@@ -105,6 +105,7 @@ impl std::fmt::Debug for TemplateParameter {
 }
 /// See [`TemplateParameter`](crate::model::TemplateParameter)
 pub mod template_parameter {
+    ///
     /// A builder for [`TemplateParameter`](crate::model::TemplateParameter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -209,6 +210,7 @@ impl std::fmt::Debug for ManagedExecution {
 }
 /// See [`ManagedExecution`](crate::model::ManagedExecution)
 pub mod managed_execution {
+    ///
     /// A builder for [`ManagedExecution`](crate::model::ManagedExecution)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -336,6 +338,7 @@ impl std::fmt::Debug for AutoDeployment {
 }
 /// See [`AutoDeployment`](crate::model::AutoDeployment)
 pub mod auto_deployment {
+    ///
     /// A builder for [`AutoDeployment`](crate::model::AutoDeployment)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -475,6 +478,7 @@ impl std::fmt::Debug for DeploymentTargets {
 }
 /// See [`DeploymentTargets`](crate::model::DeploymentTargets)
 pub mod deployment_targets {
+    ///
     /// A builder for [`DeploymentTargets`](crate::model::DeploymentTargets)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -636,6 +640,7 @@ impl std::fmt::Debug for StackSetOperationPreferences {
 }
 /// See [`StackSetOperationPreferences`](crate::model::StackSetOperationPreferences)
 pub mod stack_set_operation_preferences {
+    ///
     /// A builder for [`StackSetOperationPreferences`](crate::model::StackSetOperationPreferences)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -852,6 +857,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -939,6 +945,7 @@ impl std::fmt::Debug for Parameter {
 }
 /// See [`Parameter`](crate::model::Parameter)
 pub mod parameter {
+    ///
     /// A builder for [`Parameter`](crate::model::Parameter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1069,6 +1076,7 @@ impl std::fmt::Debug for RollbackConfiguration {
 }
 /// See [`RollbackConfiguration`](crate::model::RollbackConfiguration)
 pub mod rollback_configuration {
+    ///
     /// A builder for [`RollbackConfiguration`](crate::model::RollbackConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1174,6 +1182,7 @@ impl std::fmt::Debug for RollbackTrigger {
 }
 /// See [`RollbackTrigger`](crate::model::RollbackTrigger)
 pub mod rollback_trigger {
+    ///
     /// A builder for [`RollbackTrigger`](crate::model::RollbackTrigger)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1422,6 +1431,7 @@ impl std::fmt::Debug for LoggingConfig {
 }
 /// See [`LoggingConfig`](crate::model::LoggingConfig)
 pub mod logging_config {
+    ///
     /// A builder for [`LoggingConfig`](crate::model::LoggingConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1745,6 +1755,7 @@ impl std::fmt::Debug for TypeVersionSummary {
 }
 /// See [`TypeVersionSummary`](crate::model::TypeVersionSummary)
 pub mod type_version_summary {
+    ///
     /// A builder for [`TypeVersionSummary`](crate::model::TypeVersionSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2058,6 +2069,7 @@ impl std::fmt::Debug for TypeSummary {
 }
 /// See [`TypeSummary`](crate::model::TypeSummary)
 pub mod type_summary {
+    ///
     /// A builder for [`TypeSummary`](crate::model::TypeSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2398,6 +2410,7 @@ impl std::fmt::Debug for TypeFilters {
 }
 /// See [`TypeFilters`](crate::model::TypeFilters)
 pub mod type_filters {
+    ///
     /// A builder for [`TypeFilters`](crate::model::TypeFilters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2816,6 +2829,7 @@ impl std::fmt::Debug for StackSetSummary {
 }
 /// See [`StackSetSummary`](crate::model::StackSetSummary)
 pub mod stack_set_summary {
+    ///
     /// A builder for [`StackSetSummary`](crate::model::StackSetSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3176,6 +3190,7 @@ impl std::fmt::Debug for StackSetOperationSummary {
 }
 /// See [`StackSetOperationSummary`](crate::model::StackSetOperationSummary)
 pub mod stack_set_operation_summary {
+    ///
     /// A builder for [`StackSetOperationSummary`](crate::model::StackSetOperationSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3511,6 +3526,7 @@ impl std::fmt::Debug for StackSetOperationResultSummary {
 }
 /// See [`StackSetOperationResultSummary`](crate::model::StackSetOperationResultSummary)
 pub mod stack_set_operation_result_summary {
+    ///
     /// A builder for [`StackSetOperationResultSummary`](crate::model::StackSetOperationResultSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3680,6 +3696,7 @@ impl std::fmt::Debug for AccountGateResult {
 }
 /// See [`AccountGateResult`](crate::model::AccountGateResult)
 pub mod account_gate_result {
+    ///
     /// A builder for [`AccountGateResult`](crate::model::AccountGateResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3974,6 +3991,7 @@ impl std::fmt::Debug for StackSummary {
 }
 /// See [`StackSummary`](crate::model::StackSummary)
 pub mod stack_summary {
+    ///
     /// A builder for [`StackSummary`](crate::model::StackSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4196,6 +4214,7 @@ impl std::fmt::Debug for StackDriftInformationSummary {
 }
 /// See [`StackDriftInformationSummary`](crate::model::StackDriftInformationSummary)
 pub mod stack_drift_information_summary {
+    ///
     /// A builder for [`StackDriftInformationSummary`](crate::model::StackDriftInformationSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4498,6 +4517,7 @@ impl std::fmt::Debug for StackResourceSummary {
 }
 /// See [`StackResourceSummary`](crate::model::StackResourceSummary)
 pub mod stack_resource_summary {
+    ///
     /// A builder for [`StackResourceSummary`](crate::model::StackResourceSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4682,6 +4702,7 @@ impl std::fmt::Debug for ModuleInfo {
 }
 /// See [`ModuleInfo`](crate::model::ModuleInfo)
 pub mod module_info {
+    ///
     /// A builder for [`ModuleInfo`](crate::model::ModuleInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4788,6 +4809,7 @@ impl std::fmt::Debug for StackResourceDriftInformationSummary {
 }
 /// See [`StackResourceDriftInformationSummary`](crate::model::StackResourceDriftInformationSummary)
 pub mod stack_resource_drift_information_summary {
+    ///
     /// A builder for [`StackResourceDriftInformationSummary`](crate::model::StackResourceDriftInformationSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5195,6 +5217,7 @@ impl std::fmt::Debug for StackInstanceSummary {
 }
 /// See [`StackInstanceSummary`](crate::model::StackInstanceSummary)
 pub mod stack_instance_summary {
+    ///
     /// A builder for [`StackInstanceSummary`](crate::model::StackInstanceSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5425,6 +5448,7 @@ impl std::fmt::Debug for StackInstanceComprehensiveStatus {
 }
 /// See [`StackInstanceComprehensiveStatus`](crate::model::StackInstanceComprehensiveStatus)
 pub mod stack_instance_comprehensive_status {
+    ///
     /// A builder for [`StackInstanceComprehensiveStatus`](crate::model::StackInstanceComprehensiveStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5640,6 +5664,7 @@ impl std::fmt::Debug for StackInstanceFilter {
 }
 /// See [`StackInstanceFilter`](crate::model::StackInstanceFilter)
 pub mod stack_instance_filter {
+    ///
     /// A builder for [`StackInstanceFilter`](crate::model::StackInstanceFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5774,6 +5799,7 @@ impl std::fmt::Debug for Export {
 }
 /// See [`Export`](crate::model::Export)
 pub mod export {
+    ///
     /// A builder for [`Export`](crate::model::Export)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5932,6 +5958,7 @@ impl std::fmt::Debug for ChangeSetSummary {
 }
 /// See [`ChangeSetSummary`](crate::model::ChangeSetSummary)
 pub mod change_set_summary {
+    ///
     /// A builder for [`ChangeSetSummary`](crate::model::ChangeSetSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6322,6 +6349,7 @@ impl std::fmt::Debug for ResourceIdentifierSummary {
 }
 /// See [`ResourceIdentifierSummary`](crate::model::ResourceIdentifierSummary)
 pub mod resource_identifier_summary {
+    ///
     /// A builder for [`ResourceIdentifierSummary`](crate::model::ResourceIdentifierSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6458,6 +6486,7 @@ impl std::fmt::Debug for ParameterDeclaration {
 }
 /// See [`ParameterDeclaration`](crate::model::ParameterDeclaration)
 pub mod parameter_declaration {
+    ///
     /// A builder for [`ParameterDeclaration`](crate::model::ParameterDeclaration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6584,6 +6613,7 @@ impl std::fmt::Debug for ParameterConstraints {
 }
 /// See [`ParameterConstraints`](crate::model::ParameterConstraints)
 pub mod parameter_constraints {
+    ///
     /// A builder for [`ParameterConstraints`](crate::model::ParameterConstraints)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6801,6 +6831,7 @@ impl std::fmt::Debug for StackResourceDrift {
 }
 /// See [`StackResourceDrift`](crate::model::StackResourceDrift)
 pub mod stack_resource_drift {
+    ///
     /// A builder for [`StackResourceDrift`](crate::model::StackResourceDrift)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7075,6 +7106,7 @@ impl std::fmt::Debug for PropertyDifference {
 }
 /// See [`PropertyDifference`](crate::model::PropertyDifference)
 pub mod property_difference {
+    ///
     /// A builder for [`PropertyDifference`](crate::model::PropertyDifference)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7250,6 +7282,7 @@ impl std::fmt::Debug for PhysicalResourceIdContextKeyValuePair {
 }
 /// See [`PhysicalResourceIdContextKeyValuePair`](crate::model::PhysicalResourceIdContextKeyValuePair)
 pub mod physical_resource_id_context_key_value_pair {
+    ///
     /// A builder for [`PhysicalResourceIdContextKeyValuePair`](crate::model::PhysicalResourceIdContextKeyValuePair)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7340,6 +7373,7 @@ impl std::fmt::Debug for RequiredActivatedType {
 }
 /// See [`RequiredActivatedType`](crate::model::RequiredActivatedType)
 pub mod required_activated_type {
+    ///
     /// A builder for [`RequiredActivatedType`](crate::model::RequiredActivatedType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7626,6 +7660,7 @@ impl std::fmt::Debug for StackSetOperation {
 }
 /// See [`StackSetOperation`](crate::model::StackSetOperation)
 pub mod stack_set_operation {
+    ///
     /// A builder for [`StackSetOperation`](crate::model::StackSetOperation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7996,6 +8031,7 @@ impl std::fmt::Debug for StackSetDriftDetectionDetails {
 }
 /// See [`StackSetDriftDetectionDetails`](crate::model::StackSetDriftDetectionDetails)
 pub mod stack_set_drift_detection_details {
+    ///
     /// A builder for [`StackSetDriftDetectionDetails`](crate::model::StackSetDriftDetectionDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8457,6 +8493,7 @@ impl std::fmt::Debug for StackSet {
 }
 /// See [`StackSet`](crate::model::StackSet)
 pub mod stack_set {
+    ///
     /// A builder for [`StackSet`](crate::model::StackSet)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8941,6 +8978,7 @@ impl std::fmt::Debug for Stack {
 }
 /// See [`Stack`](crate::model::Stack)
 pub mod stack {
+    ///
     /// A builder for [`Stack`](crate::model::Stack)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9355,6 +9393,7 @@ impl std::fmt::Debug for StackDriftInformation {
 }
 /// See [`StackDriftInformation`](crate::model::StackDriftInformation)
 pub mod stack_drift_information {
+    ///
     /// A builder for [`StackDriftInformation`](crate::model::StackDriftInformation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9460,6 +9499,7 @@ impl std::fmt::Debug for Output {
 }
 /// See [`Output`](crate::model::Output)
 pub mod output {
+    ///
     /// A builder for [`Output`](crate::model::Output)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9622,6 +9662,7 @@ impl std::fmt::Debug for StackResource {
 }
 /// See [`StackResource`](crate::model::StackResource)
 pub mod stack_resource {
+    ///
     /// A builder for [`StackResource`](crate::model::StackResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9848,6 +9889,7 @@ impl std::fmt::Debug for StackResourceDriftInformation {
 }
 /// See [`StackResourceDriftInformation`](crate::model::StackResourceDriftInformation)
 pub mod stack_resource_drift_information {
+    ///
     /// A builder for [`StackResourceDriftInformation`](crate::model::StackResourceDriftInformation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10015,6 +10057,7 @@ impl std::fmt::Debug for StackResourceDetail {
 }
 /// See [`StackResourceDetail`](crate::model::StackResourceDetail)
 pub mod stack_resource_detail {
+    ///
     /// A builder for [`StackResourceDetail`](crate::model::StackResourceDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10334,6 +10377,7 @@ impl std::fmt::Debug for StackInstance {
 }
 /// See [`StackInstance`](crate::model::StackInstance)
 pub mod stack_instance {
+    ///
     /// A builder for [`StackInstance`](crate::model::StackInstance)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10686,6 +10730,7 @@ impl std::fmt::Debug for StackEvent {
 }
 /// See [`StackEvent`](crate::model::StackEvent)
 pub mod stack_event {
+    ///
     /// A builder for [`StackEvent`](crate::model::StackEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11387,6 +11432,7 @@ impl std::fmt::Debug for ChangeSetHook {
 }
 /// See [`ChangeSetHook`](crate::model::ChangeSetHook)
 pub mod change_set_hook {
+    ///
     /// A builder for [`ChangeSetHook`](crate::model::ChangeSetHook)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11559,6 +11605,7 @@ impl std::fmt::Debug for ChangeSetHookTargetDetails {
 }
 /// See [`ChangeSetHookTargetDetails`](crate::model::ChangeSetHookTargetDetails)
 pub mod change_set_hook_target_details {
+    ///
     /// A builder for [`ChangeSetHookTargetDetails`](crate::model::ChangeSetHookTargetDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11649,6 +11696,7 @@ impl std::fmt::Debug for ChangeSetHookResourceTargetDetails {
 }
 /// See [`ChangeSetHookResourceTargetDetails`](crate::model::ChangeSetHookResourceTargetDetails)
 pub mod change_set_hook_resource_target_details {
+    ///
     /// A builder for [`ChangeSetHookResourceTargetDetails`](crate::model::ChangeSetHookResourceTargetDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11868,6 +11916,7 @@ impl std::fmt::Debug for Change {
 }
 /// See [`Change`](crate::model::Change)
 pub mod change {
+    ///
     /// A builder for [`Change`](crate::model::Change)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12007,6 +12056,7 @@ impl std::fmt::Debug for ResourceChange {
 }
 /// See [`ResourceChange`](crate::model::ResourceChange)
 pub mod resource_change {
+    ///
     /// A builder for [`ResourceChange`](crate::model::ResourceChange)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12239,6 +12289,7 @@ impl std::fmt::Debug for ResourceChangeDetail {
 }
 /// See [`ResourceChangeDetail`](crate::model::ResourceChangeDetail)
 pub mod resource_change_detail {
+    ///
     /// A builder for [`ResourceChangeDetail`](crate::model::ResourceChangeDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12503,6 +12554,7 @@ impl std::fmt::Debug for ResourceTargetDefinition {
 }
 /// See [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition)
 pub mod resource_target_definition {
+    ///
     /// A builder for [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12850,6 +12902,7 @@ impl std::fmt::Debug for AccountLimit {
 }
 /// See [`AccountLimit`](crate::model::AccountLimit)
 pub mod account_limit {
+    ///
     /// A builder for [`AccountLimit`](crate::model::AccountLimit)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12995,6 +13048,7 @@ impl std::fmt::Debug for ResourceToImport {
 }
 /// See [`ResourceToImport`](crate::model::ResourceToImport)
 pub mod resource_to_import {
+    ///
     /// A builder for [`ResourceToImport`](crate::model::ResourceToImport)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13204,6 +13258,7 @@ impl std::fmt::Debug for TypeConfigurationDetails {
 }
 /// See [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails)
 pub mod type_configuration_details {
+    ///
     /// A builder for [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13372,6 +13427,7 @@ impl std::fmt::Debug for TypeConfigurationIdentifier {
 }
 /// See [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier)
 pub mod type_configuration_identifier {
+    ///
     /// A builder for [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13505,6 +13561,7 @@ impl std::fmt::Debug for BatchDescribeTypeConfigurationsError {
 }
 /// See [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError)
 pub mod batch_describe_type_configurations_error {
+    ///
     /// A builder for [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

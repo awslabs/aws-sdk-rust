@@ -11,6 +11,7 @@ impl std::fmt::Debug for PutRecordOutput {
 }
 /// See [`PutRecordOutput`](crate::output::PutRecordOutput)
 pub mod put_record_output {
+    ///
     /// A builder for [`PutRecordOutput`](crate::output::PutRecordOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -51,6 +52,7 @@ impl std::fmt::Debug for GetRecordOutput {
 }
 /// See [`GetRecordOutput`](crate::output::GetRecordOutput)
 pub mod get_record_output {
+    ///
     /// A builder for [`GetRecordOutput`](crate::output::GetRecordOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -104,6 +106,7 @@ impl std::fmt::Debug for DeleteRecordOutput {
 }
 /// See [`DeleteRecordOutput`](crate::output::DeleteRecordOutput)
 pub mod delete_record_output {
+    ///
     /// A builder for [`DeleteRecordOutput`](crate::output::DeleteRecordOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -161,6 +164,7 @@ impl std::fmt::Debug for BatchGetRecordOutput {
 }
 /// See [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput)
 pub mod batch_get_record_output {
+    ///
     /// A builder for [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateSamplingRuleOutput {
 }
 /// See [`UpdateSamplingRuleOutput`](crate::output::UpdateSamplingRuleOutput)
 pub mod update_sampling_rule_output {
+    ///
     /// A builder for [`UpdateSamplingRuleOutput`](crate::output::UpdateSamplingRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -78,6 +79,7 @@ impl std::fmt::Debug for UpdateGroupOutput {
 }
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
 pub mod update_group_output {
+    ///
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -120,6 +122,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -150,6 +153,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -196,6 +200,7 @@ impl std::fmt::Debug for PutTraceSegmentsOutput {
 }
 /// See [`PutTraceSegmentsOutput`](crate::output::PutTraceSegmentsOutput)
 pub mod put_trace_segments_output {
+    ///
     /// A builder for [`PutTraceSegmentsOutput`](crate::output::PutTraceSegmentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -253,6 +258,7 @@ impl std::fmt::Debug for PutTelemetryRecordsOutput {
 }
 /// See [`PutTelemetryRecordsOutput`](crate::output::PutTelemetryRecordsOutput)
 pub mod put_telemetry_records_output {
+    ///
     /// A builder for [`PutTelemetryRecordsOutput`](crate::output::PutTelemetryRecordsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -293,6 +299,7 @@ impl std::fmt::Debug for PutEncryptionConfigOutput {
 }
 /// See [`PutEncryptionConfigOutput`](crate::output::PutEncryptionConfigOutput)
 pub mod put_encryption_config_output {
+    ///
     /// A builder for [`PutEncryptionConfigOutput`](crate::output::PutEncryptionConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -357,6 +364,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -453,6 +461,7 @@ impl std::fmt::Debug for GetTraceSummariesOutput {
 }
 /// See [`GetTraceSummariesOutput`](crate::output::GetTraceSummariesOutput)
 pub mod get_trace_summaries_output {
+    ///
     /// A builder for [`GetTraceSummariesOutput`](crate::output::GetTraceSummariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -562,6 +571,7 @@ impl std::fmt::Debug for GetTraceGraphOutput {
 }
 /// See [`GetTraceGraphOutput`](crate::output::GetTraceGraphOutput)
 pub mod get_trace_graph_output {
+    ///
     /// A builder for [`GetTraceGraphOutput`](crate::output::GetTraceGraphOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -660,6 +670,7 @@ impl std::fmt::Debug for GetTimeSeriesServiceStatisticsOutput {
 }
 /// See [`GetTimeSeriesServiceStatisticsOutput`](crate::output::GetTimeSeriesServiceStatisticsOutput)
 pub mod get_time_series_service_statistics_output {
+    ///
     /// A builder for [`GetTimeSeriesServiceStatisticsOutput`](crate::output::GetTimeSeriesServiceStatisticsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -782,6 +793,7 @@ impl std::fmt::Debug for GetServiceGraphOutput {
 }
 /// See [`GetServiceGraphOutput`](crate::output::GetServiceGraphOutput)
 pub mod get_service_graph_output {
+    ///
     /// A builder for [`GetServiceGraphOutput`](crate::output::GetServiceGraphOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -919,6 +931,7 @@ impl std::fmt::Debug for GetSamplingTargetsOutput {
 }
 /// See [`GetSamplingTargetsOutput`](crate::output::GetSamplingTargetsOutput)
 pub mod get_sampling_targets_output {
+    ///
     /// A builder for [`GetSamplingTargetsOutput`](crate::output::GetSamplingTargetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1039,6 +1052,7 @@ impl std::fmt::Debug for GetSamplingStatisticSummariesOutput {
 }
 /// See [`GetSamplingStatisticSummariesOutput`](crate::output::GetSamplingStatisticSummariesOutput)
 pub mod get_sampling_statistic_summaries_output {
+    ///
     /// A builder for [`GetSamplingStatisticSummariesOutput`](crate::output::GetSamplingStatisticSummariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1127,6 +1141,7 @@ impl std::fmt::Debug for GetSamplingRulesOutput {
 }
 /// See [`GetSamplingRulesOutput`](crate::output::GetSamplingRulesOutput)
 pub mod get_sampling_rules_output {
+    ///
     /// A builder for [`GetSamplingRulesOutput`](crate::output::GetSamplingRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1210,6 +1225,7 @@ impl std::fmt::Debug for GetInsightSummariesOutput {
 }
 /// See [`GetInsightSummariesOutput`](crate::output::GetInsightSummariesOutput)
 pub mod get_insight_summaries_output {
+    ///
     /// A builder for [`GetInsightSummariesOutput`](crate::output::GetInsightSummariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1328,6 +1344,7 @@ impl std::fmt::Debug for GetInsightImpactGraphOutput {
 }
 /// See [`GetInsightImpactGraphOutput`](crate::output::GetInsightImpactGraphOutput)
 pub mod get_insight_impact_graph_output {
+    ///
     /// A builder for [`GetInsightImpactGraphOutput`](crate::output::GetInsightImpactGraphOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1483,6 +1500,7 @@ impl std::fmt::Debug for GetInsightEventsOutput {
 }
 /// See [`GetInsightEventsOutput`](crate::output::GetInsightEventsOutput)
 pub mod get_insight_events_output {
+    ///
     /// A builder for [`GetInsightEventsOutput`](crate::output::GetInsightEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1558,6 +1576,7 @@ impl std::fmt::Debug for GetInsightOutput {
 }
 /// See [`GetInsightOutput`](crate::output::GetInsightOutput)
 pub mod get_insight_output {
+    ///
     /// A builder for [`GetInsightOutput`](crate::output::GetInsightOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1619,6 +1638,7 @@ impl std::fmt::Debug for GetGroupsOutput {
 }
 /// See [`GetGroupsOutput`](crate::output::GetGroupsOutput)
 pub mod get_groups_output {
+    ///
     /// A builder for [`GetGroupsOutput`](crate::output::GetGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1694,6 +1714,7 @@ impl std::fmt::Debug for GetGroupOutput {
 }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput)
 pub mod get_group_output {
+    ///
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1746,6 +1767,7 @@ impl std::fmt::Debug for GetEncryptionConfigOutput {
 }
 /// See [`GetEncryptionConfigOutput`](crate::output::GetEncryptionConfigOutput)
 pub mod get_encryption_config_output {
+    ///
     /// A builder for [`GetEncryptionConfigOutput`](crate::output::GetEncryptionConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1803,6 +1825,7 @@ impl std::fmt::Debug for DeleteSamplingRuleOutput {
 }
 /// See [`DeleteSamplingRuleOutput`](crate::output::DeleteSamplingRuleOutput)
 pub mod delete_sampling_rule_output {
+    ///
     /// A builder for [`DeleteSamplingRuleOutput`](crate::output::DeleteSamplingRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1850,6 +1873,7 @@ impl std::fmt::Debug for DeleteGroupOutput {
 }
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
 pub mod delete_group_output {
+    ///
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1890,6 +1914,7 @@ impl std::fmt::Debug for CreateSamplingRuleOutput {
 }
 /// See [`CreateSamplingRuleOutput`](crate::output::CreateSamplingRuleOutput)
 pub mod create_sampling_rule_output {
+    ///
     /// A builder for [`CreateSamplingRuleOutput`](crate::output::CreateSamplingRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1947,6 +1972,7 @@ impl std::fmt::Debug for CreateGroupOutput {
 }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput)
 pub mod create_group_output {
+    ///
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2013,6 +2039,7 @@ impl std::fmt::Debug for BatchGetTracesOutput {
 }
 /// See [`BatchGetTracesOutput`](crate::output::BatchGetTracesOutput)
 pub mod batch_get_traces_output {
+    ///
     /// A builder for [`BatchGetTracesOutput`](crate::output::BatchGetTracesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

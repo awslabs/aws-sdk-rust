@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateDeviceMetadataOutput {
 }
 /// See [`UpdateDeviceMetadataOutput`](crate::output::UpdateDeviceMetadataOutput)
 pub mod update_device_metadata_output {
+    ///
     /// A builder for [`UpdateDeviceMetadataOutput`](crate::output::UpdateDeviceMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -65,6 +66,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -95,6 +97,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -125,6 +128,7 @@ impl std::fmt::Debug for RemoveApplicationInstanceOutput {
 }
 /// See [`RemoveApplicationInstanceOutput`](crate::output::RemoveApplicationInstanceOutput)
 pub mod remove_application_instance_output {
+    ///
     /// A builder for [`RemoveApplicationInstanceOutput`](crate::output::RemoveApplicationInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -155,6 +159,7 @@ impl std::fmt::Debug for RegisterPackageVersionOutput {
 }
 /// See [`RegisterPackageVersionOutput`](crate::output::RegisterPackageVersionOutput)
 pub mod register_package_version_output {
+    ///
     /// A builder for [`RegisterPackageVersionOutput`](crate::output::RegisterPackageVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -223,6 +228,7 @@ impl std::fmt::Debug for ProvisionDeviceOutput {
 }
 /// See [`ProvisionDeviceOutput`](crate::output::ProvisionDeviceOutput)
 pub mod provision_device_output {
+    ///
     /// A builder for [`ProvisionDeviceOutput`](crate::output::ProvisionDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -338,6 +344,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -414,6 +421,7 @@ impl std::fmt::Debug for ListPackagesOutput {
 }
 /// See [`ListPackagesOutput`](crate::output::ListPackagesOutput)
 pub mod list_packages_output {
+    ///
     /// A builder for [`ListPackagesOutput`](crate::output::ListPackagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -496,6 +504,7 @@ impl std::fmt::Debug for ListPackageImportJobsOutput {
 }
 /// See [`ListPackageImportJobsOutput`](crate::output::ListPackageImportJobsOutput)
 pub mod list_package_import_jobs_output {
+    ///
     /// A builder for [`ListPackageImportJobsOutput`](crate::output::ListPackageImportJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -579,6 +588,7 @@ impl std::fmt::Debug for ListNodesOutput {
 }
 /// See [`ListNodesOutput`](crate::output::ListNodesOutput)
 pub mod list_nodes_output {
+    ///
     /// A builder for [`ListNodesOutput`](crate::output::ListNodesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -664,6 +674,7 @@ impl std::fmt::Debug for ListNodeFromTemplateJobsOutput {
 }
 /// See [`ListNodeFromTemplateJobsOutput`](crate::output::ListNodeFromTemplateJobsOutput)
 pub mod list_node_from_template_jobs_output {
+    ///
     /// A builder for [`ListNodeFromTemplateJobsOutput`](crate::output::ListNodeFromTemplateJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -747,6 +758,7 @@ impl std::fmt::Debug for ListDevicesJobsOutput {
 }
 /// See [`ListDevicesJobsOutput`](crate::output::ListDevicesJobsOutput)
 pub mod list_devices_jobs_output {
+    ///
     /// A builder for [`ListDevicesJobsOutput`](crate::output::ListDevicesJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -829,6 +841,7 @@ impl std::fmt::Debug for ListDevicesOutput {
 }
 /// See [`ListDevicesOutput`](crate::output::ListDevicesOutput)
 pub mod list_devices_output {
+    ///
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -914,6 +927,7 @@ impl std::fmt::Debug for ListApplicationInstancesOutput {
 }
 /// See [`ListApplicationInstancesOutput`](crate::output::ListApplicationInstancesOutput)
 pub mod list_application_instances_output {
+    ///
     /// A builder for [`ListApplicationInstancesOutput`](crate::output::ListApplicationInstancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -997,6 +1011,7 @@ impl std::fmt::Debug for ListApplicationInstanceNodeInstancesOutput {
 }
 /// See [`ListApplicationInstanceNodeInstancesOutput`](crate::output::ListApplicationInstanceNodeInstancesOutput)
 pub mod list_application_instance_node_instances_output {
+    ///
     /// A builder for [`ListApplicationInstanceNodeInstancesOutput`](crate::output::ListApplicationInstanceNodeInstancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1079,6 +1094,7 @@ impl std::fmt::Debug for ListApplicationInstanceDependenciesOutput {
 }
 /// See [`ListApplicationInstanceDependenciesOutput`](crate::output::ListApplicationInstanceDependenciesOutput)
 pub mod list_application_instance_dependencies_output {
+    ///
     /// A builder for [`ListApplicationInstanceDependenciesOutput`](crate::output::ListApplicationInstanceDependenciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1217,6 +1233,7 @@ impl std::fmt::Debug for DescribePackageVersionOutput {
 }
 /// See [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput)
 pub mod describe_package_version_output {
+    ///
     /// A builder for [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1469,6 +1486,7 @@ impl std::fmt::Debug for DescribePackageImportJobOutput {
 }
 /// See [`DescribePackageImportJobOutput`](crate::output::DescribePackageImportJobOutput)
 pub mod describe_package_import_job_output {
+    ///
     /// A builder for [`DescribePackageImportJobOutput`](crate::output::DescribePackageImportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1735,6 +1753,7 @@ impl std::fmt::Debug for DescribePackageOutput {
 }
 /// See [`DescribePackageOutput`](crate::output::DescribePackageOutput)
 pub mod describe_package_output {
+    ///
     /// A builder for [`DescribePackageOutput`](crate::output::DescribePackageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2000,6 +2019,7 @@ impl std::fmt::Debug for DescribeNodeFromTemplateJobOutput {
 }
 /// See [`DescribeNodeFromTemplateJobOutput`](crate::output::DescribeNodeFromTemplateJobOutput)
 pub mod describe_node_from_template_job_output {
+    ///
     /// A builder for [`DescribeNodeFromTemplateJobOutput`](crate::output::DescribeNodeFromTemplateJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2327,6 +2347,7 @@ impl std::fmt::Debug for DescribeNodeOutput {
 }
 /// See [`DescribeNodeOutput`](crate::output::DescribeNodeOutput)
 pub mod describe_node_output {
+    ///
     /// A builder for [`DescribeNodeOutput`](crate::output::DescribeNodeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2607,6 +2628,7 @@ impl std::fmt::Debug for DescribeDeviceJobOutput {
 }
 /// See [`DescribeDeviceJobOutput`](crate::output::DescribeDeviceJobOutput)
 pub mod describe_device_job_output {
+    ///
     /// A builder for [`DescribeDeviceJobOutput`](crate::output::DescribeDeviceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2885,6 +2907,7 @@ impl std::fmt::Debug for DescribeDeviceOutput {
 }
 /// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
 pub mod describe_device_output {
+    ///
     /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3267,6 +3290,7 @@ impl std::fmt::Debug for DescribeApplicationInstanceDetailsOutput {
 }
 /// See [`DescribeApplicationInstanceDetailsOutput`](crate::output::DescribeApplicationInstanceDetailsOutput)
 pub mod describe_application_instance_details_output {
+    ///
     /// A builder for [`DescribeApplicationInstanceDetailsOutput`](crate::output::DescribeApplicationInstanceDetailsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3539,6 +3563,7 @@ impl std::fmt::Debug for DescribeApplicationInstanceOutput {
 }
 /// See [`DescribeApplicationInstanceOutput`](crate::output::DescribeApplicationInstanceOutput)
 pub mod describe_application_instance_output {
+    ///
     /// A builder for [`DescribeApplicationInstanceOutput`](crate::output::DescribeApplicationInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3799,6 +3824,7 @@ impl std::fmt::Debug for DeregisterPackageVersionOutput {
 }
 /// See [`DeregisterPackageVersionOutput`](crate::output::DeregisterPackageVersionOutput)
 pub mod deregister_package_version_output {
+    ///
     /// A builder for [`DeregisterPackageVersionOutput`](crate::output::DeregisterPackageVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3829,6 +3855,7 @@ impl std::fmt::Debug for DeletePackageOutput {
 }
 /// See [`DeletePackageOutput`](crate::output::DeletePackageOutput)
 pub mod delete_package_output {
+    ///
     /// A builder for [`DeletePackageOutput`](crate::output::DeletePackageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3869,6 +3896,7 @@ impl std::fmt::Debug for DeleteDeviceOutput {
 }
 /// See [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput)
 pub mod delete_device_output {
+    ///
     /// A builder for [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3923,6 +3951,7 @@ impl std::fmt::Debug for CreatePackageImportJobOutput {
 }
 /// See [`CreatePackageImportJobOutput`](crate::output::CreatePackageImportJobOutput)
 pub mod create_package_import_job_output {
+    ///
     /// A builder for [`CreatePackageImportJobOutput`](crate::output::CreatePackageImportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3991,6 +4020,7 @@ impl std::fmt::Debug for CreatePackageOutput {
 }
 /// See [`CreatePackageOutput`](crate::output::CreatePackageOutput)
 pub mod create_package_output {
+    ///
     /// A builder for [`CreatePackageOutput`](crate::output::CreatePackageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4072,6 +4102,7 @@ impl std::fmt::Debug for CreateNodeFromTemplateJobOutput {
 }
 /// See [`CreateNodeFromTemplateJobOutput`](crate::output::CreateNodeFromTemplateJobOutput)
 pub mod create_node_from_template_job_output {
+    ///
     /// A builder for [`CreateNodeFromTemplateJobOutput`](crate::output::CreateNodeFromTemplateJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4126,6 +4157,7 @@ impl std::fmt::Debug for CreateJobForDevicesOutput {
 }
 /// See [`CreateJobForDevicesOutput`](crate::output::CreateJobForDevicesOutput)
 pub mod create_job_for_devices_output {
+    ///
     /// A builder for [`CreateJobForDevicesOutput`](crate::output::CreateJobForDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4187,6 +4219,7 @@ impl std::fmt::Debug for CreateApplicationInstanceOutput {
 }
 /// See [`CreateApplicationInstanceOutput`](crate::output::CreateApplicationInstanceOutput)
 pub mod create_application_instance_output {
+    ///
     /// A builder for [`CreateApplicationInstanceOutput`](crate::output::CreateApplicationInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

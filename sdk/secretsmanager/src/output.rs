@@ -28,6 +28,7 @@ impl std::fmt::Debug for ValidateResourcePolicyOutput {
 }
 /// See [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput)
 pub mod validate_resource_policy_output {
+    ///
     /// A builder for [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -111,6 +112,7 @@ impl std::fmt::Debug for UpdateSecretVersionStageOutput {
 }
 /// See [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput)
 pub mod update_secret_version_stage_output {
+    ///
     /// A builder for [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -191,6 +193,7 @@ impl std::fmt::Debug for UpdateSecretOutput {
 }
 /// See [`UpdateSecretOutput`](crate::output::UpdateSecretOutput)
 pub mod update_secret_output {
+    ///
     /// A builder for [`UpdateSecretOutput`](crate::output::UpdateSecretOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -259,6 +262,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -289,6 +293,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -329,6 +334,7 @@ impl std::fmt::Debug for StopReplicationToReplicaOutput {
 }
 /// See [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput)
 pub mod stop_replication_to_replica_output {
+    ///
     /// A builder for [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -395,6 +401,7 @@ impl std::fmt::Debug for RotateSecretOutput {
 }
 /// See [`RotateSecretOutput`](crate::output::RotateSecretOutput)
 pub mod rotate_secret_output {
+    ///
     /// A builder for [`RotateSecretOutput`](crate::output::RotateSecretOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -480,6 +487,7 @@ impl std::fmt::Debug for RestoreSecretOutput {
 }
 /// See [`RestoreSecretOutput`](crate::output::RestoreSecretOutput)
 pub mod restore_secret_output {
+    ///
     /// A builder for [`RestoreSecretOutput`](crate::output::RestoreSecretOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -555,6 +563,7 @@ impl std::fmt::Debug for ReplicateSecretToRegionsOutput {
 }
 /// See [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput)
 pub mod replicate_secret_to_regions_output {
+    ///
     /// A builder for [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -640,6 +649,7 @@ impl std::fmt::Debug for RemoveRegionsFromReplicationOutput {
 }
 /// See [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput)
 pub mod remove_regions_from_replication_output {
+    ///
     /// A builder for [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -737,6 +747,7 @@ impl std::fmt::Debug for PutSecretValueOutput {
 }
 /// See [`PutSecretValueOutput`](crate::output::PutSecretValueOutput)
 pub mod put_secret_value_output {
+    ///
     /// A builder for [`PutSecretValueOutput`](crate::output::PutSecretValueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -843,6 +854,7 @@ impl std::fmt::Debug for PutResourcePolicyOutput {
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
 pub mod put_resource_policy_output {
+    ///
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -930,6 +942,7 @@ impl std::fmt::Debug for ListSecretVersionIdsOutput {
 }
 /// See [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput)
 pub mod list_secret_version_ids_output {
+    ///
     /// A builder for [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1037,6 +1050,7 @@ impl std::fmt::Debug for ListSecretsOutput {
 }
 /// See [`ListSecretsOutput`](crate::output::ListSecretsOutput)
 pub mod list_secrets_output {
+    ///
     /// A builder for [`ListSecretsOutput`](crate::output::ListSecretsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1158,6 +1172,7 @@ impl std::fmt::Debug for GetSecretValueOutput {
 }
 /// See [`GetSecretValueOutput`](crate::output::GetSecretValueOutput)
 pub mod get_secret_value_output {
+    ///
     /// A builder for [`GetSecretValueOutput`](crate::output::GetSecretValueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1320,6 +1335,7 @@ impl std::fmt::Debug for GetResourcePolicyOutput {
 }
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
 pub mod get_resource_policy_output {
+    ///
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1401,6 +1417,7 @@ impl std::fmt::Debug for GetRandomPasswordOutput {
 }
 /// See [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput)
 pub mod get_random_password_output {
+    ///
     /// A builder for [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1606,6 +1623,7 @@ impl std::fmt::Debug for DescribeSecretOutput {
 }
 /// See [`DescribeSecretOutput`](crate::output::DescribeSecretOutput)
 pub mod describe_secret_output {
+    ///
     /// A builder for [`DescribeSecretOutput`](crate::output::DescribeSecretOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1957,6 +1975,7 @@ impl std::fmt::Debug for DeleteSecretOutput {
 }
 /// See [`DeleteSecretOutput`](crate::output::DeleteSecretOutput)
 pub mod delete_secret_output {
+    ///
     /// A builder for [`DeleteSecretOutput`](crate::output::DeleteSecretOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2045,6 +2064,7 @@ impl std::fmt::Debug for DeleteResourcePolicyOutput {
 }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
 pub mod delete_resource_policy_output {
+    ///
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2144,6 +2164,7 @@ impl std::fmt::Debug for CreateSecretOutput {
 }
 /// See [`CreateSecretOutput`](crate::output::CreateSecretOutput)
 pub mod create_secret_output {
+    ///
     /// A builder for [`CreateSecretOutput`](crate::output::CreateSecretOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2268,6 +2289,7 @@ impl std::fmt::Debug for CancelRotateSecretOutput {
 }
 /// See [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput)
 pub mod cancel_rotate_secret_output {
+    ///
     /// A builder for [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

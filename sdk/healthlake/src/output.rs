@@ -11,6 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -95,6 +97,7 @@ impl std::fmt::Debug for StartFhirImportJobOutput {
 }
 /// See [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput)
 pub mod start_fhir_import_job_output {
+    ///
     /// A builder for [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -190,6 +193,7 @@ impl std::fmt::Debug for StartFhirExportJobOutput {
 }
 /// See [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput)
 pub mod start_fhir_export_job_output {
+    ///
     /// A builder for [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -271,6 +275,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -345,6 +350,7 @@ impl std::fmt::Debug for ListFhirImportJobsOutput {
 }
 /// See [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput)
 pub mod list_fhir_import_jobs_output {
+    ///
     /// A builder for [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -437,6 +443,7 @@ impl std::fmt::Debug for ListFhirExportJobsOutput {
 }
 /// See [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput)
 pub mod list_fhir_export_jobs_output {
+    ///
     /// A builder for [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -526,6 +533,7 @@ impl std::fmt::Debug for ListFhirDatastoresOutput {
 }
 /// See [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput)
 pub mod list_fhir_datastores_output {
+    ///
     /// A builder for [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -605,6 +613,7 @@ impl std::fmt::Debug for DescribeFhirImportJobOutput {
 }
 /// See [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput)
 pub mod describe_fhir_import_job_output {
+    ///
     /// A builder for [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -662,6 +671,7 @@ impl std::fmt::Debug for DescribeFhirExportJobOutput {
 }
 /// See [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput)
 pub mod describe_fhir_export_job_output {
+    ///
     /// A builder for [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -719,6 +729,7 @@ impl std::fmt::Debug for DescribeFhirDatastoreOutput {
 }
 /// See [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput)
 pub mod describe_fhir_datastore_output {
+    ///
     /// A builder for [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -797,6 +808,7 @@ impl std::fmt::Debug for DeleteFhirDatastoreOutput {
 }
 /// See [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput)
 pub mod delete_fhir_datastore_output {
+    ///
     /// A builder for [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -917,6 +929,7 @@ impl std::fmt::Debug for CreateFhirDatastoreOutput {
 }
 /// See [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput)
 pub mod create_fhir_datastore_output {
+    ///
     /// A builder for [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

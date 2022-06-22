@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateStreamOutput {
 }
 /// See [`UpdateStreamOutput`](crate::output::UpdateStreamOutput)
 pub mod update_stream_output {
+    ///
     /// A builder for [`UpdateStreamOutput`](crate::output::UpdateStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdateSignalingChannelOutput {
 }
 /// See [`UpdateSignalingChannelOutput`](crate::output::UpdateSignalingChannelOutput)
 pub mod update_signaling_channel_output {
+    ///
     /// A builder for [`UpdateSignalingChannelOutput`](crate::output::UpdateSignalingChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UpdateNotificationConfigurationOutput {
 }
 /// See [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput)
 pub mod update_notification_configuration_output {
+    ///
     /// A builder for [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for UpdateImageGenerationConfigurationOutput {
 }
 /// See [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput)
 pub mod update_image_generation_configuration_output {
+    ///
     /// A builder for [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for UpdateDataRetentionOutput {
 }
 /// See [`UpdateDataRetentionOutput`](crate::output::UpdateDataRetentionOutput)
 pub mod update_data_retention_output {
+    ///
     /// A builder for [`UpdateDataRetentionOutput`](crate::output::UpdateDataRetentionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -161,6 +166,7 @@ impl std::fmt::Debug for UntagStreamOutput {
 }
 /// See [`UntagStreamOutput`](crate::output::UntagStreamOutput)
 pub mod untag_stream_output {
+    ///
     /// A builder for [`UntagStreamOutput`](crate::output::UntagStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -191,6 +197,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -221,6 +228,7 @@ impl std::fmt::Debug for TagStreamOutput {
 }
 /// See [`TagStreamOutput`](crate::output::TagStreamOutput)
 pub mod tag_stream_output {
+    ///
     /// A builder for [`TagStreamOutput`](crate::output::TagStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -251,6 +259,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -302,6 +311,7 @@ impl std::fmt::Debug for ListTagsForStreamOutput {
 }
 /// See [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput)
 pub mod list_tags_for_stream_output {
+    ///
     /// A builder for [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -396,6 +406,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -486,6 +497,7 @@ impl std::fmt::Debug for ListStreamsOutput {
 }
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput)
 pub mod list_streams_output {
+    ///
     /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -568,6 +580,7 @@ impl std::fmt::Debug for ListSignalingChannelsOutput {
 }
 /// See [`ListSignalingChannelsOutput`](crate::output::ListSignalingChannelsOutput)
 pub mod list_signaling_channels_output {
+    ///
     /// A builder for [`ListSignalingChannelsOutput`](crate::output::ListSignalingChannelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -646,6 +659,7 @@ impl std::fmt::Debug for GetSignalingChannelEndpointOutput {
 }
 /// See [`GetSignalingChannelEndpointOutput`](crate::output::GetSignalingChannelEndpointOutput)
 pub mod get_signaling_channel_endpoint_output {
+    ///
     /// A builder for [`GetSignalingChannelEndpointOutput`](crate::output::GetSignalingChannelEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -713,6 +727,7 @@ impl std::fmt::Debug for GetDataEndpointOutput {
 }
 /// See [`GetDataEndpointOutput`](crate::output::GetDataEndpointOutput)
 pub mod get_data_endpoint_output {
+    ///
     /// A builder for [`GetDataEndpointOutput`](crate::output::GetDataEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -770,6 +785,7 @@ impl std::fmt::Debug for DescribeStreamOutput {
 }
 /// See [`DescribeStreamOutput`](crate::output::DescribeStreamOutput)
 pub mod describe_stream_output {
+    ///
     /// A builder for [`DescribeStreamOutput`](crate::output::DescribeStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -827,6 +843,7 @@ impl std::fmt::Debug for DescribeSignalingChannelOutput {
 }
 /// See [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput)
 pub mod describe_signaling_channel_output {
+    ///
     /// A builder for [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -889,6 +906,7 @@ impl std::fmt::Debug for DescribeNotificationConfigurationOutput {
 }
 /// See [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput)
 pub mod describe_notification_configuration_output {
+    ///
     /// A builder for [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -956,6 +974,7 @@ impl std::fmt::Debug for DescribeImageGenerationConfigurationOutput {
 }
 /// See [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput)
 pub mod describe_image_generation_configuration_output {
+    ///
     /// A builder for [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1007,6 +1026,7 @@ impl std::fmt::Debug for DeleteStreamOutput {
 }
 /// See [`DeleteStreamOutput`](crate::output::DeleteStreamOutput)
 pub mod delete_stream_output {
+    ///
     /// A builder for [`DeleteStreamOutput`](crate::output::DeleteStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1037,6 +1057,7 @@ impl std::fmt::Debug for DeleteSignalingChannelOutput {
 }
 /// See [`DeleteSignalingChannelOutput`](crate::output::DeleteSignalingChannelOutput)
 pub mod delete_signaling_channel_output {
+    ///
     /// A builder for [`DeleteSignalingChannelOutput`](crate::output::DeleteSignalingChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1077,6 +1098,7 @@ impl std::fmt::Debug for CreateStreamOutput {
 }
 /// See [`CreateStreamOutput`](crate::output::CreateStreamOutput)
 pub mod create_stream_output {
+    ///
     /// A builder for [`CreateStreamOutput`](crate::output::CreateStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1131,6 +1153,7 @@ impl std::fmt::Debug for CreateSignalingChannelOutput {
 }
 /// See [`CreateSignalingChannelOutput`](crate::output::CreateSignalingChannelOutput)
 pub mod create_signaling_channel_output {
+    ///
     /// A builder for [`CreateSignalingChannelOutput`](crate::output::CreateSignalingChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

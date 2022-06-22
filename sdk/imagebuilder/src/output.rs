@@ -38,6 +38,7 @@ impl std::fmt::Debug for UpdateInfrastructureConfigurationOutput {
 }
 /// See [`UpdateInfrastructureConfigurationOutput`](crate::output::UpdateInfrastructureConfigurationOutput)
 pub mod update_infrastructure_configuration_output {
+    ///
     /// A builder for [`UpdateInfrastructureConfigurationOutput`](crate::output::UpdateInfrastructureConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -136,6 +137,7 @@ impl std::fmt::Debug for UpdateImagePipelineOutput {
 }
 /// See [`UpdateImagePipelineOutput`](crate::output::UpdateImagePipelineOutput)
 pub mod update_image_pipeline_output {
+    ///
     /// A builder for [`UpdateImagePipelineOutput`](crate::output::UpdateImagePipelineOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -234,6 +236,7 @@ impl std::fmt::Debug for UpdateDistributionConfigurationOutput {
 }
 /// See [`UpdateDistributionConfigurationOutput`](crate::output::UpdateDistributionConfigurationOutput)
 pub mod update_distribution_configuration_output {
+    ///
     /// A builder for [`UpdateDistributionConfigurationOutput`](crate::output::UpdateDistributionConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -308,6 +311,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -338,6 +342,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -392,6 +397,7 @@ impl std::fmt::Debug for StartImagePipelineExecutionOutput {
 }
 /// See [`StartImagePipelineExecutionOutput`](crate::output::StartImagePipelineExecutionOutput)
 pub mod start_image_pipeline_execution_output {
+    ///
     /// A builder for [`StartImagePipelineExecutionOutput`](crate::output::StartImagePipelineExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -480,6 +486,7 @@ impl std::fmt::Debug for PutImageRecipePolicyOutput {
 }
 /// See [`PutImageRecipePolicyOutput`](crate::output::PutImageRecipePolicyOutput)
 pub mod put_image_recipe_policy_output {
+    ///
     /// A builder for [`PutImageRecipePolicyOutput`](crate::output::PutImageRecipePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -556,6 +563,7 @@ impl std::fmt::Debug for PutImagePolicyOutput {
 }
 /// See [`PutImagePolicyOutput`](crate::output::PutImagePolicyOutput)
 pub mod put_image_policy_output {
+    ///
     /// A builder for [`PutImagePolicyOutput`](crate::output::PutImagePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -629,6 +637,7 @@ impl std::fmt::Debug for PutContainerRecipePolicyOutput {
 }
 /// See [`PutContainerRecipePolicyOutput`](crate::output::PutContainerRecipePolicyOutput)
 pub mod put_container_recipe_policy_output {
+    ///
     /// A builder for [`PutContainerRecipePolicyOutput`](crate::output::PutContainerRecipePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -705,6 +714,7 @@ impl std::fmt::Debug for PutComponentPolicyOutput {
 }
 /// See [`PutComponentPolicyOutput`](crate::output::PutComponentPolicyOutput)
 pub mod put_component_policy_output {
+    ///
     /// A builder for [`PutComponentPolicyOutput`](crate::output::PutComponentPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -778,6 +788,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -867,6 +878,7 @@ impl std::fmt::Debug for ListInfrastructureConfigurationsOutput {
 }
 /// See [`ListInfrastructureConfigurationsOutput`](crate::output::ListInfrastructureConfigurationsOutput)
 pub mod list_infrastructure_configurations_output {
+    ///
     /// A builder for [`ListInfrastructureConfigurationsOutput`](crate::output::ListInfrastructureConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1005,6 +1017,7 @@ impl std::fmt::Debug for ListImagesOutput {
 }
 /// See [`ListImagesOutput`](crate::output::ListImagesOutput)
 pub mod list_images_output {
+    ///
     /// A builder for [`ListImagesOutput`](crate::output::ListImagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1138,6 +1151,7 @@ impl std::fmt::Debug for ListImageRecipesOutput {
 }
 /// See [`ListImageRecipesOutput`](crate::output::ListImageRecipesOutput)
 pub mod list_image_recipes_output {
+    ///
     /// A builder for [`ListImageRecipesOutput`](crate::output::ListImageRecipesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1243,6 +1257,7 @@ impl std::fmt::Debug for ListImagePipelinesOutput {
 }
 /// See [`ListImagePipelinesOutput`](crate::output::ListImagePipelinesOutput)
 pub mod list_image_pipelines_output {
+    ///
     /// A builder for [`ListImagePipelinesOutput`](crate::output::ListImagePipelinesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1345,6 +1360,7 @@ impl std::fmt::Debug for ListImagePipelineImagesOutput {
 }
 /// See [`ListImagePipelineImagesOutput`](crate::output::ListImagePipelineImagesOutput)
 pub mod list_image_pipeline_images_output {
+    ///
     /// A builder for [`ListImagePipelineImagesOutput`](crate::output::ListImagePipelineImagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1447,6 +1463,7 @@ impl std::fmt::Debug for ListImagePackagesOutput {
 }
 /// See [`ListImagePackagesOutput`](crate::output::ListImagePackagesOutput)
 pub mod list_image_packages_output {
+    ///
     /// A builder for [`ListImagePackagesOutput`](crate::output::ListImagePackagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1549,6 +1566,7 @@ impl std::fmt::Debug for ListImageBuildVersionsOutput {
 }
 /// See [`ListImageBuildVersionsOutput`](crate::output::ListImageBuildVersionsOutput)
 pub mod list_image_build_versions_output {
+    ///
     /// A builder for [`ListImageBuildVersionsOutput`](crate::output::ListImageBuildVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1657,6 +1675,7 @@ impl std::fmt::Debug for ListDistributionConfigurationsOutput {
 }
 /// See [`ListDistributionConfigurationsOutput`](crate::output::ListDistributionConfigurationsOutput)
 pub mod list_distribution_configurations_output {
+    ///
     /// A builder for [`ListDistributionConfigurationsOutput`](crate::output::ListDistributionConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1773,6 +1792,7 @@ impl std::fmt::Debug for ListContainerRecipesOutput {
 }
 /// See [`ListContainerRecipesOutput`](crate::output::ListContainerRecipesOutput)
 pub mod list_container_recipes_output {
+    ///
     /// A builder for [`ListContainerRecipesOutput`](crate::output::ListContainerRecipesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1904,6 +1924,7 @@ impl std::fmt::Debug for ListComponentsOutput {
 }
 /// See [`ListComponentsOutput`](crate::output::ListComponentsOutput)
 pub mod list_components_output {
+    ///
     /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2032,6 +2053,7 @@ impl std::fmt::Debug for ListComponentBuildVersionsOutput {
 }
 /// See [`ListComponentBuildVersionsOutput`](crate::output::ListComponentBuildVersionsOutput)
 pub mod list_component_build_versions_output {
+    ///
     /// A builder for [`ListComponentBuildVersionsOutput`](crate::output::ListComponentBuildVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2134,6 +2156,7 @@ impl std::fmt::Debug for ImportVmImageOutput {
 }
 /// See [`ImportVmImageOutput`](crate::output::ImportVmImageOutput)
 pub mod import_vm_image_output {
+    ///
     /// A builder for [`ImportVmImageOutput`](crate::output::ImportVmImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2229,6 +2252,7 @@ impl std::fmt::Debug for ImportComponentOutput {
 }
 /// See [`ImportComponentOutput`](crate::output::ImportComponentOutput)
 pub mod import_component_output {
+    ///
     /// A builder for [`ImportComponentOutput`](crate::output::ImportComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2326,6 +2350,7 @@ impl std::fmt::Debug for GetInfrastructureConfigurationOutput {
 }
 /// See [`GetInfrastructureConfigurationOutput`](crate::output::GetInfrastructureConfigurationOutput)
 pub mod get_infrastructure_configuration_output {
+    ///
     /// A builder for [`GetInfrastructureConfigurationOutput`](crate::output::GetInfrastructureConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2406,6 +2431,7 @@ impl std::fmt::Debug for GetImageRecipePolicyOutput {
 }
 /// See [`GetImageRecipePolicyOutput`](crate::output::GetImageRecipePolicyOutput)
 pub mod get_image_recipe_policy_output {
+    ///
     /// A builder for [`GetImageRecipePolicyOutput`](crate::output::GetImageRecipePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2479,6 +2505,7 @@ impl std::fmt::Debug for GetImageRecipeOutput {
 }
 /// See [`GetImageRecipeOutput`](crate::output::GetImageRecipeOutput)
 pub mod get_image_recipe_output {
+    ///
     /// A builder for [`GetImageRecipeOutput`](crate::output::GetImageRecipeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2555,6 +2582,7 @@ impl std::fmt::Debug for GetImagePolicyOutput {
 }
 /// See [`GetImagePolicyOutput`](crate::output::GetImagePolicyOutput)
 pub mod get_image_policy_output {
+    ///
     /// A builder for [`GetImagePolicyOutput`](crate::output::GetImagePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2628,6 +2656,7 @@ impl std::fmt::Debug for GetImagePipelineOutput {
 }
 /// See [`GetImagePipelineOutput`](crate::output::GetImagePipelineOutput)
 pub mod get_image_pipeline_output {
+    ///
     /// A builder for [`GetImagePipelineOutput`](crate::output::GetImagePipelineOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2704,6 +2733,7 @@ impl std::fmt::Debug for GetImageOutput {
 }
 /// See [`GetImageOutput`](crate::output::GetImageOutput)
 pub mod get_image_output {
+    ///
     /// A builder for [`GetImageOutput`](crate::output::GetImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2782,6 +2812,7 @@ impl std::fmt::Debug for GetDistributionConfigurationOutput {
 }
 /// See [`GetDistributionConfigurationOutput`](crate::output::GetDistributionConfigurationOutput)
 pub mod get_distribution_configuration_output {
+    ///
     /// A builder for [`GetDistributionConfigurationOutput`](crate::output::GetDistributionConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2862,6 +2893,7 @@ impl std::fmt::Debug for GetContainerRecipePolicyOutput {
 }
 /// See [`GetContainerRecipePolicyOutput`](crate::output::GetContainerRecipePolicyOutput)
 pub mod get_container_recipe_policy_output {
+    ///
     /// A builder for [`GetContainerRecipePolicyOutput`](crate::output::GetContainerRecipePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2935,6 +2967,7 @@ impl std::fmt::Debug for GetContainerRecipeOutput {
 }
 /// See [`GetContainerRecipeOutput`](crate::output::GetContainerRecipeOutput)
 pub mod get_container_recipe_output {
+    ///
     /// A builder for [`GetContainerRecipeOutput`](crate::output::GetContainerRecipeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3011,6 +3044,7 @@ impl std::fmt::Debug for GetComponentPolicyOutput {
 }
 /// See [`GetComponentPolicyOutput`](crate::output::GetComponentPolicyOutput)
 pub mod get_component_policy_output {
+    ///
     /// A builder for [`GetComponentPolicyOutput`](crate::output::GetComponentPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3084,6 +3118,7 @@ impl std::fmt::Debug for GetComponentOutput {
 }
 /// See [`GetComponentOutput`](crate::output::GetComponentOutput)
 pub mod get_component_output {
+    ///
     /// A builder for [`GetComponentOutput`](crate::output::GetComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3163,6 +3198,7 @@ impl std::fmt::Debug for DeleteInfrastructureConfigurationOutput {
 }
 /// See [`DeleteInfrastructureConfigurationOutput`](crate::output::DeleteInfrastructureConfigurationOutput)
 pub mod delete_infrastructure_configuration_output {
+    ///
     /// A builder for [`DeleteInfrastructureConfigurationOutput`](crate::output::DeleteInfrastructureConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3242,6 +3278,7 @@ impl std::fmt::Debug for DeleteImageRecipeOutput {
 }
 /// See [`DeleteImageRecipeOutput`](crate::output::DeleteImageRecipeOutput)
 pub mod delete_image_recipe_output {
+    ///
     /// A builder for [`DeleteImageRecipeOutput`](crate::output::DeleteImageRecipeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3318,6 +3355,7 @@ impl std::fmt::Debug for DeleteImagePipelineOutput {
 }
 /// See [`DeleteImagePipelineOutput`](crate::output::DeleteImagePipelineOutput)
 pub mod delete_image_pipeline_output {
+    ///
     /// A builder for [`DeleteImagePipelineOutput`](crate::output::DeleteImagePipelineOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3394,6 +3432,7 @@ impl std::fmt::Debug for DeleteImageOutput {
 }
 /// See [`DeleteImageOutput`](crate::output::DeleteImageOutput)
 pub mod delete_image_output {
+    ///
     /// A builder for [`DeleteImageOutput`](crate::output::DeleteImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3473,6 +3512,7 @@ impl std::fmt::Debug for DeleteDistributionConfigurationOutput {
 }
 /// See [`DeleteDistributionConfigurationOutput`](crate::output::DeleteDistributionConfigurationOutput)
 pub mod delete_distribution_configuration_output {
+    ///
     /// A builder for [`DeleteDistributionConfigurationOutput`](crate::output::DeleteDistributionConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3552,6 +3592,7 @@ impl std::fmt::Debug for DeleteContainerRecipeOutput {
 }
 /// See [`DeleteContainerRecipeOutput`](crate::output::DeleteContainerRecipeOutput)
 pub mod delete_container_recipe_output {
+    ///
     /// A builder for [`DeleteContainerRecipeOutput`](crate::output::DeleteContainerRecipeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3631,6 +3672,7 @@ impl std::fmt::Debug for DeleteComponentOutput {
 }
 /// See [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
 pub mod delete_component_output {
+    ///
     /// A builder for [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3720,6 +3762,7 @@ impl std::fmt::Debug for CreateInfrastructureConfigurationOutput {
 }
 /// See [`CreateInfrastructureConfigurationOutput`](crate::output::CreateInfrastructureConfigurationOutput)
 pub mod create_infrastructure_configuration_output {
+    ///
     /// A builder for [`CreateInfrastructureConfigurationOutput`](crate::output::CreateInfrastructureConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3818,6 +3861,7 @@ impl std::fmt::Debug for CreateImageRecipeOutput {
 }
 /// See [`CreateImageRecipeOutput`](crate::output::CreateImageRecipeOutput)
 pub mod create_image_recipe_output {
+    ///
     /// A builder for [`CreateImageRecipeOutput`](crate::output::CreateImageRecipeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3913,6 +3957,7 @@ impl std::fmt::Debug for CreateImagePipelineOutput {
 }
 /// See [`CreateImagePipelineOutput`](crate::output::CreateImagePipelineOutput)
 pub mod create_image_pipeline_output {
+    ///
     /// A builder for [`CreateImagePipelineOutput`](crate::output::CreateImagePipelineOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4008,6 +4053,7 @@ impl std::fmt::Debug for CreateImageOutput {
 }
 /// See [`CreateImageOutput`](crate::output::CreateImageOutput)
 pub mod create_image_output {
+    ///
     /// A builder for [`CreateImageOutput`](crate::output::CreateImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4106,6 +4152,7 @@ impl std::fmt::Debug for CreateDistributionConfigurationOutput {
 }
 /// See [`CreateDistributionConfigurationOutput`](crate::output::CreateDistributionConfigurationOutput)
 pub mod create_distribution_configuration_output {
+    ///
     /// A builder for [`CreateDistributionConfigurationOutput`](crate::output::CreateDistributionConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4204,6 +4251,7 @@ impl std::fmt::Debug for CreateContainerRecipeOutput {
 }
 /// See [`CreateContainerRecipeOutput`](crate::output::CreateContainerRecipeOutput)
 pub mod create_container_recipe_output {
+    ///
     /// A builder for [`CreateContainerRecipeOutput`](crate::output::CreateContainerRecipeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4302,6 +4350,7 @@ impl std::fmt::Debug for CreateComponentOutput {
 }
 /// See [`CreateComponentOutput`](crate::output::CreateComponentOutput)
 pub mod create_component_output {
+    ///
     /// A builder for [`CreateComponentOutput`](crate::output::CreateComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4400,6 +4449,7 @@ impl std::fmt::Debug for CancelImageCreationOutput {
 }
 /// See [`CancelImageCreationOutput`](crate::output::CancelImageCreationOutput)
 pub mod cancel_image_creation_output {
+    ///
     /// A builder for [`CancelImageCreationOutput`](crate::output::CancelImageCreationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

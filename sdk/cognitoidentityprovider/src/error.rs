@@ -17001,6 +17001,7 @@ impl std::fmt::Display for UserNotFoundException {
 impl std::error::Error for UserNotFoundException {}
 /// See [`UserNotFoundException`](crate::error::UserNotFoundException)
 pub mod user_not_found_exception {
+    ///
     /// A builder for [`UserNotFoundException`](crate::error::UserNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17065,6 +17066,7 @@ impl std::fmt::Display for UserNotConfirmedException {
 impl std::error::Error for UserNotConfirmedException {}
 /// See [`UserNotConfirmedException`](crate::error::UserNotConfirmedException)
 pub mod user_not_confirmed_exception {
+    ///
     /// A builder for [`UserNotConfirmedException`](crate::error::UserNotConfirmedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17129,6 +17131,7 @@ impl std::fmt::Display for TooManyRequestsException {
 impl std::error::Error for TooManyRequestsException {}
 /// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
 pub mod too_many_requests_exception {
+    ///
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17193,6 +17196,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17257,6 +17261,7 @@ impl std::fmt::Display for PasswordResetRequiredException {
 impl std::error::Error for PasswordResetRequiredException {}
 /// See [`PasswordResetRequiredException`](crate::error::PasswordResetRequiredException)
 pub mod password_reset_required_exception {
+    ///
     /// A builder for [`PasswordResetRequiredException`](crate::error::PasswordResetRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17321,6 +17326,7 @@ impl std::fmt::Display for NotAuthorizedException {
 impl std::error::Error for NotAuthorizedException {}
 /// See [`NotAuthorizedException`](crate::error::NotAuthorizedException)
 pub mod not_authorized_exception {
+    ///
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17385,6 +17391,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17449,6 +17456,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
+    ///
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17513,6 +17521,7 @@ impl std::fmt::Display for InternalErrorException {
 impl std::error::Error for InternalErrorException {}
 /// See [`InternalErrorException`](crate::error::InternalErrorException)
 pub mod internal_error_exception {
+    ///
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17577,6 +17586,7 @@ impl std::fmt::Display for ExpiredCodeException {
 impl std::error::Error for ExpiredCodeException {}
 /// See [`ExpiredCodeException`](crate::error::ExpiredCodeException)
 pub mod expired_code_exception {
+    ///
     /// A builder for [`ExpiredCodeException`](crate::error::ExpiredCodeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17641,6 +17651,7 @@ impl std::fmt::Display for CodeMismatchException {
 impl std::error::Error for CodeMismatchException {}
 /// See [`CodeMismatchException`](crate::error::CodeMismatchException)
 pub mod code_mismatch_exception {
+    ///
     /// A builder for [`CodeMismatchException`](crate::error::CodeMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17705,6 +17716,7 @@ impl std::fmt::Display for AliasExistsException {
 impl std::error::Error for AliasExistsException {}
 /// See [`AliasExistsException`](crate::error::AliasExistsException)
 pub mod alias_exists_exception {
+    ///
     /// A builder for [`AliasExistsException`](crate::error::AliasExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17772,6 +17784,7 @@ impl std::fmt::Display for SoftwareTokenMfaNotFoundException {
 impl std::error::Error for SoftwareTokenMfaNotFoundException {}
 /// See [`SoftwareTokenMfaNotFoundException`](crate::error::SoftwareTokenMfaNotFoundException)
 pub mod software_token_mfa_not_found_exception {
+    ///
     /// A builder for [`SoftwareTokenMfaNotFoundException`](crate::error::SoftwareTokenMfaNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17836,6 +17849,7 @@ impl std::fmt::Display for InvalidUserPoolConfigurationException {
 impl std::error::Error for InvalidUserPoolConfigurationException {}
 /// See [`InvalidUserPoolConfigurationException`](crate::error::InvalidUserPoolConfigurationException)
 pub mod invalid_user_pool_configuration_exception {
+    ///
     /// A builder for [`InvalidUserPoolConfigurationException`](crate::error::InvalidUserPoolConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17903,6 +17917,7 @@ impl std::fmt::Display for EnableSoftwareTokenMfaException {
 impl std::error::Error for EnableSoftwareTokenMfaException {}
 /// See [`EnableSoftwareTokenMfaException`](crate::error::EnableSoftwareTokenMfaException)
 pub mod enable_software_token_mfa_exception {
+    ///
     /// A builder for [`EnableSoftwareTokenMfaException`](crate::error::EnableSoftwareTokenMfaException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17967,6 +17982,7 @@ impl std::fmt::Display for ScopeDoesNotExistException {
 impl std::error::Error for ScopeDoesNotExistException {}
 /// See [`ScopeDoesNotExistException`](crate::error::ScopeDoesNotExistException)
 pub mod scope_does_not_exist_exception {
+    ///
     /// A builder for [`ScopeDoesNotExistException`](crate::error::ScopeDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18031,6 +18047,7 @@ impl std::fmt::Display for InvalidOAuthFlowException {
 impl std::error::Error for InvalidOAuthFlowException {}
 /// See [`InvalidOAuthFlowException`](crate::error::InvalidOAuthFlowException)
 pub mod invalid_o_auth_flow_exception {
+    ///
     /// A builder for [`InvalidOAuthFlowException`](crate::error::InvalidOAuthFlowException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18095,6 +18112,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
+    ///
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18159,6 +18177,7 @@ impl std::fmt::Display for UserPoolTaggingException {
 impl std::error::Error for UserPoolTaggingException {}
 /// See [`UserPoolTaggingException`](crate::error::UserPoolTaggingException)
 pub mod user_pool_tagging_exception {
+    ///
     /// A builder for [`UserPoolTaggingException`](crate::error::UserPoolTaggingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18223,6 +18242,7 @@ impl std::fmt::Display for UserImportInProgressException {
 impl std::error::Error for UserImportInProgressException {}
 /// See [`UserImportInProgressException`](crate::error::UserImportInProgressException)
 pub mod user_import_in_progress_exception {
+    ///
     /// A builder for [`UserImportInProgressException`](crate::error::UserImportInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18287,6 +18307,7 @@ impl std::fmt::Display for InvalidSmsRoleTrustRelationshipException {
 impl std::error::Error for InvalidSmsRoleTrustRelationshipException {}
 /// See [`InvalidSmsRoleTrustRelationshipException`](crate::error::InvalidSmsRoleTrustRelationshipException)
 pub mod invalid_sms_role_trust_relationship_exception {
+    ///
     /// A builder for [`InvalidSmsRoleTrustRelationshipException`](crate::error::InvalidSmsRoleTrustRelationshipException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18351,6 +18372,7 @@ impl std::fmt::Display for InvalidSmsRoleAccessPolicyException {
 impl std::error::Error for InvalidSmsRoleAccessPolicyException {}
 /// See [`InvalidSmsRoleAccessPolicyException`](crate::error::InvalidSmsRoleAccessPolicyException)
 pub mod invalid_sms_role_access_policy_exception {
+    ///
     /// A builder for [`InvalidSmsRoleAccessPolicyException`](crate::error::InvalidSmsRoleAccessPolicyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18415,6 +18437,7 @@ impl std::fmt::Display for InvalidEmailRoleAccessPolicyException {
 impl std::error::Error for InvalidEmailRoleAccessPolicyException {}
 /// See [`InvalidEmailRoleAccessPolicyException`](crate::error::InvalidEmailRoleAccessPolicyException)
 pub mod invalid_email_role_access_policy_exception {
+    ///
     /// A builder for [`InvalidEmailRoleAccessPolicyException`](crate::error::InvalidEmailRoleAccessPolicyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18479,6 +18502,7 @@ impl std::fmt::Display for UserLambdaValidationException {
 impl std::error::Error for UserLambdaValidationException {}
 /// See [`UserLambdaValidationException`](crate::error::UserLambdaValidationException)
 pub mod user_lambda_validation_exception {
+    ///
     /// A builder for [`UserLambdaValidationException`](crate::error::UserLambdaValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18543,6 +18567,7 @@ impl std::fmt::Display for UnexpectedLambdaException {
 impl std::error::Error for UnexpectedLambdaException {}
 /// See [`UnexpectedLambdaException`](crate::error::UnexpectedLambdaException)
 pub mod unexpected_lambda_exception {
+    ///
     /// A builder for [`UnexpectedLambdaException`](crate::error::UnexpectedLambdaException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18607,6 +18632,7 @@ impl std::fmt::Display for InvalidLambdaResponseException {
 impl std::error::Error for InvalidLambdaResponseException {}
 /// See [`InvalidLambdaResponseException`](crate::error::InvalidLambdaResponseException)
 pub mod invalid_lambda_response_exception {
+    ///
     /// A builder for [`InvalidLambdaResponseException`](crate::error::InvalidLambdaResponseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18671,6 +18697,7 @@ impl std::fmt::Display for CodeDeliveryFailureException {
 impl std::error::Error for CodeDeliveryFailureException {}
 /// See [`CodeDeliveryFailureException`](crate::error::CodeDeliveryFailureException)
 pub mod code_delivery_failure_exception {
+    ///
     /// A builder for [`CodeDeliveryFailureException`](crate::error::CodeDeliveryFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18735,6 +18762,7 @@ impl std::fmt::Display for UnsupportedIdentityProviderException {
 impl std::error::Error for UnsupportedIdentityProviderException {}
 /// See [`UnsupportedIdentityProviderException`](crate::error::UnsupportedIdentityProviderException)
 pub mod unsupported_identity_provider_exception {
+    ///
     /// A builder for [`UnsupportedIdentityProviderException`](crate::error::UnsupportedIdentityProviderException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18799,6 +18827,7 @@ impl std::fmt::Display for UserPoolAddOnNotEnabledException {
 impl std::error::Error for UserPoolAddOnNotEnabledException {}
 /// See [`UserPoolAddOnNotEnabledException`](crate::error::UserPoolAddOnNotEnabledException)
 pub mod user_pool_add_on_not_enabled_exception {
+    ///
     /// A builder for [`UserPoolAddOnNotEnabledException`](crate::error::UserPoolAddOnNotEnabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18863,6 +18892,7 @@ impl std::fmt::Display for PreconditionNotMetException {
 impl std::error::Error for PreconditionNotMetException {}
 /// See [`PreconditionNotMetException`](crate::error::PreconditionNotMetException)
 pub mod precondition_not_met_exception {
+    ///
     /// A builder for [`PreconditionNotMetException`](crate::error::PreconditionNotMetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18927,6 +18957,7 @@ impl std::fmt::Display for UsernameExistsException {
 impl std::error::Error for UsernameExistsException {}
 /// See [`UsernameExistsException`](crate::error::UsernameExistsException)
 pub mod username_exists_exception {
+    ///
     /// A builder for [`UsernameExistsException`](crate::error::UsernameExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -18991,6 +19022,7 @@ impl std::fmt::Display for InvalidPasswordException {
 impl std::error::Error for InvalidPasswordException {}
 /// See [`InvalidPasswordException`](crate::error::InvalidPasswordException)
 pub mod invalid_password_exception {
+    ///
     /// A builder for [`InvalidPasswordException`](crate::error::InvalidPasswordException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19055,6 +19087,7 @@ impl std::fmt::Display for UnsupportedTokenTypeException {
 impl std::error::Error for UnsupportedTokenTypeException {}
 /// See [`UnsupportedTokenTypeException`](crate::error::UnsupportedTokenTypeException)
 pub mod unsupported_token_type_exception {
+    ///
     /// A builder for [`UnsupportedTokenTypeException`](crate::error::UnsupportedTokenTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19119,6 +19152,7 @@ impl std::fmt::Display for UnsupportedOperationException {
 impl std::error::Error for UnsupportedOperationException {}
 /// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
 pub mod unsupported_operation_exception {
+    ///
     /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19183,6 +19217,7 @@ impl std::fmt::Display for UnauthorizedException {
 impl std::error::Error for UnauthorizedException {}
 /// See [`UnauthorizedException`](crate::error::UnauthorizedException)
 pub mod unauthorized_exception {
+    ///
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19247,6 +19282,7 @@ impl std::fmt::Display for MfaMethodNotFoundException {
 impl std::error::Error for MfaMethodNotFoundException {}
 /// See [`MfaMethodNotFoundException`](crate::error::MfaMethodNotFoundException)
 pub mod mfa_method_not_found_exception {
+    ///
     /// A builder for [`MfaMethodNotFoundException`](crate::error::MfaMethodNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19311,6 +19347,7 @@ impl std::fmt::Display for DuplicateProviderException {
 impl std::error::Error for DuplicateProviderException {}
 /// See [`DuplicateProviderException`](crate::error::DuplicateProviderException)
 pub mod duplicate_provider_exception {
+    ///
     /// A builder for [`DuplicateProviderException`](crate::error::DuplicateProviderException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19375,6 +19412,7 @@ impl std::fmt::Display for GroupExistsException {
 impl std::error::Error for GroupExistsException {}
 /// See [`GroupExistsException`](crate::error::GroupExistsException)
 pub mod group_exists_exception {
+    ///
     /// A builder for [`GroupExistsException`](crate::error::GroupExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19439,6 +19477,7 @@ impl std::fmt::Display for TooManyFailedAttemptsException {
 impl std::error::Error for TooManyFailedAttemptsException {}
 /// See [`TooManyFailedAttemptsException`](crate::error::TooManyFailedAttemptsException)
 pub mod too_many_failed_attempts_exception {
+    ///
     /// A builder for [`TooManyFailedAttemptsException`](crate::error::TooManyFailedAttemptsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -19503,6 +19542,7 @@ impl std::fmt::Display for UnsupportedUserStateException {
 impl std::error::Error for UnsupportedUserStateException {}
 /// See [`UnsupportedUserStateException`](crate::error::UnsupportedUserStateException)
 pub mod unsupported_user_state_exception {
+    ///
     /// A builder for [`UnsupportedUserStateException`](crate::error::UnsupportedUserStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

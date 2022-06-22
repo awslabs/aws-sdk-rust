@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateEventIntegrationOutput {
 }
 /// See [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput)
 pub mod update_event_integration_output {
+    ///
     /// A builder for [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdateDataIntegrationOutput {
 }
 /// See [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput)
 pub mod update_data_integration_output {
+    ///
     /// A builder for [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -145,6 +149,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -221,6 +226,7 @@ impl std::fmt::Debug for ListEventIntegrationsOutput {
 }
 /// See [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput)
 pub mod list_event_integrations_output {
+    ///
     /// A builder for [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -310,6 +316,7 @@ impl std::fmt::Debug for ListEventIntegrationAssociationsOutput {
 }
 /// See [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput)
 pub mod list_event_integration_associations_output {
+    ///
     /// A builder for [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -398,6 +405,7 @@ impl std::fmt::Debug for ListDataIntegrationsOutput {
 }
 /// See [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput)
 pub mod list_data_integrations_output {
+    ///
     /// A builder for [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -487,6 +495,7 @@ impl std::fmt::Debug for ListDataIntegrationAssociationsOutput {
 }
 /// See [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput)
 pub mod list_data_integration_associations_output {
+    ///
     /// A builder for [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -607,6 +616,7 @@ impl std::fmt::Debug for GetEventIntegrationOutput {
 }
 /// See [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput)
 pub mod get_event_integration_output {
+    ///
     /// A builder for [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -802,6 +812,7 @@ impl std::fmt::Debug for GetDataIntegrationOutput {
 }
 /// See [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput)
 pub mod get_data_integration_output {
+    ///
     /// A builder for [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -953,6 +964,7 @@ impl std::fmt::Debug for DeleteEventIntegrationOutput {
 }
 /// See [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput)
 pub mod delete_event_integration_output {
+    ///
     /// A builder for [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -983,6 +995,7 @@ impl std::fmt::Debug for DeleteDataIntegrationOutput {
 }
 /// See [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput)
 pub mod delete_data_integration_output {
+    ///
     /// A builder for [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1023,6 +1036,7 @@ impl std::fmt::Debug for CreateEventIntegrationOutput {
 }
 /// See [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput)
 pub mod create_event_integration_output {
+    ///
     /// A builder for [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1142,6 +1156,7 @@ impl std::fmt::Debug for CreateDataIntegrationOutput {
 }
 /// See [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput)
 pub mod create_data_integration_output {
+    ///
     /// A builder for [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

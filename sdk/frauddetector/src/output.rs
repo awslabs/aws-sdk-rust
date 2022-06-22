@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateVariableOutput {
 }
 /// See [`UpdateVariableOutput`](crate::output::UpdateVariableOutput)
 pub mod update_variable_output {
+    ///
     /// A builder for [`UpdateVariableOutput`](crate::output::UpdateVariableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -51,6 +52,7 @@ impl std::fmt::Debug for UpdateRuleVersionOutput {
 }
 /// See [`UpdateRuleVersionOutput`](crate::output::UpdateRuleVersionOutput)
 pub mod update_rule_version_output {
+    ///
     /// A builder for [`UpdateRuleVersionOutput`](crate::output::UpdateRuleVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -93,6 +95,7 @@ impl std::fmt::Debug for UpdateRuleMetadataOutput {
 }
 /// See [`UpdateRuleMetadataOutput`](crate::output::UpdateRuleMetadataOutput)
 pub mod update_rule_metadata_output {
+    ///
     /// A builder for [`UpdateRuleMetadataOutput`](crate::output::UpdateRuleMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -123,6 +126,7 @@ impl std::fmt::Debug for UpdateModelVersionStatusOutput {
 }
 /// See [`UpdateModelVersionStatusOutput`](crate::output::UpdateModelVersionStatusOutput)
 pub mod update_model_version_status_output {
+    ///
     /// A builder for [`UpdateModelVersionStatusOutput`](crate::output::UpdateModelVersionStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -184,6 +188,7 @@ impl std::fmt::Debug for UpdateModelVersionOutput {
 }
 /// See [`UpdateModelVersionOutput`](crate::output::UpdateModelVersionOutput)
 pub mod update_model_version_output {
+    ///
     /// A builder for [`UpdateModelVersionOutput`](crate::output::UpdateModelVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -270,6 +275,7 @@ impl std::fmt::Debug for UpdateModelOutput {
 }
 /// See [`UpdateModelOutput`](crate::output::UpdateModelOutput)
 pub mod update_model_output {
+    ///
     /// A builder for [`UpdateModelOutput`](crate::output::UpdateModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -300,6 +306,7 @@ impl std::fmt::Debug for UpdateEventLabelOutput {
 }
 /// See [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput)
 pub mod update_event_label_output {
+    ///
     /// A builder for [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -330,6 +337,7 @@ impl std::fmt::Debug for UpdateDetectorVersionStatusOutput {
 }
 /// See [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput)
 pub mod update_detector_version_status_output {
+    ///
     /// A builder for [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -360,6 +368,7 @@ impl std::fmt::Debug for UpdateDetectorVersionMetadataOutput {
 }
 /// See [`UpdateDetectorVersionMetadataOutput`](crate::output::UpdateDetectorVersionMetadataOutput)
 pub mod update_detector_version_metadata_output {
+    ///
     /// A builder for [`UpdateDetectorVersionMetadataOutput`](crate::output::UpdateDetectorVersionMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -390,6 +399,7 @@ impl std::fmt::Debug for UpdateDetectorVersionOutput {
 }
 /// See [`UpdateDetectorVersionOutput`](crate::output::UpdateDetectorVersionOutput)
 pub mod update_detector_version_output {
+    ///
     /// A builder for [`UpdateDetectorVersionOutput`](crate::output::UpdateDetectorVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -420,6 +430,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -450,6 +461,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -480,6 +492,7 @@ impl std::fmt::Debug for SendEventOutput {
 }
 /// See [`SendEventOutput`](crate::output::SendEventOutput)
 pub mod send_event_output {
+    ///
     /// A builder for [`SendEventOutput`](crate::output::SendEventOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -510,6 +523,7 @@ impl std::fmt::Debug for PutOutcomeOutput {
 }
 /// See [`PutOutcomeOutput`](crate::output::PutOutcomeOutput)
 pub mod put_outcome_output {
+    ///
     /// A builder for [`PutOutcomeOutput`](crate::output::PutOutcomeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -540,6 +554,7 @@ impl std::fmt::Debug for PutLabelOutput {
 }
 /// See [`PutLabelOutput`](crate::output::PutLabelOutput)
 pub mod put_label_output {
+    ///
     /// A builder for [`PutLabelOutput`](crate::output::PutLabelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -570,6 +585,7 @@ impl std::fmt::Debug for PutKmsEncryptionKeyOutput {
 }
 /// See [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput)
 pub mod put_kms_encryption_key_output {
+    ///
     /// A builder for [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -600,6 +616,7 @@ impl std::fmt::Debug for PutExternalModelOutput {
 }
 /// See [`PutExternalModelOutput`](crate::output::PutExternalModelOutput)
 pub mod put_external_model_output {
+    ///
     /// A builder for [`PutExternalModelOutput`](crate::output::PutExternalModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -630,6 +647,7 @@ impl std::fmt::Debug for PutEventTypeOutput {
 }
 /// See [`PutEventTypeOutput`](crate::output::PutEventTypeOutput)
 pub mod put_event_type_output {
+    ///
     /// A builder for [`PutEventTypeOutput`](crate::output::PutEventTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -660,6 +678,7 @@ impl std::fmt::Debug for PutEntityTypeOutput {
 }
 /// See [`PutEntityTypeOutput`](crate::output::PutEntityTypeOutput)
 pub mod put_entity_type_output {
+    ///
     /// A builder for [`PutEntityTypeOutput`](crate::output::PutEntityTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -690,6 +709,7 @@ impl std::fmt::Debug for PutDetectorOutput {
 }
 /// See [`PutDetectorOutput`](crate::output::PutDetectorOutput)
 pub mod put_detector_output {
+    ///
     /// A builder for [`PutDetectorOutput`](crate::output::PutDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -737,6 +757,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -825,6 +846,7 @@ impl std::fmt::Debug for ListEventPredictionsOutput {
 }
 /// See [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput)
 pub mod list_event_predictions_output {
+    ///
     /// A builder for [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -911,6 +933,7 @@ impl std::fmt::Debug for GetVariablesOutput {
 }
 /// See [`GetVariablesOutput`](crate::output::GetVariablesOutput)
 pub mod get_variables_output {
+    ///
     /// A builder for [`GetVariablesOutput`](crate::output::GetVariablesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -993,6 +1016,7 @@ impl std::fmt::Debug for GetRulesOutput {
 }
 /// See [`GetRulesOutput`](crate::output::GetRulesOutput)
 pub mod get_rules_output {
+    ///
     /// A builder for [`GetRulesOutput`](crate::output::GetRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1075,6 +1099,7 @@ impl std::fmt::Debug for GetOutcomesOutput {
 }
 /// See [`GetOutcomesOutput`](crate::output::GetOutcomesOutput)
 pub mod get_outcomes_output {
+    ///
     /// A builder for [`GetOutcomesOutput`](crate::output::GetOutcomesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1236,6 +1261,7 @@ impl std::fmt::Debug for GetModelVersionOutput {
 }
 /// See [`GetModelVersionOutput`](crate::output::GetModelVersionOutput)
 pub mod get_model_version_output {
+    ///
     /// A builder for [`GetModelVersionOutput`](crate::output::GetModelVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1435,6 +1461,7 @@ impl std::fmt::Debug for GetModelsOutput {
 }
 /// See [`GetModelsOutput`](crate::output::GetModelsOutput)
 pub mod get_models_output {
+    ///
     /// A builder for [`GetModelsOutput`](crate::output::GetModelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1517,6 +1544,7 @@ impl std::fmt::Debug for GetLabelsOutput {
 }
 /// See [`GetLabelsOutput`](crate::output::GetLabelsOutput)
 pub mod get_labels_output {
+    ///
     /// A builder for [`GetLabelsOutput`](crate::output::GetLabelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1592,6 +1620,7 @@ impl std::fmt::Debug for GetKmsEncryptionKeyOutput {
 }
 /// See [`GetKmsEncryptionKeyOutput`](crate::output::GetKmsEncryptionKeyOutput)
 pub mod get_kms_encryption_key_output {
+    ///
     /// A builder for [`GetKmsEncryptionKeyOutput`](crate::output::GetKmsEncryptionKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1653,6 +1682,7 @@ impl std::fmt::Debug for GetExternalModelsOutput {
 }
 /// See [`GetExternalModelsOutput`](crate::output::GetExternalModelsOutput)
 pub mod get_external_models_output {
+    ///
     /// A builder for [`GetExternalModelsOutput`](crate::output::GetExternalModelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1735,6 +1765,7 @@ impl std::fmt::Debug for GetEventTypesOutput {
 }
 /// See [`GetEventTypesOutput`](crate::output::GetEventTypesOutput)
 pub mod get_event_types_output {
+    ///
     /// A builder for [`GetEventTypesOutput`](crate::output::GetEventTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1914,6 +1945,7 @@ impl std::fmt::Debug for GetEventPredictionMetadataOutput {
 }
 /// See [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput)
 pub mod get_event_prediction_metadata_output {
+    ///
     /// A builder for [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2225,6 +2257,7 @@ impl std::fmt::Debug for GetEventPredictionOutput {
 }
 /// See [`GetEventPredictionOutput`](crate::output::GetEventPredictionOutput)
 pub mod get_event_prediction_output {
+    ///
     /// A builder for [`GetEventPredictionOutput`](crate::output::GetEventPredictionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2331,6 +2364,7 @@ impl std::fmt::Debug for GetEventOutput {
 }
 /// See [`GetEventOutput`](crate::output::GetEventOutput)
 pub mod get_event_output {
+    ///
     /// A builder for [`GetEventOutput`](crate::output::GetEventOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2390,6 +2424,7 @@ impl std::fmt::Debug for GetEntityTypesOutput {
 }
 /// See [`GetEntityTypesOutput`](crate::output::GetEntityTypesOutput)
 pub mod get_entity_types_output {
+    ///
     /// A builder for [`GetEntityTypesOutput`](crate::output::GetEntityTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2539,6 +2574,7 @@ impl std::fmt::Debug for GetDetectorVersionOutput {
 }
 /// See [`GetDetectorVersionOutput`](crate::output::GetDetectorVersionOutput)
 pub mod get_detector_version_output {
+    ///
     /// A builder for [`GetDetectorVersionOutput`](crate::output::GetDetectorVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2764,6 +2800,7 @@ impl std::fmt::Debug for GetDetectorsOutput {
 }
 /// See [`GetDetectorsOutput`](crate::output::GetDetectorsOutput)
 pub mod get_detectors_output {
+    ///
     /// A builder for [`GetDetectorsOutput`](crate::output::GetDetectorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2846,6 +2883,7 @@ impl std::fmt::Debug for GetDeleteEventsByEventTypeStatusOutput {
 }
 /// See [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput)
 pub mod get_delete_events_by_event_type_status_output {
+    ///
     /// A builder for [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2925,6 +2963,7 @@ impl std::fmt::Debug for GetBatchPredictionJobsOutput {
 }
 /// See [`GetBatchPredictionJobsOutput`](crate::output::GetBatchPredictionJobsOutput)
 pub mod get_batch_prediction_jobs_output {
+    ///
     /// A builder for [`GetBatchPredictionJobsOutput`](crate::output::GetBatchPredictionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3008,6 +3047,7 @@ impl std::fmt::Debug for GetBatchImportJobsOutput {
 }
 /// See [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput)
 pub mod get_batch_import_jobs_output {
+    ///
     /// A builder for [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3092,6 +3132,7 @@ impl std::fmt::Debug for DescribeModelVersionsOutput {
 }
 /// See [`DescribeModelVersionsOutput`](crate::output::DescribeModelVersionsOutput)
 pub mod describe_model_versions_output {
+    ///
     /// A builder for [`DescribeModelVersionsOutput`](crate::output::DescribeModelVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3195,6 +3236,7 @@ impl std::fmt::Debug for DescribeDetectorOutput {
 }
 /// See [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput)
 pub mod describe_detector_output {
+    ///
     /// A builder for [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3288,6 +3330,7 @@ impl std::fmt::Debug for DeleteVariableOutput {
 }
 /// See [`DeleteVariableOutput`](crate::output::DeleteVariableOutput)
 pub mod delete_variable_output {
+    ///
     /// A builder for [`DeleteVariableOutput`](crate::output::DeleteVariableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3318,6 +3361,7 @@ impl std::fmt::Debug for DeleteRuleOutput {
 }
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
 pub mod delete_rule_output {
+    ///
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3348,6 +3392,7 @@ impl std::fmt::Debug for DeleteOutcomeOutput {
 }
 /// See [`DeleteOutcomeOutput`](crate::output::DeleteOutcomeOutput)
 pub mod delete_outcome_output {
+    ///
     /// A builder for [`DeleteOutcomeOutput`](crate::output::DeleteOutcomeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3378,6 +3423,7 @@ impl std::fmt::Debug for DeleteModelVersionOutput {
 }
 /// See [`DeleteModelVersionOutput`](crate::output::DeleteModelVersionOutput)
 pub mod delete_model_version_output {
+    ///
     /// A builder for [`DeleteModelVersionOutput`](crate::output::DeleteModelVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3408,6 +3454,7 @@ impl std::fmt::Debug for DeleteModelOutput {
 }
 /// See [`DeleteModelOutput`](crate::output::DeleteModelOutput)
 pub mod delete_model_output {
+    ///
     /// A builder for [`DeleteModelOutput`](crate::output::DeleteModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3438,6 +3485,7 @@ impl std::fmt::Debug for DeleteLabelOutput {
 }
 /// See [`DeleteLabelOutput`](crate::output::DeleteLabelOutput)
 pub mod delete_label_output {
+    ///
     /// A builder for [`DeleteLabelOutput`](crate::output::DeleteLabelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3468,6 +3516,7 @@ impl std::fmt::Debug for DeleteExternalModelOutput {
 }
 /// See [`DeleteExternalModelOutput`](crate::output::DeleteExternalModelOutput)
 pub mod delete_external_model_output {
+    ///
     /// A builder for [`DeleteExternalModelOutput`](crate::output::DeleteExternalModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3498,6 +3547,7 @@ impl std::fmt::Debug for DeleteEventTypeOutput {
 }
 /// See [`DeleteEventTypeOutput`](crate::output::DeleteEventTypeOutput)
 pub mod delete_event_type_output {
+    ///
     /// A builder for [`DeleteEventTypeOutput`](crate::output::DeleteEventTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3545,6 +3595,7 @@ impl std::fmt::Debug for DeleteEventsByEventTypeOutput {
 }
 /// See [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput)
 pub mod delete_events_by_event_type_output {
+    ///
     /// A builder for [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3607,6 +3658,7 @@ impl std::fmt::Debug for DeleteEventOutput {
 }
 /// See [`DeleteEventOutput`](crate::output::DeleteEventOutput)
 pub mod delete_event_output {
+    ///
     /// A builder for [`DeleteEventOutput`](crate::output::DeleteEventOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3637,6 +3689,7 @@ impl std::fmt::Debug for DeleteEntityTypeOutput {
 }
 /// See [`DeleteEntityTypeOutput`](crate::output::DeleteEntityTypeOutput)
 pub mod delete_entity_type_output {
+    ///
     /// A builder for [`DeleteEntityTypeOutput`](crate::output::DeleteEntityTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3667,6 +3720,7 @@ impl std::fmt::Debug for DeleteDetectorVersionOutput {
 }
 /// See [`DeleteDetectorVersionOutput`](crate::output::DeleteDetectorVersionOutput)
 pub mod delete_detector_version_output {
+    ///
     /// A builder for [`DeleteDetectorVersionOutput`](crate::output::DeleteDetectorVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3697,6 +3751,7 @@ impl std::fmt::Debug for DeleteDetectorOutput {
 }
 /// See [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput)
 pub mod delete_detector_output {
+    ///
     /// A builder for [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3727,6 +3782,7 @@ impl std::fmt::Debug for DeleteBatchPredictionJobOutput {
 }
 /// See [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput)
 pub mod delete_batch_prediction_job_output {
+    ///
     /// A builder for [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3757,6 +3813,7 @@ impl std::fmt::Debug for DeleteBatchImportJobOutput {
 }
 /// See [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput)
 pub mod delete_batch_import_job_output {
+    ///
     /// A builder for [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3787,6 +3844,7 @@ impl std::fmt::Debug for CreateVariableOutput {
 }
 /// See [`CreateVariableOutput`](crate::output::CreateVariableOutput)
 pub mod create_variable_output {
+    ///
     /// A builder for [`CreateVariableOutput`](crate::output::CreateVariableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3827,6 +3885,7 @@ impl std::fmt::Debug for CreateRuleOutput {
 }
 /// See [`CreateRuleOutput`](crate::output::CreateRuleOutput)
 pub mod create_rule_output {
+    ///
     /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3900,6 +3959,7 @@ impl std::fmt::Debug for CreateModelVersionOutput {
 }
 /// See [`CreateModelVersionOutput`](crate::output::CreateModelVersionOutput)
 pub mod create_model_version_output {
+    ///
     /// A builder for [`CreateModelVersionOutput`](crate::output::CreateModelVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3986,6 +4046,7 @@ impl std::fmt::Debug for CreateModelOutput {
 }
 /// See [`CreateModelOutput`](crate::output::CreateModelOutput)
 pub mod create_model_output {
+    ///
     /// A builder for [`CreateModelOutput`](crate::output::CreateModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4040,6 +4101,7 @@ impl std::fmt::Debug for CreateDetectorVersionOutput {
 }
 /// See [`CreateDetectorVersionOutput`](crate::output::CreateDetectorVersionOutput)
 pub mod create_detector_version_output {
+    ///
     /// A builder for [`CreateDetectorVersionOutput`](crate::output::CreateDetectorVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4114,6 +4176,7 @@ impl std::fmt::Debug for CreateBatchPredictionJobOutput {
 }
 /// See [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput)
 pub mod create_batch_prediction_job_output {
+    ///
     /// A builder for [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4144,6 +4207,7 @@ impl std::fmt::Debug for CreateBatchImportJobOutput {
 }
 /// See [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput)
 pub mod create_batch_import_job_output {
+    ///
     /// A builder for [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4174,6 +4238,7 @@ impl std::fmt::Debug for CancelBatchPredictionJobOutput {
 }
 /// See [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput)
 pub mod cancel_batch_prediction_job_output {
+    ///
     /// A builder for [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4204,6 +4269,7 @@ impl std::fmt::Debug for CancelBatchImportJobOutput {
 }
 /// See [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput)
 pub mod cancel_batch_import_job_output {
+    ///
     /// A builder for [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4251,6 +4317,7 @@ impl std::fmt::Debug for BatchGetVariableOutput {
 }
 /// See [`BatchGetVariableOutput`](crate::output::BatchGetVariableOutput)
 pub mod batch_get_variable_output {
+    ///
     /// A builder for [`BatchGetVariableOutput`](crate::output::BatchGetVariableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4335,6 +4402,7 @@ impl std::fmt::Debug for BatchCreateVariableOutput {
 }
 /// See [`BatchCreateVariableOutput`](crate::output::BatchCreateVariableOutput)
 pub mod batch_create_variable_output {
+    ///
     /// A builder for [`BatchCreateVariableOutput`](crate::output::BatchCreateVariableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

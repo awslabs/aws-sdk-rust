@@ -11,6 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -102,6 +104,7 @@ impl std::fmt::Debug for StartJobRunOutput {
 }
 /// See [`StartJobRunOutput`](crate::output::StartJobRunOutput)
 pub mod start_job_run_output {
+    ///
     /// A builder for [`StartJobRunOutput`](crate::output::StartJobRunOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -202,6 +205,7 @@ impl std::fmt::Debug for ListVirtualClustersOutput {
 }
 /// See [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput)
 pub mod list_virtual_clusters_output {
+    ///
     /// A builder for [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -282,6 +286,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -358,6 +363,7 @@ impl std::fmt::Debug for ListManagedEndpointsOutput {
 }
 /// See [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput)
 pub mod list_managed_endpoints_output {
+    ///
     /// A builder for [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -440,6 +446,7 @@ impl std::fmt::Debug for ListJobRunsOutput {
 }
 /// See [`ListJobRunsOutput`](crate::output::ListJobRunsOutput)
 pub mod list_job_runs_output {
+    ///
     /// A builder for [`ListJobRunsOutput`](crate::output::ListJobRunsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -515,6 +522,7 @@ impl std::fmt::Debug for DescribeVirtualClusterOutput {
 }
 /// See [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput)
 pub mod describe_virtual_cluster_output {
+    ///
     /// A builder for [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -572,6 +580,7 @@ impl std::fmt::Debug for DescribeManagedEndpointOutput {
 }
 /// See [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput)
 pub mod describe_managed_endpoint_output {
+    ///
     /// A builder for [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -626,6 +635,7 @@ impl std::fmt::Debug for DescribeJobRunOutput {
 }
 /// See [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput)
 pub mod describe_job_run_output {
+    ///
     /// A builder for [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -680,6 +690,7 @@ impl std::fmt::Debug for DeleteVirtualClusterOutput {
 }
 /// See [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput)
 pub mod delete_virtual_cluster_output {
+    ///
     /// A builder for [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -739,6 +750,7 @@ impl std::fmt::Debug for DeleteManagedEndpointOutput {
 }
 /// See [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput)
 pub mod delete_managed_endpoint_output {
+    ///
     /// A builder for [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -822,6 +834,7 @@ impl std::fmt::Debug for CreateVirtualClusterOutput {
 }
 /// See [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput)
 pub mod create_virtual_cluster_output {
+    ///
     /// A builder for [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -921,6 +934,7 @@ impl std::fmt::Debug for CreateManagedEndpointOutput {
 }
 /// See [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput)
 pub mod create_managed_endpoint_output {
+    ///
     /// A builder for [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1021,6 +1035,7 @@ impl std::fmt::Debug for CancelJobRunOutput {
 }
 /// See [`CancelJobRunOutput`](crate::output::CancelJobRunOutput)
 pub mod cancel_job_run_output {
+    ///
     /// A builder for [`CancelJobRunOutput`](crate::output::CancelJobRunOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

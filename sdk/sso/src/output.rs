@@ -11,6 +11,7 @@ impl std::fmt::Debug for LogoutOutput {
 }
 /// See [`LogoutOutput`](crate::output::LogoutOutput)
 pub mod logout_output {
+    ///
     /// A builder for [`LogoutOutput`](crate::output::LogoutOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -58,6 +59,7 @@ impl std::fmt::Debug for ListAccountsOutput {
 }
 /// See [`ListAccountsOutput`](crate::output::ListAccountsOutput)
 pub mod list_accounts_output {
+    ///
     /// A builder for [`ListAccountsOutput`](crate::output::ListAccountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -140,6 +142,7 @@ impl std::fmt::Debug for ListAccountRolesOutput {
 }
 /// See [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput)
 pub mod list_account_roles_output {
+    ///
     /// A builder for [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -215,6 +218,7 @@ impl std::fmt::Debug for GetRoleCredentialsOutput {
 }
 /// See [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput)
 pub mod get_role_credentials_output {
+    ///
     /// A builder for [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

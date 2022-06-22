@@ -11,6 +11,7 @@ impl std::fmt::Debug for RegisterScalableTargetOutput {
 }
 /// See [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput)
 pub mod register_scalable_target_output {
+    ///
     /// A builder for [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for PutScheduledActionOutput {
 }
 /// See [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput)
 pub mod put_scheduled_action_output {
+    ///
     /// A builder for [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -88,6 +90,7 @@ impl std::fmt::Debug for PutScalingPolicyOutput {
 }
 /// See [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput)
 pub mod put_scaling_policy_output {
+    ///
     /// A builder for [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -170,6 +173,7 @@ impl std::fmt::Debug for DescribeScheduledActionsOutput {
 }
 /// See [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput)
 pub mod describe_scheduled_actions_output {
+    ///
     /// A builder for [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -253,6 +257,7 @@ impl std::fmt::Debug for DescribeScalingPoliciesOutput {
 }
 /// See [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput)
 pub mod describe_scaling_policies_output {
+    ///
     /// A builder for [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -336,6 +341,7 @@ impl std::fmt::Debug for DescribeScalingActivitiesOutput {
 }
 /// See [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput)
 pub mod describe_scaling_activities_output {
+    ///
     /// A builder for [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -419,6 +425,7 @@ impl std::fmt::Debug for DescribeScalableTargetsOutput {
 }
 /// See [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput)
 pub mod describe_scalable_targets_output {
+    ///
     /// A builder for [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -485,6 +492,7 @@ impl std::fmt::Debug for DeregisterScalableTargetOutput {
 }
 /// See [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput)
 pub mod deregister_scalable_target_output {
+    ///
     /// A builder for [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -515,6 +523,7 @@ impl std::fmt::Debug for DeleteScheduledActionOutput {
 }
 /// See [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput)
 pub mod delete_scheduled_action_output {
+    ///
     /// A builder for [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -545,6 +554,7 @@ impl std::fmt::Debug for DeleteScalingPolicyOutput {
 }
 /// See [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput)
 pub mod delete_scaling_policy_output {
+    ///
     /// A builder for [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

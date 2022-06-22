@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateUserOutput {
 }
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput)
 pub mod update_user_output {
+    ///
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -73,6 +74,7 @@ impl std::fmt::Debug for UpdateSubnetGroupOutput {
 }
 /// See [`UpdateSubnetGroupOutput`](crate::output::UpdateSubnetGroupOutput)
 pub mod update_subnet_group_output {
+    ///
     /// A builder for [`UpdateSubnetGroupOutput`](crate::output::UpdateSubnetGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -130,6 +132,7 @@ impl std::fmt::Debug for UpdateParameterGroupOutput {
 }
 /// See [`UpdateParameterGroupOutput`](crate::output::UpdateParameterGroupOutput)
 pub mod update_parameter_group_output {
+    ///
     /// A builder for [`UpdateParameterGroupOutput`](crate::output::UpdateParameterGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -187,6 +190,7 @@ impl std::fmt::Debug for UpdateClusterOutput {
 }
 /// See [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
 pub mod update_cluster_output {
+    ///
     /// A builder for [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -241,6 +245,7 @@ impl std::fmt::Debug for UpdateAclOutput {
 }
 /// See [`UpdateAclOutput`](crate::output::UpdateAclOutput)
 pub mod update_acl_output {
+    ///
     /// A builder for [`UpdateAclOutput`](crate::output::UpdateAclOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -293,6 +298,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -356,6 +362,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -419,6 +426,7 @@ impl std::fmt::Debug for ResetParameterGroupOutput {
 }
 /// See [`ResetParameterGroupOutput`](crate::output::ResetParameterGroupOutput)
 pub mod reset_parameter_group_output {
+    ///
     /// A builder for [`ResetParameterGroupOutput`](crate::output::ResetParameterGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -476,6 +484,7 @@ impl std::fmt::Debug for ListTagsOutput {
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput)
 pub mod list_tags_output {
+    ///
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -546,6 +555,7 @@ impl std::fmt::Debug for ListAllowedNodeTypeUpdatesOutput {
 }
 /// See [`ListAllowedNodeTypeUpdatesOutput`](crate::output::ListAllowedNodeTypeUpdatesOutput)
 pub mod list_allowed_node_type_updates_output {
+    ///
     /// A builder for [`ListAllowedNodeTypeUpdatesOutput`](crate::output::ListAllowedNodeTypeUpdatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -630,6 +640,7 @@ impl std::fmt::Debug for FailoverShardOutput {
 }
 /// See [`FailoverShardOutput`](crate::output::FailoverShardOutput)
 pub mod failover_shard_output {
+    ///
     /// A builder for [`FailoverShardOutput`](crate::output::FailoverShardOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -691,6 +702,7 @@ impl std::fmt::Debug for DescribeUsersOutput {
 }
 /// See [`DescribeUsersOutput`](crate::output::DescribeUsersOutput)
 pub mod describe_users_output {
+    ///
     /// A builder for [`DescribeUsersOutput`](crate::output::DescribeUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -773,6 +785,7 @@ impl std::fmt::Debug for DescribeSubnetGroupsOutput {
 }
 /// See [`DescribeSubnetGroupsOutput`](crate::output::DescribeSubnetGroupsOutput)
 pub mod describe_subnet_groups_output {
+    ///
     /// A builder for [`DescribeSubnetGroupsOutput`](crate::output::DescribeSubnetGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -855,6 +868,7 @@ impl std::fmt::Debug for DescribeSnapshotsOutput {
 }
 /// See [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput)
 pub mod describe_snapshots_output {
+    ///
     /// A builder for [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -937,6 +951,7 @@ impl std::fmt::Debug for DescribeServiceUpdatesOutput {
 }
 /// See [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput)
 pub mod describe_service_updates_output {
+    ///
     /// A builder for [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1019,6 +1034,7 @@ impl std::fmt::Debug for DescribeParametersOutput {
 }
 /// See [`DescribeParametersOutput`](crate::output::DescribeParametersOutput)
 pub mod describe_parameters_output {
+    ///
     /// A builder for [`DescribeParametersOutput`](crate::output::DescribeParametersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1101,6 +1117,7 @@ impl std::fmt::Debug for DescribeParameterGroupsOutput {
 }
 /// See [`DescribeParameterGroupsOutput`](crate::output::DescribeParameterGroupsOutput)
 pub mod describe_parameter_groups_output {
+    ///
     /// A builder for [`DescribeParameterGroupsOutput`](crate::output::DescribeParameterGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1184,6 +1201,7 @@ impl std::fmt::Debug for DescribeEventsOutput {
 }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
 pub mod describe_events_output {
+    ///
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1266,6 +1284,7 @@ impl std::fmt::Debug for DescribeEngineVersionsOutput {
 }
 /// See [`DescribeEngineVersionsOutput`](crate::output::DescribeEngineVersionsOutput)
 pub mod describe_engine_versions_output {
+    ///
     /// A builder for [`DescribeEngineVersionsOutput`](crate::output::DescribeEngineVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1349,6 +1368,7 @@ impl std::fmt::Debug for DescribeClustersOutput {
 }
 /// See [`DescribeClustersOutput`](crate::output::DescribeClustersOutput)
 pub mod describe_clusters_output {
+    ///
     /// A builder for [`DescribeClustersOutput`](crate::output::DescribeClustersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1431,6 +1451,7 @@ impl std::fmt::Debug for DescribeAcLsOutput {
 }
 /// See [`DescribeAcLsOutput`](crate::output::DescribeAcLsOutput)
 pub mod describe_ac_ls_output {
+    ///
     /// A builder for [`DescribeAcLsOutput`](crate::output::DescribeAcLsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1506,6 +1527,7 @@ impl std::fmt::Debug for DeleteUserOutput {
 }
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput)
 pub mod delete_user_output {
+    ///
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1558,6 +1580,7 @@ impl std::fmt::Debug for DeleteSubnetGroupOutput {
 }
 /// See [`DeleteSubnetGroupOutput`](crate::output::DeleteSubnetGroupOutput)
 pub mod delete_subnet_group_output {
+    ///
     /// A builder for [`DeleteSubnetGroupOutput`](crate::output::DeleteSubnetGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1615,6 +1638,7 @@ impl std::fmt::Debug for DeleteSnapshotOutput {
 }
 /// See [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput)
 pub mod delete_snapshot_output {
+    ///
     /// A builder for [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1669,6 +1693,7 @@ impl std::fmt::Debug for DeleteParameterGroupOutput {
 }
 /// See [`DeleteParameterGroupOutput`](crate::output::DeleteParameterGroupOutput)
 pub mod delete_parameter_group_output {
+    ///
     /// A builder for [`DeleteParameterGroupOutput`](crate::output::DeleteParameterGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1726,6 +1751,7 @@ impl std::fmt::Debug for DeleteClusterOutput {
 }
 /// See [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
 pub mod delete_cluster_output {
+    ///
     /// A builder for [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1780,6 +1806,7 @@ impl std::fmt::Debug for DeleteAclOutput {
 }
 /// See [`DeleteAclOutput`](crate::output::DeleteAclOutput)
 pub mod delete_acl_output {
+    ///
     /// A builder for [`DeleteAclOutput`](crate::output::DeleteAclOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1832,6 +1859,7 @@ impl std::fmt::Debug for CreateUserOutput {
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput)
 pub mod create_user_output {
+    ///
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1884,6 +1912,7 @@ impl std::fmt::Debug for CreateSubnetGroupOutput {
 }
 /// See [`CreateSubnetGroupOutput`](crate::output::CreateSubnetGroupOutput)
 pub mod create_subnet_group_output {
+    ///
     /// A builder for [`CreateSubnetGroupOutput`](crate::output::CreateSubnetGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1941,6 +1970,7 @@ impl std::fmt::Debug for CreateSnapshotOutput {
 }
 /// See [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput)
 pub mod create_snapshot_output {
+    ///
     /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1995,6 +2025,7 @@ impl std::fmt::Debug for CreateParameterGroupOutput {
 }
 /// See [`CreateParameterGroupOutput`](crate::output::CreateParameterGroupOutput)
 pub mod create_parameter_group_output {
+    ///
     /// A builder for [`CreateParameterGroupOutput`](crate::output::CreateParameterGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2052,6 +2083,7 @@ impl std::fmt::Debug for CreateClusterOutput {
 }
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput)
 pub mod create_cluster_output {
+    ///
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2106,6 +2138,7 @@ impl std::fmt::Debug for CreateAclOutput {
 }
 /// See [`CreateAclOutput`](crate::output::CreateAclOutput)
 pub mod create_acl_output {
+    ///
     /// A builder for [`CreateAclOutput`](crate::output::CreateAclOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2158,6 +2191,7 @@ impl std::fmt::Debug for CopySnapshotOutput {
 }
 /// See [`CopySnapshotOutput`](crate::output::CopySnapshotOutput)
 pub mod copy_snapshot_output {
+    ///
     /// A builder for [`CopySnapshotOutput`](crate::output::CopySnapshotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2219,6 +2253,7 @@ impl std::fmt::Debug for BatchUpdateClusterOutput {
 }
 /// See [`BatchUpdateClusterOutput`](crate::output::BatchUpdateClusterOutput)
 pub mod batch_update_cluster_output {
+    ///
     /// A builder for [`BatchUpdateClusterOutput`](crate::output::BatchUpdateClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

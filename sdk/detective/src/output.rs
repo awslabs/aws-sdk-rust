@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateOrganizationConfigurationOutput {
 }
 /// See [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
 pub mod update_organization_configuration_output {
+    ///
     /// A builder for [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for StartMonitoringMemberOutput {
 }
 /// See [`StartMonitoringMemberOutput`](crate::output::StartMonitoringMemberOutput)
 pub mod start_monitoring_member_output {
+    ///
     /// A builder for [`StartMonitoringMemberOutput`](crate::output::StartMonitoringMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for RejectInvitationOutput {
 }
 /// See [`RejectInvitationOutput`](crate::output::RejectInvitationOutput)
 pub mod reject_invitation_output {
+    ///
     /// A builder for [`RejectInvitationOutput`](crate::output::RejectInvitationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -175,6 +180,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -251,6 +257,7 @@ impl std::fmt::Debug for ListOrganizationAdminAccountsOutput {
 }
 /// See [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput)
 pub mod list_organization_admin_accounts_output {
+    ///
     /// A builder for [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -337,6 +344,7 @@ impl std::fmt::Debug for ListMembersOutput {
 }
 /// See [`ListMembersOutput`](crate::output::ListMembersOutput)
 pub mod list_members_output {
+    ///
     /// A builder for [`ListMembersOutput`](crate::output::ListMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -423,6 +431,7 @@ impl std::fmt::Debug for ListInvitationsOutput {
 }
 /// See [`ListInvitationsOutput`](crate::output::ListInvitationsOutput)
 pub mod list_invitations_output {
+    ///
     /// A builder for [`ListInvitationsOutput`](crate::output::ListInvitationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -505,6 +514,7 @@ impl std::fmt::Debug for ListGraphsOutput {
 }
 /// See [`ListGraphsOutput`](crate::output::ListGraphsOutput)
 pub mod list_graphs_output {
+    ///
     /// A builder for [`ListGraphsOutput`](crate::output::ListGraphsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -589,6 +599,7 @@ impl std::fmt::Debug for GetMembersOutput {
 }
 /// See [`GetMembersOutput`](crate::output::GetMembersOutput)
 pub mod get_members_output {
+    ///
     /// A builder for [`GetMembersOutput`](crate::output::GetMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -666,6 +677,7 @@ impl std::fmt::Debug for EnableOrganizationAdminAccountOutput {
 }
 /// See [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput)
 pub mod enable_organization_admin_account_output {
+    ///
     /// A builder for [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -696,6 +708,7 @@ impl std::fmt::Debug for DisassociateMembershipOutput {
 }
 /// See [`DisassociateMembershipOutput`](crate::output::DisassociateMembershipOutput)
 pub mod disassociate_membership_output {
+    ///
     /// A builder for [`DisassociateMembershipOutput`](crate::output::DisassociateMembershipOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -726,6 +739,7 @@ impl std::fmt::Debug for DisableOrganizationAdminAccountOutput {
 }
 /// See [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput)
 pub mod disable_organization_admin_account_output {
+    ///
     /// A builder for [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -766,6 +780,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigurationOutput {
 }
 /// See [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput)
 pub mod describe_organization_configuration_output {
+    ///
     /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -827,6 +842,7 @@ impl std::fmt::Debug for DeleteMembersOutput {
 }
 /// See [`DeleteMembersOutput`](crate::output::DeleteMembersOutput)
 pub mod delete_members_output {
+    ///
     /// A builder for [`DeleteMembersOutput`](crate::output::DeleteMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -902,6 +918,7 @@ impl std::fmt::Debug for DeleteGraphOutput {
 }
 /// See [`DeleteGraphOutput`](crate::output::DeleteGraphOutput)
 pub mod delete_graph_output {
+    ///
     /// A builder for [`DeleteGraphOutput`](crate::output::DeleteGraphOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -949,6 +966,7 @@ impl std::fmt::Debug for CreateMembersOutput {
 }
 /// See [`CreateMembersOutput`](crate::output::CreateMembersOutput)
 pub mod create_members_output {
+    ///
     /// A builder for [`CreateMembersOutput`](crate::output::CreateMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1034,6 +1052,7 @@ impl std::fmt::Debug for CreateGraphOutput {
 }
 /// See [`CreateGraphOutput`](crate::output::CreateGraphOutput)
 pub mod create_graph_output {
+    ///
     /// A builder for [`CreateGraphOutput`](crate::output::CreateGraphOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1078,6 +1097,7 @@ impl std::fmt::Debug for AcceptInvitationOutput {
 }
 /// See [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
 pub mod accept_invitation_output {
+    ///
     /// A builder for [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

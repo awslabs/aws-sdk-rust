@@ -217,6 +217,7 @@ impl std::fmt::Display for InternalServiceException {
 impl std::error::Error for InternalServiceException {}
 /// See [`InternalServiceException`](crate::error::InternalServiceException)
 pub mod internal_service_exception {
+    ///
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

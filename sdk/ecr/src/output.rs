@@ -42,6 +42,7 @@ impl std::fmt::Debug for UploadLayerPartOutput {
 }
 /// See [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput)
 pub mod upload_layer_part_output {
+    ///
     /// A builder for [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -125,6 +126,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -155,6 +157,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -216,6 +219,7 @@ impl std::fmt::Debug for StartLifecyclePolicyPreviewOutput {
 }
 /// See [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput)
 pub mod start_lifecycle_policy_preview_output {
+    ///
     /// A builder for [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -336,6 +340,7 @@ impl std::fmt::Debug for StartImageScanOutput {
 }
 /// See [`StartImageScanOutput`](crate::output::StartImageScanOutput)
 pub mod start_image_scan_output {
+    ///
     /// A builder for [`StartImageScanOutput`](crate::output::StartImageScanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -449,6 +454,7 @@ impl std::fmt::Debug for SetRepositoryPolicyOutput {
 }
 /// See [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput)
 pub mod set_repository_policy_output {
+    ///
     /// A builder for [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -532,6 +538,7 @@ impl std::fmt::Debug for PutReplicationConfigurationOutput {
 }
 /// See [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput)
 pub mod put_replication_configuration_output {
+    ///
     /// A builder for [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -599,6 +606,7 @@ impl std::fmt::Debug for PutRegistryScanningConfigurationOutput {
 }
 /// See [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
 pub mod put_registry_scanning_configuration_output {
+    ///
     /// A builder for [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -667,6 +675,7 @@ impl std::fmt::Debug for PutRegistryPolicyOutput {
 }
 /// See [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput)
 pub mod put_registry_policy_output {
+    ///
     /// A builder for [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -747,6 +756,7 @@ impl std::fmt::Debug for PutLifecyclePolicyOutput {
 }
 /// See [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput)
 pub mod put_lifecycle_policy_output {
+    ///
     /// A builder for [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -845,6 +855,7 @@ impl std::fmt::Debug for PutImageTagMutabilityOutput {
 }
 /// See [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput)
 pub mod put_image_tag_mutability_output {
+    ///
     /// A builder for [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -948,6 +959,7 @@ impl std::fmt::Debug for PutImageScanningConfigurationOutput {
 }
 /// See [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput)
 pub mod put_image_scanning_configuration_output {
+    ///
     /// A builder for [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1036,6 +1048,7 @@ impl std::fmt::Debug for PutImageOutput {
 }
 /// See [`PutImageOutput`](crate::output::PutImageOutput)
 pub mod put_image_output {
+    ///
     /// A builder for [`PutImageOutput`](crate::output::PutImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1088,6 +1101,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1156,6 +1170,7 @@ impl std::fmt::Debug for ListImagesOutput {
 }
 /// See [`ListImagesOutput`](crate::output::ListImagesOutput)
 pub mod list_images_output {
+    ///
     /// A builder for [`ListImagesOutput`](crate::output::ListImagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1238,6 +1253,7 @@ impl std::fmt::Debug for InitiateLayerUploadOutput {
 }
 /// See [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput)
 pub mod initiate_layer_upload_output {
+    ///
     /// A builder for [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1318,6 +1334,7 @@ impl std::fmt::Debug for GetRepositoryPolicyOutput {
 }
 /// See [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput)
 pub mod get_repository_policy_output {
+    ///
     /// A builder for [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1408,6 +1425,7 @@ impl std::fmt::Debug for GetRegistryScanningConfigurationOutput {
 }
 /// See [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
 pub mod get_registry_scanning_configuration_output {
+    ///
     /// A builder for [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1488,6 +1506,7 @@ impl std::fmt::Debug for GetRegistryPolicyOutput {
 }
 /// See [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput)
 pub mod get_registry_policy_output {
+    ///
     /// A builder for [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1599,6 +1618,7 @@ impl std::fmt::Debug for GetLifecyclePolicyPreviewOutput {
 }
 /// See [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput)
 pub mod get_lifecycle_policy_preview_output {
+    ///
     /// A builder for [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1771,6 +1791,7 @@ impl std::fmt::Debug for GetLifecyclePolicyOutput {
 }
 /// See [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
 pub mod get_lifecycle_policy_output {
+    ///
     /// A builder for [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1877,6 +1898,7 @@ impl std::fmt::Debug for GetDownloadUrlForLayerOutput {
 }
 /// See [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput)
 pub mod get_download_url_for_layer_output {
+    ///
     /// A builder for [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1943,6 +1965,7 @@ impl std::fmt::Debug for GetAuthorizationTokenOutput {
 }
 /// See [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput)
 pub mod get_authorization_token_output {
+    ///
     /// A builder for [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2014,6 +2037,7 @@ impl std::fmt::Debug for DescribeRepositoriesOutput {
 }
 /// See [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput)
 pub mod describe_repositories_output {
+    ///
     /// A builder for [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2098,6 +2122,7 @@ impl std::fmt::Debug for DescribeRegistryOutput {
 }
 /// See [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput)
 pub mod describe_registry_output {
+    ///
     /// A builder for [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2181,6 +2206,7 @@ impl std::fmt::Debug for DescribePullThroughCacheRulesOutput {
 }
 /// See [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
 pub mod describe_pull_through_cache_rules_output {
+    ///
     /// A builder for [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2295,6 +2321,7 @@ impl std::fmt::Debug for DescribeImageScanFindingsOutput {
 }
 /// See [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput)
 pub mod describe_image_scan_findings_output {
+    ///
     /// A builder for [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2428,6 +2455,7 @@ impl std::fmt::Debug for DescribeImagesOutput {
 }
 /// See [`DescribeImagesOutput`](crate::output::DescribeImagesOutput)
 pub mod describe_images_output {
+    ///
     /// A builder for [`DescribeImagesOutput`](crate::output::DescribeImagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2520,6 +2548,7 @@ impl std::fmt::Debug for DescribeImageReplicationStatusOutput {
 }
 /// See [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
 pub mod describe_image_replication_status_output {
+    ///
     /// A builder for [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2628,6 +2657,7 @@ impl std::fmt::Debug for DeleteRepositoryPolicyOutput {
 }
 /// See [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput)
 pub mod delete_repository_policy_output {
+    ///
     /// A builder for [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2709,6 +2739,7 @@ impl std::fmt::Debug for DeleteRepositoryOutput {
 }
 /// See [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
 pub mod delete_repository_output {
+    ///
     /// A builder for [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2773,6 +2804,7 @@ impl std::fmt::Debug for DeleteRegistryPolicyOutput {
 }
 /// See [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput)
 pub mod delete_registry_policy_output {
+    ///
     /// A builder for [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2860,6 +2892,7 @@ impl std::fmt::Debug for DeletePullThroughCacheRuleOutput {
 }
 /// See [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
 pub mod delete_pull_through_cache_rule_output {
+    ///
     /// A builder for [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2980,6 +3013,7 @@ impl std::fmt::Debug for DeleteLifecyclePolicyOutput {
 }
 /// See [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
 pub mod delete_lifecycle_policy_output {
+    ///
     /// A builder for [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3079,6 +3113,7 @@ impl std::fmt::Debug for CreateRepositoryOutput {
 }
 /// See [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
 pub mod create_repository_output {
+    ///
     /// A builder for [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3157,6 +3192,7 @@ impl std::fmt::Debug for CreatePullThroughCacheRuleOutput {
 }
 /// See [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
 pub mod create_pull_through_cache_rule_output {
+    ///
     /// A builder for [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3277,6 +3313,7 @@ impl std::fmt::Debug for CompleteLayerUploadOutput {
 }
 /// See [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput)
 pub mod complete_layer_upload_output {
+    ///
     /// A builder for [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3383,6 +3420,7 @@ impl std::fmt::Debug for BatchGetRepositoryScanningConfigurationOutput {
 }
 /// See [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
 pub mod batch_get_repository_scanning_configuration_output {
+    ///
     /// A builder for [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3487,6 +3525,7 @@ impl std::fmt::Debug for BatchGetImageOutput {
 }
 /// See [`BatchGetImageOutput`](crate::output::BatchGetImageOutput)
 pub mod batch_get_image_output {
+    ///
     /// A builder for [`BatchGetImageOutput`](crate::output::BatchGetImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3578,6 +3617,7 @@ impl std::fmt::Debug for BatchDeleteImageOutput {
 }
 /// See [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput)
 pub mod batch_delete_image_output {
+    ///
     /// A builder for [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3669,6 +3709,7 @@ impl std::fmt::Debug for BatchCheckLayerAvailabilityOutput {
 }
 /// See [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput)
 pub mod batch_check_layer_availability_output {
+    ///
     /// A builder for [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

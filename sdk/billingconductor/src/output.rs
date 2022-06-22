@@ -42,6 +42,7 @@ impl std::fmt::Debug for ListPricingRulesAssociatedToPricingPlanOutput {
 }
 /// See [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput)
 pub mod list_pricing_rules_associated_to_pricing_plan_output {
+    ///
     /// A builder for [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -162,6 +163,7 @@ impl std::fmt::Debug for ListPricingRulesOutput {
 }
 /// See [`ListPricingRulesOutput`](crate::output::ListPricingRulesOutput)
 pub mod list_pricing_rules_output {
+    ///
     /// A builder for [`ListPricingRulesOutput`](crate::output::ListPricingRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -253,6 +255,7 @@ impl std::fmt::Debug for CreatePricingRuleOutput {
 }
 /// See [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput)
 pub mod create_pricing_rule_output {
+    ///
     /// A builder for [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -305,6 +308,7 @@ impl std::fmt::Debug for DeletePricingRuleOutput {
 }
 /// See [`DeletePricingRuleOutput`](crate::output::DeletePricingRuleOutput)
 pub mod delete_pricing_rule_output {
+    ///
     /// A builder for [`DeletePricingRuleOutput`](crate::output::DeletePricingRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -416,6 +420,7 @@ impl std::fmt::Debug for UpdatePricingRuleOutput {
 }
 /// See [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput)
 pub mod update_pricing_rule_output {
+    ///
     /// A builder for [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -577,6 +582,7 @@ impl std::fmt::Debug for DisassociatePricingRulesOutput {
 }
 /// See [`DisassociatePricingRulesOutput`](crate::output::DisassociatePricingRulesOutput)
 pub mod disassociate_pricing_rules_output {
+    ///
     /// A builder for [`DisassociatePricingRulesOutput`](crate::output::DisassociatePricingRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -629,6 +635,7 @@ impl std::fmt::Debug for AssociatePricingRulesOutput {
 }
 /// See [`AssociatePricingRulesOutput`](crate::output::AssociatePricingRulesOutput)
 pub mod associate_pricing_rules_output {
+    ///
     /// A builder for [`AssociatePricingRulesOutput`](crate::output::AssociatePricingRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -702,6 +709,7 @@ impl std::fmt::Debug for ListPricingPlansAssociatedWithPricingRuleOutput {
 }
 /// See [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput)
 pub mod list_pricing_plans_associated_with_pricing_rule_output {
+    ///
     /// A builder for [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -822,6 +830,7 @@ impl std::fmt::Debug for ListPricingPlansOutput {
 }
 /// See [`ListPricingPlansOutput`](crate::output::ListPricingPlansOutput)
 pub mod list_pricing_plans_output {
+    ///
     /// A builder for [`ListPricingPlansOutput`](crate::output::ListPricingPlansOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -913,6 +922,7 @@ impl std::fmt::Debug for CreatePricingPlanOutput {
 }
 /// See [`CreatePricingPlanOutput`](crate::output::CreatePricingPlanOutput)
 pub mod create_pricing_plan_output {
+    ///
     /// A builder for [`CreatePricingPlanOutput`](crate::output::CreatePricingPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -965,6 +975,7 @@ impl std::fmt::Debug for DeletePricingPlanOutput {
 }
 /// See [`DeletePricingPlanOutput`](crate::output::DeletePricingPlanOutput)
 pub mod delete_pricing_plan_output {
+    ///
     /// A builder for [`DeletePricingPlanOutput`](crate::output::DeletePricingPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1045,6 +1056,7 @@ impl std::fmt::Debug for UpdatePricingPlanOutput {
 }
 /// See [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput)
 pub mod update_pricing_plan_output {
+    ///
     /// A builder for [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1166,6 +1178,7 @@ impl std::fmt::Debug for ListResourcesAssociatedToCustomLineItemOutput {
 }
 /// See [`ListResourcesAssociatedToCustomLineItemOutput`](crate::output::ListResourcesAssociatedToCustomLineItemOutput)
 pub mod list_resources_associated_to_custom_line_item_output {
+    ///
     /// A builder for [`ListResourcesAssociatedToCustomLineItemOutput`](crate::output::ListResourcesAssociatedToCustomLineItemOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1280,6 +1293,7 @@ impl std::fmt::Debug for BatchDisassociateResourcesFromCustomLineItemOutput {
 }
 /// See [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::output::BatchDisassociateResourcesFromCustomLineItemOutput)
 pub mod batch_disassociate_resources_from_custom_line_item_output {
+    ///
     /// A builder for [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::output::BatchDisassociateResourcesFromCustomLineItemOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1398,6 +1412,7 @@ impl std::fmt::Debug for BatchAssociateResourcesToCustomLineItemOutput {
 }
 /// See [`BatchAssociateResourcesToCustomLineItemOutput`](crate::output::BatchAssociateResourcesToCustomLineItemOutput)
 pub mod batch_associate_resources_to_custom_line_item_output {
+    ///
     /// A builder for [`BatchAssociateResourcesToCustomLineItemOutput`](crate::output::BatchAssociateResourcesToCustomLineItemOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1505,6 +1520,7 @@ impl std::fmt::Debug for ListCustomLineItemsOutput {
 }
 /// See [`ListCustomLineItemsOutput`](crate::output::ListCustomLineItemsOutput)
 pub mod list_custom_line_items_output {
+    ///
     /// A builder for [`ListCustomLineItemsOutput`](crate::output::ListCustomLineItemsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1581,6 +1597,7 @@ impl std::fmt::Debug for CreateCustomLineItemOutput {
 }
 /// See [`CreateCustomLineItemOutput`](crate::output::CreateCustomLineItemOutput)
 pub mod create_custom_line_item_output {
+    ///
     /// A builder for [`CreateCustomLineItemOutput`](crate::output::CreateCustomLineItemOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1633,6 +1650,7 @@ impl std::fmt::Debug for DeleteCustomLineItemOutput {
 }
 /// See [`DeleteCustomLineItemOutput`](crate::output::DeleteCustomLineItemOutput)
 pub mod delete_custom_line_item_output {
+    ///
     /// A builder for [`DeleteCustomLineItemOutput`](crate::output::DeleteCustomLineItemOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1729,6 +1747,7 @@ impl std::fmt::Debug for UpdateCustomLineItemOutput {
 }
 /// See [`UpdateCustomLineItemOutput`](crate::output::UpdateCustomLineItemOutput)
 pub mod update_custom_line_item_output {
+    ///
     /// A builder for [`UpdateCustomLineItemOutput`](crate::output::UpdateCustomLineItemOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1865,6 +1884,7 @@ impl std::fmt::Debug for DisassociateAccountsOutput {
 }
 /// See [`DisassociateAccountsOutput`](crate::output::DisassociateAccountsOutput)
 pub mod disassociate_accounts_output {
+    ///
     /// A builder for [`DisassociateAccountsOutput`](crate::output::DisassociateAccountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1917,6 +1937,7 @@ impl std::fmt::Debug for AssociateAccountsOutput {
 }
 /// See [`AssociateAccountsOutput`](crate::output::AssociateAccountsOutput)
 pub mod associate_accounts_output {
+    ///
     /// A builder for [`AssociateAccountsOutput`](crate::output::AssociateAccountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1976,6 +1997,7 @@ impl std::fmt::Debug for ListBillingGroupsOutput {
 }
 /// See [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput)
 pub mod list_billing_groups_output {
+    ///
     /// A builder for [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2052,6 +2074,7 @@ impl std::fmt::Debug for CreateBillingGroupOutput {
 }
 /// See [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput)
 pub mod create_billing_group_output {
+    ///
     /// A builder for [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2104,6 +2127,7 @@ impl std::fmt::Debug for DeleteBillingGroupOutput {
 }
 /// See [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput)
 pub mod delete_billing_group_output {
+    ///
     /// A builder for [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2212,6 +2236,7 @@ impl std::fmt::Debug for UpdateBillingGroupOutput {
 }
 /// See [`UpdateBillingGroupOutput`](crate::output::UpdateBillingGroupOutput)
 pub mod update_billing_group_output {
+    ///
     /// A builder for [`UpdateBillingGroupOutput`](crate::output::UpdateBillingGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2364,6 +2389,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2394,6 +2420,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2438,6 +2465,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2520,6 +2548,7 @@ impl std::fmt::Debug for ListBillingGroupCostReportsOutput {
 }
 /// See [`ListBillingGroupCostReportsOutput`](crate::output::ListBillingGroupCostReportsOutput)
 pub mod list_billing_group_cost_reports_output {
+    ///
     /// A builder for [`ListBillingGroupCostReportsOutput`](crate::output::ListBillingGroupCostReportsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2609,6 +2638,7 @@ impl std::fmt::Debug for ListAccountAssociationsOutput {
 }
 /// See [`ListAccountAssociationsOutput`](crate::output::ListAccountAssociationsOutput)
 pub mod list_account_associations_output {
+    ///
     /// A builder for [`ListAccountAssociationsOutput`](crate::output::ListAccountAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

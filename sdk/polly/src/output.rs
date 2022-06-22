@@ -48,6 +48,7 @@ impl std::fmt::Debug for SynthesizeSpeechOutput {
 }
 /// See [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput)
 pub mod synthesize_speech_output {
+    ///
     /// A builder for [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -143,6 +144,7 @@ impl std::fmt::Debug for StartSpeechSynthesisTaskOutput {
 }
 /// See [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput)
 pub mod start_speech_synthesis_task_output {
+    ///
     /// A builder for [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -190,6 +192,7 @@ impl std::fmt::Debug for PutLexiconOutput {
 }
 /// See [`PutLexiconOutput`](crate::output::PutLexiconOutput)
 pub mod put_lexicon_output {
+    ///
     /// A builder for [`PutLexiconOutput`](crate::output::PutLexiconOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -237,6 +240,7 @@ impl std::fmt::Debug for ListSpeechSynthesisTasksOutput {
 }
 /// See [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput)
 pub mod list_speech_synthesis_tasks_output {
+    ///
     /// A builder for [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -319,6 +323,7 @@ impl std::fmt::Debug for ListLexiconsOutput {
 }
 /// See [`ListLexiconsOutput`](crate::output::ListLexiconsOutput)
 pub mod list_lexicons_output {
+    ///
     /// A builder for [`ListLexiconsOutput`](crate::output::ListLexiconsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -394,6 +399,7 @@ impl std::fmt::Debug for GetSpeechSynthesisTaskOutput {
 }
 /// See [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput)
 pub mod get_speech_synthesis_task_output {
+    ///
     /// A builder for [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -458,6 +464,7 @@ impl std::fmt::Debug for GetLexiconOutput {
 }
 /// See [`GetLexiconOutput`](crate::output::GetLexiconOutput)
 pub mod get_lexicon_output {
+    ///
     /// A builder for [`GetLexiconOutput`](crate::output::GetLexiconOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -534,6 +541,7 @@ impl std::fmt::Debug for DescribeVoicesOutput {
 }
 /// See [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput)
 pub mod describe_voices_output {
+    ///
     /// A builder for [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -599,6 +607,7 @@ impl std::fmt::Debug for DeleteLexiconOutput {
 }
 /// See [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput)
 pub mod delete_lexicon_output {
+    ///
     /// A builder for [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

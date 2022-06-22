@@ -229,6 +229,7 @@ impl std::fmt::Debug for SsmAutomation {
 }
 /// See [`SsmAutomation`](crate::model::SsmAutomation)
 pub mod ssm_automation {
+    ///
     /// A builder for [`SsmAutomation`](crate::model::SsmAutomation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -579,6 +580,7 @@ impl std::fmt::Debug for EmptyChatChannel {
 }
 /// See [`EmptyChatChannel`](crate::model::EmptyChatChannel)
 pub mod empty_chat_channel {
+    ///
     /// A builder for [`EmptyChatChannel`](crate::model::EmptyChatChannel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -711,6 +713,7 @@ impl std::fmt::Debug for DeleteRegionAction {
 }
 /// See [`DeleteRegionAction`](crate::model::DeleteRegionAction)
 pub mod delete_region_action {
+    ///
     /// A builder for [`DeleteRegionAction`](crate::model::DeleteRegionAction)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -772,6 +775,7 @@ impl std::fmt::Debug for AddRegionAction {
 }
 /// See [`AddRegionAction`](crate::model::AddRegionAction)
 pub mod add_region_action {
+    ///
     /// A builder for [`AddRegionAction`](crate::model::AddRegionAction)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -899,6 +903,7 @@ impl std::fmt::Debug for ItemIdentifier {
 }
 /// See [`ItemIdentifier`](crate::model::ItemIdentifier)
 pub mod item_identifier {
+    ///
     /// A builder for [`ItemIdentifier`](crate::model::ItemIdentifier)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1126,6 +1131,7 @@ impl std::fmt::Debug for RelatedItem {
 }
 /// See [`RelatedItem`](crate::model::RelatedItem)
 pub mod related_item {
+    ///
     /// A builder for [`RelatedItem`](crate::model::RelatedItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1271,6 +1277,7 @@ impl std::fmt::Debug for TriggerDetails {
 }
 /// See [`TriggerDetails`](crate::model::TriggerDetails)
 pub mod trigger_details {
+    ///
     /// A builder for [`TriggerDetails`](crate::model::TriggerDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1392,6 +1399,7 @@ impl std::fmt::Debug for EventSummary {
 }
 /// See [`EventSummary`](crate::model::EventSummary)
 pub mod event_summary {
+    ///
     /// A builder for [`EventSummary`](crate::model::EventSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1616,6 +1624,7 @@ impl std::fmt::Debug for Filter {
 }
 /// See [`Filter`](crate::model::Filter)
 pub mod filter {
+    ///
     /// A builder for [`Filter`](crate::model::Filter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1818,6 +1827,7 @@ impl std::fmt::Debug for ResponsePlanSummary {
 }
 /// See [`ResponsePlanSummary`](crate::model::ResponsePlanSummary)
 pub mod response_plan_summary {
+    ///
     /// A builder for [`ResponsePlanSummary`](crate::model::ResponsePlanSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1940,6 +1950,7 @@ impl std::fmt::Debug for IncidentRecordSummary {
 }
 /// See [`IncidentRecordSummary`](crate::model::IncidentRecordSummary)
 pub mod incident_record_summary {
+    ///
     /// A builder for [`IncidentRecordSummary`](crate::model::IncidentRecordSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2099,6 +2110,7 @@ impl std::fmt::Debug for IncidentRecordSource {
 }
 /// See [`IncidentRecordSource`](crate::model::IncidentRecordSource)
 pub mod incident_record_source {
+    ///
     /// A builder for [`IncidentRecordSource`](crate::model::IncidentRecordSource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2224,6 +2236,7 @@ impl std::fmt::Debug for TimelineEvent {
 }
 /// See [`TimelineEvent`](crate::model::TimelineEvent)
 pub mod timeline_event {
+    ///
     /// A builder for [`TimelineEvent`](crate::model::TimelineEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2378,6 +2391,7 @@ impl std::fmt::Debug for IncidentTemplate {
 }
 /// See [`IncidentTemplate`](crate::model::IncidentTemplate)
 pub mod incident_template {
+    ///
     /// A builder for [`IncidentTemplate`](crate::model::IncidentTemplate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2507,6 +2521,7 @@ impl std::fmt::Debug for ResourcePolicy {
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy)
 pub mod resource_policy {
+    ///
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2646,6 +2661,7 @@ impl std::fmt::Debug for ReplicationSet {
 }
 /// See [`ReplicationSet`](crate::model::ReplicationSet)
 pub mod replication_set {
+    ///
     /// A builder for [`ReplicationSet`](crate::model::ReplicationSet)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2901,6 +2917,7 @@ impl std::fmt::Debug for RegionInfo {
 }
 /// See [`RegionInfo`](crate::model::RegionInfo)
 pub mod region_info {
+    ///
     /// A builder for [`RegionInfo`](crate::model::RegionInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3165,6 +3182,7 @@ impl std::fmt::Debug for IncidentRecord {
 }
 /// See [`IncidentRecord`](crate::model::IncidentRecord)
 pub mod incident_record {
+    ///
     /// A builder for [`IncidentRecord`](crate::model::IncidentRecord)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3456,6 +3474,7 @@ impl std::fmt::Debug for RegionMapInputValue {
 }
 /// See [`RegionMapInputValue`](crate::model::RegionMapInputValue)
 pub mod region_map_input_value {
+    ///
     /// A builder for [`RegionMapInputValue`](crate::model::RegionMapInputValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

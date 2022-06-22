@@ -2151,6 +2151,7 @@ impl std::fmt::Display for CloudHsmTagException {
 impl std::error::Error for CloudHsmTagException {}
 /// See [`CloudHsmTagException`](crate::error::CloudHsmTagException)
 pub mod cloud_hsm_tag_exception {
+    ///
     /// A builder for [`CloudHsmTagException`](crate::error::CloudHsmTagException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2215,6 +2216,7 @@ impl std::fmt::Display for CloudHsmServiceException {
 impl std::error::Error for CloudHsmServiceException {}
 /// See [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
 pub mod cloud_hsm_service_exception {
+    ///
     /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2279,6 +2281,7 @@ impl std::fmt::Display for CloudHsmResourceNotFoundException {
 impl std::error::Error for CloudHsmResourceNotFoundException {}
 /// See [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException)
 pub mod cloud_hsm_resource_not_found_exception {
+    ///
     /// A builder for [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2343,6 +2346,7 @@ impl std::fmt::Display for CloudHsmInvalidRequestException {
 impl std::error::Error for CloudHsmInvalidRequestException {}
 /// See [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException)
 pub mod cloud_hsm_invalid_request_exception {
+    ///
     /// A builder for [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2407,6 +2411,7 @@ impl std::fmt::Display for CloudHsmInternalFailureException {
 impl std::error::Error for CloudHsmInternalFailureException {}
 /// See [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException)
 pub mod cloud_hsm_internal_failure_exception {
+    ///
     /// A builder for [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2471,6 +2476,7 @@ impl std::fmt::Display for CloudHsmAccessDeniedException {
 impl std::error::Error for CloudHsmAccessDeniedException {}
 /// See [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException)
 pub mod cloud_hsm_access_denied_exception {
+    ///
     /// A builder for [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

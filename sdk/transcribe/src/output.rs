@@ -35,6 +35,7 @@ impl std::fmt::Debug for UpdateVocabularyFilterOutput {
 }
 /// See [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput)
 pub mod update_vocabulary_filter_output {
+    ///
     /// A builder for [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -143,6 +144,7 @@ impl std::fmt::Debug for UpdateVocabularyOutput {
 }
 /// See [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput)
 pub mod update_vocabulary_output {
+    ///
     /// A builder for [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -266,6 +268,7 @@ impl std::fmt::Debug for UpdateMedicalVocabularyOutput {
 }
 /// See [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput)
 pub mod update_medical_vocabulary_output {
+    ///
     /// A builder for [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -368,6 +371,7 @@ impl std::fmt::Debug for UpdateCallAnalyticsCategoryOutput {
 }
 /// See [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput)
 pub mod update_call_analytics_category_output {
+    ///
     /// A builder for [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -415,6 +419,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -445,6 +450,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -485,6 +491,7 @@ impl std::fmt::Debug for StartTranscriptionJobOutput {
 }
 /// See [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput)
 pub mod start_transcription_job_output {
+    ///
     /// A builder for [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -544,6 +551,7 @@ impl std::fmt::Debug for StartMedicalTranscriptionJobOutput {
 }
 /// See [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput)
 pub mod start_medical_transcription_job_output {
+    ///
     /// A builder for [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -605,6 +613,7 @@ impl std::fmt::Debug for StartCallAnalyticsJobOutput {
 }
 /// See [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput)
 pub mod start_call_analytics_job_output {
+    ///
     /// A builder for [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -669,6 +678,7 @@ impl std::fmt::Debug for ListVocabularyFiltersOutput {
 }
 /// See [`ListVocabularyFiltersOutput`](crate::output::ListVocabularyFiltersOutput)
 pub mod list_vocabulary_filters_output {
+    ///
     /// A builder for [`ListVocabularyFiltersOutput`](crate::output::ListVocabularyFiltersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -759,6 +769,7 @@ impl std::fmt::Debug for ListVocabulariesOutput {
 }
 /// See [`ListVocabulariesOutput`](crate::output::ListVocabulariesOutput)
 pub mod list_vocabularies_output {
+    ///
     /// A builder for [`ListVocabulariesOutput`](crate::output::ListVocabulariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -869,6 +880,7 @@ impl std::fmt::Debug for ListTranscriptionJobsOutput {
 }
 /// See [`ListTranscriptionJobsOutput`](crate::output::ListTranscriptionJobsOutput)
 pub mod list_transcription_jobs_output {
+    ///
     /// A builder for [`ListTranscriptionJobsOutput`](crate::output::ListTranscriptionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -970,6 +982,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1059,6 +1072,7 @@ impl std::fmt::Debug for ListMedicalVocabulariesOutput {
 }
 /// See [`ListMedicalVocabulariesOutput`](crate::output::ListMedicalVocabulariesOutput)
 pub mod list_medical_vocabularies_output {
+    ///
     /// A builder for [`ListMedicalVocabulariesOutput`](crate::output::ListMedicalVocabulariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1169,6 +1183,7 @@ impl std::fmt::Debug for ListMedicalTranscriptionJobsOutput {
 }
 /// See [`ListMedicalTranscriptionJobsOutput`](crate::output::ListMedicalTranscriptionJobsOutput)
 pub mod list_medical_transcription_jobs_output {
+    ///
     /// A builder for [`ListMedicalTranscriptionJobsOutput`](crate::output::ListMedicalTranscriptionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1270,6 +1285,7 @@ impl std::fmt::Debug for ListLanguageModelsOutput {
 }
 /// See [`ListLanguageModelsOutput`](crate::output::ListLanguageModelsOutput)
 pub mod list_language_models_output {
+    ///
     /// A builder for [`ListLanguageModelsOutput`](crate::output::ListLanguageModelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1365,6 +1381,7 @@ impl std::fmt::Debug for ListCallAnalyticsJobsOutput {
 }
 /// See [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput)
 pub mod list_call_analytics_jobs_output {
+    ///
     /// A builder for [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1466,6 +1483,7 @@ impl std::fmt::Debug for ListCallAnalyticsCategoriesOutput {
 }
 /// See [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput)
 pub mod list_call_analytics_categories_output {
+    ///
     /// A builder for [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1562,6 +1580,7 @@ impl std::fmt::Debug for GetVocabularyFilterOutput {
 }
 /// See [`GetVocabularyFilterOutput`](crate::output::GetVocabularyFilterOutput)
 pub mod get_vocabulary_filter_output {
+    ///
     /// A builder for [`GetVocabularyFilterOutput`](crate::output::GetVocabularyFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1696,6 +1715,7 @@ impl std::fmt::Debug for GetVocabularyOutput {
 }
 /// See [`GetVocabularyOutput`](crate::output::GetVocabularyOutput)
 pub mod get_vocabulary_output {
+    ///
     /// A builder for [`GetVocabularyOutput`](crate::output::GetVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1825,6 +1845,7 @@ impl std::fmt::Debug for GetTranscriptionJobOutput {
 }
 /// See [`GetTranscriptionJobOutput`](crate::output::GetTranscriptionJobOutput)
 pub mod get_transcription_job_output {
+    ///
     /// A builder for [`GetTranscriptionJobOutput`](crate::output::GetTranscriptionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1919,6 +1940,7 @@ impl std::fmt::Debug for GetMedicalVocabularyOutput {
 }
 /// See [`GetMedicalVocabularyOutput`](crate::output::GetMedicalVocabularyOutput)
 pub mod get_medical_vocabulary_output {
+    ///
     /// A builder for [`GetMedicalVocabularyOutput`](crate::output::GetMedicalVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2052,6 +2074,7 @@ impl std::fmt::Debug for GetMedicalTranscriptionJobOutput {
 }
 /// See [`GetMedicalTranscriptionJobOutput`](crate::output::GetMedicalTranscriptionJobOutput)
 pub mod get_medical_transcription_job_output {
+    ///
     /// A builder for [`GetMedicalTranscriptionJobOutput`](crate::output::GetMedicalTranscriptionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2113,6 +2136,7 @@ impl std::fmt::Debug for GetCallAnalyticsJobOutput {
 }
 /// See [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput)
 pub mod get_call_analytics_job_output {
+    ///
     /// A builder for [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2170,6 +2194,7 @@ impl std::fmt::Debug for GetCallAnalyticsCategoryOutput {
 }
 /// See [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput)
 pub mod get_call_analytics_category_output {
+    ///
     /// A builder for [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2227,6 +2252,7 @@ impl std::fmt::Debug for DescribeLanguageModelOutput {
 }
 /// See [`DescribeLanguageModelOutput`](crate::output::DescribeLanguageModelOutput)
 pub mod describe_language_model_output {
+    ///
     /// A builder for [`DescribeLanguageModelOutput`](crate::output::DescribeLanguageModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2274,6 +2300,7 @@ impl std::fmt::Debug for DeleteVocabularyFilterOutput {
 }
 /// See [`DeleteVocabularyFilterOutput`](crate::output::DeleteVocabularyFilterOutput)
 pub mod delete_vocabulary_filter_output {
+    ///
     /// A builder for [`DeleteVocabularyFilterOutput`](crate::output::DeleteVocabularyFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2304,6 +2331,7 @@ impl std::fmt::Debug for DeleteVocabularyOutput {
 }
 /// See [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput)
 pub mod delete_vocabulary_output {
+    ///
     /// A builder for [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2334,6 +2362,7 @@ impl std::fmt::Debug for DeleteTranscriptionJobOutput {
 }
 /// See [`DeleteTranscriptionJobOutput`](crate::output::DeleteTranscriptionJobOutput)
 pub mod delete_transcription_job_output {
+    ///
     /// A builder for [`DeleteTranscriptionJobOutput`](crate::output::DeleteTranscriptionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2364,6 +2393,7 @@ impl std::fmt::Debug for DeleteMedicalVocabularyOutput {
 }
 /// See [`DeleteMedicalVocabularyOutput`](crate::output::DeleteMedicalVocabularyOutput)
 pub mod delete_medical_vocabulary_output {
+    ///
     /// A builder for [`DeleteMedicalVocabularyOutput`](crate::output::DeleteMedicalVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2394,6 +2424,7 @@ impl std::fmt::Debug for DeleteMedicalTranscriptionJobOutput {
 }
 /// See [`DeleteMedicalTranscriptionJobOutput`](crate::output::DeleteMedicalTranscriptionJobOutput)
 pub mod delete_medical_transcription_job_output {
+    ///
     /// A builder for [`DeleteMedicalTranscriptionJobOutput`](crate::output::DeleteMedicalTranscriptionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2424,6 +2455,7 @@ impl std::fmt::Debug for DeleteLanguageModelOutput {
 }
 /// See [`DeleteLanguageModelOutput`](crate::output::DeleteLanguageModelOutput)
 pub mod delete_language_model_output {
+    ///
     /// A builder for [`DeleteLanguageModelOutput`](crate::output::DeleteLanguageModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2454,6 +2486,7 @@ impl std::fmt::Debug for DeleteCallAnalyticsJobOutput {
 }
 /// See [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput)
 pub mod delete_call_analytics_job_output {
+    ///
     /// A builder for [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2484,6 +2517,7 @@ impl std::fmt::Debug for DeleteCallAnalyticsCategoryOutput {
 }
 /// See [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput)
 pub mod delete_call_analytics_category_output {
+    ///
     /// A builder for [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2538,6 +2572,7 @@ impl std::fmt::Debug for CreateVocabularyFilterOutput {
 }
 /// See [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput)
 pub mod create_vocabulary_filter_output {
+    ///
     /// A builder for [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2653,6 +2688,7 @@ impl std::fmt::Debug for CreateVocabularyOutput {
 }
 /// See [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput)
 pub mod create_vocabulary_output {
+    ///
     /// A builder for [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2798,6 +2834,7 @@ impl std::fmt::Debug for CreateMedicalVocabularyOutput {
 }
 /// See [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput)
 pub mod create_medical_vocabulary_output {
+    ///
     /// A builder for [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2945,6 +2982,7 @@ impl std::fmt::Debug for CreateLanguageModelOutput {
 }
 /// See [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput)
 pub mod create_language_model_output {
+    ///
     /// A builder for [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3061,6 +3099,7 @@ impl std::fmt::Debug for CreateCallAnalyticsCategoryOutput {
 }
 /// See [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput)
 pub mod create_call_analytics_category_output {
+    ///
     /// A builder for [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

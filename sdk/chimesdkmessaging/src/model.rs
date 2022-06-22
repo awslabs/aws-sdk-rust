@@ -155,6 +155,7 @@ impl std::fmt::Debug for ChannelMessageStatusStructure {
 }
 /// See [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure)
 pub mod channel_message_status_structure {
+    ///
     /// A builder for [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -308,6 +309,7 @@ impl std::fmt::Debug for Processor {
 }
 /// See [`Processor`](crate::model::Processor)
 pub mod processor {
+    ///
     /// A builder for [`Processor`](crate::model::Processor)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -459,6 +461,7 @@ impl std::fmt::Debug for ProcessorConfiguration {
 }
 /// See [`ProcessorConfiguration`](crate::model::ProcessorConfiguration)
 pub mod processor_configuration {
+    ///
     /// A builder for [`ProcessorConfiguration`](crate::model::ProcessorConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -523,6 +526,7 @@ impl std::fmt::Debug for LambdaConfiguration {
 }
 /// See [`LambdaConfiguration`](crate::model::LambdaConfiguration)
 pub mod lambda_configuration {
+    ///
     /// A builder for [`LambdaConfiguration`](crate::model::LambdaConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -705,6 +709,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -771,6 +776,7 @@ impl std::fmt::Debug for MessageAttributeValue {
 }
 /// See [`MessageAttributeValue`](crate::model::MessageAttributeValue)
 pub mod message_attribute_value {
+    ///
     /// A builder for [`MessageAttributeValue`](crate::model::MessageAttributeValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -848,6 +854,7 @@ impl std::fmt::Debug for PushNotificationConfiguration {
 }
 /// See [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
 pub mod push_notification_configuration {
+    ///
     /// A builder for [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1096,6 +1103,7 @@ impl std::fmt::Debug for ChannelMembershipPreferences {
 }
 /// See [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
 pub mod channel_membership_preferences {
+    ///
     /// A builder for [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1164,6 +1172,7 @@ impl std::fmt::Debug for PushNotificationPreferences {
 }
 /// See [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
 pub mod push_notification_preferences {
+    ///
     /// A builder for [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1299,6 +1308,7 @@ impl std::fmt::Debug for Identity {
 }
 /// See [`Identity`](crate::model::Identity)
 pub mod identity {
+    ///
     /// A builder for [`Identity`](crate::model::Identity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1365,6 +1375,7 @@ impl std::fmt::Debug for ChannelModeratedByAppInstanceUserSummary {
 }
 /// See [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
 pub mod channel_moderated_by_app_instance_user_summary {
+    ///
     /// A builder for [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1457,6 +1468,7 @@ impl std::fmt::Debug for ChannelSummary {
 }
 /// See [`ChannelSummary`](crate::model::ChannelSummary)
 pub mod channel_summary {
+    ///
     /// A builder for [`ChannelSummary`](crate::model::ChannelSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1660,6 +1672,7 @@ impl std::fmt::Debug for ChannelAssociatedWithFlowSummary {
 }
 /// See [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary)
 pub mod channel_associated_with_flow_summary {
+    ///
     /// A builder for [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1765,6 +1778,7 @@ impl std::fmt::Debug for ChannelModeratorSummary {
 }
 /// See [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary)
 pub mod channel_moderator_summary {
+    ///
     /// A builder for [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1895,6 +1909,7 @@ impl std::fmt::Debug for ChannelMessageSummary {
 }
 /// See [`ChannelMessageSummary`](crate::model::ChannelMessageSummary)
 pub mod channel_message_summary {
+    ///
     /// A builder for [`ChannelMessageSummary`](crate::model::ChannelMessageSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2169,6 +2184,7 @@ impl std::fmt::Debug for ChannelMembershipForAppInstanceUserSummary {
 }
 /// See [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary)
 pub mod channel_membership_for_app_instance_user_summary {
+    ///
     /// A builder for [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2252,6 +2268,7 @@ impl std::fmt::Debug for AppInstanceUserMembershipSummary {
 }
 /// See [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary)
 pub mod app_instance_user_membership_summary {
+    ///
     /// A builder for [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2379,6 +2396,7 @@ impl std::fmt::Debug for ChannelMembershipSummary {
 }
 /// See [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary)
 pub mod channel_membership_summary {
+    ///
     /// A builder for [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2447,6 +2465,7 @@ impl std::fmt::Debug for ChannelFlowSummary {
 }
 /// See [`ChannelFlowSummary`](crate::model::ChannelFlowSummary)
 pub mod channel_flow_summary {
+    ///
     /// A builder for [`ChannelFlowSummary`](crate::model::ChannelFlowSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2537,6 +2556,7 @@ impl std::fmt::Debug for ChannelBanSummary {
 }
 /// See [`ChannelBanSummary`](crate::model::ChannelBanSummary)
 pub mod channel_ban_summary {
+    ///
     /// A builder for [`ChannelBanSummary`](crate::model::ChannelBanSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2591,6 +2611,7 @@ impl std::fmt::Debug for MessagingSessionEndpoint {
 }
 /// See [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint)
 pub mod messaging_session_endpoint {
+    ///
     /// A builder for [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2733,6 +2754,7 @@ impl std::fmt::Debug for ChannelMessage {
 }
 /// See [`ChannelMessage`](crate::model::ChannelMessage)
 pub mod channel_message {
+    ///
     /// A builder for [`ChannelMessage`](crate::model::ChannelMessage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2987,6 +3009,7 @@ impl std::fmt::Debug for ChannelModerator {
 }
 /// See [`ChannelModerator`](crate::model::ChannelModerator)
 pub mod channel_moderator {
+    ///
     /// A builder for [`ChannelModerator`](crate::model::ChannelModerator)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3118,6 +3141,7 @@ impl std::fmt::Debug for ChannelMembership {
 }
 /// See [`ChannelMembership`](crate::model::ChannelMembership)
 pub mod channel_membership {
+    ///
     /// A builder for [`ChannelMembership`](crate::model::ChannelMembership)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3272,6 +3296,7 @@ impl std::fmt::Debug for ChannelFlow {
 }
 /// See [`ChannelFlow`](crate::model::ChannelFlow)
 pub mod channel_flow {
+    ///
     /// A builder for [`ChannelFlow`](crate::model::ChannelFlow)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3413,6 +3438,7 @@ impl std::fmt::Debug for ChannelBan {
 }
 /// See [`ChannelBan`](crate::model::ChannelBan)
 pub mod channel_ban {
+    ///
     /// A builder for [`ChannelBan`](crate::model::ChannelBan)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3572,6 +3598,7 @@ impl std::fmt::Debug for Channel {
 }
 /// See [`Channel`](crate::model::Channel)
 pub mod channel {
+    ///
     /// A builder for [`Channel`](crate::model::Channel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3788,6 +3815,7 @@ impl std::fmt::Debug for ChannelMessageCallback {
 }
 /// See [`ChannelMessageCallback`](crate::model::ChannelMessageCallback)
 pub mod channel_message_callback {
+    ///
     /// A builder for [`ChannelMessageCallback`](crate::model::ChannelMessageCallback)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3928,6 +3956,7 @@ impl std::fmt::Debug for BatchCreateChannelMembershipError {
 }
 /// See [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError)
 pub mod batch_create_channel_membership_error {
+    ///
     /// A builder for [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4033,6 +4062,7 @@ impl std::fmt::Debug for BatchChannelMemberships {
 }
 /// See [`BatchChannelMemberships`](crate::model::BatchChannelMemberships)
 pub mod batch_channel_memberships {
+    ///
     /// A builder for [`BatchChannelMemberships`](crate::model::BatchChannelMemberships)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

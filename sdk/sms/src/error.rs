@@ -4970,6 +4970,7 @@ impl std::fmt::Display for UnauthorizedOperationException {
 impl std::error::Error for UnauthorizedOperationException {}
 /// See [`UnauthorizedOperationException`](crate::error::UnauthorizedOperationException)
 pub mod unauthorized_operation_exception {
+    ///
     /// A builder for [`UnauthorizedOperationException`](crate::error::UnauthorizedOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5034,6 +5035,7 @@ impl std::fmt::Display for TemporarilyUnavailableException {
 impl std::error::Error for TemporarilyUnavailableException {}
 /// See [`TemporarilyUnavailableException`](crate::error::TemporarilyUnavailableException)
 pub mod temporarily_unavailable_exception {
+    ///
     /// A builder for [`TemporarilyUnavailableException`](crate::error::TemporarilyUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5098,6 +5100,7 @@ impl std::fmt::Display for ServerCannotBeReplicatedException {
 impl std::error::Error for ServerCannotBeReplicatedException {}
 /// See [`ServerCannotBeReplicatedException`](crate::error::ServerCannotBeReplicatedException)
 pub mod server_cannot_be_replicated_exception {
+    ///
     /// A builder for [`ServerCannotBeReplicatedException`](crate::error::ServerCannotBeReplicatedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5162,6 +5165,7 @@ impl std::fmt::Display for ReplicationJobNotFoundException {
 impl std::error::Error for ReplicationJobNotFoundException {}
 /// See [`ReplicationJobNotFoundException`](crate::error::ReplicationJobNotFoundException)
 pub mod replication_job_not_found_exception {
+    ///
     /// A builder for [`ReplicationJobNotFoundException`](crate::error::ReplicationJobNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5226,6 +5230,7 @@ impl std::fmt::Display for OperationNotPermittedException {
 impl std::error::Error for OperationNotPermittedException {}
 /// See [`OperationNotPermittedException`](crate::error::OperationNotPermittedException)
 pub mod operation_not_permitted_exception {
+    ///
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5290,6 +5295,7 @@ impl std::fmt::Display for MissingRequiredParameterException {
 impl std::error::Error for MissingRequiredParameterException {}
 /// See [`MissingRequiredParameterException`](crate::error::MissingRequiredParameterException)
 pub mod missing_required_parameter_exception {
+    ///
     /// A builder for [`MissingRequiredParameterException`](crate::error::MissingRequiredParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5354,6 +5360,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
+    ///
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5418,6 +5425,7 @@ impl std::fmt::Display for InternalError {
 impl std::error::Error for InternalError {}
 /// See [`InternalError`](crate::error::InternalError)
 pub mod internal_error {
+    ///
     /// A builder for [`InternalError`](crate::error::InternalError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5482,6 +5490,7 @@ impl std::fmt::Display for ReplicationRunLimitExceededException {
 impl std::error::Error for ReplicationRunLimitExceededException {}
 /// See [`ReplicationRunLimitExceededException`](crate::error::ReplicationRunLimitExceededException)
 pub mod replication_run_limit_exceeded_exception {
+    ///
     /// A builder for [`ReplicationRunLimitExceededException`](crate::error::ReplicationRunLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5546,6 +5555,7 @@ impl std::fmt::Display for DryRunOperationException {
 impl std::error::Error for DryRunOperationException {}
 /// See [`DryRunOperationException`](crate::error::DryRunOperationException)
 pub mod dry_run_operation_exception {
+    ///
     /// A builder for [`DryRunOperationException`](crate::error::DryRunOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5610,6 +5620,7 @@ impl std::fmt::Display for NoConnectorsAvailableException {
 impl std::error::Error for NoConnectorsAvailableException {}
 /// See [`NoConnectorsAvailableException`](crate::error::NoConnectorsAvailableException)
 pub mod no_connectors_available_exception {
+    ///
     /// A builder for [`NoConnectorsAvailableException`](crate::error::NoConnectorsAvailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5674,6 +5685,7 @@ impl std::fmt::Display for ReplicationJobAlreadyExistsException {
 impl std::error::Error for ReplicationJobAlreadyExistsException {}
 /// See [`ReplicationJobAlreadyExistsException`](crate::error::ReplicationJobAlreadyExistsException)
 pub mod replication_job_already_exists_exception {
+    ///
     /// A builder for [`ReplicationJobAlreadyExistsException`](crate::error::ReplicationJobAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

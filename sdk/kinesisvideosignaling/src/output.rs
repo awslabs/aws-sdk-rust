@@ -21,6 +21,7 @@ impl std::fmt::Debug for SendAlexaOfferToMasterOutput {
 }
 /// See [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput)
 pub mod send_alexa_offer_to_master_output {
+    ///
     /// A builder for [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -75,6 +76,7 @@ impl std::fmt::Debug for GetIceServerConfigOutput {
 }
 /// See [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput)
 pub mod get_ice_server_config_output {
+    ///
     /// A builder for [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

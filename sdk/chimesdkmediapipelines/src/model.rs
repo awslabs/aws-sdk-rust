@@ -111,6 +111,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -184,6 +185,7 @@ impl std::fmt::Debug for MediaCapturePipelineSummary {
 }
 /// See [`MediaCapturePipelineSummary`](crate::model::MediaCapturePipelineSummary)
 pub mod media_capture_pipeline_summary {
+    ///
     /// A builder for [`MediaCapturePipelineSummary`](crate::model::MediaCapturePipelineSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -325,6 +327,7 @@ impl std::fmt::Debug for MediaCapturePipeline {
 }
 /// See [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
 pub mod media_capture_pipeline {
+    ///
     /// A builder for [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -524,6 +527,7 @@ impl std::fmt::Debug for ChimeSdkMeetingConfiguration {
 }
 /// See [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration)
 pub mod chime_sdk_meeting_configuration {
+    ///
     /// A builder for [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -614,6 +618,7 @@ impl std::fmt::Debug for ArtifactsConfiguration {
 }
 /// See [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration)
 pub mod artifacts_configuration {
+    ///
     /// A builder for [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -708,6 +713,7 @@ impl std::fmt::Debug for ContentArtifactsConfiguration {
 }
 /// See [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration)
 pub mod content_artifacts_configuration {
+    ///
     /// A builder for [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -893,6 +899,7 @@ impl std::fmt::Debug for VideoArtifactsConfiguration {
 }
 /// See [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration)
 pub mod video_artifacts_configuration {
+    ///
     /// A builder for [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1016,6 +1023,7 @@ impl std::fmt::Debug for AudioArtifactsConfiguration {
 }
 /// See [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration)
 pub mod audio_artifacts_configuration {
+    ///
     /// A builder for [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1130,6 +1138,7 @@ impl std::fmt::Debug for SourceConfiguration {
 }
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration)
 pub mod source_configuration {
+    ///
     /// A builder for [`SourceConfiguration`](crate::model::SourceConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1194,6 +1203,7 @@ impl std::fmt::Debug for SelectedVideoStreams {
 }
 /// See [`SelectedVideoStreams`](crate::model::SelectedVideoStreams)
 pub mod selected_video_streams {
+    ///
     /// A builder for [`SelectedVideoStreams`](crate::model::SelectedVideoStreams)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

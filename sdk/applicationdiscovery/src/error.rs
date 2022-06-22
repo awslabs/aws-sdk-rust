@@ -3771,6 +3771,7 @@ impl std::fmt::Display for ServerInternalErrorException {
 impl std::error::Error for ServerInternalErrorException {}
 /// See [`ServerInternalErrorException`](crate::error::ServerInternalErrorException)
 pub mod server_internal_error_exception {
+    ///
     /// A builder for [`ServerInternalErrorException`](crate::error::ServerInternalErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3835,6 +3836,7 @@ impl std::fmt::Display for InvalidParameterValueException {
 impl std::error::Error for InvalidParameterValueException {}
 /// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
 pub mod invalid_parameter_value_exception {
+    ///
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3899,6 +3901,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
+    ///
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3963,6 +3966,7 @@ impl std::fmt::Display for HomeRegionNotSetException {
 impl std::error::Error for HomeRegionNotSetException {}
 /// See [`HomeRegionNotSetException`](crate::error::HomeRegionNotSetException)
 pub mod home_region_not_set_exception {
+    ///
     /// A builder for [`HomeRegionNotSetException`](crate::error::HomeRegionNotSetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4027,6 +4031,7 @@ impl std::fmt::Display for AuthorizationErrorException {
 impl std::error::Error for AuthorizationErrorException {}
 /// See [`AuthorizationErrorException`](crate::error::AuthorizationErrorException)
 pub mod authorization_error_exception {
+    ///
     /// A builder for [`AuthorizationErrorException`](crate::error::AuthorizationErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4091,6 +4096,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4155,6 +4161,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException)
 pub mod resource_in_use_exception {
+    ///
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4219,6 +4226,7 @@ impl std::fmt::Display for OperationNotPermittedException {
 impl std::error::Error for OperationNotPermittedException {}
 /// See [`OperationNotPermittedException`](crate::error::OperationNotPermittedException)
 pub mod operation_not_permitted_exception {
+    ///
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4283,6 +4291,7 @@ impl std::fmt::Display for ConflictErrorException {
 impl std::error::Error for ConflictErrorException {}
 /// See [`ConflictErrorException`](crate::error::ConflictErrorException)
 pub mod conflict_error_exception {
+    ///
     /// A builder for [`ConflictErrorException`](crate::error::ConflictErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

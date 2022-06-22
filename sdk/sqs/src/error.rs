@@ -1974,6 +1974,7 @@ impl std::fmt::Display for InvalidAttributeName {
 impl std::error::Error for InvalidAttributeName {}
 /// See [`InvalidAttributeName`](crate::error::InvalidAttributeName)
 pub mod invalid_attribute_name {
+    ///
     /// A builder for [`InvalidAttributeName`](crate::error::InvalidAttributeName)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2038,6 +2039,7 @@ impl std::fmt::Display for UnsupportedOperation {
 impl std::error::Error for UnsupportedOperation {}
 /// See [`UnsupportedOperation`](crate::error::UnsupportedOperation)
 pub mod unsupported_operation {
+    ///
     /// A builder for [`UnsupportedOperation`](crate::error::UnsupportedOperation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2102,6 +2104,7 @@ impl std::fmt::Display for TooManyEntriesInBatchRequest {
 impl std::error::Error for TooManyEntriesInBatchRequest {}
 /// See [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest)
 pub mod too_many_entries_in_batch_request {
+    ///
     /// A builder for [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2166,6 +2169,7 @@ impl std::fmt::Display for InvalidBatchEntryId {
 impl std::error::Error for InvalidBatchEntryId {}
 /// See [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId)
 pub mod invalid_batch_entry_id {
+    ///
     /// A builder for [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2230,6 +2234,7 @@ impl std::fmt::Display for EmptyBatchRequest {
 impl std::error::Error for EmptyBatchRequest {}
 /// See [`EmptyBatchRequest`](crate::error::EmptyBatchRequest)
 pub mod empty_batch_request {
+    ///
     /// A builder for [`EmptyBatchRequest`](crate::error::EmptyBatchRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2294,6 +2299,7 @@ impl std::fmt::Display for BatchRequestTooLong {
 impl std::error::Error for BatchRequestTooLong {}
 /// See [`BatchRequestTooLong`](crate::error::BatchRequestTooLong)
 pub mod batch_request_too_long {
+    ///
     /// A builder for [`BatchRequestTooLong`](crate::error::BatchRequestTooLong)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2358,6 +2364,7 @@ impl std::fmt::Display for BatchEntryIdsNotDistinct {
 impl std::error::Error for BatchEntryIdsNotDistinct {}
 /// See [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct)
 pub mod batch_entry_ids_not_distinct {
+    ///
     /// A builder for [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2422,6 +2429,7 @@ impl std::fmt::Display for InvalidMessageContents {
 impl std::error::Error for InvalidMessageContents {}
 /// See [`InvalidMessageContents`](crate::error::InvalidMessageContents)
 pub mod invalid_message_contents {
+    ///
     /// A builder for [`InvalidMessageContents`](crate::error::InvalidMessageContents)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2486,6 +2494,7 @@ impl std::fmt::Display for OverLimit {
 impl std::error::Error for OverLimit {}
 /// See [`OverLimit`](crate::error::OverLimit)
 pub mod over_limit {
+    ///
     /// A builder for [`OverLimit`](crate::error::OverLimit)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2550,6 +2559,7 @@ impl std::fmt::Display for QueueDoesNotExist {
 impl std::error::Error for QueueDoesNotExist {}
 /// See [`QueueDoesNotExist`](crate::error::QueueDoesNotExist)
 pub mod queue_does_not_exist {
+    ///
     /// A builder for [`QueueDoesNotExist`](crate::error::QueueDoesNotExist)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2614,6 +2624,7 @@ impl std::fmt::Display for PurgeQueueInProgress {
 impl std::error::Error for PurgeQueueInProgress {}
 /// See [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress)
 pub mod purge_queue_in_progress {
+    ///
     /// A builder for [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2678,6 +2689,7 @@ impl std::fmt::Display for ReceiptHandleIsInvalid {
 impl std::error::Error for ReceiptHandleIsInvalid {}
 /// See [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid)
 pub mod receipt_handle_is_invalid {
+    ///
     /// A builder for [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2742,6 +2754,7 @@ impl std::fmt::Display for InvalidIdFormat {
 impl std::error::Error for InvalidIdFormat {}
 /// See [`InvalidIdFormat`](crate::error::InvalidIdFormat)
 pub mod invalid_id_format {
+    ///
     /// A builder for [`InvalidIdFormat`](crate::error::InvalidIdFormat)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2806,6 +2819,7 @@ impl std::fmt::Display for QueueNameExists {
 impl std::error::Error for QueueNameExists {}
 /// See [`QueueNameExists`](crate::error::QueueNameExists)
 pub mod queue_name_exists {
+    ///
     /// A builder for [`QueueNameExists`](crate::error::QueueNameExists)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2870,6 +2884,7 @@ impl std::fmt::Display for QueueDeletedRecently {
 impl std::error::Error for QueueDeletedRecently {}
 /// See [`QueueDeletedRecently`](crate::error::QueueDeletedRecently)
 pub mod queue_deleted_recently {
+    ///
     /// A builder for [`QueueDeletedRecently`](crate::error::QueueDeletedRecently)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2934,6 +2949,7 @@ impl std::fmt::Display for MessageNotInflight {
 impl std::error::Error for MessageNotInflight {}
 /// See [`MessageNotInflight`](crate::error::MessageNotInflight)
 pub mod message_not_inflight {
+    ///
     /// A builder for [`MessageNotInflight`](crate::error::MessageNotInflight)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

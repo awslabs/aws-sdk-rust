@@ -37,6 +37,7 @@ impl std::fmt::Debug for VerifyMacOutput {
 }
 /// See [`VerifyMacOutput`](crate::output::VerifyMacOutput)
 pub mod verify_mac_output {
+    ///
     /// A builder for [`VerifyMacOutput`](crate::output::VerifyMacOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -134,6 +135,7 @@ impl std::fmt::Debug for VerifyOutput {
 }
 /// See [`VerifyOutput`](crate::output::VerifyOutput)
 pub mod verify_output {
+    ///
     /// A builder for [`VerifyOutput`](crate::output::VerifyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -205,6 +207,7 @@ impl std::fmt::Debug for UpdatePrimaryRegionOutput {
 }
 /// See [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
 pub mod update_primary_region_output {
+    ///
     /// A builder for [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -235,6 +238,7 @@ impl std::fmt::Debug for UpdateKeyDescriptionOutput {
 }
 /// See [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput)
 pub mod update_key_description_output {
+    ///
     /// A builder for [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -265,6 +269,7 @@ impl std::fmt::Debug for UpdateCustomKeyStoreOutput {
 }
 /// See [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput)
 pub mod update_custom_key_store_output {
+    ///
     /// A builder for [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -295,6 +300,7 @@ impl std::fmt::Debug for UpdateAliasOutput {
 }
 /// See [`UpdateAliasOutput`](crate::output::UpdateAliasOutput)
 pub mod update_alias_output {
+    ///
     /// A builder for [`UpdateAliasOutput`](crate::output::UpdateAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -325,6 +331,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -355,6 +362,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -419,6 +427,7 @@ impl std::fmt::Debug for SignOutput {
 }
 /// See [`SignOutput`](crate::output::SignOutput)
 pub mod sign_output {
+    ///
     /// A builder for [`SignOutput`](crate::output::SignOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -537,6 +546,7 @@ impl std::fmt::Debug for ScheduleKeyDeletionOutput {
 }
 /// See [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput)
 pub mod schedule_key_deletion_output {
+    ///
     /// A builder for [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -626,6 +636,7 @@ impl std::fmt::Debug for RevokeGrantOutput {
 }
 /// See [`RevokeGrantOutput`](crate::output::RevokeGrantOutput)
 pub mod revoke_grant_output {
+    ///
     /// A builder for [`RevokeGrantOutput`](crate::output::RevokeGrantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -656,6 +667,7 @@ impl std::fmt::Debug for RetireGrantOutput {
 }
 /// See [`RetireGrantOutput`](crate::output::RetireGrantOutput)
 pub mod retire_grant_output {
+    ///
     /// A builder for [`RetireGrantOutput`](crate::output::RetireGrantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -710,6 +722,7 @@ impl std::fmt::Debug for ReplicateKeyOutput {
 }
 /// See [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
 pub mod replicate_key_output {
+    ///
     /// A builder for [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -842,6 +855,7 @@ impl std::fmt::Debug for ReEncryptOutput {
 }
 /// See [`ReEncryptOutput`](crate::output::ReEncryptOutput)
 pub mod re_encrypt_output {
+    ///
     /// A builder for [`ReEncryptOutput`](crate::output::ReEncryptOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -954,6 +968,7 @@ impl std::fmt::Debug for PutKeyPolicyOutput {
 }
 /// See [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput)
 pub mod put_key_policy_output {
+    ///
     /// A builder for [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1008,6 +1023,7 @@ impl std::fmt::Debug for ListRetirableGrantsOutput {
 }
 /// See [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput)
 pub mod list_retirable_grants_output {
+    ///
     /// A builder for [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1115,6 +1131,7 @@ impl std::fmt::Debug for ListResourceTagsOutput {
 }
 /// See [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput)
 pub mod list_resource_tags_output {
+    ///
     /// A builder for [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1222,6 +1239,7 @@ impl std::fmt::Debug for ListKeysOutput {
 }
 /// See [`ListKeysOutput`](crate::output::ListKeysOutput)
 pub mod list_keys_output {
+    ///
     /// A builder for [`ListKeysOutput`](crate::output::ListKeysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1323,6 +1341,7 @@ impl std::fmt::Debug for ListKeyPoliciesOutput {
 }
 /// See [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput)
 pub mod list_key_policies_output {
+    ///
     /// A builder for [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1424,6 +1443,7 @@ impl std::fmt::Debug for ListGrantsOutput {
 }
 /// See [`ListGrantsOutput`](crate::output::ListGrantsOutput)
 pub mod list_grants_output {
+    ///
     /// A builder for [`ListGrantsOutput`](crate::output::ListGrantsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1525,6 +1545,7 @@ impl std::fmt::Debug for ListAliasesOutput {
 }
 /// See [`ListAliasesOutput`](crate::output::ListAliasesOutput)
 pub mod list_aliases_output {
+    ///
     /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1602,6 +1623,7 @@ impl std::fmt::Debug for ImportKeyMaterialOutput {
 }
 /// See [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput)
 pub mod import_key_material_output {
+    ///
     /// A builder for [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1703,6 +1725,7 @@ impl std::fmt::Debug for GetPublicKeyOutput {
 }
 /// See [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput)
 pub mod get_public_key_output {
+    ///
     /// A builder for [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1900,6 +1923,7 @@ impl std::fmt::Debug for GetParametersForImportOutput {
 }
 /// See [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput)
 pub mod get_parameters_for_import_output {
+    ///
     /// A builder for [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1999,6 +2023,7 @@ impl std::fmt::Debug for GetKeyRotationStatusOutput {
 }
 /// See [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput)
 pub mod get_key_rotation_status_output {
+    ///
     /// A builder for [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2053,6 +2078,7 @@ impl std::fmt::Debug for GetKeyPolicyOutput {
 }
 /// See [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput)
 pub mod get_key_policy_output {
+    ///
     /// A builder for [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2107,6 +2133,7 @@ impl std::fmt::Debug for GenerateRandomOutput {
 }
 /// See [`GenerateRandomOutput`](crate::output::GenerateRandomOutput)
 pub mod generate_random_output {
+    ///
     /// A builder for [`GenerateRandomOutput`](crate::output::GenerateRandomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2175,6 +2202,7 @@ impl std::fmt::Debug for GenerateMacOutput {
 }
 /// See [`GenerateMacOutput`](crate::output::GenerateMacOutput)
 pub mod generate_mac_output {
+    ///
     /// A builder for [`GenerateMacOutput`](crate::output::GenerateMacOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2263,6 +2291,7 @@ impl std::fmt::Debug for GenerateDataKeyWithoutPlaintextOutput {
 }
 /// See [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput)
 pub mod generate_data_key_without_plaintext_output {
+    ///
     /// A builder for [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2356,6 +2385,7 @@ impl std::fmt::Debug for GenerateDataKeyPairWithoutPlaintextOutput {
 }
 /// See [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput)
 pub mod generate_data_key_pair_without_plaintext_output {
+    ///
     /// A builder for [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2486,6 +2516,7 @@ impl std::fmt::Debug for GenerateDataKeyPairOutput {
 }
 /// See [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput)
 pub mod generate_data_key_pair_output {
+    ///
     /// A builder for [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2614,6 +2645,7 @@ impl std::fmt::Debug for GenerateDataKeyOutput {
 }
 /// See [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput)
 pub mod generate_data_key_output {
+    ///
     /// A builder for [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2711,6 +2743,7 @@ impl std::fmt::Debug for EncryptOutput {
 }
 /// See [`EncryptOutput`](crate::output::EncryptOutput)
 pub mod encrypt_output {
+    ///
     /// A builder for [`EncryptOutput`](crate::output::EncryptOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2788,6 +2821,7 @@ impl std::fmt::Debug for EnableKeyRotationOutput {
 }
 /// See [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput)
 pub mod enable_key_rotation_output {
+    ///
     /// A builder for [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2818,6 +2852,7 @@ impl std::fmt::Debug for EnableKeyOutput {
 }
 /// See [`EnableKeyOutput`](crate::output::EnableKeyOutput)
 pub mod enable_key_output {
+    ///
     /// A builder for [`EnableKeyOutput`](crate::output::EnableKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2848,6 +2883,7 @@ impl std::fmt::Debug for DisconnectCustomKeyStoreOutput {
 }
 /// See [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput)
 pub mod disconnect_custom_key_store_output {
+    ///
     /// A builder for [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2878,6 +2914,7 @@ impl std::fmt::Debug for DisableKeyRotationOutput {
 }
 /// See [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput)
 pub mod disable_key_rotation_output {
+    ///
     /// A builder for [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2908,6 +2945,7 @@ impl std::fmt::Debug for DisableKeyOutput {
 }
 /// See [`DisableKeyOutput`](crate::output::DisableKeyOutput)
 pub mod disable_key_output {
+    ///
     /// A builder for [`DisableKeyOutput`](crate::output::DisableKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2948,6 +2986,7 @@ impl std::fmt::Debug for DescribeKeyOutput {
 }
 /// See [`DescribeKeyOutput`](crate::output::DescribeKeyOutput)
 pub mod describe_key_output {
+    ///
     /// A builder for [`DescribeKeyOutput`](crate::output::DescribeKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3022,6 +3061,7 @@ impl std::fmt::Debug for DescribeCustomKeyStoresOutput {
 }
 /// See [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput)
 pub mod describe_custom_key_stores_output {
+    ///
     /// A builder for [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3100,6 +3140,7 @@ impl std::fmt::Debug for DeleteImportedKeyMaterialOutput {
 }
 /// See [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput)
 pub mod delete_imported_key_material_output {
+    ///
     /// A builder for [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3130,6 +3171,7 @@ impl std::fmt::Debug for DeleteCustomKeyStoreOutput {
 }
 /// See [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput)
 pub mod delete_custom_key_store_output {
+    ///
     /// A builder for [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3160,6 +3202,7 @@ impl std::fmt::Debug for DeleteAliasOutput {
 }
 /// See [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
 pub mod delete_alias_output {
+    ///
     /// A builder for [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3216,6 +3259,7 @@ impl std::fmt::Debug for DecryptOutput {
 }
 /// See [`DecryptOutput`](crate::output::DecryptOutput)
 pub mod decrypt_output {
+    ///
     /// A builder for [`DecryptOutput`](crate::output::DecryptOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3300,6 +3344,7 @@ impl std::fmt::Debug for CreateKeyOutput {
 }
 /// See [`CreateKeyOutput`](crate::output::CreateKeyOutput)
 pub mod create_key_output {
+    ///
     /// A builder for [`CreateKeyOutput`](crate::output::CreateKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3368,6 +3413,7 @@ impl std::fmt::Debug for CreateGrantOutput {
 }
 /// See [`CreateGrantOutput`](crate::output::CreateGrantOutput)
 pub mod create_grant_output {
+    ///
     /// A builder for [`CreateGrantOutput`](crate::output::CreateGrantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3438,6 +3484,7 @@ impl std::fmt::Debug for CreateCustomKeyStoreOutput {
 }
 /// See [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput)
 pub mod create_custom_key_store_output {
+    ///
     /// A builder for [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3485,6 +3532,7 @@ impl std::fmt::Debug for CreateAliasOutput {
 }
 /// See [`CreateAliasOutput`](crate::output::CreateAliasOutput)
 pub mod create_alias_output {
+    ///
     /// A builder for [`CreateAliasOutput`](crate::output::CreateAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3515,6 +3563,7 @@ impl std::fmt::Debug for ConnectCustomKeyStoreOutput {
 }
 /// See [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput)
 pub mod connect_custom_key_store_output {
+    ///
     /// A builder for [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3555,6 +3604,7 @@ impl std::fmt::Debug for CancelKeyDeletionOutput {
 }
 /// See [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput)
 pub mod cancel_key_deletion_output {
+    ///
     /// A builder for [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

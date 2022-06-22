@@ -21,6 +21,7 @@ impl std::fmt::Debug for RemoveTagsFromResourceOutput {
 }
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
 pub mod remove_tags_from_resource_output {
+    ///
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -75,6 +76,7 @@ impl std::fmt::Debug for ModifyLunaClientOutput {
 }
 /// See [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput)
 pub mod modify_luna_client_output {
+    ///
     /// A builder for [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -129,6 +131,7 @@ impl std::fmt::Debug for ModifyHsmOutput {
 }
 /// See [`ModifyHsmOutput`](crate::output::ModifyHsmOutput)
 pub mod modify_hsm_output {
+    ///
     /// A builder for [`ModifyHsmOutput`](crate::output::ModifyHsmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -183,6 +186,7 @@ impl std::fmt::Debug for ModifyHapgOutput {
 }
 /// See [`ModifyHapgOutput`](crate::output::ModifyHapgOutput)
 pub mod modify_hapg_output {
+    ///
     /// A builder for [`ModifyHapgOutput`](crate::output::ModifyHapgOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -237,6 +241,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -307,6 +312,7 @@ impl std::fmt::Debug for ListLunaClientsOutput {
 }
 /// See [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput)
 pub mod list_luna_clients_output {
+    ///
     /// A builder for [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -389,6 +395,7 @@ impl std::fmt::Debug for ListHsmsOutput {
 }
 /// See [`ListHsmsOutput`](crate::output::ListHsmsOutput)
 pub mod list_hsms_output {
+    ///
     /// A builder for [`ListHsmsOutput`](crate::output::ListHsmsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -471,6 +478,7 @@ impl std::fmt::Debug for ListHapgsOutput {
 }
 /// See [`ListHapgsOutput`](crate::output::ListHapgsOutput)
 pub mod list_hapgs_output {
+    ///
     /// A builder for [`ListHapgsOutput`](crate::output::ListHapgsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -546,6 +554,7 @@ impl std::fmt::Debug for ListAvailableZonesOutput {
 }
 /// See [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput)
 pub mod list_available_zones_output {
+    ///
     /// A builder for [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -623,6 +632,7 @@ impl std::fmt::Debug for GetConfigOutput {
 }
 /// See [`GetConfigOutput`](crate::output::GetConfigOutput)
 pub mod get_config_output {
+    ///
     /// A builder for [`GetConfigOutput`](crate::output::GetConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -729,6 +739,7 @@ impl std::fmt::Debug for DescribeLunaClientOutput {
 }
 /// See [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput)
 pub mod describe_luna_client_output {
+    ///
     /// A builder for [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -985,6 +996,7 @@ impl std::fmt::Debug for DescribeHsmOutput {
 }
 /// See [`DescribeHsmOutput`](crate::output::DescribeHsmOutput)
 pub mod describe_hsm_output {
+    ///
     /// A builder for [`DescribeHsmOutput`](crate::output::DescribeHsmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1385,6 +1397,7 @@ impl std::fmt::Debug for DescribeHapgOutput {
 }
 /// See [`DescribeHapgOutput`](crate::output::DescribeHapgOutput)
 pub mod describe_hapg_output {
+    ///
     /// A builder for [`DescribeHapgOutput`](crate::output::DescribeHapgOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1578,6 +1591,7 @@ impl std::fmt::Debug for DeleteLunaClientOutput {
 }
 /// See [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput)
 pub mod delete_luna_client_output {
+    ///
     /// A builder for [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1632,6 +1646,7 @@ impl std::fmt::Debug for DeleteHsmOutput {
 }
 /// See [`DeleteHsmOutput`](crate::output::DeleteHsmOutput)
 pub mod delete_hsm_output {
+    ///
     /// A builder for [`DeleteHsmOutput`](crate::output::DeleteHsmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1686,6 +1701,7 @@ impl std::fmt::Debug for DeleteHapgOutput {
 }
 /// See [`DeleteHapgOutput`](crate::output::DeleteHapgOutput)
 pub mod delete_hapg_output {
+    ///
     /// A builder for [`DeleteHapgOutput`](crate::output::DeleteHapgOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1740,6 +1756,7 @@ impl std::fmt::Debug for CreateLunaClientOutput {
 }
 /// See [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput)
 pub mod create_luna_client_output {
+    ///
     /// A builder for [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1794,6 +1811,7 @@ impl std::fmt::Debug for CreateHsmOutput {
 }
 /// See [`CreateHsmOutput`](crate::output::CreateHsmOutput)
 pub mod create_hsm_output {
+    ///
     /// A builder for [`CreateHsmOutput`](crate::output::CreateHsmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1848,6 +1866,7 @@ impl std::fmt::Debug for CreateHapgOutput {
 }
 /// See [`CreateHapgOutput`](crate::output::CreateHapgOutput)
 pub mod create_hapg_output {
+    ///
     /// A builder for [`CreateHapgOutput`](crate::output::CreateHapgOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1902,6 +1921,7 @@ impl std::fmt::Debug for AddTagsToResourceOutput {
 }
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
 pub mod add_tags_to_resource_output {
+    ///
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -3490,6 +3490,7 @@ impl std::fmt::Display for InvalidInput {
 impl std::error::Error for InvalidInput {}
 /// See [`InvalidInput`](crate::error::InvalidInput)
 pub mod invalid_input {
+    ///
     /// A builder for [`InvalidInput`](crate::error::InvalidInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3554,6 +3555,7 @@ impl std::fmt::Display for UnsupportedTld {
 impl std::error::Error for UnsupportedTld {}
 /// See [`UnsupportedTld`](crate::error::UnsupportedTld)
 pub mod unsupported_tld {
+    ///
     /// A builder for [`UnsupportedTld`](crate::error::UnsupportedTld)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3618,6 +3620,7 @@ impl std::fmt::Display for OperationLimitExceeded {
 impl std::error::Error for OperationLimitExceeded {}
 /// See [`OperationLimitExceeded`](crate::error::OperationLimitExceeded)
 pub mod operation_limit_exceeded {
+    ///
     /// A builder for [`OperationLimitExceeded`](crate::error::OperationLimitExceeded)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3682,6 +3685,7 @@ impl std::fmt::Display for TldRulesViolation {
 impl std::error::Error for TldRulesViolation {}
 /// See [`TldRulesViolation`](crate::error::TldRulesViolation)
 pub mod tld_rules_violation {
+    ///
     /// A builder for [`TldRulesViolation`](crate::error::TldRulesViolation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3746,6 +3750,7 @@ impl std::fmt::Display for DuplicateRequest {
 impl std::error::Error for DuplicateRequest {}
 /// See [`DuplicateRequest`](crate::error::DuplicateRequest)
 pub mod duplicate_request {
+    ///
     /// A builder for [`DuplicateRequest`](crate::error::DuplicateRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3810,6 +3815,7 @@ impl std::fmt::Display for DomainLimitExceeded {
 impl std::error::Error for DomainLimitExceeded {}
 /// See [`DomainLimitExceeded`](crate::error::DomainLimitExceeded)
 pub mod domain_limit_exceeded {
+    ///
     /// A builder for [`DomainLimitExceeded`](crate::error::DomainLimitExceeded)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

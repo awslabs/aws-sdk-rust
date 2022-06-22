@@ -9358,6 +9358,7 @@ impl std::fmt::Display for OrganizationStateException {
 impl std::error::Error for OrganizationStateException {}
 /// See [`OrganizationStateException`](crate::error::OrganizationStateException)
 pub mod organization_state_exception {
+    ///
     /// A builder for [`OrganizationStateException`](crate::error::OrganizationStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9422,6 +9423,7 @@ impl std::fmt::Display for OrganizationNotFoundException {
 impl std::error::Error for OrganizationNotFoundException {}
 /// See [`OrganizationNotFoundException`](crate::error::OrganizationNotFoundException)
 pub mod organization_not_found_exception {
+    ///
     /// A builder for [`OrganizationNotFoundException`](crate::error::OrganizationNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9486,6 +9488,7 @@ impl std::fmt::Display for NameAvailabilityException {
 impl std::error::Error for NameAvailabilityException {}
 /// See [`NameAvailabilityException`](crate::error::NameAvailabilityException)
 pub mod name_availability_exception {
+    ///
     /// A builder for [`NameAvailabilityException`](crate::error::NameAvailabilityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9550,6 +9553,7 @@ impl std::fmt::Display for MailDomainStateException {
 impl std::error::Error for MailDomainStateException {}
 /// See [`MailDomainStateException`](crate::error::MailDomainStateException)
 pub mod mail_domain_state_exception {
+    ///
     /// A builder for [`MailDomainStateException`](crate::error::MailDomainStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9614,6 +9618,7 @@ impl std::fmt::Display for MailDomainNotFoundException {
 impl std::error::Error for MailDomainNotFoundException {}
 /// See [`MailDomainNotFoundException`](crate::error::MailDomainNotFoundException)
 pub mod mail_domain_not_found_exception {
+    ///
     /// A builder for [`MailDomainNotFoundException`](crate::error::MailDomainNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9678,6 +9683,7 @@ impl std::fmt::Display for InvalidConfigurationException {
 impl std::error::Error for InvalidConfigurationException {}
 /// See [`InvalidConfigurationException`](crate::error::InvalidConfigurationException)
 pub mod invalid_configuration_exception {
+    ///
     /// A builder for [`InvalidConfigurationException`](crate::error::InvalidConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9742,6 +9748,7 @@ impl std::fmt::Display for EntityStateException {
 impl std::error::Error for EntityStateException {}
 /// See [`EntityStateException`](crate::error::EntityStateException)
 pub mod entity_state_exception {
+    ///
     /// A builder for [`EntityStateException`](crate::error::EntityStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9806,6 +9813,7 @@ impl std::fmt::Display for EntityNotFoundException {
 impl std::error::Error for EntityNotFoundException {}
 /// See [`EntityNotFoundException`](crate::error::EntityNotFoundException)
 pub mod entity_not_found_exception {
+    ///
     /// A builder for [`EntityNotFoundException`](crate::error::EntityNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9870,6 +9878,7 @@ impl std::fmt::Display for EmailAddressInUseException {
 impl std::error::Error for EmailAddressInUseException {}
 /// See [`EmailAddressInUseException`](crate::error::EmailAddressInUseException)
 pub mod email_address_in_use_exception {
+    ///
     /// A builder for [`EmailAddressInUseException`](crate::error::EmailAddressInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9934,6 +9943,7 @@ impl std::fmt::Display for DirectoryUnavailableException {
 impl std::error::Error for DirectoryUnavailableException {}
 /// See [`DirectoryUnavailableException`](crate::error::DirectoryUnavailableException)
 pub mod directory_unavailable_exception {
+    ///
     /// A builder for [`DirectoryUnavailableException`](crate::error::DirectoryUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9998,6 +10008,7 @@ impl std::fmt::Display for UnsupportedOperationException {
 impl std::error::Error for UnsupportedOperationException {}
 /// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
 pub mod unsupported_operation_exception {
+    ///
     /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10062,6 +10073,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
+    ///
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10126,6 +10138,7 @@ impl std::fmt::Display for DirectoryServiceAuthenticationFailedException {
 impl std::error::Error for DirectoryServiceAuthenticationFailedException {}
 /// See [`DirectoryServiceAuthenticationFailedException`](crate::error::DirectoryServiceAuthenticationFailedException)
 pub mod directory_service_authentication_failed_exception {
+    ///
     /// A builder for [`DirectoryServiceAuthenticationFailedException`](crate::error::DirectoryServiceAuthenticationFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10190,6 +10203,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10254,6 +10268,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException)
 pub mod too_many_tags_exception {
+    ///
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10318,6 +10333,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10382,6 +10398,7 @@ impl std::fmt::Display for InvalidPasswordException {
 impl std::error::Error for InvalidPasswordException {}
 /// See [`InvalidPasswordException`](crate::error::InvalidPasswordException)
 pub mod invalid_password_exception {
+    ///
     /// A builder for [`InvalidPasswordException`](crate::error::InvalidPasswordException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10446,6 +10463,7 @@ impl std::fmt::Display for EntityAlreadyRegisteredException {
 impl std::error::Error for EntityAlreadyRegisteredException {}
 /// See [`EntityAlreadyRegisteredException`](crate::error::EntityAlreadyRegisteredException)
 pub mod entity_already_registered_exception {
+    ///
     /// A builder for [`EntityAlreadyRegisteredException`](crate::error::EntityAlreadyRegisteredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10510,6 +10528,7 @@ impl std::fmt::Display for MailDomainInUseException {
 impl std::error::Error for MailDomainInUseException {}
 /// See [`MailDomainInUseException`](crate::error::MailDomainInUseException)
 pub mod mail_domain_in_use_exception {
+    ///
     /// A builder for [`MailDomainInUseException`](crate::error::MailDomainInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10574,6 +10593,7 @@ impl std::fmt::Display for InvalidCustomSesConfigurationException {
 impl std::error::Error for InvalidCustomSesConfigurationException {}
 /// See [`InvalidCustomSesConfigurationException`](crate::error::InvalidCustomSesConfigurationException)
 pub mod invalid_custom_ses_configuration_exception {
+    ///
     /// A builder for [`InvalidCustomSesConfigurationException`](crate::error::InvalidCustomSesConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10638,6 +10658,7 @@ impl std::fmt::Display for ReservedNameException {
 impl std::error::Error for ReservedNameException {}
 /// See [`ReservedNameException`](crate::error::ReservedNameException)
 pub mod reserved_name_exception {
+    ///
     /// A builder for [`ReservedNameException`](crate::error::ReservedNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10702,6 +10723,7 @@ impl std::fmt::Display for DirectoryInUseException {
 impl std::error::Error for DirectoryInUseException {}
 /// See [`DirectoryInUseException`](crate::error::DirectoryInUseException)
 pub mod directory_in_use_exception {
+    ///
     /// A builder for [`DirectoryInUseException`](crate::error::DirectoryInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

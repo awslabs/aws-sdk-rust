@@ -35,6 +35,7 @@ impl std::fmt::Debug for UpdateJobStatusOutput {
 }
 /// See [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput)
 pub mod update_job_status_output {
+    ///
     /// A builder for [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -123,6 +124,7 @@ impl std::fmt::Debug for UpdateJobPriorityOutput {
 }
 /// See [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput)
 pub mod update_job_priority_output {
+    ///
     /// A builder for [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -179,6 +181,7 @@ impl std::fmt::Debug for PutStorageLensConfigurationTaggingOutput {
 }
 /// See [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput)
 pub mod put_storage_lens_configuration_tagging_output {
+    ///
     /// A builder for [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -209,6 +212,7 @@ impl std::fmt::Debug for PutStorageLensConfigurationOutput {
 }
 /// See [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput)
 pub mod put_storage_lens_configuration_output {
+    ///
     /// A builder for [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -239,6 +243,7 @@ impl std::fmt::Debug for PutPublicAccessBlockOutput {
 }
 /// See [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput)
 pub mod put_public_access_block_output {
+    ///
     /// A builder for [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -279,6 +284,7 @@ impl std::fmt::Debug for PutMultiRegionAccessPointPolicyOutput {
 }
 /// See [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
 pub mod put_multi_region_access_point_policy_output {
+    ///
     /// A builder for [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -326,6 +332,7 @@ impl std::fmt::Debug for PutJobTaggingOutput {
 }
 /// See [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput)
 pub mod put_job_tagging_output {
+    ///
     /// A builder for [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -356,6 +363,7 @@ impl std::fmt::Debug for PutBucketTaggingOutput {
 }
 /// See [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput)
 pub mod put_bucket_tagging_output {
+    ///
     /// A builder for [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -386,6 +394,7 @@ impl std::fmt::Debug for PutBucketPolicyOutput {
 }
 /// See [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput)
 pub mod put_bucket_policy_output {
+    ///
     /// A builder for [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -416,6 +425,7 @@ impl std::fmt::Debug for PutBucketLifecycleConfigurationOutput {
 }
 /// See [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput)
 pub mod put_bucket_lifecycle_configuration_output {
+    ///
     /// A builder for [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -446,6 +456,7 @@ impl std::fmt::Debug for PutAccessPointPolicyForObjectLambdaOutput {
 }
 /// See [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput)
 pub mod put_access_point_policy_for_object_lambda_output {
+    ///
     /// A builder for [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -476,6 +487,7 @@ impl std::fmt::Debug for PutAccessPointPolicyOutput {
 }
 /// See [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput)
 pub mod put_access_point_policy_output {
+    ///
     /// A builder for [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -506,6 +518,7 @@ impl std::fmt::Debug for PutAccessPointConfigurationForObjectLambdaOutput {
 }
 /// See [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput)
 pub mod put_access_point_configuration_for_object_lambda_output {
+    ///
     /// A builder for [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -560,6 +573,7 @@ impl std::fmt::Debug for ListStorageLensConfigurationsOutput {
 }
 /// See [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput)
 pub mod list_storage_lens_configurations_output {
+    ///
     /// A builder for [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -648,6 +662,7 @@ impl std::fmt::Debug for ListRegionalBucketsOutput {
 }
 /// See [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput)
 pub mod list_regional_buckets_output {
+    ///
     /// A builder for [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -734,6 +749,7 @@ impl std::fmt::Debug for ListMultiRegionAccessPointsOutput {
 }
 /// See [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
 pub mod list_multi_region_access_points_output {
+    ///
     /// A builder for [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -817,6 +833,7 @@ impl std::fmt::Debug for ListJobsOutput {
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput)
 pub mod list_jobs_output {
+    ///
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -905,6 +922,7 @@ impl std::fmt::Debug for ListAccessPointsForObjectLambdaOutput {
 }
 /// See [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput)
 pub mod list_access_points_for_object_lambda_output {
+    ///
     /// A builder for [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -991,6 +1009,7 @@ impl std::fmt::Debug for ListAccessPointsOutput {
 }
 /// See [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput)
 pub mod list_access_points_output {
+    ///
     /// A builder for [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1066,6 +1085,7 @@ impl std::fmt::Debug for GetStorageLensConfigurationTaggingOutput {
 }
 /// See [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput)
 pub mod get_storage_lens_configuration_tagging_output {
+    ///
     /// A builder for [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1132,6 +1152,7 @@ impl std::fmt::Debug for GetStorageLensConfigurationOutput {
 }
 /// See [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput)
 pub mod get_storage_lens_configuration_output {
+    ///
     /// A builder for [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1199,6 +1220,7 @@ impl std::fmt::Debug for GetPublicAccessBlockOutput {
 }
 /// See [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
 pub mod get_public_access_block_output {
+    ///
     /// A builder for [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1260,6 +1282,7 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusOutput {
 }
 /// See [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
 pub mod get_multi_region_access_point_policy_status_output {
+    ///
     /// A builder for [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1319,6 +1342,7 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyOutput {
 }
 /// See [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
 pub mod get_multi_region_access_point_policy_output {
+    ///
     /// A builder for [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1376,6 +1400,7 @@ impl std::fmt::Debug for GetMultiRegionAccessPointOutput {
 }
 /// See [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
 pub mod get_multi_region_access_point_output {
+    ///
     /// A builder for [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1433,6 +1458,7 @@ impl std::fmt::Debug for GetJobTaggingOutput {
 }
 /// See [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput)
 pub mod get_job_tagging_output {
+    ///
     /// A builder for [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1494,6 +1520,7 @@ impl std::fmt::Debug for GetBucketTaggingOutput {
 }
 /// See [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput)
 pub mod get_bucket_tagging_output {
+    ///
     /// A builder for [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1557,6 +1584,7 @@ impl std::fmt::Debug for GetBucketPolicyOutput {
 }
 /// See [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput)
 pub mod get_bucket_policy_output {
+    ///
     /// A builder for [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1611,6 +1639,7 @@ impl std::fmt::Debug for GetBucketLifecycleConfigurationOutput {
 }
 /// See [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput)
 pub mod get_bucket_lifecycle_configuration_output {
+    ///
     /// A builder for [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1689,6 +1718,7 @@ impl std::fmt::Debug for GetBucketOutput {
 }
 /// See [`GetBucketOutput`](crate::output::GetBucketOutput)
 pub mod get_bucket_output {
+    ///
     /// A builder for [`GetBucketOutput`](crate::output::GetBucketOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1770,6 +1800,7 @@ impl std::fmt::Debug for GetAccessPointPolicyStatusForObjectLambdaOutput {
 }
 /// See [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput)
 pub mod get_access_point_policy_status_for_object_lambda_output {
+    ///
     /// A builder for [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1828,6 +1859,7 @@ impl std::fmt::Debug for GetAccessPointPolicyStatusOutput {
 }
 /// See [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput)
 pub mod get_access_point_policy_status_output {
+    ///
     /// A builder for [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1885,6 +1917,7 @@ impl std::fmt::Debug for GetAccessPointPolicyForObjectLambdaOutput {
 }
 /// See [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput)
 pub mod get_access_point_policy_for_object_lambda_output {
+    ///
     /// A builder for [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1939,6 +1972,7 @@ impl std::fmt::Debug for GetAccessPointPolicyOutput {
 }
 /// See [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput)
 pub mod get_access_point_policy_output {
+    ///
     /// A builder for [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2013,6 +2047,7 @@ impl std::fmt::Debug for GetAccessPointForObjectLambdaOutput {
 }
 /// See [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput)
 pub mod get_access_point_for_object_lambda_output {
+    ///
     /// A builder for [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2101,6 +2136,7 @@ impl std::fmt::Debug for GetAccessPointConfigurationForObjectLambdaOutput {
 }
 /// See [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput)
 pub mod get_access_point_configuration_for_object_lambda_output {
+    ///
     /// A builder for [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2233,6 +2269,7 @@ impl std::fmt::Debug for GetAccessPointOutput {
 }
 /// See [`GetAccessPointOutput`](crate::output::GetAccessPointOutput)
 pub mod get_access_point_output {
+    ///
     /// A builder for [`GetAccessPointOutput`](crate::output::GetAccessPointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2427,6 +2464,7 @@ impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationOutput {
 }
 /// See [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
 pub mod describe_multi_region_access_point_operation_output {
+    ///
     /// A builder for [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2485,6 +2523,7 @@ impl std::fmt::Debug for DescribeJobOutput {
 }
 /// See [`DescribeJobOutput`](crate::output::DescribeJobOutput)
 pub mod describe_job_output {
+    ///
     /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2527,6 +2566,7 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationTaggingOutput {
 }
 /// See [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput)
 pub mod delete_storage_lens_configuration_tagging_output {
+    ///
     /// A builder for [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2557,6 +2597,7 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationOutput {
 }
 /// See [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput)
 pub mod delete_storage_lens_configuration_output {
+    ///
     /// A builder for [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2587,6 +2628,7 @@ impl std::fmt::Debug for DeletePublicAccessBlockOutput {
 }
 /// See [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
 pub mod delete_public_access_block_output {
+    ///
     /// A builder for [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2627,6 +2669,7 @@ impl std::fmt::Debug for DeleteMultiRegionAccessPointOutput {
 }
 /// See [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
 pub mod delete_multi_region_access_point_output {
+    ///
     /// A builder for [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2674,6 +2717,7 @@ impl std::fmt::Debug for DeleteJobTaggingOutput {
 }
 /// See [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput)
 pub mod delete_job_tagging_output {
+    ///
     /// A builder for [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2704,6 +2748,7 @@ impl std::fmt::Debug for DeleteBucketTaggingOutput {
 }
 /// See [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput)
 pub mod delete_bucket_tagging_output {
+    ///
     /// A builder for [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2734,6 +2779,7 @@ impl std::fmt::Debug for DeleteBucketPolicyOutput {
 }
 /// See [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput)
 pub mod delete_bucket_policy_output {
+    ///
     /// A builder for [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2764,6 +2810,7 @@ impl std::fmt::Debug for DeleteBucketLifecycleConfigurationOutput {
 }
 /// See [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput)
 pub mod delete_bucket_lifecycle_configuration_output {
+    ///
     /// A builder for [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2794,6 +2841,7 @@ impl std::fmt::Debug for DeleteBucketOutput {
 }
 /// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
 pub mod delete_bucket_output {
+    ///
     /// A builder for [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2824,6 +2872,7 @@ impl std::fmt::Debug for DeleteAccessPointPolicyForObjectLambdaOutput {
 }
 /// See [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput)
 pub mod delete_access_point_policy_for_object_lambda_output {
+    ///
     /// A builder for [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2855,6 +2904,7 @@ impl std::fmt::Debug for DeleteAccessPointPolicyOutput {
 }
 /// See [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput)
 pub mod delete_access_point_policy_output {
+    ///
     /// A builder for [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2885,6 +2935,7 @@ impl std::fmt::Debug for DeleteAccessPointForObjectLambdaOutput {
 }
 /// See [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput)
 pub mod delete_access_point_for_object_lambda_output {
+    ///
     /// A builder for [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2915,6 +2966,7 @@ impl std::fmt::Debug for DeleteAccessPointOutput {
 }
 /// See [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
 pub mod delete_access_point_output {
+    ///
     /// A builder for [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2955,6 +3007,7 @@ impl std::fmt::Debug for CreateMultiRegionAccessPointOutput {
 }
 /// See [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
 pub mod create_multi_region_access_point_output {
+    ///
     /// A builder for [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3012,6 +3065,7 @@ impl std::fmt::Debug for CreateJobOutput {
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput)
 pub mod create_job_output {
+    ///
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3097,6 +3151,7 @@ impl std::fmt::Debug for CreateBucketOutput {
 }
 /// See [`CreateBucketOutput`](crate::output::CreateBucketOutput)
 pub mod create_bucket_output {
+    ///
     /// A builder for [`CreateBucketOutput`](crate::output::CreateBucketOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3190,6 +3245,7 @@ impl std::fmt::Debug for CreateAccessPointForObjectLambdaOutput {
 }
 /// See [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput)
 pub mod create_access_point_for_object_lambda_output {
+    ///
     /// A builder for [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3261,6 +3317,7 @@ impl std::fmt::Debug for CreateAccessPointOutput {
 }
 /// See [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput)
 pub mod create_access_point_output {
+    ///
     /// A builder for [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -79,6 +79,7 @@ impl std::fmt::Debug for OutputDataConfig {
 }
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig)
 pub mod output_data_config {
+    ///
     /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -154,6 +155,7 @@ impl std::fmt::Debug for InputDataConfig {
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig)
 pub mod input_data_config {
+    ///
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -313,6 +315,7 @@ impl std::fmt::Debug for ComprehendMedicalAsyncJobProperties {
 }
 /// See [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties)
 pub mod comprehend_medical_async_job_properties {
+    ///
     /// A builder for [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -657,6 +660,7 @@ impl std::fmt::Debug for ComprehendMedicalAsyncJobFilter {
 }
 /// See [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter)
 pub mod comprehend_medical_async_job_filter {
+    ///
     /// A builder for [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -756,6 +760,7 @@ impl std::fmt::Debug for Characters {
 }
 /// See [`Characters`](crate::model::Characters)
 pub mod characters {
+    ///
     /// A builder for [`Characters`](crate::model::Characters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -824,6 +829,7 @@ impl std::fmt::Debug for SnomedctDetails {
 }
 /// See [`SnomedctDetails`](crate::model::SnomedctDetails)
 pub mod snomedct_details {
+    ///
     /// A builder for [`SnomedctDetails`](crate::model::SnomedctDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -965,6 +971,7 @@ impl std::fmt::Debug for SnomedctEntity {
 }
 /// See [`SnomedctEntity`](crate::model::SnomedctEntity)
 pub mod snomedct_entity {
+    ///
     /// A builder for [`SnomedctEntity`](crate::model::SnomedctEntity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1175,6 +1182,7 @@ impl std::fmt::Debug for SnomedctConcept {
 }
 /// See [`SnomedctConcept`](crate::model::SnomedctConcept)
 pub mod snomedct_concept {
+    ///
     /// A builder for [`SnomedctConcept`](crate::model::SnomedctConcept)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1260,6 +1268,7 @@ impl std::fmt::Debug for SnomedctTrait {
 }
 /// See [`SnomedctTrait`](crate::model::SnomedctTrait)
 pub mod snomedct_trait {
+    ///
     /// A builder for [`SnomedctTrait`](crate::model::SnomedctTrait)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1464,6 +1473,7 @@ impl std::fmt::Debug for SnomedctAttribute {
 }
 /// See [`SnomedctAttribute`](crate::model::SnomedctAttribute)
 pub mod snomedct_attribute {
+    ///
     /// A builder for [`SnomedctAttribute`](crate::model::SnomedctAttribute)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2007,6 +2017,7 @@ impl std::fmt::Debug for RxNormEntity {
 }
 /// See [`RxNormEntity`](crate::model::RxNormEntity)
 pub mod rx_norm_entity {
+    ///
     /// A builder for [`RxNormEntity`](crate::model::RxNormEntity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2217,6 +2228,7 @@ impl std::fmt::Debug for RxNormConcept {
 }
 /// See [`RxNormConcept`](crate::model::RxNormConcept)
 pub mod rx_norm_concept {
+    ///
     /// A builder for [`RxNormConcept`](crate::model::RxNormConcept)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2302,6 +2314,7 @@ impl std::fmt::Debug for RxNormTrait {
 }
 /// See [`RxNormTrait`](crate::model::RxNormTrait)
 pub mod rx_norm_trait {
+    ///
     /// A builder for [`RxNormTrait`](crate::model::RxNormTrait)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2471,6 +2484,7 @@ impl std::fmt::Debug for RxNormAttribute {
 }
 /// See [`RxNormAttribute`](crate::model::RxNormAttribute)
 pub mod rx_norm_attribute {
+    ///
     /// A builder for [`RxNormAttribute`](crate::model::RxNormAttribute)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2873,6 +2887,7 @@ impl std::fmt::Debug for Icd10CmEntity {
 }
 /// See [`Icd10CmEntity`](crate::model::Icd10CmEntity)
 pub mod icd10_cm_entity {
+    ///
     /// A builder for [`Icd10CmEntity`](crate::model::Icd10CmEntity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3083,6 +3098,7 @@ impl std::fmt::Debug for Icd10CmConcept {
 }
 /// See [`Icd10CmConcept`](crate::model::Icd10CmConcept)
 pub mod icd10_cm_concept {
+    ///
     /// A builder for [`Icd10CmConcept`](crate::model::Icd10CmConcept)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3168,6 +3184,7 @@ impl std::fmt::Debug for Icd10CmTrait {
 }
 /// See [`Icd10CmTrait`](crate::model::Icd10CmTrait)
 pub mod icd10_cm_trait {
+    ///
     /// A builder for [`Icd10CmTrait`](crate::model::Icd10CmTrait)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3363,6 +3380,7 @@ impl std::fmt::Debug for Icd10CmAttribute {
 }
 /// See [`Icd10CmAttribute`](crate::model::Icd10CmAttribute)
 pub mod icd10_cm_attribute {
+    ///
     /// A builder for [`Icd10CmAttribute`](crate::model::Icd10CmAttribute)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3843,6 +3861,7 @@ impl std::fmt::Debug for Entity {
 }
 /// See [`Entity`](crate::model::Entity)
 pub mod entity {
+    ///
     /// A builder for [`Entity`](crate::model::Entity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4077,6 +4096,7 @@ impl std::fmt::Debug for Attribute {
 }
 /// See [`Attribute`](crate::model::Attribute)
 pub mod attribute {
+    ///
     /// A builder for [`Attribute`](crate::model::Attribute)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4261,6 +4281,7 @@ impl std::fmt::Debug for Trait {
 }
 /// See [`Trait`](crate::model::Trait)
 pub mod r#trait {
+    ///
     /// A builder for [`Trait`](crate::model::Trait)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4856,6 +4877,7 @@ impl std::fmt::Debug for UnmappedAttribute {
 }
 /// See [`UnmappedAttribute`](crate::model::UnmappedAttribute)
 pub mod unmapped_attribute {
+    ///
     /// A builder for [`UnmappedAttribute`](crate::model::UnmappedAttribute)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

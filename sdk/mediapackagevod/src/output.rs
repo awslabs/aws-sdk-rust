@@ -60,6 +60,7 @@ impl std::fmt::Debug for UpdatePackagingGroupOutput {
 }
 /// See [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput)
 pub mod update_packaging_group_output {
+    ///
     /// A builder for [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -187,6 +188,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -217,6 +219,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -261,6 +264,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -337,6 +341,7 @@ impl std::fmt::Debug for ListPackagingGroupsOutput {
 }
 /// See [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput)
 pub mod list_packaging_groups_output {
+    ///
     /// A builder for [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -423,6 +428,7 @@ impl std::fmt::Debug for ListPackagingConfigurationsOutput {
 }
 /// See [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput)
 pub mod list_packaging_configurations_output {
+    ///
     /// A builder for [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -509,6 +515,7 @@ impl std::fmt::Debug for ListAssetsOutput {
 }
 /// See [`ListAssetsOutput`](crate::output::ListAssetsOutput)
 pub mod list_assets_output {
+    ///
     /// A builder for [`ListAssetsOutput`](crate::output::ListAssetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -623,6 +630,7 @@ impl std::fmt::Debug for DescribePackagingGroupOutput {
 }
 /// See [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput)
 pub mod describe_packaging_group_output {
+    ///
     /// A builder for [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -813,6 +821,7 @@ impl std::fmt::Debug for DescribePackagingConfigurationOutput {
 }
 /// See [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput)
 pub mod describe_packaging_configuration_output {
+    ///
     /// A builder for [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1043,6 +1052,7 @@ impl std::fmt::Debug for DescribeAssetOutput {
 }
 /// See [`DescribeAssetOutput`](crate::output::DescribeAssetOutput)
 pub mod describe_asset_output {
+    ///
     /// A builder for [`DescribeAssetOutput`](crate::output::DescribeAssetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1216,6 +1226,7 @@ impl std::fmt::Debug for DeletePackagingGroupOutput {
 }
 /// See [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput)
 pub mod delete_packaging_group_output {
+    ///
     /// A builder for [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1246,6 +1257,7 @@ impl std::fmt::Debug for DeletePackagingConfigurationOutput {
 }
 /// See [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput)
 pub mod delete_packaging_configuration_output {
+    ///
     /// A builder for [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1276,6 +1288,7 @@ impl std::fmt::Debug for DeleteAssetOutput {
 }
 /// See [`DeleteAssetOutput`](crate::output::DeleteAssetOutput)
 pub mod delete_asset_output {
+    ///
     /// A builder for [`DeleteAssetOutput`](crate::output::DeleteAssetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1355,6 +1368,7 @@ impl std::fmt::Debug for CreatePackagingGroupOutput {
 }
 /// See [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput)
 pub mod create_packaging_group_output {
+    ///
     /// A builder for [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1545,6 +1559,7 @@ impl std::fmt::Debug for CreatePackagingConfigurationOutput {
 }
 /// See [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput)
 pub mod create_packaging_configuration_output {
+    ///
     /// A builder for [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1775,6 +1790,7 @@ impl std::fmt::Debug for CreateAssetOutput {
 }
 /// See [`CreateAssetOutput`](crate::output::CreateAssetOutput)
 pub mod create_asset_output {
+    ///
     /// A builder for [`CreateAssetOutput`](crate::output::CreateAssetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1997,6 +2013,7 @@ impl std::fmt::Debug for ConfigureLogsOutput {
 }
 /// See [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput)
 pub mod configure_logs_output {
+    ///
     /// A builder for [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

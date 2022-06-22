@@ -80,6 +80,7 @@ impl std::fmt::Debug for StreamProcessorDataSharingPreference {
 }
 /// See [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference)
 pub mod stream_processor_data_sharing_preference {
+    ///
     /// A builder for [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -142,6 +143,7 @@ impl std::fmt::Debug for RegionOfInterest {
 }
 /// See [`RegionOfInterest`](crate::model::RegionOfInterest)
 pub mod region_of_interest {
+    ///
     /// A builder for [`RegionOfInterest`](crate::model::RegionOfInterest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -228,6 +230,7 @@ impl std::fmt::Debug for Point {
 }
 /// See [`Point`](crate::model::Point)
 pub mod point {
+    ///
     /// A builder for [`Point`](crate::model::Point)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -319,6 +322,7 @@ impl std::fmt::Debug for BoundingBox {
 }
 /// See [`BoundingBox`](crate::model::BoundingBox)
 pub mod bounding_box {
+    ///
     /// A builder for [`BoundingBox`](crate::model::BoundingBox)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -412,6 +416,7 @@ impl std::fmt::Debug for StreamProcessorSettingsForUpdate {
 }
 /// See [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate)
 pub mod stream_processor_settings_for_update {
+    ///
     /// A builder for [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -480,6 +485,7 @@ impl std::fmt::Debug for ConnectedHomeSettingsForUpdate {
 }
 /// See [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate)
 pub mod connected_home_settings_for_update {
+    ///
     /// A builder for [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -557,6 +563,7 @@ impl std::fmt::Debug for DatasetChanges {
 }
 /// See [`DatasetChanges`](crate::model::DatasetChanges)
 pub mod dataset_changes {
+    ///
     /// A builder for [`DatasetChanges`](crate::model::DatasetChanges)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -716,6 +723,7 @@ impl std::fmt::Debug for StartTextDetectionFilters {
 }
 /// See [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters)
 pub mod start_text_detection_filters {
+    ///
     /// A builder for [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -809,6 +817,7 @@ impl std::fmt::Debug for DetectionFilter {
 }
 /// See [`DetectionFilter`](crate::model::DetectionFilter)
 pub mod detection_filter {
+    ///
     /// A builder for [`DetectionFilter`](crate::model::DetectionFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -894,6 +903,7 @@ impl std::fmt::Debug for NotificationChannel {
 }
 /// See [`NotificationChannel`](crate::model::NotificationChannel)
 pub mod notification_channel {
+    ///
     /// A builder for [`NotificationChannel`](crate::model::NotificationChannel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -963,6 +973,7 @@ impl std::fmt::Debug for Video {
 }
 /// See [`Video`](crate::model::Video)
 pub mod video {
+    ///
     /// A builder for [`Video`](crate::model::Video)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1033,6 +1044,7 @@ impl std::fmt::Debug for S3Object {
 }
 /// See [`S3Object`](crate::model::S3Object)
 pub mod s3_object {
+    ///
     /// A builder for [`S3Object`](crate::model::S3Object)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1111,6 +1123,7 @@ impl std::fmt::Debug for StreamProcessingStopSelector {
 }
 /// See [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector)
 pub mod stream_processing_stop_selector {
+    ///
     /// A builder for [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1168,6 +1181,7 @@ impl std::fmt::Debug for StreamProcessingStartSelector {
 }
 /// See [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector)
 pub mod stream_processing_start_selector {
+    ///
     /// A builder for [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1236,6 +1250,7 @@ impl std::fmt::Debug for KinesisVideoStreamStartSelector {
 }
 /// See [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector)
 pub mod kinesis_video_stream_start_selector {
+    ///
     /// A builder for [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1369,6 +1384,7 @@ impl std::fmt::Debug for StartSegmentDetectionFilters {
 }
 /// See [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters)
 pub mod start_segment_detection_filters {
+    ///
     /// A builder for [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1447,6 +1463,7 @@ impl std::fmt::Debug for StartShotDetectionFilter {
 }
 /// See [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter)
 pub mod start_shot_detection_filter {
+    ///
     /// A builder for [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1512,6 +1529,7 @@ impl std::fmt::Debug for StartTechnicalCueDetectionFilter {
 }
 /// See [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter)
 pub mod start_technical_cue_detection_filter {
+    ///
     /// A builder for [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1596,6 +1614,7 @@ impl std::fmt::Debug for BlackFrame {
 }
 /// See [`BlackFrame`](crate::model::BlackFrame)
 pub mod black_frame {
+    ///
     /// A builder for [`BlackFrame`](crate::model::BlackFrame)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1730,6 +1749,7 @@ impl std::fmt::Debug for FaceMatch {
 }
 /// See [`FaceMatch`](crate::model::FaceMatch)
 pub mod face_match {
+    ///
     /// A builder for [`FaceMatch`](crate::model::FaceMatch)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1831,6 +1851,7 @@ impl std::fmt::Debug for Face {
 }
 /// See [`Face`](crate::model::Face)
 pub mod face {
+    ///
     /// A builder for [`Face`](crate::model::Face)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2034,6 +2055,7 @@ impl std::fmt::Debug for Image {
 }
 /// See [`Image`](crate::model::Image)
 pub mod image {
+    ///
     /// A builder for [`Image`](crate::model::Image)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2205,6 +2227,7 @@ impl std::fmt::Debug for ComparedFace {
 }
 /// See [`ComparedFace`](crate::model::ComparedFace)
 pub mod compared_face {
+    ///
     /// A builder for [`ComparedFace`](crate::model::ComparedFace)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2362,6 +2385,7 @@ impl std::fmt::Debug for Smile {
 }
 /// See [`Smile`](crate::model::Smile)
 pub mod smile {
+    ///
     /// A builder for [`Smile`](crate::model::Smile)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2435,6 +2459,7 @@ impl std::fmt::Debug for Emotion {
 }
 /// See [`Emotion`](crate::model::Emotion)
 pub mod emotion {
+    ///
     /// A builder for [`Emotion`](crate::model::Emotion)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2601,6 +2626,7 @@ impl std::fmt::Debug for ImageQuality {
 }
 /// See [`ImageQuality`](crate::model::ImageQuality)
 pub mod image_quality {
+    ///
     /// A builder for [`ImageQuality`](crate::model::ImageQuality)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2681,6 +2707,7 @@ impl std::fmt::Debug for Pose {
 }
 /// See [`Pose`](crate::model::Pose)
 pub mod pose {
+    ///
     /// A builder for [`Pose`](crate::model::Pose)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2773,6 +2800,7 @@ impl std::fmt::Debug for Landmark {
 }
 /// See [`Landmark`](crate::model::Landmark)
 pub mod landmark {
+    ///
     /// A builder for [`Landmark`](crate::model::Landmark)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3084,6 +3112,7 @@ impl std::fmt::Debug for Celebrity {
 }
 /// See [`Celebrity`](crate::model::Celebrity)
 pub mod celebrity {
+    ///
     /// A builder for [`Celebrity`](crate::model::Celebrity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3210,6 +3239,7 @@ impl std::fmt::Debug for KnownGender {
 }
 /// See [`KnownGender`](crate::model::KnownGender)
 pub mod known_gender {
+    ///
     /// A builder for [`KnownGender`](crate::model::KnownGender)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3337,6 +3367,7 @@ impl std::fmt::Debug for StreamProcessor {
 }
 /// See [`StreamProcessor`](crate::model::StreamProcessor)
 pub mod stream_processor {
+    ///
     /// A builder for [`StreamProcessor`](crate::model::StreamProcessor)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3486,6 +3517,7 @@ impl std::fmt::Debug for DatasetLabelDescription {
 }
 /// See [`DatasetLabelDescription`](crate::model::DatasetLabelDescription)
 pub mod dataset_label_description {
+    ///
     /// A builder for [`DatasetLabelDescription`](crate::model::DatasetLabelDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3562,6 +3594,7 @@ impl std::fmt::Debug for DatasetLabelStats {
 }
 /// See [`DatasetLabelStats`](crate::model::DatasetLabelStats)
 pub mod dataset_label_stats {
+    ///
     /// A builder for [`DatasetLabelStats`](crate::model::DatasetLabelStats)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3651,6 +3684,7 @@ impl std::fmt::Debug for UnindexedFace {
 }
 /// See [`UnindexedFace`](crate::model::UnindexedFace)
 pub mod unindexed_face {
+    ///
     /// A builder for [`UnindexedFace`](crate::model::UnindexedFace)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3851,6 +3885,7 @@ impl std::fmt::Debug for FaceDetail {
 }
 /// See [`FaceDetail`](crate::model::FaceDetail)
 pub mod face_detail {
+    ///
     /// A builder for [`FaceDetail`](crate::model::FaceDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4113,6 +4148,7 @@ impl std::fmt::Debug for MouthOpen {
 }
 /// See [`MouthOpen`](crate::model::MouthOpen)
 pub mod mouth_open {
+    ///
     /// A builder for [`MouthOpen`](crate::model::MouthOpen)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4186,6 +4222,7 @@ impl std::fmt::Debug for EyeOpen {
 }
 /// See [`EyeOpen`](crate::model::EyeOpen)
 pub mod eye_open {
+    ///
     /// A builder for [`EyeOpen`](crate::model::EyeOpen)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4259,6 +4296,7 @@ impl std::fmt::Debug for Mustache {
 }
 /// See [`Mustache`](crate::model::Mustache)
 pub mod mustache {
+    ///
     /// A builder for [`Mustache`](crate::model::Mustache)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4332,6 +4370,7 @@ impl std::fmt::Debug for Beard {
 }
 /// See [`Beard`](crate::model::Beard)
 pub mod beard {
+    ///
     /// A builder for [`Beard`](crate::model::Beard)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4408,6 +4447,7 @@ impl std::fmt::Debug for Gender {
 }
 /// See [`Gender`](crate::model::Gender)
 pub mod gender {
+    ///
     /// A builder for [`Gender`](crate::model::Gender)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4536,6 +4576,7 @@ impl std::fmt::Debug for Sunglasses {
 }
 /// See [`Sunglasses`](crate::model::Sunglasses)
 pub mod sunglasses {
+    ///
     /// A builder for [`Sunglasses`](crate::model::Sunglasses)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4609,6 +4650,7 @@ impl std::fmt::Debug for Eyeglasses {
 }
 /// See [`Eyeglasses`](crate::model::Eyeglasses)
 pub mod eyeglasses {
+    ///
     /// A builder for [`Eyeglasses`](crate::model::Eyeglasses)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4683,6 +4725,7 @@ impl std::fmt::Debug for AgeRange {
 }
 /// See [`AgeRange`](crate::model::AgeRange)
 pub mod age_range {
+    ///
     /// A builder for [`AgeRange`](crate::model::AgeRange)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4839,6 +4882,7 @@ impl std::fmt::Debug for FaceRecord {
 }
 /// See [`FaceRecord`](crate::model::FaceRecord)
 pub mod face_record {
+    ///
     /// A builder for [`FaceRecord`](crate::model::FaceRecord)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4970,6 +5014,7 @@ impl std::fmt::Debug for TextDetectionResult {
 }
 /// See [`TextDetectionResult`](crate::model::TextDetectionResult)
 pub mod text_detection_result {
+    ///
     /// A builder for [`TextDetectionResult`](crate::model::TextDetectionResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5077,6 +5122,7 @@ impl std::fmt::Debug for TextDetection {
 }
 /// See [`TextDetection`](crate::model::TextDetection)
 pub mod text_detection {
+    ///
     /// A builder for [`TextDetection`](crate::model::TextDetection)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5201,6 +5247,7 @@ impl std::fmt::Debug for Geometry {
 }
 /// See [`Geometry`](crate::model::Geometry)
 pub mod geometry {
+    ///
     /// A builder for [`Geometry`](crate::model::Geometry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5376,6 +5423,7 @@ impl std::fmt::Debug for VideoMetadata {
 }
 /// See [`VideoMetadata`](crate::model::VideoMetadata)
 pub mod video_metadata {
+    ///
     /// A builder for [`VideoMetadata`](crate::model::VideoMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5626,6 +5674,7 @@ impl std::fmt::Debug for SegmentTypeInfo {
 }
 /// See [`SegmentTypeInfo`](crate::model::SegmentTypeInfo)
 pub mod segment_type_info {
+    ///
     /// A builder for [`SegmentTypeInfo`](crate::model::SegmentTypeInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5772,6 +5821,7 @@ impl std::fmt::Debug for SegmentDetection {
 }
 /// See [`SegmentDetection`](crate::model::SegmentDetection)
 pub mod segment_detection {
+    ///
     /// A builder for [`SegmentDetection`](crate::model::SegmentDetection)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5980,6 +6030,7 @@ impl std::fmt::Debug for ShotSegment {
 }
 /// See [`ShotSegment`](crate::model::ShotSegment)
 pub mod shot_segment {
+    ///
     /// A builder for [`ShotSegment`](crate::model::ShotSegment)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6053,6 +6104,7 @@ impl std::fmt::Debug for TechnicalCueSegment {
 }
 /// See [`TechnicalCueSegment`](crate::model::TechnicalCueSegment)
 pub mod technical_cue_segment {
+    ///
     /// A builder for [`TechnicalCueSegment`](crate::model::TechnicalCueSegment)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6226,6 +6278,7 @@ impl std::fmt::Debug for AudioMetadata {
 }
 /// See [`AudioMetadata`](crate::model::AudioMetadata)
 pub mod audio_metadata {
+    ///
     /// A builder for [`AudioMetadata`](crate::model::AudioMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6324,6 +6377,7 @@ impl std::fmt::Debug for PersonDetection {
 }
 /// See [`PersonDetection`](crate::model::PersonDetection)
 pub mod person_detection {
+    ///
     /// A builder for [`PersonDetection`](crate::model::PersonDetection)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6407,6 +6461,7 @@ impl std::fmt::Debug for PersonDetail {
 }
 /// See [`PersonDetail`](crate::model::PersonDetail)
 pub mod person_detail {
+    ///
     /// A builder for [`PersonDetail`](crate::model::PersonDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6550,6 +6605,7 @@ impl std::fmt::Debug for LabelDetection {
 }
 /// See [`LabelDetection`](crate::model::LabelDetection)
 pub mod label_detection {
+    ///
     /// A builder for [`LabelDetection`](crate::model::LabelDetection)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6638,6 +6694,7 @@ impl std::fmt::Debug for Label {
 }
 /// See [`Label`](crate::model::Label)
 pub mod label {
+    ///
     /// A builder for [`Label`](crate::model::Label)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6746,6 +6803,7 @@ impl std::fmt::Debug for Parent {
 }
 /// See [`Parent`](crate::model::Parent)
 pub mod parent {
+    ///
     /// A builder for [`Parent`](crate::model::Parent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6805,6 +6863,7 @@ impl std::fmt::Debug for Instance {
 }
 /// See [`Instance`](crate::model::Instance)
 pub mod instance {
+    ///
     /// A builder for [`Instance`](crate::model::Instance)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6943,6 +7002,7 @@ impl std::fmt::Debug for PersonMatch {
 }
 /// See [`PersonMatch`](crate::model::PersonMatch)
 pub mod person_match {
+    ///
     /// A builder for [`PersonMatch`](crate::model::PersonMatch)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7095,6 +7155,7 @@ impl std::fmt::Debug for FaceDetection {
 }
 /// See [`FaceDetection`](crate::model::FaceDetection)
 pub mod face_detection {
+    ///
     /// A builder for [`FaceDetection`](crate::model::FaceDetection)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7168,6 +7229,7 @@ impl std::fmt::Debug for ContentModerationDetection {
 }
 /// See [`ContentModerationDetection`](crate::model::ContentModerationDetection)
 pub mod content_moderation_detection {
+    ///
     /// A builder for [`ContentModerationDetection`](crate::model::ContentModerationDetection)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7253,6 +7315,7 @@ impl std::fmt::Debug for ModerationLabel {
 }
 /// See [`ModerationLabel`](crate::model::ModerationLabel)
 pub mod moderation_label {
+    ///
     /// A builder for [`ModerationLabel`](crate::model::ModerationLabel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7395,6 +7458,7 @@ impl std::fmt::Debug for CelebrityRecognition {
 }
 /// See [`CelebrityRecognition`](crate::model::CelebrityRecognition)
 pub mod celebrity_recognition {
+    ///
     /// A builder for [`CelebrityRecognition`](crate::model::CelebrityRecognition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7506,6 +7570,7 @@ impl std::fmt::Debug for CelebrityDetail {
 }
 /// See [`CelebrityDetail`](crate::model::CelebrityDetail)
 pub mod celebrity_detail {
+    ///
     /// A builder for [`CelebrityDetail`](crate::model::CelebrityDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7702,6 +7767,7 @@ impl std::fmt::Debug for DistributeDataset {
 }
 /// See [`DistributeDataset`](crate::model::DistributeDataset)
 pub mod distribute_dataset {
+    ///
     /// A builder for [`DistributeDataset`](crate::model::DistributeDataset)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7761,6 +7827,7 @@ impl std::fmt::Debug for DetectTextFilters {
 }
 /// See [`DetectTextFilters`](crate::model::DetectTextFilters)
 pub mod detect_text_filters {
+    ///
     /// A builder for [`DetectTextFilters`](crate::model::DetectTextFilters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7861,6 +7928,7 @@ impl std::fmt::Debug for ProtectiveEquipmentSummary {
 }
 /// See [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary)
 pub mod protective_equipment_summary {
+    ///
     /// A builder for [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7987,6 +8055,7 @@ impl std::fmt::Debug for ProtectiveEquipmentPerson {
 }
 /// See [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson)
 pub mod protective_equipment_person {
+    ///
     /// A builder for [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8104,6 +8173,7 @@ impl std::fmt::Debug for ProtectiveEquipmentBodyPart {
 }
 /// See [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart)
 pub mod protective_equipment_body_part {
+    ///
     /// A builder for [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8213,6 +8283,7 @@ impl std::fmt::Debug for EquipmentDetection {
 }
 /// See [`EquipmentDetection`](crate::model::EquipmentDetection)
 pub mod equipment_detection {
+    ///
     /// A builder for [`EquipmentDetection`](crate::model::EquipmentDetection)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8319,6 +8390,7 @@ impl std::fmt::Debug for CoversBodyPart {
 }
 /// See [`CoversBodyPart`](crate::model::CoversBodyPart)
 pub mod covers_body_part {
+    ///
     /// A builder for [`CoversBodyPart`](crate::model::CoversBodyPart)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8521,6 +8593,7 @@ impl std::fmt::Debug for ProtectiveEquipmentSummarizationAttributes {
 }
 /// See [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes)
 pub mod protective_equipment_summarization_attributes {
+    ///
     /// A builder for [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8626,6 +8699,7 @@ impl std::fmt::Debug for HumanLoopActivationOutput {
 }
 /// See [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput)
 pub mod human_loop_activation_output {
+    ///
     /// A builder for [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8742,6 +8816,7 @@ impl std::fmt::Debug for HumanLoopConfig {
 }
 /// See [`HumanLoopConfig`](crate::model::HumanLoopConfig)
 pub mod human_loop_config {
+    ///
     /// A builder for [`HumanLoopConfig`](crate::model::HumanLoopConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8829,6 +8904,7 @@ impl std::fmt::Debug for HumanLoopDataAttributes {
 }
 /// See [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes)
 pub mod human_loop_data_attributes {
+    ///
     /// A builder for [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8969,6 +9045,7 @@ impl std::fmt::Debug for CustomLabel {
 }
 /// See [`CustomLabel`](crate::model::CustomLabel)
 pub mod custom_label {
+    ///
     /// A builder for [`CustomLabel`](crate::model::CustomLabel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9049,6 +9126,7 @@ impl std::fmt::Debug for StreamProcessorNotificationChannel {
 }
 /// See [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel)
 pub mod stream_processor_notification_channel {
+    ///
     /// A builder for [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9113,6 +9191,7 @@ impl std::fmt::Debug for StreamProcessorSettings {
 }
 /// See [`StreamProcessorSettings`](crate::model::StreamProcessorSettings)
 pub mod stream_processor_settings {
+    ///
     /// A builder for [`StreamProcessorSettings`](crate::model::StreamProcessorSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9192,6 +9271,7 @@ impl std::fmt::Debug for ConnectedHomeSettings {
 }
 /// See [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings)
 pub mod connected_home_settings {
+    ///
     /// A builder for [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9274,6 +9354,7 @@ impl std::fmt::Debug for FaceSearchSettings {
 }
 /// See [`FaceSearchSettings`](crate::model::FaceSearchSettings)
 pub mod face_search_settings {
+    ///
     /// A builder for [`FaceSearchSettings`](crate::model::FaceSearchSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9350,6 +9431,7 @@ impl std::fmt::Debug for StreamProcessorOutput {
 }
 /// See [`StreamProcessorOutput`](crate::model::StreamProcessorOutput)
 pub mod stream_processor_output {
+    ///
     /// A builder for [`StreamProcessorOutput`](crate::model::StreamProcessorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9429,6 +9511,7 @@ impl std::fmt::Debug for S3Destination {
 }
 /// See [`S3Destination`](crate::model::S3Destination)
 pub mod s3_destination {
+    ///
     /// A builder for [`S3Destination`](crate::model::S3Destination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9495,6 +9578,7 @@ impl std::fmt::Debug for KinesisDataStream {
 }
 /// See [`KinesisDataStream`](crate::model::KinesisDataStream)
 pub mod kinesis_data_stream {
+    ///
     /// A builder for [`KinesisDataStream`](crate::model::KinesisDataStream)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9547,6 +9631,7 @@ impl std::fmt::Debug for StreamProcessorInput {
 }
 /// See [`StreamProcessorInput`](crate::model::StreamProcessorInput)
 pub mod stream_processor_input {
+    ///
     /// A builder for [`StreamProcessorInput`](crate::model::StreamProcessorInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9604,6 +9689,7 @@ impl std::fmt::Debug for KinesisVideoStream {
 }
 /// See [`KinesisVideoStream`](crate::model::KinesisVideoStream)
 pub mod kinesis_video_stream {
+    ///
     /// A builder for [`KinesisVideoStream`](crate::model::KinesisVideoStream)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9743,6 +9829,7 @@ impl std::fmt::Debug for ProjectVersionDescription {
 }
 /// See [`ProjectVersionDescription`](crate::model::ProjectVersionDescription)
 pub mod project_version_description {
+    ///
     /// A builder for [`ProjectVersionDescription`](crate::model::ProjectVersionDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9978,6 +10065,7 @@ impl std::fmt::Debug for GroundTruthManifest {
 }
 /// See [`GroundTruthManifest`](crate::model::GroundTruthManifest)
 pub mod ground_truth_manifest {
+    ///
     /// A builder for [`GroundTruthManifest`](crate::model::GroundTruthManifest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10043,6 +10131,7 @@ impl std::fmt::Debug for EvaluationResult {
 }
 /// See [`EvaluationResult`](crate::model::EvaluationResult)
 pub mod evaluation_result {
+    ///
     /// A builder for [`EvaluationResult`](crate::model::EvaluationResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10114,6 +10203,7 @@ impl std::fmt::Debug for Summary {
 }
 /// See [`Summary`](crate::model::Summary)
 pub mod summary {
+    ///
     /// A builder for [`Summary`](crate::model::Summary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10186,6 +10276,7 @@ impl std::fmt::Debug for TestingDataResult {
 }
 /// See [`TestingDataResult`](crate::model::TestingDataResult)
 pub mod testing_data_result {
+    ///
     /// A builder for [`TestingDataResult`](crate::model::TestingDataResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10270,6 +10361,7 @@ impl std::fmt::Debug for ValidationData {
 }
 /// See [`ValidationData`](crate::model::ValidationData)
 pub mod validation_data {
+    ///
     /// A builder for [`ValidationData`](crate::model::ValidationData)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10333,6 +10425,7 @@ impl std::fmt::Debug for Asset {
 }
 /// See [`Asset`](crate::model::Asset)
 pub mod asset {
+    ///
     /// A builder for [`Asset`](crate::model::Asset)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10397,6 +10490,7 @@ impl std::fmt::Debug for TestingData {
 }
 /// See [`TestingData`](crate::model::TestingData)
 pub mod testing_data {
+    ///
     /// A builder for [`TestingData`](crate::model::TestingData)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10486,6 +10580,7 @@ impl std::fmt::Debug for TrainingDataResult {
 }
 /// See [`TrainingDataResult`](crate::model::TrainingDataResult)
 pub mod training_data_result {
+    ///
     /// A builder for [`TrainingDataResult`](crate::model::TrainingDataResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10570,6 +10665,7 @@ impl std::fmt::Debug for TrainingData {
 }
 /// See [`TrainingData`](crate::model::TrainingData)
 pub mod training_data {
+    ///
     /// A builder for [`TrainingData`](crate::model::TrainingData)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10640,6 +10736,7 @@ impl std::fmt::Debug for OutputConfig {
 }
 /// See [`OutputConfig`](crate::model::OutputConfig)
 pub mod output_config {
+    ///
     /// A builder for [`OutputConfig`](crate::model::OutputConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10730,6 +10827,7 @@ impl std::fmt::Debug for ProjectDescription {
 }
 /// See [`ProjectDescription`](crate::model::ProjectDescription)
 pub mod project_description {
+    ///
     /// A builder for [`ProjectDescription`](crate::model::ProjectDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10872,6 +10970,7 @@ impl std::fmt::Debug for DatasetMetadata {
 }
 /// See [`DatasetMetadata`](crate::model::DatasetMetadata)
 pub mod dataset_metadata {
+    ///
     /// A builder for [`DatasetMetadata`](crate::model::DatasetMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11298,6 +11397,7 @@ impl std::fmt::Debug for DatasetDescription {
 }
 /// See [`DatasetDescription`](crate::model::DatasetDescription)
 pub mod dataset_description {
+    ///
     /// A builder for [`DatasetDescription`](crate::model::DatasetDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11454,6 +11554,7 @@ impl std::fmt::Debug for DatasetStats {
 }
 /// See [`DatasetStats`](crate::model::DatasetStats)
 pub mod dataset_stats {
+    ///
     /// A builder for [`DatasetStats`](crate::model::DatasetStats)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11553,6 +11654,7 @@ impl std::fmt::Debug for DatasetSource {
 }
 /// See [`DatasetSource`](crate::model::DatasetSource)
 pub mod dataset_source {
+    ///
     /// A builder for [`DatasetSource`](crate::model::DatasetSource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11629,6 +11731,7 @@ impl std::fmt::Debug for CompareFacesMatch {
 }
 /// See [`CompareFacesMatch`](crate::model::CompareFacesMatch)
 pub mod compare_faces_match {
+    ///
     /// A builder for [`CompareFacesMatch`](crate::model::CompareFacesMatch)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11702,6 +11805,7 @@ impl std::fmt::Debug for ComparedSourceImageFace {
 }
 /// See [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace)
 pub mod compared_source_image_face {
+    ///
     /// A builder for [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

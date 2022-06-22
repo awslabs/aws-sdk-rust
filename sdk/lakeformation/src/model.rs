@@ -87,6 +87,7 @@ impl std::fmt::Debug for WriteOperation {
 }
 /// See [`WriteOperation`](crate::model::WriteOperation)
 pub mod write_operation {
+    ///
     /// A builder for [`WriteOperation`](crate::model::WriteOperation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -173,6 +174,7 @@ impl std::fmt::Debug for DeleteObjectInput {
 }
 /// See [`DeleteObjectInput`](crate::model::DeleteObjectInput)
 pub mod delete_object_input {
+    ///
     /// A builder for [`DeleteObjectInput`](crate::model::DeleteObjectInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -283,6 +285,7 @@ impl std::fmt::Debug for AddObjectInput {
 }
 /// See [`AddObjectInput`](crate::model::AddObjectInput)
 pub mod add_object_input {
+    ///
     /// A builder for [`AddObjectInput`](crate::model::AddObjectInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -471,6 +474,7 @@ impl std::fmt::Debug for QueryPlanningContext {
 }
 /// See [`QueryPlanningContext`](crate::model::QueryPlanningContext)
 pub mod query_planning_context {
+    ///
     /// A builder for [`QueryPlanningContext`](crate::model::QueryPlanningContext)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -620,6 +624,7 @@ impl std::fmt::Debug for TaggedTable {
 }
 /// See [`TaggedTable`](crate::model::TaggedTable)
 pub mod tagged_table {
+    ///
     /// A builder for [`TaggedTable`](crate::model::TaggedTable)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -748,6 +753,7 @@ impl std::fmt::Debug for ColumnLfTag {
 }
 /// See [`ColumnLfTag`](crate::model::ColumnLfTag)
 pub mod column_lf_tag {
+    ///
     /// A builder for [`ColumnLfTag`](crate::model::ColumnLfTag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -837,6 +843,7 @@ impl std::fmt::Debug for LfTagPair {
 }
 /// See [`LfTagPair`](crate::model::LfTagPair)
 pub mod lf_tag_pair {
+    ///
     /// A builder for [`LfTagPair`](crate::model::LfTagPair)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -947,6 +954,7 @@ impl std::fmt::Debug for TableResource {
 }
 /// See [`TableResource`](crate::model::TableResource)
 pub mod table_resource {
+    ///
     /// A builder for [`TableResource`](crate::model::TableResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1035,6 +1043,7 @@ impl std::fmt::Debug for TableWildcard {
 }
 /// See [`TableWildcard`](crate::model::TableWildcard)
 pub mod table_wildcard {
+    ///
     /// A builder for [`TableWildcard`](crate::model::TableWildcard)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1082,6 +1091,7 @@ impl std::fmt::Debug for LfTag {
 }
 /// See [`LfTag`](crate::model::LfTag)
 pub mod lf_tag {
+    ///
     /// A builder for [`LfTag`](crate::model::LfTag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1164,6 +1174,7 @@ impl std::fmt::Debug for TaggedDatabase {
 }
 /// See [`TaggedDatabase`](crate::model::TaggedDatabase)
 pub mod tagged_database {
+    ///
     /// A builder for [`TaggedDatabase`](crate::model::TaggedDatabase)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1249,6 +1260,7 @@ impl std::fmt::Debug for DatabaseResource {
 }
 /// See [`DatabaseResource`](crate::model::DatabaseResource)
 pub mod database_resource {
+    ///
     /// A builder for [`DatabaseResource`](crate::model::DatabaseResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1474,6 +1486,7 @@ impl std::fmt::Debug for Resource {
 }
 /// See [`Resource`](crate::model::Resource)
 pub mod resource {
+    ///
     /// A builder for [`Resource`](crate::model::Resource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1650,6 +1663,7 @@ impl std::fmt::Debug for LfTagPolicyResource {
 }
 /// See [`LfTagPolicyResource`](crate::model::LfTagPolicyResource)
 pub mod lf_tag_policy_resource {
+    ///
     /// A builder for [`LfTagPolicyResource`](crate::model::LfTagPolicyResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1809,6 +1823,7 @@ impl std::fmt::Debug for LfTagKeyResource {
 }
 /// See [`LfTagKeyResource`](crate::model::LfTagKeyResource)
 pub mod lf_tag_key_resource {
+    ///
     /// A builder for [`LfTagKeyResource`](crate::model::LfTagKeyResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1917,6 +1932,7 @@ impl std::fmt::Debug for DataCellsFilterResource {
 }
 /// See [`DataCellsFilterResource`](crate::model::DataCellsFilterResource)
 pub mod data_cells_filter_resource {
+    ///
     /// A builder for [`DataCellsFilterResource`](crate::model::DataCellsFilterResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2020,6 +2036,7 @@ impl std::fmt::Debug for DataLocationResource {
 }
 /// See [`DataLocationResource`](crate::model::DataLocationResource)
 pub mod data_location_resource {
+    ///
     /// A builder for [`DataLocationResource`](crate::model::DataLocationResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2115,6 +2132,7 @@ impl std::fmt::Debug for TableWithColumnsResource {
 }
 /// See [`TableWithColumnsResource`](crate::model::TableWithColumnsResource)
 pub mod table_with_columns_resource {
+    ///
     /// A builder for [`TableWithColumnsResource`](crate::model::TableWithColumnsResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2232,6 +2250,7 @@ impl std::fmt::Debug for ColumnWildcard {
 }
 /// See [`ColumnWildcard`](crate::model::ColumnWildcard)
 pub mod column_wildcard {
+    ///
     /// A builder for [`ColumnWildcard`](crate::model::ColumnWildcard)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2285,6 +2304,7 @@ impl std::fmt::Debug for CatalogResource {
 }
 /// See [`CatalogResource`](crate::model::CatalogResource)
 pub mod catalog_resource {
+    ///
     /// A builder for [`CatalogResource`](crate::model::CatalogResource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2328,6 +2348,7 @@ impl std::fmt::Debug for DataLakePrincipal {
 }
 /// See [`DataLakePrincipal`](crate::model::DataLakePrincipal)
 pub mod data_lake_principal {
+    ///
     /// A builder for [`DataLakePrincipal`](crate::model::DataLakePrincipal)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2395,6 +2416,7 @@ impl std::fmt::Debug for LfTagError {
 }
 /// See [`LfTagError`](crate::model::LfTagError)
 pub mod lf_tag_error {
+    ///
     /// A builder for [`LfTagError`](crate::model::LfTagError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2468,6 +2490,7 @@ impl std::fmt::Debug for ErrorDetail {
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail)
 pub mod error_detail {
+    ///
     /// A builder for [`ErrorDetail`](crate::model::ErrorDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2623,6 +2646,7 @@ impl std::fmt::Debug for DataLakeSettings {
 }
 /// See [`DataLakeSettings`](crate::model::DataLakeSettings)
 pub mod data_lake_settings {
+    ///
     /// A builder for [`DataLakeSettings`](crate::model::DataLakeSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2850,6 +2874,7 @@ impl std::fmt::Debug for PrincipalPermissions {
 }
 /// See [`PrincipalPermissions`](crate::model::PrincipalPermissions)
 pub mod principal_permissions {
+    ///
     /// A builder for [`PrincipalPermissions`](crate::model::PrincipalPermissions)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2949,6 +2974,7 @@ impl std::fmt::Debug for TransactionDescription {
 }
 /// See [`TransactionDescription`](crate::model::TransactionDescription)
 pub mod transaction_description {
+    ///
     /// A builder for [`TransactionDescription`](crate::model::TransactionDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3217,6 +3243,7 @@ impl std::fmt::Debug for StorageOptimizer {
 }
 /// See [`StorageOptimizer`](crate::model::StorageOptimizer)
 pub mod storage_optimizer {
+    ///
     /// A builder for [`StorageOptimizer`](crate::model::StorageOptimizer)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3363,6 +3390,7 @@ impl std::fmt::Debug for ResourceInfo {
 }
 /// See [`ResourceInfo`](crate::model::ResourceInfo)
 pub mod resource_info {
+    ///
     /// A builder for [`ResourceInfo`](crate::model::ResourceInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3458,6 +3486,7 @@ impl std::fmt::Debug for FilterCondition {
 }
 /// See [`FilterCondition`](crate::model::FilterCondition)
 pub mod filter_condition {
+    ///
     /// A builder for [`FilterCondition`](crate::model::FilterCondition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3746,6 +3775,7 @@ impl std::fmt::Debug for PrincipalResourcePermissions {
 }
 /// See [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions)
 pub mod principal_resource_permissions {
+    ///
     /// A builder for [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3874,6 +3904,7 @@ impl std::fmt::Debug for DetailsMap {
 }
 /// See [`DetailsMap`](crate::model::DetailsMap)
 pub mod details_map {
+    ///
     /// A builder for [`DetailsMap`](crate::model::DetailsMap)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4124,6 +4155,7 @@ impl std::fmt::Debug for DataCellsFilter {
 }
 /// See [`DataCellsFilter`](crate::model::DataCellsFilter)
 pub mod data_cells_filter {
+    ///
     /// A builder for [`DataCellsFilter`](crate::model::DataCellsFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4280,6 +4312,7 @@ impl std::fmt::Debug for RowFilter {
 }
 /// See [`RowFilter`](crate::model::RowFilter)
 pub mod row_filter {
+    ///
     /// A builder for [`RowFilter`](crate::model::RowFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4342,6 +4375,7 @@ impl std::fmt::Debug for AllRowsWildcard {
 }
 /// See [`AllRowsWildcard`](crate::model::AllRowsWildcard)
 pub mod all_rows_wildcard {
+    ///
     /// A builder for [`AllRowsWildcard`](crate::model::AllRowsWildcard)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4396,6 +4430,7 @@ impl std::fmt::Debug for WorkUnitRange {
 }
 /// See [`WorkUnitRange`](crate::model::WorkUnitRange)
 pub mod work_unit_range {
+    ///
     /// A builder for [`WorkUnitRange`](crate::model::WorkUnitRange)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4532,6 +4567,7 @@ impl std::fmt::Debug for AuditContext {
 }
 /// See [`AuditContext`](crate::model::AuditContext)
 pub mod audit_context {
+    ///
     /// A builder for [`AuditContext`](crate::model::AuditContext)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4589,6 +4625,7 @@ impl std::fmt::Debug for PartitionValueList {
 }
 /// See [`PartitionValueList`](crate::model::PartitionValueList)
 pub mod partition_value_list {
+    ///
     /// A builder for [`PartitionValueList`](crate::model::PartitionValueList)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4659,6 +4696,7 @@ impl std::fmt::Debug for PartitionObjects {
 }
 /// See [`PartitionObjects`](crate::model::PartitionObjects)
 pub mod partition_objects {
+    ///
     /// A builder for [`PartitionObjects`](crate::model::PartitionObjects)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4757,6 +4795,7 @@ impl std::fmt::Debug for TableObject {
 }
 /// See [`TableObject`](crate::model::TableObject)
 pub mod table_object {
+    ///
     /// A builder for [`TableObject`](crate::model::TableObject)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4862,6 +4901,7 @@ impl std::fmt::Debug for PlanningStatistics {
 }
 /// See [`PlanningStatistics`](crate::model::PlanningStatistics)
 pub mod planning_statistics {
+    ///
     /// A builder for [`PlanningStatistics`](crate::model::PlanningStatistics)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4969,6 +5009,7 @@ impl std::fmt::Debug for ExecutionStatistics {
 }
 /// See [`ExecutionStatistics`](crate::model::ExecutionStatistics)
 pub mod execution_statistics {
+    ///
     /// A builder for [`ExecutionStatistics`](crate::model::ExecutionStatistics)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5132,6 +5173,7 @@ impl std::fmt::Debug for VirtualObject {
 }
 /// See [`VirtualObject`](crate::model::VirtualObject)
 pub mod virtual_object {
+    ///
     /// A builder for [`VirtualObject`](crate::model::VirtualObject)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5207,6 +5249,7 @@ impl std::fmt::Debug for BatchPermissionsFailureEntry {
 }
 /// See [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry)
 pub mod batch_permissions_failure_entry {
+    ///
     /// A builder for [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5309,6 +5352,7 @@ impl std::fmt::Debug for BatchPermissionsRequestEntry {
 }
 /// See [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry)
 pub mod batch_permissions_request_entry {
+    ///
     /// A builder for [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

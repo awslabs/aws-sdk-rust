@@ -8263,6 +8263,7 @@ impl std::fmt::Display for TriggerTargetsLimitExceededException {
 impl std::error::Error for TriggerTargetsLimitExceededException {}
 /// See [`TriggerTargetsLimitExceededException`](crate::error::TriggerTargetsLimitExceededException)
 pub mod trigger_targets_limit_exceeded_exception {
+    ///
     /// A builder for [`TriggerTargetsLimitExceededException`](crate::error::TriggerTargetsLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8327,6 +8328,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException)
 pub mod throttling_exception {
+    ///
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8391,6 +8393,7 @@ impl std::fmt::Display for TagSetListLimitExceededException {
 impl std::error::Error for TagSetListLimitExceededException {}
 /// See [`TagSetListLimitExceededException`](crate::error::TagSetListLimitExceededException)
 pub mod tag_set_list_limit_exceeded_exception {
+    ///
     /// A builder for [`TagSetListLimitExceededException`](crate::error::TagSetListLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8455,6 +8458,7 @@ impl std::fmt::Display for LifecycleHookLimitExceededException {
 impl std::error::Error for LifecycleHookLimitExceededException {}
 /// See [`LifecycleHookLimitExceededException`](crate::error::LifecycleHookLimitExceededException)
 pub mod lifecycle_hook_limit_exceeded_exception {
+    ///
     /// A builder for [`LifecycleHookLimitExceededException`](crate::error::LifecycleHookLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8519,6 +8523,7 @@ impl std::fmt::Display for InvalidTriggerConfigException {
 impl std::error::Error for InvalidTriggerConfigException {}
 /// See [`InvalidTriggerConfigException`](crate::error::InvalidTriggerConfigException)
 pub mod invalid_trigger_config_exception {
+    ///
     /// A builder for [`InvalidTriggerConfigException`](crate::error::InvalidTriggerConfigException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8583,6 +8588,7 @@ impl std::fmt::Display for InvalidTrafficRoutingConfigurationException {
 impl std::error::Error for InvalidTrafficRoutingConfigurationException {}
 /// See [`InvalidTrafficRoutingConfigurationException`](crate::error::InvalidTrafficRoutingConfigurationException)
 pub mod invalid_traffic_routing_configuration_exception {
+    ///
     /// A builder for [`InvalidTrafficRoutingConfigurationException`](crate::error::InvalidTrafficRoutingConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8647,6 +8653,7 @@ impl std::fmt::Display for InvalidTargetGroupPairException {
 impl std::error::Error for InvalidTargetGroupPairException {}
 /// See [`InvalidTargetGroupPairException`](crate::error::InvalidTargetGroupPairException)
 pub mod invalid_target_group_pair_exception {
+    ///
     /// A builder for [`InvalidTargetGroupPairException`](crate::error::InvalidTargetGroupPairException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8711,6 +8718,7 @@ impl std::fmt::Display for InvalidTagException {
 impl std::error::Error for InvalidTagException {}
 /// See [`InvalidTagException`](crate::error::InvalidTagException)
 pub mod invalid_tag_exception {
+    ///
     /// A builder for [`InvalidTagException`](crate::error::InvalidTagException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8775,6 +8783,7 @@ impl std::fmt::Display for InvalidRoleException {
 impl std::error::Error for InvalidRoleException {}
 /// See [`InvalidRoleException`](crate::error::InvalidRoleException)
 pub mod invalid_role_exception {
+    ///
     /// A builder for [`InvalidRoleException`](crate::error::InvalidRoleException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8839,6 +8848,7 @@ impl std::fmt::Display for InvalidOnPremisesTagCombinationException {
 impl std::error::Error for InvalidOnPremisesTagCombinationException {}
 /// See [`InvalidOnPremisesTagCombinationException`](crate::error::InvalidOnPremisesTagCombinationException)
 pub mod invalid_on_premises_tag_combination_exception {
+    ///
     /// A builder for [`InvalidOnPremisesTagCombinationException`](crate::error::InvalidOnPremisesTagCombinationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8903,6 +8913,7 @@ impl std::fmt::Display for InvalidLoadBalancerInfoException {
 impl std::error::Error for InvalidLoadBalancerInfoException {}
 /// See [`InvalidLoadBalancerInfoException`](crate::error::InvalidLoadBalancerInfoException)
 pub mod invalid_load_balancer_info_exception {
+    ///
     /// A builder for [`InvalidLoadBalancerInfoException`](crate::error::InvalidLoadBalancerInfoException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8967,6 +8978,7 @@ impl std::fmt::Display for InvalidInputException {
 impl std::error::Error for InvalidInputException {}
 /// See [`InvalidInputException`](crate::error::InvalidInputException)
 pub mod invalid_input_exception {
+    ///
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9031,6 +9043,7 @@ impl std::fmt::Display for InvalidEcsServiceException {
 impl std::error::Error for InvalidEcsServiceException {}
 /// See [`InvalidEcsServiceException`](crate::error::InvalidEcsServiceException)
 pub mod invalid_ecs_service_exception {
+    ///
     /// A builder for [`InvalidEcsServiceException`](crate::error::InvalidEcsServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9095,6 +9108,7 @@ impl std::fmt::Display for InvalidEc2TagException {
 impl std::error::Error for InvalidEc2TagException {}
 /// See [`InvalidEc2TagException`](crate::error::InvalidEc2TagException)
 pub mod invalid_ec2_tag_exception {
+    ///
     /// A builder for [`InvalidEc2TagException`](crate::error::InvalidEc2TagException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9162,6 +9176,7 @@ impl std::fmt::Display for InvalidEc2TagCombinationException {
 impl std::error::Error for InvalidEc2TagCombinationException {}
 /// See [`InvalidEc2TagCombinationException`](crate::error::InvalidEc2TagCombinationException)
 pub mod invalid_ec2_tag_combination_exception {
+    ///
     /// A builder for [`InvalidEc2TagCombinationException`](crate::error::InvalidEc2TagCombinationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9226,6 +9241,7 @@ impl std::fmt::Display for InvalidDeploymentStyleException {
 impl std::error::Error for InvalidDeploymentStyleException {}
 /// See [`InvalidDeploymentStyleException`](crate::error::InvalidDeploymentStyleException)
 pub mod invalid_deployment_style_exception {
+    ///
     /// A builder for [`InvalidDeploymentStyleException`](crate::error::InvalidDeploymentStyleException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9290,6 +9306,7 @@ impl std::fmt::Display for InvalidDeploymentGroupNameException {
 impl std::error::Error for InvalidDeploymentGroupNameException {}
 /// See [`InvalidDeploymentGroupNameException`](crate::error::InvalidDeploymentGroupNameException)
 pub mod invalid_deployment_group_name_exception {
+    ///
     /// A builder for [`InvalidDeploymentGroupNameException`](crate::error::InvalidDeploymentGroupNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9354,6 +9371,7 @@ impl std::fmt::Display for InvalidDeploymentConfigNameException {
 impl std::error::Error for InvalidDeploymentConfigNameException {}
 /// See [`InvalidDeploymentConfigNameException`](crate::error::InvalidDeploymentConfigNameException)
 pub mod invalid_deployment_config_name_exception {
+    ///
     /// A builder for [`InvalidDeploymentConfigNameException`](crate::error::InvalidDeploymentConfigNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9418,6 +9436,7 @@ impl std::fmt::Display for InvalidBlueGreenDeploymentConfigurationException {
 impl std::error::Error for InvalidBlueGreenDeploymentConfigurationException {}
 /// See [`InvalidBlueGreenDeploymentConfigurationException`](crate::error::InvalidBlueGreenDeploymentConfigurationException)
 pub mod invalid_blue_green_deployment_configuration_exception {
+    ///
     /// A builder for [`InvalidBlueGreenDeploymentConfigurationException`](crate::error::InvalidBlueGreenDeploymentConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9483,6 +9502,7 @@ impl std::fmt::Display for InvalidAutoScalingGroupException {
 impl std::error::Error for InvalidAutoScalingGroupException {}
 /// See [`InvalidAutoScalingGroupException`](crate::error::InvalidAutoScalingGroupException)
 pub mod invalid_auto_scaling_group_exception {
+    ///
     /// A builder for [`InvalidAutoScalingGroupException`](crate::error::InvalidAutoScalingGroupException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9547,6 +9567,7 @@ impl std::fmt::Display for InvalidAutoRollbackConfigException {
 impl std::error::Error for InvalidAutoRollbackConfigException {}
 /// See [`InvalidAutoRollbackConfigException`](crate::error::InvalidAutoRollbackConfigException)
 pub mod invalid_auto_rollback_config_exception {
+    ///
     /// A builder for [`InvalidAutoRollbackConfigException`](crate::error::InvalidAutoRollbackConfigException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9611,6 +9632,7 @@ impl std::fmt::Display for InvalidApplicationNameException {
 impl std::error::Error for InvalidApplicationNameException {}
 /// See [`InvalidApplicationNameException`](crate::error::InvalidApplicationNameException)
 pub mod invalid_application_name_exception {
+    ///
     /// A builder for [`InvalidApplicationNameException`](crate::error::InvalidApplicationNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9682,6 +9704,7 @@ impl std::fmt::Display for InvalidAlarmConfigException {
 impl std::error::Error for InvalidAlarmConfigException {}
 /// See [`InvalidAlarmConfigException`](crate::error::InvalidAlarmConfigException)
 pub mod invalid_alarm_config_exception {
+    ///
     /// A builder for [`InvalidAlarmConfigException`](crate::error::InvalidAlarmConfigException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9749,6 +9772,7 @@ impl std::fmt::Display for EcsServiceMappingLimitExceededException {
 impl std::error::Error for EcsServiceMappingLimitExceededException {}
 /// See [`EcsServiceMappingLimitExceededException`](crate::error::EcsServiceMappingLimitExceededException)
 pub mod ecs_service_mapping_limit_exceeded_exception {
+    ///
     /// A builder for [`EcsServiceMappingLimitExceededException`](crate::error::EcsServiceMappingLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9813,6 +9837,7 @@ impl std::fmt::Display for DeploymentGroupNameRequiredException {
 impl std::error::Error for DeploymentGroupNameRequiredException {}
 /// See [`DeploymentGroupNameRequiredException`](crate::error::DeploymentGroupNameRequiredException)
 pub mod deployment_group_name_required_exception {
+    ///
     /// A builder for [`DeploymentGroupNameRequiredException`](crate::error::DeploymentGroupNameRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9877,6 +9902,7 @@ impl std::fmt::Display for DeploymentGroupDoesNotExistException {
 impl std::error::Error for DeploymentGroupDoesNotExistException {}
 /// See [`DeploymentGroupDoesNotExistException`](crate::error::DeploymentGroupDoesNotExistException)
 pub mod deployment_group_does_not_exist_exception {
+    ///
     /// A builder for [`DeploymentGroupDoesNotExistException`](crate::error::DeploymentGroupDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9941,6 +9967,7 @@ impl std::fmt::Display for DeploymentGroupAlreadyExistsException {
 impl std::error::Error for DeploymentGroupAlreadyExistsException {}
 /// See [`DeploymentGroupAlreadyExistsException`](crate::error::DeploymentGroupAlreadyExistsException)
 pub mod deployment_group_already_exists_exception {
+    ///
     /// A builder for [`DeploymentGroupAlreadyExistsException`](crate::error::DeploymentGroupAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10005,6 +10032,7 @@ impl std::fmt::Display for DeploymentConfigDoesNotExistException {
 impl std::error::Error for DeploymentConfigDoesNotExistException {}
 /// See [`DeploymentConfigDoesNotExistException`](crate::error::DeploymentConfigDoesNotExistException)
 pub mod deployment_config_does_not_exist_exception {
+    ///
     /// A builder for [`DeploymentConfigDoesNotExistException`](crate::error::DeploymentConfigDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10069,6 +10097,7 @@ impl std::fmt::Display for ApplicationNameRequiredException {
 impl std::error::Error for ApplicationNameRequiredException {}
 /// See [`ApplicationNameRequiredException`](crate::error::ApplicationNameRequiredException)
 pub mod application_name_required_exception {
+    ///
     /// A builder for [`ApplicationNameRequiredException`](crate::error::ApplicationNameRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10133,6 +10162,7 @@ impl std::fmt::Display for ApplicationDoesNotExistException {
 impl std::error::Error for ApplicationDoesNotExistException {}
 /// See [`ApplicationDoesNotExistException`](crate::error::ApplicationDoesNotExistException)
 pub mod application_does_not_exist_exception {
+    ///
     /// A builder for [`ApplicationDoesNotExistException`](crate::error::ApplicationDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10197,6 +10227,7 @@ impl std::fmt::Display for AlarmsLimitExceededException {
 impl std::error::Error for AlarmsLimitExceededException {}
 /// See [`AlarmsLimitExceededException`](crate::error::AlarmsLimitExceededException)
 pub mod alarms_limit_exceeded_exception {
+    ///
     /// A builder for [`AlarmsLimitExceededException`](crate::error::AlarmsLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10261,6 +10292,7 @@ impl std::fmt::Display for ApplicationAlreadyExistsException {
 impl std::error::Error for ApplicationAlreadyExistsException {}
 /// See [`ApplicationAlreadyExistsException`](crate::error::ApplicationAlreadyExistsException)
 pub mod application_already_exists_exception {
+    ///
     /// A builder for [`ApplicationAlreadyExistsException`](crate::error::ApplicationAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10325,6 +10357,7 @@ impl std::fmt::Display for TagRequiredException {
 impl std::error::Error for TagRequiredException {}
 /// See [`TagRequiredException`](crate::error::TagRequiredException)
 pub mod tag_required_exception {
+    ///
     /// A builder for [`TagRequiredException`](crate::error::TagRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10389,6 +10422,7 @@ impl std::fmt::Display for ResourceArnRequiredException {
 impl std::error::Error for ResourceArnRequiredException {}
 /// See [`ResourceArnRequiredException`](crate::error::ResourceArnRequiredException)
 pub mod resource_arn_required_exception {
+    ///
     /// A builder for [`ResourceArnRequiredException`](crate::error::ResourceArnRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10453,6 +10487,7 @@ impl std::fmt::Display for InvalidTagsToAddException {
 impl std::error::Error for InvalidTagsToAddException {}
 /// See [`InvalidTagsToAddException`](crate::error::InvalidTagsToAddException)
 pub mod invalid_tags_to_add_exception {
+    ///
     /// A builder for [`InvalidTagsToAddException`](crate::error::InvalidTagsToAddException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10517,6 +10552,7 @@ impl std::fmt::Display for InvalidArnException {
 impl std::error::Error for InvalidArnException {}
 /// See [`InvalidArnException`](crate::error::InvalidArnException)
 pub mod invalid_arn_exception {
+    ///
     /// A builder for [`InvalidArnException`](crate::error::InvalidArnException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10581,6 +10617,7 @@ impl std::fmt::Display for ArnNotSupportedException {
 impl std::error::Error for ArnNotSupportedException {}
 /// See [`ArnNotSupportedException`](crate::error::ArnNotSupportedException)
 pub mod arn_not_supported_exception {
+    ///
     /// A builder for [`ArnNotSupportedException`](crate::error::ArnNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10645,6 +10682,7 @@ impl std::fmt::Display for UnsupportedActionForDeploymentTypeException {
 impl std::error::Error for UnsupportedActionForDeploymentTypeException {}
 /// See [`UnsupportedActionForDeploymentTypeException`](crate::error::UnsupportedActionForDeploymentTypeException)
 pub mod unsupported_action_for_deployment_type_exception {
+    ///
     /// A builder for [`UnsupportedActionForDeploymentTypeException`](crate::error::UnsupportedActionForDeploymentTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10709,6 +10747,7 @@ impl std::fmt::Display for InvalidDeploymentIdException {
 impl std::error::Error for InvalidDeploymentIdException {}
 /// See [`InvalidDeploymentIdException`](crate::error::InvalidDeploymentIdException)
 pub mod invalid_deployment_id_exception {
+    ///
     /// A builder for [`InvalidDeploymentIdException`](crate::error::InvalidDeploymentIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10773,6 +10812,7 @@ impl std::fmt::Display for DeploymentIdRequiredException {
 impl std::error::Error for DeploymentIdRequiredException {}
 /// See [`DeploymentIdRequiredException`](crate::error::DeploymentIdRequiredException)
 pub mod deployment_id_required_exception {
+    ///
     /// A builder for [`DeploymentIdRequiredException`](crate::error::DeploymentIdRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10837,6 +10877,7 @@ impl std::fmt::Display for DeploymentDoesNotExistException {
 impl std::error::Error for DeploymentDoesNotExistException {}
 /// See [`DeploymentDoesNotExistException`](crate::error::DeploymentDoesNotExistException)
 pub mod deployment_does_not_exist_exception {
+    ///
     /// A builder for [`DeploymentDoesNotExistException`](crate::error::DeploymentDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10901,6 +10942,7 @@ impl std::fmt::Display for DeploymentAlreadyCompletedException {
 impl std::error::Error for DeploymentAlreadyCompletedException {}
 /// See [`DeploymentAlreadyCompletedException`](crate::error::DeploymentAlreadyCompletedException)
 pub mod deployment_already_completed_exception {
+    ///
     /// A builder for [`DeploymentAlreadyCompletedException`](crate::error::DeploymentAlreadyCompletedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10965,6 +11007,7 @@ impl std::fmt::Display for DeploymentNotStartedException {
 impl std::error::Error for DeploymentNotStartedException {}
 /// See [`DeploymentNotStartedException`](crate::error::DeploymentNotStartedException)
 pub mod deployment_not_started_exception {
+    ///
     /// A builder for [`DeploymentNotStartedException`](crate::error::DeploymentNotStartedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11029,6 +11072,7 @@ impl std::fmt::Display for TagLimitExceededException {
 impl std::error::Error for TagLimitExceededException {}
 /// See [`TagLimitExceededException`](crate::error::TagLimitExceededException)
 pub mod tag_limit_exceeded_exception {
+    ///
     /// A builder for [`TagLimitExceededException`](crate::error::TagLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11093,6 +11137,7 @@ impl std::fmt::Display for InvalidInstanceNameException {
 impl std::error::Error for InvalidInstanceNameException {}
 /// See [`InvalidInstanceNameException`](crate::error::InvalidInstanceNameException)
 pub mod invalid_instance_name_exception {
+    ///
     /// A builder for [`InvalidInstanceNameException`](crate::error::InvalidInstanceNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11157,6 +11202,7 @@ impl std::fmt::Display for InstanceNotRegisteredException {
 impl std::error::Error for InstanceNotRegisteredException {}
 /// See [`InstanceNotRegisteredException`](crate::error::InstanceNotRegisteredException)
 pub mod instance_not_registered_exception {
+    ///
     /// A builder for [`InstanceNotRegisteredException`](crate::error::InstanceNotRegisteredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11221,6 +11267,7 @@ impl std::fmt::Display for InstanceNameRequiredException {
 impl std::error::Error for InstanceNameRequiredException {}
 /// See [`InstanceNameRequiredException`](crate::error::InstanceNameRequiredException)
 pub mod instance_name_required_exception {
+    ///
     /// A builder for [`InstanceNameRequiredException`](crate::error::InstanceNameRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11285,6 +11332,7 @@ impl std::fmt::Display for InstanceLimitExceededException {
 impl std::error::Error for InstanceLimitExceededException {}
 /// See [`InstanceLimitExceededException`](crate::error::InstanceLimitExceededException)
 pub mod instance_limit_exceeded_exception {
+    ///
     /// A builder for [`InstanceLimitExceededException`](crate::error::InstanceLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11349,6 +11397,7 @@ impl std::fmt::Display for MultipleIamArnsProvidedException {
 impl std::error::Error for MultipleIamArnsProvidedException {}
 /// See [`MultipleIamArnsProvidedException`](crate::error::MultipleIamArnsProvidedException)
 pub mod multiple_iam_arns_provided_exception {
+    ///
     /// A builder for [`MultipleIamArnsProvidedException`](crate::error::MultipleIamArnsProvidedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11413,6 +11462,7 @@ impl std::fmt::Display for InvalidIamUserArnException {
 impl std::error::Error for InvalidIamUserArnException {}
 /// See [`InvalidIamUserArnException`](crate::error::InvalidIamUserArnException)
 pub mod invalid_iam_user_arn_exception {
+    ///
     /// A builder for [`InvalidIamUserArnException`](crate::error::InvalidIamUserArnException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11477,6 +11527,7 @@ impl std::fmt::Display for InvalidIamSessionArnException {
 impl std::error::Error for InvalidIamSessionArnException {}
 /// See [`InvalidIamSessionArnException`](crate::error::InvalidIamSessionArnException)
 pub mod invalid_iam_session_arn_exception {
+    ///
     /// A builder for [`InvalidIamSessionArnException`](crate::error::InvalidIamSessionArnException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11541,6 +11592,7 @@ impl std::fmt::Display for InstanceNameAlreadyRegisteredException {
 impl std::error::Error for InstanceNameAlreadyRegisteredException {}
 /// See [`InstanceNameAlreadyRegisteredException`](crate::error::InstanceNameAlreadyRegisteredException)
 pub mod instance_name_already_registered_exception {
+    ///
     /// A builder for [`InstanceNameAlreadyRegisteredException`](crate::error::InstanceNameAlreadyRegisteredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11605,6 +11657,7 @@ impl std::fmt::Display for IamUserArnRequiredException {
 impl std::error::Error for IamUserArnRequiredException {}
 /// See [`IamUserArnRequiredException`](crate::error::IamUserArnRequiredException)
 pub mod iam_user_arn_required_exception {
+    ///
     /// A builder for [`IamUserArnRequiredException`](crate::error::IamUserArnRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11669,6 +11722,7 @@ impl std::fmt::Display for IamUserArnAlreadyRegisteredException {
 impl std::error::Error for IamUserArnAlreadyRegisteredException {}
 /// See [`IamUserArnAlreadyRegisteredException`](crate::error::IamUserArnAlreadyRegisteredException)
 pub mod iam_user_arn_already_registered_exception {
+    ///
     /// A builder for [`IamUserArnAlreadyRegisteredException`](crate::error::IamUserArnAlreadyRegisteredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11733,6 +11787,7 @@ impl std::fmt::Display for IamSessionArnAlreadyRegisteredException {
 impl std::error::Error for IamSessionArnAlreadyRegisteredException {}
 /// See [`IamSessionArnAlreadyRegisteredException`](crate::error::IamSessionArnAlreadyRegisteredException)
 pub mod iam_session_arn_already_registered_exception {
+    ///
     /// A builder for [`IamSessionArnAlreadyRegisteredException`](crate::error::IamSessionArnAlreadyRegisteredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11797,6 +11852,7 @@ impl std::fmt::Display for IamArnRequiredException {
 impl std::error::Error for IamArnRequiredException {}
 /// See [`IamArnRequiredException`](crate::error::IamArnRequiredException)
 pub mod iam_arn_required_exception {
+    ///
     /// A builder for [`IamArnRequiredException`](crate::error::IamArnRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11861,6 +11917,7 @@ impl std::fmt::Display for RevisionRequiredException {
 impl std::error::Error for RevisionRequiredException {}
 /// See [`RevisionRequiredException`](crate::error::RevisionRequiredException)
 pub mod revision_required_exception {
+    ///
     /// A builder for [`RevisionRequiredException`](crate::error::RevisionRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11925,6 +11982,7 @@ impl std::fmt::Display for InvalidRevisionException {
 impl std::error::Error for InvalidRevisionException {}
 /// See [`InvalidRevisionException`](crate::error::InvalidRevisionException)
 pub mod invalid_revision_exception {
+    ///
     /// A builder for [`InvalidRevisionException`](crate::error::InvalidRevisionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11989,6 +12047,7 @@ impl std::fmt::Display for DescriptionTooLongException {
 impl std::error::Error for DescriptionTooLongException {}
 /// See [`DescriptionTooLongException`](crate::error::DescriptionTooLongException)
 pub mod description_too_long_exception {
+    ///
     /// A builder for [`DescriptionTooLongException`](crate::error::DescriptionTooLongException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12053,6 +12112,7 @@ impl std::fmt::Display for LifecycleEventAlreadyCompletedException {
 impl std::error::Error for LifecycleEventAlreadyCompletedException {}
 /// See [`LifecycleEventAlreadyCompletedException`](crate::error::LifecycleEventAlreadyCompletedException)
 pub mod lifecycle_event_already_completed_exception {
+    ///
     /// A builder for [`LifecycleEventAlreadyCompletedException`](crate::error::LifecycleEventAlreadyCompletedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12117,6 +12177,7 @@ impl std::fmt::Display for InvalidLifecycleEventHookExecutionStatusException {
 impl std::error::Error for InvalidLifecycleEventHookExecutionStatusException {}
 /// See [`InvalidLifecycleEventHookExecutionStatusException`](crate::error::InvalidLifecycleEventHookExecutionStatusException)
 pub mod invalid_lifecycle_event_hook_execution_status_exception {
+    ///
     /// A builder for [`InvalidLifecycleEventHookExecutionStatusException`](crate::error::InvalidLifecycleEventHookExecutionStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12182,6 +12243,7 @@ impl std::fmt::Display for InvalidLifecycleEventHookExecutionIdException {
 impl std::error::Error for InvalidLifecycleEventHookExecutionIdException {}
 /// See [`InvalidLifecycleEventHookExecutionIdException`](crate::error::InvalidLifecycleEventHookExecutionIdException)
 pub mod invalid_lifecycle_event_hook_execution_id_exception {
+    ///
     /// A builder for [`InvalidLifecycleEventHookExecutionIdException`](crate::error::InvalidLifecycleEventHookExecutionIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12246,6 +12308,7 @@ impl std::fmt::Display for InvalidTagFilterException {
 impl std::error::Error for InvalidTagFilterException {}
 /// See [`InvalidTagFilterException`](crate::error::InvalidTagFilterException)
 pub mod invalid_tag_filter_exception {
+    ///
     /// A builder for [`InvalidTagFilterException`](crate::error::InvalidTagFilterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12310,6 +12373,7 @@ impl std::fmt::Display for InvalidRegistrationStatusException {
 impl std::error::Error for InvalidRegistrationStatusException {}
 /// See [`InvalidRegistrationStatusException`](crate::error::InvalidRegistrationStatusException)
 pub mod invalid_registration_status_exception {
+    ///
     /// A builder for [`InvalidRegistrationStatusException`](crate::error::InvalidRegistrationStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12374,6 +12438,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
+    ///
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12438,6 +12503,7 @@ impl std::fmt::Display for ResourceValidationException {
 impl std::error::Error for ResourceValidationException {}
 /// See [`ResourceValidationException`](crate::error::ResourceValidationException)
 pub mod resource_validation_exception {
+    ///
     /// A builder for [`ResourceValidationException`](crate::error::ResourceValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12502,6 +12568,7 @@ impl std::fmt::Display for OperationNotSupportedException {
 impl std::error::Error for OperationNotSupportedException {}
 /// See [`OperationNotSupportedException`](crate::error::OperationNotSupportedException)
 pub mod operation_not_supported_exception {
+    ///
     /// A builder for [`OperationNotSupportedException`](crate::error::OperationNotSupportedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12566,6 +12633,7 @@ impl std::fmt::Display for InvalidInstanceTypeException {
 impl std::error::Error for InvalidInstanceTypeException {}
 /// See [`InvalidInstanceTypeException`](crate::error::InvalidInstanceTypeException)
 pub mod invalid_instance_type_exception {
+    ///
     /// A builder for [`InvalidInstanceTypeException`](crate::error::InvalidInstanceTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12630,6 +12698,7 @@ impl std::fmt::Display for InvalidInstanceStatusException {
 impl std::error::Error for InvalidInstanceStatusException {}
 /// See [`InvalidInstanceStatusException`](crate::error::InvalidInstanceStatusException)
 pub mod invalid_instance_status_exception {
+    ///
     /// A builder for [`InvalidInstanceStatusException`](crate::error::InvalidInstanceStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12694,6 +12763,7 @@ impl std::fmt::Display for InvalidDeploymentInstanceTypeException {
 impl std::error::Error for InvalidDeploymentInstanceTypeException {}
 /// See [`InvalidDeploymentInstanceTypeException`](crate::error::InvalidDeploymentInstanceTypeException)
 pub mod invalid_deployment_instance_type_exception {
+    ///
     /// A builder for [`InvalidDeploymentInstanceTypeException`](crate::error::InvalidDeploymentInstanceTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12758,6 +12828,7 @@ impl std::fmt::Display for InvalidTimeRangeException {
 impl std::error::Error for InvalidTimeRangeException {}
 /// See [`InvalidTimeRangeException`](crate::error::InvalidTimeRangeException)
 pub mod invalid_time_range_exception {
+    ///
     /// A builder for [`InvalidTimeRangeException`](crate::error::InvalidTimeRangeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12822,6 +12893,7 @@ impl std::fmt::Display for InvalidExternalIdException {
 impl std::error::Error for InvalidExternalIdException {}
 /// See [`InvalidExternalIdException`](crate::error::InvalidExternalIdException)
 pub mod invalid_external_id_exception {
+    ///
     /// A builder for [`InvalidExternalIdException`](crate::error::InvalidExternalIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12886,6 +12958,7 @@ impl std::fmt::Display for InvalidDeploymentStatusException {
 impl std::error::Error for InvalidDeploymentStatusException {}
 /// See [`InvalidDeploymentStatusException`](crate::error::InvalidDeploymentStatusException)
 pub mod invalid_deployment_status_exception {
+    ///
     /// A builder for [`InvalidDeploymentStatusException`](crate::error::InvalidDeploymentStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12950,6 +13023,7 @@ impl std::fmt::Display for InvalidTargetFilterNameException {
 impl std::error::Error for InvalidTargetFilterNameException {}
 /// See [`InvalidTargetFilterNameException`](crate::error::InvalidTargetFilterNameException)
 pub mod invalid_target_filter_name_exception {
+    ///
     /// A builder for [`InvalidTargetFilterNameException`](crate::error::InvalidTargetFilterNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13014,6 +13088,7 @@ impl std::fmt::Display for InvalidComputePlatformException {
 impl std::error::Error for InvalidComputePlatformException {}
 /// See [`InvalidComputePlatformException`](crate::error::InvalidComputePlatformException)
 pub mod invalid_compute_platform_exception {
+    ///
     /// A builder for [`InvalidComputePlatformException`](crate::error::InvalidComputePlatformException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13078,6 +13153,7 @@ impl std::fmt::Display for InvalidSortOrderException {
 impl std::error::Error for InvalidSortOrderException {}
 /// See [`InvalidSortOrderException`](crate::error::InvalidSortOrderException)
 pub mod invalid_sort_order_exception {
+    ///
     /// A builder for [`InvalidSortOrderException`](crate::error::InvalidSortOrderException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13142,6 +13218,7 @@ impl std::fmt::Display for InvalidSortByException {
 impl std::error::Error for InvalidSortByException {}
 /// See [`InvalidSortByException`](crate::error::InvalidSortByException)
 pub mod invalid_sort_by_exception {
+    ///
     /// A builder for [`InvalidSortByException`](crate::error::InvalidSortByException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13206,6 +13283,7 @@ impl std::fmt::Display for InvalidKeyPrefixFilterException {
 impl std::error::Error for InvalidKeyPrefixFilterException {}
 /// See [`InvalidKeyPrefixFilterException`](crate::error::InvalidKeyPrefixFilterException)
 pub mod invalid_key_prefix_filter_exception {
+    ///
     /// A builder for [`InvalidKeyPrefixFilterException`](crate::error::InvalidKeyPrefixFilterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13270,6 +13348,7 @@ impl std::fmt::Display for InvalidDeployedStateFilterException {
 impl std::error::Error for InvalidDeployedStateFilterException {}
 /// See [`InvalidDeployedStateFilterException`](crate::error::InvalidDeployedStateFilterException)
 pub mod invalid_deployed_state_filter_exception {
+    ///
     /// A builder for [`InvalidDeployedStateFilterException`](crate::error::InvalidDeployedStateFilterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13334,6 +13413,7 @@ impl std::fmt::Display for InvalidBucketNameFilterException {
 impl std::error::Error for InvalidBucketNameFilterException {}
 /// See [`InvalidBucketNameFilterException`](crate::error::InvalidBucketNameFilterException)
 pub mod invalid_bucket_name_filter_exception {
+    ///
     /// A builder for [`InvalidBucketNameFilterException`](crate::error::InvalidBucketNameFilterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13398,6 +13478,7 @@ impl std::fmt::Display for BucketNameFilterRequiredException {
 impl std::error::Error for BucketNameFilterRequiredException {}
 /// See [`BucketNameFilterRequiredException`](crate::error::BucketNameFilterRequiredException)
 pub mod bucket_name_filter_required_exception {
+    ///
     /// A builder for [`BucketNameFilterRequiredException`](crate::error::BucketNameFilterRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13462,6 +13543,7 @@ impl std::fmt::Display for InvalidDeploymentTargetIdException {
 impl std::error::Error for InvalidDeploymentTargetIdException {}
 /// See [`InvalidDeploymentTargetIdException`](crate::error::InvalidDeploymentTargetIdException)
 pub mod invalid_deployment_target_id_exception {
+    ///
     /// A builder for [`InvalidDeploymentTargetIdException`](crate::error::InvalidDeploymentTargetIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13526,6 +13608,7 @@ impl std::fmt::Display for DeploymentTargetIdRequiredException {
 impl std::error::Error for DeploymentTargetIdRequiredException {}
 /// See [`DeploymentTargetIdRequiredException`](crate::error::DeploymentTargetIdRequiredException)
 pub mod deployment_target_id_required_exception {
+    ///
     /// A builder for [`DeploymentTargetIdRequiredException`](crate::error::DeploymentTargetIdRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13590,6 +13673,7 @@ impl std::fmt::Display for DeploymentTargetDoesNotExistException {
 impl std::error::Error for DeploymentTargetDoesNotExistException {}
 /// See [`DeploymentTargetDoesNotExistException`](crate::error::DeploymentTargetDoesNotExistException)
 pub mod deployment_target_does_not_exist_exception {
+    ///
     /// A builder for [`DeploymentTargetDoesNotExistException`](crate::error::DeploymentTargetDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13654,6 +13738,7 @@ impl std::fmt::Display for InstanceIdRequiredException {
 impl std::error::Error for InstanceIdRequiredException {}
 /// See [`InstanceIdRequiredException`](crate::error::InstanceIdRequiredException)
 pub mod instance_id_required_exception {
+    ///
     /// A builder for [`InstanceIdRequiredException`](crate::error::InstanceIdRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13718,6 +13803,7 @@ impl std::fmt::Display for InstanceDoesNotExistException {
 impl std::error::Error for InstanceDoesNotExistException {}
 /// See [`InstanceDoesNotExistException`](crate::error::InstanceDoesNotExistException)
 pub mod instance_does_not_exist_exception {
+    ///
     /// A builder for [`InstanceDoesNotExistException`](crate::error::InstanceDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13782,6 +13868,7 @@ impl std::fmt::Display for DeploymentConfigNameRequiredException {
 impl std::error::Error for DeploymentConfigNameRequiredException {}
 /// See [`DeploymentConfigNameRequiredException`](crate::error::DeploymentConfigNameRequiredException)
 pub mod deployment_config_name_required_exception {
+    ///
     /// A builder for [`DeploymentConfigNameRequiredException`](crate::error::DeploymentConfigNameRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13846,6 +13933,7 @@ impl std::fmt::Display for RevisionDoesNotExistException {
 impl std::error::Error for RevisionDoesNotExistException {}
 /// See [`RevisionDoesNotExistException`](crate::error::RevisionDoesNotExistException)
 pub mod revision_does_not_exist_exception {
+    ///
     /// A builder for [`RevisionDoesNotExistException`](crate::error::RevisionDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13910,6 +13998,7 @@ impl std::fmt::Display for InvalidGitHubAccountTokenNameException {
 impl std::error::Error for InvalidGitHubAccountTokenNameException {}
 /// See [`InvalidGitHubAccountTokenNameException`](crate::error::InvalidGitHubAccountTokenNameException)
 pub mod invalid_git_hub_account_token_name_exception {
+    ///
     /// A builder for [`InvalidGitHubAccountTokenNameException`](crate::error::InvalidGitHubAccountTokenNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13974,6 +14063,7 @@ impl std::fmt::Display for GitHubAccountTokenNameRequiredException {
 impl std::error::Error for GitHubAccountTokenNameRequiredException {}
 /// See [`GitHubAccountTokenNameRequiredException`](crate::error::GitHubAccountTokenNameRequiredException)
 pub mod git_hub_account_token_name_required_exception {
+    ///
     /// A builder for [`GitHubAccountTokenNameRequiredException`](crate::error::GitHubAccountTokenNameRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14038,6 +14128,7 @@ impl std::fmt::Display for GitHubAccountTokenDoesNotExistException {
 impl std::error::Error for GitHubAccountTokenDoesNotExistException {}
 /// See [`GitHubAccountTokenDoesNotExistException`](crate::error::GitHubAccountTokenDoesNotExistException)
 pub mod git_hub_account_token_does_not_exist_exception {
+    ///
     /// A builder for [`GitHubAccountTokenDoesNotExistException`](crate::error::GitHubAccountTokenDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14102,6 +14193,7 @@ impl std::fmt::Display for InvalidOperationException {
 impl std::error::Error for InvalidOperationException {}
 /// See [`InvalidOperationException`](crate::error::InvalidOperationException)
 pub mod invalid_operation_exception {
+    ///
     /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14166,6 +14258,7 @@ impl std::fmt::Display for DeploymentConfigInUseException {
 impl std::error::Error for DeploymentConfigInUseException {}
 /// See [`DeploymentConfigInUseException`](crate::error::DeploymentConfigInUseException)
 pub mod deployment_config_in_use_exception {
+    ///
     /// A builder for [`DeploymentConfigInUseException`](crate::error::DeploymentConfigInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14230,6 +14323,7 @@ impl std::fmt::Display for RoleRequiredException {
 impl std::error::Error for RoleRequiredException {}
 /// See [`RoleRequiredException`](crate::error::RoleRequiredException)
 pub mod role_required_exception {
+    ///
     /// A builder for [`RoleRequiredException`](crate::error::RoleRequiredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14294,6 +14388,7 @@ impl std::fmt::Display for DeploymentGroupLimitExceededException {
 impl std::error::Error for DeploymentGroupLimitExceededException {}
 /// See [`DeploymentGroupLimitExceededException`](crate::error::DeploymentGroupLimitExceededException)
 pub mod deployment_group_limit_exceeded_exception {
+    ///
     /// A builder for [`DeploymentGroupLimitExceededException`](crate::error::DeploymentGroupLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14358,6 +14453,7 @@ impl std::fmt::Display for InvalidMinimumHealthyHostValueException {
 impl std::error::Error for InvalidMinimumHealthyHostValueException {}
 /// See [`InvalidMinimumHealthyHostValueException`](crate::error::InvalidMinimumHealthyHostValueException)
 pub mod invalid_minimum_healthy_host_value_exception {
+    ///
     /// A builder for [`InvalidMinimumHealthyHostValueException`](crate::error::InvalidMinimumHealthyHostValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14422,6 +14518,7 @@ impl std::fmt::Display for DeploymentConfigLimitExceededException {
 impl std::error::Error for DeploymentConfigLimitExceededException {}
 /// See [`DeploymentConfigLimitExceededException`](crate::error::DeploymentConfigLimitExceededException)
 pub mod deployment_config_limit_exceeded_exception {
+    ///
     /// A builder for [`DeploymentConfigLimitExceededException`](crate::error::DeploymentConfigLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14486,6 +14583,7 @@ impl std::fmt::Display for DeploymentConfigAlreadyExistsException {
 impl std::error::Error for DeploymentConfigAlreadyExistsException {}
 /// See [`DeploymentConfigAlreadyExistsException`](crate::error::DeploymentConfigAlreadyExistsException)
 pub mod deployment_config_already_exists_exception {
+    ///
     /// A builder for [`DeploymentConfigAlreadyExistsException`](crate::error::DeploymentConfigAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14550,6 +14648,7 @@ impl std::fmt::Display for InvalidUpdateOutdatedInstancesOnlyValueException {
 impl std::error::Error for InvalidUpdateOutdatedInstancesOnlyValueException {}
 /// See [`InvalidUpdateOutdatedInstancesOnlyValueException`](crate::error::InvalidUpdateOutdatedInstancesOnlyValueException)
 pub mod invalid_update_outdated_instances_only_value_exception {
+    ///
     /// A builder for [`InvalidUpdateOutdatedInstancesOnlyValueException`](crate::error::InvalidUpdateOutdatedInstancesOnlyValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14621,6 +14720,7 @@ impl std::fmt::Display for InvalidTargetInstancesException {
 impl std::error::Error for InvalidTargetInstancesException {}
 /// See [`InvalidTargetInstancesException`](crate::error::InvalidTargetInstancesException)
 pub mod invalid_target_instances_exception {
+    ///
     /// A builder for [`InvalidTargetInstancesException`](crate::error::InvalidTargetInstancesException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14685,6 +14785,7 @@ impl std::fmt::Display for InvalidIgnoreApplicationStopFailuresValueException {
 impl std::error::Error for InvalidIgnoreApplicationStopFailuresValueException {}
 /// See [`InvalidIgnoreApplicationStopFailuresValueException`](crate::error::InvalidIgnoreApplicationStopFailuresValueException)
 pub mod invalid_ignore_application_stop_failures_value_exception {
+    ///
     /// A builder for [`InvalidIgnoreApplicationStopFailuresValueException`](crate::error::InvalidIgnoreApplicationStopFailuresValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14750,6 +14851,7 @@ impl std::fmt::Display for InvalidGitHubAccountTokenException {
 impl std::error::Error for InvalidGitHubAccountTokenException {}
 /// See [`InvalidGitHubAccountTokenException`](crate::error::InvalidGitHubAccountTokenException)
 pub mod invalid_git_hub_account_token_exception {
+    ///
     /// A builder for [`InvalidGitHubAccountTokenException`](crate::error::InvalidGitHubAccountTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14814,6 +14916,7 @@ impl std::fmt::Display for InvalidFileExistsBehaviorException {
 impl std::error::Error for InvalidFileExistsBehaviorException {}
 /// See [`InvalidFileExistsBehaviorException`](crate::error::InvalidFileExistsBehaviorException)
 pub mod invalid_file_exists_behavior_exception {
+    ///
     /// A builder for [`InvalidFileExistsBehaviorException`](crate::error::InvalidFileExistsBehaviorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14878,6 +14981,7 @@ impl std::fmt::Display for DeploymentLimitExceededException {
 impl std::error::Error for DeploymentLimitExceededException {}
 /// See [`DeploymentLimitExceededException`](crate::error::DeploymentLimitExceededException)
 pub mod deployment_limit_exceeded_exception {
+    ///
     /// A builder for [`DeploymentLimitExceededException`](crate::error::DeploymentLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14942,6 +15046,7 @@ impl std::fmt::Display for ApplicationLimitExceededException {
 impl std::error::Error for ApplicationLimitExceededException {}
 /// See [`ApplicationLimitExceededException`](crate::error::ApplicationLimitExceededException)
 pub mod application_limit_exceeded_exception {
+    ///
     /// A builder for [`ApplicationLimitExceededException`](crate::error::ApplicationLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -15006,6 +15111,7 @@ impl std::fmt::Display for InvalidDeploymentWaitTypeException {
 impl std::error::Error for InvalidDeploymentWaitTypeException {}
 /// See [`InvalidDeploymentWaitTypeException`](crate::error::InvalidDeploymentWaitTypeException)
 pub mod invalid_deployment_wait_type_exception {
+    ///
     /// A builder for [`InvalidDeploymentWaitTypeException`](crate::error::InvalidDeploymentWaitTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -15070,6 +15176,7 @@ impl std::fmt::Display for DeploymentIsNotInReadyStateException {
 impl std::error::Error for DeploymentIsNotInReadyStateException {}
 /// See [`DeploymentIsNotInReadyStateException`](crate::error::DeploymentIsNotInReadyStateException)
 pub mod deployment_is_not_in_ready_state_exception {
+    ///
     /// A builder for [`DeploymentIsNotInReadyStateException`](crate::error::DeploymentIsNotInReadyStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -15134,6 +15241,7 @@ impl std::fmt::Display for BatchLimitExceededException {
 impl std::error::Error for BatchLimitExceededException {}
 /// See [`BatchLimitExceededException`](crate::error::BatchLimitExceededException)
 pub mod batch_limit_exceeded_exception {
+    ///
     /// A builder for [`BatchLimitExceededException`](crate::error::BatchLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -15198,6 +15306,7 @@ impl std::fmt::Display for DeploymentTargetListSizeExceededException {
 impl std::error::Error for DeploymentTargetListSizeExceededException {}
 /// See [`DeploymentTargetListSizeExceededException`](crate::error::DeploymentTargetListSizeExceededException)
 pub mod deployment_target_list_size_exceeded_exception {
+    ///
     /// A builder for [`DeploymentTargetListSizeExceededException`](crate::error::DeploymentTargetListSizeExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

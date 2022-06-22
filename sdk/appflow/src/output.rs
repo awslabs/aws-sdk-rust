@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateFlowOutput {
 }
 /// See [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
 pub mod update_flow_output {
+    ///
     /// A builder for [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -78,6 +79,7 @@ impl std::fmt::Debug for UpdateConnectorProfileOutput {
 }
 /// See [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput)
 pub mod update_connector_profile_output {
+    ///
     /// A builder for [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -125,6 +127,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -155,6 +158,7 @@ impl std::fmt::Debug for UnregisterConnectorOutput {
 }
 /// See [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
 pub mod unregister_connector_output {
+    ///
     /// A builder for [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -185,6 +189,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -232,6 +237,7 @@ impl std::fmt::Debug for StopFlowOutput {
 }
 /// See [`StopFlowOutput`](crate::output::StopFlowOutput)
 pub mod stop_flow_output {
+    ///
     /// A builder for [`StopFlowOutput`](crate::output::StopFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -315,6 +321,7 @@ impl std::fmt::Debug for StartFlowOutput {
 }
 /// See [`StartFlowOutput`](crate::output::StartFlowOutput)
 pub mod start_flow_output {
+    ///
     /// A builder for [`StartFlowOutput`](crate::output::StartFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -396,6 +403,7 @@ impl std::fmt::Debug for RegisterConnectorOutput {
 }
 /// See [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
 pub mod register_connector_output {
+    ///
     /// A builder for [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -457,6 +465,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -533,6 +542,7 @@ impl std::fmt::Debug for ListFlowsOutput {
 }
 /// See [`ListFlowsOutput`](crate::output::ListFlowsOutput)
 pub mod list_flows_output {
+    ///
     /// A builder for [`ListFlowsOutput`](crate::output::ListFlowsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -615,6 +625,7 @@ impl std::fmt::Debug for ListConnectorsOutput {
 }
 /// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
 pub mod list_connectors_output {
+    ///
     /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -702,6 +713,7 @@ impl std::fmt::Debug for ListConnectorEntitiesOutput {
 }
 /// See [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput)
 pub mod list_connector_entities_output {
+    ///
     /// A builder for [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -786,6 +798,7 @@ impl std::fmt::Debug for DescribeFlowExecutionRecordsOutput {
 }
 /// See [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput)
 pub mod describe_flow_execution_records_output {
+    ///
     /// A builder for [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -982,6 +995,7 @@ impl std::fmt::Debug for DescribeFlowOutput {
 }
 /// See [`DescribeFlowOutput`](crate::output::DescribeFlowOutput)
 pub mod describe_flow_output {
+    ///
     /// A builder for [`DescribeFlowOutput`](crate::output::DescribeFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1305,6 +1319,7 @@ impl std::fmt::Debug for DescribeConnectorsOutput {
 }
 /// See [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput)
 pub mod describe_connectors_output {
+    ///
     /// A builder for [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1425,6 +1440,7 @@ impl std::fmt::Debug for DescribeConnectorProfilesOutput {
 }
 /// See [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput)
 pub mod describe_connector_profiles_output {
+    ///
     /// A builder for [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1504,6 +1520,7 @@ impl std::fmt::Debug for DescribeConnectorEntityOutput {
 }
 /// See [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput)
 pub mod describe_connector_entity_output {
+    ///
     /// A builder for [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1573,6 +1590,7 @@ impl std::fmt::Debug for DescribeConnectorOutput {
 }
 /// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
 pub mod describe_connector_output {
+    ///
     /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1624,6 +1642,7 @@ impl std::fmt::Debug for DeleteFlowOutput {
 }
 /// See [`DeleteFlowOutput`](crate::output::DeleteFlowOutput)
 pub mod delete_flow_output {
+    ///
     /// A builder for [`DeleteFlowOutput`](crate::output::DeleteFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1654,6 +1673,7 @@ impl std::fmt::Debug for DeleteConnectorProfileOutput {
 }
 /// See [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput)
 pub mod delete_connector_profile_output {
+    ///
     /// A builder for [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1701,6 +1721,7 @@ impl std::fmt::Debug for CreateFlowOutput {
 }
 /// See [`CreateFlowOutput`](crate::output::CreateFlowOutput)
 pub mod create_flow_output {
+    ///
     /// A builder for [`CreateFlowOutput`](crate::output::CreateFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1770,6 +1791,7 @@ impl std::fmt::Debug for CreateConnectorProfileOutput {
 }
 /// See [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput)
 pub mod create_connector_profile_output {
+    ///
     /// A builder for [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

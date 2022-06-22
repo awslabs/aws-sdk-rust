@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateScalingPlanOutput {
 }
 /// See [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput)
 pub mod update_scaling_plan_output {
+    ///
     /// A builder for [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -51,6 +52,7 @@ impl std::fmt::Debug for GetScalingPlanResourceForecastDataOutput {
 }
 /// See [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput)
 pub mod get_scaling_plan_resource_forecast_data_output {
+    ///
     /// A builder for [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -121,6 +123,7 @@ impl std::fmt::Debug for DescribeScalingPlansOutput {
 }
 /// See [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput)
 pub mod describe_scaling_plans_output {
+    ///
     /// A builder for [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -206,6 +209,7 @@ impl std::fmt::Debug for DescribeScalingPlanResourcesOutput {
 }
 /// See [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput)
 pub mod describe_scaling_plan_resources_output {
+    ///
     /// A builder for [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -272,6 +276,7 @@ impl std::fmt::Debug for DeleteScalingPlanOutput {
 }
 /// See [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput)
 pub mod delete_scaling_plan_output {
+    ///
     /// A builder for [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -312,6 +317,7 @@ impl std::fmt::Debug for CreateScalingPlanOutput {
 }
 /// See [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput)
 pub mod create_scaling_plan_output {
+    ///
     /// A builder for [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

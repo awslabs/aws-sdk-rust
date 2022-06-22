@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateServiceIntegrationOutput {
 }
 /// See [`UpdateServiceIntegrationOutput`](crate::output::UpdateServiceIntegrationOutput)
 pub mod update_service_integration_output {
+    ///
     /// A builder for [`UpdateServiceIntegrationOutput`](crate::output::UpdateServiceIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdateResourceCollectionOutput {
 }
 /// See [`UpdateResourceCollectionOutput`](crate::output::UpdateResourceCollectionOutput)
 pub mod update_resource_collection_output {
+    ///
     /// A builder for [`UpdateResourceCollectionOutput`](crate::output::UpdateResourceCollectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UpdateEventSourcesConfigOutput {
 }
 /// See [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput)
 pub mod update_event_sources_config_output {
+    ///
     /// A builder for [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for StartCostEstimationOutput {
 }
 /// See [`StartCostEstimationOutput`](crate::output::StartCostEstimationOutput)
 pub mod start_cost_estimation_output {
+    ///
     /// A builder for [`StartCostEstimationOutput`](crate::output::StartCostEstimationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -160,6 +164,7 @@ impl std::fmt::Debug for SearchOrganizationInsightsOutput {
 }
 /// See [`SearchOrganizationInsightsOutput`](crate::output::SearchOrganizationInsightsOutput)
 pub mod search_organization_insights_output {
+    ///
     /// A builder for [`SearchOrganizationInsightsOutput`](crate::output::SearchOrganizationInsightsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -277,6 +282,7 @@ impl std::fmt::Debug for SearchInsightsOutput {
 }
 /// See [`SearchInsightsOutput`](crate::output::SearchInsightsOutput)
 pub mod search_insights_output {
+    ///
     /// A builder for [`SearchInsightsOutput`](crate::output::SearchInsightsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -365,6 +371,7 @@ impl std::fmt::Debug for RemoveNotificationChannelOutput {
 }
 /// See [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput)
 pub mod remove_notification_channel_output {
+    ///
     /// A builder for [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -395,6 +402,7 @@ impl std::fmt::Debug for PutFeedbackOutput {
 }
 /// See [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
 pub mod put_feedback_output {
+    ///
     /// A builder for [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -442,6 +450,7 @@ impl std::fmt::Debug for ListRecommendationsOutput {
 }
 /// See [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput)
 pub mod list_recommendations_output {
+    ///
     /// A builder for [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -538,6 +547,7 @@ impl std::fmt::Debug for ListOrganizationInsightsOutput {
 }
 /// See [`ListOrganizationInsightsOutput`](crate::output::ListOrganizationInsightsOutput)
 pub mod list_organization_insights_output {
+    ///
     /// A builder for [`ListOrganizationInsightsOutput`](crate::output::ListOrganizationInsightsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -653,6 +663,7 @@ impl std::fmt::Debug for ListNotificationChannelsOutput {
 }
 /// See [`ListNotificationChannelsOutput`](crate::output::ListNotificationChannelsOutput)
 pub mod list_notification_channels_output {
+    ///
     /// A builder for [`ListNotificationChannelsOutput`](crate::output::ListNotificationChannelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -747,6 +758,7 @@ impl std::fmt::Debug for ListInsightsOutput {
 }
 /// See [`ListInsightsOutput`](crate::output::ListInsightsOutput)
 pub mod list_insights_output {
+    ///
     /// A builder for [`ListInsightsOutput`](crate::output::ListInsightsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -852,6 +864,7 @@ impl std::fmt::Debug for ListEventsOutput {
 }
 /// See [`ListEventsOutput`](crate::output::ListEventsOutput)
 pub mod list_events_output {
+    ///
     /// A builder for [`ListEventsOutput`](crate::output::ListEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -947,6 +960,7 @@ impl std::fmt::Debug for ListAnomaliesForInsightOutput {
 }
 /// See [`ListAnomaliesForInsightOutput`](crate::output::ListAnomaliesForInsightOutput)
 pub mod list_anomalies_for_insight_output {
+    ///
     /// A builder for [`ListAnomaliesForInsightOutput`](crate::output::ListAnomaliesForInsightOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1054,6 +1068,7 @@ impl std::fmt::Debug for GetResourceCollectionOutput {
 }
 /// See [`GetResourceCollectionOutput`](crate::output::GetResourceCollectionOutput)
 pub mod get_resource_collection_output {
+    ///
     /// A builder for [`GetResourceCollectionOutput`](crate::output::GetResourceCollectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1164,6 +1179,7 @@ impl std::fmt::Debug for GetCostEstimationOutput {
 }
 /// See [`GetCostEstimationOutput`](crate::output::GetCostEstimationOutput)
 pub mod get_cost_estimation_output {
+    ///
     /// A builder for [`GetCostEstimationOutput`](crate::output::GetCostEstimationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1302,6 +1318,7 @@ impl std::fmt::Debug for DescribeServiceIntegrationOutput {
 }
 /// See [`DescribeServiceIntegrationOutput`](crate::output::DescribeServiceIntegrationOutput)
 pub mod describe_service_integration_output {
+    ///
     /// A builder for [`DescribeServiceIntegrationOutput`](crate::output::DescribeServiceIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1401,6 +1418,7 @@ impl std::fmt::Debug for DescribeResourceCollectionHealthOutput {
 }
 /// See [`DescribeResourceCollectionHealthOutput`](crate::output::DescribeResourceCollectionHealthOutput)
 pub mod describe_resource_collection_health_output {
+    ///
     /// A builder for [`DescribeResourceCollectionHealthOutput`](crate::output::DescribeResourceCollectionHealthOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1581,6 +1599,7 @@ impl std::fmt::Debug for DescribeOrganizationResourceCollectionHealthOutput {
 }
 /// See [`DescribeOrganizationResourceCollectionHealthOutput`](crate::output::DescribeOrganizationResourceCollectionHealthOutput)
 pub mod describe_organization_resource_collection_health_output {
+    ///
     /// A builder for [`DescribeOrganizationResourceCollectionHealthOutput`](crate::output::DescribeOrganizationResourceCollectionHealthOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1744,6 +1763,7 @@ impl std::fmt::Debug for DescribeOrganizationOverviewOutput {
 }
 /// See [`DescribeOrganizationOverviewOutput`](crate::output::DescribeOrganizationOverviewOutput)
 pub mod describe_organization_overview_output {
+    ///
     /// A builder for [`DescribeOrganizationOverviewOutput`](crate::output::DescribeOrganizationOverviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1831,6 +1851,7 @@ impl std::fmt::Debug for DescribeOrganizationHealthOutput {
 }
 /// See [`DescribeOrganizationHealthOutput`](crate::output::DescribeOrganizationHealthOutput)
 pub mod describe_organization_health_output {
+    ///
     /// A builder for [`DescribeOrganizationHealthOutput`](crate::output::DescribeOrganizationHealthOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1928,6 +1949,7 @@ impl std::fmt::Debug for DescribeInsightOutput {
 }
 /// See [`DescribeInsightOutput`](crate::output::DescribeInsightOutput)
 pub mod describe_insight_output {
+    ///
     /// A builder for [`DescribeInsightOutput`](crate::output::DescribeInsightOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2000,6 +2022,7 @@ impl std::fmt::Debug for DescribeFeedbackOutput {
 }
 /// See [`DescribeFeedbackOutput`](crate::output::DescribeFeedbackOutput)
 pub mod describe_feedback_output {
+    ///
     /// A builder for [`DescribeFeedbackOutput`](crate::output::DescribeFeedbackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2057,6 +2080,7 @@ impl std::fmt::Debug for DescribeEventSourcesConfigOutput {
 }
 /// See [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput)
 pub mod describe_event_sources_config_output {
+    ///
     /// A builder for [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2121,6 +2145,7 @@ impl std::fmt::Debug for DescribeAnomalyOutput {
 }
 /// See [`DescribeAnomalyOutput`](crate::output::DescribeAnomalyOutput)
 pub mod describe_anomaly_output {
+    ///
     /// A builder for [`DescribeAnomalyOutput`](crate::output::DescribeAnomalyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2210,6 +2235,7 @@ impl std::fmt::Debug for DescribeAccountOverviewOutput {
 }
 /// See [`DescribeAccountOverviewOutput`](crate::output::DescribeAccountOverviewOutput)
 pub mod describe_account_overview_output {
+    ///
     /// A builder for [`DescribeAccountOverviewOutput`](crate::output::DescribeAccountOverviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2312,6 +2338,7 @@ impl std::fmt::Debug for DescribeAccountHealthOutput {
 }
 /// See [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput)
 pub mod describe_account_health_output {
+    ///
     /// A builder for [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2392,6 +2419,7 @@ impl std::fmt::Debug for DeleteInsightOutput {
 }
 /// See [`DeleteInsightOutput`](crate::output::DeleteInsightOutput)
 pub mod delete_insight_output {
+    ///
     /// A builder for [`DeleteInsightOutput`](crate::output::DeleteInsightOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2432,6 +2460,7 @@ impl std::fmt::Debug for AddNotificationChannelOutput {
 }
 /// See [`AddNotificationChannelOutput`](crate::output::AddNotificationChannelOutput)
 pub mod add_notification_channel_output {
+    ///
     /// A builder for [`AddNotificationChannelOutput`](crate::output::AddNotificationChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -11,6 +11,7 @@ impl std::fmt::Debug for PutAlternateContactOutput {
 }
 /// See [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput)
 pub mod put_alternate_contact_output {
+    ///
     /// A builder for [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for DeleteAlternateContactOutput {
 }
 /// See [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput)
 pub mod delete_alternate_contact_output {
+    ///
     /// A builder for [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -81,6 +83,7 @@ impl std::fmt::Debug for GetAlternateContactOutput {
 }
 /// See [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput)
 pub mod get_alternate_contact_output {
+    ///
     /// A builder for [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

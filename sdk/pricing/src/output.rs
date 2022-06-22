@@ -35,6 +35,7 @@ impl std::fmt::Debug for GetProductsOutput {
 }
 /// See [`GetProductsOutput`](crate::output::GetProductsOutput)
 pub mod get_products_output {
+    ///
     /// A builder for [`GetProductsOutput`](crate::output::GetProductsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -132,6 +133,7 @@ impl std::fmt::Debug for GetAttributeValuesOutput {
 }
 /// See [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput)
 pub mod get_attribute_values_output {
+    ///
     /// A builder for [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -222,6 +224,7 @@ impl std::fmt::Debug for DescribeServicesOutput {
 }
 /// See [`DescribeServicesOutput`](crate::output::DescribeServicesOutput)
 pub mod describe_services_output {
+    ///
     /// A builder for [`DescribeServicesOutput`](crate::output::DescribeServicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

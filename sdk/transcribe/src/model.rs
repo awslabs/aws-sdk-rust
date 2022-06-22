@@ -314,6 +314,7 @@ impl std::fmt::Debug for CategoryProperties {
 }
 /// See [`CategoryProperties`](crate::model::CategoryProperties)
 pub mod category_properties {
+    ///
     /// A builder for [`CategoryProperties`](crate::model::CategoryProperties)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -539,6 +540,7 @@ impl std::fmt::Debug for SentimentFilter {
 }
 /// See [`SentimentFilter`](crate::model::SentimentFilter)
 pub mod sentiment_filter {
+    ///
     /// A builder for [`SentimentFilter`](crate::model::SentimentFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -755,6 +757,7 @@ impl std::fmt::Debug for RelativeTimeRange {
 }
 /// See [`RelativeTimeRange`](crate::model::RelativeTimeRange)
 pub mod relative_time_range {
+    ///
     /// A builder for [`RelativeTimeRange`](crate::model::RelativeTimeRange)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -906,6 +909,7 @@ impl std::fmt::Debug for AbsoluteTimeRange {
 }
 /// See [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange)
 pub mod absolute_time_range {
+    ///
     /// A builder for [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1116,6 +1120,7 @@ impl std::fmt::Debug for TranscriptFilter {
 }
 /// See [`TranscriptFilter`](crate::model::TranscriptFilter)
 pub mod transcript_filter {
+    ///
     /// A builder for [`TranscriptFilter`](crate::model::TranscriptFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1330,6 +1335,7 @@ impl std::fmt::Debug for InterruptionFilter {
 }
 /// See [`InterruptionFilter`](crate::model::InterruptionFilter)
 pub mod interruption_filter {
+    ///
     /// A builder for [`InterruptionFilter`](crate::model::InterruptionFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1462,6 +1468,7 @@ impl std::fmt::Debug for NonTalkTimeFilter {
 }
 /// See [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter)
 pub mod non_talk_time_filter {
+    ///
     /// A builder for [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1565,6 +1572,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1799,6 +1807,7 @@ impl std::fmt::Debug for TranscriptionJob {
 }
 /// See [`TranscriptionJob`](crate::model::TranscriptionJob)
 pub mod transcription_job {
+    ///
     /// A builder for [`TranscriptionJob`](crate::model::TranscriptionJob)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2206,6 +2215,7 @@ impl std::fmt::Debug for LanguageIdSettings {
 }
 /// See [`LanguageIdSettings`](crate::model::LanguageIdSettings)
 pub mod language_id_settings {
+    ///
     /// A builder for [`LanguageIdSettings`](crate::model::LanguageIdSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2307,6 +2317,7 @@ impl std::fmt::Debug for SubtitlesOutput {
 }
 /// See [`SubtitlesOutput`](crate::model::SubtitlesOutput)
 pub mod subtitles_output {
+    ///
     /// A builder for [`SubtitlesOutput`](crate::model::SubtitlesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2476,6 +2487,7 @@ impl std::fmt::Debug for ContentRedaction {
 }
 /// See [`ContentRedaction`](crate::model::ContentRedaction)
 pub mod content_redaction {
+    ///
     /// A builder for [`ContentRedaction`](crate::model::ContentRedaction)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2801,6 +2813,7 @@ impl std::fmt::Debug for JobExecutionSettings {
 }
 /// See [`JobExecutionSettings`](crate::model::JobExecutionSettings)
 pub mod job_execution_settings {
+    ///
     /// A builder for [`JobExecutionSettings`](crate::model::JobExecutionSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2876,6 +2889,7 @@ impl std::fmt::Debug for ModelSettings {
 }
 /// See [`ModelSettings`](crate::model::ModelSettings)
 pub mod model_settings {
+    ///
     /// A builder for [`ModelSettings`](crate::model::ModelSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2990,6 +3004,7 @@ impl std::fmt::Debug for Settings {
 }
 /// See [`Settings`](crate::model::Settings)
 pub mod settings {
+    ///
     /// A builder for [`Settings`](crate::model::Settings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3220,6 +3235,7 @@ impl std::fmt::Debug for Transcript {
 }
 /// See [`Transcript`](crate::model::Transcript)
 pub mod transcript {
+    ///
     /// A builder for [`Transcript`](crate::model::Transcript)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3316,6 +3332,7 @@ impl std::fmt::Debug for Media {
 }
 /// See [`Media`](crate::model::Media)
 pub mod media {
+    ///
     /// A builder for [`Media`](crate::model::Media)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3545,6 +3562,7 @@ impl std::fmt::Debug for Subtitles {
 }
 /// See [`Subtitles`](crate::model::Subtitles)
 pub mod subtitles {
+    ///
     /// A builder for [`Subtitles`](crate::model::Subtitles)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3758,6 +3776,7 @@ impl std::fmt::Debug for MedicalTranscriptionJob {
 }
 /// See [`MedicalTranscriptionJob`](crate::model::MedicalTranscriptionJob)
 pub mod medical_transcription_job {
+    ///
     /// A builder for [`MedicalTranscriptionJob`](crate::model::MedicalTranscriptionJob)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4266,6 +4285,7 @@ impl std::fmt::Debug for MedicalTranscriptionSetting {
 }
 /// See [`MedicalTranscriptionSetting`](crate::model::MedicalTranscriptionSetting)
 pub mod medical_transcription_setting {
+    ///
     /// A builder for [`MedicalTranscriptionSetting`](crate::model::MedicalTranscriptionSetting)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4391,6 +4411,7 @@ impl std::fmt::Debug for MedicalTranscript {
 }
 /// See [`MedicalTranscript`](crate::model::MedicalTranscript)
 pub mod medical_transcript {
+    ///
     /// A builder for [`MedicalTranscript`](crate::model::MedicalTranscript)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4570,6 +4591,7 @@ impl std::fmt::Debug for CallAnalyticsJob {
 }
 /// See [`CallAnalyticsJob`](crate::model::CallAnalyticsJob)
 pub mod call_analytics_job {
+    ///
     /// A builder for [`CallAnalyticsJob`](crate::model::CallAnalyticsJob)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4866,6 +4888,7 @@ impl std::fmt::Debug for ChannelDefinition {
 }
 /// See [`ChannelDefinition`](crate::model::ChannelDefinition)
 pub mod channel_definition {
+    ///
     /// A builder for [`ChannelDefinition`](crate::model::ChannelDefinition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4987,6 +5010,7 @@ impl std::fmt::Debug for CallAnalyticsJobSettings {
 }
 /// See [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings)
 pub mod call_analytics_job_settings {
+    ///
     /// A builder for [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5240,6 +5264,7 @@ impl std::fmt::Debug for VocabularyFilterInfo {
 }
 /// See [`VocabularyFilterInfo`](crate::model::VocabularyFilterInfo)
 pub mod vocabulary_filter_info {
+    ///
     /// A builder for [`VocabularyFilterInfo`](crate::model::VocabularyFilterInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5348,6 +5373,7 @@ impl std::fmt::Debug for VocabularyInfo {
 }
 /// See [`VocabularyInfo`](crate::model::VocabularyInfo)
 pub mod vocabulary_info {
+    ///
     /// A builder for [`VocabularyInfo`](crate::model::VocabularyInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5533,6 +5559,7 @@ impl std::fmt::Debug for TranscriptionJobSummary {
 }
 /// See [`TranscriptionJobSummary`](crate::model::TranscriptionJobSummary)
 pub mod transcription_job_summary {
+    ///
     /// A builder for [`TranscriptionJobSummary`](crate::model::TranscriptionJobSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5893,6 +5920,7 @@ impl std::fmt::Debug for MedicalTranscriptionJobSummary {
 }
 /// See [`MedicalTranscriptionJobSummary`](crate::model::MedicalTranscriptionJobSummary)
 pub mod medical_transcription_job_summary {
+    ///
     /// A builder for [`MedicalTranscriptionJobSummary`](crate::model::MedicalTranscriptionJobSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6164,6 +6192,7 @@ impl std::fmt::Debug for LanguageModel {
 }
 /// See [`LanguageModel`](crate::model::LanguageModel)
 pub mod language_model {
+    ///
     /// A builder for [`LanguageModel`](crate::model::LanguageModel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6349,6 +6378,7 @@ impl std::fmt::Debug for InputDataConfig {
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig)
 pub mod input_data_config {
+    ///
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6658,6 +6688,7 @@ impl std::fmt::Debug for CallAnalyticsJobSummary {
 }
 /// See [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary)
 pub mod call_analytics_job_summary {
+    ///
     /// A builder for [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

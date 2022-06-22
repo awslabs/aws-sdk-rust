@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdatePermissionSetOutput {
 }
 /// See [`UpdatePermissionSetOutput`](crate::output::UpdatePermissionSetOutput)
 pub mod update_permission_set_output {
+    ///
     /// A builder for [`UpdatePermissionSetOutput`](crate::output::UpdatePermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,6 +43,7 @@ impl std::fmt::Debug for UpdateInstanceAccessControlAttributeConfigurationOutput
 }
 /// See [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput)
 pub mod update_instance_access_control_attribute_configuration_output {
+    ///
     /// A builder for [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -75,6 +77,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -105,6 +108,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,6 +139,7 @@ impl std::fmt::Debug for PutInlinePolicyToPermissionSetOutput {
 }
 /// See [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput)
 pub mod put_inline_policy_to_permission_set_output {
+    ///
     /// A builder for [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -181,6 +186,7 @@ impl std::fmt::Debug for ProvisionPermissionSetOutput {
 }
 /// See [`ProvisionPermissionSetOutput`](crate::output::ProvisionPermissionSetOutput)
 pub mod provision_permission_set_output {
+    ///
     /// A builder for [`ProvisionPermissionSetOutput`](crate::output::ProvisionPermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -249,6 +255,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -331,6 +338,7 @@ impl std::fmt::Debug for ListPermissionSetsProvisionedToAccountOutput {
 }
 /// See [`ListPermissionSetsProvisionedToAccountOutput`](crate::output::ListPermissionSetsProvisionedToAccountOutput)
 pub mod list_permission_sets_provisioned_to_account_output {
+    ///
     /// A builder for [`ListPermissionSetsProvisionedToAccountOutput`](crate::output::ListPermissionSetsProvisionedToAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -413,6 +421,7 @@ impl std::fmt::Debug for ListPermissionSetsOutput {
 }
 /// See [`ListPermissionSetsOutput`](crate::output::ListPermissionSetsOutput)
 pub mod list_permission_sets_output {
+    ///
     /// A builder for [`ListPermissionSetsOutput`](crate::output::ListPermissionSetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -501,6 +510,7 @@ impl std::fmt::Debug for ListPermissionSetProvisioningStatusOutput {
 }
 /// See [`ListPermissionSetProvisioningStatusOutput`](crate::output::ListPermissionSetProvisioningStatusOutput)
 pub mod list_permission_set_provisioning_status_output {
+    ///
     /// A builder for [`ListPermissionSetProvisioningStatusOutput`](crate::output::ListPermissionSetProvisioningStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -593,6 +603,7 @@ impl std::fmt::Debug for ListManagedPoliciesInPermissionSetOutput {
 }
 /// See [`ListManagedPoliciesInPermissionSetOutput`](crate::output::ListManagedPoliciesInPermissionSetOutput)
 pub mod list_managed_policies_in_permission_set_output {
+    ///
     /// A builder for [`ListManagedPoliciesInPermissionSetOutput`](crate::output::ListManagedPoliciesInPermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -679,6 +690,7 @@ impl std::fmt::Debug for ListInstancesOutput {
 }
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput)
 pub mod list_instances_output {
+    ///
     /// A builder for [`ListInstancesOutput`](crate::output::ListInstancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -761,6 +773,7 @@ impl std::fmt::Debug for ListAccountsForProvisionedPermissionSetOutput {
 }
 /// See [`ListAccountsForProvisionedPermissionSetOutput`](crate::output::ListAccountsForProvisionedPermissionSetOutput)
 pub mod list_accounts_for_provisioned_permission_set_output {
+    ///
     /// A builder for [`ListAccountsForProvisionedPermissionSetOutput`](crate::output::ListAccountsForProvisionedPermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -844,6 +857,7 @@ impl std::fmt::Debug for ListAccountAssignmentsOutput {
 }
 /// See [`ListAccountAssignmentsOutput`](crate::output::ListAccountAssignmentsOutput)
 pub mod list_account_assignments_output {
+    ///
     /// A builder for [`ListAccountAssignmentsOutput`](crate::output::ListAccountAssignmentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -933,6 +947,7 @@ impl std::fmt::Debug for ListAccountAssignmentDeletionStatusOutput {
 }
 /// See [`ListAccountAssignmentDeletionStatusOutput`](crate::output::ListAccountAssignmentDeletionStatusOutput)
 pub mod list_account_assignment_deletion_status_output {
+    ///
     /// A builder for [`ListAccountAssignmentDeletionStatusOutput`](crate::output::ListAccountAssignmentDeletionStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1028,6 +1043,7 @@ impl std::fmt::Debug for ListAccountAssignmentCreationStatusOutput {
 }
 /// See [`ListAccountAssignmentCreationStatusOutput`](crate::output::ListAccountAssignmentCreationStatusOutput)
 pub mod list_account_assignment_creation_status_output {
+    ///
     /// A builder for [`ListAccountAssignmentCreationStatusOutput`](crate::output::ListAccountAssignmentCreationStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1110,6 +1126,7 @@ impl std::fmt::Debug for GetInlinePolicyForPermissionSetOutput {
 }
 /// See [`GetInlinePolicyForPermissionSetOutput`](crate::output::GetInlinePolicyForPermissionSetOutput)
 pub mod get_inline_policy_for_permission_set_output {
+    ///
     /// A builder for [`GetInlinePolicyForPermissionSetOutput`](crate::output::GetInlinePolicyForPermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1157,6 +1174,7 @@ impl std::fmt::Debug for DetachManagedPolicyFromPermissionSetOutput {
 }
 /// See [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput)
 pub mod detach_managed_policy_from_permission_set_output {
+    ///
     /// A builder for [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1203,6 +1221,7 @@ impl std::fmt::Debug for DescribePermissionSetProvisioningStatusOutput {
 }
 /// See [`DescribePermissionSetProvisioningStatusOutput`](crate::output::DescribePermissionSetProvisioningStatusOutput)
 pub mod describe_permission_set_provisioning_status_output {
+    ///
     /// A builder for [`DescribePermissionSetProvisioningStatusOutput`](crate::output::DescribePermissionSetProvisioningStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1264,6 +1283,7 @@ impl std::fmt::Debug for DescribePermissionSetOutput {
 }
 /// See [`DescribePermissionSetOutput`](crate::output::DescribePermissionSetOutput)
 pub mod describe_permission_set_output {
+    ///
     /// A builder for [`DescribePermissionSetOutput`](crate::output::DescribePermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1346,6 +1366,7 @@ impl std::fmt::Debug for DescribeInstanceAccessControlAttributeConfigurationOutp
 }
 /// See [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput)
 pub mod describe_instance_access_control_attribute_configuration_output {
+    ///
     /// A builder for [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1454,6 +1475,7 @@ impl std::fmt::Debug for DescribeAccountAssignmentDeletionStatusOutput {
 }
 /// See [`DescribeAccountAssignmentDeletionStatusOutput`](crate::output::DescribeAccountAssignmentDeletionStatusOutput)
 pub mod describe_account_assignment_deletion_status_output {
+    ///
     /// A builder for [`DescribeAccountAssignmentDeletionStatusOutput`](crate::output::DescribeAccountAssignmentDeletionStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1521,6 +1543,7 @@ impl std::fmt::Debug for DescribeAccountAssignmentCreationStatusOutput {
 }
 /// See [`DescribeAccountAssignmentCreationStatusOutput`](crate::output::DescribeAccountAssignmentCreationStatusOutput)
 pub mod describe_account_assignment_creation_status_output {
+    ///
     /// A builder for [`DescribeAccountAssignmentCreationStatusOutput`](crate::output::DescribeAccountAssignmentCreationStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1572,6 +1595,7 @@ impl std::fmt::Debug for DeletePermissionSetOutput {
 }
 /// See [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput)
 pub mod delete_permission_set_output {
+    ///
     /// A builder for [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1603,6 +1627,7 @@ impl std::fmt::Debug for DeleteInstanceAccessControlAttributeConfigurationOutput
 }
 /// See [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput)
 pub mod delete_instance_access_control_attribute_configuration_output {
+    ///
     /// A builder for [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1636,6 +1661,7 @@ impl std::fmt::Debug for DeleteInlinePolicyFromPermissionSetOutput {
 }
 /// See [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput)
 pub mod delete_inline_policy_from_permission_set_output {
+    ///
     /// A builder for [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1682,6 +1708,7 @@ impl std::fmt::Debug for DeleteAccountAssignmentOutput {
 }
 /// See [`DeleteAccountAssignmentOutput`](crate::output::DeleteAccountAssignmentOutput)
 pub mod delete_account_assignment_output {
+    ///
     /// A builder for [`DeleteAccountAssignmentOutput`](crate::output::DeleteAccountAssignmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1743,6 +1770,7 @@ impl std::fmt::Debug for CreatePermissionSetOutput {
 }
 /// See [`CreatePermissionSetOutput`](crate::output::CreatePermissionSetOutput)
 pub mod create_permission_set_output {
+    ///
     /// A builder for [`CreatePermissionSetOutput`](crate::output::CreatePermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1791,6 +1819,7 @@ impl std::fmt::Debug for CreateInstanceAccessControlAttributeConfigurationOutput
 }
 /// See [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput)
 pub mod create_instance_access_control_attribute_configuration_output {
+    ///
     /// A builder for [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1840,6 +1869,7 @@ impl std::fmt::Debug for CreateAccountAssignmentOutput {
 }
 /// See [`CreateAccountAssignmentOutput`](crate::output::CreateAccountAssignmentOutput)
 pub mod create_account_assignment_output {
+    ///
     /// A builder for [`CreateAccountAssignmentOutput`](crate::output::CreateAccountAssignmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1891,6 +1921,7 @@ impl std::fmt::Debug for AttachManagedPolicyToPermissionSetOutput {
 }
 /// See [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput)
 pub mod attach_managed_policy_to_permission_set_output {
+    ///
     /// A builder for [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

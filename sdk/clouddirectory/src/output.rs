@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpgradePublishedSchemaOutput {
 }
 /// See [`UpgradePublishedSchemaOutput`](crate::output::UpgradePublishedSchemaOutput)
 pub mod upgrade_published_schema_output {
+    ///
     /// A builder for [`UpgradePublishedSchemaOutput`](crate::output::UpgradePublishedSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -85,6 +86,7 @@ impl std::fmt::Debug for UpgradeAppliedSchemaOutput {
 }
 /// See [`UpgradeAppliedSchemaOutput`](crate::output::UpgradeAppliedSchemaOutput)
 pub mod upgrade_applied_schema_output {
+    ///
     /// A builder for [`UpgradeAppliedSchemaOutput`](crate::output::UpgradeAppliedSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -147,6 +149,7 @@ impl std::fmt::Debug for UpdateTypedLinkFacetOutput {
 }
 /// See [`UpdateTypedLinkFacetOutput`](crate::output::UpdateTypedLinkFacetOutput)
 pub mod update_typed_link_facet_output {
+    ///
     /// A builder for [`UpdateTypedLinkFacetOutput`](crate::output::UpdateTypedLinkFacetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -187,6 +190,7 @@ impl std::fmt::Debug for UpdateSchemaOutput {
 }
 /// See [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput)
 pub mod update_schema_output {
+    ///
     /// A builder for [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -241,6 +245,7 @@ impl std::fmt::Debug for UpdateObjectAttributesOutput {
 }
 /// See [`UpdateObjectAttributesOutput`](crate::output::UpdateObjectAttributesOutput)
 pub mod update_object_attributes_output {
+    ///
     /// A builder for [`UpdateObjectAttributesOutput`](crate::output::UpdateObjectAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -288,6 +293,7 @@ impl std::fmt::Debug for UpdateLinkAttributesOutput {
 }
 /// See [`UpdateLinkAttributesOutput`](crate::output::UpdateLinkAttributesOutput)
 pub mod update_link_attributes_output {
+    ///
     /// A builder for [`UpdateLinkAttributesOutput`](crate::output::UpdateLinkAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -318,6 +324,7 @@ impl std::fmt::Debug for UpdateFacetOutput {
 }
 /// See [`UpdateFacetOutput`](crate::output::UpdateFacetOutput)
 pub mod update_facet_output {
+    ///
     /// A builder for [`UpdateFacetOutput`](crate::output::UpdateFacetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -348,6 +355,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -378,6 +386,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -408,6 +417,7 @@ impl std::fmt::Debug for RemoveFacetFromObjectOutput {
 }
 /// See [`RemoveFacetFromObjectOutput`](crate::output::RemoveFacetFromObjectOutput)
 pub mod remove_facet_from_object_output {
+    ///
     /// A builder for [`RemoveFacetFromObjectOutput`](crate::output::RemoveFacetFromObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -448,6 +458,7 @@ impl std::fmt::Debug for PutSchemaFromJsonOutput {
 }
 /// See [`PutSchemaFromJsonOutput`](crate::output::PutSchemaFromJsonOutput)
 pub mod put_schema_from_json_output {
+    ///
     /// A builder for [`PutSchemaFromJsonOutput`](crate::output::PutSchemaFromJsonOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -500,6 +511,7 @@ impl std::fmt::Debug for PublishSchemaOutput {
 }
 /// See [`PublishSchemaOutput`](crate::output::PublishSchemaOutput)
 pub mod publish_schema_output {
+    ///
     /// A builder for [`PublishSchemaOutput`](crate::output::PublishSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -564,6 +576,7 @@ impl std::fmt::Debug for LookupPolicyOutput {
 }
 /// See [`LookupPolicyOutput`](crate::output::LookupPolicyOutput)
 pub mod lookup_policy_output {
+    ///
     /// A builder for [`LookupPolicyOutput`](crate::output::LookupPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -647,6 +660,7 @@ impl std::fmt::Debug for ListTypedLinkFacetNamesOutput {
 }
 /// See [`ListTypedLinkFacetNamesOutput`](crate::output::ListTypedLinkFacetNamesOutput)
 pub mod list_typed_link_facet_names_output {
+    ///
     /// A builder for [`ListTypedLinkFacetNamesOutput`](crate::output::ListTypedLinkFacetNamesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -729,6 +743,7 @@ impl std::fmt::Debug for ListTypedLinkFacetAttributesOutput {
 }
 /// See [`ListTypedLinkFacetAttributesOutput`](crate::output::ListTypedLinkFacetAttributesOutput)
 pub mod list_typed_link_facet_attributes_output {
+    ///
     /// A builder for [`ListTypedLinkFacetAttributesOutput`](crate::output::ListTypedLinkFacetAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -812,6 +827,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -894,6 +910,7 @@ impl std::fmt::Debug for ListPublishedSchemaArnsOutput {
 }
 /// See [`ListPublishedSchemaArnsOutput`](crate::output::ListPublishedSchemaArnsOutput)
 pub mod list_published_schema_arns_output {
+    ///
     /// A builder for [`ListPublishedSchemaArnsOutput`](crate::output::ListPublishedSchemaArnsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -976,6 +993,7 @@ impl std::fmt::Debug for ListPolicyAttachmentsOutput {
 }
 /// See [`ListPolicyAttachmentsOutput`](crate::output::ListPolicyAttachmentsOutput)
 pub mod list_policy_attachments_output {
+    ///
     /// A builder for [`ListPolicyAttachmentsOutput`](crate::output::ListPolicyAttachmentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1060,6 +1078,7 @@ impl std::fmt::Debug for ListOutgoingTypedLinksOutput {
 }
 /// See [`ListOutgoingTypedLinksOutput`](crate::output::ListOutgoingTypedLinksOutput)
 pub mod list_outgoing_typed_links_output {
+    ///
     /// A builder for [`ListOutgoingTypedLinksOutput`](crate::output::ListOutgoingTypedLinksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1143,6 +1162,7 @@ impl std::fmt::Debug for ListObjectPoliciesOutput {
 }
 /// See [`ListObjectPoliciesOutput`](crate::output::ListObjectPoliciesOutput)
 pub mod list_object_policies_output {
+    ///
     /// A builder for [`ListObjectPoliciesOutput`](crate::output::ListObjectPoliciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1239,6 +1259,7 @@ impl std::fmt::Debug for ListObjectParentsOutput {
 }
 /// See [`ListObjectParentsOutput`](crate::output::ListObjectParentsOutput)
 pub mod list_object_parents_output {
+    ///
     /// A builder for [`ListObjectParentsOutput`](crate::output::ListObjectParentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1362,6 +1383,7 @@ impl std::fmt::Debug for ListObjectParentPathsOutput {
 }
 /// See [`ListObjectParentPathsOutput`](crate::output::ListObjectParentPathsOutput)
 pub mod list_object_parent_paths_output {
+    ///
     /// A builder for [`ListObjectParentPathsOutput`](crate::output::ListObjectParentPathsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1452,6 +1474,7 @@ impl std::fmt::Debug for ListObjectChildrenOutput {
 }
 /// See [`ListObjectChildrenOutput`](crate::output::ListObjectChildrenOutput)
 pub mod list_object_children_output {
+    ///
     /// A builder for [`ListObjectChildrenOutput`](crate::output::ListObjectChildrenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1542,6 +1565,7 @@ impl std::fmt::Debug for ListObjectAttributesOutput {
 }
 /// See [`ListObjectAttributesOutput`](crate::output::ListObjectAttributesOutput)
 pub mod list_object_attributes_output {
+    ///
     /// A builder for [`ListObjectAttributesOutput`](crate::output::ListObjectAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1625,6 +1649,7 @@ impl std::fmt::Debug for ListManagedSchemaArnsOutput {
 }
 /// See [`ListManagedSchemaArnsOutput`](crate::output::ListManagedSchemaArnsOutput)
 pub mod list_managed_schema_arns_output {
+    ///
     /// A builder for [`ListManagedSchemaArnsOutput`](crate::output::ListManagedSchemaArnsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1707,6 +1732,7 @@ impl std::fmt::Debug for ListIndexOutput {
 }
 /// See [`ListIndexOutput`](crate::output::ListIndexOutput)
 pub mod list_index_output {
+    ///
     /// A builder for [`ListIndexOutput`](crate::output::ListIndexOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1790,6 +1816,7 @@ impl std::fmt::Debug for ListIncomingTypedLinksOutput {
 }
 /// See [`ListIncomingTypedLinksOutput`](crate::output::ListIncomingTypedLinksOutput)
 pub mod list_incoming_typed_links_output {
+    ///
     /// A builder for [`ListIncomingTypedLinksOutput`](crate::output::ListIncomingTypedLinksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1873,6 +1900,7 @@ impl std::fmt::Debug for ListFacetNamesOutput {
 }
 /// See [`ListFacetNamesOutput`](crate::output::ListFacetNamesOutput)
 pub mod list_facet_names_output {
+    ///
     /// A builder for [`ListFacetNamesOutput`](crate::output::ListFacetNamesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1955,6 +1983,7 @@ impl std::fmt::Debug for ListFacetAttributesOutput {
 }
 /// See [`ListFacetAttributesOutput`](crate::output::ListFacetAttributesOutput)
 pub mod list_facet_attributes_output {
+    ///
     /// A builder for [`ListFacetAttributesOutput`](crate::output::ListFacetAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2037,6 +2066,7 @@ impl std::fmt::Debug for ListDirectoriesOutput {
 }
 /// See [`ListDirectoriesOutput`](crate::output::ListDirectoriesOutput)
 pub mod list_directories_output {
+    ///
     /// A builder for [`ListDirectoriesOutput`](crate::output::ListDirectoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2119,6 +2149,7 @@ impl std::fmt::Debug for ListDevelopmentSchemaArnsOutput {
 }
 /// See [`ListDevelopmentSchemaArnsOutput`](crate::output::ListDevelopmentSchemaArnsOutput)
 pub mod list_development_schema_arns_output {
+    ///
     /// A builder for [`ListDevelopmentSchemaArnsOutput`](crate::output::ListDevelopmentSchemaArnsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2201,6 +2232,7 @@ impl std::fmt::Debug for ListAttachedIndicesOutput {
 }
 /// See [`ListAttachedIndicesOutput`](crate::output::ListAttachedIndicesOutput)
 pub mod list_attached_indices_output {
+    ///
     /// A builder for [`ListAttachedIndicesOutput`](crate::output::ListAttachedIndicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2284,6 +2316,7 @@ impl std::fmt::Debug for ListAppliedSchemaArnsOutput {
 }
 /// See [`ListAppliedSchemaArnsOutput`](crate::output::ListAppliedSchemaArnsOutput)
 pub mod list_applied_schema_arns_output {
+    ///
     /// A builder for [`ListAppliedSchemaArnsOutput`](crate::output::ListAppliedSchemaArnsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2359,6 +2392,7 @@ impl std::fmt::Debug for GetTypedLinkFacetInformationOutput {
 }
 /// See [`GetTypedLinkFacetInformationOutput`](crate::output::GetTypedLinkFacetInformationOutput)
 pub mod get_typed_link_facet_information_output {
+    ///
     /// A builder for [`GetTypedLinkFacetInformationOutput`](crate::output::GetTypedLinkFacetInformationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2430,6 +2464,7 @@ impl std::fmt::Debug for GetSchemaAsJsonOutput {
 }
 /// See [`GetSchemaAsJsonOutput`](crate::output::GetSchemaAsJsonOutput)
 pub mod get_schema_as_json_output {
+    ///
     /// A builder for [`GetSchemaAsJsonOutput`](crate::output::GetSchemaAsJsonOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2503,6 +2538,7 @@ impl std::fmt::Debug for GetObjectInformationOutput {
 }
 /// See [`GetObjectInformationOutput`](crate::output::GetObjectInformationOutput)
 pub mod get_object_information_output {
+    ///
     /// A builder for [`GetObjectInformationOutput`](crate::output::GetObjectInformationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2581,6 +2617,7 @@ impl std::fmt::Debug for GetObjectAttributesOutput {
 }
 /// See [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput)
 pub mod get_object_attributes_output {
+    ///
     /// A builder for [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2645,6 +2682,7 @@ impl std::fmt::Debug for GetLinkAttributesOutput {
 }
 /// See [`GetLinkAttributesOutput`](crate::output::GetLinkAttributesOutput)
 pub mod get_link_attributes_output {
+    ///
     /// A builder for [`GetLinkAttributesOutput`](crate::output::GetLinkAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2709,6 +2747,7 @@ impl std::fmt::Debug for GetFacetOutput {
 }
 /// See [`GetFacetOutput`](crate::output::GetFacetOutput)
 pub mod get_facet_output {
+    ///
     /// A builder for [`GetFacetOutput`](crate::output::GetFacetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2761,6 +2800,7 @@ impl std::fmt::Debug for GetDirectoryOutput {
 }
 /// See [`GetDirectoryOutput`](crate::output::GetDirectoryOutput)
 pub mod get_directory_output {
+    ///
     /// A builder for [`GetDirectoryOutput`](crate::output::GetDirectoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2818,6 +2858,7 @@ impl std::fmt::Debug for GetAppliedSchemaVersionOutput {
 }
 /// See [`GetAppliedSchemaVersionOutput`](crate::output::GetAppliedSchemaVersionOutput)
 pub mod get_applied_schema_version_output {
+    ///
     /// A builder for [`GetAppliedSchemaVersionOutput`](crate::output::GetAppliedSchemaVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2875,6 +2916,7 @@ impl std::fmt::Debug for EnableDirectoryOutput {
 }
 /// See [`EnableDirectoryOutput`](crate::output::EnableDirectoryOutput)
 pub mod enable_directory_output {
+    ///
     /// A builder for [`EnableDirectoryOutput`](crate::output::EnableDirectoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2932,6 +2974,7 @@ impl std::fmt::Debug for DisableDirectoryOutput {
 }
 /// See [`DisableDirectoryOutput`](crate::output::DisableDirectoryOutput)
 pub mod disable_directory_output {
+    ///
     /// A builder for [`DisableDirectoryOutput`](crate::output::DisableDirectoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2979,6 +3022,7 @@ impl std::fmt::Debug for DetachTypedLinkOutput {
 }
 /// See [`DetachTypedLinkOutput`](crate::output::DetachTypedLinkOutput)
 pub mod detach_typed_link_output {
+    ///
     /// A builder for [`DetachTypedLinkOutput`](crate::output::DetachTypedLinkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3009,6 +3053,7 @@ impl std::fmt::Debug for DetachPolicyOutput {
 }
 /// See [`DetachPolicyOutput`](crate::output::DetachPolicyOutput)
 pub mod detach_policy_output {
+    ///
     /// A builder for [`DetachPolicyOutput`](crate::output::DetachPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3052,6 +3097,7 @@ impl std::fmt::Debug for DetachObjectOutput {
 }
 /// See [`DetachObjectOutput`](crate::output::DetachObjectOutput)
 pub mod detach_object_output {
+    ///
     /// A builder for [`DetachObjectOutput`](crate::output::DetachObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3112,6 +3158,7 @@ impl std::fmt::Debug for DetachFromIndexOutput {
 }
 /// See [`DetachFromIndexOutput`](crate::output::DetachFromIndexOutput)
 pub mod detach_from_index_output {
+    ///
     /// A builder for [`DetachFromIndexOutput`](crate::output::DetachFromIndexOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3159,6 +3206,7 @@ impl std::fmt::Debug for DeleteTypedLinkFacetOutput {
 }
 /// See [`DeleteTypedLinkFacetOutput`](crate::output::DeleteTypedLinkFacetOutput)
 pub mod delete_typed_link_facet_output {
+    ///
     /// A builder for [`DeleteTypedLinkFacetOutput`](crate::output::DeleteTypedLinkFacetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3199,6 +3247,7 @@ impl std::fmt::Debug for DeleteSchemaOutput {
 }
 /// See [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput)
 pub mod delete_schema_output {
+    ///
     /// A builder for [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3243,6 +3292,7 @@ impl std::fmt::Debug for DeleteObjectOutput {
 }
 /// See [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
 pub mod delete_object_output {
+    ///
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3273,6 +3323,7 @@ impl std::fmt::Debug for DeleteFacetOutput {
 }
 /// See [`DeleteFacetOutput`](crate::output::DeleteFacetOutput)
 pub mod delete_facet_output {
+    ///
     /// A builder for [`DeleteFacetOutput`](crate::output::DeleteFacetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3313,6 +3364,7 @@ impl std::fmt::Debug for DeleteDirectoryOutput {
 }
 /// See [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput)
 pub mod delete_directory_output {
+    ///
     /// A builder for [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3360,6 +3412,7 @@ impl std::fmt::Debug for CreateTypedLinkFacetOutput {
 }
 /// See [`CreateTypedLinkFacetOutput`](crate::output::CreateTypedLinkFacetOutput)
 pub mod create_typed_link_facet_output {
+    ///
     /// A builder for [`CreateTypedLinkFacetOutput`](crate::output::CreateTypedLinkFacetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3400,6 +3453,7 @@ impl std::fmt::Debug for CreateSchemaOutput {
 }
 /// See [`CreateSchemaOutput`](crate::output::CreateSchemaOutput)
 pub mod create_schema_output {
+    ///
     /// A builder for [`CreateSchemaOutput`](crate::output::CreateSchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3454,6 +3508,7 @@ impl std::fmt::Debug for CreateObjectOutput {
 }
 /// See [`CreateObjectOutput`](crate::output::CreateObjectOutput)
 pub mod create_object_output {
+    ///
     /// A builder for [`CreateObjectOutput`](crate::output::CreateObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3511,6 +3566,7 @@ impl std::fmt::Debug for CreateIndexOutput {
 }
 /// See [`CreateIndexOutput`](crate::output::CreateIndexOutput)
 pub mod create_index_output {
+    ///
     /// A builder for [`CreateIndexOutput`](crate::output::CreateIndexOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3558,6 +3614,7 @@ impl std::fmt::Debug for CreateFacetOutput {
 }
 /// See [`CreateFacetOutput`](crate::output::CreateFacetOutput)
 pub mod create_facet_output {
+    ///
     /// A builder for [`CreateFacetOutput`](crate::output::CreateFacetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3619,6 +3676,7 @@ impl std::fmt::Debug for CreateDirectoryOutput {
 }
 /// See [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput)
 pub mod create_directory_output {
+    ///
     /// A builder for [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3718,6 +3776,7 @@ impl std::fmt::Debug for BatchWriteOutput {
 }
 /// See [`BatchWriteOutput`](crate::output::BatchWriteOutput)
 pub mod batch_write_output {
+    ///
     /// A builder for [`BatchWriteOutput`](crate::output::BatchWriteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3782,6 +3841,7 @@ impl std::fmt::Debug for BatchReadOutput {
 }
 /// See [`BatchReadOutput`](crate::output::BatchReadOutput)
 pub mod batch_read_output {
+    ///
     /// A builder for [`BatchReadOutput`](crate::output::BatchReadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3846,6 +3906,7 @@ impl std::fmt::Debug for AttachTypedLinkOutput {
 }
 /// See [`AttachTypedLinkOutput`](crate::output::AttachTypedLinkOutput)
 pub mod attach_typed_link_output {
+    ///
     /// A builder for [`AttachTypedLinkOutput`](crate::output::AttachTypedLinkOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3906,6 +3967,7 @@ impl std::fmt::Debug for AttachToIndexOutput {
 }
 /// See [`AttachToIndexOutput`](crate::output::AttachToIndexOutput)
 pub mod attach_to_index_output {
+    ///
     /// A builder for [`AttachToIndexOutput`](crate::output::AttachToIndexOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3953,6 +4015,7 @@ impl std::fmt::Debug for AttachPolicyOutput {
 }
 /// See [`AttachPolicyOutput`](crate::output::AttachPolicyOutput)
 pub mod attach_policy_output {
+    ///
     /// A builder for [`AttachPolicyOutput`](crate::output::AttachPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3996,6 +4059,7 @@ impl std::fmt::Debug for AttachObjectOutput {
 }
 /// See [`AttachObjectOutput`](crate::output::AttachObjectOutput)
 pub mod attach_object_output {
+    ///
     /// A builder for [`AttachObjectOutput`](crate::output::AttachObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4060,6 +4124,7 @@ impl std::fmt::Debug for ApplySchemaOutput {
 }
 /// See [`ApplySchemaOutput`](crate::output::ApplySchemaOutput)
 pub mod apply_schema_output {
+    ///
     /// A builder for [`ApplySchemaOutput`](crate::output::ApplySchemaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4122,6 +4187,7 @@ impl std::fmt::Debug for AddFacetToObjectOutput {
 }
 /// See [`AddFacetToObjectOutput`](crate::output::AddFacetToObjectOutput)
 pub mod add_facet_to_object_output {
+    ///
     /// A builder for [`AddFacetToObjectOutput`](crate::output::AddFacetToObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

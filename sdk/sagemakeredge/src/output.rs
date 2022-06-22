@@ -11,6 +11,7 @@ impl std::fmt::Debug for SendHeartbeatOutput {
 }
 /// See [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
 pub mod send_heartbeat_output {
+    ///
     /// A builder for [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -58,6 +59,7 @@ impl std::fmt::Debug for GetDeviceRegistrationOutput {
 }
 /// See [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput)
 pub mod get_device_registration_output {
+    ///
     /// A builder for [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdatePolicyOutput {
 }
 /// See [`UpdatePolicyOutput`](crate::output::UpdatePolicyOutput)
 pub mod update_policy_output {
+    ///
     /// A builder for [`UpdatePolicyOutput`](crate::output::UpdatePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -75,6 +76,7 @@ impl std::fmt::Debug for UpdateOrganizationalUnitOutput {
 }
 /// See [`UpdateOrganizationalUnitOutput`](crate::output::UpdateOrganizationalUnitOutput)
 pub mod update_organizational_unit_output {
+    ///
     /// A builder for [`UpdateOrganizationalUnitOutput`](crate::output::UpdateOrganizationalUnitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -122,6 +124,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -152,6 +155,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -182,6 +186,7 @@ impl std::fmt::Debug for RemoveAccountFromOrganizationOutput {
 }
 /// See [`RemoveAccountFromOrganizationOutput`](crate::output::RemoveAccountFromOrganizationOutput)
 pub mod remove_account_from_organization_output {
+    ///
     /// A builder for [`RemoveAccountFromOrganizationOutput`](crate::output::RemoveAccountFromOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -212,6 +217,7 @@ impl std::fmt::Debug for RegisterDelegatedAdministratorOutput {
 }
 /// See [`RegisterDelegatedAdministratorOutput`](crate::output::RegisterDelegatedAdministratorOutput)
 pub mod register_delegated_administrator_output {
+    ///
     /// A builder for [`RegisterDelegatedAdministratorOutput`](crate::output::RegisterDelegatedAdministratorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -242,6 +248,7 @@ impl std::fmt::Debug for MoveAccountOutput {
 }
 /// See [`MoveAccountOutput`](crate::output::MoveAccountOutput)
 pub mod move_account_output {
+    ///
     /// A builder for [`MoveAccountOutput`](crate::output::MoveAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -289,6 +296,7 @@ impl std::fmt::Debug for ListTargetsForPolicyOutput {
 }
 /// See [`ListTargetsForPolicyOutput`](crate::output::ListTargetsForPolicyOutput)
 pub mod list_targets_for_policy_output {
+    ///
     /// A builder for [`ListTargetsForPolicyOutput`](crate::output::ListTargetsForPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -371,6 +379,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -453,6 +462,7 @@ impl std::fmt::Debug for ListRootsOutput {
 }
 /// See [`ListRootsOutput`](crate::output::ListRootsOutput)
 pub mod list_roots_output {
+    ///
     /// A builder for [`ListRootsOutput`](crate::output::ListRootsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -535,6 +545,7 @@ impl std::fmt::Debug for ListPoliciesForTargetOutput {
 }
 /// See [`ListPoliciesForTargetOutput`](crate::output::ListPoliciesForTargetOutput)
 pub mod list_policies_for_target_output {
+    ///
     /// A builder for [`ListPoliciesForTargetOutput`](crate::output::ListPoliciesForTargetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -617,6 +628,7 @@ impl std::fmt::Debug for ListPoliciesOutput {
 }
 /// See [`ListPoliciesOutput`](crate::output::ListPoliciesOutput)
 pub mod list_policies_output {
+    ///
     /// A builder for [`ListPoliciesOutput`](crate::output::ListPoliciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -699,6 +711,7 @@ impl std::fmt::Debug for ListParentsOutput {
 }
 /// See [`ListParentsOutput`](crate::output::ListParentsOutput)
 pub mod list_parents_output {
+    ///
     /// A builder for [`ListParentsOutput`](crate::output::ListParentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -781,6 +794,7 @@ impl std::fmt::Debug for ListOrganizationalUnitsForParentOutput {
 }
 /// See [`ListOrganizationalUnitsForParentOutput`](crate::output::ListOrganizationalUnitsForParentOutput)
 pub mod list_organizational_units_for_parent_output {
+    ///
     /// A builder for [`ListOrganizationalUnitsForParentOutput`](crate::output::ListOrganizationalUnitsForParentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -864,6 +878,7 @@ impl std::fmt::Debug for ListHandshakesForOrganizationOutput {
 }
 /// See [`ListHandshakesForOrganizationOutput`](crate::output::ListHandshakesForOrganizationOutput)
 pub mod list_handshakes_for_organization_output {
+    ///
     /// A builder for [`ListHandshakesForOrganizationOutput`](crate::output::ListHandshakesForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -946,6 +961,7 @@ impl std::fmt::Debug for ListHandshakesForAccountOutput {
 }
 /// See [`ListHandshakesForAccountOutput`](crate::output::ListHandshakesForAccountOutput)
 pub mod list_handshakes_for_account_output {
+    ///
     /// A builder for [`ListHandshakesForAccountOutput`](crate::output::ListHandshakesForAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1028,6 +1044,7 @@ impl std::fmt::Debug for ListDelegatedServicesForAccountOutput {
 }
 /// See [`ListDelegatedServicesForAccountOutput`](crate::output::ListDelegatedServicesForAccountOutput)
 pub mod list_delegated_services_for_account_output {
+    ///
     /// A builder for [`ListDelegatedServicesForAccountOutput`](crate::output::ListDelegatedServicesForAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1114,6 +1131,7 @@ impl std::fmt::Debug for ListDelegatedAdministratorsOutput {
 }
 /// See [`ListDelegatedAdministratorsOutput`](crate::output::ListDelegatedAdministratorsOutput)
 pub mod list_delegated_administrators_output {
+    ///
     /// A builder for [`ListDelegatedAdministratorsOutput`](crate::output::ListDelegatedAdministratorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1203,6 +1221,7 @@ impl std::fmt::Debug for ListCreateAccountStatusOutput {
 }
 /// See [`ListCreateAccountStatusOutput`](crate::output::ListCreateAccountStatusOutput)
 pub mod list_create_account_status_output {
+    ///
     /// A builder for [`ListCreateAccountStatusOutput`](crate::output::ListCreateAccountStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1286,6 +1305,7 @@ impl std::fmt::Debug for ListChildrenOutput {
 }
 /// See [`ListChildrenOutput`](crate::output::ListChildrenOutput)
 pub mod list_children_output {
+    ///
     /// A builder for [`ListChildrenOutput`](crate::output::ListChildrenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1374,6 +1394,7 @@ impl std::fmt::Debug for ListAwsServiceAccessForOrganizationOutput {
 }
 /// See [`ListAwsServiceAccessForOrganizationOutput`](crate::output::ListAwsServiceAccessForOrganizationOutput)
 pub mod list_aws_service_access_for_organization_output {
+    ///
     /// A builder for [`ListAwsServiceAccessForOrganizationOutput`](crate::output::ListAwsServiceAccessForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1460,6 +1481,7 @@ impl std::fmt::Debug for ListAccountsForParentOutput {
 }
 /// See [`ListAccountsForParentOutput`](crate::output::ListAccountsForParentOutput)
 pub mod list_accounts_for_parent_output {
+    ///
     /// A builder for [`ListAccountsForParentOutput`](crate::output::ListAccountsForParentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1542,6 +1564,7 @@ impl std::fmt::Debug for ListAccountsOutput {
 }
 /// See [`ListAccountsOutput`](crate::output::ListAccountsOutput)
 pub mod list_accounts_output {
+    ///
     /// A builder for [`ListAccountsOutput`](crate::output::ListAccountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1607,6 +1630,7 @@ impl std::fmt::Debug for LeaveOrganizationOutput {
 }
 /// See [`LeaveOrganizationOutput`](crate::output::LeaveOrganizationOutput)
 pub mod leave_organization_output {
+    ///
     /// A builder for [`LeaveOrganizationOutput`](crate::output::LeaveOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1647,6 +1671,7 @@ impl std::fmt::Debug for InviteAccountToOrganizationOutput {
 }
 /// See [`InviteAccountToOrganizationOutput`](crate::output::InviteAccountToOrganizationOutput)
 pub mod invite_account_to_organization_output {
+    ///
     /// A builder for [`InviteAccountToOrganizationOutput`](crate::output::InviteAccountToOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1704,6 +1729,7 @@ impl std::fmt::Debug for EnablePolicyTypeOutput {
 }
 /// See [`EnablePolicyTypeOutput`](crate::output::EnablePolicyTypeOutput)
 pub mod enable_policy_type_output {
+    ///
     /// A builder for [`EnablePolicyTypeOutput`](crate::output::EnablePolicyTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1746,6 +1772,7 @@ impl std::fmt::Debug for EnableAwsServiceAccessOutput {
 }
 /// See [`EnableAwsServiceAccessOutput`](crate::output::EnableAwsServiceAccessOutput)
 pub mod enable_aws_service_access_output {
+    ///
     /// A builder for [`EnableAwsServiceAccessOutput`](crate::output::EnableAwsServiceAccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1786,6 +1813,7 @@ impl std::fmt::Debug for EnableAllFeaturesOutput {
 }
 /// See [`EnableAllFeaturesOutput`](crate::output::EnableAllFeaturesOutput)
 pub mod enable_all_features_output {
+    ///
     /// A builder for [`EnableAllFeaturesOutput`](crate::output::EnableAllFeaturesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1843,6 +1871,7 @@ impl std::fmt::Debug for DisablePolicyTypeOutput {
 }
 /// See [`DisablePolicyTypeOutput`](crate::output::DisablePolicyTypeOutput)
 pub mod disable_policy_type_output {
+    ///
     /// A builder for [`DisablePolicyTypeOutput`](crate::output::DisablePolicyTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1885,6 +1914,7 @@ impl std::fmt::Debug for DisableAwsServiceAccessOutput {
 }
 /// See [`DisableAwsServiceAccessOutput`](crate::output::DisableAwsServiceAccessOutput)
 pub mod disable_aws_service_access_output {
+    ///
     /// A builder for [`DisableAwsServiceAccessOutput`](crate::output::DisableAwsServiceAccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1915,6 +1945,7 @@ impl std::fmt::Debug for DetachPolicyOutput {
 }
 /// See [`DetachPolicyOutput`](crate::output::DetachPolicyOutput)
 pub mod detach_policy_output {
+    ///
     /// A builder for [`DetachPolicyOutput`](crate::output::DetachPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1955,6 +1986,7 @@ impl std::fmt::Debug for DescribePolicyOutput {
 }
 /// See [`DescribePolicyOutput`](crate::output::DescribePolicyOutput)
 pub mod describe_policy_output {
+    ///
     /// A builder for [`DescribePolicyOutput`](crate::output::DescribePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2009,6 +2041,7 @@ impl std::fmt::Debug for DescribeOrganizationalUnitOutput {
 }
 /// See [`DescribeOrganizationalUnitOutput`](crate::output::DescribeOrganizationalUnitOutput)
 pub mod describe_organizational_unit_output {
+    ///
     /// A builder for [`DescribeOrganizationalUnitOutput`](crate::output::DescribeOrganizationalUnitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2070,6 +2103,7 @@ impl std::fmt::Debug for DescribeOrganizationOutput {
 }
 /// See [`DescribeOrganizationOutput`](crate::output::DescribeOrganizationOutput)
 pub mod describe_organization_output {
+    ///
     /// A builder for [`DescribeOrganizationOutput`](crate::output::DescribeOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2131,6 +2165,7 @@ impl std::fmt::Debug for DescribeHandshakeOutput {
 }
 /// See [`DescribeHandshakeOutput`](crate::output::DescribeHandshakeOutput)
 pub mod describe_handshake_output {
+    ///
     /// A builder for [`DescribeHandshakeOutput`](crate::output::DescribeHandshakeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2188,6 +2223,7 @@ impl std::fmt::Debug for DescribeEffectivePolicyOutput {
 }
 /// See [`DescribeEffectivePolicyOutput`](crate::output::DescribeEffectivePolicyOutput)
 pub mod describe_effective_policy_output {
+    ///
     /// A builder for [`DescribeEffectivePolicyOutput`](crate::output::DescribeEffectivePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2245,6 +2281,7 @@ impl std::fmt::Debug for DescribeCreateAccountStatusOutput {
 }
 /// See [`DescribeCreateAccountStatusOutput`](crate::output::DescribeCreateAccountStatusOutput)
 pub mod describe_create_account_status_output {
+    ///
     /// A builder for [`DescribeCreateAccountStatusOutput`](crate::output::DescribeCreateAccountStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2302,6 +2339,7 @@ impl std::fmt::Debug for DescribeAccountOutput {
 }
 /// See [`DescribeAccountOutput`](crate::output::DescribeAccountOutput)
 pub mod describe_account_output {
+    ///
     /// A builder for [`DescribeAccountOutput`](crate::output::DescribeAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2346,6 +2384,7 @@ impl std::fmt::Debug for DeregisterDelegatedAdministratorOutput {
 }
 /// See [`DeregisterDelegatedAdministratorOutput`](crate::output::DeregisterDelegatedAdministratorOutput)
 pub mod deregister_delegated_administrator_output {
+    ///
     /// A builder for [`DeregisterDelegatedAdministratorOutput`](crate::output::DeregisterDelegatedAdministratorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2376,6 +2415,7 @@ impl std::fmt::Debug for DeletePolicyOutput {
 }
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
 pub mod delete_policy_output {
+    ///
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2406,6 +2446,7 @@ impl std::fmt::Debug for DeleteOrganizationalUnitOutput {
 }
 /// See [`DeleteOrganizationalUnitOutput`](crate::output::DeleteOrganizationalUnitOutput)
 pub mod delete_organizational_unit_output {
+    ///
     /// A builder for [`DeleteOrganizationalUnitOutput`](crate::output::DeleteOrganizationalUnitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2436,6 +2477,7 @@ impl std::fmt::Debug for DeleteOrganizationOutput {
 }
 /// See [`DeleteOrganizationOutput`](crate::output::DeleteOrganizationOutput)
 pub mod delete_organization_output {
+    ///
     /// A builder for [`DeleteOrganizationOutput`](crate::output::DeleteOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2476,6 +2518,7 @@ impl std::fmt::Debug for DeclineHandshakeOutput {
 }
 /// See [`DeclineHandshakeOutput`](crate::output::DeclineHandshakeOutput)
 pub mod decline_handshake_output {
+    ///
     /// A builder for [`DeclineHandshakeOutput`](crate::output::DeclineHandshakeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2533,6 +2576,7 @@ impl std::fmt::Debug for CreatePolicyOutput {
 }
 /// See [`CreatePolicyOutput`](crate::output::CreatePolicyOutput)
 pub mod create_policy_output {
+    ///
     /// A builder for [`CreatePolicyOutput`](crate::output::CreatePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2587,6 +2631,7 @@ impl std::fmt::Debug for CreateOrganizationalUnitOutput {
 }
 /// See [`CreateOrganizationalUnitOutput`](crate::output::CreateOrganizationalUnitOutput)
 pub mod create_organizational_unit_output {
+    ///
     /// A builder for [`CreateOrganizationalUnitOutput`](crate::output::CreateOrganizationalUnitOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2644,6 +2689,7 @@ impl std::fmt::Debug for CreateOrganizationOutput {
 }
 /// See [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput)
 pub mod create_organization_output {
+    ///
     /// A builder for [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2701,6 +2747,7 @@ impl std::fmt::Debug for CreateGovCloudAccountOutput {
 }
 /// See [`CreateGovCloudAccountOutput`](crate::output::CreateGovCloudAccountOutput)
 pub mod create_gov_cloud_account_output {
+    ///
     /// A builder for [`CreateGovCloudAccountOutput`](crate::output::CreateGovCloudAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2758,6 +2805,7 @@ impl std::fmt::Debug for CreateAccountOutput {
 }
 /// See [`CreateAccountOutput`](crate::output::CreateAccountOutput)
 pub mod create_account_output {
+    ///
     /// A builder for [`CreateAccountOutput`](crate::output::CreateAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2805,6 +2853,7 @@ impl std::fmt::Debug for CloseAccountOutput {
 }
 /// See [`CloseAccountOutput`](crate::output::CloseAccountOutput)
 pub mod close_account_output {
+    ///
     /// A builder for [`CloseAccountOutput`](crate::output::CloseAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2845,6 +2894,7 @@ impl std::fmt::Debug for CancelHandshakeOutput {
 }
 /// See [`CancelHandshakeOutput`](crate::output::CancelHandshakeOutput)
 pub mod cancel_handshake_output {
+    ///
     /// A builder for [`CancelHandshakeOutput`](crate::output::CancelHandshakeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2892,6 +2942,7 @@ impl std::fmt::Debug for AttachPolicyOutput {
 }
 /// See [`AttachPolicyOutput`](crate::output::AttachPolicyOutput)
 pub mod attach_policy_output {
+    ///
     /// A builder for [`AttachPolicyOutput`](crate::output::AttachPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2932,6 +2983,7 @@ impl std::fmt::Debug for AcceptHandshakeOutput {
 }
 /// See [`AcceptHandshakeOutput`](crate::output::AcceptHandshakeOutput)
 pub mod accept_handshake_output {
+    ///
     /// A builder for [`AcceptHandshakeOutput`](crate::output::AcceptHandshakeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

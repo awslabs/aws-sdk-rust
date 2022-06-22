@@ -2716,6 +2716,7 @@ impl std::fmt::Display for InvalidResourceException {
 impl std::error::Error for InvalidResourceException {}
 /// See [`InvalidResourceException`](crate::error::InvalidResourceException)
 pub mod invalid_resource_exception {
+    ///
     /// A builder for [`InvalidResourceException`](crate::error::InvalidResourceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2795,6 +2796,7 @@ impl std::fmt::Display for InvalidJobStateException {
 impl std::error::Error for InvalidJobStateException {}
 /// See [`InvalidJobStateException`](crate::error::InvalidJobStateException)
 pub mod invalid_job_state_exception {
+    ///
     /// A builder for [`InvalidJobStateException`](crate::error::InvalidJobStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2859,6 +2861,7 @@ impl std::fmt::Display for KmsRequestFailedException {
 impl std::error::Error for KmsRequestFailedException {}
 /// See [`KmsRequestFailedException`](crate::error::KmsRequestFailedException)
 pub mod kms_request_failed_exception {
+    ///
     /// A builder for [`KmsRequestFailedException`](crate::error::KmsRequestFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2923,6 +2926,7 @@ impl std::fmt::Display for InvalidInputCombinationException {
 impl std::error::Error for InvalidInputCombinationException {}
 /// See [`InvalidInputCombinationException`](crate::error::InvalidInputCombinationException)
 pub mod invalid_input_combination_exception {
+    ///
     /// A builder for [`InvalidInputCombinationException`](crate::error::InvalidInputCombinationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2987,6 +2991,7 @@ impl std::fmt::Display for Ec2RequestFailedException {
 impl std::error::Error for Ec2RequestFailedException {}
 /// See [`Ec2RequestFailedException`](crate::error::Ec2RequestFailedException)
 pub mod ec2_request_failed_exception {
+    ///
     /// A builder for [`Ec2RequestFailedException`](crate::error::Ec2RequestFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3051,6 +3056,7 @@ impl std::fmt::Display for ClusterLimitExceededException {
 impl std::error::Error for ClusterLimitExceededException {}
 /// See [`ClusterLimitExceededException`](crate::error::ClusterLimitExceededException)
 pub mod cluster_limit_exceeded_exception {
+    ///
     /// A builder for [`ClusterLimitExceededException`](crate::error::ClusterLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3115,6 +3121,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
+    ///
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3188,6 +3195,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException)
 pub mod conflict_exception {
+    ///
     /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3267,6 +3275,7 @@ impl std::fmt::Display for ReturnShippingLabelAlreadyExistsException {
 impl std::error::Error for ReturnShippingLabelAlreadyExistsException {}
 /// See [`ReturnShippingLabelAlreadyExistsException`](crate::error::ReturnShippingLabelAlreadyExistsException)
 pub mod return_shipping_label_already_exists_exception {
+    ///
     /// A builder for [`ReturnShippingLabelAlreadyExistsException`](crate::error::ReturnShippingLabelAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3331,6 +3340,7 @@ impl std::fmt::Display for UnsupportedAddressException {
 impl std::error::Error for UnsupportedAddressException {}
 /// See [`UnsupportedAddressException`](crate::error::UnsupportedAddressException)
 pub mod unsupported_address_exception {
+    ///
     /// A builder for [`UnsupportedAddressException`](crate::error::UnsupportedAddressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3395,6 +3405,7 @@ impl std::fmt::Display for InvalidAddressException {
 impl std::error::Error for InvalidAddressException {}
 /// See [`InvalidAddressException`](crate::error::InvalidAddressException)
 pub mod invalid_address_exception {
+    ///
     /// A builder for [`InvalidAddressException`](crate::error::InvalidAddressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

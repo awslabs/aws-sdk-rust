@@ -23761,6 +23761,7 @@ impl std::fmt::Display for UnauthenticatedException {
 impl std::error::Error for UnauthenticatedException {}
 /// See [`UnauthenticatedException`](crate::error::UnauthenticatedException)
 pub mod unauthenticated_exception {
+    ///
     /// A builder for [`UnauthenticatedException`](crate::error::UnauthenticatedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -23884,6 +23885,7 @@ impl std::fmt::Display for ServiceException {
 impl std::error::Error for ServiceException {}
 /// See [`ServiceException`](crate::error::ServiceException)
 pub mod service_exception {
+    ///
     /// A builder for [`ServiceException`](crate::error::ServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24007,6 +24009,7 @@ impl std::fmt::Display for OperationFailureException {
 impl std::error::Error for OperationFailureException {}
 /// See [`OperationFailureException`](crate::error::OperationFailureException)
 pub mod operation_failure_exception {
+    ///
     /// A builder for [`OperationFailureException`](crate::error::OperationFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24130,6 +24133,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException)
 pub mod not_found_exception {
+    ///
     /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24255,6 +24259,7 @@ impl std::fmt::Display for InvalidInputException {
 impl std::error::Error for InvalidInputException {}
 /// See [`InvalidInputException`](crate::error::InvalidInputException)
 pub mod invalid_input_exception {
+    ///
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24378,6 +24383,7 @@ impl std::fmt::Display for AccountSetupInProgressException {
 impl std::error::Error for AccountSetupInProgressException {}
 /// See [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException)
 pub mod account_setup_in_progress_exception {
+    ///
     /// A builder for [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24501,6 +24507,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
+    ///
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -56,6 +56,7 @@ impl std::fmt::Debug for StartDeviceAuthorizationOutput {
 }
 /// See [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput)
 pub mod start_device_authorization_output {
+    ///
     /// A builder for [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -211,6 +212,7 @@ impl std::fmt::Debug for RegisterClientOutput {
 }
 /// See [`RegisterClientOutput`](crate::output::RegisterClientOutput)
 pub mod register_client_output {
+    ///
     /// A builder for [`RegisterClientOutput`](crate::output::RegisterClientOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -362,6 +364,7 @@ impl std::fmt::Debug for CreateTokenOutput {
 }
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput)
 pub mod create_token_output {
+    ///
     /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

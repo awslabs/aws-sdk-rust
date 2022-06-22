@@ -56,6 +56,7 @@ impl std::fmt::Debug for UpdateUserProfileOutput {
 }
 /// See [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput)
 pub mod update_user_profile_output {
+    ///
     /// A builder for [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -196,6 +197,7 @@ impl std::fmt::Debug for UpdateTeamMemberOutput {
 }
 /// See [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput)
 pub mod update_team_member_output {
+    ///
     /// A builder for [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -264,6 +266,7 @@ impl std::fmt::Debug for UpdateProjectOutput {
 }
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
 pub mod update_project_output {
+    ///
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -294,6 +297,7 @@ impl std::fmt::Debug for UntagProjectOutput {
 }
 /// See [`UntagProjectOutput`](crate::output::UntagProjectOutput)
 pub mod untag_project_output {
+    ///
     /// A builder for [`UntagProjectOutput`](crate::output::UntagProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -338,6 +342,7 @@ impl std::fmt::Debug for TagProjectOutput {
 }
 /// See [`TagProjectOutput`](crate::output::TagProjectOutput)
 pub mod tag_project_output {
+    ///
     /// A builder for [`TagProjectOutput`](crate::output::TagProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -414,6 +419,7 @@ impl std::fmt::Debug for ListUserProfilesOutput {
 }
 /// See [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput)
 pub mod list_user_profiles_output {
+    ///
     /// A builder for [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -497,6 +503,7 @@ impl std::fmt::Debug for ListTeamMembersOutput {
 }
 /// See [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput)
 pub mod list_team_members_output {
+    ///
     /// A builder for [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -583,6 +590,7 @@ impl std::fmt::Debug for ListTagsForProjectOutput {
 }
 /// See [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput)
 pub mod list_tags_for_project_output {
+    ///
     /// A builder for [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -673,6 +681,7 @@ impl std::fmt::Debug for ListResourcesOutput {
 }
 /// See [`ListResourcesOutput`](crate::output::ListResourcesOutput)
 pub mod list_resources_output {
+    ///
     /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -755,6 +764,7 @@ impl std::fmt::Debug for ListProjectsOutput {
 }
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput)
 pub mod list_projects_output {
+    ///
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -820,6 +830,7 @@ impl std::fmt::Debug for DisassociateTeamMemberOutput {
 }
 /// See [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput)
 pub mod disassociate_team_member_output {
+    ///
     /// A builder for [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -895,6 +906,7 @@ impl std::fmt::Debug for DescribeUserProfileOutput {
 }
 /// See [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput)
 pub mod describe_user_profile_output {
+    ///
     /// A builder for [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1077,6 +1089,7 @@ impl std::fmt::Debug for DescribeProjectOutput {
 }
 /// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
 pub mod describe_project_output {
+    ///
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1239,6 +1252,7 @@ impl std::fmt::Debug for DeleteUserProfileOutput {
 }
 /// See [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput)
 pub mod delete_user_profile_output {
+    ///
     /// A builder for [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1300,6 +1314,7 @@ impl std::fmt::Debug for DeleteProjectOutput {
 }
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
 pub mod delete_project_output {
+    ///
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1401,6 +1416,7 @@ impl std::fmt::Debug for CreateUserProfileOutput {
 }
 /// See [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput)
 pub mod create_user_profile_output {
+    ///
     /// A builder for [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1548,6 +1564,7 @@ impl std::fmt::Debug for CreateProjectOutput {
 }
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput)
 pub mod create_project_output {
+    ///
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1644,6 +1661,7 @@ impl std::fmt::Debug for AssociateTeamMemberOutput {
 }
 /// See [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput)
 pub mod associate_team_member_output {
+    ///
     /// A builder for [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

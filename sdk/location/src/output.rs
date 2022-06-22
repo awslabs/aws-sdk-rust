@@ -28,6 +28,7 @@ impl std::fmt::Debug for ListTrackerConsumersOutput {
 }
 /// See [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput)
 pub mod list_tracker_consumers_output {
+    ///
     /// A builder for [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -112,6 +113,7 @@ impl std::fmt::Debug for ListDevicePositionsOutput {
 }
 /// See [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput)
 pub mod list_device_positions_output {
+    ///
     /// A builder for [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -197,6 +199,7 @@ impl std::fmt::Debug for GetDevicePositionHistoryOutput {
 }
 /// See [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput)
 pub mod get_device_position_history_output {
+    ///
     /// A builder for [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -312,6 +315,7 @@ impl std::fmt::Debug for GetDevicePositionOutput {
 }
 /// See [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput)
 pub mod get_device_position_output {
+    ///
     /// A builder for [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -448,6 +452,7 @@ impl std::fmt::Debug for DisassociateTrackerConsumerOutput {
 }
 /// See [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput)
 pub mod disassociate_tracker_consumer_output {
+    ///
     /// A builder for [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -488,6 +493,7 @@ impl std::fmt::Debug for BatchUpdateDevicePositionOutput {
 }
 /// See [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput)
 pub mod batch_update_device_position_output {
+    ///
     /// A builder for [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -559,6 +565,7 @@ impl std::fmt::Debug for BatchGetDevicePositionOutput {
 }
 /// See [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput)
 pub mod batch_get_device_position_output {
+    ///
     /// A builder for [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -648,6 +655,7 @@ impl std::fmt::Debug for BatchDeleteDevicePositionHistoryOutput {
 }
 /// See [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput)
 pub mod batch_delete_device_position_history_output {
+    ///
     /// A builder for [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -707,6 +715,7 @@ impl std::fmt::Debug for AssociateTrackerConsumerOutput {
 }
 /// See [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput)
 pub mod associate_tracker_consumer_output {
+    ///
     /// A builder for [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -754,6 +763,7 @@ impl std::fmt::Debug for ListTrackersOutput {
 }
 /// See [`ListTrackersOutput`](crate::output::ListTrackersOutput)
 pub mod list_trackers_output {
+    ///
     /// A builder for [`ListTrackersOutput`](crate::output::ListTrackersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -850,6 +860,7 @@ impl std::fmt::Debug for CreateTrackerOutput {
 }
 /// See [`CreateTrackerOutput`](crate::output::CreateTrackerOutput)
 pub mod create_tracker_output {
+    ///
     /// A builder for [`CreateTrackerOutput`](crate::output::CreateTrackerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -927,6 +938,7 @@ impl std::fmt::Debug for DeleteTrackerOutput {
 }
 /// See [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput)
 pub mod delete_tracker_output {
+    ///
     /// A builder for [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -987,6 +999,7 @@ impl std::fmt::Debug for UpdateTrackerOutput {
 }
 /// See [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput)
 pub mod update_tracker_output {
+    ///
     /// A builder for [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1147,6 +1160,7 @@ impl std::fmt::Debug for DescribeTrackerOutput {
 }
 /// See [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput)
 pub mod describe_tracker_output {
+    ///
     /// A builder for [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1377,6 +1391,7 @@ impl std::fmt::Debug for CalculateRouteMatrixOutput {
 }
 /// See [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput)
 pub mod calculate_route_matrix_output {
+    ///
     /// A builder for [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1532,6 +1547,7 @@ impl std::fmt::Debug for CalculateRouteOutput {
 }
 /// See [`CalculateRouteOutput`](crate::output::CalculateRouteOutput)
 pub mod calculate_route_output {
+    ///
     /// A builder for [`CalculateRouteOutput`](crate::output::CalculateRouteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1640,6 +1656,7 @@ impl std::fmt::Debug for ListRouteCalculatorsOutput {
 }
 /// See [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput)
 pub mod list_route_calculators_output {
+    ///
     /// A builder for [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1750,6 +1767,7 @@ impl std::fmt::Debug for CreateRouteCalculatorOutput {
 }
 /// See [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput)
 pub mod create_route_calculator_output {
+    ///
     /// A builder for [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1845,6 +1863,7 @@ impl std::fmt::Debug for DeleteRouteCalculatorOutput {
 }
 /// See [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput)
 pub mod delete_route_calculator_output {
+    ///
     /// A builder for [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1905,6 +1924,7 @@ impl std::fmt::Debug for UpdateRouteCalculatorOutput {
 }
 /// See [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput)
 pub mod update_route_calculator_output {
+    ///
     /// A builder for [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2079,6 +2099,7 @@ impl std::fmt::Debug for DescribeRouteCalculatorOutput {
 }
 /// See [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput)
 pub mod describe_route_calculator_output {
+    ///
     /// A builder for [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2286,6 +2307,7 @@ impl std::fmt::Debug for SearchPlaceIndexForTextOutput {
 }
 /// See [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput)
 pub mod search_place_index_for_text_output {
+    ///
     /// A builder for [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2375,6 +2397,7 @@ impl std::fmt::Debug for SearchPlaceIndexForSuggestionsOutput {
 }
 /// See [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput)
 pub mod search_place_index_for_suggestions_output {
+    ///
     /// A builder for [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2467,6 +2490,7 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionOutput {
 }
 /// See [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput)
 pub mod search_place_index_for_position_output {
+    ///
     /// A builder for [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2553,6 +2577,7 @@ impl std::fmt::Debug for ListPlaceIndexesOutput {
 }
 /// See [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput)
 pub mod list_place_indexes_output {
+    ///
     /// A builder for [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2649,6 +2674,7 @@ impl std::fmt::Debug for CreatePlaceIndexOutput {
 }
 /// See [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput)
 pub mod create_place_index_output {
+    ///
     /// A builder for [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2726,6 +2752,7 @@ impl std::fmt::Debug for DeletePlaceIndexOutput {
 }
 /// See [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput)
 pub mod delete_place_index_output {
+    ///
     /// A builder for [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2786,6 +2813,7 @@ impl std::fmt::Debug for UpdatePlaceIndexOutput {
 }
 /// See [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput)
 pub mod update_place_index_output {
+    ///
     /// A builder for [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2951,6 +2979,7 @@ impl std::fmt::Debug for DescribePlaceIndexOutput {
 }
 /// See [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput)
 pub mod describe_place_index_output {
+    ///
     /// A builder for [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3157,6 +3186,7 @@ impl std::fmt::Debug for GetMapTileOutput {
 }
 /// See [`GetMapTileOutput`](crate::output::GetMapTileOutput)
 pub mod get_map_tile_output {
+    ///
     /// A builder for [`GetMapTileOutput`](crate::output::GetMapTileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3230,6 +3260,7 @@ impl std::fmt::Debug for GetMapStyleDescriptorOutput {
 }
 /// See [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput)
 pub mod get_map_style_descriptor_output {
+    ///
     /// A builder for [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3303,6 +3334,7 @@ impl std::fmt::Debug for GetMapSpritesOutput {
 }
 /// See [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput)
 pub mod get_map_sprites_output {
+    ///
     /// A builder for [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3376,6 +3408,7 @@ impl std::fmt::Debug for GetMapGlyphsOutput {
 }
 /// See [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput)
 pub mod get_map_glyphs_output {
+    ///
     /// A builder for [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3449,6 +3482,7 @@ impl std::fmt::Debug for ListMapsOutput {
 }
 /// See [`ListMapsOutput`](crate::output::ListMapsOutput)
 pub mod list_maps_output {
+    ///
     /// A builder for [`ListMapsOutput`](crate::output::ListMapsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3544,6 +3578,7 @@ impl std::fmt::Debug for CreateMapOutput {
 }
 /// See [`CreateMapOutput`](crate::output::CreateMapOutput)
 pub mod create_map_output {
+    ///
     /// A builder for [`CreateMapOutput`](crate::output::CreateMapOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3621,6 +3656,7 @@ impl std::fmt::Debug for DeleteMapOutput {
 }
 /// See [`DeleteMapOutput`](crate::output::DeleteMapOutput)
 pub mod delete_map_output {
+    ///
     /// A builder for [`DeleteMapOutput`](crate::output::DeleteMapOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3681,6 +3717,7 @@ impl std::fmt::Debug for UpdateMapOutput {
 }
 /// See [`UpdateMapOutput`](crate::output::UpdateMapOutput)
 pub mod update_map_output {
+    ///
     /// A builder for [`UpdateMapOutput`](crate::output::UpdateMapOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3834,6 +3871,7 @@ impl std::fmt::Debug for DescribeMapOutput {
 }
 /// See [`DescribeMapOutput`](crate::output::DescribeMapOutput)
 pub mod describe_map_output {
+    ///
     /// A builder for [`DescribeMapOutput`](crate::output::DescribeMapOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4033,6 +4071,7 @@ impl std::fmt::Debug for PutGeofenceOutput {
 }
 /// See [`PutGeofenceOutput`](crate::output::PutGeofenceOutput)
 pub mod put_geofence_output {
+    ///
     /// A builder for [`PutGeofenceOutput`](crate::output::PutGeofenceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4124,6 +4163,7 @@ impl std::fmt::Debug for ListGeofencesOutput {
 }
 /// See [`ListGeofencesOutput`](crate::output::ListGeofencesOutput)
 pub mod list_geofences_output {
+    ///
     /// A builder for [`ListGeofencesOutput`](crate::output::ListGeofencesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4242,6 +4282,7 @@ impl std::fmt::Debug for GetGeofenceOutput {
 }
 /// See [`GetGeofenceOutput`](crate::output::GetGeofenceOutput)
 pub mod get_geofence_output {
+    ///
     /// A builder for [`GetGeofenceOutput`](crate::output::GetGeofenceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4374,6 +4415,7 @@ impl std::fmt::Debug for BatchPutGeofenceOutput {
 }
 /// See [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput)
 pub mod batch_put_geofence_output {
+    ///
     /// A builder for [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4459,6 +4501,7 @@ impl std::fmt::Debug for BatchEvaluateGeofencesOutput {
 }
 /// See [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput)
 pub mod batch_evaluate_geofences_output {
+    ///
     /// A builder for [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4523,6 +4566,7 @@ impl std::fmt::Debug for BatchDeleteGeofenceOutput {
 }
 /// See [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput)
 pub mod batch_delete_geofence_output {
+    ///
     /// A builder for [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4597,6 +4641,7 @@ impl std::fmt::Debug for ListGeofenceCollectionsOutput {
 }
 /// See [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput)
 pub mod list_geofence_collections_output {
+    ///
     /// A builder for [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4698,6 +4743,7 @@ impl std::fmt::Debug for CreateGeofenceCollectionOutput {
 }
 /// See [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput)
 pub mod create_geofence_collection_output {
+    ///
     /// A builder for [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4781,6 +4827,7 @@ impl std::fmt::Debug for DeleteGeofenceCollectionOutput {
 }
 /// See [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput)
 pub mod delete_geofence_collection_output {
+    ///
     /// A builder for [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4841,6 +4888,7 @@ impl std::fmt::Debug for UpdateGeofenceCollectionOutput {
 }
 /// See [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput)
 pub mod update_geofence_collection_output {
+    ///
     /// A builder for [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5000,6 +5048,7 @@ impl std::fmt::Debug for DescribeGeofenceCollectionOutput {
 }
 /// See [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput)
 pub mod describe_geofence_collection_output {
+    ///
     /// A builder for [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5181,6 +5230,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5211,6 +5261,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5261,6 +5312,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

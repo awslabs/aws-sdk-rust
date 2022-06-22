@@ -3287,6 +3287,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException)
 pub mod not_found_exception {
+    ///
     /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3351,6 +3352,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
+    ///
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3415,6 +3417,7 @@ impl std::fmt::Display for InternalErrorException {
 impl std::error::Error for InternalErrorException {}
 /// See [`InternalErrorException`](crate::error::InternalErrorException)
 pub mod internal_error_exception {
+    ///
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3479,6 +3482,7 @@ impl std::fmt::Display for DuplicateRecordException {
 impl std::error::Error for DuplicateRecordException {}
 /// See [`DuplicateRecordException`](crate::error::DuplicateRecordException)
 pub mod duplicate_record_exception {
+    ///
     /// A builder for [`DuplicateRecordException`](crate::error::DuplicateRecordException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3543,6 +3547,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
+    ///
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3607,6 +3612,7 @@ impl std::fmt::Display for ResourceLockedException {
 impl std::error::Error for ResourceLockedException {}
 /// See [`ResourceLockedException`](crate::error::ResourceLockedException)
 pub mod resource_locked_exception {
+    ///
     /// A builder for [`ResourceLockedException`](crate::error::ResourceLockedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3671,6 +3677,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
+    ///
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3735,6 +3742,7 @@ impl std::fmt::Display for ExpiredNextTokenException {
 impl std::error::Error for ExpiredNextTokenException {}
 /// See [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException)
 pub mod expired_next_token_exception {
+    ///
     /// A builder for [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3799,6 +3807,7 @@ impl std::fmt::Display for CreationLimitExceededException {
 impl std::error::Error for CreationLimitExceededException {}
 /// See [`CreationLimitExceededException`](crate::error::CreationLimitExceededException)
 pub mod creation_limit_exceeded_exception {
+    ///
     /// A builder for [`CreationLimitExceededException`](crate::error::CreationLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

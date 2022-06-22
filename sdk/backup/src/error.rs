@@ -8690,6 +8690,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
 pub mod service_unavailable_exception {
+    ///
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8813,6 +8814,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8936,6 +8938,7 @@ impl std::fmt::Display for MissingParameterValueException {
 impl std::error::Error for MissingParameterValueException {}
 /// See [`MissingParameterValueException`](crate::error::MissingParameterValueException)
 pub mod missing_parameter_value_exception {
+    ///
     /// A builder for [`MissingParameterValueException`](crate::error::MissingParameterValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9059,6 +9062,7 @@ impl std::fmt::Display for InvalidParameterValueException {
 impl std::error::Error for InvalidParameterValueException {}
 /// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
 pub mod invalid_parameter_value_exception {
+    ///
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9182,6 +9186,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException)
 pub mod conflict_exception {
+    ///
     /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9305,6 +9310,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
+    ///
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9428,6 +9434,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9565,6 +9572,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
 pub mod already_exists_exception {
+    ///
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9715,6 +9723,7 @@ impl std::fmt::Display for InvalidResourceStateException {
 impl std::error::Error for InvalidResourceStateException {}
 /// See [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
 pub mod invalid_resource_state_exception {
+    ///
     /// A builder for [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9838,6 +9847,7 @@ impl std::fmt::Display for DependencyFailureException {
 impl std::error::Error for DependencyFailureException {}
 /// See [`DependencyFailureException`](crate::error::DependencyFailureException)
 pub mod dependency_failure_exception {
+    ///
     /// A builder for [`DependencyFailureException`](crate::error::DependencyFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

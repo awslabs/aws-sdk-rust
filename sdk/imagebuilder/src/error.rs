@@ -8210,6 +8210,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
 pub mod service_unavailable_exception {
+    ///
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8274,6 +8275,7 @@ impl std::fmt::Display for ServiceException {
 impl std::error::Error for ServiceException {}
 /// See [`ServiceException`](crate::error::ServiceException)
 pub mod service_exception {
+    ///
     /// A builder for [`ServiceException`](crate::error::ServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8338,6 +8340,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException)
 pub mod resource_in_use_exception {
+    ///
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8402,6 +8405,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
+    ///
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8466,6 +8470,7 @@ impl std::fmt::Display for IdempotentParameterMismatchException {
 impl std::error::Error for IdempotentParameterMismatchException {}
 /// See [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
 pub mod idempotent_parameter_mismatch_exception {
+    ///
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8530,6 +8535,7 @@ impl std::fmt::Display for ForbiddenException {
 impl std::error::Error for ForbiddenException {}
 /// See [`ForbiddenException`](crate::error::ForbiddenException)
 pub mod forbidden_exception {
+    ///
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8594,6 +8600,7 @@ impl std::fmt::Display for ClientException {
 impl std::error::Error for ClientException {}
 /// See [`ClientException`](crate::error::ClientException)
 pub mod client_exception {
+    ///
     /// A builder for [`ClientException`](crate::error::ClientException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8658,6 +8665,7 @@ impl std::fmt::Display for CallRateLimitExceededException {
 impl std::error::Error for CallRateLimitExceededException {}
 /// See [`CallRateLimitExceededException`](crate::error::CallRateLimitExceededException)
 pub mod call_rate_limit_exceeded_exception {
+    ///
     /// A builder for [`CallRateLimitExceededException`](crate::error::CallRateLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8722,6 +8730,7 @@ impl std::fmt::Display for InvalidParameterCombinationException {
 impl std::error::Error for InvalidParameterCombinationException {}
 /// See [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException)
 pub mod invalid_parameter_combination_exception {
+    ///
     /// A builder for [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8786,6 +8795,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8850,6 +8860,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
+    ///
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8914,6 +8925,7 @@ impl std::fmt::Display for InvalidParameterValueException {
 impl std::error::Error for InvalidParameterValueException {}
 /// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
 pub mod invalid_parameter_value_exception {
+    ///
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8978,6 +8990,7 @@ impl std::fmt::Display for InvalidPaginationTokenException {
 impl std::error::Error for InvalidPaginationTokenException {}
 /// See [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
 pub mod invalid_pagination_token_exception {
+    ///
     /// A builder for [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9042,6 +9055,7 @@ impl std::fmt::Display for InvalidVersionNumberException {
 impl std::error::Error for InvalidVersionNumberException {}
 /// See [`InvalidVersionNumberException`](crate::error::InvalidVersionNumberException)
 pub mod invalid_version_number_exception {
+    ///
     /// A builder for [`InvalidVersionNumberException`](crate::error::InvalidVersionNumberException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9106,6 +9120,7 @@ impl std::fmt::Display for ResourceDependencyException {
 impl std::error::Error for ResourceDependencyException {}
 /// See [`ResourceDependencyException`](crate::error::ResourceDependencyException)
 pub mod resource_dependency_exception {
+    ///
     /// A builder for [`ResourceDependencyException`](crate::error::ResourceDependencyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9170,6 +9185,7 @@ impl std::fmt::Display for ServiceQuotaExceededException {
 impl std::error::Error for ServiceQuotaExceededException {}
 /// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
 pub mod service_quota_exceeded_exception {
+    ///
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9234,6 +9250,7 @@ impl std::fmt::Display for ResourceAlreadyExistsException {
 impl std::error::Error for ResourceAlreadyExistsException {}
 /// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
 pub mod resource_already_exists_exception {
+    ///
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

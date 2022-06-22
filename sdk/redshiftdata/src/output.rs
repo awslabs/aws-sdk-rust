@@ -28,6 +28,7 @@ impl std::fmt::Debug for ListTablesOutput {
 }
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput)
 pub mod list_tables_output {
+    ///
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -110,6 +111,7 @@ impl std::fmt::Debug for ListStatementsOutput {
 }
 /// See [`ListStatementsOutput`](crate::output::ListStatementsOutput)
 pub mod list_statements_output {
+    ///
     /// A builder for [`ListStatementsOutput`](crate::output::ListStatementsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -192,6 +194,7 @@ impl std::fmt::Debug for ListSchemasOutput {
 }
 /// See [`ListSchemasOutput`](crate::output::ListSchemasOutput)
 pub mod list_schemas_output {
+    ///
     /// A builder for [`ListSchemasOutput`](crate::output::ListSchemasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -274,6 +277,7 @@ impl std::fmt::Debug for ListDatabasesOutput {
 }
 /// See [`ListDatabasesOutput`](crate::output::ListDatabasesOutput)
 pub mod list_databases_output {
+    ///
     /// A builder for [`ListDatabasesOutput`](crate::output::ListDatabasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -370,6 +374,7 @@ impl std::fmt::Debug for GetStatementResultOutput {
 }
 /// See [`GetStatementResultOutput`](crate::output::GetStatementResultOutput)
 pub mod get_statement_result_output {
+    ///
     /// A builder for [`GetStatementResultOutput`](crate::output::GetStatementResultOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -514,6 +519,7 @@ impl std::fmt::Debug for ExecuteStatementOutput {
 }
 /// See [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput)
 pub mod execute_statement_output {
+    ///
     /// A builder for [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -648,6 +654,7 @@ impl std::fmt::Debug for DescribeTableOutput {
 }
 /// See [`DescribeTableOutput`](crate::output::DescribeTableOutput)
 pub mod describe_table_output {
+    ///
     /// A builder for [`DescribeTableOutput`](crate::output::DescribeTableOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -872,6 +879,7 @@ impl std::fmt::Debug for DescribeStatementOutput {
 }
 /// See [`DescribeStatementOutput`](crate::output::DescribeStatementOutput)
 pub mod describe_statement_output {
+    ///
     /// A builder for [`DescribeStatementOutput`](crate::output::DescribeStatementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1179,6 +1187,7 @@ impl std::fmt::Debug for CancelStatementOutput {
 }
 /// See [`CancelStatementOutput`](crate::output::CancelStatementOutput)
 pub mod cancel_statement_output {
+    ///
     /// A builder for [`CancelStatementOutput`](crate::output::CancelStatementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1268,6 +1277,7 @@ impl std::fmt::Debug for BatchExecuteStatementOutput {
 }
 /// See [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput)
 pub mod batch_execute_statement_output {
+    ///
     /// A builder for [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

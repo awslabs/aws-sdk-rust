@@ -762,6 +762,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException)
 pub mod not_found_exception {
+    ///
     /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -826,6 +827,7 @@ impl std::fmt::Display for NotAcceptableException {
 impl std::error::Error for NotAcceptableException {}
 /// See [`NotAcceptableException`](crate::error::NotAcceptableException)
 pub mod not_acceptable_exception {
+    ///
     /// A builder for [`NotAcceptableException`](crate::error::NotAcceptableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -899,6 +901,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -978,6 +981,7 @@ impl std::fmt::Display for InternalFailureException {
 impl std::error::Error for InternalFailureException {}
 /// See [`InternalFailureException`](crate::error::InternalFailureException)
 pub mod internal_failure_exception {
+    ///
     /// A builder for [`InternalFailureException`](crate::error::InternalFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1047,6 +1051,7 @@ impl std::fmt::Display for DependencyFailedException {
 impl std::error::Error for DependencyFailedException {}
 /// See [`DependencyFailedException`](crate::error::DependencyFailedException)
 pub mod dependency_failed_exception {
+    ///
     /// A builder for [`DependencyFailedException`](crate::error::DependencyFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1111,6 +1116,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException)
 pub mod conflict_exception {
+    ///
     /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1175,6 +1181,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException)
 pub mod bad_request_exception {
+    ///
     /// A builder for [`BadRequestException`](crate::error::BadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1239,6 +1246,7 @@ impl std::fmt::Display for BadGatewayException {
 impl std::error::Error for BadGatewayException {}
 /// See [`BadGatewayException`](crate::error::BadGatewayException)
 pub mod bad_gateway_exception {
+    ///
     /// A builder for [`BadGatewayException`](crate::error::BadGatewayException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1303,6 +1311,7 @@ impl std::fmt::Display for LoopDetectedException {
 impl std::error::Error for LoopDetectedException {}
 /// See [`LoopDetectedException`](crate::error::LoopDetectedException)
 pub mod loop_detected_exception {
+    ///
     /// A builder for [`LoopDetectedException`](crate::error::LoopDetectedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1367,6 +1376,7 @@ impl std::fmt::Display for UnsupportedMediaTypeException {
 impl std::error::Error for UnsupportedMediaTypeException {}
 /// See [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException)
 pub mod unsupported_media_type_exception {
+    ///
     /// A builder for [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1431,6 +1441,7 @@ impl std::fmt::Display for RequestTimeoutException {
 impl std::error::Error for RequestTimeoutException {}
 /// See [`RequestTimeoutException`](crate::error::RequestTimeoutException)
 pub mod request_timeout_exception {
+    ///
     /// A builder for [`RequestTimeoutException`](crate::error::RequestTimeoutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

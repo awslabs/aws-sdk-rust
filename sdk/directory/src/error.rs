@@ -8914,6 +8914,7 @@ impl std::fmt::Display for UnsupportedOperationException {
 impl std::error::Error for UnsupportedOperationException {}
 /// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
 pub mod unsupported_operation_exception {
+    ///
     /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8999,6 +9000,7 @@ impl std::fmt::Display for ServiceException {
 impl std::error::Error for ServiceException {}
 /// See [`ServiceException`](crate::error::ServiceException)
 pub mod service_exception {
+    ///
     /// A builder for [`ServiceException`](crate::error::ServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9084,6 +9086,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException)
 pub mod invalid_parameter_exception {
+    ///
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9169,6 +9172,7 @@ impl std::fmt::Display for EntityDoesNotExistException {
 impl std::error::Error for EntityDoesNotExistException {}
 /// See [`EntityDoesNotExistException`](crate::error::EntityDoesNotExistException)
 pub mod entity_does_not_exist_exception {
+    ///
     /// A builder for [`EntityDoesNotExistException`](crate::error::EntityDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9254,6 +9258,7 @@ impl std::fmt::Display for ClientException {
 impl std::error::Error for ClientException {}
 /// See [`ClientException`](crate::error::ClientException)
 pub mod client_exception {
+    ///
     /// A builder for [`ClientException`](crate::error::ClientException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9339,6 +9344,7 @@ impl std::fmt::Display for DomainControllerLimitExceededException {
 impl std::error::Error for DomainControllerLimitExceededException {}
 /// See [`DomainControllerLimitExceededException`](crate::error::DomainControllerLimitExceededException)
 pub mod domain_controller_limit_exceeded_exception {
+    ///
     /// A builder for [`DomainControllerLimitExceededException`](crate::error::DomainControllerLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9424,6 +9430,7 @@ impl std::fmt::Display for DirectoryUnavailableException {
 impl std::error::Error for DirectoryUnavailableException {}
 /// See [`DirectoryUnavailableException`](crate::error::DirectoryUnavailableException)
 pub mod directory_unavailable_exception {
+    ///
     /// A builder for [`DirectoryUnavailableException`](crate::error::DirectoryUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9509,6 +9516,7 @@ impl std::fmt::Display for InvalidTargetException {
 impl std::error::Error for InvalidTargetException {}
 /// See [`InvalidTargetException`](crate::error::InvalidTargetException)
 pub mod invalid_target_exception {
+    ///
     /// A builder for [`InvalidTargetException`](crate::error::InvalidTargetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9594,6 +9602,7 @@ impl std::fmt::Display for DirectoryNotSharedException {
 impl std::error::Error for DirectoryNotSharedException {}
 /// See [`DirectoryNotSharedException`](crate::error::DirectoryNotSharedException)
 pub mod directory_not_shared_exception {
+    ///
     /// A builder for [`DirectoryNotSharedException`](crate::error::DirectoryNotSharedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9679,6 +9688,7 @@ impl std::fmt::Display for SnapshotLimitExceededException {
 impl std::error::Error for SnapshotLimitExceededException {}
 /// See [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException)
 pub mod snapshot_limit_exceeded_exception {
+    ///
     /// A builder for [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9764,6 +9774,7 @@ impl std::fmt::Display for ShareLimitExceededException {
 impl std::error::Error for ShareLimitExceededException {}
 /// See [`ShareLimitExceededException`](crate::error::ShareLimitExceededException)
 pub mod share_limit_exceeded_exception {
+    ///
     /// A builder for [`ShareLimitExceededException`](crate::error::ShareLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9849,6 +9860,7 @@ impl std::fmt::Display for OrganizationsException {
 impl std::error::Error for OrganizationsException {}
 /// See [`OrganizationsException`](crate::error::OrganizationsException)
 pub mod organizations_exception {
+    ///
     /// A builder for [`OrganizationsException`](crate::error::OrganizationsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9934,6 +9946,7 @@ impl std::fmt::Display for DirectoryAlreadySharedException {
 impl std::error::Error for DirectoryAlreadySharedException {}
 /// See [`DirectoryAlreadySharedException`](crate::error::DirectoryAlreadySharedException)
 pub mod directory_already_shared_exception {
+    ///
     /// A builder for [`DirectoryAlreadySharedException`](crate::error::DirectoryAlreadySharedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10019,6 +10032,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
+    ///
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10104,6 +10118,7 @@ impl std::fmt::Display for UserDoesNotExistException {
 impl std::error::Error for UserDoesNotExistException {}
 /// See [`UserDoesNotExistException`](crate::error::UserDoesNotExistException)
 pub mod user_does_not_exist_exception {
+    ///
     /// A builder for [`UserDoesNotExistException`](crate::error::UserDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10189,6 +10204,7 @@ impl std::fmt::Display for InvalidPasswordException {
 impl std::error::Error for InvalidPasswordException {}
 /// See [`InvalidPasswordException`](crate::error::InvalidPasswordException)
 pub mod invalid_password_exception {
+    ///
     /// A builder for [`InvalidPasswordException`](crate::error::InvalidPasswordException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10274,6 +10290,7 @@ impl std::fmt::Display for DirectoryDoesNotExistException {
 impl std::error::Error for DirectoryDoesNotExistException {}
 /// See [`DirectoryDoesNotExistException`](crate::error::DirectoryDoesNotExistException)
 pub mod directory_does_not_exist_exception {
+    ///
     /// A builder for [`DirectoryDoesNotExistException`](crate::error::DirectoryDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10359,6 +10376,7 @@ impl std::fmt::Display for InvalidCertificateException {
 impl std::error::Error for InvalidCertificateException {}
 /// See [`InvalidCertificateException`](crate::error::InvalidCertificateException)
 pub mod invalid_certificate_exception {
+    ///
     /// A builder for [`InvalidCertificateException`](crate::error::InvalidCertificateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10444,6 +10462,7 @@ impl std::fmt::Display for CertificateLimitExceededException {
 impl std::error::Error for CertificateLimitExceededException {}
 /// See [`CertificateLimitExceededException`](crate::error::CertificateLimitExceededException)
 pub mod certificate_limit_exceeded_exception {
+    ///
     /// A builder for [`CertificateLimitExceededException`](crate::error::CertificateLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10529,6 +10548,7 @@ impl std::fmt::Display for CertificateAlreadyExistsException {
 impl std::error::Error for CertificateAlreadyExistsException {}
 /// See [`CertificateAlreadyExistsException`](crate::error::CertificateAlreadyExistsException)
 pub mod certificate_already_exists_exception {
+    ///
     /// A builder for [`CertificateAlreadyExistsException`](crate::error::CertificateAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10614,6 +10634,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
+    ///
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10699,6 +10720,7 @@ impl std::fmt::Display for InsufficientPermissionsException {
 impl std::error::Error for InsufficientPermissionsException {}
 /// See [`InsufficientPermissionsException`](crate::error::InsufficientPermissionsException)
 pub mod insufficient_permissions_exception {
+    ///
     /// A builder for [`InsufficientPermissionsException`](crate::error::InsufficientPermissionsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10784,6 +10806,7 @@ impl std::fmt::Display for AuthenticationFailedException {
 impl std::error::Error for AuthenticationFailedException {}
 /// See [`AuthenticationFailedException`](crate::error::AuthenticationFailedException)
 pub mod authentication_failed_exception {
+    ///
     /// A builder for [`AuthenticationFailedException`](crate::error::AuthenticationFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10869,6 +10892,7 @@ impl std::fmt::Display for EntityAlreadyExistsException {
 impl std::error::Error for EntityAlreadyExistsException {}
 /// See [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
 pub mod entity_already_exists_exception {
+    ///
     /// A builder for [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10954,6 +10978,7 @@ impl std::fmt::Display for NoAvailableCertificateException {
 impl std::error::Error for NoAvailableCertificateException {}
 /// See [`NoAvailableCertificateException`](crate::error::NoAvailableCertificateException)
 pub mod no_available_certificate_exception {
+    ///
     /// A builder for [`NoAvailableCertificateException`](crate::error::NoAvailableCertificateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11042,6 +11067,7 @@ impl std::fmt::Display for InvalidLdapsStatusException {
 impl std::error::Error for InvalidLdapsStatusException {}
 /// See [`InvalidLdapsStatusException`](crate::error::InvalidLdapsStatusException)
 pub mod invalid_ldaps_status_exception {
+    ///
     /// A builder for [`InvalidLdapsStatusException`](crate::error::InvalidLdapsStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11127,6 +11153,7 @@ impl std::fmt::Display for InvalidClientAuthStatusException {
 impl std::error::Error for InvalidClientAuthStatusException {}
 /// See [`InvalidClientAuthStatusException`](crate::error::InvalidClientAuthStatusException)
 pub mod invalid_client_auth_status_exception {
+    ///
     /// A builder for [`InvalidClientAuthStatusException`](crate::error::InvalidClientAuthStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11212,6 +11239,7 @@ impl std::fmt::Display for CertificateDoesNotExistException {
 impl std::error::Error for CertificateDoesNotExistException {}
 /// See [`CertificateDoesNotExistException`](crate::error::CertificateDoesNotExistException)
 pub mod certificate_does_not_exist_exception {
+    ///
     /// A builder for [`CertificateDoesNotExistException`](crate::error::CertificateDoesNotExistException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11297,6 +11325,7 @@ impl std::fmt::Display for CertificateInUseException {
 impl std::error::Error for CertificateInUseException {}
 /// See [`CertificateInUseException`](crate::error::CertificateInUseException)
 pub mod certificate_in_use_exception {
+    ///
     /// A builder for [`CertificateInUseException`](crate::error::CertificateInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11382,6 +11411,7 @@ impl std::fmt::Display for DirectoryLimitExceededException {
 impl std::error::Error for DirectoryLimitExceededException {}
 /// See [`DirectoryLimitExceededException`](crate::error::DirectoryLimitExceededException)
 pub mod directory_limit_exceeded_exception {
+    ///
     /// A builder for [`DirectoryLimitExceededException`](crate::error::DirectoryLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11467,6 +11497,7 @@ impl std::fmt::Display for TagLimitExceededException {
 impl std::error::Error for TagLimitExceededException {}
 /// See [`TagLimitExceededException`](crate::error::TagLimitExceededException)
 pub mod tag_limit_exceeded_exception {
+    ///
     /// A builder for [`TagLimitExceededException`](crate::error::TagLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11552,6 +11583,7 @@ impl std::fmt::Display for RegionLimitExceededException {
 impl std::error::Error for RegionLimitExceededException {}
 /// See [`RegionLimitExceededException`](crate::error::RegionLimitExceededException)
 pub mod region_limit_exceeded_exception {
+    ///
     /// A builder for [`RegionLimitExceededException`](crate::error::RegionLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11637,6 +11669,7 @@ impl std::fmt::Display for DirectoryAlreadyInRegionException {
 impl std::error::Error for DirectoryAlreadyInRegionException {}
 /// See [`DirectoryAlreadyInRegionException`](crate::error::DirectoryAlreadyInRegionException)
 pub mod directory_already_in_region_exception {
+    ///
     /// A builder for [`DirectoryAlreadyInRegionException`](crate::error::DirectoryAlreadyInRegionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11722,6 +11755,7 @@ impl std::fmt::Display for IpRouteLimitExceededException {
 impl std::error::Error for IpRouteLimitExceededException {}
 /// See [`IpRouteLimitExceededException`](crate::error::IpRouteLimitExceededException)
 pub mod ip_route_limit_exceeded_exception {
+    ///
     /// A builder for [`IpRouteLimitExceededException`](crate::error::IpRouteLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

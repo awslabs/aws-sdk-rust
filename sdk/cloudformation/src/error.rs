@@ -6535,6 +6535,7 @@ impl std::fmt::Display for StaleRequestException {
 impl std::error::Error for StaleRequestException {}
 /// See [`StaleRequestException`](crate::error::StaleRequestException)
 pub mod stale_request_exception {
+    ///
     /// A builder for [`StaleRequestException`](crate::error::StaleRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6599,6 +6600,7 @@ impl std::fmt::Display for StackSetNotFoundException {
 impl std::error::Error for StackSetNotFoundException {}
 /// See [`StackSetNotFoundException`](crate::error::StackSetNotFoundException)
 pub mod stack_set_not_found_exception {
+    ///
     /// A builder for [`StackSetNotFoundException`](crate::error::StackSetNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6663,6 +6665,7 @@ impl std::fmt::Display for StackInstanceNotFoundException {
 impl std::error::Error for StackInstanceNotFoundException {}
 /// See [`StackInstanceNotFoundException`](crate::error::StackInstanceNotFoundException)
 pub mod stack_instance_not_found_exception {
+    ///
     /// A builder for [`StackInstanceNotFoundException`](crate::error::StackInstanceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6727,6 +6730,7 @@ impl std::fmt::Display for OperationInProgressException {
 impl std::error::Error for OperationInProgressException {}
 /// See [`OperationInProgressException`](crate::error::OperationInProgressException)
 pub mod operation_in_progress_exception {
+    ///
     /// A builder for [`OperationInProgressException`](crate::error::OperationInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6791,6 +6795,7 @@ impl std::fmt::Display for OperationIdAlreadyExistsException {
 impl std::error::Error for OperationIdAlreadyExistsException {}
 /// See [`OperationIdAlreadyExistsException`](crate::error::OperationIdAlreadyExistsException)
 pub mod operation_id_already_exists_exception {
+    ///
     /// A builder for [`OperationIdAlreadyExistsException`](crate::error::OperationIdAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6855,6 +6860,7 @@ impl std::fmt::Display for InvalidOperationException {
 impl std::error::Error for InvalidOperationException {}
 /// See [`InvalidOperationException`](crate::error::InvalidOperationException)
 pub mod invalid_operation_exception {
+    ///
     /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6919,6 +6925,7 @@ impl std::fmt::Display for TokenAlreadyExistsException {
 impl std::error::Error for TokenAlreadyExistsException {}
 /// See [`TokenAlreadyExistsException`](crate::error::TokenAlreadyExistsException)
 pub mod token_already_exists_exception {
+    ///
     /// A builder for [`TokenAlreadyExistsException`](crate::error::TokenAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6983,6 +6990,7 @@ impl std::fmt::Display for InsufficientCapabilitiesException {
 impl std::error::Error for InsufficientCapabilitiesException {}
 /// See [`InsufficientCapabilitiesException`](crate::error::InsufficientCapabilitiesException)
 pub mod insufficient_capabilities_exception {
+    ///
     /// A builder for [`InsufficientCapabilitiesException`](crate::error::InsufficientCapabilitiesException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7047,6 +7055,7 @@ impl std::fmt::Display for TypeNotFoundException {
 impl std::error::Error for TypeNotFoundException {}
 /// See [`TypeNotFoundException`](crate::error::TypeNotFoundException)
 pub mod type_not_found_exception {
+    ///
     /// A builder for [`TypeNotFoundException`](crate::error::TypeNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7111,6 +7120,7 @@ impl std::fmt::Display for CfnRegistryException {
 impl std::error::Error for CfnRegistryException {}
 /// See [`CfnRegistryException`](crate::error::CfnRegistryException)
 pub mod cfn_registry_exception {
+    ///
     /// A builder for [`CfnRegistryException`](crate::error::CfnRegistryException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7175,6 +7185,7 @@ impl std::fmt::Display for OperationNotFoundException {
 impl std::error::Error for OperationNotFoundException {}
 /// See [`OperationNotFoundException`](crate::error::OperationNotFoundException)
 pub mod operation_not_found_exception {
+    ///
     /// A builder for [`OperationNotFoundException`](crate::error::OperationNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7239,6 +7250,7 @@ impl std::fmt::Display for OperationStatusCheckFailedException {
 impl std::error::Error for OperationStatusCheckFailedException {}
 /// See [`OperationStatusCheckFailedException`](crate::error::OperationStatusCheckFailedException)
 pub mod operation_status_check_failed_exception {
+    ///
     /// A builder for [`OperationStatusCheckFailedException`](crate::error::OperationStatusCheckFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7303,6 +7315,7 @@ impl std::fmt::Display for InvalidStateTransitionException {
 impl std::error::Error for InvalidStateTransitionException {}
 /// See [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
 pub mod invalid_state_transition_exception {
+    ///
     /// A builder for [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7367,6 +7380,7 @@ impl std::fmt::Display for StackNotFoundException {
 impl std::error::Error for StackNotFoundException {}
 /// See [`StackNotFoundException`](crate::error::StackNotFoundException)
 pub mod stack_not_found_exception {
+    ///
     /// A builder for [`StackNotFoundException`](crate::error::StackNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7432,6 +7446,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7496,6 +7511,7 @@ impl std::fmt::Display for ChangeSetNotFoundException {
 impl std::error::Error for ChangeSetNotFoundException {}
 /// See [`ChangeSetNotFoundException`](crate::error::ChangeSetNotFoundException)
 pub mod change_set_not_found_exception {
+    ///
     /// A builder for [`ChangeSetNotFoundException`](crate::error::ChangeSetNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7560,6 +7576,7 @@ impl std::fmt::Display for InvalidChangeSetStatusException {
 impl std::error::Error for InvalidChangeSetStatusException {}
 /// See [`InvalidChangeSetStatusException`](crate::error::InvalidChangeSetStatusException)
 pub mod invalid_change_set_status_exception {
+    ///
     /// A builder for [`InvalidChangeSetStatusException`](crate::error::InvalidChangeSetStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7624,6 +7641,7 @@ impl std::fmt::Display for StackSetNotEmptyException {
 impl std::error::Error for StackSetNotEmptyException {}
 /// See [`StackSetNotEmptyException`](crate::error::StackSetNotEmptyException)
 pub mod stack_set_not_empty_exception {
+    ///
     /// A builder for [`StackSetNotEmptyException`](crate::error::StackSetNotEmptyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7688,6 +7706,7 @@ impl std::fmt::Display for NameAlreadyExistsException {
 impl std::error::Error for NameAlreadyExistsException {}
 /// See [`NameAlreadyExistsException`](crate::error::NameAlreadyExistsException)
 pub mod name_already_exists_exception {
+    ///
     /// A builder for [`NameAlreadyExistsException`](crate::error::NameAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7752,6 +7771,7 @@ impl std::fmt::Display for CreatedButModifiedException {
 impl std::error::Error for CreatedButModifiedException {}
 /// See [`CreatedButModifiedException`](crate::error::CreatedButModifiedException)
 pub mod created_but_modified_exception {
+    ///
     /// A builder for [`CreatedButModifiedException`](crate::error::CreatedButModifiedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7816,6 +7836,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
 pub mod already_exists_exception {
+    ///
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7880,6 +7901,7 @@ impl std::fmt::Display for TypeConfigurationNotFoundException {
 impl std::error::Error for TypeConfigurationNotFoundException {}
 /// See [`TypeConfigurationNotFoundException`](crate::error::TypeConfigurationNotFoundException)
 pub mod type_configuration_not_found_exception {
+    ///
     /// A builder for [`TypeConfigurationNotFoundException`](crate::error::TypeConfigurationNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

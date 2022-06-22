@@ -56,6 +56,7 @@ impl std::fmt::Debug for UpdateFunctionUrlConfigOutput {
 }
 /// See [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput)
 pub mod update_function_url_config_output {
+    ///
     /// A builder for [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -224,6 +225,7 @@ impl std::fmt::Debug for UpdateFunctionEventInvokeConfigOutput {
 }
 /// See [`UpdateFunctionEventInvokeConfigOutput`](crate::output::UpdateFunctionEventInvokeConfigOutput)
 pub mod update_function_event_invoke_config_output {
+    ///
     /// A builder for [`UpdateFunctionEventInvokeConfigOutput`](crate::output::UpdateFunctionEventInvokeConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -579,6 +581,7 @@ impl std::fmt::Debug for UpdateFunctionConfigurationOutput {
 }
 /// See [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput)
 pub mod update_function_configuration_output {
+    ///
     /// A builder for [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1330,6 +1333,7 @@ impl std::fmt::Debug for UpdateFunctionCodeOutput {
 }
 /// See [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput)
 pub mod update_function_code_output {
+    ///
     /// A builder for [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2036,6 +2040,7 @@ impl std::fmt::Debug for UpdateEventSourceMappingOutput {
 }
 /// See [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput)
 pub mod update_event_source_mapping_output {
+    ///
     /// A builder for [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2446,6 +2451,7 @@ impl std::fmt::Debug for UpdateCodeSigningConfigOutput {
 }
 /// See [`UpdateCodeSigningConfigOutput`](crate::output::UpdateCodeSigningConfigOutput)
 pub mod update_code_signing_config_output {
+    ///
     /// A builder for [`UpdateCodeSigningConfigOutput`](crate::output::UpdateCodeSigningConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2538,6 +2544,7 @@ impl std::fmt::Debug for UpdateAliasOutput {
 }
 /// See [`UpdateAliasOutput`](crate::output::UpdateAliasOutput)
 pub mod update_alias_output {
+    ///
     /// A builder for [`UpdateAliasOutput`](crate::output::UpdateAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2648,6 +2655,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2678,6 +2686,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2708,6 +2717,7 @@ impl std::fmt::Debug for RemovePermissionOutput {
 }
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput)
 pub mod remove_permission_output {
+    ///
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2738,6 +2748,7 @@ impl std::fmt::Debug for RemoveLayerVersionPermissionOutput {
 }
 /// See [`RemoveLayerVersionPermissionOutput`](crate::output::RemoveLayerVersionPermissionOutput)
 pub mod remove_layer_version_permission_output {
+    ///
     /// A builder for [`RemoveLayerVersionPermissionOutput`](crate::output::RemoveLayerVersionPermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2822,6 +2833,7 @@ impl std::fmt::Debug for PutProvisionedConcurrencyConfigOutput {
 }
 /// See [`PutProvisionedConcurrencyConfigOutput`](crate::output::PutProvisionedConcurrencyConfigOutput)
 pub mod put_provisioned_concurrency_config_output {
+    ///
     /// A builder for [`PutProvisionedConcurrencyConfigOutput`](crate::output::PutProvisionedConcurrencyConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3002,6 +3014,7 @@ impl std::fmt::Debug for PutFunctionEventInvokeConfigOutput {
 }
 /// See [`PutFunctionEventInvokeConfigOutput`](crate::output::PutFunctionEventInvokeConfigOutput)
 pub mod put_function_event_invoke_config_output {
+    ///
     /// A builder for [`PutFunctionEventInvokeConfigOutput`](crate::output::PutFunctionEventInvokeConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3127,6 +3140,7 @@ impl std::fmt::Debug for PutFunctionConcurrencyOutput {
 }
 /// See [`PutFunctionConcurrencyOutput`](crate::output::PutFunctionConcurrencyOutput)
 pub mod put_function_concurrency_output {
+    ///
     /// A builder for [`PutFunctionConcurrencyOutput`](crate::output::PutFunctionConcurrencyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3205,6 +3219,7 @@ impl std::fmt::Debug for PutFunctionCodeSigningConfigOutput {
 }
 /// See [`PutFunctionCodeSigningConfigOutput`](crate::output::PutFunctionCodeSigningConfigOutput)
 pub mod put_function_code_signing_config_output {
+    ///
     /// A builder for [`PutFunctionCodeSigningConfigOutput`](crate::output::PutFunctionCodeSigningConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3524,6 +3539,7 @@ impl std::fmt::Debug for PublishVersionOutput {
 }
 /// See [`PublishVersionOutput`](crate::output::PublishVersionOutput)
 pub mod publish_version_output {
+    ///
     /// A builder for [`PublishVersionOutput`](crate::output::PublishVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4098,6 +4114,7 @@ impl std::fmt::Debug for PublishLayerVersionOutput {
 }
 /// See [`PublishLayerVersionOutput`](crate::output::PublishLayerVersionOutput)
 pub mod publish_layer_version_output {
+    ///
     /// A builder for [`PublishLayerVersionOutput`](crate::output::PublishLayerVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4280,6 +4297,7 @@ impl std::fmt::Debug for ListVersionsByFunctionOutput {
 }
 /// See [`ListVersionsByFunctionOutput`](crate::output::ListVersionsByFunctionOutput)
 pub mod list_versions_by_function_output {
+    ///
     /// A builder for [`ListVersionsByFunctionOutput`](crate::output::ListVersionsByFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4360,6 +4378,7 @@ impl std::fmt::Debug for ListTagsOutput {
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput)
 pub mod list_tags_output {
+    ///
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4442,6 +4461,7 @@ impl std::fmt::Debug for ListProvisionedConcurrencyConfigsOutput {
 }
 /// See [`ListProvisionedConcurrencyConfigsOutput`](crate::output::ListProvisionedConcurrencyConfigsOutput)
 pub mod list_provisioned_concurrency_configs_output {
+    ///
     /// A builder for [`ListProvisionedConcurrencyConfigsOutput`](crate::output::ListProvisionedConcurrencyConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4530,6 +4550,7 @@ impl std::fmt::Debug for ListLayerVersionsOutput {
 }
 /// See [`ListLayerVersionsOutput`](crate::output::ListLayerVersionsOutput)
 pub mod list_layer_versions_output {
+    ///
     /// A builder for [`ListLayerVersionsOutput`](crate::output::ListLayerVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4613,6 +4634,7 @@ impl std::fmt::Debug for ListLayersOutput {
 }
 /// See [`ListLayersOutput`](crate::output::ListLayersOutput)
 pub mod list_layers_output {
+    ///
     /// A builder for [`ListLayersOutput`](crate::output::ListLayersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4695,6 +4717,7 @@ impl std::fmt::Debug for ListFunctionUrlConfigsOutput {
 }
 /// See [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput)
 pub mod list_function_url_configs_output {
+    ///
     /// A builder for [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4778,6 +4801,7 @@ impl std::fmt::Debug for ListFunctionsByCodeSigningConfigOutput {
 }
 /// See [`ListFunctionsByCodeSigningConfigOutput`](crate::output::ListFunctionsByCodeSigningConfigOutput)
 pub mod list_functions_by_code_signing_config_output {
+    ///
     /// A builder for [`ListFunctionsByCodeSigningConfigOutput`](crate::output::ListFunctionsByCodeSigningConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4860,6 +4884,7 @@ impl std::fmt::Debug for ListFunctionsOutput {
 }
 /// See [`ListFunctionsOutput`](crate::output::ListFunctionsOutput)
 pub mod list_functions_output {
+    ///
     /// A builder for [`ListFunctionsOutput`](crate::output::ListFunctionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4949,6 +4974,7 @@ impl std::fmt::Debug for ListFunctionEventInvokeConfigsOutput {
 }
 /// See [`ListFunctionEventInvokeConfigsOutput`](crate::output::ListFunctionEventInvokeConfigsOutput)
 pub mod list_function_event_invoke_configs_output {
+    ///
     /// A builder for [`ListFunctionEventInvokeConfigsOutput`](crate::output::ListFunctionEventInvokeConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5038,6 +5064,7 @@ impl std::fmt::Debug for ListEventSourceMappingsOutput {
 }
 /// See [`ListEventSourceMappingsOutput`](crate::output::ListEventSourceMappingsOutput)
 pub mod list_event_source_mappings_output {
+    ///
     /// A builder for [`ListEventSourceMappingsOutput`](crate::output::ListEventSourceMappingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5126,6 +5153,7 @@ impl std::fmt::Debug for ListCodeSigningConfigsOutput {
 }
 /// See [`ListCodeSigningConfigsOutput`](crate::output::ListCodeSigningConfigsOutput)
 pub mod list_code_signing_configs_output {
+    ///
     /// A builder for [`ListCodeSigningConfigsOutput`](crate::output::ListCodeSigningConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5209,6 +5237,7 @@ impl std::fmt::Debug for ListAliasesOutput {
 }
 /// See [`ListAliasesOutput`](crate::output::ListAliasesOutput)
 pub mod list_aliases_output {
+    ///
     /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5284,6 +5313,7 @@ impl std::fmt::Debug for InvokeAsyncOutput {
 }
 /// See [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput)
 pub mod invoke_async_output {
+    ///
     /// A builder for [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5366,6 +5396,7 @@ impl std::fmt::Debug for InvokeOutput {
 }
 /// See [`InvokeOutput`](crate::output::InvokeOutput)
 pub mod invoke_output {
+    ///
     /// A builder for [`InvokeOutput`](crate::output::InvokeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5518,6 +5549,7 @@ impl std::fmt::Debug for GetProvisionedConcurrencyConfigOutput {
 }
 /// See [`GetProvisionedConcurrencyConfigOutput`](crate::output::GetProvisionedConcurrencyConfigOutput)
 pub mod get_provisioned_concurrency_config_output {
+    ///
     /// A builder for [`GetProvisionedConcurrencyConfigOutput`](crate::output::GetProvisionedConcurrencyConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5660,6 +5692,7 @@ impl std::fmt::Debug for GetPolicyOutput {
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput)
 pub mod get_policy_output {
+    ///
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5733,6 +5766,7 @@ impl std::fmt::Debug for GetLayerVersionPolicyOutput {
 }
 /// See [`GetLayerVersionPolicyOutput`](crate::output::GetLayerVersionPolicyOutput)
 pub mod get_layer_version_policy_output {
+    ///
     /// A builder for [`GetLayerVersionPolicyOutput`](crate::output::GetLayerVersionPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5855,6 +5889,7 @@ impl std::fmt::Debug for GetLayerVersionByArnOutput {
 }
 /// See [`GetLayerVersionByArnOutput`](crate::output::GetLayerVersionByArnOutput)
 pub mod get_layer_version_by_arn_output {
+    ///
     /// A builder for [`GetLayerVersionByArnOutput`](crate::output::GetLayerVersionByArnOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6086,6 +6121,7 @@ impl std::fmt::Debug for GetLayerVersionOutput {
 }
 /// See [`GetLayerVersionOutput`](crate::output::GetLayerVersionOutput)
 pub mod get_layer_version_output {
+    ///
     /// A builder for [`GetLayerVersionOutput`](crate::output::GetLayerVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6296,6 +6332,7 @@ impl std::fmt::Debug for GetFunctionUrlConfigOutput {
 }
 /// See [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput)
 pub mod get_function_url_config_output {
+    ///
     /// A builder for [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6464,6 +6501,7 @@ impl std::fmt::Debug for GetFunctionEventInvokeConfigOutput {
 }
 /// See [`GetFunctionEventInvokeConfigOutput`](crate::output::GetFunctionEventInvokeConfigOutput)
 pub mod get_function_event_invoke_config_output {
+    ///
     /// A builder for [`GetFunctionEventInvokeConfigOutput`](crate::output::GetFunctionEventInvokeConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6819,6 +6857,7 @@ impl std::fmt::Debug for GetFunctionConfigurationOutput {
 }
 /// See [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput)
 pub mod get_function_configuration_output {
+    ///
     /// A builder for [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7340,6 +7379,7 @@ impl std::fmt::Debug for GetFunctionConcurrencyOutput {
 }
 /// See [`GetFunctionConcurrencyOutput`](crate::output::GetFunctionConcurrencyOutput)
 pub mod get_function_concurrency_output {
+    ///
     /// A builder for [`GetFunctionConcurrencyOutput`](crate::output::GetFunctionConcurrencyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7418,6 +7458,7 @@ impl std::fmt::Debug for GetFunctionCodeSigningConfigOutput {
 }
 /// See [`GetFunctionCodeSigningConfigOutput`](crate::output::GetFunctionCodeSigningConfigOutput)
 pub mod get_function_code_signing_config_output {
+    ///
     /// A builder for [`GetFunctionCodeSigningConfigOutput`](crate::output::GetFunctionCodeSigningConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7529,6 +7570,7 @@ impl std::fmt::Debug for GetFunctionOutput {
 }
 /// See [`GetFunctionOutput`](crate::output::GetFunctionOutput)
 pub mod get_function_output {
+    ///
     /// A builder for [`GetFunctionOutput`](crate::output::GetFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7833,6 +7875,7 @@ impl std::fmt::Debug for GetEventSourceMappingOutput {
 }
 /// See [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput)
 pub mod get_event_source_mapping_output {
+    ///
     /// A builder for [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8243,6 +8286,7 @@ impl std::fmt::Debug for GetCodeSigningConfigOutput {
 }
 /// See [`GetCodeSigningConfigOutput`](crate::output::GetCodeSigningConfigOutput)
 pub mod get_code_signing_config_output {
+    ///
     /// A builder for [`GetCodeSigningConfigOutput`](crate::output::GetCodeSigningConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8335,6 +8379,7 @@ impl std::fmt::Debug for GetAliasOutput {
 }
 /// See [`GetAliasOutput`](crate::output::GetAliasOutput)
 pub mod get_alias_output {
+    ///
     /// A builder for [`GetAliasOutput`](crate::output::GetAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8462,6 +8507,7 @@ impl std::fmt::Debug for GetAccountSettingsOutput {
 }
 /// See [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput)
 pub mod get_account_settings_output {
+    ///
     /// A builder for [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8524,6 +8570,7 @@ impl std::fmt::Debug for DeleteProvisionedConcurrencyConfigOutput {
 }
 /// See [`DeleteProvisionedConcurrencyConfigOutput`](crate::output::DeleteProvisionedConcurrencyConfigOutput)
 pub mod delete_provisioned_concurrency_config_output {
+    ///
     /// A builder for [`DeleteProvisionedConcurrencyConfigOutput`](crate::output::DeleteProvisionedConcurrencyConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8554,6 +8601,7 @@ impl std::fmt::Debug for DeleteLayerVersionOutput {
 }
 /// See [`DeleteLayerVersionOutput`](crate::output::DeleteLayerVersionOutput)
 pub mod delete_layer_version_output {
+    ///
     /// A builder for [`DeleteLayerVersionOutput`](crate::output::DeleteLayerVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8584,6 +8632,7 @@ impl std::fmt::Debug for DeleteFunctionUrlConfigOutput {
 }
 /// See [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput)
 pub mod delete_function_url_config_output {
+    ///
     /// A builder for [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8614,6 +8663,7 @@ impl std::fmt::Debug for DeleteFunctionEventInvokeConfigOutput {
 }
 /// See [`DeleteFunctionEventInvokeConfigOutput`](crate::output::DeleteFunctionEventInvokeConfigOutput)
 pub mod delete_function_event_invoke_config_output {
+    ///
     /// A builder for [`DeleteFunctionEventInvokeConfigOutput`](crate::output::DeleteFunctionEventInvokeConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8644,6 +8694,7 @@ impl std::fmt::Debug for DeleteFunctionConcurrencyOutput {
 }
 /// See [`DeleteFunctionConcurrencyOutput`](crate::output::DeleteFunctionConcurrencyOutput)
 pub mod delete_function_concurrency_output {
+    ///
     /// A builder for [`DeleteFunctionConcurrencyOutput`](crate::output::DeleteFunctionConcurrencyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8674,6 +8725,7 @@ impl std::fmt::Debug for DeleteFunctionCodeSigningConfigOutput {
 }
 /// See [`DeleteFunctionCodeSigningConfigOutput`](crate::output::DeleteFunctionCodeSigningConfigOutput)
 pub mod delete_function_code_signing_config_output {
+    ///
     /// A builder for [`DeleteFunctionCodeSigningConfigOutput`](crate::output::DeleteFunctionCodeSigningConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8704,6 +8756,7 @@ impl std::fmt::Debug for DeleteFunctionOutput {
 }
 /// See [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput)
 pub mod delete_function_output {
+    ///
     /// A builder for [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8932,6 +8985,7 @@ impl std::fmt::Debug for DeleteEventSourceMappingOutput {
 }
 /// See [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput)
 pub mod delete_event_source_mapping_output {
+    ///
     /// A builder for [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9332,6 +9386,7 @@ impl std::fmt::Debug for DeleteCodeSigningConfigOutput {
 }
 /// See [`DeleteCodeSigningConfigOutput`](crate::output::DeleteCodeSigningConfigOutput)
 pub mod delete_code_signing_config_output {
+    ///
     /// A builder for [`DeleteCodeSigningConfigOutput`](crate::output::DeleteCodeSigningConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9362,6 +9417,7 @@ impl std::fmt::Debug for DeleteAliasOutput {
 }
 /// See [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
 pub mod delete_alias_output {
+    ///
     /// A builder for [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9430,6 +9486,7 @@ impl std::fmt::Debug for CreateFunctionUrlConfigOutput {
 }
 /// See [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput)
 pub mod create_function_url_config_output {
+    ///
     /// A builder for [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9771,6 +9828,7 @@ impl std::fmt::Debug for CreateFunctionOutput {
 }
 /// See [`CreateFunctionOutput`](crate::output::CreateFunctionOutput)
 pub mod create_function_output {
+    ///
     /// A builder for [`CreateFunctionOutput`](crate::output::CreateFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10477,6 +10535,7 @@ impl std::fmt::Debug for CreateEventSourceMappingOutput {
 }
 /// See [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput)
 pub mod create_event_source_mapping_output {
+    ///
     /// A builder for [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10887,6 +10946,7 @@ impl std::fmt::Debug for CreateCodeSigningConfigOutput {
 }
 /// See [`CreateCodeSigningConfigOutput`](crate::output::CreateCodeSigningConfigOutput)
 pub mod create_code_signing_config_output {
+    ///
     /// A builder for [`CreateCodeSigningConfigOutput`](crate::output::CreateCodeSigningConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10979,6 +11039,7 @@ impl std::fmt::Debug for CreateAliasOutput {
 }
 /// See [`CreateAliasOutput`](crate::output::CreateAliasOutput)
 pub mod create_alias_output {
+    ///
     /// A builder for [`CreateAliasOutput`](crate::output::CreateAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11099,6 +11160,7 @@ impl std::fmt::Debug for AddPermissionOutput {
 }
 /// See [`AddPermissionOutput`](crate::output::AddPermissionOutput)
 pub mod add_permission_output {
+    ///
     /// A builder for [`AddPermissionOutput`](crate::output::AddPermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11160,6 +11222,7 @@ impl std::fmt::Debug for AddLayerVersionPermissionOutput {
 }
 /// See [`AddLayerVersionPermissionOutput`](crate::output::AddLayerVersionPermissionOutput)
 pub mod add_layer_version_permission_output {
+    ///
     /// A builder for [`AddLayerVersionPermissionOutput`](crate::output::AddLayerVersionPermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

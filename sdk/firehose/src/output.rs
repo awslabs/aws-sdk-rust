@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateDestinationOutput {
 }
 /// See [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
 pub mod update_destination_output {
+    ///
     /// A builder for [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UntagDeliveryStreamOutput {
 }
 /// See [`UntagDeliveryStreamOutput`](crate::output::UntagDeliveryStreamOutput)
 pub mod untag_delivery_stream_output {
+    ///
     /// A builder for [`UntagDeliveryStreamOutput`](crate::output::UntagDeliveryStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for TagDeliveryStreamOutput {
 }
 /// See [`TagDeliveryStreamOutput`](crate::output::TagDeliveryStreamOutput)
 pub mod tag_delivery_stream_output {
+    ///
     /// A builder for [`TagDeliveryStreamOutput`](crate::output::TagDeliveryStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for StopDeliveryStreamEncryptionOutput {
 }
 /// See [`StopDeliveryStreamEncryptionOutput`](crate::output::StopDeliveryStreamEncryptionOutput)
 pub mod stop_delivery_stream_encryption_output {
+    ///
     /// A builder for [`StopDeliveryStreamEncryptionOutput`](crate::output::StopDeliveryStreamEncryptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for StartDeliveryStreamEncryptionOutput {
 }
 /// See [`StartDeliveryStreamEncryptionOutput`](crate::output::StartDeliveryStreamEncryptionOutput)
 pub mod start_delivery_stream_encryption_output {
+    ///
     /// A builder for [`StartDeliveryStreamEncryptionOutput`](crate::output::StartDeliveryStreamEncryptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -188,6 +193,7 @@ impl std::fmt::Debug for PutRecordBatchOutput {
 }
 /// See [`PutRecordBatchOutput`](crate::output::PutRecordBatchOutput)
 pub mod put_record_batch_output {
+    ///
     /// A builder for [`PutRecordBatchOutput`](crate::output::PutRecordBatchOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -286,6 +292,7 @@ impl std::fmt::Debug for PutRecordOutput {
 }
 /// See [`PutRecordOutput`](crate::output::PutRecordOutput)
 pub mod put_record_output {
+    ///
     /// A builder for [`PutRecordOutput`](crate::output::PutRecordOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -359,6 +366,7 @@ impl std::fmt::Debug for ListTagsForDeliveryStreamOutput {
 }
 /// See [`ListTagsForDeliveryStreamOutput`](crate::output::ListTagsForDeliveryStreamOutput)
 pub mod list_tags_for_delivery_stream_output {
+    ///
     /// A builder for [`ListTagsForDeliveryStreamOutput`](crate::output::ListTagsForDeliveryStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -441,6 +449,7 @@ impl std::fmt::Debug for ListDeliveryStreamsOutput {
 }
 /// See [`ListDeliveryStreamsOutput`](crate::output::ListDeliveryStreamsOutput)
 pub mod list_delivery_streams_output {
+    ///
     /// A builder for [`ListDeliveryStreamsOutput`](crate::output::ListDeliveryStreamsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -521,6 +530,7 @@ impl std::fmt::Debug for DescribeDeliveryStreamOutput {
 }
 /// See [`DescribeDeliveryStreamOutput`](crate::output::DescribeDeliveryStreamOutput)
 pub mod describe_delivery_stream_output {
+    ///
     /// A builder for [`DescribeDeliveryStreamOutput`](crate::output::DescribeDeliveryStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -572,6 +582,7 @@ impl std::fmt::Debug for DeleteDeliveryStreamOutput {
 }
 /// See [`DeleteDeliveryStreamOutput`](crate::output::DeleteDeliveryStreamOutput)
 pub mod delete_delivery_stream_output {
+    ///
     /// A builder for [`DeleteDeliveryStreamOutput`](crate::output::DeleteDeliveryStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -612,6 +623,7 @@ impl std::fmt::Debug for CreateDeliveryStreamOutput {
 }
 /// See [`CreateDeliveryStreamOutput`](crate::output::CreateDeliveryStreamOutput)
 pub mod create_delivery_stream_output {
+    ///
     /// A builder for [`CreateDeliveryStreamOutput`](crate::output::CreateDeliveryStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

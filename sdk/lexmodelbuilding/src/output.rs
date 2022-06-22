@@ -11,6 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -130,6 +132,7 @@ impl std::fmt::Debug for StartMigrationOutput {
 }
 /// See [`StartMigrationOutput`](crate::output::StartMigrationOutput)
 pub mod start_migration_output {
+    ///
     /// A builder for [`StartMigrationOutput`](crate::output::StartMigrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -322,6 +325,7 @@ impl std::fmt::Debug for StartImportOutput {
 }
 /// See [`StartImportOutput`](crate::output::StartImportOutput)
 pub mod start_import_output {
+    ///
     /// A builder for [`StartImportOutput`](crate::output::StartImportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -547,6 +551,7 @@ impl std::fmt::Debug for PutSlotTypeOutput {
 }
 /// See [`PutSlotTypeOutput`](crate::output::PutSlotTypeOutput)
 pub mod put_slot_type_output {
+    ///
     /// A builder for [`PutSlotTypeOutput`](crate::output::PutSlotTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -886,6 +891,7 @@ impl std::fmt::Debug for PutIntentOutput {
 }
 /// See [`PutIntentOutput`](crate::output::PutIntentOutput)
 pub mod put_intent_output {
+    ///
     /// A builder for [`PutIntentOutput`](crate::output::PutIntentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1280,6 +1286,7 @@ impl std::fmt::Debug for PutBotAliasOutput {
 }
 /// See [`PutBotAliasOutput`](crate::output::PutBotAliasOutput)
 pub mod put_bot_alias_output {
+    ///
     /// A builder for [`PutBotAliasOutput`](crate::output::PutBotAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1597,6 +1604,7 @@ impl std::fmt::Debug for PutBotOutput {
 }
 /// See [`PutBotOutput`](crate::output::PutBotOutput)
 pub mod put_bot_output {
+    ///
     /// A builder for [`PutBotOutput`](crate::output::PutBotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1925,6 +1933,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1993,6 +2002,7 @@ impl std::fmt::Debug for GetUtterancesViewOutput {
 }
 /// See [`GetUtterancesViewOutput`](crate::output::GetUtterancesViewOutput)
 pub mod get_utterances_view_output {
+    ///
     /// A builder for [`GetUtterancesViewOutput`](crate::output::GetUtterancesViewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2075,6 +2085,7 @@ impl std::fmt::Debug for GetSlotTypeVersionsOutput {
 }
 /// See [`GetSlotTypeVersionsOutput`](crate::output::GetSlotTypeVersionsOutput)
 pub mod get_slot_type_versions_output {
+    ///
     /// A builder for [`GetSlotTypeVersionsOutput`](crate::output::GetSlotTypeVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2157,6 +2168,7 @@ impl std::fmt::Debug for GetSlotTypesOutput {
 }
 /// See [`GetSlotTypesOutput`](crate::output::GetSlotTypesOutput)
 pub mod get_slot_types_output {
+    ///
     /// A builder for [`GetSlotTypesOutput`](crate::output::GetSlotTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2303,6 +2315,7 @@ impl std::fmt::Debug for GetSlotTypeOutput {
 }
 /// See [`GetSlotTypeOutput`](crate::output::GetSlotTypeOutput)
 pub mod get_slot_type_output {
+    ///
     /// A builder for [`GetSlotTypeOutput`](crate::output::GetSlotTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2511,6 +2524,7 @@ impl std::fmt::Debug for GetMigrationsOutput {
 }
 /// See [`GetMigrationsOutput`](crate::output::GetMigrationsOutput)
 pub mod get_migrations_output {
+    ///
     /// A builder for [`GetMigrationsOutput`](crate::output::GetMigrationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2660,6 +2674,7 @@ impl std::fmt::Debug for GetMigrationOutput {
 }
 /// See [`GetMigrationOutput`](crate::output::GetMigrationOutput)
 pub mod get_migration_output {
+    ///
     /// A builder for [`GetMigrationOutput`](crate::output::GetMigrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2863,6 +2878,7 @@ impl std::fmt::Debug for GetIntentVersionsOutput {
 }
 /// See [`GetIntentVersionsOutput`](crate::output::GetIntentVersionsOutput)
 pub mod get_intent_versions_output {
+    ///
     /// A builder for [`GetIntentVersionsOutput`](crate::output::GetIntentVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2945,6 +2961,7 @@ impl std::fmt::Debug for GetIntentsOutput {
 }
 /// See [`GetIntentsOutput`](crate::output::GetIntentsOutput)
 pub mod get_intents_output {
+    ///
     /// A builder for [`GetIntentsOutput`](crate::output::GetIntentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3139,6 +3156,7 @@ impl std::fmt::Debug for GetIntentOutput {
 }
 /// See [`GetIntentOutput`](crate::output::GetIntentOutput)
 pub mod get_intent_output {
+    ///
     /// A builder for [`GetIntentOutput`](crate::output::GetIntentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3505,6 +3523,7 @@ impl std::fmt::Debug for GetImportOutput {
 }
 /// See [`GetImportOutput`](crate::output::GetImportOutput)
 pub mod get_import_output {
+    ///
     /// A builder for [`GetImportOutput`](crate::output::GetImportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3704,6 +3723,7 @@ impl std::fmt::Debug for GetExportOutput {
 }
 /// See [`GetExportOutput`](crate::output::GetExportOutput)
 pub mod get_export_output {
+    ///
     /// A builder for [`GetExportOutput`](crate::output::GetExportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3859,6 +3879,7 @@ impl std::fmt::Debug for GetBuiltinSlotTypesOutput {
 }
 /// See [`GetBuiltinSlotTypesOutput`](crate::output::GetBuiltinSlotTypesOutput)
 pub mod get_builtin_slot_types_output {
+    ///
     /// A builder for [`GetBuiltinSlotTypesOutput`](crate::output::GetBuiltinSlotTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3942,6 +3963,7 @@ impl std::fmt::Debug for GetBuiltinIntentsOutput {
 }
 /// See [`GetBuiltinIntentsOutput`](crate::output::GetBuiltinIntentsOutput)
 pub mod get_builtin_intents_output {
+    ///
     /// A builder for [`GetBuiltinIntentsOutput`](crate::output::GetBuiltinIntentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4031,6 +4053,7 @@ impl std::fmt::Debug for GetBuiltinIntentOutput {
 }
 /// See [`GetBuiltinIntentOutput`](crate::output::GetBuiltinIntentOutput)
 pub mod get_builtin_intent_output {
+    ///
     /// A builder for [`GetBuiltinIntentOutput`](crate::output::GetBuiltinIntentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4134,6 +4157,7 @@ impl std::fmt::Debug for GetBotVersionsOutput {
 }
 /// See [`GetBotVersionsOutput`](crate::output::GetBotVersionsOutput)
 pub mod get_bot_versions_output {
+    ///
     /// A builder for [`GetBotVersionsOutput`](crate::output::GetBotVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4216,6 +4240,7 @@ impl std::fmt::Debug for GetBotsOutput {
 }
 /// See [`GetBotsOutput`](crate::output::GetBotsOutput)
 pub mod get_bots_output {
+    ///
     /// A builder for [`GetBotsOutput`](crate::output::GetBotsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4301,6 +4326,7 @@ impl std::fmt::Debug for GetBotChannelAssociationsOutput {
 }
 /// See [`GetBotChannelAssociationsOutput`](crate::output::GetBotChannelAssociationsOutput)
 pub mod get_bot_channel_associations_output {
+    ///
     /// A builder for [`GetBotChannelAssociationsOutput`](crate::output::GetBotChannelAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4450,6 +4476,7 @@ impl std::fmt::Debug for GetBotChannelAssociationOutput {
 }
 /// See [`GetBotChannelAssociationOutput`](crate::output::GetBotChannelAssociationOutput)
 pub mod get_bot_channel_association_output {
+    ///
     /// A builder for [`GetBotChannelAssociationOutput`](crate::output::GetBotChannelAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4643,6 +4670,7 @@ impl std::fmt::Debug for GetBotAliasesOutput {
 }
 /// See [`GetBotAliasesOutput`](crate::output::GetBotAliasesOutput)
 pub mod get_bot_aliases_output {
+    ///
     /// A builder for [`GetBotAliasesOutput`](crate::output::GetBotAliasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4769,6 +4797,7 @@ impl std::fmt::Debug for GetBotAliasOutput {
 }
 /// See [`GetBotAliasOutput`](crate::output::GetBotAliasOutput)
 pub mod get_bot_alias_output {
+    ///
     /// A builder for [`GetBotAliasOutput`](crate::output::GetBotAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5051,6 +5080,7 @@ impl std::fmt::Debug for GetBotOutput {
 }
 /// See [`GetBotOutput`](crate::output::GetBotOutput)
 pub mod get_bot_output {
+    ///
     /// A builder for [`GetBotOutput`](crate::output::GetBotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5336,6 +5366,7 @@ impl std::fmt::Debug for DeleteUtterancesOutput {
 }
 /// See [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput)
 pub mod delete_utterances_output {
+    ///
     /// A builder for [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5366,6 +5397,7 @@ impl std::fmt::Debug for DeleteSlotTypeVersionOutput {
 }
 /// See [`DeleteSlotTypeVersionOutput`](crate::output::DeleteSlotTypeVersionOutput)
 pub mod delete_slot_type_version_output {
+    ///
     /// A builder for [`DeleteSlotTypeVersionOutput`](crate::output::DeleteSlotTypeVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5396,6 +5428,7 @@ impl std::fmt::Debug for DeleteSlotTypeOutput {
 }
 /// See [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput)
 pub mod delete_slot_type_output {
+    ///
     /// A builder for [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5426,6 +5459,7 @@ impl std::fmt::Debug for DeleteIntentVersionOutput {
 }
 /// See [`DeleteIntentVersionOutput`](crate::output::DeleteIntentVersionOutput)
 pub mod delete_intent_version_output {
+    ///
     /// A builder for [`DeleteIntentVersionOutput`](crate::output::DeleteIntentVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5456,6 +5490,7 @@ impl std::fmt::Debug for DeleteIntentOutput {
 }
 /// See [`DeleteIntentOutput`](crate::output::DeleteIntentOutput)
 pub mod delete_intent_output {
+    ///
     /// A builder for [`DeleteIntentOutput`](crate::output::DeleteIntentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5486,6 +5521,7 @@ impl std::fmt::Debug for DeleteBotVersionOutput {
 }
 /// See [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput)
 pub mod delete_bot_version_output {
+    ///
     /// A builder for [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5516,6 +5552,7 @@ impl std::fmt::Debug for DeleteBotChannelAssociationOutput {
 }
 /// See [`DeleteBotChannelAssociationOutput`](crate::output::DeleteBotChannelAssociationOutput)
 pub mod delete_bot_channel_association_output {
+    ///
     /// A builder for [`DeleteBotChannelAssociationOutput`](crate::output::DeleteBotChannelAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5546,6 +5583,7 @@ impl std::fmt::Debug for DeleteBotAliasOutput {
 }
 /// See [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput)
 pub mod delete_bot_alias_output {
+    ///
     /// A builder for [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5576,6 +5614,7 @@ impl std::fmt::Debug for DeleteBotOutput {
 }
 /// See [`DeleteBotOutput`](crate::output::DeleteBotOutput)
 pub mod delete_bot_output {
+    ///
     /// A builder for [`DeleteBotOutput`](crate::output::DeleteBotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5687,6 +5726,7 @@ impl std::fmt::Debug for CreateSlotTypeVersionOutput {
 }
 /// See [`CreateSlotTypeVersionOutput`](crate::output::CreateSlotTypeVersionOutput)
 pub mod create_slot_type_version_output {
+    ///
     /// A builder for [`CreateSlotTypeVersionOutput`](crate::output::CreateSlotTypeVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6007,6 +6047,7 @@ impl std::fmt::Debug for CreateIntentVersionOutput {
 }
 /// See [`CreateIntentVersionOutput`](crate::output::CreateIntentVersionOutput)
 pub mod create_intent_version_output {
+    ///
     /// A builder for [`CreateIntentVersionOutput`](crate::output::CreateIntentVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6448,6 +6489,7 @@ impl std::fmt::Debug for CreateBotVersionOutput {
 }
 /// See [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput)
 pub mod create_bot_version_output {
+    ///
     /// A builder for [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

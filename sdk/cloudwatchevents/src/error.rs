@@ -5891,6 +5891,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5955,6 +5956,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6019,6 +6021,7 @@ impl std::fmt::Display for InternalException {
 impl std::error::Error for InternalException {}
 /// See [`InternalException`](crate::error::InternalException)
 pub mod internal_exception {
+    ///
     /// A builder for [`InternalException`](crate::error::InternalException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6083,6 +6086,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
+    ///
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6147,6 +6151,7 @@ impl std::fmt::Display for InvalidEventPatternException {
 impl std::error::Error for InvalidEventPatternException {}
 /// See [`InvalidEventPatternException`](crate::error::InvalidEventPatternException)
 pub mod invalid_event_pattern_exception {
+    ///
     /// A builder for [`InvalidEventPatternException`](crate::error::InvalidEventPatternException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6211,6 +6216,7 @@ impl std::fmt::Display for ManagedRuleException {
 impl std::error::Error for ManagedRuleException {}
 /// See [`ManagedRuleException`](crate::error::ManagedRuleException)
 pub mod managed_rule_exception {
+    ///
     /// A builder for [`ManagedRuleException`](crate::error::ManagedRuleException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6275,6 +6281,7 @@ impl std::fmt::Display for ResourceAlreadyExistsException {
 impl std::error::Error for ResourceAlreadyExistsException {}
 /// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
 pub mod resource_already_exists_exception {
+    ///
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6339,6 +6346,7 @@ impl std::fmt::Display for OperationDisabledException {
 impl std::error::Error for OperationDisabledException {}
 /// See [`OperationDisabledException`](crate::error::OperationDisabledException)
 pub mod operation_disabled_exception {
+    ///
     /// A builder for [`OperationDisabledException`](crate::error::OperationDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6403,6 +6411,7 @@ impl std::fmt::Display for PolicyLengthExceededException {
 impl std::error::Error for PolicyLengthExceededException {}
 /// See [`PolicyLengthExceededException`](crate::error::PolicyLengthExceededException)
 pub mod policy_length_exceeded_exception {
+    ///
     /// A builder for [`PolicyLengthExceededException`](crate::error::PolicyLengthExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6467,6 +6476,7 @@ impl std::fmt::Display for InvalidStateException {
 impl std::error::Error for InvalidStateException {}
 /// See [`InvalidStateException`](crate::error::InvalidStateException)
 pub mod invalid_state_exception {
+    ///
     /// A builder for [`InvalidStateException`](crate::error::InvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6531,6 +6541,7 @@ impl std::fmt::Display for IllegalStatusException {
 impl std::error::Error for IllegalStatusException {}
 /// See [`IllegalStatusException`](crate::error::IllegalStatusException)
 pub mod illegal_status_exception {
+    ///
     /// A builder for [`IllegalStatusException`](crate::error::IllegalStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

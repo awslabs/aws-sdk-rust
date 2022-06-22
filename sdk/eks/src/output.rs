@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateNodegroupVersionOutput {
 }
 /// See [`UpdateNodegroupVersionOutput`](crate::output::UpdateNodegroupVersionOutput)
 pub mod update_nodegroup_version_output {
+    ///
     /// A builder for [`UpdateNodegroupVersionOutput`](crate::output::UpdateNodegroupVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -75,6 +76,7 @@ impl std::fmt::Debug for UpdateNodegroupConfigOutput {
 }
 /// See [`UpdateNodegroupConfigOutput`](crate::output::UpdateNodegroupConfigOutput)
 pub mod update_nodegroup_config_output {
+    ///
     /// A builder for [`UpdateNodegroupConfigOutput`](crate::output::UpdateNodegroupConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -129,6 +131,7 @@ impl std::fmt::Debug for UpdateClusterVersionOutput {
 }
 /// See [`UpdateClusterVersionOutput`](crate::output::UpdateClusterVersionOutput)
 pub mod update_cluster_version_output {
+    ///
     /// A builder for [`UpdateClusterVersionOutput`](crate::output::UpdateClusterVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -183,6 +186,7 @@ impl std::fmt::Debug for UpdateClusterConfigOutput {
 }
 /// See [`UpdateClusterConfigOutput`](crate::output::UpdateClusterConfigOutput)
 pub mod update_cluster_config_output {
+    ///
     /// A builder for [`UpdateClusterConfigOutput`](crate::output::UpdateClusterConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -237,6 +241,7 @@ impl std::fmt::Debug for UpdateAddonOutput {
 }
 /// See [`UpdateAddonOutput`](crate::output::UpdateAddonOutput)
 pub mod update_addon_output {
+    ///
     /// A builder for [`UpdateAddonOutput`](crate::output::UpdateAddonOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -281,6 +286,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -311,6 +317,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -351,6 +358,7 @@ impl std::fmt::Debug for RegisterClusterOutput {
 }
 /// See [`RegisterClusterOutput`](crate::output::RegisterClusterOutput)
 pub mod register_cluster_output {
+    ///
     /// A builder for [`RegisterClusterOutput`](crate::output::RegisterClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -412,6 +420,7 @@ impl std::fmt::Debug for ListUpdatesOutput {
 }
 /// See [`ListUpdatesOutput`](crate::output::ListUpdatesOutput)
 pub mod list_updates_output {
+    ///
     /// A builder for [`ListUpdatesOutput`](crate::output::ListUpdatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -491,6 +500,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -567,6 +577,7 @@ impl std::fmt::Debug for ListNodegroupsOutput {
 }
 /// See [`ListNodegroupsOutput`](crate::output::ListNodegroupsOutput)
 pub mod list_nodegroups_output {
+    ///
     /// A builder for [`ListNodegroupsOutput`](crate::output::ListNodegroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -652,6 +663,7 @@ impl std::fmt::Debug for ListIdentityProviderConfigsOutput {
 }
 /// See [`ListIdentityProviderConfigsOutput`](crate::output::ListIdentityProviderConfigsOutput)
 pub mod list_identity_provider_configs_output {
+    ///
     /// A builder for [`ListIdentityProviderConfigsOutput`](crate::output::ListIdentityProviderConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -738,6 +750,7 @@ impl std::fmt::Debug for ListFargateProfilesOutput {
 }
 /// See [`ListFargateProfilesOutput`](crate::output::ListFargateProfilesOutput)
 pub mod list_fargate_profiles_output {
+    ///
     /// A builder for [`ListFargateProfilesOutput`](crate::output::ListFargateProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -820,6 +833,7 @@ impl std::fmt::Debug for ListClustersOutput {
 }
 /// See [`ListClustersOutput`](crate::output::ListClustersOutput)
 pub mod list_clusters_output {
+    ///
     /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -906,6 +920,7 @@ impl std::fmt::Debug for ListAddonsOutput {
 }
 /// See [`ListAddonsOutput`](crate::output::ListAddonsOutput)
 pub mod list_addons_output {
+    ///
     /// A builder for [`ListAddonsOutput`](crate::output::ListAddonsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -985,6 +1000,7 @@ impl std::fmt::Debug for DisassociateIdentityProviderConfigOutput {
 }
 /// See [`DisassociateIdentityProviderConfigOutput`](crate::output::DisassociateIdentityProviderConfigOutput)
 pub mod disassociate_identity_provider_config_output {
+    ///
     /// A builder for [`DisassociateIdentityProviderConfigOutput`](crate::output::DisassociateIdentityProviderConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1039,6 +1055,7 @@ impl std::fmt::Debug for DescribeUpdateOutput {
 }
 /// See [`DescribeUpdateOutput`](crate::output::DescribeUpdateOutput)
 pub mod describe_update_output {
+    ///
     /// A builder for [`DescribeUpdateOutput`](crate::output::DescribeUpdateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1093,6 +1110,7 @@ impl std::fmt::Debug for DescribeNodegroupOutput {
 }
 /// See [`DescribeNodegroupOutput`](crate::output::DescribeNodegroupOutput)
 pub mod describe_nodegroup_output {
+    ///
     /// A builder for [`DescribeNodegroupOutput`](crate::output::DescribeNodegroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1152,6 +1170,7 @@ impl std::fmt::Debug for DescribeIdentityProviderConfigOutput {
 }
 /// See [`DescribeIdentityProviderConfigOutput`](crate::output::DescribeIdentityProviderConfigOutput)
 pub mod describe_identity_provider_config_output {
+    ///
     /// A builder for [`DescribeIdentityProviderConfigOutput`](crate::output::DescribeIdentityProviderConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1213,6 +1232,7 @@ impl std::fmt::Debug for DescribeFargateProfileOutput {
 }
 /// See [`DescribeFargateProfileOutput`](crate::output::DescribeFargateProfileOutput)
 pub mod describe_fargate_profile_output {
+    ///
     /// A builder for [`DescribeFargateProfileOutput`](crate::output::DescribeFargateProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1270,6 +1290,7 @@ impl std::fmt::Debug for DescribeClusterOutput {
 }
 /// See [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
 pub mod describe_cluster_output {
+    ///
     /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1335,6 +1356,7 @@ impl std::fmt::Debug for DescribeAddonVersionsOutput {
 }
 /// See [`DescribeAddonVersionsOutput`](crate::output::DescribeAddonVersionsOutput)
 pub mod describe_addon_versions_output {
+    ///
     /// A builder for [`DescribeAddonVersionsOutput`](crate::output::DescribeAddonVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1414,6 +1436,7 @@ impl std::fmt::Debug for DescribeAddonOutput {
 }
 /// See [`DescribeAddonOutput`](crate::output::DescribeAddonOutput)
 pub mod describe_addon_output {
+    ///
     /// A builder for [`DescribeAddonOutput`](crate::output::DescribeAddonOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1466,6 +1489,7 @@ impl std::fmt::Debug for DeregisterClusterOutput {
 }
 /// See [`DeregisterClusterOutput`](crate::output::DeregisterClusterOutput)
 pub mod deregister_cluster_output {
+    ///
     /// A builder for [`DeregisterClusterOutput`](crate::output::DeregisterClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1520,6 +1544,7 @@ impl std::fmt::Debug for DeleteNodegroupOutput {
 }
 /// See [`DeleteNodegroupOutput`](crate::output::DeleteNodegroupOutput)
 pub mod delete_nodegroup_output {
+    ///
     /// A builder for [`DeleteNodegroupOutput`](crate::output::DeleteNodegroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1577,6 +1602,7 @@ impl std::fmt::Debug for DeleteFargateProfileOutput {
 }
 /// See [`DeleteFargateProfileOutput`](crate::output::DeleteFargateProfileOutput)
 pub mod delete_fargate_profile_output {
+    ///
     /// A builder for [`DeleteFargateProfileOutput`](crate::output::DeleteFargateProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1634,6 +1660,7 @@ impl std::fmt::Debug for DeleteClusterOutput {
 }
 /// See [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
 pub mod delete_cluster_output {
+    ///
     /// A builder for [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1688,6 +1715,7 @@ impl std::fmt::Debug for DeleteAddonOutput {
 }
 /// See [`DeleteAddonOutput`](crate::output::DeleteAddonOutput)
 pub mod delete_addon_output {
+    ///
     /// A builder for [`DeleteAddonOutput`](crate::output::DeleteAddonOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1740,6 +1768,7 @@ impl std::fmt::Debug for CreateNodegroupOutput {
 }
 /// See [`CreateNodegroupOutput`](crate::output::CreateNodegroupOutput)
 pub mod create_nodegroup_output {
+    ///
     /// A builder for [`CreateNodegroupOutput`](crate::output::CreateNodegroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1797,6 +1826,7 @@ impl std::fmt::Debug for CreateFargateProfileOutput {
 }
 /// See [`CreateFargateProfileOutput`](crate::output::CreateFargateProfileOutput)
 pub mod create_fargate_profile_output {
+    ///
     /// A builder for [`CreateFargateProfileOutput`](crate::output::CreateFargateProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1854,6 +1884,7 @@ impl std::fmt::Debug for CreateClusterOutput {
 }
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput)
 pub mod create_cluster_output {
+    ///
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1908,6 +1939,7 @@ impl std::fmt::Debug for CreateAddonOutput {
 }
 /// See [`CreateAddonOutput`](crate::output::CreateAddonOutput)
 pub mod create_addon_output {
+    ///
     /// A builder for [`CreateAddonOutput`](crate::output::CreateAddonOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1971,6 +2003,7 @@ impl std::fmt::Debug for AssociateIdentityProviderConfigOutput {
 }
 /// See [`AssociateIdentityProviderConfigOutput`](crate::output::AssociateIdentityProviderConfigOutput)
 pub mod associate_identity_provider_config_output {
+    ///
     /// A builder for [`AssociateIdentityProviderConfigOutput`](crate::output::AssociateIdentityProviderConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2054,6 +2087,7 @@ impl std::fmt::Debug for AssociateEncryptionConfigOutput {
 }
 /// See [`AssociateEncryptionConfigOutput`](crate::output::AssociateEncryptionConfigOutput)
 pub mod associate_encryption_config_output {
+    ///
     /// A builder for [`AssociateEncryptionConfigOutput`](crate::output::AssociateEncryptionConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

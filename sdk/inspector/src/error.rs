@@ -4893,6 +4893,7 @@ impl std::fmt::Display for ServiceTemporarilyUnavailableException {
 impl std::error::Error for ServiceTemporarilyUnavailableException {}
 /// See [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException)
 pub mod service_temporarily_unavailable_exception {
+    ///
     /// A builder for [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4985,6 +4986,7 @@ impl std::fmt::Display for NoSuchEntityException {
 impl std::error::Error for NoSuchEntityException {}
 /// See [`NoSuchEntityException`](crate::error::NoSuchEntityException)
 pub mod no_such_entity_exception {
+    ///
     /// A builder for [`NoSuchEntityException`](crate::error::NoSuchEntityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5092,6 +5094,7 @@ impl std::fmt::Display for InvalidInputException {
 impl std::error::Error for InvalidInputException {}
 /// See [`InvalidInputException`](crate::error::InvalidInputException)
 pub mod invalid_input_exception {
+    ///
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5192,6 +5195,7 @@ impl std::fmt::Display for InternalException {
 impl std::error::Error for InternalException {}
 /// See [`InternalException`](crate::error::InternalException)
 pub mod internal_exception {
+    ///
     /// A builder for [`InternalException`](crate::error::InternalException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5284,6 +5288,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
+    ///
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5391,6 +5396,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5500,6 +5506,7 @@ impl std::fmt::Display for InvalidCrossAccountRoleException {
 impl std::error::Error for InvalidCrossAccountRoleException {}
 /// See [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException)
 pub mod invalid_cross_account_role_exception {
+    ///
     /// A builder for [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5614,6 +5621,7 @@ impl std::fmt::Display for AgentsAlreadyRunningAssessmentException {
 impl std::error::Error for AgentsAlreadyRunningAssessmentException {}
 /// See [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException)
 pub mod agents_already_running_assessment_exception {
+    ///
     /// A builder for [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5733,6 +5741,7 @@ impl std::fmt::Display for UnsupportedFeatureException {
 impl std::error::Error for UnsupportedFeatureException {}
 /// See [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
 pub mod unsupported_feature_exception {
+    ///
     /// A builder for [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5835,6 +5844,7 @@ impl std::fmt::Display for AssessmentRunInProgressException {
 impl std::error::Error for AssessmentRunInProgressException {}
 /// See [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException)
 pub mod assessment_run_in_progress_exception {
+    ///
     /// A builder for [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5947,6 +5957,7 @@ impl std::fmt::Display for PreviewGenerationInProgressException {
 impl std::error::Error for PreviewGenerationInProgressException {}
 /// See [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException)
 pub mod preview_generation_in_progress_exception {
+    ///
     /// A builder for [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

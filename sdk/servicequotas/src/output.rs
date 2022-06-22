@@ -11,6 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -83,6 +85,7 @@ impl std::fmt::Debug for RequestServiceQuotaIncreaseOutput {
 }
 /// See [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput)
 pub mod request_service_quota_increase_output {
+    ///
     /// A builder for [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -146,6 +149,7 @@ impl std::fmt::Debug for PutServiceQuotaIncreaseRequestIntoTemplateOutput {
 }
 /// See [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput)
 pub mod put_service_quota_increase_request_into_template_output {
+    ///
     /// A builder for [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -209,6 +213,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -277,6 +282,7 @@ impl std::fmt::Debug for ListServicesOutput {
 }
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput)
 pub mod list_services_output {
+    ///
     /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -359,6 +365,7 @@ impl std::fmt::Debug for ListServiceQuotasOutput {
 }
 /// See [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput)
 pub mod list_service_quotas_output {
+    ///
     /// A builder for [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -448,6 +455,7 @@ impl std::fmt::Debug for ListServiceQuotaIncreaseRequestsInTemplateOutput {
 }
 /// See [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput)
 pub mod list_service_quota_increase_requests_in_template_output {
+    ///
     /// A builder for [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -543,6 +551,7 @@ impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
 }
 /// See [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput)
 pub mod list_requested_service_quota_change_history_by_quota_output {
+    ///
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -634,6 +643,7 @@ impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryOutput {
 }
 /// See [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput)
 pub mod list_requested_service_quota_change_history_output {
+    ///
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -720,6 +730,7 @@ impl std::fmt::Debug for ListAwsDefaultServiceQuotasOutput {
 }
 /// See [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput)
 pub mod list_aws_default_service_quotas_output {
+    ///
     /// A builder for [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -801,6 +812,7 @@ impl std::fmt::Debug for GetServiceQuotaIncreaseRequestFromTemplateOutput {
 }
 /// See [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput)
 pub mod get_service_quota_increase_request_from_template_output {
+    ///
     /// A builder for [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -864,6 +876,7 @@ impl std::fmt::Debug for GetServiceQuotaOutput {
 }
 /// See [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput)
 pub mod get_service_quota_output {
+    ///
     /// A builder for [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -918,6 +931,7 @@ impl std::fmt::Debug for GetRequestedServiceQuotaChangeOutput {
 }
 /// See [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput)
 pub mod get_requested_service_quota_change_output {
+    ///
     /// A builder for [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -975,6 +989,7 @@ impl std::fmt::Debug for GetAwsDefaultServiceQuotaOutput {
 }
 /// See [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput)
 pub mod get_aws_default_service_quota_output {
+    ///
     /// A builder for [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1033,6 +1048,7 @@ impl std::fmt::Debug for GetAssociationForServiceQuotaTemplateOutput {
 }
 /// See [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput)
 pub mod get_association_for_service_quota_template_output {
+    ///
     /// A builder for [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1085,6 +1101,7 @@ impl std::fmt::Debug for DisassociateServiceQuotaTemplateOutput {
 }
 /// See [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput)
 pub mod disassociate_service_quota_template_output {
+    ///
     /// A builder for [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1115,6 +1132,7 @@ impl std::fmt::Debug for DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
 }
 /// See [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput)
 pub mod delete_service_quota_increase_request_from_template_output {
+    ///
     /// A builder for [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1147,6 +1165,7 @@ impl std::fmt::Debug for AssociateServiceQuotaTemplateOutput {
 }
 /// See [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput)
 pub mod associate_service_quota_template_output {
+    ///
     /// A builder for [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

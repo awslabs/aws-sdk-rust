@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateDomainOutput {
 }
 /// See [`UpdateDomainOutput`](crate::output::UpdateDomainOutput)
 pub mod update_domain_output {
+    ///
     /// A builder for [`UpdateDomainOutput`](crate::output::UpdateDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -65,6 +66,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -95,6 +97,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,6 +138,7 @@ impl std::fmt::Debug for StartSpeakerEnrollmentJobOutput {
 }
 /// See [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput)
 pub mod start_speaker_enrollment_job_output {
+    ///
     /// A builder for [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -190,6 +194,7 @@ impl std::fmt::Debug for StartFraudsterRegistrationJobOutput {
 }
 /// See [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput)
 pub mod start_fraudster_registration_job_output {
+    ///
     /// A builder for [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -245,6 +250,7 @@ impl std::fmt::Debug for OptOutSpeakerOutput {
 }
 /// See [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput)
 pub mod opt_out_speaker_output {
+    ///
     /// A builder for [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -299,6 +305,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -367,6 +374,7 @@ impl std::fmt::Debug for ListSpeakersOutput {
 }
 /// See [`ListSpeakersOutput`](crate::output::ListSpeakersOutput)
 pub mod list_speakers_output {
+    ///
     /// A builder for [`ListSpeakersOutput`](crate::output::ListSpeakersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -453,6 +461,7 @@ impl std::fmt::Debug for ListSpeakerEnrollmentJobsOutput {
 }
 /// See [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput)
 pub mod list_speaker_enrollment_jobs_output {
+    ///
     /// A builder for [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -539,6 +548,7 @@ impl std::fmt::Debug for ListFraudsterRegistrationJobsOutput {
 }
 /// See [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput)
 pub mod list_fraudster_registration_jobs_output {
+    ///
     /// A builder for [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -627,6 +637,7 @@ impl std::fmt::Debug for ListDomainsOutput {
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput)
 pub mod list_domains_output {
+    ///
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -742,6 +753,7 @@ impl std::fmt::Debug for EvaluateSessionOutput {
 }
 /// See [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput)
 pub mod evaluate_session_output {
+    ///
     /// A builder for [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -865,6 +877,7 @@ impl std::fmt::Debug for DescribeSpeakerEnrollmentJobOutput {
 }
 /// See [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput)
 pub mod describe_speaker_enrollment_job_output {
+    ///
     /// A builder for [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -920,6 +933,7 @@ impl std::fmt::Debug for DescribeSpeakerOutput {
 }
 /// See [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput)
 pub mod describe_speaker_output {
+    ///
     /// A builder for [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -974,6 +988,7 @@ impl std::fmt::Debug for DescribeFraudsterRegistrationJobOutput {
 }
 /// See [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput)
 pub mod describe_fraudster_registration_job_output {
+    ///
     /// A builder for [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1029,6 +1044,7 @@ impl std::fmt::Debug for DescribeFraudsterOutput {
 }
 /// See [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput)
 pub mod describe_fraudster_output {
+    ///
     /// A builder for [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1086,6 +1102,7 @@ impl std::fmt::Debug for DescribeDomainOutput {
 }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
 pub mod describe_domain_output {
+    ///
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1130,6 +1147,7 @@ impl std::fmt::Debug for DeleteSpeakerOutput {
 }
 /// See [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput)
 pub mod delete_speaker_output {
+    ///
     /// A builder for [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1160,6 +1178,7 @@ impl std::fmt::Debug for DeleteFraudsterOutput {
 }
 /// See [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput)
 pub mod delete_fraudster_output {
+    ///
     /// A builder for [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1190,6 +1209,7 @@ impl std::fmt::Debug for DeleteDomainOutput {
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
 pub mod delete_domain_output {
+    ///
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1230,6 +1250,7 @@ impl std::fmt::Debug for CreateDomainOutput {
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput)
 pub mod create_domain_output {
+    ///
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

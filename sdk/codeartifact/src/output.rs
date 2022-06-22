@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateRepositoryOutput {
 }
 /// See [`UpdateRepositoryOutput`](crate::output::UpdateRepositoryOutput)
 pub mod update_repository_output {
+    ///
     /// A builder for [`UpdateRepositoryOutput`](crate::output::UpdateRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -97,6 +98,7 @@ impl std::fmt::Debug for UpdatePackageVersionsStatusOutput {
 }
 /// See [`UpdatePackageVersionsStatusOutput`](crate::output::UpdatePackageVersionsStatusOutput)
 pub mod update_package_versions_status_output {
+    ///
     /// A builder for [`UpdatePackageVersionsStatusOutput`](crate::output::UpdatePackageVersionsStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -193,6 +195,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -223,6 +226,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -263,6 +267,7 @@ impl std::fmt::Debug for PutRepositoryPermissionsPolicyOutput {
 }
 /// See [`PutRepositoryPermissionsPolicyOutput`](crate::output::PutRepositoryPermissionsPolicyOutput)
 pub mod put_repository_permissions_policy_output {
+    ///
     /// A builder for [`PutRepositoryPermissionsPolicyOutput`](crate::output::PutRepositoryPermissionsPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -320,6 +325,7 @@ impl std::fmt::Debug for PutDomainPermissionsPolicyOutput {
 }
 /// See [`PutDomainPermissionsPolicyOutput`](crate::output::PutDomainPermissionsPolicyOutput)
 pub mod put_domain_permissions_policy_output {
+    ///
     /// A builder for [`PutDomainPermissionsPolicyOutput`](crate::output::PutDomainPermissionsPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -377,6 +383,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -445,6 +452,7 @@ impl std::fmt::Debug for ListRepositoriesInDomainOutput {
 }
 /// See [`ListRepositoriesInDomainOutput`](crate::output::ListRepositoriesInDomainOutput)
 pub mod list_repositories_in_domain_output {
+    ///
     /// A builder for [`ListRepositoriesInDomainOutput`](crate::output::ListRepositoriesInDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -528,6 +536,7 @@ impl std::fmt::Debug for ListRepositoriesOutput {
 }
 /// See [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput)
 pub mod list_repositories_output {
+    ///
     /// A builder for [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -667,6 +676,7 @@ impl std::fmt::Debug for ListPackageVersionsOutput {
 }
 /// See [`ListPackageVersionsOutput`](crate::output::ListPackageVersionsOutput)
 pub mod list_package_versions_output {
+    ///
     /// A builder for [`ListPackageVersionsOutput`](crate::output::ListPackageVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -887,6 +897,7 @@ impl std::fmt::Debug for ListPackageVersionDependenciesOutput {
 }
 /// See [`ListPackageVersionDependenciesOutput`](crate::output::ListPackageVersionDependenciesOutput)
 pub mod list_package_version_dependencies_output {
+    ///
     /// A builder for [`ListPackageVersionDependenciesOutput`](crate::output::ListPackageVersionDependenciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1101,6 +1112,7 @@ impl std::fmt::Debug for ListPackageVersionAssetsOutput {
 }
 /// See [`ListPackageVersionAssetsOutput`](crate::output::ListPackageVersionAssetsOutput)
 pub mod list_package_version_assets_output {
+    ///
     /// A builder for [`ListPackageVersionAssetsOutput`](crate::output::ListPackageVersionAssetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1259,6 +1271,7 @@ impl std::fmt::Debug for ListPackagesOutput {
 }
 /// See [`ListPackagesOutput`](crate::output::ListPackagesOutput)
 pub mod list_packages_output {
+    ///
     /// A builder for [`ListPackagesOutput`](crate::output::ListPackagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1341,6 +1354,7 @@ impl std::fmt::Debug for ListDomainsOutput {
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput)
 pub mod list_domains_output {
+    ///
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1416,6 +1430,7 @@ impl std::fmt::Debug for GetRepositoryPermissionsPolicyOutput {
 }
 /// See [`GetRepositoryPermissionsPolicyOutput`](crate::output::GetRepositoryPermissionsPolicyOutput)
 pub mod get_repository_permissions_policy_output {
+    ///
     /// A builder for [`GetRepositoryPermissionsPolicyOutput`](crate::output::GetRepositoryPermissionsPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1473,6 +1488,7 @@ impl std::fmt::Debug for GetRepositoryEndpointOutput {
 }
 /// See [`GetRepositoryEndpointOutput`](crate::output::GetRepositoryEndpointOutput)
 pub mod get_repository_endpoint_output {
+    ///
     /// A builder for [`GetRepositoryEndpointOutput`](crate::output::GetRepositoryEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1585,6 +1601,7 @@ impl std::fmt::Debug for GetPackageVersionReadmeOutput {
 }
 /// See [`GetPackageVersionReadmeOutput`](crate::output::GetPackageVersionReadmeOutput)
 pub mod get_package_version_readme_output {
+    ///
     /// A builder for [`GetPackageVersionReadmeOutput`](crate::output::GetPackageVersionReadmeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1745,6 +1762,7 @@ impl std::fmt::Debug for GetPackageVersionAssetOutput {
 }
 /// See [`GetPackageVersionAssetOutput`](crate::output::GetPackageVersionAssetOutput)
 pub mod get_package_version_asset_output {
+    ///
     /// A builder for [`GetPackageVersionAssetOutput`](crate::output::GetPackageVersionAssetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -1844,6 +1862,7 @@ impl std::fmt::Debug for GetDomainPermissionsPolicyOutput {
 }
 /// See [`GetDomainPermissionsPolicyOutput`](crate::output::GetDomainPermissionsPolicyOutput)
 pub mod get_domain_permissions_policy_output {
+    ///
     /// A builder for [`GetDomainPermissionsPolicyOutput`](crate::output::GetDomainPermissionsPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1908,6 +1927,7 @@ impl std::fmt::Debug for GetAuthorizationTokenOutput {
 }
 /// See [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput)
 pub mod get_authorization_token_output {
+    ///
     /// A builder for [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2015,6 +2035,7 @@ impl std::fmt::Debug for DisposePackageVersionsOutput {
 }
 /// See [`DisposePackageVersionsOutput`](crate::output::DisposePackageVersionsOutput)
 pub mod dispose_package_versions_output {
+    ///
     /// A builder for [`DisposePackageVersionsOutput`](crate::output::DisposePackageVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2137,6 +2158,7 @@ impl std::fmt::Debug for DisassociateExternalConnectionOutput {
 }
 /// See [`DisassociateExternalConnectionOutput`](crate::output::DisassociateExternalConnectionOutput)
 pub mod disassociate_external_connection_output {
+    ///
     /// A builder for [`DisassociateExternalConnectionOutput`](crate::output::DisassociateExternalConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2194,6 +2216,7 @@ impl std::fmt::Debug for DescribeRepositoryOutput {
 }
 /// See [`DescribeRepositoryOutput`](crate::output::DescribeRepositoryOutput)
 pub mod describe_repository_output {
+    ///
     /// A builder for [`DescribeRepositoryOutput`](crate::output::DescribeRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2251,6 +2274,7 @@ impl std::fmt::Debug for DescribePackageVersionOutput {
 }
 /// See [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput)
 pub mod describe_package_version_output {
+    ///
     /// A builder for [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2308,6 +2332,7 @@ impl std::fmt::Debug for DescribeDomainOutput {
 }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
 pub mod describe_domain_output {
+    ///
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2365,6 +2390,7 @@ impl std::fmt::Debug for DeleteRepositoryPermissionsPolicyOutput {
 }
 /// See [`DeleteRepositoryPermissionsPolicyOutput`](crate::output::DeleteRepositoryPermissionsPolicyOutput)
 pub mod delete_repository_permissions_policy_output {
+    ///
     /// A builder for [`DeleteRepositoryPermissionsPolicyOutput`](crate::output::DeleteRepositoryPermissionsPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2422,6 +2448,7 @@ impl std::fmt::Debug for DeleteRepositoryOutput {
 }
 /// See [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
 pub mod delete_repository_output {
+    ///
     /// A builder for [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2514,6 +2541,7 @@ impl std::fmt::Debug for DeletePackageVersionsOutput {
 }
 /// See [`DeletePackageVersionsOutput`](crate::output::DeletePackageVersionsOutput)
 pub mod delete_package_versions_output {
+    ///
     /// A builder for [`DeletePackageVersionsOutput`](crate::output::DeletePackageVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2636,6 +2664,7 @@ impl std::fmt::Debug for DeleteDomainPermissionsPolicyOutput {
 }
 /// See [`DeleteDomainPermissionsPolicyOutput`](crate::output::DeleteDomainPermissionsPolicyOutput)
 pub mod delete_domain_permissions_policy_output {
+    ///
     /// A builder for [`DeleteDomainPermissionsPolicyOutput`](crate::output::DeleteDomainPermissionsPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2693,6 +2722,7 @@ impl std::fmt::Debug for DeleteDomainOutput {
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
 pub mod delete_domain_output {
+    ///
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2750,6 +2780,7 @@ impl std::fmt::Debug for CreateRepositoryOutput {
 }
 /// See [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
 pub mod create_repository_output {
+    ///
     /// A builder for [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2807,6 +2838,7 @@ impl std::fmt::Debug for CreateDomainOutput {
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput)
 pub mod create_domain_output {
+    ///
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2899,6 +2931,7 @@ impl std::fmt::Debug for CopyPackageVersionsOutput {
 }
 /// See [`CopyPackageVersionsOutput`](crate::output::CopyPackageVersionsOutput)
 pub mod copy_package_versions_output {
+    ///
     /// A builder for [`CopyPackageVersionsOutput`](crate::output::CopyPackageVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3021,6 +3054,7 @@ impl std::fmt::Debug for AssociateExternalConnectionOutput {
 }
 /// See [`AssociateExternalConnectionOutput`](crate::output::AssociateExternalConnectionOutput)
 pub mod associate_external_connection_output {
+    ///
     /// A builder for [`AssociateExternalConnectionOutput`](crate::output::AssociateExternalConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

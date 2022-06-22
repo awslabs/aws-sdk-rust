@@ -11,6 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -88,6 +90,7 @@ impl std::fmt::Debug for StartTableDataImportJobOutput {
 }
 /// See [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput)
 pub mod start_table_data_import_job_output {
+    ///
     /// A builder for [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -178,6 +181,7 @@ impl std::fmt::Debug for QueryTableRowsOutput {
 }
 /// See [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput)
 pub mod query_table_rows_output {
+    ///
     /// A builder for [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -290,6 +294,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -373,6 +378,7 @@ impl std::fmt::Debug for ListTablesOutput {
 }
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput)
 pub mod list_tables_output {
+    ///
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -488,6 +494,7 @@ impl std::fmt::Debug for ListTableRowsOutput {
 }
 /// See [`ListTableRowsOutput`](crate::output::ListTableRowsOutput)
 pub mod list_table_rows_output {
+    ///
     /// A builder for [`ListTableRowsOutput`](crate::output::ListTableRowsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -631,6 +638,7 @@ impl std::fmt::Debug for ListTableColumnsOutput {
 }
 /// See [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput)
 pub mod list_table_columns_output {
+    ///
     /// A builder for [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -718,6 +726,7 @@ impl std::fmt::Debug for InvokeScreenAutomationOutput {
 }
 /// See [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput)
 pub mod invoke_screen_automation_output {
+    ///
     /// A builder for [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -791,6 +800,7 @@ impl std::fmt::Debug for GetScreenDataOutput {
 }
 /// See [`GetScreenDataOutput`](crate::output::GetScreenDataOutput)
 pub mod get_screen_data_output {
+    ///
     /// A builder for [`GetScreenDataOutput`](crate::output::GetScreenDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -907,6 +917,7 @@ impl std::fmt::Debug for DescribeTableDataImportJobOutput {
 }
 /// See [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput)
 pub mod describe_table_data_import_job_output {
+    ///
     /// A builder for [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1026,6 +1037,7 @@ impl std::fmt::Debug for BatchUpsertTableRowsOutput {
 }
 /// See [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput)
 pub mod batch_upsert_table_rows_output {
+    ///
     /// A builder for [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1138,6 +1150,7 @@ impl std::fmt::Debug for BatchUpdateTableRowsOutput {
 }
 /// See [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput)
 pub mod batch_update_table_rows_output {
+    ///
     /// A builder for [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1221,6 +1234,7 @@ impl std::fmt::Debug for BatchDeleteTableRowsOutput {
 }
 /// See [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput)
 pub mod batch_delete_table_rows_output {
+    ///
     /// A builder for [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1315,6 +1329,7 @@ impl std::fmt::Debug for BatchCreateTableRowsOutput {
 }
 /// See [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput)
 pub mod batch_create_table_rows_output {
+    ///
     /// A builder for [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

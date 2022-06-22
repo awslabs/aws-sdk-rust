@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateTagOptionOutput {
 }
 /// See [`UpdateTagOptionOutput`](crate::output::UpdateTagOptionOutput)
 pub mod update_tag_option_output {
+    ///
     /// A builder for [`UpdateTagOptionOutput`](crate::output::UpdateTagOptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -78,6 +79,7 @@ impl std::fmt::Debug for UpdateServiceActionOutput {
 }
 /// See [`UpdateServiceActionOutput`](crate::output::UpdateServiceActionOutput)
 pub mod update_service_action_output {
+    ///
     /// A builder for [`UpdateServiceActionOutput`](crate::output::UpdateServiceActionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -158,6 +160,7 @@ impl std::fmt::Debug for UpdateProvisioningArtifactOutput {
 }
 /// See [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput)
 pub mod update_provisioning_artifact_output {
+    ///
     /// A builder for [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -290,6 +293,7 @@ impl std::fmt::Debug for UpdateProvisionedProductPropertiesOutput {
 }
 /// See [`UpdateProvisionedProductPropertiesOutput`](crate::output::UpdateProvisionedProductPropertiesOutput)
 pub mod update_provisioned_product_properties_output {
+    ///
     /// A builder for [`UpdateProvisionedProductPropertiesOutput`](crate::output::UpdateProvisionedProductPropertiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -403,6 +407,7 @@ impl std::fmt::Debug for UpdateProvisionedProductOutput {
 }
 /// See [`UpdateProvisionedProductOutput`](crate::output::UpdateProvisionedProductOutput)
 pub mod update_provisioned_product_output {
+    ///
     /// A builder for [`UpdateProvisionedProductOutput`](crate::output::UpdateProvisionedProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -467,6 +472,7 @@ impl std::fmt::Debug for UpdateProductOutput {
 }
 /// See [`UpdateProductOutput`](crate::output::UpdateProductOutput)
 pub mod update_product_output {
+    ///
     /// A builder for [`UpdateProductOutput`](crate::output::UpdateProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -552,6 +558,7 @@ impl std::fmt::Debug for UpdatePortfolioShareOutput {
 }
 /// See [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput)
 pub mod update_portfolio_share_output {
+    ///
     /// A builder for [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -628,6 +635,7 @@ impl std::fmt::Debug for UpdatePortfolioOutput {
 }
 /// See [`UpdatePortfolioOutput`](crate::output::UpdatePortfolioOutput)
 pub mod update_portfolio_output {
+    ///
     /// A builder for [`UpdatePortfolioOutput`](crate::output::UpdatePortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -720,6 +728,7 @@ impl std::fmt::Debug for UpdateConstraintOutput {
 }
 /// See [`UpdateConstraintOutput`](crate::output::UpdateConstraintOutput)
 pub mod update_constraint_output {
+    ///
     /// A builder for [`UpdateConstraintOutput`](crate::output::UpdateConstraintOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -804,6 +813,7 @@ impl std::fmt::Debug for TerminateProvisionedProductOutput {
 }
 /// See [`TerminateProvisionedProductOutput`](crate::output::TerminateProvisionedProductOutput)
 pub mod terminate_provisioned_product_output {
+    ///
     /// A builder for [`TerminateProvisionedProductOutput`](crate::output::TerminateProvisionedProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -878,6 +888,7 @@ impl std::fmt::Debug for SearchProvisionedProductsOutput {
 }
 /// See [`SearchProvisionedProductsOutput`](crate::output::SearchProvisionedProductsOutput)
 pub mod search_provisioned_products_output {
+    ///
     /// A builder for [`SearchProvisionedProductsOutput`](crate::output::SearchProvisionedProductsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -979,6 +990,7 @@ impl std::fmt::Debug for SearchProductsAsAdminOutput {
 }
 /// See [`SearchProductsAsAdminOutput`](crate::output::SearchProductsAsAdminOutput)
 pub mod search_products_as_admin_output {
+    ///
     /// A builder for [`SearchProductsAsAdminOutput`](crate::output::SearchProductsAsAdminOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1087,6 +1099,7 @@ impl std::fmt::Debug for SearchProductsOutput {
 }
 /// See [`SearchProductsOutput`](crate::output::SearchProductsOutput)
 pub mod search_products_output {
+    ///
     /// A builder for [`SearchProductsOutput`](crate::output::SearchProductsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1211,6 +1224,7 @@ impl std::fmt::Debug for ScanProvisionedProductsOutput {
 }
 /// See [`ScanProvisionedProductsOutput`](crate::output::ScanProvisionedProductsOutput)
 pub mod scan_provisioned_products_output {
+    ///
     /// A builder for [`ScanProvisionedProductsOutput`](crate::output::ScanProvisionedProductsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1283,6 +1297,7 @@ impl std::fmt::Debug for RejectPortfolioShareOutput {
 }
 /// See [`RejectPortfolioShareOutput`](crate::output::RejectPortfolioShareOutput)
 pub mod reject_portfolio_share_output {
+    ///
     /// A builder for [`RejectPortfolioShareOutput`](crate::output::RejectPortfolioShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1323,6 +1338,7 @@ impl std::fmt::Debug for ProvisionProductOutput {
 }
 /// See [`ProvisionProductOutput`](crate::output::ProvisionProductOutput)
 pub mod provision_product_output {
+    ///
     /// A builder for [`ProvisionProductOutput`](crate::output::ProvisionProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1387,6 +1403,7 @@ impl std::fmt::Debug for ListTagOptionsOutput {
 }
 /// See [`ListTagOptionsOutput`](crate::output::ListTagOptionsOutput)
 pub mod list_tag_options_output {
+    ///
     /// A builder for [`ListTagOptionsOutput`](crate::output::ListTagOptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1470,6 +1487,7 @@ impl std::fmt::Debug for ListStackInstancesForProvisionedProductOutput {
 }
 /// See [`ListStackInstancesForProvisionedProductOutput`](crate::output::ListStackInstancesForProvisionedProductOutput)
 pub mod list_stack_instances_for_provisioned_product_output {
+    ///
     /// A builder for [`ListStackInstancesForProvisionedProductOutput`](crate::output::ListStackInstancesForProvisionedProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1559,6 +1577,7 @@ impl std::fmt::Debug for ListServiceActionsForProvisioningArtifactOutput {
 }
 /// See [`ListServiceActionsForProvisioningArtifactOutput`](crate::output::ListServiceActionsForProvisioningArtifactOutput)
 pub mod list_service_actions_for_provisioning_artifact_output {
+    ///
     /// A builder for [`ListServiceActionsForProvisioningArtifactOutput`](crate::output::ListServiceActionsForProvisioningArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1652,6 +1671,7 @@ impl std::fmt::Debug for ListServiceActionsOutput {
 }
 /// See [`ListServiceActionsOutput`](crate::output::ListServiceActionsOutput)
 pub mod list_service_actions_output {
+    ///
     /// A builder for [`ListServiceActionsOutput`](crate::output::ListServiceActionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1741,6 +1761,7 @@ impl std::fmt::Debug for ListResourcesForTagOptionOutput {
 }
 /// See [`ListResourcesForTagOptionOutput`](crate::output::ListResourcesForTagOptionOutput)
 pub mod list_resources_for_tag_option_output {
+    ///
     /// A builder for [`ListResourcesForTagOptionOutput`](crate::output::ListResourcesForTagOptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1824,6 +1845,7 @@ impl std::fmt::Debug for ListRecordHistoryOutput {
 }
 /// See [`ListRecordHistoryOutput`](crate::output::ListRecordHistoryOutput)
 pub mod list_record_history_output {
+    ///
     /// A builder for [`ListRecordHistoryOutput`](crate::output::ListRecordHistoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1915,6 +1937,7 @@ impl std::fmt::Debug for ListProvisioningArtifactsForServiceActionOutput {
 }
 /// See [`ListProvisioningArtifactsForServiceActionOutput`](crate::output::ListProvisioningArtifactsForServiceActionOutput)
 pub mod list_provisioning_artifacts_for_service_action_output {
+    ///
     /// A builder for [`ListProvisioningArtifactsForServiceActionOutput`](crate::output::ListProvisioningArtifactsForServiceActionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2011,6 +2034,7 @@ impl std::fmt::Debug for ListProvisioningArtifactsOutput {
 }
 /// See [`ListProvisioningArtifactsOutput`](crate::output::ListProvisioningArtifactsOutput)
 pub mod list_provisioning_artifacts_output {
+    ///
     /// A builder for [`ListProvisioningArtifactsOutput`](crate::output::ListProvisioningArtifactsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2103,6 +2127,7 @@ impl std::fmt::Debug for ListProvisionedProductPlansOutput {
 }
 /// See [`ListProvisionedProductPlansOutput`](crate::output::ListProvisionedProductPlansOutput)
 pub mod list_provisioned_product_plans_output {
+    ///
     /// A builder for [`ListProvisionedProductPlansOutput`](crate::output::ListProvisionedProductPlansOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2192,6 +2217,7 @@ impl std::fmt::Debug for ListPrincipalsForPortfolioOutput {
 }
 /// See [`ListPrincipalsForPortfolioOutput`](crate::output::ListPrincipalsForPortfolioOutput)
 pub mod list_principals_for_portfolio_output {
+    ///
     /// A builder for [`ListPrincipalsForPortfolioOutput`](crate::output::ListPrincipalsForPortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2277,6 +2303,7 @@ impl std::fmt::Debug for ListPortfoliosForProductOutput {
 }
 /// See [`ListPortfoliosForProductOutput`](crate::output::ListPortfoliosForProductOutput)
 pub mod list_portfolios_for_product_output {
+    ///
     /// A builder for [`ListPortfoliosForProductOutput`](crate::output::ListPortfoliosForProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2363,6 +2390,7 @@ impl std::fmt::Debug for ListPortfoliosOutput {
 }
 /// See [`ListPortfoliosOutput`](crate::output::ListPortfoliosOutput)
 pub mod list_portfolios_output {
+    ///
     /// A builder for [`ListPortfoliosOutput`](crate::output::ListPortfoliosOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2449,6 +2477,7 @@ impl std::fmt::Debug for ListPortfolioAccessOutput {
 }
 /// See [`ListPortfolioAccessOutput`](crate::output::ListPortfolioAccessOutput)
 pub mod list_portfolio_access_output {
+    ///
     /// A builder for [`ListPortfolioAccessOutput`](crate::output::ListPortfolioAccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2534,6 +2563,7 @@ impl std::fmt::Debug for ListOrganizationPortfolioAccessOutput {
 }
 /// See [`ListOrganizationPortfolioAccessOutput`](crate::output::ListOrganizationPortfolioAccessOutput)
 pub mod list_organization_portfolio_access_output {
+    ///
     /// A builder for [`ListOrganizationPortfolioAccessOutput`](crate::output::ListOrganizationPortfolioAccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2620,6 +2650,7 @@ impl std::fmt::Debug for ListLaunchPathsOutput {
 }
 /// See [`ListLaunchPathsOutput`](crate::output::ListLaunchPathsOutput)
 pub mod list_launch_paths_output {
+    ///
     /// A builder for [`ListLaunchPathsOutput`](crate::output::ListLaunchPathsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2706,6 +2737,7 @@ impl std::fmt::Debug for ListConstraintsForPortfolioOutput {
 }
 /// See [`ListConstraintsForPortfolioOutput`](crate::output::ListConstraintsForPortfolioOutput)
 pub mod list_constraints_for_portfolio_output {
+    ///
     /// A builder for [`ListConstraintsForPortfolioOutput`](crate::output::ListConstraintsForPortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2792,6 +2824,7 @@ impl std::fmt::Debug for ListBudgetsForResourceOutput {
 }
 /// See [`ListBudgetsForResourceOutput`](crate::output::ListBudgetsForResourceOutput)
 pub mod list_budgets_for_resource_output {
+    ///
     /// A builder for [`ListBudgetsForResourceOutput`](crate::output::ListBudgetsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2877,6 +2910,7 @@ impl std::fmt::Debug for ListAcceptedPortfolioSharesOutput {
 }
 /// See [`ListAcceptedPortfolioSharesOutput`](crate::output::ListAcceptedPortfolioSharesOutput)
 pub mod list_accepted_portfolio_shares_output {
+    ///
     /// A builder for [`ListAcceptedPortfolioSharesOutput`](crate::output::ListAcceptedPortfolioSharesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2956,6 +2990,7 @@ impl std::fmt::Debug for ImportAsProvisionedProductOutput {
 }
 /// See [`ImportAsProvisionedProductOutput`](crate::output::ImportAsProvisionedProductOutput)
 pub mod import_as_provisioned_product_output {
+    ///
     /// A builder for [`ImportAsProvisionedProductOutput`](crate::output::ImportAsProvisionedProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3020,6 +3055,7 @@ impl std::fmt::Debug for GetProvisionedProductOutputsOutput {
 }
 /// See [`GetProvisionedProductOutputsOutput`](crate::output::GetProvisionedProductOutputsOutput)
 pub mod get_provisioned_product_outputs_output {
+    ///
     /// A builder for [`GetProvisionedProductOutputsOutput`](crate::output::GetProvisionedProductOutputsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3098,6 +3134,7 @@ impl std::fmt::Debug for GetAwsOrganizationsAccessStatusOutput {
 }
 /// See [`GetAwsOrganizationsAccessStatusOutput`](crate::output::GetAwsOrganizationsAccessStatusOutput)
 pub mod get_aws_organizations_access_status_output {
+    ///
     /// A builder for [`GetAwsOrganizationsAccessStatusOutput`](crate::output::GetAwsOrganizationsAccessStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3155,6 +3192,7 @@ impl std::fmt::Debug for ExecuteProvisionedProductServiceActionOutput {
 }
 /// See [`ExecuteProvisionedProductServiceActionOutput`](crate::output::ExecuteProvisionedProductServiceActionOutput)
 pub mod execute_provisioned_product_service_action_output {
+    ///
     /// A builder for [`ExecuteProvisionedProductServiceActionOutput`](crate::output::ExecuteProvisionedProductServiceActionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3212,6 +3250,7 @@ impl std::fmt::Debug for ExecuteProvisionedProductPlanOutput {
 }
 /// See [`ExecuteProvisionedProductPlanOutput`](crate::output::ExecuteProvisionedProductPlanOutput)
 pub mod execute_provisioned_product_plan_output {
+    ///
     /// A builder for [`ExecuteProvisionedProductPlanOutput`](crate::output::ExecuteProvisionedProductPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3259,6 +3298,7 @@ impl std::fmt::Debug for EnableAwsOrganizationsAccessOutput {
 }
 /// See [`EnableAwsOrganizationsAccessOutput`](crate::output::EnableAwsOrganizationsAccessOutput)
 pub mod enable_aws_organizations_access_output {
+    ///
     /// A builder for [`EnableAwsOrganizationsAccessOutput`](crate::output::EnableAwsOrganizationsAccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3289,6 +3329,7 @@ impl std::fmt::Debug for DisassociateTagOptionFromResourceOutput {
 }
 /// See [`DisassociateTagOptionFromResourceOutput`](crate::output::DisassociateTagOptionFromResourceOutput)
 pub mod disassociate_tag_option_from_resource_output {
+    ///
     /// A builder for [`DisassociateTagOptionFromResourceOutput`](crate::output::DisassociateTagOptionFromResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3320,6 +3361,7 @@ impl std::fmt::Debug for DisassociateServiceActionFromProvisioningArtifactOutput
 }
 /// See [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::DisassociateServiceActionFromProvisioningArtifactOutput)
 pub mod disassociate_service_action_from_provisioning_artifact_output {
+    ///
     /// A builder for [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::DisassociateServiceActionFromProvisioningArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3353,6 +3395,7 @@ impl std::fmt::Debug for DisassociateProductFromPortfolioOutput {
 }
 /// See [`DisassociateProductFromPortfolioOutput`](crate::output::DisassociateProductFromPortfolioOutput)
 pub mod disassociate_product_from_portfolio_output {
+    ///
     /// A builder for [`DisassociateProductFromPortfolioOutput`](crate::output::DisassociateProductFromPortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3383,6 +3426,7 @@ impl std::fmt::Debug for DisassociatePrincipalFromPortfolioOutput {
 }
 /// See [`DisassociatePrincipalFromPortfolioOutput`](crate::output::DisassociatePrincipalFromPortfolioOutput)
 pub mod disassociate_principal_from_portfolio_output {
+    ///
     /// A builder for [`DisassociatePrincipalFromPortfolioOutput`](crate::output::DisassociatePrincipalFromPortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3413,6 +3457,7 @@ impl std::fmt::Debug for DisassociateBudgetFromResourceOutput {
 }
 /// See [`DisassociateBudgetFromResourceOutput`](crate::output::DisassociateBudgetFromResourceOutput)
 pub mod disassociate_budget_from_resource_output {
+    ///
     /// A builder for [`DisassociateBudgetFromResourceOutput`](crate::output::DisassociateBudgetFromResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3443,6 +3488,7 @@ impl std::fmt::Debug for DisableAwsOrganizationsAccessOutput {
 }
 /// See [`DisableAwsOrganizationsAccessOutput`](crate::output::DisableAwsOrganizationsAccessOutput)
 pub mod disable_aws_organizations_access_output {
+    ///
     /// A builder for [`DisableAwsOrganizationsAccessOutput`](crate::output::DisableAwsOrganizationsAccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3483,6 +3529,7 @@ impl std::fmt::Debug for DescribeTagOptionOutput {
 }
 /// See [`DescribeTagOptionOutput`](crate::output::DescribeTagOptionOutput)
 pub mod describe_tag_option_output {
+    ///
     /// A builder for [`DescribeTagOptionOutput`](crate::output::DescribeTagOptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3543,6 +3590,7 @@ impl std::fmt::Debug for DescribeServiceActionExecutionParametersOutput {
 }
 /// See [`DescribeServiceActionExecutionParametersOutput`](crate::output::DescribeServiceActionExecutionParametersOutput)
 pub mod describe_service_action_execution_parameters_output {
+    ///
     /// A builder for [`DescribeServiceActionExecutionParametersOutput`](crate::output::DescribeServiceActionExecutionParametersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3611,6 +3659,7 @@ impl std::fmt::Debug for DescribeServiceActionOutput {
 }
 /// See [`DescribeServiceActionOutput`](crate::output::DescribeServiceActionOutput)
 pub mod describe_service_action_output {
+    ///
     /// A builder for [`DescribeServiceActionOutput`](crate::output::DescribeServiceActionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3682,6 +3731,7 @@ impl std::fmt::Debug for DescribeRecordOutput {
 }
 /// See [`DescribeRecordOutput`](crate::output::DescribeRecordOutput)
 pub mod describe_record_output {
+    ///
     /// A builder for [`DescribeRecordOutput`](crate::output::DescribeRecordOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3841,6 +3891,7 @@ impl std::fmt::Debug for DescribeProvisioningParametersOutput {
 }
 /// See [`DescribeProvisioningParametersOutput`](crate::output::DescribeProvisioningParametersOutput)
 pub mod describe_provisioning_parameters_output {
+    ///
     /// A builder for [`DescribeProvisioningParametersOutput`](crate::output::DescribeProvisioningParametersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4065,6 +4116,7 @@ impl std::fmt::Debug for DescribeProvisioningArtifactOutput {
 }
 /// See [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput)
 pub mod describe_provisioning_artifact_output {
+    ///
     /// A builder for [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4187,6 +4239,7 @@ impl std::fmt::Debug for DescribeProvisionedProductPlanOutput {
 }
 /// See [`DescribeProvisionedProductPlanOutput`](crate::output::DescribeProvisionedProductPlanOutput)
 pub mod describe_provisioned_product_plan_output {
+    ///
     /// A builder for [`DescribeProvisionedProductPlanOutput`](crate::output::DescribeProvisionedProductPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4300,6 +4353,7 @@ impl std::fmt::Debug for DescribeProvisionedProductOutput {
 }
 /// See [`DescribeProvisionedProductOutput`](crate::output::DescribeProvisionedProductOutput)
 pub mod describe_provisioned_product_output {
+    ///
     /// A builder for [`DescribeProvisionedProductOutput`](crate::output::DescribeProvisionedProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4393,6 +4447,7 @@ impl std::fmt::Debug for DescribeProductViewOutput {
 }
 /// See [`DescribeProductViewOutput`](crate::output::DescribeProductViewOutput)
 pub mod describe_product_view_output {
+    ///
     /// A builder for [`DescribeProductViewOutput`](crate::output::DescribeProductViewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4506,6 +4561,7 @@ impl std::fmt::Debug for DescribeProductAsAdminOutput {
 }
 /// See [`DescribeProductAsAdminOutput`](crate::output::DescribeProductAsAdminOutput)
 pub mod describe_product_as_admin_output {
+    ///
     /// A builder for [`DescribeProductAsAdminOutput`](crate::output::DescribeProductAsAdminOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4675,6 +4731,7 @@ impl std::fmt::Debug for DescribeProductOutput {
 }
 /// See [`DescribeProductOutput`](crate::output::DescribeProductOutput)
 pub mod describe_product_output {
+    ///
     /// A builder for [`DescribeProductOutput`](crate::output::DescribeProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4824,6 +4881,7 @@ impl std::fmt::Debug for DescribePortfolioShareStatusOutput {
 }
 /// See [`DescribePortfolioShareStatusOutput`](crate::output::DescribePortfolioShareStatusOutput)
 pub mod describe_portfolio_share_status_output {
+    ///
     /// A builder for [`DescribePortfolioShareStatusOutput`](crate::output::DescribePortfolioShareStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4945,6 +5003,7 @@ impl std::fmt::Debug for DescribePortfolioSharesOutput {
 }
 /// See [`DescribePortfolioSharesOutput`](crate::output::DescribePortfolioSharesOutput)
 pub mod describe_portfolio_shares_output {
+    ///
     /// A builder for [`DescribePortfolioSharesOutput`](crate::output::DescribePortfolioSharesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5048,6 +5107,7 @@ impl std::fmt::Debug for DescribePortfolioOutput {
 }
 /// See [`DescribePortfolioOutput`](crate::output::DescribePortfolioOutput)
 pub mod describe_portfolio_output {
+    ///
     /// A builder for [`DescribePortfolioOutput`](crate::output::DescribePortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5182,6 +5242,7 @@ impl std::fmt::Debug for DescribeCopyProductStatusOutput {
 }
 /// See [`DescribeCopyProductStatusOutput`](crate::output::DescribeCopyProductStatusOutput)
 pub mod describe_copy_product_status_output {
+    ///
     /// A builder for [`DescribeCopyProductStatusOutput`](crate::output::DescribeCopyProductStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5283,6 +5344,7 @@ impl std::fmt::Debug for DescribeConstraintOutput {
 }
 /// See [`DescribeConstraintOutput`](crate::output::DescribeConstraintOutput)
 pub mod describe_constraint_output {
+    ///
     /// A builder for [`DescribeConstraintOutput`](crate::output::DescribeConstraintOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5357,6 +5419,7 @@ impl std::fmt::Debug for DeleteTagOptionOutput {
 }
 /// See [`DeleteTagOptionOutput`](crate::output::DeleteTagOptionOutput)
 pub mod delete_tag_option_output {
+    ///
     /// A builder for [`DeleteTagOptionOutput`](crate::output::DeleteTagOptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5387,6 +5450,7 @@ impl std::fmt::Debug for DeleteServiceActionOutput {
 }
 /// See [`DeleteServiceActionOutput`](crate::output::DeleteServiceActionOutput)
 pub mod delete_service_action_output {
+    ///
     /// A builder for [`DeleteServiceActionOutput`](crate::output::DeleteServiceActionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5417,6 +5481,7 @@ impl std::fmt::Debug for DeleteProvisioningArtifactOutput {
 }
 /// See [`DeleteProvisioningArtifactOutput`](crate::output::DeleteProvisioningArtifactOutput)
 pub mod delete_provisioning_artifact_output {
+    ///
     /// A builder for [`DeleteProvisioningArtifactOutput`](crate::output::DeleteProvisioningArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5447,6 +5512,7 @@ impl std::fmt::Debug for DeleteProvisionedProductPlanOutput {
 }
 /// See [`DeleteProvisionedProductPlanOutput`](crate::output::DeleteProvisionedProductPlanOutput)
 pub mod delete_provisioned_product_plan_output {
+    ///
     /// A builder for [`DeleteProvisionedProductPlanOutput`](crate::output::DeleteProvisionedProductPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5477,6 +5543,7 @@ impl std::fmt::Debug for DeleteProductOutput {
 }
 /// See [`DeleteProductOutput`](crate::output::DeleteProductOutput)
 pub mod delete_product_output {
+    ///
     /// A builder for [`DeleteProductOutput`](crate::output::DeleteProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5517,6 +5584,7 @@ impl std::fmt::Debug for DeletePortfolioShareOutput {
 }
 /// See [`DeletePortfolioShareOutput`](crate::output::DeletePortfolioShareOutput)
 pub mod delete_portfolio_share_output {
+    ///
     /// A builder for [`DeletePortfolioShareOutput`](crate::output::DeletePortfolioShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5564,6 +5632,7 @@ impl std::fmt::Debug for DeletePortfolioOutput {
 }
 /// See [`DeletePortfolioOutput`](crate::output::DeletePortfolioOutput)
 pub mod delete_portfolio_output {
+    ///
     /// A builder for [`DeletePortfolioOutput`](crate::output::DeletePortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5594,6 +5663,7 @@ impl std::fmt::Debug for DeleteConstraintOutput {
 }
 /// See [`DeleteConstraintOutput`](crate::output::DeleteConstraintOutput)
 pub mod delete_constraint_output {
+    ///
     /// A builder for [`DeleteConstraintOutput`](crate::output::DeleteConstraintOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5634,6 +5704,7 @@ impl std::fmt::Debug for CreateTagOptionOutput {
 }
 /// See [`CreateTagOptionOutput`](crate::output::CreateTagOptionOutput)
 pub mod create_tag_option_output {
+    ///
     /// A builder for [`CreateTagOptionOutput`](crate::output::CreateTagOptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5691,6 +5762,7 @@ impl std::fmt::Debug for CreateServiceActionOutput {
 }
 /// See [`CreateServiceActionOutput`](crate::output::CreateServiceActionOutput)
 pub mod create_service_action_output {
+    ///
     /// A builder for [`CreateServiceActionOutput`](crate::output::CreateServiceActionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5781,6 +5853,7 @@ impl std::fmt::Debug for CreateProvisioningArtifactOutput {
 }
 /// See [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput)
 pub mod create_provisioning_artifact_output {
+    ///
     /// A builder for [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5921,6 +5994,7 @@ impl std::fmt::Debug for CreateProvisionedProductPlanOutput {
 }
 /// See [`CreateProvisionedProductPlanOutput`](crate::output::CreateProvisionedProductPlanOutput)
 pub mod create_provisioned_product_plan_output {
+    ///
     /// A builder for [`CreateProvisionedProductPlanOutput`](crate::output::CreateProvisionedProductPlanOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6051,6 +6125,7 @@ impl std::fmt::Debug for CreateProductOutput {
 }
 /// See [`CreateProductOutput`](crate::output::CreateProductOutput)
 pub mod create_product_output {
+    ///
     /// A builder for [`CreateProductOutput`](crate::output::CreateProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6148,6 +6223,7 @@ impl std::fmt::Debug for CreatePortfolioShareOutput {
 }
 /// See [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput)
 pub mod create_portfolio_share_output {
+    ///
     /// A builder for [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6212,6 +6288,7 @@ impl std::fmt::Debug for CreatePortfolioOutput {
 }
 /// See [`CreatePortfolioOutput`](crate::output::CreatePortfolioOutput)
 pub mod create_portfolio_output {
+    ///
     /// A builder for [`CreatePortfolioOutput`](crate::output::CreatePortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6304,6 +6381,7 @@ impl std::fmt::Debug for CreateConstraintOutput {
 }
 /// See [`CreateConstraintOutput`](crate::output::CreateConstraintOutput)
 pub mod create_constraint_output {
+    ///
     /// A builder for [`CreateConstraintOutput`](crate::output::CreateConstraintOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6388,6 +6466,7 @@ impl std::fmt::Debug for CopyProductOutput {
 }
 /// See [`CopyProductOutput`](crate::output::CopyProductOutput)
 pub mod copy_product_output {
+    ///
     /// A builder for [`CopyProductOutput`](crate::output::CopyProductOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6452,6 +6531,7 @@ impl std::fmt::Debug for BatchDisassociateServiceActionFromProvisioningArtifactO
 }
 /// See [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput)
 pub mod batch_disassociate_service_action_from_provisioning_artifact_output {
+    ///
     /// A builder for [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6530,6 +6610,7 @@ impl std::fmt::Debug for BatchAssociateServiceActionWithProvisioningArtifactOutp
 }
 /// See [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput)
 pub mod batch_associate_service_action_with_provisioning_artifact_output {
+    ///
     /// A builder for [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6591,6 +6672,7 @@ impl std::fmt::Debug for AssociateTagOptionWithResourceOutput {
 }
 /// See [`AssociateTagOptionWithResourceOutput`](crate::output::AssociateTagOptionWithResourceOutput)
 pub mod associate_tag_option_with_resource_output {
+    ///
     /// A builder for [`AssociateTagOptionWithResourceOutput`](crate::output::AssociateTagOptionWithResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6621,6 +6703,7 @@ impl std::fmt::Debug for AssociateServiceActionWithProvisioningArtifactOutput {
 }
 /// See [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::output::AssociateServiceActionWithProvisioningArtifactOutput)
 pub mod associate_service_action_with_provisioning_artifact_output {
+    ///
     /// A builder for [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::output::AssociateServiceActionWithProvisioningArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6653,6 +6736,7 @@ impl std::fmt::Debug for AssociateProductWithPortfolioOutput {
 }
 /// See [`AssociateProductWithPortfolioOutput`](crate::output::AssociateProductWithPortfolioOutput)
 pub mod associate_product_with_portfolio_output {
+    ///
     /// A builder for [`AssociateProductWithPortfolioOutput`](crate::output::AssociateProductWithPortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6683,6 +6767,7 @@ impl std::fmt::Debug for AssociatePrincipalWithPortfolioOutput {
 }
 /// See [`AssociatePrincipalWithPortfolioOutput`](crate::output::AssociatePrincipalWithPortfolioOutput)
 pub mod associate_principal_with_portfolio_output {
+    ///
     /// A builder for [`AssociatePrincipalWithPortfolioOutput`](crate::output::AssociatePrincipalWithPortfolioOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6713,6 +6798,7 @@ impl std::fmt::Debug for AssociateBudgetWithResourceOutput {
 }
 /// See [`AssociateBudgetWithResourceOutput`](crate::output::AssociateBudgetWithResourceOutput)
 pub mod associate_budget_with_resource_output {
+    ///
     /// A builder for [`AssociateBudgetWithResourceOutput`](crate::output::AssociateBudgetWithResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6743,6 +6829,7 @@ impl std::fmt::Debug for AcceptPortfolioShareOutput {
 }
 /// See [`AcceptPortfolioShareOutput`](crate::output::AcceptPortfolioShareOutput)
 pub mod accept_portfolio_share_output {
+    ///
     /// A builder for [`AcceptPortfolioShareOutput`](crate::output::AcceptPortfolioShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

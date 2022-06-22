@@ -2310,6 +2310,7 @@ impl std::fmt::Display for PipelineNotFoundException {
 impl std::error::Error for PipelineNotFoundException {}
 /// See [`PipelineNotFoundException`](crate::error::PipelineNotFoundException)
 pub mod pipeline_not_found_exception {
+    ///
     /// A builder for [`PipelineNotFoundException`](crate::error::PipelineNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2374,6 +2375,7 @@ impl std::fmt::Display for PipelineDeletedException {
 impl std::error::Error for PipelineDeletedException {}
 /// See [`PipelineDeletedException`](crate::error::PipelineDeletedException)
 pub mod pipeline_deleted_exception {
+    ///
     /// A builder for [`PipelineDeletedException`](crate::error::PipelineDeletedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2438,6 +2440,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
+    ///
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2502,6 +2505,7 @@ impl std::fmt::Display for InternalServiceError {
 impl std::error::Error for InternalServiceError {}
 /// See [`InternalServiceError`](crate::error::InternalServiceError)
 pub mod internal_service_error {
+    ///
     /// A builder for [`InternalServiceError`](crate::error::InternalServiceError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2566,6 +2570,7 @@ impl std::fmt::Display for TaskNotFoundException {
 impl std::error::Error for TaskNotFoundException {}
 /// See [`TaskNotFoundException`](crate::error::TaskNotFoundException)
 pub mod task_not_found_exception {
+    ///
     /// A builder for [`TaskNotFoundException`](crate::error::TaskNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateWorkspaceImagePermissionOutput {
 }
 /// See [`UpdateWorkspaceImagePermissionOutput`](crate::output::UpdateWorkspaceImagePermissionOutput)
 pub mod update_workspace_image_permission_output {
+    ///
     /// A builder for [`UpdateWorkspaceImagePermissionOutput`](crate::output::UpdateWorkspaceImagePermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdateWorkspaceBundleOutput {
 }
 /// See [`UpdateWorkspaceBundleOutput`](crate::output::UpdateWorkspaceBundleOutput)
 pub mod update_workspace_bundle_output {
+    ///
     /// A builder for [`UpdateWorkspaceBundleOutput`](crate::output::UpdateWorkspaceBundleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UpdateRulesOfIpGroupOutput {
 }
 /// See [`UpdateRulesOfIpGroupOutput`](crate::output::UpdateRulesOfIpGroupOutput)
 pub mod update_rules_of_ip_group_output {
+    ///
     /// A builder for [`UpdateRulesOfIpGroupOutput`](crate::output::UpdateRulesOfIpGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for UpdateConnectionAliasPermissionOutput {
 }
 /// See [`UpdateConnectionAliasPermissionOutput`](crate::output::UpdateConnectionAliasPermissionOutput)
 pub mod update_connection_alias_permission_output {
+    ///
     /// A builder for [`UpdateConnectionAliasPermissionOutput`](crate::output::UpdateConnectionAliasPermissionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for UpdateConnectClientAddInOutput {
 }
 /// See [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput)
 pub mod update_connect_client_add_in_output {
+    ///
     /// A builder for [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -174,6 +179,7 @@ impl std::fmt::Debug for TerminateWorkspacesOutput {
 }
 /// See [`TerminateWorkspacesOutput`](crate::output::TerminateWorkspacesOutput)
 pub mod terminate_workspaces_output {
+    ///
     /// A builder for [`TerminateWorkspacesOutput`](crate::output::TerminateWorkspacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -244,6 +250,7 @@ impl std::fmt::Debug for StopWorkspacesOutput {
 }
 /// See [`StopWorkspacesOutput`](crate::output::StopWorkspacesOutput)
 pub mod stop_workspaces_output {
+    ///
     /// A builder for [`StopWorkspacesOutput`](crate::output::StopWorkspacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -314,6 +321,7 @@ impl std::fmt::Debug for StartWorkspacesOutput {
 }
 /// See [`StartWorkspacesOutput`](crate::output::StartWorkspacesOutput)
 pub mod start_workspaces_output {
+    ///
     /// A builder for [`StartWorkspacesOutput`](crate::output::StartWorkspacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -371,6 +379,7 @@ impl std::fmt::Debug for RevokeIpRulesOutput {
 }
 /// See [`RevokeIpRulesOutput`](crate::output::RevokeIpRulesOutput)
 pub mod revoke_ip_rules_output {
+    ///
     /// A builder for [`RevokeIpRulesOutput`](crate::output::RevokeIpRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -401,6 +410,7 @@ impl std::fmt::Debug for RestoreWorkspaceOutput {
 }
 /// See [`RestoreWorkspaceOutput`](crate::output::RestoreWorkspaceOutput)
 pub mod restore_workspace_output {
+    ///
     /// A builder for [`RestoreWorkspaceOutput`](crate::output::RestoreWorkspaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -431,6 +441,7 @@ impl std::fmt::Debug for RegisterWorkspaceDirectoryOutput {
 }
 /// See [`RegisterWorkspaceDirectoryOutput`](crate::output::RegisterWorkspaceDirectoryOutput)
 pub mod register_workspace_directory_output {
+    ///
     /// A builder for [`RegisterWorkspaceDirectoryOutput`](crate::output::RegisterWorkspaceDirectoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -474,6 +485,7 @@ impl std::fmt::Debug for RebuildWorkspacesOutput {
 }
 /// See [`RebuildWorkspacesOutput`](crate::output::RebuildWorkspacesOutput)
 pub mod rebuild_workspaces_output {
+    ///
     /// A builder for [`RebuildWorkspacesOutput`](crate::output::RebuildWorkspacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -544,6 +556,7 @@ impl std::fmt::Debug for RebootWorkspacesOutput {
 }
 /// See [`RebootWorkspacesOutput`](crate::output::RebootWorkspacesOutput)
 pub mod reboot_workspaces_output {
+    ///
     /// A builder for [`RebootWorkspacesOutput`](crate::output::RebootWorkspacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -601,6 +614,7 @@ impl std::fmt::Debug for ModifyWorkspaceStateOutput {
 }
 /// See [`ModifyWorkspaceStateOutput`](crate::output::ModifyWorkspaceStateOutput)
 pub mod modify_workspace_state_output {
+    ///
     /// A builder for [`ModifyWorkspaceStateOutput`](crate::output::ModifyWorkspaceStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -631,6 +645,7 @@ impl std::fmt::Debug for ModifyWorkspacePropertiesOutput {
 }
 /// See [`ModifyWorkspacePropertiesOutput`](crate::output::ModifyWorkspacePropertiesOutput)
 pub mod modify_workspace_properties_output {
+    ///
     /// A builder for [`ModifyWorkspacePropertiesOutput`](crate::output::ModifyWorkspacePropertiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -661,6 +676,7 @@ impl std::fmt::Debug for ModifyWorkspaceCreationPropertiesOutput {
 }
 /// See [`ModifyWorkspaceCreationPropertiesOutput`](crate::output::ModifyWorkspaceCreationPropertiesOutput)
 pub mod modify_workspace_creation_properties_output {
+    ///
     /// A builder for [`ModifyWorkspaceCreationPropertiesOutput`](crate::output::ModifyWorkspaceCreationPropertiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -691,6 +707,7 @@ impl std::fmt::Debug for ModifyWorkspaceAccessPropertiesOutput {
 }
 /// See [`ModifyWorkspaceAccessPropertiesOutput`](crate::output::ModifyWorkspaceAccessPropertiesOutput)
 pub mod modify_workspace_access_properties_output {
+    ///
     /// A builder for [`ModifyWorkspaceAccessPropertiesOutput`](crate::output::ModifyWorkspaceAccessPropertiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -721,6 +738,7 @@ impl std::fmt::Debug for ModifySelfservicePermissionsOutput {
 }
 /// See [`ModifySelfservicePermissionsOutput`](crate::output::ModifySelfservicePermissionsOutput)
 pub mod modify_selfservice_permissions_output {
+    ///
     /// A builder for [`ModifySelfservicePermissionsOutput`](crate::output::ModifySelfservicePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -751,6 +769,7 @@ impl std::fmt::Debug for ModifyClientPropertiesOutput {
 }
 /// See [`ModifyClientPropertiesOutput`](crate::output::ModifyClientPropertiesOutput)
 pub mod modify_client_properties_output {
+    ///
     /// A builder for [`ModifyClientPropertiesOutput`](crate::output::ModifyClientPropertiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -781,6 +800,7 @@ impl std::fmt::Debug for ModifyAccountOutput {
 }
 /// See [`ModifyAccountOutput`](crate::output::ModifyAccountOutput)
 pub mod modify_account_output {
+    ///
     /// A builder for [`ModifyAccountOutput`](crate::output::ModifyAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -828,6 +848,7 @@ impl std::fmt::Debug for MigrateWorkspaceOutput {
 }
 /// See [`MigrateWorkspaceOutput`](crate::output::MigrateWorkspaceOutput)
 pub mod migrate_workspace_output {
+    ///
     /// A builder for [`MigrateWorkspaceOutput`](crate::output::MigrateWorkspaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -907,6 +928,7 @@ impl std::fmt::Debug for ListAvailableManagementCidrRangesOutput {
 }
 /// See [`ListAvailableManagementCidrRangesOutput`](crate::output::ListAvailableManagementCidrRangesOutput)
 pub mod list_available_management_cidr_ranges_output {
+    ///
     /// A builder for [`ListAvailableManagementCidrRangesOutput`](crate::output::ListAvailableManagementCidrRangesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -982,6 +1004,7 @@ impl std::fmt::Debug for ImportWorkspaceImageOutput {
 }
 /// See [`ImportWorkspaceImageOutput`](crate::output::ImportWorkspaceImageOutput)
 pub mod import_workspace_image_output {
+    ///
     /// A builder for [`ImportWorkspaceImageOutput`](crate::output::ImportWorkspaceImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1083,6 +1106,7 @@ impl std::fmt::Debug for ImportClientBrandingOutput {
 }
 /// See [`ImportClientBrandingOutput`](crate::output::ImportClientBrandingOutput)
 pub mod import_client_branding_output {
+    ///
     /// A builder for [`ImportClientBrandingOutput`](crate::output::ImportClientBrandingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1225,6 +1249,7 @@ impl std::fmt::Debug for DisassociateIpGroupsOutput {
 }
 /// See [`DisassociateIpGroupsOutput`](crate::output::DisassociateIpGroupsOutput)
 pub mod disassociate_ip_groups_output {
+    ///
     /// A builder for [`DisassociateIpGroupsOutput`](crate::output::DisassociateIpGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1255,6 +1280,7 @@ impl std::fmt::Debug for DisassociateConnectionAliasOutput {
 }
 /// See [`DisassociateConnectionAliasOutput`](crate::output::DisassociateConnectionAliasOutput)
 pub mod disassociate_connection_alias_output {
+    ///
     /// A builder for [`DisassociateConnectionAliasOutput`](crate::output::DisassociateConnectionAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1302,6 +1328,7 @@ impl std::fmt::Debug for DescribeWorkspaceSnapshotsOutput {
 }
 /// See [`DescribeWorkspaceSnapshotsOutput`](crate::output::DescribeWorkspaceSnapshotsOutput)
 pub mod describe_workspace_snapshots_output {
+    ///
     /// A builder for [`DescribeWorkspaceSnapshotsOutput`](crate::output::DescribeWorkspaceSnapshotsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1399,6 +1426,7 @@ impl std::fmt::Debug for DescribeWorkspacesConnectionStatusOutput {
 }
 /// See [`DescribeWorkspacesConnectionStatusOutput`](crate::output::DescribeWorkspacesConnectionStatusOutput)
 pub mod describe_workspaces_connection_status_output {
+    ///
     /// A builder for [`DescribeWorkspacesConnectionStatusOutput`](crate::output::DescribeWorkspacesConnectionStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1487,6 +1515,7 @@ impl std::fmt::Debug for DescribeWorkspacesOutput {
 }
 /// See [`DescribeWorkspacesOutput`](crate::output::DescribeWorkspacesOutput)
 pub mod describe_workspaces_output {
+    ///
     /// A builder for [`DescribeWorkspacesOutput`](crate::output::DescribeWorkspacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1571,6 +1600,7 @@ impl std::fmt::Debug for DescribeWorkspaceImagesOutput {
 }
 /// See [`DescribeWorkspaceImagesOutput`](crate::output::DescribeWorkspaceImagesOutput)
 pub mod describe_workspace_images_output {
+    ///
     /// A builder for [`DescribeWorkspaceImagesOutput`](crate::output::DescribeWorkspaceImagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1660,6 +1690,7 @@ impl std::fmt::Debug for DescribeWorkspaceImagePermissionsOutput {
 }
 /// See [`DescribeWorkspaceImagePermissionsOutput`](crate::output::DescribeWorkspaceImagePermissionsOutput)
 pub mod describe_workspace_image_permissions_output {
+    ///
     /// A builder for [`DescribeWorkspaceImagePermissionsOutput`](crate::output::DescribeWorkspaceImagePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1755,6 +1786,7 @@ impl std::fmt::Debug for DescribeWorkspaceDirectoriesOutput {
 }
 /// See [`DescribeWorkspaceDirectoriesOutput`](crate::output::DescribeWorkspaceDirectoriesOutput)
 pub mod describe_workspace_directories_output {
+    ///
     /// A builder for [`DescribeWorkspaceDirectoriesOutput`](crate::output::DescribeWorkspaceDirectoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1838,6 +1870,7 @@ impl std::fmt::Debug for DescribeWorkspaceBundlesOutput {
 }
 /// See [`DescribeWorkspaceBundlesOutput`](crate::output::DescribeWorkspaceBundlesOutput)
 pub mod describe_workspace_bundles_output {
+    ///
     /// A builder for [`DescribeWorkspaceBundlesOutput`](crate::output::DescribeWorkspaceBundlesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1913,6 +1946,7 @@ impl std::fmt::Debug for DescribeTagsOutput {
 }
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput)
 pub mod describe_tags_output {
+    ///
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1983,6 +2017,7 @@ impl std::fmt::Debug for DescribeIpGroupsOutput {
 }
 /// See [`DescribeIpGroupsOutput`](crate::output::DescribeIpGroupsOutput)
 pub mod describe_ip_groups_output {
+    ///
     /// A builder for [`DescribeIpGroupsOutput`](crate::output::DescribeIpGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2078,6 +2113,7 @@ impl std::fmt::Debug for DescribeConnectionAliasPermissionsOutput {
 }
 /// See [`DescribeConnectionAliasPermissionsOutput`](crate::output::DescribeConnectionAliasPermissionsOutput)
 pub mod describe_connection_alias_permissions_output {
+    ///
     /// A builder for [`DescribeConnectionAliasPermissionsOutput`](crate::output::DescribeConnectionAliasPermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2176,6 +2212,7 @@ impl std::fmt::Debug for DescribeConnectionAliasesOutput {
 }
 /// See [`DescribeConnectionAliasesOutput`](crate::output::DescribeConnectionAliasesOutput)
 pub mod describe_connection_aliases_output {
+    ///
     /// A builder for [`DescribeConnectionAliasesOutput`](crate::output::DescribeConnectionAliasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2259,6 +2296,7 @@ impl std::fmt::Debug for DescribeConnectClientAddInsOutput {
 }
 /// See [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput)
 pub mod describe_connect_client_add_ins_output {
+    ///
     /// A builder for [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2337,6 +2375,7 @@ impl std::fmt::Debug for DescribeClientPropertiesOutput {
 }
 /// See [`DescribeClientPropertiesOutput`](crate::output::DescribeClientPropertiesOutput)
 pub mod describe_client_properties_output {
+    ///
     /// A builder for [`DescribeClientPropertiesOutput`](crate::output::DescribeClientPropertiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2451,6 +2490,7 @@ impl std::fmt::Debug for DescribeClientBrandingOutput {
 }
 /// See [`DescribeClientBrandingOutput`](crate::output::DescribeClientBrandingOutput)
 pub mod describe_client_branding_output {
+    ///
     /// A builder for [`DescribeClientBrandingOutput`](crate::output::DescribeClientBrandingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2613,6 +2653,7 @@ impl std::fmt::Debug for DescribeAccountModificationsOutput {
 }
 /// See [`DescribeAccountModificationsOutput`](crate::output::DescribeAccountModificationsOutput)
 pub mod describe_account_modifications_output {
+    ///
     /// A builder for [`DescribeAccountModificationsOutput`](crate::output::DescribeAccountModificationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2704,6 +2745,7 @@ impl std::fmt::Debug for DescribeAccountOutput {
 }
 /// See [`DescribeAccountOutput`](crate::output::DescribeAccountOutput)
 pub mod describe_account_output {
+    ///
     /// A builder for [`DescribeAccountOutput`](crate::output::DescribeAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2777,6 +2819,7 @@ impl std::fmt::Debug for DeregisterWorkspaceDirectoryOutput {
 }
 /// See [`DeregisterWorkspaceDirectoryOutput`](crate::output::DeregisterWorkspaceDirectoryOutput)
 pub mod deregister_workspace_directory_output {
+    ///
     /// A builder for [`DeregisterWorkspaceDirectoryOutput`](crate::output::DeregisterWorkspaceDirectoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2807,6 +2850,7 @@ impl std::fmt::Debug for DeleteWorkspaceImageOutput {
 }
 /// See [`DeleteWorkspaceImageOutput`](crate::output::DeleteWorkspaceImageOutput)
 pub mod delete_workspace_image_output {
+    ///
     /// A builder for [`DeleteWorkspaceImageOutput`](crate::output::DeleteWorkspaceImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2837,6 +2881,7 @@ impl std::fmt::Debug for DeleteWorkspaceBundleOutput {
 }
 /// See [`DeleteWorkspaceBundleOutput`](crate::output::DeleteWorkspaceBundleOutput)
 pub mod delete_workspace_bundle_output {
+    ///
     /// A builder for [`DeleteWorkspaceBundleOutput`](crate::output::DeleteWorkspaceBundleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2867,6 +2912,7 @@ impl std::fmt::Debug for DeleteTagsOutput {
 }
 /// See [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
 pub mod delete_tags_output {
+    ///
     /// A builder for [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2897,6 +2943,7 @@ impl std::fmt::Debug for DeleteIpGroupOutput {
 }
 /// See [`DeleteIpGroupOutput`](crate::output::DeleteIpGroupOutput)
 pub mod delete_ip_group_output {
+    ///
     /// A builder for [`DeleteIpGroupOutput`](crate::output::DeleteIpGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2927,6 +2974,7 @@ impl std::fmt::Debug for DeleteConnectionAliasOutput {
 }
 /// See [`DeleteConnectionAliasOutput`](crate::output::DeleteConnectionAliasOutput)
 pub mod delete_connection_alias_output {
+    ///
     /// A builder for [`DeleteConnectionAliasOutput`](crate::output::DeleteConnectionAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2957,6 +3005,7 @@ impl std::fmt::Debug for DeleteConnectClientAddInOutput {
 }
 /// See [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput)
 pub mod delete_connect_client_add_in_output {
+    ///
     /// A builder for [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2987,6 +3036,7 @@ impl std::fmt::Debug for DeleteClientBrandingOutput {
 }
 /// See [`DeleteClientBrandingOutput`](crate::output::DeleteClientBrandingOutput)
 pub mod delete_client_branding_output {
+    ///
     /// A builder for [`DeleteClientBrandingOutput`](crate::output::DeleteClientBrandingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3039,6 +3089,7 @@ impl std::fmt::Debug for CreateWorkspacesOutput {
 }
 /// See [`CreateWorkspacesOutput`](crate::output::CreateWorkspacesOutput)
 pub mod create_workspaces_output {
+    ///
     /// A builder for [`CreateWorkspacesOutput`](crate::output::CreateWorkspacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3129,6 +3180,7 @@ impl std::fmt::Debug for CreateWorkspaceBundleOutput {
 }
 /// See [`CreateWorkspaceBundleOutput`](crate::output::CreateWorkspaceBundleOutput)
 pub mod create_workspace_bundle_output {
+    ///
     /// A builder for [`CreateWorkspaceBundleOutput`](crate::output::CreateWorkspaceBundleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3186,6 +3238,7 @@ impl std::fmt::Debug for CreateUpdatedWorkspaceImageOutput {
 }
 /// See [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput)
 pub mod create_updated_workspace_image_output {
+    ///
     /// A builder for [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3230,6 +3283,7 @@ impl std::fmt::Debug for CreateTagsOutput {
 }
 /// See [`CreateTagsOutput`](crate::output::CreateTagsOutput)
 pub mod create_tags_output {
+    ///
     /// A builder for [`CreateTagsOutput`](crate::output::CreateTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3270,6 +3324,7 @@ impl std::fmt::Debug for CreateIpGroupOutput {
 }
 /// See [`CreateIpGroupOutput`](crate::output::CreateIpGroupOutput)
 pub mod create_ip_group_output {
+    ///
     /// A builder for [`CreateIpGroupOutput`](crate::output::CreateIpGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3324,6 +3379,7 @@ impl std::fmt::Debug for CreateConnectionAliasOutput {
 }
 /// See [`CreateConnectionAliasOutput`](crate::output::CreateConnectionAliasOutput)
 pub mod create_connection_alias_output {
+    ///
     /// A builder for [`CreateConnectionAliasOutput`](crate::output::CreateConnectionAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3378,6 +3434,7 @@ impl std::fmt::Debug for CreateConnectClientAddInOutput {
 }
 /// See [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput)
 pub mod create_connect_client_add_in_output {
+    ///
     /// A builder for [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3432,6 +3489,7 @@ impl std::fmt::Debug for CopyWorkspaceImageOutput {
 }
 /// See [`CopyWorkspaceImageOutput`](crate::output::CopyWorkspaceImageOutput)
 pub mod copy_workspace_image_output {
+    ///
     /// A builder for [`CopyWorkspaceImageOutput`](crate::output::CopyWorkspaceImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3476,6 +3534,7 @@ impl std::fmt::Debug for AuthorizeIpRulesOutput {
 }
 /// See [`AuthorizeIpRulesOutput`](crate::output::AuthorizeIpRulesOutput)
 pub mod authorize_ip_rules_output {
+    ///
     /// A builder for [`AuthorizeIpRulesOutput`](crate::output::AuthorizeIpRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3506,6 +3565,7 @@ impl std::fmt::Debug for AssociateIpGroupsOutput {
 }
 /// See [`AssociateIpGroupsOutput`](crate::output::AssociateIpGroupsOutput)
 pub mod associate_ip_groups_output {
+    ///
     /// A builder for [`AssociateIpGroupsOutput`](crate::output::AssociateIpGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3546,6 +3606,7 @@ impl std::fmt::Debug for AssociateConnectionAliasOutput {
 }
 /// See [`AssociateConnectionAliasOutput`](crate::output::AssociateConnectionAliasOutput)
 pub mod associate_connection_alias_output {
+    ///
     /// A builder for [`AssociateConnectionAliasOutput`](crate::output::AssociateConnectionAliasOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

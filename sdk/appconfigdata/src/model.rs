@@ -138,6 +138,7 @@ impl std::fmt::Debug for InvalidParameterDetail {
 }
 /// See [`InvalidParameterDetail`](crate::model::InvalidParameterDetail)
 pub mod invalid_parameter_detail {
+    ///
     /// A builder for [`InvalidParameterDetail`](crate::model::InvalidParameterDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -6370,6 +6370,7 @@ impl std::fmt::Display for ServiceLinkedRoleFailure {
 impl std::error::Error for ServiceLinkedRoleFailure {}
 /// See [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure)
 pub mod service_linked_role_failure {
+    ///
     /// A builder for [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6434,6 +6435,7 @@ impl std::fmt::Display for ScalingActivityInProgressFault {
 impl std::error::Error for ScalingActivityInProgressFault {}
 /// See [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault)
 pub mod scaling_activity_in_progress_fault {
+    ///
     /// A builder for [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6498,6 +6500,7 @@ impl std::fmt::Display for ResourceContentionFault {
 impl std::error::Error for ResourceContentionFault {}
 /// See [`ResourceContentionFault`](crate::error::ResourceContentionFault)
 pub mod resource_contention_fault {
+    ///
     /// A builder for [`ResourceContentionFault`](crate::error::ResourceContentionFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6562,6 +6565,7 @@ impl std::fmt::Display for ResourceInUseFault {
 impl std::error::Error for ResourceInUseFault {}
 /// See [`ResourceInUseFault`](crate::error::ResourceInUseFault)
 pub mod resource_in_use_fault {
+    ///
     /// A builder for [`ResourceInUseFault`](crate::error::ResourceInUseFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6626,6 +6630,7 @@ impl std::fmt::Display for LimitExceededFault {
 impl std::error::Error for LimitExceededFault {}
 /// See [`LimitExceededFault`](crate::error::LimitExceededFault)
 pub mod limit_exceeded_fault {
+    ///
     /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6690,6 +6695,7 @@ impl std::fmt::Display for InstanceRefreshInProgressFault {
 impl std::error::Error for InstanceRefreshInProgressFault {}
 /// See [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault)
 pub mod instance_refresh_in_progress_fault {
+    ///
     /// A builder for [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6754,6 +6760,7 @@ impl std::fmt::Display for AlreadyExistsFault {
 impl std::error::Error for AlreadyExistsFault {}
 /// See [`AlreadyExistsFault`](crate::error::AlreadyExistsFault)
 pub mod already_exists_fault {
+    ///
     /// A builder for [`AlreadyExistsFault`](crate::error::AlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6818,6 +6825,7 @@ impl std::fmt::Display for InvalidNextToken {
 impl std::error::Error for InvalidNextToken {}
 /// See [`InvalidNextToken`](crate::error::InvalidNextToken)
 pub mod invalid_next_token {
+    ///
     /// A builder for [`InvalidNextToken`](crate::error::InvalidNextToken)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6882,6 +6890,7 @@ impl std::fmt::Display for ActiveInstanceRefreshNotFoundFault {
 impl std::error::Error for ActiveInstanceRefreshNotFoundFault {}
 /// See [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault)
 pub mod active_instance_refresh_not_found_fault {
+    ///
     /// A builder for [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -9510,6 +9510,7 @@ impl std::fmt::Display for InvalidGatewayRequestException {
 impl std::error::Error for InvalidGatewayRequestException {}
 /// See [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException)
 pub mod invalid_gateway_request_exception {
+    ///
     /// A builder for [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9598,6 +9599,7 @@ impl std::fmt::Display for InternalServerError {
 impl std::error::Error for InternalServerError {}
 /// See [`InternalServerError`](crate::error::InternalServerError)
 pub mod internal_server_error {
+    ///
     /// A builder for [`InternalServerError`](crate::error::InternalServerError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9686,6 +9688,7 @@ impl std::fmt::Display for ServiceUnavailableError {
 impl std::error::Error for ServiceUnavailableError {}
 /// See [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
 pub mod service_unavailable_error {
+    ///
     /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

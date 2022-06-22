@@ -28,6 +28,7 @@ impl std::fmt::Debug for GetRecommendationsOutput {
 }
 /// See [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput)
 pub mod get_recommendations_output {
+    ///
     /// A builder for [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -113,6 +114,7 @@ impl std::fmt::Debug for GetPersonalizedRankingOutput {
 }
 /// See [`GetPersonalizedRankingOutput`](crate::output::GetPersonalizedRankingOutput)
 pub mod get_personalized_ranking_output {
+    ///
     /// A builder for [`GetPersonalizedRankingOutput`](crate::output::GetPersonalizedRankingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

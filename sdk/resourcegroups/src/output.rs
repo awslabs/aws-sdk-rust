@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateGroupQueryOutput {
 }
 /// See [`UpdateGroupQueryOutput`](crate::output::UpdateGroupQueryOutput)
 pub mod update_group_query_output {
+    ///
     /// A builder for [`UpdateGroupQueryOutput`](crate::output::UpdateGroupQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -78,6 +79,7 @@ impl std::fmt::Debug for UpdateGroupOutput {
 }
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
 pub mod update_group_output {
+    ///
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -137,6 +139,7 @@ impl std::fmt::Debug for UntagOutput {
 }
 /// See [`UntagOutput`](crate::output::UntagOutput)
 pub mod untag_output {
+    ///
     /// A builder for [`UntagOutput`](crate::output::UntagOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -226,6 +229,7 @@ impl std::fmt::Debug for UngroupResourcesOutput {
 }
 /// See [`UngroupResourcesOutput`](crate::output::UngroupResourcesOutput)
 pub mod ungroup_resources_output {
+    ///
     /// A builder for [`UngroupResourcesOutput`](crate::output::UngroupResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -342,6 +346,7 @@ impl std::fmt::Debug for TagOutput {
 }
 /// See [`TagOutput`](crate::output::TagOutput)
 pub mod tag_output {
+    ///
     /// A builder for [`TagOutput`](crate::output::TagOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -439,6 +444,7 @@ impl std::fmt::Debug for SearchResourcesOutput {
 }
 /// See [`SearchResourcesOutput`](crate::output::SearchResourcesOutput)
 pub mod search_resources_output {
+    ///
     /// A builder for [`SearchResourcesOutput`](crate::output::SearchResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -526,6 +532,7 @@ impl std::fmt::Debug for PutGroupConfigurationOutput {
 }
 /// See [`PutGroupConfigurationOutput`](crate::output::PutGroupConfigurationOutput)
 pub mod put_group_configuration_output {
+    ///
     /// A builder for [`PutGroupConfigurationOutput`](crate::output::PutGroupConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -584,6 +591,7 @@ impl std::fmt::Debug for ListGroupsOutput {
 }
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput)
 pub mod list_groups_output {
+    ///
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -710,6 +718,7 @@ impl std::fmt::Debug for ListGroupResourcesOutput {
 }
 /// See [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput)
 pub mod list_group_resources_output {
+    ///
     /// A builder for [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -847,6 +856,7 @@ impl std::fmt::Debug for GroupResourcesOutput {
 }
 /// See [`GroupResourcesOutput`](crate::output::GroupResourcesOutput)
 pub mod group_resources_output {
+    ///
     /// A builder for [`GroupResourcesOutput`](crate::output::GroupResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -963,6 +973,7 @@ impl std::fmt::Debug for GetTagsOutput {
 }
 /// See [`GetTagsOutput`](crate::output::GetTagsOutput)
 pub mod get_tags_output {
+    ///
     /// A builder for [`GetTagsOutput`](crate::output::GetTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1046,6 +1057,7 @@ impl std::fmt::Debug for GetGroupQueryOutput {
 }
 /// See [`GetGroupQueryOutput`](crate::output::GetGroupQueryOutput)
 pub mod get_group_query_output {
+    ///
     /// A builder for [`GetGroupQueryOutput`](crate::output::GetGroupQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1103,6 +1115,7 @@ impl std::fmt::Debug for GetGroupConfigurationOutput {
 }
 /// See [`GetGroupConfigurationOutput`](crate::output::GetGroupConfigurationOutput)
 pub mod get_group_configuration_output {
+    ///
     /// A builder for [`GetGroupConfigurationOutput`](crate::output::GetGroupConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1160,6 +1173,7 @@ impl std::fmt::Debug for GetGroupOutput {
 }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput)
 pub mod get_group_output {
+    ///
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1212,6 +1226,7 @@ impl std::fmt::Debug for DeleteGroupOutput {
 }
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
 pub mod delete_group_output {
+    ///
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1289,6 +1304,7 @@ impl std::fmt::Debug for CreateGroupOutput {
 }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput)
 pub mod create_group_output {
+    ///
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

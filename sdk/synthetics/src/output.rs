@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateCanaryOutput {
 }
 /// See [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput)
 pub mod update_canary_output {
+    ///
     /// A builder for [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for StopCanaryOutput {
 }
 /// See [`StopCanaryOutput`](crate::output::StopCanaryOutput)
 pub mod stop_canary_output {
+    ///
     /// A builder for [`StopCanaryOutput`](crate::output::StopCanaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for StartCanaryOutput {
 }
 /// See [`StartCanaryOutput`](crate::output::StartCanaryOutput)
 pub mod start_canary_output {
+    ///
     /// A builder for [`StartCanaryOutput`](crate::output::StartCanaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -175,6 +180,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -251,6 +257,7 @@ impl std::fmt::Debug for GetCanaryRunsOutput {
 }
 /// See [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput)
 pub mod get_canary_runs_output {
+    ///
     /// A builder for [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -326,6 +333,7 @@ impl std::fmt::Debug for GetCanaryOutput {
 }
 /// See [`GetCanaryOutput`](crate::output::GetCanaryOutput)
 pub mod get_canary_output {
+    ///
     /// A builder for [`GetCanaryOutput`](crate::output::GetCanaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -387,6 +395,7 @@ impl std::fmt::Debug for DescribeRuntimeVersionsOutput {
 }
 /// See [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput)
 pub mod describe_runtime_versions_output {
+    ///
     /// A builder for [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -470,6 +479,7 @@ impl std::fmt::Debug for DescribeCanariesLastRunOutput {
 }
 /// See [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput)
 pub mod describe_canaries_last_run_output {
+    ///
     /// A builder for [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -553,6 +563,7 @@ impl std::fmt::Debug for DescribeCanariesOutput {
 }
 /// See [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput)
 pub mod describe_canaries_output {
+    ///
     /// A builder for [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -618,6 +629,7 @@ impl std::fmt::Debug for DeleteCanaryOutput {
 }
 /// See [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput)
 pub mod delete_canary_output {
+    ///
     /// A builder for [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -658,6 +670,7 @@ impl std::fmt::Debug for CreateCanaryOutput {
 }
 /// See [`CreateCanaryOutput`](crate::output::CreateCanaryOutput)
 pub mod create_canary_output {
+    ///
     /// A builder for [`CreateCanaryOutput`](crate::output::CreateCanaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

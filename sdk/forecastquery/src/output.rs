@@ -21,6 +21,7 @@ impl std::fmt::Debug for QueryForecastOutput {
 }
 /// See [`QueryForecastOutput`](crate::output::QueryForecastOutput)
 pub mod query_forecast_output {
+    ///
     /// A builder for [`QueryForecastOutput`](crate::output::QueryForecastOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

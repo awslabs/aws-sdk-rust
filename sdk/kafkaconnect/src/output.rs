@@ -28,6 +28,7 @@ impl std::fmt::Debug for UpdateConnectorOutput {
 }
 /// See [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput)
 pub mod update_connector_output {
+    ///
     /// A builder for [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -110,6 +111,7 @@ impl std::fmt::Debug for ListWorkerConfigurationsOutput {
 }
 /// See [`ListWorkerConfigurationsOutput`](crate::output::ListWorkerConfigurationsOutput)
 pub mod list_worker_configurations_output {
+    ///
     /// A builder for [`ListWorkerConfigurationsOutput`](crate::output::ListWorkerConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -196,6 +198,7 @@ impl std::fmt::Debug for ListCustomPluginsOutput {
 }
 /// See [`ListCustomPluginsOutput`](crate::output::ListCustomPluginsOutput)
 pub mod list_custom_plugins_output {
+    ///
     /// A builder for [`ListCustomPluginsOutput`](crate::output::ListCustomPluginsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -279,6 +282,7 @@ impl std::fmt::Debug for ListConnectorsOutput {
 }
 /// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
 pub mod list_connectors_output {
+    ///
     /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -384,6 +388,7 @@ impl std::fmt::Debug for DescribeWorkerConfigurationOutput {
 }
 /// See [`DescribeWorkerConfigurationOutput`](crate::output::DescribeWorkerConfigurationOutput)
 pub mod describe_worker_configuration_output {
+    ///
     /// A builder for [`DescribeWorkerConfigurationOutput`](crate::output::DescribeWorkerConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -543,6 +548,7 @@ impl std::fmt::Debug for DescribeCustomPluginOutput {
 }
 /// See [`DescribeCustomPluginOutput`](crate::output::DescribeCustomPluginOutput)
 pub mod describe_custom_plugin_output {
+    ///
     /// A builder for [`DescribeCustomPluginOutput`](crate::output::DescribeCustomPluginOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -820,6 +826,7 @@ impl std::fmt::Debug for DescribeConnectorOutput {
 }
 /// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
 pub mod describe_connector_output {
+    ///
     /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1156,6 +1163,7 @@ impl std::fmt::Debug for DeleteCustomPluginOutput {
 }
 /// See [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput)
 pub mod delete_custom_plugin_output {
+    ///
     /// A builder for [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1235,6 +1243,7 @@ impl std::fmt::Debug for DeleteConnectorOutput {
 }
 /// See [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput)
 pub mod delete_connector_output {
+    ///
     /// A builder for [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1330,6 +1339,7 @@ impl std::fmt::Debug for CreateWorkerConfigurationOutput {
 }
 /// See [`CreateWorkerConfigurationOutput`](crate::output::CreateWorkerConfigurationOutput)
 pub mod create_worker_configuration_output {
+    ///
     /// A builder for [`CreateWorkerConfigurationOutput`](crate::output::CreateWorkerConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1454,6 +1464,7 @@ impl std::fmt::Debug for CreateCustomPluginOutput {
 }
 /// See [`CreateCustomPluginOutput`](crate::output::CreateCustomPluginOutput)
 pub mod create_custom_plugin_output {
+    ///
     /// A builder for [`CreateCustomPluginOutput`](crate::output::CreateCustomPluginOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1564,6 +1575,7 @@ impl std::fmt::Debug for CreateConnectorOutput {
 }
 /// See [`CreateConnectorOutput`](crate::output::CreateConnectorOutput)
 pub mod create_connector_output {
+    ///
     /// A builder for [`CreateConnectorOutput`](crate::output::CreateConnectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -131,6 +131,7 @@ impl Client {
 }
 pub mod fluent_builders {
     //!
+    //!
     //! Utilities to ergonomically construct a request to the service.
     //!
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling

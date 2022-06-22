@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateWorkspaceOutput {
 }
 /// See [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput)
 pub mod update_workspace_output {
+    ///
     /// A builder for [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -78,6 +79,7 @@ impl std::fmt::Debug for UpdateSceneOutput {
 }
 /// See [`UpdateSceneOutput`](crate::output::UpdateSceneOutput)
 pub mod update_scene_output {
+    ///
     /// A builder for [`UpdateSceneOutput`](crate::output::UpdateSceneOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -142,6 +144,7 @@ impl std::fmt::Debug for UpdateEntityOutput {
 }
 /// See [`UpdateEntityOutput`](crate::output::UpdateEntityOutput)
 pub mod update_entity_output {
+    ///
     /// A builder for [`UpdateEntityOutput`](crate::output::UpdateEntityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -232,6 +235,7 @@ impl std::fmt::Debug for UpdateComponentTypeOutput {
 }
 /// See [`UpdateComponentTypeOutput`](crate::output::UpdateComponentTypeOutput)
 pub mod update_component_type_output {
+    ///
     /// A builder for [`UpdateComponentTypeOutput`](crate::output::UpdateComponentTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -315,6 +319,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -345,6 +350,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -392,6 +398,7 @@ impl std::fmt::Debug for ListWorkspacesOutput {
 }
 /// See [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput)
 pub mod list_workspaces_output {
+    ///
     /// A builder for [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -479,6 +486,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -569,6 +577,7 @@ impl std::fmt::Debug for ListScenesOutput {
 }
 /// See [`ListScenesOutput`](crate::output::ListScenesOutput)
 pub mod list_scenes_output {
+    ///
     /// A builder for [`ListScenesOutput`](crate::output::ListScenesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -651,6 +660,7 @@ impl std::fmt::Debug for ListEntitiesOutput {
 }
 /// See [`ListEntitiesOutput`](crate::output::ListEntitiesOutput)
 pub mod list_entities_output {
+    ///
     /// A builder for [`ListEntitiesOutput`](crate::output::ListEntitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -751,6 +761,7 @@ impl std::fmt::Debug for ListComponentTypesOutput {
 }
 /// See [`ListComponentTypesOutput`](crate::output::ListComponentTypesOutput)
 pub mod list_component_types_output {
+    ///
     /// A builder for [`ListComponentTypesOutput`](crate::output::ListComponentTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -896,6 +907,7 @@ impl std::fmt::Debug for GetWorkspaceOutput {
 }
 /// See [`GetWorkspaceOutput`](crate::output::GetWorkspaceOutput)
 pub mod get_workspace_output {
+    ///
     /// A builder for [`GetWorkspaceOutput`](crate::output::GetWorkspaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1077,6 +1089,7 @@ impl std::fmt::Debug for GetSceneOutput {
 }
 /// See [`GetSceneOutput`](crate::output::GetSceneOutput)
 pub mod get_scene_output {
+    ///
     /// A builder for [`GetSceneOutput`](crate::output::GetSceneOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1240,6 +1253,7 @@ impl std::fmt::Debug for GetPropertyValueHistoryOutput {
 }
 /// See [`GetPropertyValueHistoryOutput`](crate::output::GetPropertyValueHistoryOutput)
 pub mod get_property_value_history_output {
+    ///
     /// A builder for [`GetPropertyValueHistoryOutput`](crate::output::GetPropertyValueHistoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1322,6 +1336,7 @@ impl std::fmt::Debug for GetPropertyValueOutput {
 }
 /// See [`GetPropertyValueOutput`](crate::output::GetPropertyValueOutput)
 pub mod get_property_value_output {
+    ///
     /// A builder for [`GetPropertyValueOutput`](crate::output::GetPropertyValueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1469,6 +1484,7 @@ impl std::fmt::Debug for GetEntityOutput {
 }
 /// See [`GetEntityOutput`](crate::output::GetEntityOutput)
 pub mod get_entity_output {
+    ///
     /// A builder for [`GetEntityOutput`](crate::output::GetEntityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1765,6 +1781,7 @@ impl std::fmt::Debug for GetComponentTypeOutput {
 }
 /// See [`GetComponentTypeOutput`](crate::output::GetComponentTypeOutput)
 pub mod get_component_type_output {
+    ///
     /// A builder for [`GetComponentTypeOutput`](crate::output::GetComponentTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2011,6 +2028,7 @@ impl std::fmt::Debug for DeleteWorkspaceOutput {
 }
 /// See [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput)
 pub mod delete_workspace_output {
+    ///
     /// A builder for [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2041,6 +2059,7 @@ impl std::fmt::Debug for DeleteSceneOutput {
 }
 /// See [`DeleteSceneOutput`](crate::output::DeleteSceneOutput)
 pub mod delete_scene_output {
+    ///
     /// A builder for [`DeleteSceneOutput`](crate::output::DeleteSceneOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2081,6 +2100,7 @@ impl std::fmt::Debug for DeleteEntityOutput {
 }
 /// See [`DeleteEntityOutput`](crate::output::DeleteEntityOutput)
 pub mod delete_entity_output {
+    ///
     /// A builder for [`DeleteEntityOutput`](crate::output::DeleteEntityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2133,6 +2153,7 @@ impl std::fmt::Debug for DeleteComponentTypeOutput {
 }
 /// See [`DeleteComponentTypeOutput`](crate::output::DeleteComponentTypeOutput)
 pub mod delete_component_type_output {
+    ///
     /// A builder for [`DeleteComponentTypeOutput`](crate::output::DeleteComponentTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2192,6 +2213,7 @@ impl std::fmt::Debug for CreateWorkspaceOutput {
 }
 /// See [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput)
 pub mod create_workspace_output {
+    ///
     /// A builder for [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2268,6 +2290,7 @@ impl std::fmt::Debug for CreateSceneOutput {
 }
 /// See [`CreateSceneOutput`](crate::output::CreateSceneOutput)
 pub mod create_scene_output {
+    ///
     /// A builder for [`CreateSceneOutput`](crate::output::CreateSceneOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2358,6 +2381,7 @@ impl std::fmt::Debug for CreateEntityOutput {
 }
 /// See [`CreateEntityOutput`](crate::output::CreateEntityOutput)
 pub mod create_entity_output {
+    ///
     /// A builder for [`CreateEntityOutput`](crate::output::CreateEntityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2465,6 +2489,7 @@ impl std::fmt::Debug for CreateComponentTypeOutput {
 }
 /// See [`CreateComponentTypeOutput`](crate::output::CreateComponentTypeOutput)
 pub mod create_component_type_output {
+    ///
     /// A builder for [`CreateComponentTypeOutput`](crate::output::CreateComponentTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2548,6 +2573,7 @@ impl std::fmt::Debug for BatchPutPropertyValuesOutput {
 }
 /// See [`BatchPutPropertyValuesOutput`](crate::output::BatchPutPropertyValuesOutput)
 pub mod batch_put_property_values_output {
+    ///
     /// A builder for [`BatchPutPropertyValuesOutput`](crate::output::BatchPutPropertyValuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

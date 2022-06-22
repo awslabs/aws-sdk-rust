@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateStateMachineOutput {
 }
 /// See [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput)
 pub mod update_state_machine_output {
+    ///
     /// A builder for [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -68,6 +69,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -98,6 +100,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -138,6 +141,7 @@ impl std::fmt::Debug for StopExecutionOutput {
 }
 /// See [`StopExecutionOutput`](crate::output::StopExecutionOutput)
 pub mod stop_execution_output {
+    ///
     /// A builder for [`StopExecutionOutput`](crate::output::StopExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -294,6 +298,7 @@ impl std::fmt::Debug for StartSyncExecutionOutput {
 }
 /// See [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput)
 pub mod start_sync_execution_output {
+    ///
     /// A builder for [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -547,6 +552,7 @@ impl std::fmt::Debug for StartExecutionOutput {
 }
 /// See [`StartExecutionOutput`](crate::output::StartExecutionOutput)
 pub mod start_execution_output {
+    ///
     /// A builder for [`StartExecutionOutput`](crate::output::StartExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -609,6 +615,7 @@ impl std::fmt::Debug for SendTaskSuccessOutput {
 }
 /// See [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput)
 pub mod send_task_success_output {
+    ///
     /// A builder for [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -639,6 +646,7 @@ impl std::fmt::Debug for SendTaskHeartbeatOutput {
 }
 /// See [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput)
 pub mod send_task_heartbeat_output {
+    ///
     /// A builder for [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -669,6 +677,7 @@ impl std::fmt::Debug for SendTaskFailureOutput {
 }
 /// See [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput)
 pub mod send_task_failure_output {
+    ///
     /// A builder for [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -709,6 +718,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -777,6 +787,7 @@ impl std::fmt::Debug for ListStateMachinesOutput {
 }
 /// See [`ListStateMachinesOutput`](crate::output::ListStateMachinesOutput)
 pub mod list_state_machines_output {
+    ///
     /// A builder for [`ListStateMachinesOutput`](crate::output::ListStateMachinesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -859,6 +870,7 @@ impl std::fmt::Debug for ListExecutionsOutput {
 }
 /// See [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
 pub mod list_executions_output {
+    ///
     /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -941,6 +953,7 @@ impl std::fmt::Debug for ListActivitiesOutput {
 }
 /// See [`ListActivitiesOutput`](crate::output::ListActivitiesOutput)
 pub mod list_activities_output {
+    ///
     /// A builder for [`ListActivitiesOutput`](crate::output::ListActivitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1023,6 +1036,7 @@ impl std::fmt::Debug for GetExecutionHistoryOutput {
 }
 /// See [`GetExecutionHistoryOutput`](crate::output::GetExecutionHistoryOutput)
 pub mod get_execution_history_output {
+    ///
     /// A builder for [`GetExecutionHistoryOutput`](crate::output::GetExecutionHistoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1105,6 +1119,7 @@ impl std::fmt::Debug for GetActivityTaskOutput {
 }
 /// See [`GetActivityTaskOutput`](crate::output::GetActivityTaskOutput)
 pub mod get_activity_task_output {
+    ///
     /// A builder for [`GetActivityTaskOutput`](crate::output::GetActivityTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1217,6 +1232,7 @@ impl std::fmt::Debug for DescribeStateMachineForExecutionOutput {
 }
 /// See [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput)
 pub mod describe_state_machine_for_execution_output {
+    ///
     /// A builder for [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1433,6 +1449,7 @@ impl std::fmt::Debug for DescribeStateMachineOutput {
 }
 /// See [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput)
 pub mod describe_state_machine_output {
+    ///
     /// A builder for [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1715,6 +1732,7 @@ impl std::fmt::Debug for DescribeExecutionOutput {
 }
 /// See [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
 pub mod describe_execution_output {
+    ///
     /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1972,6 +1990,7 @@ impl std::fmt::Debug for DescribeActivityOutput {
 }
 /// See [`DescribeActivityOutput`](crate::output::DescribeActivityOutput)
 pub mod describe_activity_output {
+    ///
     /// A builder for [`DescribeActivityOutput`](crate::output::DescribeActivityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2061,6 +2080,7 @@ impl std::fmt::Debug for DeleteStateMachineOutput {
 }
 /// See [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput)
 pub mod delete_state_machine_output {
+    ///
     /// A builder for [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2091,6 +2111,7 @@ impl std::fmt::Debug for DeleteActivityOutput {
 }
 /// See [`DeleteActivityOutput`](crate::output::DeleteActivityOutput)
 pub mod delete_activity_output {
+    ///
     /// A builder for [`DeleteActivityOutput`](crate::output::DeleteActivityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2138,6 +2159,7 @@ impl std::fmt::Debug for CreateStateMachineOutput {
 }
 /// See [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput)
 pub mod create_state_machine_output {
+    ///
     /// A builder for [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2217,6 +2239,7 @@ impl std::fmt::Debug for CreateActivityOutput {
 }
 /// See [`CreateActivityOutput`](crate::output::CreateActivityOutput)
 pub mod create_activity_output {
+    ///
     /// A builder for [`CreateActivityOutput`](crate::output::CreateActivityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

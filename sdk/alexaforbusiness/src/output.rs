@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateSkillGroupOutput {
 }
 /// See [`UpdateSkillGroupOutput`](crate::output::UpdateSkillGroupOutput)
 pub mod update_skill_group_output {
+    ///
     /// A builder for [`UpdateSkillGroupOutput`](crate::output::UpdateSkillGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdateRoomOutput {
 }
 /// See [`UpdateRoomOutput`](crate::output::UpdateRoomOutput)
 pub mod update_room_output {
+    ///
     /// A builder for [`UpdateRoomOutput`](crate::output::UpdateRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UpdateProfileOutput {
 }
 /// See [`UpdateProfileOutput`](crate::output::UpdateProfileOutput)
 pub mod update_profile_output {
+    ///
     /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for UpdateNetworkProfileOutput {
 }
 /// See [`UpdateNetworkProfileOutput`](crate::output::UpdateNetworkProfileOutput)
 pub mod update_network_profile_output {
+    ///
     /// A builder for [`UpdateNetworkProfileOutput`](crate::output::UpdateNetworkProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for UpdateGatewayGroupOutput {
 }
 /// See [`UpdateGatewayGroupOutput`](crate::output::UpdateGatewayGroupOutput)
 pub mod update_gateway_group_output {
+    ///
     /// A builder for [`UpdateGatewayGroupOutput`](crate::output::UpdateGatewayGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -161,6 +166,7 @@ impl std::fmt::Debug for UpdateGatewayOutput {
 }
 /// See [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput)
 pub mod update_gateway_output {
+    ///
     /// A builder for [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -191,6 +197,7 @@ impl std::fmt::Debug for UpdateDeviceOutput {
 }
 /// See [`UpdateDeviceOutput`](crate::output::UpdateDeviceOutput)
 pub mod update_device_output {
+    ///
     /// A builder for [`UpdateDeviceOutput`](crate::output::UpdateDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -221,6 +228,7 @@ impl std::fmt::Debug for UpdateContactOutput {
 }
 /// See [`UpdateContactOutput`](crate::output::UpdateContactOutput)
 pub mod update_contact_output {
+    ///
     /// A builder for [`UpdateContactOutput`](crate::output::UpdateContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -251,6 +259,7 @@ impl std::fmt::Debug for UpdateConferenceProviderOutput {
 }
 /// See [`UpdateConferenceProviderOutput`](crate::output::UpdateConferenceProviderOutput)
 pub mod update_conference_provider_output {
+    ///
     /// A builder for [`UpdateConferenceProviderOutput`](crate::output::UpdateConferenceProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -281,6 +290,7 @@ impl std::fmt::Debug for UpdateBusinessReportScheduleOutput {
 }
 /// See [`UpdateBusinessReportScheduleOutput`](crate::output::UpdateBusinessReportScheduleOutput)
 pub mod update_business_report_schedule_output {
+    ///
     /// A builder for [`UpdateBusinessReportScheduleOutput`](crate::output::UpdateBusinessReportScheduleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -311,6 +321,7 @@ impl std::fmt::Debug for UpdateAddressBookOutput {
 }
 /// See [`UpdateAddressBookOutput`](crate::output::UpdateAddressBookOutput)
 pub mod update_address_book_output {
+    ///
     /// A builder for [`UpdateAddressBookOutput`](crate::output::UpdateAddressBookOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -341,6 +352,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -371,6 +383,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -401,6 +414,7 @@ impl std::fmt::Debug for StartSmartHomeApplianceDiscoveryOutput {
 }
 /// See [`StartSmartHomeApplianceDiscoveryOutput`](crate::output::StartSmartHomeApplianceDiscoveryOutput)
 pub mod start_smart_home_appliance_discovery_output {
+    ///
     /// A builder for [`StartSmartHomeApplianceDiscoveryOutput`](crate::output::StartSmartHomeApplianceDiscoveryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -431,6 +445,7 @@ impl std::fmt::Debug for StartDeviceSyncOutput {
 }
 /// See [`StartDeviceSyncOutput`](crate::output::StartDeviceSyncOutput)
 pub mod start_device_sync_output {
+    ///
     /// A builder for [`StartDeviceSyncOutput`](crate::output::StartDeviceSyncOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -461,6 +476,7 @@ impl std::fmt::Debug for SendInvitationOutput {
 }
 /// See [`SendInvitationOutput`](crate::output::SendInvitationOutput)
 pub mod send_invitation_output {
+    ///
     /// A builder for [`SendInvitationOutput`](crate::output::SendInvitationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -501,6 +517,7 @@ impl std::fmt::Debug for SendAnnouncementOutput {
 }
 /// See [`SendAnnouncementOutput`](crate::output::SendAnnouncementOutput)
 pub mod send_announcement_output {
+    ///
     /// A builder for [`SendAnnouncementOutput`](crate::output::SendAnnouncementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -572,6 +589,7 @@ impl std::fmt::Debug for SearchUsersOutput {
 }
 /// See [`SearchUsersOutput`](crate::output::SearchUsersOutput)
 pub mod search_users_output {
+    ///
     /// A builder for [`SearchUsersOutput`](crate::output::SearchUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -673,6 +691,7 @@ impl std::fmt::Debug for SearchSkillGroupsOutput {
 }
 /// See [`SearchSkillGroupsOutput`](crate::output::SearchSkillGroupsOutput)
 pub mod search_skill_groups_output {
+    ///
     /// A builder for [`SearchSkillGroupsOutput`](crate::output::SearchSkillGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -774,6 +793,7 @@ impl std::fmt::Debug for SearchRoomsOutput {
 }
 /// See [`SearchRoomsOutput`](crate::output::SearchRoomsOutput)
 pub mod search_rooms_output {
+    ///
     /// A builder for [`SearchRoomsOutput`](crate::output::SearchRoomsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -875,6 +895,7 @@ impl std::fmt::Debug for SearchProfilesOutput {
 }
 /// See [`SearchProfilesOutput`](crate::output::SearchProfilesOutput)
 pub mod search_profiles_output {
+    ///
     /// A builder for [`SearchProfilesOutput`](crate::output::SearchProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -976,6 +997,7 @@ impl std::fmt::Debug for SearchNetworkProfilesOutput {
 }
 /// See [`SearchNetworkProfilesOutput`](crate::output::SearchNetworkProfilesOutput)
 pub mod search_network_profiles_output {
+    ///
     /// A builder for [`SearchNetworkProfilesOutput`](crate::output::SearchNetworkProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1078,6 +1100,7 @@ impl std::fmt::Debug for SearchDevicesOutput {
 }
 /// See [`SearchDevicesOutput`](crate::output::SearchDevicesOutput)
 pub mod search_devices_output {
+    ///
     /// A builder for [`SearchDevicesOutput`](crate::output::SearchDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1179,6 +1202,7 @@ impl std::fmt::Debug for SearchContactsOutput {
 }
 /// See [`SearchContactsOutput`](crate::output::SearchContactsOutput)
 pub mod search_contacts_output {
+    ///
     /// A builder for [`SearchContactsOutput`](crate::output::SearchContactsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1280,6 +1304,7 @@ impl std::fmt::Debug for SearchAddressBooksOutput {
 }
 /// See [`SearchAddressBooksOutput`](crate::output::SearchAddressBooksOutput)
 pub mod search_address_books_output {
+    ///
     /// A builder for [`SearchAddressBooksOutput`](crate::output::SearchAddressBooksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1357,6 +1382,7 @@ impl std::fmt::Debug for RevokeInvitationOutput {
 }
 /// See [`RevokeInvitationOutput`](crate::output::RevokeInvitationOutput)
 pub mod revoke_invitation_output {
+    ///
     /// A builder for [`RevokeInvitationOutput`](crate::output::RevokeInvitationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1413,6 +1439,7 @@ impl std::fmt::Debug for ResolveRoomOutput {
 }
 /// See [`ResolveRoomOutput`](crate::output::ResolveRoomOutput)
 pub mod resolve_room_output {
+    ///
     /// A builder for [`ResolveRoomOutput`](crate::output::ResolveRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1491,6 +1518,7 @@ impl std::fmt::Debug for RejectSkillOutput {
 }
 /// See [`RejectSkillOutput`](crate::output::RejectSkillOutput)
 pub mod reject_skill_output {
+    ///
     /// A builder for [`RejectSkillOutput`](crate::output::RejectSkillOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1531,6 +1559,7 @@ impl std::fmt::Debug for RegisterAvsDeviceOutput {
 }
 /// See [`RegisterAvsDeviceOutput`](crate::output::RegisterAvsDeviceOutput)
 pub mod register_avs_device_output {
+    ///
     /// A builder for [`RegisterAvsDeviceOutput`](crate::output::RegisterAvsDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1575,6 +1604,7 @@ impl std::fmt::Debug for PutSkillAuthorizationOutput {
 }
 /// See [`PutSkillAuthorizationOutput`](crate::output::PutSkillAuthorizationOutput)
 pub mod put_skill_authorization_output {
+    ///
     /// A builder for [`PutSkillAuthorizationOutput`](crate::output::PutSkillAuthorizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1605,6 +1635,7 @@ impl std::fmt::Debug for PutRoomSkillParameterOutput {
 }
 /// See [`PutRoomSkillParameterOutput`](crate::output::PutRoomSkillParameterOutput)
 pub mod put_room_skill_parameter_output {
+    ///
     /// A builder for [`PutRoomSkillParameterOutput`](crate::output::PutRoomSkillParameterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1635,6 +1666,7 @@ impl std::fmt::Debug for PutInvitationConfigurationOutput {
 }
 /// See [`PutInvitationConfigurationOutput`](crate::output::PutInvitationConfigurationOutput)
 pub mod put_invitation_configuration_output {
+    ///
     /// A builder for [`PutInvitationConfigurationOutput`](crate::output::PutInvitationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1665,6 +1697,7 @@ impl std::fmt::Debug for PutConferencePreferenceOutput {
 }
 /// See [`PutConferencePreferenceOutput`](crate::output::PutConferencePreferenceOutput)
 pub mod put_conference_preference_output {
+    ///
     /// A builder for [`PutConferencePreferenceOutput`](crate::output::PutConferencePreferenceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1712,6 +1745,7 @@ impl std::fmt::Debug for ListTagsOutput {
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput)
 pub mod list_tags_output {
+    ///
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1796,6 +1830,7 @@ impl std::fmt::Debug for ListSmartHomeAppliancesOutput {
 }
 /// See [`ListSmartHomeAppliancesOutput`](crate::output::ListSmartHomeAppliancesOutput)
 pub mod list_smart_home_appliances_output {
+    ///
     /// A builder for [`ListSmartHomeAppliancesOutput`](crate::output::ListSmartHomeAppliancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1879,6 +1914,7 @@ impl std::fmt::Debug for ListSkillsStoreSkillsByCategoryOutput {
 }
 /// See [`ListSkillsStoreSkillsByCategoryOutput`](crate::output::ListSkillsStoreSkillsByCategoryOutput)
 pub mod list_skills_store_skills_by_category_output {
+    ///
     /// A builder for [`ListSkillsStoreSkillsByCategoryOutput`](crate::output::ListSkillsStoreSkillsByCategoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1962,6 +1998,7 @@ impl std::fmt::Debug for ListSkillsStoreCategoriesOutput {
 }
 /// See [`ListSkillsStoreCategoriesOutput`](crate::output::ListSkillsStoreCategoriesOutput)
 pub mod list_skills_store_categories_output {
+    ///
     /// A builder for [`ListSkillsStoreCategoriesOutput`](crate::output::ListSkillsStoreCategoriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2044,6 +2081,7 @@ impl std::fmt::Debug for ListSkillsOutput {
 }
 /// See [`ListSkillsOutput`](crate::output::ListSkillsOutput)
 pub mod list_skills_output {
+    ///
     /// A builder for [`ListSkillsOutput`](crate::output::ListSkillsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2126,6 +2164,7 @@ impl std::fmt::Debug for ListGatewaysOutput {
 }
 /// See [`ListGatewaysOutput`](crate::output::ListGatewaysOutput)
 pub mod list_gateways_output {
+    ///
     /// A builder for [`ListGatewaysOutput`](crate::output::ListGatewaysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2208,6 +2247,7 @@ impl std::fmt::Debug for ListGatewayGroupsOutput {
 }
 /// See [`ListGatewayGroupsOutput`](crate::output::ListGatewayGroupsOutput)
 pub mod list_gateway_groups_output {
+    ///
     /// A builder for [`ListGatewayGroupsOutput`](crate::output::ListGatewayGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2291,6 +2331,7 @@ impl std::fmt::Debug for ListDeviceEventsOutput {
 }
 /// See [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput)
 pub mod list_device_events_output {
+    ///
     /// A builder for [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2373,6 +2414,7 @@ impl std::fmt::Debug for ListConferenceProvidersOutput {
 }
 /// See [`ListConferenceProvidersOutput`](crate::output::ListConferenceProvidersOutput)
 pub mod list_conference_providers_output {
+    ///
     /// A builder for [`ListConferenceProvidersOutput`](crate::output::ListConferenceProvidersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2459,6 +2501,7 @@ impl std::fmt::Debug for ListBusinessReportSchedulesOutput {
 }
 /// See [`ListBusinessReportSchedulesOutput`](crate::output::ListBusinessReportSchedulesOutput)
 pub mod list_business_report_schedules_output {
+    ///
     /// A builder for [`ListBusinessReportSchedulesOutput`](crate::output::ListBusinessReportSchedulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2538,6 +2581,7 @@ impl std::fmt::Debug for GetSkillGroupOutput {
 }
 /// See [`GetSkillGroupOutput`](crate::output::GetSkillGroupOutput)
 pub mod get_skill_group_output {
+    ///
     /// A builder for [`GetSkillGroupOutput`](crate::output::GetSkillGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2595,6 +2639,7 @@ impl std::fmt::Debug for GetRoomSkillParameterOutput {
 }
 /// See [`GetRoomSkillParameterOutput`](crate::output::GetRoomSkillParameterOutput)
 pub mod get_room_skill_parameter_output {
+    ///
     /// A builder for [`GetRoomSkillParameterOutput`](crate::output::GetRoomSkillParameterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2652,6 +2697,7 @@ impl std::fmt::Debug for GetRoomOutput {
 }
 /// See [`GetRoomOutput`](crate::output::GetRoomOutput)
 pub mod get_room_output {
+    ///
     /// A builder for [`GetRoomOutput`](crate::output::GetRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2704,6 +2750,7 @@ impl std::fmt::Debug for GetProfileOutput {
 }
 /// See [`GetProfileOutput`](crate::output::GetProfileOutput)
 pub mod get_profile_output {
+    ///
     /// A builder for [`GetProfileOutput`](crate::output::GetProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2758,6 +2805,7 @@ impl std::fmt::Debug for GetNetworkProfileOutput {
 }
 /// See [`GetNetworkProfileOutput`](crate::output::GetNetworkProfileOutput)
 pub mod get_network_profile_output {
+    ///
     /// A builder for [`GetNetworkProfileOutput`](crate::output::GetNetworkProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2829,6 +2877,7 @@ impl std::fmt::Debug for GetInvitationConfigurationOutput {
 }
 /// See [`GetInvitationConfigurationOutput`](crate::output::GetInvitationConfigurationOutput)
 pub mod get_invitation_configuration_output {
+    ///
     /// A builder for [`GetInvitationConfigurationOutput`](crate::output::GetInvitationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2922,6 +2971,7 @@ impl std::fmt::Debug for GetGatewayGroupOutput {
 }
 /// See [`GetGatewayGroupOutput`](crate::output::GetGatewayGroupOutput)
 pub mod get_gateway_group_output {
+    ///
     /// A builder for [`GetGatewayGroupOutput`](crate::output::GetGatewayGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2979,6 +3029,7 @@ impl std::fmt::Debug for GetGatewayOutput {
 }
 /// See [`GetGatewayOutput`](crate::output::GetGatewayOutput)
 pub mod get_gateway_output {
+    ///
     /// A builder for [`GetGatewayOutput`](crate::output::GetGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3033,6 +3084,7 @@ impl std::fmt::Debug for GetDeviceOutput {
 }
 /// See [`GetDeviceOutput`](crate::output::GetDeviceOutput)
 pub mod get_device_output {
+    ///
     /// A builder for [`GetDeviceOutput`](crate::output::GetDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3087,6 +3139,7 @@ impl std::fmt::Debug for GetContactOutput {
 }
 /// See [`GetContactOutput`](crate::output::GetContactOutput)
 pub mod get_contact_output {
+    ///
     /// A builder for [`GetContactOutput`](crate::output::GetContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3141,6 +3194,7 @@ impl std::fmt::Debug for GetConferenceProviderOutput {
 }
 /// See [`GetConferenceProviderOutput`](crate::output::GetConferenceProviderOutput)
 pub mod get_conference_provider_output {
+    ///
     /// A builder for [`GetConferenceProviderOutput`](crate::output::GetConferenceProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3198,6 +3252,7 @@ impl std::fmt::Debug for GetConferencePreferenceOutput {
 }
 /// See [`GetConferencePreferenceOutput`](crate::output::GetConferencePreferenceOutput)
 pub mod get_conference_preference_output {
+    ///
     /// A builder for [`GetConferencePreferenceOutput`](crate::output::GetConferencePreferenceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3255,6 +3310,7 @@ impl std::fmt::Debug for GetAddressBookOutput {
 }
 /// See [`GetAddressBookOutput`](crate::output::GetAddressBookOutput)
 pub mod get_address_book_output {
+    ///
     /// A builder for [`GetAddressBookOutput`](crate::output::GetAddressBookOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3302,6 +3358,7 @@ impl std::fmt::Debug for ForgetSmartHomeAppliancesOutput {
 }
 /// See [`ForgetSmartHomeAppliancesOutput`](crate::output::ForgetSmartHomeAppliancesOutput)
 pub mod forget_smart_home_appliances_output {
+    ///
     /// A builder for [`ForgetSmartHomeAppliancesOutput`](crate::output::ForgetSmartHomeAppliancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3332,6 +3389,7 @@ impl std::fmt::Debug for DisassociateSkillGroupFromRoomOutput {
 }
 /// See [`DisassociateSkillGroupFromRoomOutput`](crate::output::DisassociateSkillGroupFromRoomOutput)
 pub mod disassociate_skill_group_from_room_output {
+    ///
     /// A builder for [`DisassociateSkillGroupFromRoomOutput`](crate::output::DisassociateSkillGroupFromRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3362,6 +3420,7 @@ impl std::fmt::Debug for DisassociateSkillFromUsersOutput {
 }
 /// See [`DisassociateSkillFromUsersOutput`](crate::output::DisassociateSkillFromUsersOutput)
 pub mod disassociate_skill_from_users_output {
+    ///
     /// A builder for [`DisassociateSkillFromUsersOutput`](crate::output::DisassociateSkillFromUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3392,6 +3451,7 @@ impl std::fmt::Debug for DisassociateSkillFromSkillGroupOutput {
 }
 /// See [`DisassociateSkillFromSkillGroupOutput`](crate::output::DisassociateSkillFromSkillGroupOutput)
 pub mod disassociate_skill_from_skill_group_output {
+    ///
     /// A builder for [`DisassociateSkillFromSkillGroupOutput`](crate::output::DisassociateSkillFromSkillGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3422,6 +3482,7 @@ impl std::fmt::Debug for DisassociateDeviceFromRoomOutput {
 }
 /// See [`DisassociateDeviceFromRoomOutput`](crate::output::DisassociateDeviceFromRoomOutput)
 pub mod disassociate_device_from_room_output {
+    ///
     /// A builder for [`DisassociateDeviceFromRoomOutput`](crate::output::DisassociateDeviceFromRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3452,6 +3513,7 @@ impl std::fmt::Debug for DisassociateContactFromAddressBookOutput {
 }
 /// See [`DisassociateContactFromAddressBookOutput`](crate::output::DisassociateContactFromAddressBookOutput)
 pub mod disassociate_contact_from_address_book_output {
+    ///
     /// A builder for [`DisassociateContactFromAddressBookOutput`](crate::output::DisassociateContactFromAddressBookOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3482,6 +3544,7 @@ impl std::fmt::Debug for DeleteUserOutput {
 }
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput)
 pub mod delete_user_output {
+    ///
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3512,6 +3575,7 @@ impl std::fmt::Debug for DeleteSkillGroupOutput {
 }
 /// See [`DeleteSkillGroupOutput`](crate::output::DeleteSkillGroupOutput)
 pub mod delete_skill_group_output {
+    ///
     /// A builder for [`DeleteSkillGroupOutput`](crate::output::DeleteSkillGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3542,6 +3606,7 @@ impl std::fmt::Debug for DeleteSkillAuthorizationOutput {
 }
 /// See [`DeleteSkillAuthorizationOutput`](crate::output::DeleteSkillAuthorizationOutput)
 pub mod delete_skill_authorization_output {
+    ///
     /// A builder for [`DeleteSkillAuthorizationOutput`](crate::output::DeleteSkillAuthorizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3572,6 +3637,7 @@ impl std::fmt::Debug for DeleteRoomSkillParameterOutput {
 }
 /// See [`DeleteRoomSkillParameterOutput`](crate::output::DeleteRoomSkillParameterOutput)
 pub mod delete_room_skill_parameter_output {
+    ///
     /// A builder for [`DeleteRoomSkillParameterOutput`](crate::output::DeleteRoomSkillParameterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3602,6 +3668,7 @@ impl std::fmt::Debug for DeleteRoomOutput {
 }
 /// See [`DeleteRoomOutput`](crate::output::DeleteRoomOutput)
 pub mod delete_room_output {
+    ///
     /// A builder for [`DeleteRoomOutput`](crate::output::DeleteRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3632,6 +3699,7 @@ impl std::fmt::Debug for DeleteProfileOutput {
 }
 /// See [`DeleteProfileOutput`](crate::output::DeleteProfileOutput)
 pub mod delete_profile_output {
+    ///
     /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3662,6 +3730,7 @@ impl std::fmt::Debug for DeleteNetworkProfileOutput {
 }
 /// See [`DeleteNetworkProfileOutput`](crate::output::DeleteNetworkProfileOutput)
 pub mod delete_network_profile_output {
+    ///
     /// A builder for [`DeleteNetworkProfileOutput`](crate::output::DeleteNetworkProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3692,6 +3761,7 @@ impl std::fmt::Debug for DeleteGatewayGroupOutput {
 }
 /// See [`DeleteGatewayGroupOutput`](crate::output::DeleteGatewayGroupOutput)
 pub mod delete_gateway_group_output {
+    ///
     /// A builder for [`DeleteGatewayGroupOutput`](crate::output::DeleteGatewayGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3722,6 +3792,7 @@ impl std::fmt::Debug for DeleteDeviceUsageDataOutput {
 }
 /// See [`DeleteDeviceUsageDataOutput`](crate::output::DeleteDeviceUsageDataOutput)
 pub mod delete_device_usage_data_output {
+    ///
     /// A builder for [`DeleteDeviceUsageDataOutput`](crate::output::DeleteDeviceUsageDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3752,6 +3823,7 @@ impl std::fmt::Debug for DeleteDeviceOutput {
 }
 /// See [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput)
 pub mod delete_device_output {
+    ///
     /// A builder for [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3782,6 +3854,7 @@ impl std::fmt::Debug for DeleteContactOutput {
 }
 /// See [`DeleteContactOutput`](crate::output::DeleteContactOutput)
 pub mod delete_contact_output {
+    ///
     /// A builder for [`DeleteContactOutput`](crate::output::DeleteContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3812,6 +3885,7 @@ impl std::fmt::Debug for DeleteConferenceProviderOutput {
 }
 /// See [`DeleteConferenceProviderOutput`](crate::output::DeleteConferenceProviderOutput)
 pub mod delete_conference_provider_output {
+    ///
     /// A builder for [`DeleteConferenceProviderOutput`](crate::output::DeleteConferenceProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3842,6 +3916,7 @@ impl std::fmt::Debug for DeleteBusinessReportScheduleOutput {
 }
 /// See [`DeleteBusinessReportScheduleOutput`](crate::output::DeleteBusinessReportScheduleOutput)
 pub mod delete_business_report_schedule_output {
+    ///
     /// A builder for [`DeleteBusinessReportScheduleOutput`](crate::output::DeleteBusinessReportScheduleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3872,6 +3947,7 @@ impl std::fmt::Debug for DeleteAddressBookOutput {
 }
 /// See [`DeleteAddressBookOutput`](crate::output::DeleteAddressBookOutput)
 pub mod delete_address_book_output {
+    ///
     /// A builder for [`DeleteAddressBookOutput`](crate::output::DeleteAddressBookOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3912,6 +3988,7 @@ impl std::fmt::Debug for CreateUserOutput {
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput)
 pub mod create_user_output {
+    ///
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3966,6 +4043,7 @@ impl std::fmt::Debug for CreateSkillGroupOutput {
 }
 /// See [`CreateSkillGroupOutput`](crate::output::CreateSkillGroupOutput)
 pub mod create_skill_group_output {
+    ///
     /// A builder for [`CreateSkillGroupOutput`](crate::output::CreateSkillGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4023,6 +4101,7 @@ impl std::fmt::Debug for CreateRoomOutput {
 }
 /// See [`CreateRoomOutput`](crate::output::CreateRoomOutput)
 pub mod create_room_output {
+    ///
     /// A builder for [`CreateRoomOutput`](crate::output::CreateRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4077,6 +4156,7 @@ impl std::fmt::Debug for CreateProfileOutput {
 }
 /// See [`CreateProfileOutput`](crate::output::CreateProfileOutput)
 pub mod create_profile_output {
+    ///
     /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4131,6 +4211,7 @@ impl std::fmt::Debug for CreateNetworkProfileOutput {
 }
 /// See [`CreateNetworkProfileOutput`](crate::output::CreateNetworkProfileOutput)
 pub mod create_network_profile_output {
+    ///
     /// A builder for [`CreateNetworkProfileOutput`](crate::output::CreateNetworkProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4188,6 +4269,7 @@ impl std::fmt::Debug for CreateGatewayGroupOutput {
 }
 /// See [`CreateGatewayGroupOutput`](crate::output::CreateGatewayGroupOutput)
 pub mod create_gateway_group_output {
+    ///
     /// A builder for [`CreateGatewayGroupOutput`](crate::output::CreateGatewayGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4245,6 +4327,7 @@ impl std::fmt::Debug for CreateContactOutput {
 }
 /// See [`CreateContactOutput`](crate::output::CreateContactOutput)
 pub mod create_contact_output {
+    ///
     /// A builder for [`CreateContactOutput`](crate::output::CreateContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4299,6 +4382,7 @@ impl std::fmt::Debug for CreateConferenceProviderOutput {
 }
 /// See [`CreateConferenceProviderOutput`](crate::output::CreateConferenceProviderOutput)
 pub mod create_conference_provider_output {
+    ///
     /// A builder for [`CreateConferenceProviderOutput`](crate::output::CreateConferenceProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4356,6 +4440,7 @@ impl std::fmt::Debug for CreateBusinessReportScheduleOutput {
 }
 /// See [`CreateBusinessReportScheduleOutput`](crate::output::CreateBusinessReportScheduleOutput)
 pub mod create_business_report_schedule_output {
+    ///
     /// A builder for [`CreateBusinessReportScheduleOutput`](crate::output::CreateBusinessReportScheduleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4410,6 +4495,7 @@ impl std::fmt::Debug for CreateAddressBookOutput {
 }
 /// See [`CreateAddressBookOutput`](crate::output::CreateAddressBookOutput)
 pub mod create_address_book_output {
+    ///
     /// A builder for [`CreateAddressBookOutput`](crate::output::CreateAddressBookOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4457,6 +4543,7 @@ impl std::fmt::Debug for AssociateSkillWithUsersOutput {
 }
 /// See [`AssociateSkillWithUsersOutput`](crate::output::AssociateSkillWithUsersOutput)
 pub mod associate_skill_with_users_output {
+    ///
     /// A builder for [`AssociateSkillWithUsersOutput`](crate::output::AssociateSkillWithUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4487,6 +4574,7 @@ impl std::fmt::Debug for AssociateSkillWithSkillGroupOutput {
 }
 /// See [`AssociateSkillWithSkillGroupOutput`](crate::output::AssociateSkillWithSkillGroupOutput)
 pub mod associate_skill_with_skill_group_output {
+    ///
     /// A builder for [`AssociateSkillWithSkillGroupOutput`](crate::output::AssociateSkillWithSkillGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4517,6 +4605,7 @@ impl std::fmt::Debug for AssociateSkillGroupWithRoomOutput {
 }
 /// See [`AssociateSkillGroupWithRoomOutput`](crate::output::AssociateSkillGroupWithRoomOutput)
 pub mod associate_skill_group_with_room_output {
+    ///
     /// A builder for [`AssociateSkillGroupWithRoomOutput`](crate::output::AssociateSkillGroupWithRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4547,6 +4636,7 @@ impl std::fmt::Debug for AssociateDeviceWithRoomOutput {
 }
 /// See [`AssociateDeviceWithRoomOutput`](crate::output::AssociateDeviceWithRoomOutput)
 pub mod associate_device_with_room_output {
+    ///
     /// A builder for [`AssociateDeviceWithRoomOutput`](crate::output::AssociateDeviceWithRoomOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4577,6 +4667,7 @@ impl std::fmt::Debug for AssociateDeviceWithNetworkProfileOutput {
 }
 /// See [`AssociateDeviceWithNetworkProfileOutput`](crate::output::AssociateDeviceWithNetworkProfileOutput)
 pub mod associate_device_with_network_profile_output {
+    ///
     /// A builder for [`AssociateDeviceWithNetworkProfileOutput`](crate::output::AssociateDeviceWithNetworkProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4607,6 +4698,7 @@ impl std::fmt::Debug for AssociateContactWithAddressBookOutput {
 }
 /// See [`AssociateContactWithAddressBookOutput`](crate::output::AssociateContactWithAddressBookOutput)
 pub mod associate_contact_with_address_book_output {
+    ///
     /// A builder for [`AssociateContactWithAddressBookOutput`](crate::output::AssociateContactWithAddressBookOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4637,6 +4729,7 @@ impl std::fmt::Debug for ApproveSkillOutput {
 }
 /// See [`ApproveSkillOutput`](crate::output::ApproveSkillOutput)
 pub mod approve_skill_output {
+    ///
     /// A builder for [`ApproveSkillOutput`](crate::output::ApproveSkillOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

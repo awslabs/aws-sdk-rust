@@ -945,6 +945,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1009,6 +1010,7 @@ impl std::fmt::Display for NotAuthorizedException {
 impl std::error::Error for NotAuthorizedException {}
 /// See [`NotAuthorizedException`](crate::error::NotAuthorizedException)
 pub mod not_authorized_exception {
+    ///
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1073,6 +1075,7 @@ impl std::fmt::Display for InvalidArgumentException {
 impl std::error::Error for InvalidArgumentException {}
 /// See [`InvalidArgumentException`](crate::error::InvalidArgumentException)
 pub mod invalid_argument_exception {
+    ///
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1137,6 +1140,7 @@ impl std::fmt::Display for ClientLimitExceededException {
 impl std::error::Error for ClientLimitExceededException {}
 /// See [`ClientLimitExceededException`](crate::error::ClientLimitExceededException)
 pub mod client_limit_exceeded_exception {
+    ///
     /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1201,6 +1205,7 @@ impl std::fmt::Display for UnsupportedStreamMediaTypeException {
 impl std::error::Error for UnsupportedStreamMediaTypeException {}
 /// See [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException)
 pub mod unsupported_stream_media_type_exception {
+    ///
     /// A builder for [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1265,6 +1270,7 @@ impl std::fmt::Display for NoDataRetentionException {
 impl std::error::Error for NoDataRetentionException {}
 /// See [`NoDataRetentionException`](crate::error::NoDataRetentionException)
 pub mod no_data_retention_exception {
+    ///
     /// A builder for [`NoDataRetentionException`](crate::error::NoDataRetentionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1329,6 +1335,7 @@ impl std::fmt::Display for MissingCodecPrivateDataException {
 impl std::error::Error for MissingCodecPrivateDataException {}
 /// See [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException)
 pub mod missing_codec_private_data_exception {
+    ///
     /// A builder for [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1393,6 +1400,7 @@ impl std::fmt::Display for InvalidCodecPrivateDataException {
 impl std::error::Error for InvalidCodecPrivateDataException {}
 /// See [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException)
 pub mod invalid_codec_private_data_exception {
+    ///
     /// A builder for [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1457,6 +1465,7 @@ impl std::fmt::Display for InvalidMediaFrameException {
 impl std::error::Error for InvalidMediaFrameException {}
 /// See [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException)
 pub mod invalid_media_frame_exception {
+    ///
     /// A builder for [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

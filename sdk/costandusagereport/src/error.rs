@@ -458,6 +458,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException)
 pub mod validation_exception {
+    ///
     /// A builder for [`ValidationException`](crate::error::ValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -522,6 +523,7 @@ impl std::fmt::Display for ReportLimitReachedException {
 impl std::error::Error for ReportLimitReachedException {}
 /// See [`ReportLimitReachedException`](crate::error::ReportLimitReachedException)
 pub mod report_limit_reached_exception {
+    ///
     /// A builder for [`ReportLimitReachedException`](crate::error::ReportLimitReachedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -586,6 +588,7 @@ impl std::fmt::Display for InternalErrorException {
 impl std::error::Error for InternalErrorException {}
 /// See [`InternalErrorException`](crate::error::InternalErrorException)
 pub mod internal_error_exception {
+    ///
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -650,6 +653,7 @@ impl std::fmt::Display for DuplicateReportNameException {
 impl std::error::Error for DuplicateReportNameException {}
 /// See [`DuplicateReportNameException`](crate::error::DuplicateReportNameException)
 pub mod duplicate_report_name_exception {
+    ///
     /// A builder for [`DuplicateReportNameException`](crate::error::DuplicateReportNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

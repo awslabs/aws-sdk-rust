@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateAttributeGroupOutput {
 }
 /// See [`UpdateAttributeGroupOutput`](crate::output::UpdateAttributeGroupOutput)
 pub mod update_attribute_group_output {
+    ///
     /// A builder for [`UpdateAttributeGroupOutput`](crate::output::UpdateAttributeGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -78,6 +79,7 @@ impl std::fmt::Debug for UpdateApplicationOutput {
 }
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
 pub mod update_application_output {
+    ///
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -125,6 +127,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -155,6 +158,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -209,6 +213,7 @@ impl std::fmt::Debug for SyncResourceOutput {
 }
 /// See [`SyncResourceOutput`](crate::output::SyncResourceOutput)
 pub mod sync_resource_output {
+    ///
     /// A builder for [`SyncResourceOutput`](crate::output::SyncResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -297,6 +302,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -373,6 +379,7 @@ impl std::fmt::Debug for ListAttributeGroupsOutput {
 }
 /// See [`ListAttributeGroupsOutput`](crate::output::ListAttributeGroupsOutput)
 pub mod list_attribute_groups_output {
+    ///
     /// A builder for [`ListAttributeGroupsOutput`](crate::output::ListAttributeGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -456,6 +463,7 @@ impl std::fmt::Debug for ListAssociatedResourcesOutput {
 }
 /// See [`ListAssociatedResourcesOutput`](crate::output::ListAssociatedResourcesOutput)
 pub mod list_associated_resources_output {
+    ///
     /// A builder for [`ListAssociatedResourcesOutput`](crate::output::ListAssociatedResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -538,6 +546,7 @@ impl std::fmt::Debug for ListAssociatedAttributeGroupsOutput {
 }
 /// See [`ListAssociatedAttributeGroupsOutput`](crate::output::ListAssociatedAttributeGroupsOutput)
 pub mod list_associated_attribute_groups_output {
+    ///
     /// A builder for [`ListAssociatedAttributeGroupsOutput`](crate::output::ListAssociatedAttributeGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -620,6 +629,7 @@ impl std::fmt::Debug for ListApplicationsOutput {
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
 pub mod list_applications_output {
+    ///
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -749,6 +759,7 @@ impl std::fmt::Debug for GetAttributeGroupOutput {
 }
 /// See [`GetAttributeGroupOutput`](crate::output::GetAttributeGroupOutput)
 pub mod get_attribute_group_output {
+    ///
     /// A builder for [`GetAttributeGroupOutput`](crate::output::GetAttributeGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -910,6 +921,7 @@ impl std::fmt::Debug for GetAssociatedResourceOutput {
 }
 /// See [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput)
 pub mod get_associated_resource_output {
+    ///
     /// A builder for [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1024,6 +1036,7 @@ impl std::fmt::Debug for GetApplicationOutput {
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput)
 pub mod get_application_output {
+    ///
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1207,6 +1220,7 @@ impl std::fmt::Debug for DisassociateResourceOutput {
 }
 /// See [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput)
 pub mod disassociate_resource_output {
+    ///
     /// A builder for [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1283,6 +1297,7 @@ impl std::fmt::Debug for DisassociateAttributeGroupOutput {
 }
 /// See [`DisassociateAttributeGroupOutput`](crate::output::DisassociateAttributeGroupOutput)
 pub mod disassociate_attribute_group_output {
+    ///
     /// A builder for [`DisassociateAttributeGroupOutput`](crate::output::DisassociateAttributeGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1355,6 +1370,7 @@ impl std::fmt::Debug for DeleteAttributeGroupOutput {
 }
 /// See [`DeleteAttributeGroupOutput`](crate::output::DeleteAttributeGroupOutput)
 pub mod delete_attribute_group_output {
+    ///
     /// A builder for [`DeleteAttributeGroupOutput`](crate::output::DeleteAttributeGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1412,6 +1428,7 @@ impl std::fmt::Debug for DeleteApplicationOutput {
 }
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
 pub mod delete_application_output {
+    ///
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1469,6 +1486,7 @@ impl std::fmt::Debug for CreateAttributeGroupOutput {
 }
 /// See [`CreateAttributeGroupOutput`](crate::output::CreateAttributeGroupOutput)
 pub mod create_attribute_group_output {
+    ///
     /// A builder for [`CreateAttributeGroupOutput`](crate::output::CreateAttributeGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1526,6 +1544,7 @@ impl std::fmt::Debug for CreateApplicationOutput {
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
 pub mod create_application_output {
+    ///
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1590,6 +1609,7 @@ impl std::fmt::Debug for AssociateResourceOutput {
 }
 /// See [`AssociateResourceOutput`](crate::output::AssociateResourceOutput)
 pub mod associate_resource_output {
+    ///
     /// A builder for [`AssociateResourceOutput`](crate::output::AssociateResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1666,6 +1686,7 @@ impl std::fmt::Debug for AssociateAttributeGroupOutput {
 }
 /// See [`AssociateAttributeGroupOutput`](crate::output::AssociateAttributeGroupOutput)
 pub mod associate_attribute_group_output {
+    ///
     /// A builder for [`AssociateAttributeGroupOutput`](crate::output::AssociateAttributeGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

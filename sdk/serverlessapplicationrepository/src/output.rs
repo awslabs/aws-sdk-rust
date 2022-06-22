@@ -123,6 +123,7 @@ impl std::fmt::Debug for UpdateApplicationOutput {
 }
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
 pub mod update_application_output {
+    ///
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -353,6 +354,7 @@ impl std::fmt::Debug for UnshareApplicationOutput {
 }
 /// See [`UnshareApplicationOutput`](crate::output::UnshareApplicationOutput)
 pub mod unshare_application_output {
+    ///
     /// A builder for [`UnshareApplicationOutput`](crate::output::UnshareApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -393,6 +395,7 @@ impl std::fmt::Debug for PutApplicationPolicyOutput {
 }
 /// See [`PutApplicationPolicyOutput`](crate::output::PutApplicationPolicyOutput)
 pub mod put_application_policy_output {
+    ///
     /// A builder for [`PutApplicationPolicyOutput`](crate::output::PutApplicationPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -464,6 +467,7 @@ impl std::fmt::Debug for ListApplicationVersionsOutput {
 }
 /// See [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput)
 pub mod list_application_versions_output {
+    ///
     /// A builder for [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -546,6 +550,7 @@ impl std::fmt::Debug for ListApplicationsOutput {
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
 pub mod list_applications_output {
+    ///
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -632,6 +637,7 @@ impl std::fmt::Debug for ListApplicationDependenciesOutput {
 }
 /// See [`ListApplicationDependenciesOutput`](crate::output::ListApplicationDependenciesOutput)
 pub mod list_application_dependencies_output {
+    ///
     /// A builder for [`ListApplicationDependenciesOutput`](crate::output::ListApplicationDependenciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -756,6 +762,7 @@ impl std::fmt::Debug for GetCloudFormationTemplateOutput {
 }
 /// See [`GetCloudFormationTemplateOutput`](crate::output::GetCloudFormationTemplateOutput)
 pub mod get_cloud_formation_template_output {
+    ///
     /// A builder for [`GetCloudFormationTemplateOutput`](crate::output::GetCloudFormationTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -900,6 +907,7 @@ impl std::fmt::Debug for GetApplicationPolicyOutput {
 }
 /// See [`GetApplicationPolicyOutput`](crate::output::GetApplicationPolicyOutput)
 pub mod get_application_policy_output {
+    ///
     /// A builder for [`GetApplicationPolicyOutput`](crate::output::GetApplicationPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1066,6 +1074,7 @@ impl std::fmt::Debug for GetApplicationOutput {
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput)
 pub mod get_application_output {
+    ///
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1296,6 +1305,7 @@ impl std::fmt::Debug for DeleteApplicationOutput {
 }
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
 pub mod delete_application_output {
+    ///
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1384,6 +1394,7 @@ impl std::fmt::Debug for CreateCloudFormationTemplateOutput {
 }
 /// See [`CreateCloudFormationTemplateOutput`](crate::output::CreateCloudFormationTemplateOutput)
 pub mod create_cloud_formation_template_output {
+    ///
     /// A builder for [`CreateCloudFormationTemplateOutput`](crate::output::CreateCloudFormationTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1555,6 +1566,7 @@ impl std::fmt::Debug for CreateCloudFormationChangeSetOutput {
 }
 /// See [`CreateCloudFormationChangeSetOutput`](crate::output::CreateCloudFormationChangeSetOutput)
 pub mod create_cloud_formation_change_set_output {
+    ///
     /// A builder for [`CreateCloudFormationChangeSetOutput`](crate::output::CreateCloudFormationChangeSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1733,6 +1745,7 @@ impl std::fmt::Debug for CreateApplicationVersionOutput {
 }
 /// See [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput)
 pub mod create_application_version_output {
+    ///
     /// A builder for [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2034,6 +2047,7 @@ impl std::fmt::Debug for CreateApplicationOutput {
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
 pub mod create_application_output {
+    ///
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -28,6 +28,7 @@ impl std::fmt::Debug for UpdateConnectivityInfoOutput {
 }
 /// See [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput)
 pub mod update_connectivity_info_output {
+    ///
     /// A builder for [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -84,6 +85,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -114,6 +116,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -160,6 +163,7 @@ impl std::fmt::Debug for ResolveComponentCandidatesOutput {
 }
 /// See [`ResolveComponentCandidatesOutput`](crate::output::ResolveComponentCandidatesOutput)
 pub mod resolve_component_candidates_output {
+    ///
     /// A builder for [`ResolveComponentCandidatesOutput`](crate::output::ResolveComponentCandidatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -231,6 +235,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -307,6 +312,7 @@ impl std::fmt::Debug for ListInstalledComponentsOutput {
 }
 /// See [`ListInstalledComponentsOutput`](crate::output::ListInstalledComponentsOutput)
 pub mod list_installed_components_output {
+    ///
     /// A builder for [`ListInstalledComponentsOutput`](crate::output::ListInstalledComponentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -393,6 +399,7 @@ impl std::fmt::Debug for ListEffectiveDeploymentsOutput {
 }
 /// See [`ListEffectiveDeploymentsOutput`](crate::output::ListEffectiveDeploymentsOutput)
 pub mod list_effective_deployments_output {
+    ///
     /// A builder for [`ListEffectiveDeploymentsOutput`](crate::output::ListEffectiveDeploymentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -476,6 +483,7 @@ impl std::fmt::Debug for ListDeploymentsOutput {
 }
 /// See [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput)
 pub mod list_deployments_output {
+    ///
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -558,6 +566,7 @@ impl std::fmt::Debug for ListCoreDevicesOutput {
 }
 /// See [`ListCoreDevicesOutput`](crate::output::ListCoreDevicesOutput)
 pub mod list_core_devices_output {
+    ///
     /// A builder for [`ListCoreDevicesOutput`](crate::output::ListCoreDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -643,6 +652,7 @@ impl std::fmt::Debug for ListComponentVersionsOutput {
 }
 /// See [`ListComponentVersionsOutput`](crate::output::ListComponentVersionsOutput)
 pub mod list_component_versions_output {
+    ///
     /// A builder for [`ListComponentVersionsOutput`](crate::output::ListComponentVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -726,6 +736,7 @@ impl std::fmt::Debug for ListComponentsOutput {
 }
 /// See [`ListComponentsOutput`](crate::output::ListComponentsOutput)
 pub mod list_components_output {
+    ///
     /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -811,6 +822,7 @@ impl std::fmt::Debug for ListClientDevicesAssociatedWithCoreDeviceOutput {
 }
 /// See [`ListClientDevicesAssociatedWithCoreDeviceOutput`](crate::output::ListClientDevicesAssociatedWithCoreDeviceOutput)
 pub mod list_client_devices_associated_with_core_device_output {
+    ///
     /// A builder for [`ListClientDevicesAssociatedWithCoreDeviceOutput`](crate::output::ListClientDevicesAssociatedWithCoreDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -898,6 +910,7 @@ impl std::fmt::Debug for GetServiceRoleForAccountOutput {
 }
 /// See [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput)
 pub mod get_service_role_for_account_output {
+    ///
     /// A builder for [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1069,6 +1082,7 @@ impl std::fmt::Debug for GetDeploymentOutput {
 }
 /// See [`GetDeploymentOutput`](crate::output::GetDeploymentOutput)
 pub mod get_deployment_output {
+    ///
     /// A builder for [`GetDeploymentOutput`](crate::output::GetDeploymentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1386,6 +1400,7 @@ impl std::fmt::Debug for GetCoreDeviceOutput {
 }
 /// See [`GetCoreDeviceOutput`](crate::output::GetCoreDeviceOutput)
 pub mod get_core_device_output {
+    ///
     /// A builder for [`GetCoreDeviceOutput`](crate::output::GetCoreDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1553,6 +1568,7 @@ impl std::fmt::Debug for GetConnectivityInfoOutput {
 }
 /// See [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput)
 pub mod get_connectivity_info_output {
+    ///
     /// A builder for [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1629,6 +1645,7 @@ impl std::fmt::Debug for GetComponentVersionArtifactOutput {
 }
 /// See [`GetComponentVersionArtifactOutput`](crate::output::GetComponentVersionArtifactOutput)
 pub mod get_component_version_artifact_output {
+    ///
     /// A builder for [`GetComponentVersionArtifactOutput`](crate::output::GetComponentVersionArtifactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1704,6 +1721,7 @@ impl std::fmt::Debug for GetComponentOutput {
 }
 /// See [`GetComponentOutput`](crate::output::GetComponentOutput)
 pub mod get_component_output {
+    ///
     /// A builder for [`GetComponentOutput`](crate::output::GetComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1802,6 +1820,7 @@ impl std::fmt::Debug for DisassociateServiceRoleFromAccountOutput {
 }
 /// See [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput)
 pub mod disassociate_service_role_from_account_output {
+    ///
     /// A builder for [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1919,6 +1938,7 @@ impl std::fmt::Debug for DescribeComponentOutput {
 }
 /// See [`DescribeComponentOutput`](crate::output::DescribeComponentOutput)
 pub mod describe_component_output {
+    ///
     /// A builder for [`DescribeComponentOutput`](crate::output::DescribeComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2097,6 +2117,7 @@ impl std::fmt::Debug for DeleteDeploymentOutput {
 }
 /// See [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput)
 pub mod delete_deployment_output {
+    ///
     /// A builder for [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2127,6 +2148,7 @@ impl std::fmt::Debug for DeleteCoreDeviceOutput {
 }
 /// See [`DeleteCoreDeviceOutput`](crate::output::DeleteCoreDeviceOutput)
 pub mod delete_core_device_output {
+    ///
     /// A builder for [`DeleteCoreDeviceOutput`](crate::output::DeleteCoreDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2157,6 +2179,7 @@ impl std::fmt::Debug for DeleteComponentOutput {
 }
 /// See [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
 pub mod delete_component_output {
+    ///
     /// A builder for [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2211,6 +2234,7 @@ impl std::fmt::Debug for CreateDeploymentOutput {
 }
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput)
 pub mod create_deployment_output {
+    ///
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2320,6 +2344,7 @@ impl std::fmt::Debug for CreateComponentVersionOutput {
 }
 /// See [`CreateComponentVersionOutput`](crate::output::CreateComponentVersionOutput)
 pub mod create_component_version_output {
+    ///
     /// A builder for [`CreateComponentVersionOutput`](crate::output::CreateComponentVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2434,6 +2459,7 @@ impl std::fmt::Debug for CancelDeploymentOutput {
 }
 /// See [`CancelDeploymentOutput`](crate::output::CancelDeploymentOutput)
 pub mod cancel_deployment_output {
+    ///
     /// A builder for [`CancelDeploymentOutput`](crate::output::CancelDeploymentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2493,6 +2519,7 @@ impl std::fmt::Debug for BatchDisassociateClientDeviceFromCoreDeviceOutput {
 }
 /// See [`BatchDisassociateClientDeviceFromCoreDeviceOutput`](crate::output::BatchDisassociateClientDeviceFromCoreDeviceOutput)
 pub mod batch_disassociate_client_device_from_core_device_output {
+    ///
     /// A builder for [`BatchDisassociateClientDeviceFromCoreDeviceOutput`](crate::output::BatchDisassociateClientDeviceFromCoreDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2568,6 +2595,7 @@ impl std::fmt::Debug for BatchAssociateClientDeviceWithCoreDeviceOutput {
 }
 /// See [`BatchAssociateClientDeviceWithCoreDeviceOutput`](crate::output::BatchAssociateClientDeviceWithCoreDeviceOutput)
 pub mod batch_associate_client_device_with_core_device_output {
+    ///
     /// A builder for [`BatchAssociateClientDeviceWithCoreDeviceOutput`](crate::output::BatchAssociateClientDeviceWithCoreDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2639,6 +2667,7 @@ impl std::fmt::Debug for AssociateServiceRoleToAccountOutput {
 }
 /// See [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput)
 pub mod associate_service_role_to_account_output {
+    ///
     /// A builder for [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

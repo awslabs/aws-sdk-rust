@@ -147,6 +147,7 @@ impl std::fmt::Debug for Cors {
 }
 /// See [`Cors`](crate::model::Cors)
 pub mod cors {
+    ///
     /// A builder for [`Cors`](crate::model::Cors)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -361,6 +362,7 @@ impl std::fmt::Debug for DestinationConfig {
 }
 /// See [`DestinationConfig`](crate::model::DestinationConfig)
 pub mod destination_config {
+    ///
     /// A builder for [`DestinationConfig`](crate::model::DestinationConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -433,6 +435,7 @@ impl std::fmt::Debug for OnFailure {
 }
 /// See [`OnFailure`](crate::model::OnFailure)
 pub mod on_failure {
+    ///
     /// A builder for [`OnFailure`](crate::model::OnFailure)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -487,6 +490,7 @@ impl std::fmt::Debug for OnSuccess {
 }
 /// See [`OnSuccess`](crate::model::OnSuccess)
 pub mod on_success {
+    ///
     /// A builder for [`OnSuccess`](crate::model::OnSuccess)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -541,6 +545,7 @@ impl std::fmt::Debug for EphemeralStorage {
 }
 /// See [`EphemeralStorage`](crate::model::EphemeralStorage)
 pub mod ephemeral_storage {
+    ///
     /// A builder for [`EphemeralStorage`](crate::model::EphemeralStorage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -655,6 +660,7 @@ impl std::fmt::Debug for ImageConfigResponse {
 }
 /// See [`ImageConfigResponse`](crate::model::ImageConfigResponse)
 pub mod image_config_response {
+    ///
     /// A builder for [`ImageConfigResponse`](crate::model::ImageConfigResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -734,6 +740,7 @@ impl std::fmt::Debug for ImageConfigError {
 }
 /// See [`ImageConfigError`](crate::model::ImageConfigError)
 pub mod image_config_error {
+    ///
     /// A builder for [`ImageConfigError`](crate::model::ImageConfigError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -814,6 +821,7 @@ impl std::fmt::Debug for ImageConfig {
 }
 /// See [`ImageConfig`](crate::model::ImageConfig)
 pub mod image_config {
+    ///
     /// A builder for [`ImageConfig`](crate::model::ImageConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -975,6 +983,7 @@ impl std::fmt::Debug for FileSystemConfig {
 }
 /// See [`FileSystemConfig`](crate::model::FileSystemConfig)
 pub mod file_system_config {
+    ///
     /// A builder for [`FileSystemConfig`](crate::model::FileSystemConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1405,6 +1414,7 @@ impl std::fmt::Debug for Layer {
 }
 /// See [`Layer`](crate::model::Layer)
 pub mod layer {
+    ///
     /// A builder for [`Layer`](crate::model::Layer)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1504,6 +1514,7 @@ impl std::fmt::Debug for TracingConfigResponse {
 }
 /// See [`TracingConfigResponse`](crate::model::TracingConfigResponse)
 pub mod tracing_config_response {
+    ///
     /// A builder for [`TracingConfigResponse`](crate::model::TracingConfigResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1622,6 +1633,7 @@ impl std::fmt::Debug for EnvironmentResponse {
 }
 /// See [`EnvironmentResponse`](crate::model::EnvironmentResponse)
 pub mod environment_response {
+    ///
     /// A builder for [`EnvironmentResponse`](crate::model::EnvironmentResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1715,6 +1727,7 @@ impl std::fmt::Debug for EnvironmentError {
 }
 /// See [`EnvironmentError`](crate::model::EnvironmentError)
 pub mod environment_error {
+    ///
     /// A builder for [`EnvironmentError`](crate::model::EnvironmentError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1781,6 +1794,7 @@ impl std::fmt::Debug for DeadLetterConfig {
 }
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig)
 pub mod dead_letter_config {
+    ///
     /// A builder for [`DeadLetterConfig`](crate::model::DeadLetterConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1849,6 +1863,7 @@ impl std::fmt::Debug for VpcConfigResponse {
 }
 /// See [`VpcConfigResponse`](crate::model::VpcConfigResponse)
 pub mod vpc_config_response {
+    ///
     /// A builder for [`VpcConfigResponse`](crate::model::VpcConfigResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2128,6 +2143,7 @@ impl std::fmt::Debug for TracingConfig {
 }
 /// See [`TracingConfig`](crate::model::TracingConfig)
 pub mod tracing_config {
+    ///
     /// A builder for [`TracingConfig`](crate::model::TracingConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2184,6 +2200,7 @@ impl std::fmt::Debug for Environment {
 }
 /// See [`Environment`](crate::model::Environment)
 pub mod environment {
+    ///
     /// A builder for [`Environment`](crate::model::Environment)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2262,6 +2279,7 @@ impl std::fmt::Debug for VpcConfig {
 }
 /// See [`VpcConfig`](crate::model::VpcConfig)
 pub mod vpc_config {
+    ///
     /// A builder for [`VpcConfig`](crate::model::VpcConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2403,6 +2421,7 @@ impl std::fmt::Debug for SelfManagedEventSource {
 }
 /// See [`SelfManagedEventSource`](crate::model::SelfManagedEventSource)
 pub mod self_managed_event_source {
+    ///
     /// A builder for [`SelfManagedEventSource`](crate::model::SelfManagedEventSource)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2560,6 +2579,7 @@ impl std::fmt::Debug for SourceAccessConfiguration {
 }
 /// See [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration)
 pub mod source_access_configuration {
+    ///
     /// A builder for [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2739,6 +2759,7 @@ impl std::fmt::Debug for FilterCriteria {
 }
 /// See [`FilterCriteria`](crate::model::FilterCriteria)
 pub mod filter_criteria {
+    ///
     /// A builder for [`FilterCriteria`](crate::model::FilterCriteria)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2802,6 +2823,7 @@ impl std::fmt::Debug for Filter {
 }
 /// See [`Filter`](crate::model::Filter)
 pub mod filter {
+    ///
     /// A builder for [`Filter`](crate::model::Filter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2950,6 +2972,7 @@ impl std::fmt::Debug for CodeSigningConfig {
 }
 /// See [`CodeSigningConfig`](crate::model::CodeSigningConfig)
 pub mod code_signing_config {
+    ///
     /// A builder for [`CodeSigningConfig`](crate::model::CodeSigningConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3086,6 +3109,7 @@ impl std::fmt::Debug for CodeSigningPolicies {
 }
 /// See [`CodeSigningPolicies`](crate::model::CodeSigningPolicies)
 pub mod code_signing_policies {
+    ///
     /// A builder for [`CodeSigningPolicies`](crate::model::CodeSigningPolicies)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3207,6 +3231,7 @@ impl std::fmt::Debug for AllowedPublishers {
 }
 /// See [`AllowedPublishers`](crate::model::AllowedPublishers)
 pub mod allowed_publishers {
+    ///
     /// A builder for [`AllowedPublishers`](crate::model::AllowedPublishers)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3280,6 +3305,7 @@ impl std::fmt::Debug for AliasRoutingConfiguration {
 }
 /// See [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration)
 pub mod alias_routing_configuration {
+    ///
     /// A builder for [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3438,6 +3464,7 @@ impl std::fmt::Debug for LayerVersionContentOutput {
 }
 /// See [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput)
 pub mod layer_version_content_output {
+    ///
     /// A builder for [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3570,6 +3597,7 @@ impl std::fmt::Debug for LayerVersionContentInput {
 }
 /// See [`LayerVersionContentInput`](crate::model::LayerVersionContentInput)
 pub mod layer_version_content_input {
+    ///
     /// A builder for [`LayerVersionContentInput`](crate::model::LayerVersionContentInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3896,6 +3924,7 @@ impl std::fmt::Debug for FunctionConfiguration {
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration)
 pub mod function_configuration {
+    ///
     /// A builder for [`FunctionConfiguration`](crate::model::FunctionConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4465,6 +4494,7 @@ impl std::fmt::Debug for ProvisionedConcurrencyConfigListItem {
 }
 /// See [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem)
 pub mod provisioned_concurrency_config_list_item {
+    ///
     /// A builder for [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4654,6 +4684,7 @@ impl std::fmt::Debug for LayerVersionsListItem {
 }
 /// See [`LayerVersionsListItem`](crate::model::LayerVersionsListItem)
 pub mod layer_versions_list_item {
+    ///
     /// A builder for [`LayerVersionsListItem`](crate::model::LayerVersionsListItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4818,6 +4849,7 @@ impl std::fmt::Debug for LayersListItem {
 }
 /// See [`LayersListItem`](crate::model::LayersListItem)
 pub mod layers_list_item {
+    ///
     /// A builder for [`LayersListItem`](crate::model::LayersListItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4938,6 +4970,7 @@ impl std::fmt::Debug for FunctionUrlConfig {
 }
 /// See [`FunctionUrlConfig`](crate::model::FunctionUrlConfig)
 pub mod function_url_config {
+    ///
     /// A builder for [`FunctionUrlConfig`](crate::model::FunctionUrlConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5157,6 +5190,7 @@ impl std::fmt::Debug for FunctionEventInvokeConfig {
 }
 /// See [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig)
 pub mod function_event_invoke_config {
+    ///
     /// A builder for [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5467,6 +5501,7 @@ impl std::fmt::Debug for EventSourceMappingConfiguration {
 }
 /// See [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration)
 pub mod event_source_mapping_configuration {
+    ///
     /// A builder for [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5912,6 +5947,7 @@ impl std::fmt::Debug for AliasConfiguration {
 }
 /// See [`AliasConfiguration`](crate::model::AliasConfiguration)
 pub mod alias_configuration {
+    ///
     /// A builder for [`AliasConfiguration`](crate::model::AliasConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6149,6 +6185,7 @@ impl std::fmt::Debug for Concurrency {
 }
 /// See [`Concurrency`](crate::model::Concurrency)
 pub mod concurrency {
+    ///
     /// A builder for [`Concurrency`](crate::model::Concurrency)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6227,6 +6264,7 @@ impl std::fmt::Debug for FunctionCodeLocation {
 }
 /// See [`FunctionCodeLocation`](crate::model::FunctionCodeLocation)
 pub mod function_code_location {
+    ///
     /// A builder for [`FunctionCodeLocation`](crate::model::FunctionCodeLocation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6330,6 +6368,7 @@ impl std::fmt::Debug for AccountUsage {
 }
 /// See [`AccountUsage`](crate::model::AccountUsage)
 pub mod account_usage {
+    ///
     /// A builder for [`AccountUsage`](crate::model::AccountUsage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6427,6 +6466,7 @@ impl std::fmt::Debug for AccountLimit {
 }
 /// See [`AccountLimit`](crate::model::AccountLimit)
 pub mod account_limit {
+    ///
     /// A builder for [`AccountLimit`](crate::model::AccountLimit)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6560,6 +6600,7 @@ impl std::fmt::Debug for FunctionCode {
 }
 /// See [`FunctionCode`](crate::model::FunctionCode)
 pub mod function_code {
+    ///
     /// A builder for [`FunctionCode`](crate::model::FunctionCode)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

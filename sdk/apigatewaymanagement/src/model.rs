@@ -28,6 +28,7 @@ impl std::fmt::Debug for Identity {
 }
 /// See [`Identity`](crate::model::Identity)
 pub mod identity {
+    ///
     /// A builder for [`Identity`](crate::model::Identity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

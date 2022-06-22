@@ -127,6 +127,7 @@ impl std::fmt::Debug for RadiusSettings {
 }
 /// See [`RadiusSettings`](crate::model::RadiusSettings)
 pub mod radius_settings {
+    ///
     /// A builder for [`RadiusSettings`](crate::model::RadiusSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -357,6 +358,7 @@ impl std::fmt::Debug for UnshareTarget {
 }
 /// See [`UnshareTarget`](crate::model::UnshareTarget)
 pub mod unshare_target {
+    ///
     /// A builder for [`UnshareTarget`](crate::model::UnshareTarget)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -536,6 +538,7 @@ impl std::fmt::Debug for ShareTarget {
 }
 /// See [`ShareTarget`](crate::model::ShareTarget)
 pub mod share_target {
+    ///
     /// A builder for [`ShareTarget`](crate::model::ShareTarget)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -602,6 +605,7 @@ impl std::fmt::Debug for ClientCertAuthSettings {
 }
 /// See [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings)
 pub mod client_cert_auth_settings {
+    ///
     /// A builder for [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -718,6 +722,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -831,6 +836,7 @@ impl std::fmt::Debug for SchemaExtensionInfo {
 }
 /// See [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo)
 pub mod schema_extension_info {
+    ///
     /// A builder for [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1091,6 +1097,7 @@ impl std::fmt::Debug for LogSubscription {
 }
 /// See [`LogSubscription`](crate::model::LogSubscription)
 pub mod log_subscription {
+    ///
     /// A builder for [`LogSubscription`](crate::model::LogSubscription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1210,6 +1217,7 @@ impl std::fmt::Debug for IpRouteInfo {
 }
 /// See [`IpRouteInfo`](crate::model::IpRouteInfo)
 pub mod ip_route_info {
+    ///
     /// A builder for [`IpRouteInfo`](crate::model::IpRouteInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1439,6 +1447,7 @@ impl std::fmt::Debug for CertificateInfo {
 }
 /// See [`CertificateInfo`](crate::model::CertificateInfo)
 pub mod certificate_info {
+    ///
     /// A builder for [`CertificateInfo`](crate::model::CertificateInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1651,6 +1660,7 @@ impl std::fmt::Debug for SnapshotLimits {
 }
 /// See [`SnapshotLimits`](crate::model::SnapshotLimits)
 pub mod snapshot_limits {
+    ///
     /// A builder for [`SnapshotLimits`](crate::model::SnapshotLimits)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1820,6 +1830,7 @@ impl std::fmt::Debug for DirectoryLimits {
 }
 /// See [`DirectoryLimits`](crate::model::DirectoryLimits)
 pub mod directory_limits {
+    ///
     /// A builder for [`DirectoryLimits`](crate::model::DirectoryLimits)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2172,6 +2183,7 @@ impl std::fmt::Debug for Trust {
 }
 /// See [`Trust`](crate::model::Trust)
 pub mod trust {
+    ///
     /// A builder for [`Trust`](crate::model::Trust)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2625,6 +2637,7 @@ impl std::fmt::Debug for Snapshot {
 }
 /// See [`Snapshot`](crate::model::Snapshot)
 pub mod snapshot {
+    ///
     /// A builder for [`Snapshot`](crate::model::Snapshot)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2915,6 +2928,7 @@ impl std::fmt::Debug for SharedDirectory {
 }
 /// See [`SharedDirectory`](crate::model::SharedDirectory)
 pub mod shared_directory {
+    ///
     /// A builder for [`SharedDirectory`](crate::model::SharedDirectory)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3246,6 +3260,7 @@ impl std::fmt::Debug for RegionDescription {
 }
 /// See [`RegionDescription`](crate::model::RegionDescription)
 pub mod region_description {
+    ///
     /// A builder for [`RegionDescription`](crate::model::RegionDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3426,6 +3441,7 @@ impl std::fmt::Debug for DirectoryVpcSettings {
 }
 /// See [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings)
 pub mod directory_vpc_settings {
+    ///
     /// A builder for [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3673,6 +3689,7 @@ impl std::fmt::Debug for LdapsSettingInfo {
 }
 /// See [`LdapsSettingInfo`](crate::model::LdapsSettingInfo)
 pub mod ldaps_setting_info {
+    ///
     /// A builder for [`LdapsSettingInfo`](crate::model::LdapsSettingInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3851,6 +3868,7 @@ impl std::fmt::Debug for EventTopic {
 }
 /// See [`EventTopic`](crate::model::EventTopic)
 pub mod event_topic {
+    ///
     /// A builder for [`EventTopic`](crate::model::EventTopic)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4087,6 +4105,7 @@ impl std::fmt::Debug for DomainController {
 }
 /// See [`DomainController`](crate::model::DomainController)
 pub mod domain_controller {
+    ///
     /// A builder for [`DomainController`](crate::model::DomainController)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4541,6 +4560,7 @@ impl std::fmt::Debug for DirectoryDescription {
 }
 /// See [`DirectoryDescription`](crate::model::DirectoryDescription)
 pub mod directory_description {
+    ///
     /// A builder for [`DirectoryDescription`](crate::model::DirectoryDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4959,6 +4979,7 @@ impl std::fmt::Debug for RegionsInfo {
 }
 /// See [`RegionsInfo`](crate::model::RegionsInfo)
 pub mod regions_info {
+    ///
     /// A builder for [`RegionsInfo`](crate::model::RegionsInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5074,6 +5095,7 @@ impl std::fmt::Debug for OwnerDirectoryDescription {
 }
 /// See [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription)
 pub mod owner_directory_description {
+    ///
     /// A builder for [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5289,6 +5311,7 @@ impl std::fmt::Debug for DirectoryVpcSettingsDescription {
 }
 /// See [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription)
 pub mod directory_vpc_settings_description {
+    ///
     /// A builder for [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5435,6 +5458,7 @@ impl std::fmt::Debug for DirectoryConnectSettingsDescription {
 }
 /// See [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription)
 pub mod directory_connect_settings_description {
+    ///
     /// A builder for [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5774,6 +5798,7 @@ impl std::fmt::Debug for ConditionalForwarder {
 }
 /// See [`ConditionalForwarder`](crate::model::ConditionalForwarder)
 pub mod conditional_forwarder {
+    ///
     /// A builder for [`ConditionalForwarder`](crate::model::ConditionalForwarder)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5932,6 +5957,7 @@ impl std::fmt::Debug for ClientAuthenticationSettingInfo {
 }
 /// See [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo)
 pub mod client_authentication_setting_info {
+    ///
     /// A builder for [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6125,6 +6151,7 @@ impl std::fmt::Debug for Certificate {
 }
 /// See [`Certificate`](crate::model::Certificate)
 pub mod certificate {
+    ///
     /// A builder for [`Certificate`](crate::model::Certificate)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6299,6 +6326,7 @@ impl std::fmt::Debug for Computer {
 }
 /// See [`Computer`](crate::model::Computer)
 pub mod computer {
+    ///
     /// A builder for [`Computer`](crate::model::Computer)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6396,6 +6424,7 @@ impl std::fmt::Debug for Attribute {
 }
 /// See [`Attribute`](crate::model::Attribute)
 pub mod attribute {
+    ///
     /// A builder for [`Attribute`](crate::model::Attribute)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6493,6 +6522,7 @@ impl std::fmt::Debug for DirectoryConnectSettings {
 }
 /// See [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings)
 pub mod directory_connect_settings {
+    ///
     /// A builder for [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6621,6 +6651,7 @@ impl std::fmt::Debug for IpRoute {
 }
 /// See [`IpRoute`](crate::model::IpRoute)
 pub mod ip_route {
+    ///
     /// A builder for [`IpRoute`](crate::model::IpRoute)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

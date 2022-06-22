@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateWorkGroupOutput {
 }
 /// See [`UpdateWorkGroupOutput`](crate::output::UpdateWorkGroupOutput)
 pub mod update_work_group_output {
+    ///
     /// A builder for [`UpdateWorkGroupOutput`](crate::output::UpdateWorkGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdatePreparedStatementOutput {
 }
 /// See [`UpdatePreparedStatementOutput`](crate::output::UpdatePreparedStatementOutput)
 pub mod update_prepared_statement_output {
+    ///
     /// A builder for [`UpdatePreparedStatementOutput`](crate::output::UpdatePreparedStatementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UpdateNamedQueryOutput {
 }
 /// See [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput)
 pub mod update_named_query_output {
+    ///
     /// A builder for [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for UpdateDataCatalogOutput {
 }
 /// See [`UpdateDataCatalogOutput`](crate::output::UpdateDataCatalogOutput)
 pub mod update_data_catalog_output {
+    ///
     /// A builder for [`UpdateDataCatalogOutput`](crate::output::UpdateDataCatalogOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -161,6 +166,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -191,6 +197,7 @@ impl std::fmt::Debug for StopQueryExecutionOutput {
 }
 /// See [`StopQueryExecutionOutput`](crate::output::StopQueryExecutionOutput)
 pub mod stop_query_execution_output {
+    ///
     /// A builder for [`StopQueryExecutionOutput`](crate::output::StopQueryExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -231,6 +238,7 @@ impl std::fmt::Debug for StartQueryExecutionOutput {
 }
 /// See [`StartQueryExecutionOutput`](crate::output::StartQueryExecutionOutput)
 pub mod start_query_execution_output {
+    ///
     /// A builder for [`StartQueryExecutionOutput`](crate::output::StartQueryExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -295,6 +303,7 @@ impl std::fmt::Debug for ListWorkGroupsOutput {
 }
 /// See [`ListWorkGroupsOutput`](crate::output::ListWorkGroupsOutput)
 pub mod list_work_groups_output {
+    ///
     /// A builder for [`ListWorkGroupsOutput`](crate::output::ListWorkGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -377,6 +386,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -459,6 +469,7 @@ impl std::fmt::Debug for ListTableMetadataOutput {
 }
 /// See [`ListTableMetadataOutput`](crate::output::ListTableMetadataOutput)
 pub mod list_table_metadata_output {
+    ///
     /// A builder for [`ListTableMetadataOutput`](crate::output::ListTableMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -542,6 +553,7 @@ impl std::fmt::Debug for ListQueryExecutionsOutput {
 }
 /// See [`ListQueryExecutionsOutput`](crate::output::ListQueryExecutionsOutput)
 pub mod list_query_executions_output {
+    ///
     /// A builder for [`ListQueryExecutionsOutput`](crate::output::ListQueryExecutionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -627,6 +639,7 @@ impl std::fmt::Debug for ListPreparedStatementsOutput {
 }
 /// See [`ListPreparedStatementsOutput`](crate::output::ListPreparedStatementsOutput)
 pub mod list_prepared_statements_output {
+    ///
     /// A builder for [`ListPreparedStatementsOutput`](crate::output::ListPreparedStatementsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -713,6 +726,7 @@ impl std::fmt::Debug for ListNamedQueriesOutput {
 }
 /// See [`ListNamedQueriesOutput`](crate::output::ListNamedQueriesOutput)
 pub mod list_named_queries_output {
+    ///
     /// A builder for [`ListNamedQueriesOutput`](crate::output::ListNamedQueriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -795,6 +809,7 @@ impl std::fmt::Debug for ListEngineVersionsOutput {
 }
 /// See [`ListEngineVersionsOutput`](crate::output::ListEngineVersionsOutput)
 pub mod list_engine_versions_output {
+    ///
     /// A builder for [`ListEngineVersionsOutput`](crate::output::ListEngineVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -879,6 +894,7 @@ impl std::fmt::Debug for ListDataCatalogsOutput {
 }
 /// See [`ListDataCatalogsOutput`](crate::output::ListDataCatalogsOutput)
 pub mod list_data_catalogs_output {
+    ///
     /// A builder for [`ListDataCatalogsOutput`](crate::output::ListDataCatalogsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -962,6 +978,7 @@ impl std::fmt::Debug for ListDatabasesOutput {
 }
 /// See [`ListDatabasesOutput`](crate::output::ListDatabasesOutput)
 pub mod list_databases_output {
+    ///
     /// A builder for [`ListDatabasesOutput`](crate::output::ListDatabasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1037,6 +1054,7 @@ impl std::fmt::Debug for GetWorkGroupOutput {
 }
 /// See [`GetWorkGroupOutput`](crate::output::GetWorkGroupOutput)
 pub mod get_work_group_output {
+    ///
     /// A builder for [`GetWorkGroupOutput`](crate::output::GetWorkGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1094,6 +1112,7 @@ impl std::fmt::Debug for GetTableMetadataOutput {
 }
 /// See [`GetTableMetadataOutput`](crate::output::GetTableMetadataOutput)
 pub mod get_table_metadata_output {
+    ///
     /// A builder for [`GetTableMetadataOutput`](crate::output::GetTableMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1165,6 +1184,7 @@ impl std::fmt::Debug for GetQueryResultsOutput {
 }
 /// See [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
 pub mod get_query_results_output {
+    ///
     /// A builder for [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1246,6 +1266,7 @@ impl std::fmt::Debug for GetQueryExecutionOutput {
 }
 /// See [`GetQueryExecutionOutput`](crate::output::GetQueryExecutionOutput)
 pub mod get_query_execution_output {
+    ///
     /// A builder for [`GetQueryExecutionOutput`](crate::output::GetQueryExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1303,6 +1324,7 @@ impl std::fmt::Debug for GetPreparedStatementOutput {
 }
 /// See [`GetPreparedStatementOutput`](crate::output::GetPreparedStatementOutput)
 pub mod get_prepared_statement_output {
+    ///
     /// A builder for [`GetPreparedStatementOutput`](crate::output::GetPreparedStatementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1360,6 +1382,7 @@ impl std::fmt::Debug for GetNamedQueryOutput {
 }
 /// See [`GetNamedQueryOutput`](crate::output::GetNamedQueryOutput)
 pub mod get_named_query_output {
+    ///
     /// A builder for [`GetNamedQueryOutput`](crate::output::GetNamedQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1417,6 +1440,7 @@ impl std::fmt::Debug for GetDataCatalogOutput {
 }
 /// See [`GetDataCatalogOutput`](crate::output::GetDataCatalogOutput)
 pub mod get_data_catalog_output {
+    ///
     /// A builder for [`GetDataCatalogOutput`](crate::output::GetDataCatalogOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1474,6 +1498,7 @@ impl std::fmt::Debug for GetDatabaseOutput {
 }
 /// See [`GetDatabaseOutput`](crate::output::GetDatabaseOutput)
 pub mod get_database_output {
+    ///
     /// A builder for [`GetDatabaseOutput`](crate::output::GetDatabaseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1518,6 +1543,7 @@ impl std::fmt::Debug for DeleteWorkGroupOutput {
 }
 /// See [`DeleteWorkGroupOutput`](crate::output::DeleteWorkGroupOutput)
 pub mod delete_work_group_output {
+    ///
     /// A builder for [`DeleteWorkGroupOutput`](crate::output::DeleteWorkGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1548,6 +1574,7 @@ impl std::fmt::Debug for DeletePreparedStatementOutput {
 }
 /// See [`DeletePreparedStatementOutput`](crate::output::DeletePreparedStatementOutput)
 pub mod delete_prepared_statement_output {
+    ///
     /// A builder for [`DeletePreparedStatementOutput`](crate::output::DeletePreparedStatementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1578,6 +1605,7 @@ impl std::fmt::Debug for DeleteNamedQueryOutput {
 }
 /// See [`DeleteNamedQueryOutput`](crate::output::DeleteNamedQueryOutput)
 pub mod delete_named_query_output {
+    ///
     /// A builder for [`DeleteNamedQueryOutput`](crate::output::DeleteNamedQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1608,6 +1636,7 @@ impl std::fmt::Debug for DeleteDataCatalogOutput {
 }
 /// See [`DeleteDataCatalogOutput`](crate::output::DeleteDataCatalogOutput)
 pub mod delete_data_catalog_output {
+    ///
     /// A builder for [`DeleteDataCatalogOutput`](crate::output::DeleteDataCatalogOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1638,6 +1667,7 @@ impl std::fmt::Debug for CreateWorkGroupOutput {
 }
 /// See [`CreateWorkGroupOutput`](crate::output::CreateWorkGroupOutput)
 pub mod create_work_group_output {
+    ///
     /// A builder for [`CreateWorkGroupOutput`](crate::output::CreateWorkGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1668,6 +1698,7 @@ impl std::fmt::Debug for CreatePreparedStatementOutput {
 }
 /// See [`CreatePreparedStatementOutput`](crate::output::CreatePreparedStatementOutput)
 pub mod create_prepared_statement_output {
+    ///
     /// A builder for [`CreatePreparedStatementOutput`](crate::output::CreatePreparedStatementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1708,6 +1739,7 @@ impl std::fmt::Debug for CreateNamedQueryOutput {
 }
 /// See [`CreateNamedQueryOutput`](crate::output::CreateNamedQueryOutput)
 pub mod create_named_query_output {
+    ///
     /// A builder for [`CreateNamedQueryOutput`](crate::output::CreateNamedQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1755,6 +1787,7 @@ impl std::fmt::Debug for CreateDataCatalogOutput {
 }
 /// See [`CreateDataCatalogOutput`](crate::output::CreateDataCatalogOutput)
 pub mod create_data_catalog_output {
+    ///
     /// A builder for [`CreateDataCatalogOutput`](crate::output::CreateDataCatalogOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1808,6 +1841,7 @@ impl std::fmt::Debug for BatchGetQueryExecutionOutput {
 }
 /// See [`BatchGetQueryExecutionOutput`](crate::output::BatchGetQueryExecutionOutput)
 pub mod batch_get_query_execution_output {
+    ///
     /// A builder for [`BatchGetQueryExecutionOutput`](crate::output::BatchGetQueryExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1910,6 +1944,7 @@ impl std::fmt::Debug for BatchGetNamedQueryOutput {
 }
 /// See [`BatchGetNamedQueryOutput`](crate::output::BatchGetNamedQueryOutput)
 pub mod batch_get_named_query_output {
+    ///
     /// A builder for [`BatchGetNamedQueryOutput`](crate::output::BatchGetNamedQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

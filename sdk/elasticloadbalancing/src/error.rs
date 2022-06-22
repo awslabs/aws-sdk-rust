@@ -3537,6 +3537,7 @@ impl std::fmt::Display for PolicyNotFoundException {
 impl std::error::Error for PolicyNotFoundException {}
 /// See [`PolicyNotFoundException`](crate::error::PolicyNotFoundException)
 pub mod policy_not_found_exception {
+    ///
     /// A builder for [`PolicyNotFoundException`](crate::error::PolicyNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3601,6 +3602,7 @@ impl std::fmt::Display for ListenerNotFoundException {
 impl std::error::Error for ListenerNotFoundException {}
 /// See [`ListenerNotFoundException`](crate::error::ListenerNotFoundException)
 pub mod listener_not_found_exception {
+    ///
     /// A builder for [`ListenerNotFoundException`](crate::error::ListenerNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3665,6 +3667,7 @@ impl std::fmt::Display for InvalidConfigurationRequestException {
 impl std::error::Error for InvalidConfigurationRequestException {}
 /// See [`InvalidConfigurationRequestException`](crate::error::InvalidConfigurationRequestException)
 pub mod invalid_configuration_request_exception {
+    ///
     /// A builder for [`InvalidConfigurationRequestException`](crate::error::InvalidConfigurationRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3729,6 +3732,7 @@ impl std::fmt::Display for AccessPointNotFoundException {
 impl std::error::Error for AccessPointNotFoundException {}
 /// See [`AccessPointNotFoundException`](crate::error::AccessPointNotFoundException)
 pub mod access_point_not_found_exception {
+    ///
     /// A builder for [`AccessPointNotFoundException`](crate::error::AccessPointNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3793,6 +3797,7 @@ impl std::fmt::Display for UnsupportedProtocolException {
 impl std::error::Error for UnsupportedProtocolException {}
 /// See [`UnsupportedProtocolException`](crate::error::UnsupportedProtocolException)
 pub mod unsupported_protocol_exception {
+    ///
     /// A builder for [`UnsupportedProtocolException`](crate::error::UnsupportedProtocolException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3857,6 +3862,7 @@ impl std::fmt::Display for CertificateNotFoundException {
 impl std::error::Error for CertificateNotFoundException {}
 /// See [`CertificateNotFoundException`](crate::error::CertificateNotFoundException)
 pub mod certificate_not_found_exception {
+    ///
     /// A builder for [`CertificateNotFoundException`](crate::error::CertificateNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3921,6 +3927,7 @@ impl std::fmt::Display for InvalidEndPointException {
 impl std::error::Error for InvalidEndPointException {}
 /// See [`InvalidEndPointException`](crate::error::InvalidEndPointException)
 pub mod invalid_end_point_exception {
+    ///
     /// A builder for [`InvalidEndPointException`](crate::error::InvalidEndPointException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3985,6 +3992,7 @@ impl std::fmt::Display for LoadBalancerAttributeNotFoundException {
 impl std::error::Error for LoadBalancerAttributeNotFoundException {}
 /// See [`LoadBalancerAttributeNotFoundException`](crate::error::LoadBalancerAttributeNotFoundException)
 pub mod load_balancer_attribute_not_found_exception {
+    ///
     /// A builder for [`LoadBalancerAttributeNotFoundException`](crate::error::LoadBalancerAttributeNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4049,6 +4057,7 @@ impl std::fmt::Display for DependencyThrottleException {
 impl std::error::Error for DependencyThrottleException {}
 /// See [`DependencyThrottleException`](crate::error::DependencyThrottleException)
 pub mod dependency_throttle_exception {
+    ///
     /// A builder for [`DependencyThrottleException`](crate::error::DependencyThrottleException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4113,6 +4122,7 @@ impl std::fmt::Display for PolicyTypeNotFoundException {
 impl std::error::Error for PolicyTypeNotFoundException {}
 /// See [`PolicyTypeNotFoundException`](crate::error::PolicyTypeNotFoundException)
 pub mod policy_type_not_found_exception {
+    ///
     /// A builder for [`PolicyTypeNotFoundException`](crate::error::PolicyTypeNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4177,6 +4187,7 @@ impl std::fmt::Display for TooManyPoliciesException {
 impl std::error::Error for TooManyPoliciesException {}
 /// See [`TooManyPoliciesException`](crate::error::TooManyPoliciesException)
 pub mod too_many_policies_exception {
+    ///
     /// A builder for [`TooManyPoliciesException`](crate::error::TooManyPoliciesException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4241,6 +4252,7 @@ impl std::fmt::Display for DuplicatePolicyNameException {
 impl std::error::Error for DuplicatePolicyNameException {}
 /// See [`DuplicatePolicyNameException`](crate::error::DuplicatePolicyNameException)
 pub mod duplicate_policy_name_exception {
+    ///
     /// A builder for [`DuplicatePolicyNameException`](crate::error::DuplicatePolicyNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4305,6 +4317,7 @@ impl std::fmt::Display for DuplicateListenerException {
 impl std::error::Error for DuplicateListenerException {}
 /// See [`DuplicateListenerException`](crate::error::DuplicateListenerException)
 pub mod duplicate_listener_exception {
+    ///
     /// A builder for [`DuplicateListenerException`](crate::error::DuplicateListenerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4369,6 +4382,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException)
 pub mod too_many_tags_exception {
+    ///
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4433,6 +4447,7 @@ impl std::fmt::Display for TooManyAccessPointsException {
 impl std::error::Error for TooManyAccessPointsException {}
 /// See [`TooManyAccessPointsException`](crate::error::TooManyAccessPointsException)
 pub mod too_many_access_points_exception {
+    ///
     /// A builder for [`TooManyAccessPointsException`](crate::error::TooManyAccessPointsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4497,6 +4512,7 @@ impl std::fmt::Display for SubnetNotFoundException {
 impl std::error::Error for SubnetNotFoundException {}
 /// See [`SubnetNotFoundException`](crate::error::SubnetNotFoundException)
 pub mod subnet_not_found_exception {
+    ///
     /// A builder for [`SubnetNotFoundException`](crate::error::SubnetNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4561,6 +4577,7 @@ impl std::fmt::Display for OperationNotPermittedException {
 impl std::error::Error for OperationNotPermittedException {}
 /// See [`OperationNotPermittedException`](crate::error::OperationNotPermittedException)
 pub mod operation_not_permitted_exception {
+    ///
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4625,6 +4642,7 @@ impl std::fmt::Display for InvalidSubnetException {
 impl std::error::Error for InvalidSubnetException {}
 /// See [`InvalidSubnetException`](crate::error::InvalidSubnetException)
 pub mod invalid_subnet_exception {
+    ///
     /// A builder for [`InvalidSubnetException`](crate::error::InvalidSubnetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4689,6 +4707,7 @@ impl std::fmt::Display for InvalidSecurityGroupException {
 impl std::error::Error for InvalidSecurityGroupException {}
 /// See [`InvalidSecurityGroupException`](crate::error::InvalidSecurityGroupException)
 pub mod invalid_security_group_exception {
+    ///
     /// A builder for [`InvalidSecurityGroupException`](crate::error::InvalidSecurityGroupException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4753,6 +4772,7 @@ impl std::fmt::Display for InvalidSchemeException {
 impl std::error::Error for InvalidSchemeException {}
 /// See [`InvalidSchemeException`](crate::error::InvalidSchemeException)
 pub mod invalid_scheme_exception {
+    ///
     /// A builder for [`InvalidSchemeException`](crate::error::InvalidSchemeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4817,6 +4837,7 @@ impl std::fmt::Display for DuplicateTagKeysException {
 impl std::error::Error for DuplicateTagKeysException {}
 /// See [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException)
 pub mod duplicate_tag_keys_exception {
+    ///
     /// A builder for [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4881,6 +4902,7 @@ impl std::fmt::Display for DuplicateAccessPointNameException {
 impl std::error::Error for DuplicateAccessPointNameException {}
 /// See [`DuplicateAccessPointNameException`](crate::error::DuplicateAccessPointNameException)
 pub mod duplicate_access_point_name_exception {
+    ///
     /// A builder for [`DuplicateAccessPointNameException`](crate::error::DuplicateAccessPointNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

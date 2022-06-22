@@ -577,6 +577,7 @@ impl std::fmt::Display for InternalServerError {
 impl std::error::Error for InternalServerError {}
 /// See [`InternalServerError`](crate::error::InternalServerError)
 pub mod internal_server_error {
+    ///
     /// A builder for [`InternalServerError`](crate::error::InternalServerError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -641,6 +642,7 @@ impl std::fmt::Display for ContainerNotFoundException {
 impl std::error::Error for ContainerNotFoundException {}
 /// See [`ContainerNotFoundException`](crate::error::ContainerNotFoundException)
 pub mod container_not_found_exception {
+    ///
     /// A builder for [`ContainerNotFoundException`](crate::error::ContainerNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -705,6 +707,7 @@ impl std::fmt::Display for RequestedRangeNotSatisfiableException {
 impl std::error::Error for RequestedRangeNotSatisfiableException {}
 /// See [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException)
 pub mod requested_range_not_satisfiable_exception {
+    ///
     /// A builder for [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -769,6 +772,7 @@ impl std::fmt::Display for ObjectNotFoundException {
 impl std::error::Error for ObjectNotFoundException {}
 /// See [`ObjectNotFoundException`](crate::error::ObjectNotFoundException)
 pub mod object_not_found_exception {
+    ///
     /// A builder for [`ObjectNotFoundException`](crate::error::ObjectNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

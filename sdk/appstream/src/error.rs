@@ -7923,6 +7923,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7987,6 +7988,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException)
 pub mod resource_in_use_exception {
+    ///
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8051,6 +8053,7 @@ impl std::fmt::Display for OperationNotPermittedException {
 impl std::error::Error for OperationNotPermittedException {}
 /// See [`OperationNotPermittedException`](crate::error::OperationNotPermittedException)
 pub mod operation_not_permitted_exception {
+    ///
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8115,6 +8118,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8179,6 +8183,7 @@ impl std::fmt::Display for InvalidRoleException {
 impl std::error::Error for InvalidRoleException {}
 /// See [`InvalidRoleException`](crate::error::InvalidRoleException)
 pub mod invalid_role_exception {
+    ///
     /// A builder for [`InvalidRoleException`](crate::error::InvalidRoleException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8243,6 +8248,7 @@ impl std::fmt::Display for InvalidParameterCombinationException {
 impl std::error::Error for InvalidParameterCombinationException {}
 /// See [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException)
 pub mod invalid_parameter_combination_exception {
+    ///
     /// A builder for [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8307,6 +8313,7 @@ impl std::fmt::Display for InvalidAccountStatusException {
 impl std::error::Error for InvalidAccountStatusException {}
 /// See [`InvalidAccountStatusException`](crate::error::InvalidAccountStatusException)
 pub mod invalid_account_status_exception {
+    ///
     /// A builder for [`InvalidAccountStatusException`](crate::error::InvalidAccountStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8371,6 +8378,7 @@ impl std::fmt::Display for IncompatibleImageException {
 impl std::error::Error for IncompatibleImageException {}
 /// See [`IncompatibleImageException`](crate::error::IncompatibleImageException)
 pub mod incompatible_image_exception {
+    ///
     /// A builder for [`IncompatibleImageException`](crate::error::IncompatibleImageException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8435,6 +8443,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
+    ///
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8499,6 +8508,7 @@ impl std::fmt::Display for ResourceNotAvailableException {
 impl std::error::Error for ResourceNotAvailableException {}
 /// See [`ResourceNotAvailableException`](crate::error::ResourceNotAvailableException)
 pub mod resource_not_available_exception {
+    ///
     /// A builder for [`ResourceNotAvailableException`](crate::error::ResourceNotAvailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8563,6 +8573,7 @@ impl std::fmt::Display for RequestLimitExceededException {
 impl std::error::Error for RequestLimitExceededException {}
 /// See [`RequestLimitExceededException`](crate::error::RequestLimitExceededException)
 pub mod request_limit_exceeded_exception {
+    ///
     /// A builder for [`RequestLimitExceededException`](crate::error::RequestLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8627,6 +8638,7 @@ impl std::fmt::Display for EntitlementNotFoundException {
 impl std::error::Error for EntitlementNotFoundException {}
 /// See [`EntitlementNotFoundException`](crate::error::EntitlementNotFoundException)
 pub mod entitlement_not_found_exception {
+    ///
     /// A builder for [`EntitlementNotFoundException`](crate::error::EntitlementNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8691,6 +8703,7 @@ impl std::fmt::Display for ResourceAlreadyExistsException {
 impl std::error::Error for ResourceAlreadyExistsException {}
 /// See [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
 pub mod resource_already_exists_exception {
+    ///
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8755,6 +8768,7 @@ impl std::fmt::Display for EntitlementAlreadyExistsException {
 impl std::error::Error for EntitlementAlreadyExistsException {}
 /// See [`EntitlementAlreadyExistsException`](crate::error::EntitlementAlreadyExistsException)
 pub mod entitlement_already_exists_exception {
+    ///
     /// A builder for [`EntitlementAlreadyExistsException`](crate::error::EntitlementAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

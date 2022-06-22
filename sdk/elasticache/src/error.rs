@@ -9984,6 +9984,7 @@ impl std::fmt::Display for TestFailoverNotAvailableFault {
 impl std::error::Error for TestFailoverNotAvailableFault {}
 /// See [`TestFailoverNotAvailableFault`](crate::error::TestFailoverNotAvailableFault)
 pub mod test_failover_not_available_fault {
+    ///
     /// A builder for [`TestFailoverNotAvailableFault`](crate::error::TestFailoverNotAvailableFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10048,6 +10049,7 @@ impl std::fmt::Display for ReplicationGroupNotFoundFault {
 impl std::error::Error for ReplicationGroupNotFoundFault {}
 /// See [`ReplicationGroupNotFoundFault`](crate::error::ReplicationGroupNotFoundFault)
 pub mod replication_group_not_found_fault {
+    ///
     /// A builder for [`ReplicationGroupNotFoundFault`](crate::error::ReplicationGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10112,6 +10114,7 @@ impl std::fmt::Display for NodeGroupNotFoundFault {
 impl std::error::Error for NodeGroupNotFoundFault {}
 /// See [`NodeGroupNotFoundFault`](crate::error::NodeGroupNotFoundFault)
 pub mod node_group_not_found_fault {
+    ///
     /// A builder for [`NodeGroupNotFoundFault`](crate::error::NodeGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10176,6 +10179,7 @@ impl std::fmt::Display for InvalidReplicationGroupStateFault {
 impl std::error::Error for InvalidReplicationGroupStateFault {}
 /// See [`InvalidReplicationGroupStateFault`](crate::error::InvalidReplicationGroupStateFault)
 pub mod invalid_replication_group_state_fault {
+    ///
     /// A builder for [`InvalidReplicationGroupStateFault`](crate::error::InvalidReplicationGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10240,6 +10244,7 @@ impl std::fmt::Display for InvalidParameterValueException {
 impl std::error::Error for InvalidParameterValueException {}
 /// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
 pub mod invalid_parameter_value_exception {
+    ///
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10304,6 +10309,7 @@ impl std::fmt::Display for InvalidParameterCombinationException {
 impl std::error::Error for InvalidParameterCombinationException {}
 /// See [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException)
 pub mod invalid_parameter_combination_exception {
+    ///
     /// A builder for [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10368,6 +10374,7 @@ impl std::fmt::Display for InvalidKmsKeyFault {
 impl std::error::Error for InvalidKmsKeyFault {}
 /// See [`InvalidKmsKeyFault`](crate::error::InvalidKmsKeyFault)
 pub mod invalid_kms_key_fault {
+    ///
     /// A builder for [`InvalidKmsKeyFault`](crate::error::InvalidKmsKeyFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10432,6 +10439,7 @@ impl std::fmt::Display for InvalidCacheClusterStateFault {
 impl std::error::Error for InvalidCacheClusterStateFault {}
 /// See [`InvalidCacheClusterStateFault`](crate::error::InvalidCacheClusterStateFault)
 pub mod invalid_cache_cluster_state_fault {
+    ///
     /// A builder for [`InvalidCacheClusterStateFault`](crate::error::InvalidCacheClusterStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10499,6 +10507,7 @@ impl std::fmt::Display for ApiCallRateForCustomerExceededFault {
 impl std::error::Error for ApiCallRateForCustomerExceededFault {}
 /// See [`ApiCallRateForCustomerExceededFault`](crate::error::ApiCallRateForCustomerExceededFault)
 pub mod api_call_rate_for_customer_exceeded_fault {
+    ///
     /// A builder for [`ApiCallRateForCustomerExceededFault`](crate::error::ApiCallRateForCustomerExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10563,6 +10572,7 @@ impl std::fmt::Display for ReplicationGroupAlreadyUnderMigrationFault {
 impl std::error::Error for ReplicationGroupAlreadyUnderMigrationFault {}
 /// See [`ReplicationGroupAlreadyUnderMigrationFault`](crate::error::ReplicationGroupAlreadyUnderMigrationFault)
 pub mod replication_group_already_under_migration_fault {
+    ///
     /// A builder for [`ReplicationGroupAlreadyUnderMigrationFault`](crate::error::ReplicationGroupAlreadyUnderMigrationFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10627,6 +10637,7 @@ impl std::fmt::Display for InvalidCacheSecurityGroupStateFault {
 impl std::error::Error for InvalidCacheSecurityGroupStateFault {}
 /// See [`InvalidCacheSecurityGroupStateFault`](crate::error::InvalidCacheSecurityGroupStateFault)
 pub mod invalid_cache_security_group_state_fault {
+    ///
     /// A builder for [`InvalidCacheSecurityGroupStateFault`](crate::error::InvalidCacheSecurityGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10691,6 +10702,7 @@ impl std::fmt::Display for CacheSecurityGroupNotFoundFault {
 impl std::error::Error for CacheSecurityGroupNotFoundFault {}
 /// See [`CacheSecurityGroupNotFoundFault`](crate::error::CacheSecurityGroupNotFoundFault)
 pub mod cache_security_group_not_found_fault {
+    ///
     /// A builder for [`CacheSecurityGroupNotFoundFault`](crate::error::CacheSecurityGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10755,6 +10767,7 @@ impl std::fmt::Display for AuthorizationNotFoundFault {
 impl std::error::Error for AuthorizationNotFoundFault {}
 /// See [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault)
 pub mod authorization_not_found_fault {
+    ///
     /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10819,6 +10832,7 @@ impl std::fmt::Display for InvalidGlobalReplicationGroupStateFault {
 impl std::error::Error for InvalidGlobalReplicationGroupStateFault {}
 /// See [`InvalidGlobalReplicationGroupStateFault`](crate::error::InvalidGlobalReplicationGroupStateFault)
 pub mod invalid_global_replication_group_state_fault {
+    ///
     /// A builder for [`InvalidGlobalReplicationGroupStateFault`](crate::error::InvalidGlobalReplicationGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10883,6 +10897,7 @@ impl std::fmt::Display for InvalidCacheParameterGroupStateFault {
 impl std::error::Error for InvalidCacheParameterGroupStateFault {}
 /// See [`InvalidCacheParameterGroupStateFault`](crate::error::InvalidCacheParameterGroupStateFault)
 pub mod invalid_cache_parameter_group_state_fault {
+    ///
     /// A builder for [`InvalidCacheParameterGroupStateFault`](crate::error::InvalidCacheParameterGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10947,6 +10962,7 @@ impl std::fmt::Display for CacheParameterGroupNotFoundFault {
 impl std::error::Error for CacheParameterGroupNotFoundFault {}
 /// See [`CacheParameterGroupNotFoundFault`](crate::error::CacheParameterGroupNotFoundFault)
 pub mod cache_parameter_group_not_found_fault {
+    ///
     /// A builder for [`CacheParameterGroupNotFoundFault`](crate::error::CacheParameterGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11011,6 +11027,7 @@ impl std::fmt::Display for UserNotFoundFault {
 impl std::error::Error for UserNotFoundFault {}
 /// See [`UserNotFoundFault`](crate::error::UserNotFoundFault)
 pub mod user_not_found_fault {
+    ///
     /// A builder for [`UserNotFoundFault`](crate::error::UserNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11075,6 +11092,7 @@ impl std::fmt::Display for UserGroupNotFoundFault {
 impl std::error::Error for UserGroupNotFoundFault {}
 /// See [`UserGroupNotFoundFault`](crate::error::UserGroupNotFoundFault)
 pub mod user_group_not_found_fault {
+    ///
     /// A builder for [`UserGroupNotFoundFault`](crate::error::UserGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11139,6 +11157,7 @@ impl std::fmt::Display for TagNotFoundFault {
 impl std::error::Error for TagNotFoundFault {}
 /// See [`TagNotFoundFault`](crate::error::TagNotFoundFault)
 pub mod tag_not_found_fault {
+    ///
     /// A builder for [`TagNotFoundFault`](crate::error::TagNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11203,6 +11222,7 @@ impl std::fmt::Display for SnapshotNotFoundFault {
 impl std::error::Error for SnapshotNotFoundFault {}
 /// See [`SnapshotNotFoundFault`](crate::error::SnapshotNotFoundFault)
 pub mod snapshot_not_found_fault {
+    ///
     /// A builder for [`SnapshotNotFoundFault`](crate::error::SnapshotNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11267,6 +11287,7 @@ impl std::fmt::Display for ReservedCacheNodeNotFoundFault {
 impl std::error::Error for ReservedCacheNodeNotFoundFault {}
 /// See [`ReservedCacheNodeNotFoundFault`](crate::error::ReservedCacheNodeNotFoundFault)
 pub mod reserved_cache_node_not_found_fault {
+    ///
     /// A builder for [`ReservedCacheNodeNotFoundFault`](crate::error::ReservedCacheNodeNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11331,6 +11352,7 @@ impl std::fmt::Display for InvalidArnFault {
 impl std::error::Error for InvalidArnFault {}
 /// See [`InvalidArnFault`](crate::error::InvalidArnFault)
 pub mod invalid_arn_fault {
+    ///
     /// A builder for [`InvalidArnFault`](crate::error::InvalidArnFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11395,6 +11417,7 @@ impl std::fmt::Display for CacheSubnetGroupNotFoundFault {
 impl std::error::Error for CacheSubnetGroupNotFoundFault {}
 /// See [`CacheSubnetGroupNotFoundFault`](crate::error::CacheSubnetGroupNotFoundFault)
 pub mod cache_subnet_group_not_found_fault {
+    ///
     /// A builder for [`CacheSubnetGroupNotFoundFault`](crate::error::CacheSubnetGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11459,6 +11482,7 @@ impl std::fmt::Display for CacheClusterNotFoundFault {
 impl std::error::Error for CacheClusterNotFoundFault {}
 /// See [`CacheClusterNotFoundFault`](crate::error::CacheClusterNotFoundFault)
 pub mod cache_cluster_not_found_fault {
+    ///
     /// A builder for [`CacheClusterNotFoundFault`](crate::error::CacheClusterNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11523,6 +11547,7 @@ impl std::fmt::Display for GlobalReplicationGroupNotFoundFault {
 impl std::error::Error for GlobalReplicationGroupNotFoundFault {}
 /// See [`GlobalReplicationGroupNotFoundFault`](crate::error::GlobalReplicationGroupNotFoundFault)
 pub mod global_replication_group_not_found_fault {
+    ///
     /// A builder for [`GlobalReplicationGroupNotFoundFault`](crate::error::GlobalReplicationGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11587,6 +11612,7 @@ impl std::fmt::Display for TagQuotaPerResourceExceeded {
 impl std::error::Error for TagQuotaPerResourceExceeded {}
 /// See [`TagQuotaPerResourceExceeded`](crate::error::TagQuotaPerResourceExceeded)
 pub mod tag_quota_per_resource_exceeded {
+    ///
     /// A builder for [`TagQuotaPerResourceExceeded`](crate::error::TagQuotaPerResourceExceeded)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11651,6 +11677,7 @@ impl std::fmt::Display for ReservedCacheNodesOfferingNotFoundFault {
 impl std::error::Error for ReservedCacheNodesOfferingNotFoundFault {}
 /// See [`ReservedCacheNodesOfferingNotFoundFault`](crate::error::ReservedCacheNodesOfferingNotFoundFault)
 pub mod reserved_cache_nodes_offering_not_found_fault {
+    ///
     /// A builder for [`ReservedCacheNodesOfferingNotFoundFault`](crate::error::ReservedCacheNodesOfferingNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11715,6 +11742,7 @@ impl std::fmt::Display for ReservedCacheNodeQuotaExceededFault {
 impl std::error::Error for ReservedCacheNodeQuotaExceededFault {}
 /// See [`ReservedCacheNodeQuotaExceededFault`](crate::error::ReservedCacheNodeQuotaExceededFault)
 pub mod reserved_cache_node_quota_exceeded_fault {
+    ///
     /// A builder for [`ReservedCacheNodeQuotaExceededFault`](crate::error::ReservedCacheNodeQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11779,6 +11807,7 @@ impl std::fmt::Display for ReservedCacheNodeAlreadyExistsFault {
 impl std::error::Error for ReservedCacheNodeAlreadyExistsFault {}
 /// See [`ReservedCacheNodeAlreadyExistsFault`](crate::error::ReservedCacheNodeAlreadyExistsFault)
 pub mod reserved_cache_node_already_exists_fault {
+    ///
     /// A builder for [`ReservedCacheNodeAlreadyExistsFault`](crate::error::ReservedCacheNodeAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11843,6 +11872,7 @@ impl std::fmt::Display for ServiceLinkedRoleNotFoundFault {
 impl std::error::Error for ServiceLinkedRoleNotFoundFault {}
 /// See [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
 pub mod service_linked_role_not_found_fault {
+    ///
     /// A builder for [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11907,6 +11937,7 @@ impl std::fmt::Display for InvalidUserGroupStateFault {
 impl std::error::Error for InvalidUserGroupStateFault {}
 /// See [`InvalidUserGroupStateFault`](crate::error::InvalidUserGroupStateFault)
 pub mod invalid_user_group_state_fault {
+    ///
     /// A builder for [`InvalidUserGroupStateFault`](crate::error::InvalidUserGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11971,6 +12002,7 @@ impl std::fmt::Display for DuplicateUserNameFault {
 impl std::error::Error for DuplicateUserNameFault {}
 /// See [`DuplicateUserNameFault`](crate::error::DuplicateUserNameFault)
 pub mod duplicate_user_name_fault {
+    ///
     /// A builder for [`DuplicateUserNameFault`](crate::error::DuplicateUserNameFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12035,6 +12067,7 @@ impl std::fmt::Display for DefaultUserRequired {
 impl std::error::Error for DefaultUserRequired {}
 /// See [`DefaultUserRequired`](crate::error::DefaultUserRequired)
 pub mod default_user_required {
+    ///
     /// A builder for [`DefaultUserRequired`](crate::error::DefaultUserRequired)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12099,6 +12132,7 @@ impl std::fmt::Display for InvalidUserStateFault {
 impl std::error::Error for InvalidUserStateFault {}
 /// See [`InvalidUserStateFault`](crate::error::InvalidUserStateFault)
 pub mod invalid_user_state_fault {
+    ///
     /// A builder for [`InvalidUserStateFault`](crate::error::InvalidUserStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12163,6 +12197,7 @@ impl std::fmt::Display for NodeQuotaForCustomerExceededFault {
 impl std::error::Error for NodeQuotaForCustomerExceededFault {}
 /// See [`NodeQuotaForCustomerExceededFault`](crate::error::NodeQuotaForCustomerExceededFault)
 pub mod node_quota_for_customer_exceeded_fault {
+    ///
     /// A builder for [`NodeQuotaForCustomerExceededFault`](crate::error::NodeQuotaForCustomerExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12227,6 +12262,7 @@ impl std::fmt::Display for NodeGroupsPerReplicationGroupQuotaExceededFault {
 impl std::error::Error for NodeGroupsPerReplicationGroupQuotaExceededFault {}
 /// See [`NodeGroupsPerReplicationGroupQuotaExceededFault`](crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault)
 pub mod node_groups_per_replication_group_quota_exceeded_fault {
+    ///
     /// A builder for [`NodeGroupsPerReplicationGroupQuotaExceededFault`](crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12295,6 +12331,7 @@ impl std::fmt::Display for InvalidVpcNetworkStateFault {
 impl std::error::Error for InvalidVpcNetworkStateFault {}
 /// See [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
 pub mod invalid_vpc_network_state_fault {
+    ///
     /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12359,6 +12396,7 @@ impl std::fmt::Display for InsufficientCacheClusterCapacityFault {
 impl std::error::Error for InsufficientCacheClusterCapacityFault {}
 /// See [`InsufficientCacheClusterCapacityFault`](crate::error::InsufficientCacheClusterCapacityFault)
 pub mod insufficient_cache_cluster_capacity_fault {
+    ///
     /// A builder for [`InsufficientCacheClusterCapacityFault`](crate::error::InsufficientCacheClusterCapacityFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12423,6 +12461,7 @@ impl std::fmt::Display for NodeQuotaForClusterExceededFault {
 impl std::error::Error for NodeQuotaForClusterExceededFault {}
 /// See [`NodeQuotaForClusterExceededFault`](crate::error::NodeQuotaForClusterExceededFault)
 pub mod node_quota_for_cluster_exceeded_fault {
+    ///
     /// A builder for [`NodeQuotaForClusterExceededFault`](crate::error::NodeQuotaForClusterExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12487,6 +12526,7 @@ impl std::fmt::Display for SubnetNotAllowedFault {
 impl std::error::Error for SubnetNotAllowedFault {}
 /// See [`SubnetNotAllowedFault`](crate::error::SubnetNotAllowedFault)
 pub mod subnet_not_allowed_fault {
+    ///
     /// A builder for [`SubnetNotAllowedFault`](crate::error::SubnetNotAllowedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12551,6 +12591,7 @@ impl std::fmt::Display for SubnetInUse {
 impl std::error::Error for SubnetInUse {}
 /// See [`SubnetInUse`](crate::error::SubnetInUse)
 pub mod subnet_in_use {
+    ///
     /// A builder for [`SubnetInUse`](crate::error::SubnetInUse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12615,6 +12656,7 @@ impl std::fmt::Display for InvalidSubnet {
 impl std::error::Error for InvalidSubnet {}
 /// See [`InvalidSubnet`](crate::error::InvalidSubnet)
 pub mod invalid_subnet {
+    ///
     /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12679,6 +12721,7 @@ impl std::fmt::Display for CacheSubnetQuotaExceededFault {
 impl std::error::Error for CacheSubnetQuotaExceededFault {}
 /// See [`CacheSubnetQuotaExceededFault`](crate::error::CacheSubnetQuotaExceededFault)
 pub mod cache_subnet_quota_exceeded_fault {
+    ///
     /// A builder for [`CacheSubnetQuotaExceededFault`](crate::error::CacheSubnetQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12743,6 +12786,7 @@ impl std::fmt::Display for NoOperationFault {
 impl std::error::Error for NoOperationFault {}
 /// See [`NoOperationFault`](crate::error::NoOperationFault)
 pub mod no_operation_fault {
+    ///
     /// A builder for [`NoOperationFault`](crate::error::NoOperationFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12807,6 +12851,7 @@ impl std::fmt::Display for ClusterQuotaForCustomerExceededFault {
 impl std::error::Error for ClusterQuotaForCustomerExceededFault {}
 /// See [`ClusterQuotaForCustomerExceededFault`](crate::error::ClusterQuotaForCustomerExceededFault)
 pub mod cluster_quota_for_customer_exceeded_fault {
+    ///
     /// A builder for [`ClusterQuotaForCustomerExceededFault`](crate::error::ClusterQuotaForCustomerExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12871,6 +12916,7 @@ impl std::fmt::Display for ServiceUpdateNotFoundFault {
 impl std::error::Error for ServiceUpdateNotFoundFault {}
 /// See [`ServiceUpdateNotFoundFault`](crate::error::ServiceUpdateNotFoundFault)
 pub mod service_update_not_found_fault {
+    ///
     /// A builder for [`ServiceUpdateNotFoundFault`](crate::error::ServiceUpdateNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12935,6 +12981,7 @@ impl std::fmt::Display for DefaultUserAssociatedToUserGroupFault {
 impl std::error::Error for DefaultUserAssociatedToUserGroupFault {}
 /// See [`DefaultUserAssociatedToUserGroupFault`](crate::error::DefaultUserAssociatedToUserGroupFault)
 pub mod default_user_associated_to_user_group_fault {
+    ///
     /// A builder for [`DefaultUserAssociatedToUserGroupFault`](crate::error::DefaultUserAssociatedToUserGroupFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12999,6 +13046,7 @@ impl std::fmt::Display for InvalidSnapshotStateFault {
 impl std::error::Error for InvalidSnapshotStateFault {}
 /// See [`InvalidSnapshotStateFault`](crate::error::InvalidSnapshotStateFault)
 pub mod invalid_snapshot_state_fault {
+    ///
     /// A builder for [`InvalidSnapshotStateFault`](crate::error::InvalidSnapshotStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13063,6 +13111,7 @@ impl std::fmt::Display for SnapshotQuotaExceededFault {
 impl std::error::Error for SnapshotQuotaExceededFault {}
 /// See [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault)
 pub mod snapshot_quota_exceeded_fault {
+    ///
     /// A builder for [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13132,6 +13181,7 @@ impl std::fmt::Display for SnapshotFeatureNotSupportedFault {
 impl std::error::Error for SnapshotFeatureNotSupportedFault {}
 /// See [`SnapshotFeatureNotSupportedFault`](crate::error::SnapshotFeatureNotSupportedFault)
 pub mod snapshot_feature_not_supported_fault {
+    ///
     /// A builder for [`SnapshotFeatureNotSupportedFault`](crate::error::SnapshotFeatureNotSupportedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13196,6 +13246,7 @@ impl std::fmt::Display for SnapshotAlreadyExistsFault {
 impl std::error::Error for SnapshotAlreadyExistsFault {}
 /// See [`SnapshotAlreadyExistsFault`](crate::error::SnapshotAlreadyExistsFault)
 pub mod snapshot_already_exists_fault {
+    ///
     /// A builder for [`SnapshotAlreadyExistsFault`](crate::error::SnapshotAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13260,6 +13311,7 @@ impl std::fmt::Display for CacheSubnetGroupInUse {
 impl std::error::Error for CacheSubnetGroupInUse {}
 /// See [`CacheSubnetGroupInUse`](crate::error::CacheSubnetGroupInUse)
 pub mod cache_subnet_group_in_use {
+    ///
     /// A builder for [`CacheSubnetGroupInUse`](crate::error::CacheSubnetGroupInUse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13324,6 +13376,7 @@ impl std::fmt::Display for UserGroupQuotaExceededFault {
 impl std::error::Error for UserGroupQuotaExceededFault {}
 /// See [`UserGroupQuotaExceededFault`](crate::error::UserGroupQuotaExceededFault)
 pub mod user_group_quota_exceeded_fault {
+    ///
     /// A builder for [`UserGroupQuotaExceededFault`](crate::error::UserGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13388,6 +13441,7 @@ impl std::fmt::Display for UserGroupAlreadyExistsFault {
 impl std::error::Error for UserGroupAlreadyExistsFault {}
 /// See [`UserGroupAlreadyExistsFault`](crate::error::UserGroupAlreadyExistsFault)
 pub mod user_group_already_exists_fault {
+    ///
     /// A builder for [`UserGroupAlreadyExistsFault`](crate::error::UserGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13452,6 +13506,7 @@ impl std::fmt::Display for UserQuotaExceededFault {
 impl std::error::Error for UserQuotaExceededFault {}
 /// See [`UserQuotaExceededFault`](crate::error::UserQuotaExceededFault)
 pub mod user_quota_exceeded_fault {
+    ///
     /// A builder for [`UserQuotaExceededFault`](crate::error::UserQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13516,6 +13571,7 @@ impl std::fmt::Display for UserAlreadyExistsFault {
 impl std::error::Error for UserAlreadyExistsFault {}
 /// See [`UserAlreadyExistsFault`](crate::error::UserAlreadyExistsFault)
 pub mod user_already_exists_fault {
+    ///
     /// A builder for [`UserAlreadyExistsFault`](crate::error::UserAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13580,6 +13636,7 @@ impl std::fmt::Display for ReplicationGroupAlreadyExistsFault {
 impl std::error::Error for ReplicationGroupAlreadyExistsFault {}
 /// See [`ReplicationGroupAlreadyExistsFault`](crate::error::ReplicationGroupAlreadyExistsFault)
 pub mod replication_group_already_exists_fault {
+    ///
     /// A builder for [`ReplicationGroupAlreadyExistsFault`](crate::error::ReplicationGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13644,6 +13701,7 @@ impl std::fmt::Display for GlobalReplicationGroupAlreadyExistsFault {
 impl std::error::Error for GlobalReplicationGroupAlreadyExistsFault {}
 /// See [`GlobalReplicationGroupAlreadyExistsFault`](crate::error::GlobalReplicationGroupAlreadyExistsFault)
 pub mod global_replication_group_already_exists_fault {
+    ///
     /// A builder for [`GlobalReplicationGroupAlreadyExistsFault`](crate::error::GlobalReplicationGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13708,6 +13766,7 @@ impl std::fmt::Display for CacheSubnetGroupQuotaExceededFault {
 impl std::error::Error for CacheSubnetGroupQuotaExceededFault {}
 /// See [`CacheSubnetGroupQuotaExceededFault`](crate::error::CacheSubnetGroupQuotaExceededFault)
 pub mod cache_subnet_group_quota_exceeded_fault {
+    ///
     /// A builder for [`CacheSubnetGroupQuotaExceededFault`](crate::error::CacheSubnetGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13772,6 +13831,7 @@ impl std::fmt::Display for CacheSubnetGroupAlreadyExistsFault {
 impl std::error::Error for CacheSubnetGroupAlreadyExistsFault {}
 /// See [`CacheSubnetGroupAlreadyExistsFault`](crate::error::CacheSubnetGroupAlreadyExistsFault)
 pub mod cache_subnet_group_already_exists_fault {
+    ///
     /// A builder for [`CacheSubnetGroupAlreadyExistsFault`](crate::error::CacheSubnetGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13836,6 +13896,7 @@ impl std::fmt::Display for CacheSecurityGroupQuotaExceededFault {
 impl std::error::Error for CacheSecurityGroupQuotaExceededFault {}
 /// See [`CacheSecurityGroupQuotaExceededFault`](crate::error::CacheSecurityGroupQuotaExceededFault)
 pub mod cache_security_group_quota_exceeded_fault {
+    ///
     /// A builder for [`CacheSecurityGroupQuotaExceededFault`](crate::error::CacheSecurityGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13900,6 +13961,7 @@ impl std::fmt::Display for CacheSecurityGroupAlreadyExistsFault {
 impl std::error::Error for CacheSecurityGroupAlreadyExistsFault {}
 /// See [`CacheSecurityGroupAlreadyExistsFault`](crate::error::CacheSecurityGroupAlreadyExistsFault)
 pub mod cache_security_group_already_exists_fault {
+    ///
     /// A builder for [`CacheSecurityGroupAlreadyExistsFault`](crate::error::CacheSecurityGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13964,6 +14026,7 @@ impl std::fmt::Display for CacheParameterGroupQuotaExceededFault {
 impl std::error::Error for CacheParameterGroupQuotaExceededFault {}
 /// See [`CacheParameterGroupQuotaExceededFault`](crate::error::CacheParameterGroupQuotaExceededFault)
 pub mod cache_parameter_group_quota_exceeded_fault {
+    ///
     /// A builder for [`CacheParameterGroupQuotaExceededFault`](crate::error::CacheParameterGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14028,6 +14091,7 @@ impl std::fmt::Display for CacheParameterGroupAlreadyExistsFault {
 impl std::error::Error for CacheParameterGroupAlreadyExistsFault {}
 /// See [`CacheParameterGroupAlreadyExistsFault`](crate::error::CacheParameterGroupAlreadyExistsFault)
 pub mod cache_parameter_group_already_exists_fault {
+    ///
     /// A builder for [`CacheParameterGroupAlreadyExistsFault`](crate::error::CacheParameterGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14092,6 +14156,7 @@ impl std::fmt::Display for CacheClusterAlreadyExistsFault {
 impl std::error::Error for CacheClusterAlreadyExistsFault {}
 /// See [`CacheClusterAlreadyExistsFault`](crate::error::CacheClusterAlreadyExistsFault)
 pub mod cache_cluster_already_exists_fault {
+    ///
     /// A builder for [`CacheClusterAlreadyExistsFault`](crate::error::CacheClusterAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14156,6 +14221,7 @@ impl std::fmt::Display for ReplicationGroupNotUnderMigrationFault {
 impl std::error::Error for ReplicationGroupNotUnderMigrationFault {}
 /// See [`ReplicationGroupNotUnderMigrationFault`](crate::error::ReplicationGroupNotUnderMigrationFault)
 pub mod replication_group_not_under_migration_fault {
+    ///
     /// A builder for [`ReplicationGroupNotUnderMigrationFault`](crate::error::ReplicationGroupNotUnderMigrationFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14220,6 +14286,7 @@ impl std::fmt::Display for AuthorizationAlreadyExistsFault {
 impl std::error::Error for AuthorizationAlreadyExistsFault {}
 /// See [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault)
 pub mod authorization_already_exists_fault {
+    ///
     /// A builder for [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

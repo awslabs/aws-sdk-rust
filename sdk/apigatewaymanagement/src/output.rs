@@ -11,6 +11,7 @@ impl std::fmt::Debug for PostToConnectionOutput {
 }
 /// See [`PostToConnectionOutput`](crate::output::PostToConnectionOutput)
 pub mod post_to_connection_output {
+    ///
     /// A builder for [`PostToConnectionOutput`](crate::output::PostToConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -65,6 +66,7 @@ impl std::fmt::Debug for GetConnectionOutput {
 }
 /// See [`GetConnectionOutput`](crate::output::GetConnectionOutput)
 pub mod get_connection_output {
+    ///
     /// A builder for [`GetConnectionOutput`](crate::output::GetConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -139,6 +141,7 @@ impl std::fmt::Debug for DeleteConnectionOutput {
 }
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
 pub mod delete_connection_output {
+    ///
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

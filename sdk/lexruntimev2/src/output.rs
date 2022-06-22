@@ -92,6 +92,7 @@ impl std::fmt::Debug for RecognizeUtteranceOutput {
 }
 /// See [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput)
 pub mod recognize_utterance_output {
+    ///
     /// A builder for [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -309,6 +310,7 @@ impl std::fmt::Debug for RecognizeTextOutput {
 }
 /// See [`RecognizeTextOutput`](crate::output::RecognizeTextOutput)
 pub mod recognize_text_output {
+    ///
     /// A builder for [`RecognizeTextOutput`](crate::output::RecognizeTextOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -490,6 +492,7 @@ impl std::fmt::Debug for PutSessionOutput {
 }
 /// See [`PutSessionOutput`](crate::output::PutSessionOutput)
 pub mod put_session_output {
+    ///
     /// A builder for [`PutSessionOutput`](crate::output::PutSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
@@ -640,6 +643,7 @@ impl std::fmt::Debug for GetSessionOutput {
 }
 /// See [`GetSessionOutput`](crate::output::GetSessionOutput)
 pub mod get_session_output {
+    ///
     /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -777,6 +781,7 @@ impl std::fmt::Debug for DeleteSessionOutput {
 }
 /// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
 pub mod delete_session_output {
+    ///
     /// A builder for [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

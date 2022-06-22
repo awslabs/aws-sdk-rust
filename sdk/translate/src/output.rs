@@ -47,6 +47,7 @@ impl std::fmt::Debug for UpdateParallelDataOutput {
 }
 /// See [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput)
 pub mod update_parallel_data_output {
+    ///
     /// A builder for [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -180,6 +181,7 @@ impl std::fmt::Debug for TranslateTextOutput {
 }
 /// See [`TranslateTextOutput`](crate::output::TranslateTextOutput)
 pub mod translate_text_output {
+    ///
     /// A builder for [`TranslateTextOutput`](crate::output::TranslateTextOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -311,6 +313,7 @@ impl std::fmt::Debug for StopTextTranslationJobOutput {
 }
 /// See [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput)
 pub mod stop_text_translation_job_output {
+    ///
     /// A builder for [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -405,6 +408,7 @@ impl std::fmt::Debug for StartTextTranslationJobOutput {
 }
 /// See [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput)
 pub mod start_text_translation_job_output {
+    ///
     /// A builder for [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -505,6 +509,7 @@ impl std::fmt::Debug for ListTextTranslationJobsOutput {
 }
 /// See [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput)
 pub mod list_text_translation_jobs_output {
+    ///
     /// A builder for [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -599,6 +604,7 @@ impl std::fmt::Debug for ListTerminologiesOutput {
 }
 /// See [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput)
 pub mod list_terminologies_output {
+    ///
     /// A builder for [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -691,6 +697,7 @@ impl std::fmt::Debug for ListParallelDataOutput {
 }
 /// See [`ListParallelDataOutput`](crate::output::ListParallelDataOutput)
 pub mod list_parallel_data_output {
+    ///
     /// A builder for [`ListParallelDataOutput`](crate::output::ListParallelDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -781,6 +788,7 @@ impl std::fmt::Debug for ImportTerminologyOutput {
 }
 /// See [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput)
 pub mod import_terminology_output {
+    ///
     /// A builder for [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -888,6 +896,7 @@ impl std::fmt::Debug for GetTerminologyOutput {
 }
 /// See [`GetTerminologyOutput`](crate::output::GetTerminologyOutput)
 pub mod get_terminology_output {
+    ///
     /// A builder for [`GetTerminologyOutput`](crate::output::GetTerminologyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1033,6 +1042,7 @@ impl std::fmt::Debug for GetParallelDataOutput {
 }
 /// See [`GetParallelDataOutput`](crate::output::GetParallelDataOutput)
 pub mod get_parallel_data_output {
+    ///
     /// A builder for [`GetParallelDataOutput`](crate::output::GetParallelDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1162,6 +1172,7 @@ impl std::fmt::Debug for DescribeTextTranslationJobOutput {
 }
 /// See [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput)
 pub mod describe_text_translation_job_output {
+    ///
     /// A builder for [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1213,6 +1224,7 @@ impl std::fmt::Debug for DeleteTerminologyOutput {
 }
 /// See [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput)
 pub mod delete_terminology_output {
+    ///
     /// A builder for [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1260,6 +1272,7 @@ impl std::fmt::Debug for DeleteParallelDataOutput {
 }
 /// See [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput)
 pub mod delete_parallel_data_output {
+    ///
     /// A builder for [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1336,6 +1349,7 @@ impl std::fmt::Debug for CreateParallelDataOutput {
 }
 /// See [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput)
 pub mod create_parallel_data_output {
+    ///
     /// A builder for [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

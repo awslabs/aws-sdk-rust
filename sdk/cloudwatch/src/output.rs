@@ -11,6 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for StopMetricStreamsOutput {
 }
 /// See [`StopMetricStreamsOutput`](crate::output::StopMetricStreamsOutput)
 pub mod stop_metric_streams_output {
+    ///
     /// A builder for [`StopMetricStreamsOutput`](crate::output::StopMetricStreamsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for StartMetricStreamsOutput {
 }
 /// See [`StartMetricStreamsOutput`](crate::output::StartMetricStreamsOutput)
 pub mod start_metric_streams_output {
+    ///
     /// A builder for [`StartMetricStreamsOutput`](crate::output::StartMetricStreamsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for SetAlarmStateOutput {
 }
 /// See [`SetAlarmStateOutput`](crate::output::SetAlarmStateOutput)
 pub mod set_alarm_state_output {
+    ///
     /// A builder for [`SetAlarmStateOutput`](crate::output::SetAlarmStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -171,6 +176,7 @@ impl std::fmt::Debug for PutMetricStreamOutput {
 }
 /// See [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput)
 pub mod put_metric_stream_output {
+    ///
     /// A builder for [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -213,6 +219,7 @@ impl std::fmt::Debug for PutMetricDataOutput {
 }
 /// See [`PutMetricDataOutput`](crate::output::PutMetricDataOutput)
 pub mod put_metric_data_output {
+    ///
     /// A builder for [`PutMetricDataOutput`](crate::output::PutMetricDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -243,6 +250,7 @@ impl std::fmt::Debug for PutMetricAlarmOutput {
 }
 /// See [`PutMetricAlarmOutput`](crate::output::PutMetricAlarmOutput)
 pub mod put_metric_alarm_output {
+    ///
     /// A builder for [`PutMetricAlarmOutput`](crate::output::PutMetricAlarmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -273,6 +281,7 @@ impl std::fmt::Debug for PutInsightRuleOutput {
 }
 /// See [`PutInsightRuleOutput`](crate::output::PutInsightRuleOutput)
 pub mod put_insight_rule_output {
+    ///
     /// A builder for [`PutInsightRuleOutput`](crate::output::PutInsightRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -323,6 +332,7 @@ impl std::fmt::Debug for PutDashboardOutput {
 }
 /// See [`PutDashboardOutput`](crate::output::PutDashboardOutput)
 pub mod put_dashboard_output {
+    ///
     /// A builder for [`PutDashboardOutput`](crate::output::PutDashboardOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -384,6 +394,7 @@ impl std::fmt::Debug for PutCompositeAlarmOutput {
 }
 /// See [`PutCompositeAlarmOutput`](crate::output::PutCompositeAlarmOutput)
 pub mod put_composite_alarm_output {
+    ///
     /// A builder for [`PutCompositeAlarmOutput`](crate::output::PutCompositeAlarmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -414,6 +425,7 @@ impl std::fmt::Debug for PutAnomalyDetectorOutput {
 }
 /// See [`PutAnomalyDetectorOutput`](crate::output::PutAnomalyDetectorOutput)
 pub mod put_anomaly_detector_output {
+    ///
     /// A builder for [`PutAnomalyDetectorOutput`](crate::output::PutAnomalyDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -454,6 +466,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -522,6 +535,7 @@ impl std::fmt::Debug for ListMetricStreamsOutput {
 }
 /// See [`ListMetricStreamsOutput`](crate::output::ListMetricStreamsOutput)
 pub mod list_metric_streams_output {
+    ///
     /// A builder for [`ListMetricStreamsOutput`](crate::output::ListMetricStreamsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -604,6 +618,7 @@ impl std::fmt::Debug for ListMetricsOutput {
 }
 /// See [`ListMetricsOutput`](crate::output::ListMetricsOutput)
 pub mod list_metrics_output {
+    ///
     /// A builder for [`ListMetricsOutput`](crate::output::ListMetricsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -686,6 +701,7 @@ impl std::fmt::Debug for ListDashboardsOutput {
 }
 /// See [`ListDashboardsOutput`](crate::output::ListDashboardsOutput)
 pub mod list_dashboards_output {
+    ///
     /// A builder for [`ListDashboardsOutput`](crate::output::ListDashboardsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -762,6 +778,7 @@ impl std::fmt::Debug for GetMetricWidgetImageOutput {
 }
 /// See [`GetMetricWidgetImageOutput`](crate::output::GetMetricWidgetImageOutput)
 pub mod get_metric_widget_image_output {
+    ///
     /// A builder for [`GetMetricWidgetImageOutput`](crate::output::GetMetricWidgetImageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -892,6 +909,7 @@ impl std::fmt::Debug for GetMetricStreamOutput {
 }
 /// See [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput)
 pub mod get_metric_stream_output {
+    ///
     /// A builder for [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1117,6 +1135,7 @@ impl std::fmt::Debug for GetMetricStatisticsOutput {
 }
 /// See [`GetMetricStatisticsOutput`](crate::output::GetMetricStatisticsOutput)
 pub mod get_metric_statistics_output {
+    ///
     /// A builder for [`GetMetricStatisticsOutput`](crate::output::GetMetricStatisticsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1208,6 +1227,7 @@ impl std::fmt::Debug for GetMetricDataOutput {
 }
 /// See [`GetMetricDataOutput`](crate::output::GetMetricDataOutput)
 pub mod get_metric_data_output {
+    ///
     /// A builder for [`GetMetricDataOutput`](crate::output::GetMetricDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1345,6 +1365,7 @@ impl std::fmt::Debug for GetInsightRuleReportOutput {
 }
 /// See [`GetInsightRuleReportOutput`](crate::output::GetInsightRuleReportOutput)
 pub mod get_insight_rule_report_output {
+    ///
     /// A builder for [`GetInsightRuleReportOutput`](crate::output::GetInsightRuleReportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1508,6 +1529,7 @@ impl std::fmt::Debug for GetDashboardOutput {
 }
 /// See [`GetDashboardOutput`](crate::output::GetDashboardOutput)
 pub mod get_dashboard_output {
+    ///
     /// A builder for [`GetDashboardOutput`](crate::output::GetDashboardOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1595,6 +1617,7 @@ impl std::fmt::Debug for EnableInsightRulesOutput {
 }
 /// See [`EnableInsightRulesOutput`](crate::output::EnableInsightRulesOutput)
 pub mod enable_insight_rules_output {
+    ///
     /// A builder for [`EnableInsightRulesOutput`](crate::output::EnableInsightRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1648,6 +1671,7 @@ impl std::fmt::Debug for EnableAlarmActionsOutput {
 }
 /// See [`EnableAlarmActionsOutput`](crate::output::EnableAlarmActionsOutput)
 pub mod enable_alarm_actions_output {
+    ///
     /// A builder for [`EnableAlarmActionsOutput`](crate::output::EnableAlarmActionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1688,6 +1712,7 @@ impl std::fmt::Debug for DisableInsightRulesOutput {
 }
 /// See [`DisableInsightRulesOutput`](crate::output::DisableInsightRulesOutput)
 pub mod disable_insight_rules_output {
+    ///
     /// A builder for [`DisableInsightRulesOutput`](crate::output::DisableInsightRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1741,6 +1766,7 @@ impl std::fmt::Debug for DisableAlarmActionsOutput {
 }
 /// See [`DisableAlarmActionsOutput`](crate::output::DisableAlarmActionsOutput)
 pub mod disable_alarm_actions_output {
+    ///
     /// A builder for [`DisableAlarmActionsOutput`](crate::output::DisableAlarmActionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1788,6 +1814,7 @@ impl std::fmt::Debug for DescribeInsightRulesOutput {
 }
 /// See [`DescribeInsightRulesOutput`](crate::output::DescribeInsightRulesOutput)
 pub mod describe_insight_rules_output {
+    ///
     /// A builder for [`DescribeInsightRulesOutput`](crate::output::DescribeInsightRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1870,6 +1897,7 @@ impl std::fmt::Debug for DescribeAnomalyDetectorsOutput {
 }
 /// See [`DescribeAnomalyDetectorsOutput`](crate::output::DescribeAnomalyDetectorsOutput)
 pub mod describe_anomaly_detectors_output {
+    ///
     /// A builder for [`DescribeAnomalyDetectorsOutput`](crate::output::DescribeAnomalyDetectorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1946,6 +1974,7 @@ impl std::fmt::Debug for DescribeAlarmsForMetricOutput {
 }
 /// See [`DescribeAlarmsForMetricOutput`](crate::output::DescribeAlarmsForMetricOutput)
 pub mod describe_alarms_for_metric_output {
+    ///
     /// A builder for [`DescribeAlarmsForMetricOutput`](crate::output::DescribeAlarmsForMetricOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2023,6 +2052,7 @@ impl std::fmt::Debug for DescribeAlarmsOutput {
 }
 /// See [`DescribeAlarmsOutput`](crate::output::DescribeAlarmsOutput)
 pub mod describe_alarms_output {
+    ///
     /// A builder for [`DescribeAlarmsOutput`](crate::output::DescribeAlarmsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2127,6 +2157,7 @@ impl std::fmt::Debug for DescribeAlarmHistoryOutput {
 }
 /// See [`DescribeAlarmHistoryOutput`](crate::output::DescribeAlarmHistoryOutput)
 pub mod describe_alarm_history_output {
+    ///
     /// A builder for [`DescribeAlarmHistoryOutput`](crate::output::DescribeAlarmHistoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2193,6 +2224,7 @@ impl std::fmt::Debug for DeleteMetricStreamOutput {
 }
 /// See [`DeleteMetricStreamOutput`](crate::output::DeleteMetricStreamOutput)
 pub mod delete_metric_stream_output {
+    ///
     /// A builder for [`DeleteMetricStreamOutput`](crate::output::DeleteMetricStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2233,6 +2265,7 @@ impl std::fmt::Debug for DeleteInsightRulesOutput {
 }
 /// See [`DeleteInsightRulesOutput`](crate::output::DeleteInsightRulesOutput)
 pub mod delete_insight_rules_output {
+    ///
     /// A builder for [`DeleteInsightRulesOutput`](crate::output::DeleteInsightRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2286,6 +2319,7 @@ impl std::fmt::Debug for DeleteDashboardsOutput {
 }
 /// See [`DeleteDashboardsOutput`](crate::output::DeleteDashboardsOutput)
 pub mod delete_dashboards_output {
+    ///
     /// A builder for [`DeleteDashboardsOutput`](crate::output::DeleteDashboardsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2316,6 +2350,7 @@ impl std::fmt::Debug for DeleteAnomalyDetectorOutput {
 }
 /// See [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
 pub mod delete_anomaly_detector_output {
+    ///
     /// A builder for [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2346,6 +2381,7 @@ impl std::fmt::Debug for DeleteAlarmsOutput {
 }
 /// See [`DeleteAlarmsOutput`](crate::output::DeleteAlarmsOutput)
 pub mod delete_alarms_output {
+    ///
     /// A builder for [`DeleteAlarmsOutput`](crate::output::DeleteAlarmsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

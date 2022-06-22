@@ -11,6 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for StopConfigurationRecorderOutput {
 }
 /// See [`StopConfigurationRecorderOutput`](crate::output::StopConfigurationRecorderOutput)
 pub mod stop_configuration_recorder_output {
+    ///
     /// A builder for [`StopConfigurationRecorderOutput`](crate::output::StopConfigurationRecorderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -118,6 +121,7 @@ impl std::fmt::Debug for StartRemediationExecutionOutput {
 }
 /// See [`StartRemediationExecutionOutput`](crate::output::StartRemediationExecutionOutput)
 pub mod start_remediation_execution_output {
+    ///
     /// A builder for [`StartRemediationExecutionOutput`](crate::output::StartRemediationExecutionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -186,6 +190,7 @@ impl std::fmt::Debug for StartConfigurationRecorderOutput {
 }
 /// See [`StartConfigurationRecorderOutput`](crate::output::StartConfigurationRecorderOutput)
 pub mod start_configuration_recorder_output {
+    ///
     /// A builder for [`StartConfigurationRecorderOutput`](crate::output::StartConfigurationRecorderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -216,6 +221,7 @@ impl std::fmt::Debug for StartConfigRulesEvaluationOutput {
 }
 /// See [`StartConfigRulesEvaluationOutput`](crate::output::StartConfigRulesEvaluationOutput)
 pub mod start_config_rules_evaluation_output {
+    ///
     /// A builder for [`StartConfigRulesEvaluationOutput`](crate::output::StartConfigRulesEvaluationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -270,6 +276,7 @@ impl std::fmt::Debug for SelectResourceConfigOutput {
 }
 /// See [`SelectResourceConfigOutput`](crate::output::SelectResourceConfigOutput)
 pub mod select_resource_config_output {
+    ///
     /// A builder for [`SelectResourceConfigOutput`](crate::output::SelectResourceConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -374,6 +381,7 @@ impl std::fmt::Debug for SelectAggregateResourceConfigOutput {
 }
 /// See [`SelectAggregateResourceConfigOutput`](crate::output::SelectAggregateResourceConfigOutput)
 pub mod select_aggregate_resource_config_output {
+    ///
     /// A builder for [`SelectAggregateResourceConfigOutput`](crate::output::SelectAggregateResourceConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -464,6 +472,7 @@ impl std::fmt::Debug for PutStoredQueryOutput {
 }
 /// See [`PutStoredQueryOutput`](crate::output::PutStoredQueryOutput)
 pub mod put_stored_query_output {
+    ///
     /// A builder for [`PutStoredQueryOutput`](crate::output::PutStoredQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -520,6 +529,7 @@ impl std::fmt::Debug for PutRetentionConfigurationOutput {
 }
 /// See [`PutRetentionConfigurationOutput`](crate::output::PutRetentionConfigurationOutput)
 pub mod put_retention_configuration_output {
+    ///
     /// A builder for [`PutRetentionConfigurationOutput`](crate::output::PutRetentionConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -571,6 +581,7 @@ impl std::fmt::Debug for PutResourceConfigOutput {
 }
 /// See [`PutResourceConfigOutput`](crate::output::PutResourceConfigOutput)
 pub mod put_resource_config_output {
+    ///
     /// A builder for [`PutResourceConfigOutput`](crate::output::PutResourceConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -614,6 +625,7 @@ impl std::fmt::Debug for PutRemediationExceptionsOutput {
 }
 /// See [`PutRemediationExceptionsOutput`](crate::output::PutRemediationExceptionsOutput)
 pub mod put_remediation_exceptions_output {
+    ///
     /// A builder for [`PutRemediationExceptionsOutput`](crate::output::PutRemediationExceptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -683,6 +695,7 @@ impl std::fmt::Debug for PutRemediationConfigurationsOutput {
 }
 /// See [`PutRemediationConfigurationsOutput`](crate::output::PutRemediationConfigurationsOutput)
 pub mod put_remediation_configurations_output {
+    ///
     /// A builder for [`PutRemediationConfigurationsOutput`](crate::output::PutRemediationConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -750,6 +763,7 @@ impl std::fmt::Debug for PutOrganizationConformancePackOutput {
 }
 /// See [`PutOrganizationConformancePackOutput`](crate::output::PutOrganizationConformancePackOutput)
 pub mod put_organization_conformance_pack_output {
+    ///
     /// A builder for [`PutOrganizationConformancePackOutput`](crate::output::PutOrganizationConformancePackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -813,6 +827,7 @@ impl std::fmt::Debug for PutOrganizationConfigRuleOutput {
 }
 /// See [`PutOrganizationConfigRuleOutput`](crate::output::PutOrganizationConfigRuleOutput)
 pub mod put_organization_config_rule_output {
+    ///
     /// A builder for [`PutOrganizationConfigRuleOutput`](crate::output::PutOrganizationConfigRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -863,6 +878,7 @@ impl std::fmt::Debug for PutExternalEvaluationOutput {
 }
 /// See [`PutExternalEvaluationOutput`](crate::output::PutExternalEvaluationOutput)
 pub mod put_external_evaluation_output {
+    ///
     /// A builder for [`PutExternalEvaluationOutput`](crate::output::PutExternalEvaluationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -903,6 +919,7 @@ impl std::fmt::Debug for PutEvaluationsOutput {
 }
 /// See [`PutEvaluationsOutput`](crate::output::PutEvaluationsOutput)
 pub mod put_evaluations_output {
+    ///
     /// A builder for [`PutEvaluationsOutput`](crate::output::PutEvaluationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -956,6 +973,7 @@ impl std::fmt::Debug for PutDeliveryChannelOutput {
 }
 /// See [`PutDeliveryChannelOutput`](crate::output::PutDeliveryChannelOutput)
 pub mod put_delivery_channel_output {
+    ///
     /// A builder for [`PutDeliveryChannelOutput`](crate::output::PutDeliveryChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -996,6 +1014,7 @@ impl std::fmt::Debug for PutConformancePackOutput {
 }
 /// See [`PutConformancePackOutput`](crate::output::PutConformancePackOutput)
 pub mod put_conformance_pack_output {
+    ///
     /// A builder for [`PutConformancePackOutput`](crate::output::PutConformancePackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1043,6 +1062,7 @@ impl std::fmt::Debug for PutConfigurationRecorderOutput {
 }
 /// See [`PutConfigurationRecorderOutput`](crate::output::PutConfigurationRecorderOutput)
 pub mod put_configuration_recorder_output {
+    ///
     /// A builder for [`PutConfigurationRecorderOutput`](crate::output::PutConfigurationRecorderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1085,6 +1105,7 @@ impl std::fmt::Debug for PutConfigurationAggregatorOutput {
 }
 /// See [`PutConfigurationAggregatorOutput`](crate::output::PutConfigurationAggregatorOutput)
 pub mod put_configuration_aggregator_output {
+    ///
     /// A builder for [`PutConfigurationAggregatorOutput`](crate::output::PutConfigurationAggregatorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1136,6 +1157,7 @@ impl std::fmt::Debug for PutConfigRuleOutput {
 }
 /// See [`PutConfigRuleOutput`](crate::output::PutConfigRuleOutput)
 pub mod put_config_rule_output {
+    ///
     /// A builder for [`PutConfigRuleOutput`](crate::output::PutConfigRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1178,6 +1200,7 @@ impl std::fmt::Debug for PutAggregationAuthorizationOutput {
 }
 /// See [`PutAggregationAuthorizationOutput`](crate::output::PutAggregationAuthorizationOutput)
 pub mod put_aggregation_authorization_output {
+    ///
     /// A builder for [`PutAggregationAuthorizationOutput`](crate::output::PutAggregationAuthorizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1246,6 +1269,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1331,6 +1355,7 @@ impl std::fmt::Debug for ListStoredQueriesOutput {
 }
 /// See [`ListStoredQueriesOutput`](crate::output::ListStoredQueriesOutput)
 pub mod list_stored_queries_output {
+    ///
     /// A builder for [`ListStoredQueriesOutput`](crate::output::ListStoredQueriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1414,6 +1439,7 @@ impl std::fmt::Debug for ListDiscoveredResourcesOutput {
 }
 /// See [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput)
 pub mod list_discovered_resources_output {
+    ///
     /// A builder for [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1500,6 +1526,7 @@ impl std::fmt::Debug for ListAggregateDiscoveredResourcesOutput {
 }
 /// See [`ListAggregateDiscoveredResourcesOutput`](crate::output::ListAggregateDiscoveredResourcesOutput)
 pub mod list_aggregate_discovered_resources_output {
+    ///
     /// A builder for [`ListAggregateDiscoveredResourcesOutput`](crate::output::ListAggregateDiscoveredResourcesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1579,6 +1606,7 @@ impl std::fmt::Debug for GetStoredQueryOutput {
 }
 /// See [`GetStoredQueryOutput`](crate::output::GetStoredQueryOutput)
 pub mod get_stored_query_output {
+    ///
     /// A builder for [`GetStoredQueryOutput`](crate::output::GetStoredQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1643,6 +1671,7 @@ impl std::fmt::Debug for GetResourceConfigHistoryOutput {
 }
 /// See [`GetResourceConfigHistoryOutput`](crate::output::GetResourceConfigHistoryOutput)
 pub mod get_resource_config_history_output {
+    ///
     /// A builder for [`GetResourceConfigHistoryOutput`](crate::output::GetResourceConfigHistoryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1719,6 +1748,7 @@ impl std::fmt::Debug for GetOrganizationCustomRulePolicyOutput {
 }
 /// See [`GetOrganizationCustomRulePolicyOutput`](crate::output::GetOrganizationCustomRulePolicyOutput)
 pub mod get_organization_custom_rule_policy_output {
+    ///
     /// A builder for [`GetOrganizationCustomRulePolicyOutput`](crate::output::GetOrganizationCustomRulePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1787,6 +1817,7 @@ impl std::fmt::Debug for GetOrganizationConformancePackDetailedStatusOutput {
 }
 /// See [`GetOrganizationConformancePackDetailedStatusOutput`](crate::output::GetOrganizationConformancePackDetailedStatusOutput)
 pub mod get_organization_conformance_pack_detailed_status_output {
+    ///
     /// A builder for [`GetOrganizationConformancePackDetailedStatusOutput`](crate::output::GetOrganizationConformancePackDetailedStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1886,6 +1917,7 @@ impl std::fmt::Debug for GetOrganizationConfigRuleDetailedStatusOutput {
 }
 /// See [`GetOrganizationConfigRuleDetailedStatusOutput`](crate::output::GetOrganizationConfigRuleDetailedStatusOutput)
 pub mod get_organization_config_rule_detailed_status_output {
+    ///
     /// A builder for [`GetOrganizationConfigRuleDetailedStatusOutput`](crate::output::GetOrganizationConfigRuleDetailedStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1998,6 +2030,7 @@ impl std::fmt::Debug for GetDiscoveredResourceCountsOutput {
 }
 /// See [`GetDiscoveredResourceCountsOutput`](crate::output::GetDiscoveredResourceCountsOutput)
 pub mod get_discovered_resource_counts_output {
+    ///
     /// A builder for [`GetDiscoveredResourceCountsOutput`](crate::output::GetDiscoveredResourceCountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2097,6 +2130,7 @@ impl std::fmt::Debug for GetCustomRulePolicyOutput {
 }
 /// See [`GetCustomRulePolicyOutput`](crate::output::GetCustomRulePolicyOutput)
 pub mod get_custom_rule_policy_output {
+    ///
     /// A builder for [`GetCustomRulePolicyOutput`](crate::output::GetCustomRulePolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2164,6 +2198,7 @@ impl std::fmt::Debug for GetConformancePackComplianceSummaryOutput {
 }
 /// See [`GetConformancePackComplianceSummaryOutput`](crate::output::GetConformancePackComplianceSummaryOutput)
 pub mod get_conformance_pack_compliance_summary_output {
+    ///
     /// A builder for [`GetConformancePackComplianceSummaryOutput`](crate::output::GetConformancePackComplianceSummaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2268,6 +2303,7 @@ impl std::fmt::Debug for GetConformancePackComplianceDetailsOutput {
 }
 /// See [`GetConformancePackComplianceDetailsOutput`](crate::output::GetConformancePackComplianceDetailsOutput)
 pub mod get_conformance_pack_compliance_details_output {
+    ///
     /// A builder for [`GetConformancePackComplianceDetailsOutput`](crate::output::GetConformancePackComplianceDetailsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2373,6 +2409,7 @@ impl std::fmt::Debug for GetComplianceSummaryByResourceTypeOutput {
 }
 /// See [`GetComplianceSummaryByResourceTypeOutput`](crate::output::GetComplianceSummaryByResourceTypeOutput)
 pub mod get_compliance_summary_by_resource_type_output {
+    ///
     /// A builder for [`GetComplianceSummaryByResourceTypeOutput`](crate::output::GetComplianceSummaryByResourceTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2444,6 +2481,7 @@ impl std::fmt::Debug for GetComplianceSummaryByConfigRuleOutput {
 }
 /// See [`GetComplianceSummaryByConfigRuleOutput`](crate::output::GetComplianceSummaryByConfigRuleOutput)
 pub mod get_compliance_summary_by_config_rule_output {
+    ///
     /// A builder for [`GetComplianceSummaryByConfigRuleOutput`](crate::output::GetComplianceSummaryByConfigRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2508,6 +2546,7 @@ impl std::fmt::Debug for GetComplianceDetailsByResourceOutput {
 }
 /// See [`GetComplianceDetailsByResourceOutput`](crate::output::GetComplianceDetailsByResourceOutput)
 pub mod get_compliance_details_by_resource_output {
+    ///
     /// A builder for [`GetComplianceDetailsByResourceOutput`](crate::output::GetComplianceDetailsByResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2591,6 +2630,7 @@ impl std::fmt::Debug for GetComplianceDetailsByConfigRuleOutput {
 }
 /// See [`GetComplianceDetailsByConfigRuleOutput`](crate::output::GetComplianceDetailsByConfigRuleOutput)
 pub mod get_compliance_details_by_config_rule_output {
+    ///
     /// A builder for [`GetComplianceDetailsByConfigRuleOutput`](crate::output::GetComplianceDetailsByConfigRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2667,6 +2707,7 @@ impl std::fmt::Debug for GetAggregateResourceConfigOutput {
 }
 /// See [`GetAggregateResourceConfigOutput`](crate::output::GetAggregateResourceConfigOutput)
 pub mod get_aggregate_resource_config_output {
+    ///
     /// A builder for [`GetAggregateResourceConfigOutput`](crate::output::GetAggregateResourceConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2751,6 +2792,7 @@ impl std::fmt::Debug for GetAggregateDiscoveredResourceCountsOutput {
 }
 /// See [`GetAggregateDiscoveredResourceCountsOutput`](crate::output::GetAggregateDiscoveredResourceCountsOutput)
 pub mod get_aggregate_discovered_resource_counts_output {
+    ///
     /// A builder for [`GetAggregateDiscoveredResourceCountsOutput`](crate::output::GetAggregateDiscoveredResourceCountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2875,6 +2917,7 @@ impl std::fmt::Debug for GetAggregateConformancePackComplianceSummaryOutput {
 }
 /// See [`GetAggregateConformancePackComplianceSummaryOutput`](crate::output::GetAggregateConformancePackComplianceSummaryOutput)
 pub mod get_aggregate_conformance_pack_compliance_summary_output {
+    ///
     /// A builder for [`GetAggregateConformancePackComplianceSummaryOutput`](crate::output::GetAggregateConformancePackComplianceSummaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2993,6 +3036,7 @@ impl std::fmt::Debug for GetAggregateConfigRuleComplianceSummaryOutput {
 }
 /// See [`GetAggregateConfigRuleComplianceSummaryOutput`](crate::output::GetAggregateConfigRuleComplianceSummaryOutput)
 pub mod get_aggregate_config_rule_compliance_summary_output {
+    ///
     /// A builder for [`GetAggregateConfigRuleComplianceSummaryOutput`](crate::output::GetAggregateConfigRuleComplianceSummaryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3098,6 +3142,7 @@ impl std::fmt::Debug for GetAggregateComplianceDetailsByConfigRuleOutput {
 }
 /// See [`GetAggregateComplianceDetailsByConfigRuleOutput`](crate::output::GetAggregateComplianceDetailsByConfigRuleOutput)
 pub mod get_aggregate_compliance_details_by_config_rule_output {
+    ///
     /// A builder for [`GetAggregateComplianceDetailsByConfigRuleOutput`](crate::output::GetAggregateComplianceDetailsByConfigRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3188,6 +3233,7 @@ impl std::fmt::Debug for DescribeRetentionConfigurationsOutput {
 }
 /// See [`DescribeRetentionConfigurationsOutput`](crate::output::DescribeRetentionConfigurationsOutput)
 pub mod describe_retention_configurations_output {
+    ///
     /// A builder for [`DescribeRetentionConfigurationsOutput`](crate::output::DescribeRetentionConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3280,6 +3326,7 @@ impl std::fmt::Debug for DescribeRemediationExecutionStatusOutput {
 }
 /// See [`DescribeRemediationExecutionStatusOutput`](crate::output::DescribeRemediationExecutionStatusOutput)
 pub mod describe_remediation_execution_status_output {
+    ///
     /// A builder for [`DescribeRemediationExecutionStatusOutput`](crate::output::DescribeRemediationExecutionStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3369,6 +3416,7 @@ impl std::fmt::Debug for DescribeRemediationExceptionsOutput {
 }
 /// See [`DescribeRemediationExceptionsOutput`](crate::output::DescribeRemediationExceptionsOutput)
 pub mod describe_remediation_exceptions_output {
+    ///
     /// A builder for [`DescribeRemediationExceptionsOutput`](crate::output::DescribeRemediationExceptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3451,6 +3499,7 @@ impl std::fmt::Debug for DescribeRemediationConfigurationsOutput {
 }
 /// See [`DescribeRemediationConfigurationsOutput`](crate::output::DescribeRemediationConfigurationsOutput)
 pub mod describe_remediation_configurations_output {
+    ///
     /// A builder for [`DescribeRemediationConfigurationsOutput`](crate::output::DescribeRemediationConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3531,6 +3580,7 @@ impl std::fmt::Debug for DescribePendingAggregationRequestsOutput {
 }
 /// See [`DescribePendingAggregationRequestsOutput`](crate::output::DescribePendingAggregationRequestsOutput)
 pub mod describe_pending_aggregation_requests_output {
+    ///
     /// A builder for [`DescribePendingAggregationRequestsOutput`](crate::output::DescribePendingAggregationRequestsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3623,6 +3673,7 @@ impl std::fmt::Debug for DescribeOrganizationConformancePackStatusesOutput {
 }
 /// See [`DescribeOrganizationConformancePackStatusesOutput`](crate::output::DescribeOrganizationConformancePackStatusesOutput)
 pub mod describe_organization_conformance_pack_statuses_output {
+    ///
     /// A builder for [`DescribeOrganizationConformancePackStatusesOutput`](crate::output::DescribeOrganizationConformancePackStatusesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3720,6 +3771,7 @@ impl std::fmt::Debug for DescribeOrganizationConformancePacksOutput {
 }
 /// See [`DescribeOrganizationConformancePacksOutput`](crate::output::DescribeOrganizationConformancePacksOutput)
 pub mod describe_organization_conformance_packs_output {
+    ///
     /// A builder for [`DescribeOrganizationConformancePacksOutput`](crate::output::DescribeOrganizationConformancePacksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3812,6 +3864,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigRuleStatusesOutput {
 }
 /// See [`DescribeOrganizationConfigRuleStatusesOutput`](crate::output::DescribeOrganizationConfigRuleStatusesOutput)
 pub mod describe_organization_config_rule_statuses_output {
+    ///
     /// A builder for [`DescribeOrganizationConfigRuleStatusesOutput`](crate::output::DescribeOrganizationConfigRuleStatusesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3901,6 +3954,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigRulesOutput {
 }
 /// See [`DescribeOrganizationConfigRulesOutput`](crate::output::DescribeOrganizationConfigRulesOutput)
 pub mod describe_organization_config_rules_output {
+    ///
     /// A builder for [`DescribeOrganizationConfigRulesOutput`](crate::output::DescribeOrganizationConfigRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3983,6 +4037,7 @@ impl std::fmt::Debug for DescribeDeliveryChannelStatusOutput {
 }
 /// See [`DescribeDeliveryChannelStatusOutput`](crate::output::DescribeDeliveryChannelStatusOutput)
 pub mod describe_delivery_channel_status_output {
+    ///
     /// A builder for [`DescribeDeliveryChannelStatusOutput`](crate::output::DescribeDeliveryChannelStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4050,6 +4105,7 @@ impl std::fmt::Debug for DescribeDeliveryChannelsOutput {
 }
 /// See [`DescribeDeliveryChannelsOutput`](crate::output::DescribeDeliveryChannelsOutput)
 pub mod describe_delivery_channels_output {
+    ///
     /// A builder for [`DescribeDeliveryChannelsOutput`](crate::output::DescribeDeliveryChannelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4127,6 +4183,7 @@ impl std::fmt::Debug for DescribeConformancePackStatusOutput {
 }
 /// See [`DescribeConformancePackStatusOutput`](crate::output::DescribeConformancePackStatusOutput)
 pub mod describe_conformance_pack_status_output {
+    ///
     /// A builder for [`DescribeConformancePackStatusOutput`](crate::output::DescribeConformancePackStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4216,6 +4273,7 @@ impl std::fmt::Debug for DescribeConformancePacksOutput {
 }
 /// See [`DescribeConformancePacksOutput`](crate::output::DescribeConformancePacksOutput)
 pub mod describe_conformance_packs_output {
+    ///
     /// A builder for [`DescribeConformancePacksOutput`](crate::output::DescribeConformancePacksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4315,6 +4373,7 @@ impl std::fmt::Debug for DescribeConformancePackComplianceOutput {
 }
 /// See [`DescribeConformancePackComplianceOutput`](crate::output::DescribeConformancePackComplianceOutput)
 pub mod describe_conformance_pack_compliance_output {
+    ///
     /// A builder for [`DescribeConformancePackComplianceOutput`](crate::output::DescribeConformancePackComplianceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4417,6 +4476,7 @@ impl std::fmt::Debug for DescribeConfigurationRecorderStatusOutput {
 }
 /// See [`DescribeConfigurationRecorderStatusOutput`](crate::output::DescribeConfigurationRecorderStatusOutput)
 pub mod describe_configuration_recorder_status_output {
+    ///
     /// A builder for [`DescribeConfigurationRecorderStatusOutput`](crate::output::DescribeConfigurationRecorderStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4487,6 +4547,7 @@ impl std::fmt::Debug for DescribeConfigurationRecordersOutput {
 }
 /// See [`DescribeConfigurationRecordersOutput`](crate::output::DescribeConfigurationRecordersOutput)
 pub mod describe_configuration_recorders_output {
+    ///
     /// A builder for [`DescribeConfigurationRecordersOutput`](crate::output::DescribeConfigurationRecordersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4567,6 +4628,7 @@ impl std::fmt::Debug for DescribeConfigurationAggregatorSourcesStatusOutput {
 }
 /// See [`DescribeConfigurationAggregatorSourcesStatusOutput`](crate::output::DescribeConfigurationAggregatorSourcesStatusOutput)
 pub mod describe_configuration_aggregator_sources_status_output {
+    ///
     /// A builder for [`DescribeConfigurationAggregatorSourcesStatusOutput`](crate::output::DescribeConfigurationAggregatorSourcesStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4657,6 +4719,7 @@ impl std::fmt::Debug for DescribeConfigurationAggregatorsOutput {
 }
 /// See [`DescribeConfigurationAggregatorsOutput`](crate::output::DescribeConfigurationAggregatorsOutput)
 pub mod describe_configuration_aggregators_output {
+    ///
     /// A builder for [`DescribeConfigurationAggregatorsOutput`](crate::output::DescribeConfigurationAggregatorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4743,6 +4806,7 @@ impl std::fmt::Debug for DescribeConfigRulesOutput {
 }
 /// See [`DescribeConfigRulesOutput`](crate::output::DescribeConfigRulesOutput)
 pub mod describe_config_rules_output {
+    ///
     /// A builder for [`DescribeConfigRulesOutput`](crate::output::DescribeConfigRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4831,6 +4895,7 @@ impl std::fmt::Debug for DescribeConfigRuleEvaluationStatusOutput {
 }
 /// See [`DescribeConfigRuleEvaluationStatusOutput`](crate::output::DescribeConfigRuleEvaluationStatusOutput)
 pub mod describe_config_rule_evaluation_status_output {
+    ///
     /// A builder for [`DescribeConfigRuleEvaluationStatusOutput`](crate::output::DescribeConfigRuleEvaluationStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4920,6 +4985,7 @@ impl std::fmt::Debug for DescribeComplianceByResourceOutput {
 }
 /// See [`DescribeComplianceByResourceOutput`](crate::output::DescribeComplianceByResourceOutput)
 pub mod describe_compliance_by_resource_output {
+    ///
     /// A builder for [`DescribeComplianceByResourceOutput`](crate::output::DescribeComplianceByResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5012,6 +5078,7 @@ impl std::fmt::Debug for DescribeComplianceByConfigRuleOutput {
 }
 /// See [`DescribeComplianceByConfigRuleOutput`](crate::output::DescribeComplianceByConfigRuleOutput)
 pub mod describe_compliance_by_config_rule_output {
+    ///
     /// A builder for [`DescribeComplianceByConfigRuleOutput`](crate::output::DescribeComplianceByConfigRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5104,6 +5171,7 @@ impl std::fmt::Debug for DescribeAggregationAuthorizationsOutput {
 }
 /// See [`DescribeAggregationAuthorizationsOutput`](crate::output::DescribeAggregationAuthorizationsOutput)
 pub mod describe_aggregation_authorizations_output {
+    ///
     /// A builder for [`DescribeAggregationAuthorizationsOutput`](crate::output::DescribeAggregationAuthorizationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5196,6 +5264,7 @@ impl std::fmt::Debug for DescribeAggregateComplianceByConformancePacksOutput {
 }
 /// See [`DescribeAggregateComplianceByConformancePacksOutput`](crate::output::DescribeAggregateComplianceByConformancePacksOutput)
 pub mod describe_aggregate_compliance_by_conformance_packs_output {
+    ///
     /// A builder for [`DescribeAggregateComplianceByConformancePacksOutput`](crate::output::DescribeAggregateComplianceByConformancePacksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5294,6 +5363,7 @@ impl std::fmt::Debug for DescribeAggregateComplianceByConfigRulesOutput {
 }
 /// See [`DescribeAggregateComplianceByConfigRulesOutput`](crate::output::DescribeAggregateComplianceByConfigRulesOutput)
 pub mod describe_aggregate_compliance_by_config_rules_output {
+    ///
     /// A builder for [`DescribeAggregateComplianceByConfigRulesOutput`](crate::output::DescribeAggregateComplianceByConfigRulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5378,6 +5448,7 @@ impl std::fmt::Debug for DeliverConfigSnapshotOutput {
 }
 /// See [`DeliverConfigSnapshotOutput`](crate::output::DeliverConfigSnapshotOutput)
 pub mod deliver_config_snapshot_output {
+    ///
     /// A builder for [`DeliverConfigSnapshotOutput`](crate::output::DeliverConfigSnapshotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5425,6 +5496,7 @@ impl std::fmt::Debug for DeleteStoredQueryOutput {
 }
 /// See [`DeleteStoredQueryOutput`](crate::output::DeleteStoredQueryOutput)
 pub mod delete_stored_query_output {
+    ///
     /// A builder for [`DeleteStoredQueryOutput`](crate::output::DeleteStoredQueryOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5455,6 +5527,7 @@ impl std::fmt::Debug for DeleteRetentionConfigurationOutput {
 }
 /// See [`DeleteRetentionConfigurationOutput`](crate::output::DeleteRetentionConfigurationOutput)
 pub mod delete_retention_configuration_output {
+    ///
     /// A builder for [`DeleteRetentionConfigurationOutput`](crate::output::DeleteRetentionConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5485,6 +5558,7 @@ impl std::fmt::Debug for DeleteResourceConfigOutput {
 }
 /// See [`DeleteResourceConfigOutput`](crate::output::DeleteResourceConfigOutput)
 pub mod delete_resource_config_output {
+    ///
     /// A builder for [`DeleteResourceConfigOutput`](crate::output::DeleteResourceConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5528,6 +5602,7 @@ impl std::fmt::Debug for DeleteRemediationExceptionsOutput {
 }
 /// See [`DeleteRemediationExceptionsOutput`](crate::output::DeleteRemediationExceptionsOutput)
 pub mod delete_remediation_exceptions_output {
+    ///
     /// A builder for [`DeleteRemediationExceptionsOutput`](crate::output::DeleteRemediationExceptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5588,6 +5663,7 @@ impl std::fmt::Debug for DeleteRemediationConfigurationOutput {
 }
 /// See [`DeleteRemediationConfigurationOutput`](crate::output::DeleteRemediationConfigurationOutput)
 pub mod delete_remediation_configuration_output {
+    ///
     /// A builder for [`DeleteRemediationConfigurationOutput`](crate::output::DeleteRemediationConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5618,6 +5694,7 @@ impl std::fmt::Debug for DeletePendingAggregationRequestOutput {
 }
 /// See [`DeletePendingAggregationRequestOutput`](crate::output::DeletePendingAggregationRequestOutput)
 pub mod delete_pending_aggregation_request_output {
+    ///
     /// A builder for [`DeletePendingAggregationRequestOutput`](crate::output::DeletePendingAggregationRequestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5648,6 +5725,7 @@ impl std::fmt::Debug for DeleteOrganizationConformancePackOutput {
 }
 /// See [`DeleteOrganizationConformancePackOutput`](crate::output::DeleteOrganizationConformancePackOutput)
 pub mod delete_organization_conformance_pack_output {
+    ///
     /// A builder for [`DeleteOrganizationConformancePackOutput`](crate::output::DeleteOrganizationConformancePackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5678,6 +5756,7 @@ impl std::fmt::Debug for DeleteOrganizationConfigRuleOutput {
 }
 /// See [`DeleteOrganizationConfigRuleOutput`](crate::output::DeleteOrganizationConfigRuleOutput)
 pub mod delete_organization_config_rule_output {
+    ///
     /// A builder for [`DeleteOrganizationConfigRuleOutput`](crate::output::DeleteOrganizationConfigRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5708,6 +5787,7 @@ impl std::fmt::Debug for DeleteEvaluationResultsOutput {
 }
 /// See [`DeleteEvaluationResultsOutput`](crate::output::DeleteEvaluationResultsOutput)
 pub mod delete_evaluation_results_output {
+    ///
     /// A builder for [`DeleteEvaluationResultsOutput`](crate::output::DeleteEvaluationResultsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5738,6 +5818,7 @@ impl std::fmt::Debug for DeleteDeliveryChannelOutput {
 }
 /// See [`DeleteDeliveryChannelOutput`](crate::output::DeleteDeliveryChannelOutput)
 pub mod delete_delivery_channel_output {
+    ///
     /// A builder for [`DeleteDeliveryChannelOutput`](crate::output::DeleteDeliveryChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5768,6 +5849,7 @@ impl std::fmt::Debug for DeleteConformancePackOutput {
 }
 /// See [`DeleteConformancePackOutput`](crate::output::DeleteConformancePackOutput)
 pub mod delete_conformance_pack_output {
+    ///
     /// A builder for [`DeleteConformancePackOutput`](crate::output::DeleteConformancePackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5798,6 +5880,7 @@ impl std::fmt::Debug for DeleteConfigurationRecorderOutput {
 }
 /// See [`DeleteConfigurationRecorderOutput`](crate::output::DeleteConfigurationRecorderOutput)
 pub mod delete_configuration_recorder_output {
+    ///
     /// A builder for [`DeleteConfigurationRecorderOutput`](crate::output::DeleteConfigurationRecorderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5828,6 +5911,7 @@ impl std::fmt::Debug for DeleteConfigurationAggregatorOutput {
 }
 /// See [`DeleteConfigurationAggregatorOutput`](crate::output::DeleteConfigurationAggregatorOutput)
 pub mod delete_configuration_aggregator_output {
+    ///
     /// A builder for [`DeleteConfigurationAggregatorOutput`](crate::output::DeleteConfigurationAggregatorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5858,6 +5942,7 @@ impl std::fmt::Debug for DeleteConfigRuleOutput {
 }
 /// See [`DeleteConfigRuleOutput`](crate::output::DeleteConfigRuleOutput)
 pub mod delete_config_rule_output {
+    ///
     /// A builder for [`DeleteConfigRuleOutput`](crate::output::DeleteConfigRuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5888,6 +5973,7 @@ impl std::fmt::Debug for DeleteAggregationAuthorizationOutput {
 }
 /// See [`DeleteAggregationAuthorizationOutput`](crate::output::DeleteAggregationAuthorizationOutput)
 pub mod delete_aggregation_authorization_output {
+    ///
     /// A builder for [`DeleteAggregationAuthorizationOutput`](crate::output::DeleteAggregationAuthorizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5938,6 +6024,7 @@ impl std::fmt::Debug for BatchGetResourceConfigOutput {
 }
 /// See [`BatchGetResourceConfigOutput`](crate::output::BatchGetResourceConfigOutput)
 pub mod batch_get_resource_config_output {
+    ///
     /// A builder for [`BatchGetResourceConfigOutput`](crate::output::BatchGetResourceConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6043,6 +6130,7 @@ impl std::fmt::Debug for BatchGetAggregateResourceConfigOutput {
 }
 /// See [`BatchGetAggregateResourceConfigOutput`](crate::output::BatchGetAggregateResourceConfigOutput)
 pub mod batch_get_aggregate_resource_config_output {
+    ///
     /// A builder for [`BatchGetAggregateResourceConfigOutput`](crate::output::BatchGetAggregateResourceConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

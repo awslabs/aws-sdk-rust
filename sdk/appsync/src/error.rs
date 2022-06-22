@@ -6252,6 +6252,7 @@ impl std::fmt::Display for UnauthorizedException {
 impl std::error::Error for UnauthorizedException {}
 /// See [`UnauthorizedException`](crate::error::UnauthorizedException)
 pub mod unauthorized_exception {
+    ///
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6316,6 +6317,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException)
 pub mod not_found_exception {
+    ///
     /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6380,6 +6382,7 @@ impl std::fmt::Display for InternalFailureException {
 impl std::error::Error for InternalFailureException {}
 /// See [`InternalFailureException`](crate::error::InternalFailureException)
 pub mod internal_failure_exception {
+    ///
     /// A builder for [`InternalFailureException`](crate::error::InternalFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6444,6 +6447,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
+    ///
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6508,6 +6512,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException)
 pub mod bad_request_exception {
+    ///
     /// A builder for [`BadRequestException`](crate::error::BadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6572,6 +6577,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
+    ///
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6636,6 +6642,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6700,6 +6707,7 @@ impl std::fmt::Display for ApiKeyValidityOutOfBoundsException {
 impl std::error::Error for ApiKeyValidityOutOfBoundsException {}
 /// See [`ApiKeyValidityOutOfBoundsException`](crate::error::ApiKeyValidityOutOfBoundsException)
 pub mod api_key_validity_out_of_bounds_exception {
+    ///
     /// A builder for [`ApiKeyValidityOutOfBoundsException`](crate::error::ApiKeyValidityOutOfBoundsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6764,6 +6772,7 @@ impl std::fmt::Display for GraphQlSchemaException {
 impl std::error::Error for GraphQlSchemaException {}
 /// See [`GraphQlSchemaException`](crate::error::GraphQlSchemaException)
 pub mod graph_ql_schema_exception {
+    ///
     /// A builder for [`GraphQlSchemaException`](crate::error::GraphQlSchemaException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6828,6 +6837,7 @@ impl std::fmt::Display for ApiLimitExceededException {
 impl std::error::Error for ApiLimitExceededException {}
 /// See [`ApiLimitExceededException`](crate::error::ApiLimitExceededException)
 pub mod api_limit_exceeded_exception {
+    ///
     /// A builder for [`ApiLimitExceededException`](crate::error::ApiLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6892,6 +6902,7 @@ impl std::fmt::Display for ApiKeyLimitExceededException {
 impl std::error::Error for ApiKeyLimitExceededException {}
 /// See [`ApiKeyLimitExceededException`](crate::error::ApiKeyLimitExceededException)
 pub mod api_key_limit_exceeded_exception {
+    ///
     /// A builder for [`ApiKeyLimitExceededException`](crate::error::ApiKeyLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

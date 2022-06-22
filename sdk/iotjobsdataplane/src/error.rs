@@ -626,6 +626,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException)
 pub mod throttling_exception {
+    ///
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -702,6 +703,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
 pub mod service_unavailable_exception {
+    ///
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -766,6 +768,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -830,6 +833,7 @@ impl std::fmt::Display for InvalidStateTransitionException {
 impl std::error::Error for InvalidStateTransitionException {}
 /// See [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
 pub mod invalid_state_transition_exception {
+    ///
     /// A builder for [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -894,6 +898,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
+    ///
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -958,6 +963,7 @@ impl std::fmt::Display for CertificateValidationException {
 impl std::error::Error for CertificateValidationException {}
 /// See [`CertificateValidationException`](crate::error::CertificateValidationException)
 pub mod certificate_validation_exception {
+    ///
     /// A builder for [`CertificateValidationException`](crate::error::CertificateValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1022,6 +1028,7 @@ impl std::fmt::Display for TerminalStateException {
 impl std::error::Error for TerminalStateException {}
 /// See [`TerminalStateException`](crate::error::TerminalStateException)
 pub mod terminal_state_exception {
+    ///
     /// A builder for [`TerminalStateException`](crate::error::TerminalStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

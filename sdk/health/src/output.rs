@@ -11,6 +11,7 @@ impl std::fmt::Debug for EnableHealthServiceAccessForOrganizationOutput {
 }
 /// See [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput)
 pub mod enable_health_service_access_for_organization_output {
+    ///
     /// A builder for [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -42,6 +43,7 @@ impl std::fmt::Debug for DisableHealthServiceAccessForOrganizationOutput {
 }
 /// See [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput)
 pub mod disable_health_service_access_for_organization_output {
+    ///
     /// A builder for [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -89,6 +91,7 @@ impl std::fmt::Debug for DescribeHealthServiceStatusForOrganizationOutput {
 }
 /// See [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput)
 pub mod describe_health_service_status_for_organization_output {
+    ///
     /// A builder for [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -161,6 +164,7 @@ impl std::fmt::Debug for DescribeEventTypesOutput {
 }
 /// See [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput)
 pub mod describe_event_types_output {
+    ///
     /// A builder for [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -243,6 +247,7 @@ impl std::fmt::Debug for DescribeEventsForOrganizationOutput {
 }
 /// See [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput)
 pub mod describe_events_for_organization_output {
+    ///
     /// A builder for [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -325,6 +330,7 @@ impl std::fmt::Debug for DescribeEventsOutput {
 }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
 pub mod describe_events_output {
+    ///
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -410,6 +416,7 @@ impl std::fmt::Debug for DescribeEventDetailsForOrganizationOutput {
 }
 /// See [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput)
 pub mod describe_event_details_for_organization_output {
+    ///
     /// A builder for [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -508,6 +515,7 @@ impl std::fmt::Debug for DescribeEventDetailsOutput {
 }
 /// See [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput)
 pub mod describe_event_details_output {
+    ///
     /// A builder for [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -600,6 +608,7 @@ impl std::fmt::Debug for DescribeEventAggregatesOutput {
 }
 /// See [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput)
 pub mod describe_event_aggregates_output {
+    ///
     /// A builder for [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -676,6 +685,7 @@ impl std::fmt::Debug for DescribeEntityAggregatesOutput {
 }
 /// See [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput)
 pub mod describe_entity_aggregates_output {
+    ///
     /// A builder for [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -757,6 +767,7 @@ impl std::fmt::Debug for DescribeAffectedEntitiesForOrganizationOutput {
 }
 /// See [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput)
 pub mod describe_affected_entities_for_organization_output {
+    ///
     /// A builder for [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -866,6 +877,7 @@ impl std::fmt::Debug for DescribeAffectedEntitiesOutput {
 }
 /// See [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput)
 pub mod describe_affected_entities_output {
+    ///
     /// A builder for [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -965,6 +977,7 @@ impl std::fmt::Debug for DescribeAffectedAccountsForOrganizationOutput {
 }
 /// See [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput)
 pub mod describe_affected_accounts_for_organization_output {
+    ///
     /// A builder for [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

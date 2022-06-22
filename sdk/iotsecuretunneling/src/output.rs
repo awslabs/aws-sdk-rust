@@ -11,6 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -98,6 +100,7 @@ impl std::fmt::Debug for RotateTunnelAccessTokenOutput {
 }
 /// See [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
 pub mod rotate_tunnel_access_token_output {
+    ///
     /// A builder for [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -206,6 +209,7 @@ impl std::fmt::Debug for OpenTunnelOutput {
 }
 /// See [`OpenTunnelOutput`](crate::output::OpenTunnelOutput)
 pub mod open_tunnel_output {
+    ///
     /// A builder for [`OpenTunnelOutput`](crate::output::OpenTunnelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -309,6 +313,7 @@ impl std::fmt::Debug for ListTunnelsOutput {
 }
 /// See [`ListTunnelsOutput`](crate::output::ListTunnelsOutput)
 pub mod list_tunnels_output {
+    ///
     /// A builder for [`ListTunnelsOutput`](crate::output::ListTunnelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -385,6 +390,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -446,6 +452,7 @@ impl std::fmt::Debug for DescribeTunnelOutput {
 }
 /// See [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput)
 pub mod describe_tunnel_output {
+    ///
     /// A builder for [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -490,6 +497,7 @@ impl std::fmt::Debug for CloseTunnelOutput {
 }
 /// See [`CloseTunnelOutput`](crate::output::CloseTunnelOutput)
 pub mod close_tunnel_output {
+    ///
     /// A builder for [`CloseTunnelOutput`](crate::output::CloseTunnelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

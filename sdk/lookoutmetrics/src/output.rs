@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateMetricSetOutput {
 }
 /// See [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput)
 pub mod update_metric_set_output {
+    ///
     /// A builder for [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -78,6 +79,7 @@ impl std::fmt::Debug for UpdateAnomalyDetectorOutput {
 }
 /// See [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput)
 pub mod update_anomaly_detector_output {
+    ///
     /// A builder for [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -125,6 +127,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -155,6 +158,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -185,6 +189,7 @@ impl std::fmt::Debug for PutFeedbackOutput {
 }
 /// See [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
 pub mod put_feedback_output {
+    ///
     /// A builder for [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -229,6 +234,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -307,6 +313,7 @@ impl std::fmt::Debug for ListMetricSetsOutput {
 }
 /// See [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput)
 pub mod list_metric_sets_output {
+    ///
     /// A builder for [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -411,6 +418,7 @@ impl std::fmt::Debug for ListAnomalyGroupTimeSeriesOutput {
 }
 /// See [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput)
 pub mod list_anomaly_group_time_series_output {
+    ///
     /// A builder for [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -556,6 +564,7 @@ impl std::fmt::Debug for ListAnomalyGroupSummariesOutput {
 }
 /// See [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput)
 pub mod list_anomaly_group_summaries_output {
+    ///
     /// A builder for [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -664,6 +673,7 @@ impl std::fmt::Debug for ListAnomalyGroupRelatedMetricsOutput {
 }
 /// See [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
 pub mod list_anomaly_group_related_metrics_output {
+    ///
     /// A builder for [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -756,6 +766,7 @@ impl std::fmt::Debug for ListAnomalyDetectorsOutput {
 }
 /// See [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput)
 pub mod list_anomaly_detectors_output {
+    ///
     /// A builder for [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -842,6 +853,7 @@ impl std::fmt::Debug for ListAlertsOutput {
 }
 /// See [`ListAlertsOutput`](crate::output::ListAlertsOutput)
 pub mod list_alerts_output {
+    ///
     /// A builder for [`ListAlertsOutput`](crate::output::ListAlertsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -925,6 +937,7 @@ impl std::fmt::Debug for GetSampleDataOutput {
 }
 /// See [`GetSampleDataOutput`](crate::output::GetSampleDataOutput)
 pub mod get_sample_data_output {
+    ///
     /// A builder for [`GetSampleDataOutput`](crate::output::GetSampleDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1023,6 +1036,7 @@ impl std::fmt::Debug for GetFeedbackOutput {
 }
 /// See [`GetFeedbackOutput`](crate::output::GetFeedbackOutput)
 pub mod get_feedback_output {
+    ///
     /// A builder for [`GetFeedbackOutput`](crate::output::GetFeedbackOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1102,6 +1116,7 @@ impl std::fmt::Debug for GetAnomalyGroupOutput {
 }
 /// See [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput)
 pub mod get_anomaly_group_output {
+    ///
     /// A builder for [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1164,6 +1179,7 @@ impl std::fmt::Debug for DetectMetricSetConfigOutput {
 }
 /// See [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
 pub mod detect_metric_set_config_output {
+    ///
     /// A builder for [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1309,6 +1325,7 @@ impl std::fmt::Debug for DescribeMetricSetOutput {
 }
 /// See [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput)
 pub mod describe_metric_set_output {
+    ///
     /// A builder for [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1620,6 +1637,7 @@ impl std::fmt::Debug for DescribeAnomalyDetectorOutput {
 }
 /// See [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput)
 pub mod describe_anomaly_detector_output {
+    ///
     /// A builder for [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1823,6 +1841,7 @@ impl std::fmt::Debug for DescribeAnomalyDetectionExecutionsOutput {
 }
 /// See [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput)
 pub mod describe_anomaly_detection_executions_output {
+    ///
     /// A builder for [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1899,6 +1918,7 @@ impl std::fmt::Debug for DescribeAlertOutput {
 }
 /// See [`DescribeAlertOutput`](crate::output::DescribeAlertOutput)
 pub mod describe_alert_output {
+    ///
     /// A builder for [`DescribeAlertOutput`](crate::output::DescribeAlertOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1941,6 +1961,7 @@ impl std::fmt::Debug for DeleteAnomalyDetectorOutput {
 }
 /// See [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
 pub mod delete_anomaly_detector_output {
+    ///
     /// A builder for [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1971,6 +1992,7 @@ impl std::fmt::Debug for DeleteAlertOutput {
 }
 /// See [`DeleteAlertOutput`](crate::output::DeleteAlertOutput)
 pub mod delete_alert_output {
+    ///
     /// A builder for [`DeleteAlertOutput`](crate::output::DeleteAlertOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2001,6 +2023,7 @@ impl std::fmt::Debug for DeactivateAnomalyDetectorOutput {
 }
 /// See [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
 pub mod deactivate_anomaly_detector_output {
+    ///
     /// A builder for [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2041,6 +2064,7 @@ impl std::fmt::Debug for CreateMetricSetOutput {
 }
 /// See [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput)
 pub mod create_metric_set_output {
+    ///
     /// A builder for [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2098,6 +2122,7 @@ impl std::fmt::Debug for CreateAnomalyDetectorOutput {
 }
 /// See [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput)
 pub mod create_anomaly_detector_output {
+    ///
     /// A builder for [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2155,6 +2180,7 @@ impl std::fmt::Debug for CreateAlertOutput {
 }
 /// See [`CreateAlertOutput`](crate::output::CreateAlertOutput)
 pub mod create_alert_output {
+    ///
     /// A builder for [`CreateAlertOutput`](crate::output::CreateAlertOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2199,6 +2225,7 @@ impl std::fmt::Debug for BackTestAnomalyDetectorOutput {
 }
 /// See [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput)
 pub mod back_test_anomaly_detector_output {
+    ///
     /// A builder for [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2229,6 +2256,7 @@ impl std::fmt::Debug for ActivateAnomalyDetectorOutput {
 }
 /// See [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput)
 pub mod activate_anomaly_detector_output {
+    ///
     /// A builder for [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

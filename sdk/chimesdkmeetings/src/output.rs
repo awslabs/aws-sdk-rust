@@ -11,6 +11,7 @@ impl std::fmt::Debug for StopMeetingTranscriptionOutput {
 }
 /// See [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
 pub mod stop_meeting_transcription_output {
+    ///
     /// A builder for [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for StartMeetingTranscriptionOutput {
 }
 /// See [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
 pub mod start_meeting_transcription_output {
+    ///
     /// A builder for [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -88,6 +90,7 @@ impl std::fmt::Debug for ListAttendeesOutput {
 }
 /// See [`ListAttendeesOutput`](crate::output::ListAttendeesOutput)
 pub mod list_attendees_output {
+    ///
     /// A builder for [`ListAttendeesOutput`](crate::output::ListAttendeesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -163,6 +166,7 @@ impl std::fmt::Debug for GetMeetingOutput {
 }
 /// See [`GetMeetingOutput`](crate::output::GetMeetingOutput)
 pub mod get_meeting_output {
+    ///
     /// A builder for [`GetMeetingOutput`](crate::output::GetMeetingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -217,6 +221,7 @@ impl std::fmt::Debug for GetAttendeeOutput {
 }
 /// See [`GetAttendeeOutput`](crate::output::GetAttendeeOutput)
 pub mod get_attendee_output {
+    ///
     /// A builder for [`GetAttendeeOutput`](crate::output::GetAttendeeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -261,6 +266,7 @@ impl std::fmt::Debug for DeleteMeetingOutput {
 }
 /// See [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput)
 pub mod delete_meeting_output {
+    ///
     /// A builder for [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -291,6 +297,7 @@ impl std::fmt::Debug for DeleteAttendeeOutput {
 }
 /// See [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput)
 pub mod delete_attendee_output {
+    ///
     /// A builder for [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -345,6 +352,7 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesOutput {
 }
 /// See [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput)
 pub mod create_meeting_with_attendees_output {
+    ///
     /// A builder for [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -441,6 +449,7 @@ impl std::fmt::Debug for CreateMeetingOutput {
 }
 /// See [`CreateMeetingOutput`](crate::output::CreateMeetingOutput)
 pub mod create_meeting_output {
+    ///
     /// A builder for [`CreateMeetingOutput`](crate::output::CreateMeetingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -495,6 +504,7 @@ impl std::fmt::Debug for CreateAttendeeOutput {
 }
 /// See [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput)
 pub mod create_attendee_output {
+    ///
     /// A builder for [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -556,6 +566,7 @@ impl std::fmt::Debug for BatchCreateAttendeeOutput {
 }
 /// See [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput)
 pub mod batch_create_attendee_output {
+    ///
     /// A builder for [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

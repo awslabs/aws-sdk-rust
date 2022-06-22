@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateUserSettingsOutput {
 }
 /// See [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput)
 pub mod update_user_settings_output {
+    ///
     /// A builder for [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -78,6 +79,7 @@ impl std::fmt::Debug for UpdateTrustStoreOutput {
 }
 /// See [`UpdateTrustStoreOutput`](crate::output::UpdateTrustStoreOutput)
 pub mod update_trust_store_output {
+    ///
     /// A builder for [`UpdateTrustStoreOutput`](crate::output::UpdateTrustStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -135,6 +137,7 @@ impl std::fmt::Debug for UpdatePortalOutput {
 }
 /// See [`UpdatePortalOutput`](crate::output::UpdatePortalOutput)
 pub mod update_portal_output {
+    ///
     /// A builder for [`UpdatePortalOutput`](crate::output::UpdatePortalOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -189,6 +192,7 @@ impl std::fmt::Debug for UpdateNetworkSettingsOutput {
 }
 /// See [`UpdateNetworkSettingsOutput`](crate::output::UpdateNetworkSettingsOutput)
 pub mod update_network_settings_output {
+    ///
     /// A builder for [`UpdateNetworkSettingsOutput`](crate::output::UpdateNetworkSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -246,6 +250,7 @@ impl std::fmt::Debug for UpdateIdentityProviderOutput {
 }
 /// See [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput)
 pub mod update_identity_provider_output {
+    ///
     /// A builder for [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -303,6 +308,7 @@ impl std::fmt::Debug for UpdateBrowserSettingsOutput {
 }
 /// See [`UpdateBrowserSettingsOutput`](crate::output::UpdateBrowserSettingsOutput)
 pub mod update_browser_settings_output {
+    ///
     /// A builder for [`UpdateBrowserSettingsOutput`](crate::output::UpdateBrowserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -350,6 +356,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -380,6 +387,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -427,6 +435,7 @@ impl std::fmt::Debug for ListUserSettingsOutput {
 }
 /// See [`ListUserSettingsOutput`](crate::output::ListUserSettingsOutput)
 pub mod list_user_settings_output {
+    ///
     /// A builder for [`ListUserSettingsOutput`](crate::output::ListUserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -510,6 +519,7 @@ impl std::fmt::Debug for ListTrustStoresOutput {
 }
 /// See [`ListTrustStoresOutput`](crate::output::ListTrustStoresOutput)
 pub mod list_trust_stores_output {
+    ///
     /// A builder for [`ListTrustStoresOutput`](crate::output::ListTrustStoresOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -600,6 +610,7 @@ impl std::fmt::Debug for ListTrustStoreCertificatesOutput {
 }
 /// See [`ListTrustStoreCertificatesOutput`](crate::output::ListTrustStoreCertificatesOutput)
 pub mod list_trust_store_certificates_output {
+    ///
     /// A builder for [`ListTrustStoreCertificatesOutput`](crate::output::ListTrustStoreCertificatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -691,6 +702,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -759,6 +771,7 @@ impl std::fmt::Debug for ListPortalsOutput {
 }
 /// See [`ListPortalsOutput`](crate::output::ListPortalsOutput)
 pub mod list_portals_output {
+    ///
     /// A builder for [`ListPortalsOutput`](crate::output::ListPortalsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -841,6 +854,7 @@ impl std::fmt::Debug for ListNetworkSettingsOutput {
 }
 /// See [`ListNetworkSettingsOutput`](crate::output::ListNetworkSettingsOutput)
 pub mod list_network_settings_output {
+    ///
     /// A builder for [`ListNetworkSettingsOutput`](crate::output::ListNetworkSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -927,6 +941,7 @@ impl std::fmt::Debug for ListIdentityProvidersOutput {
 }
 /// See [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput)
 pub mod list_identity_providers_output {
+    ///
     /// A builder for [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1010,6 +1025,7 @@ impl std::fmt::Debug for ListBrowserSettingsOutput {
 }
 /// See [`ListBrowserSettingsOutput`](crate::output::ListBrowserSettingsOutput)
 pub mod list_browser_settings_output {
+    ///
     /// A builder for [`ListBrowserSettingsOutput`](crate::output::ListBrowserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1086,6 +1102,7 @@ impl std::fmt::Debug for GetUserSettingsOutput {
 }
 /// See [`GetUserSettingsOutput`](crate::output::GetUserSettingsOutput)
 pub mod get_user_settings_output {
+    ///
     /// A builder for [`GetUserSettingsOutput`](crate::output::GetUserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1150,6 +1167,7 @@ impl std::fmt::Debug for GetTrustStoreCertificateOutput {
 }
 /// See [`GetTrustStoreCertificateOutput`](crate::output::GetTrustStoreCertificateOutput)
 pub mod get_trust_store_certificate_output {
+    ///
     /// A builder for [`GetTrustStoreCertificateOutput`](crate::output::GetTrustStoreCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1222,6 +1240,7 @@ impl std::fmt::Debug for GetTrustStoreOutput {
 }
 /// See [`GetTrustStoreOutput`](crate::output::GetTrustStoreOutput)
 pub mod get_trust_store_output {
+    ///
     /// A builder for [`GetTrustStoreOutput`](crate::output::GetTrustStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1289,6 +1308,7 @@ impl std::fmt::Debug for GetPortalServiceProviderMetadataOutput {
 }
 /// See [`GetPortalServiceProviderMetadataOutput`](crate::output::GetPortalServiceProviderMetadataOutput)
 pub mod get_portal_service_provider_metadata_output {
+    ///
     /// A builder for [`GetPortalServiceProviderMetadataOutput`](crate::output::GetPortalServiceProviderMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1361,6 +1381,7 @@ impl std::fmt::Debug for GetPortalOutput {
 }
 /// See [`GetPortalOutput`](crate::output::GetPortalOutput)
 pub mod get_portal_output {
+    ///
     /// A builder for [`GetPortalOutput`](crate::output::GetPortalOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1415,6 +1436,7 @@ impl std::fmt::Debug for GetNetworkSettingsOutput {
 }
 /// See [`GetNetworkSettingsOutput`](crate::output::GetNetworkSettingsOutput)
 pub mod get_network_settings_output {
+    ///
     /// A builder for [`GetNetworkSettingsOutput`](crate::output::GetNetworkSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1472,6 +1494,7 @@ impl std::fmt::Debug for GetIdentityProviderOutput {
 }
 /// See [`GetIdentityProviderOutput`](crate::output::GetIdentityProviderOutput)
 pub mod get_identity_provider_output {
+    ///
     /// A builder for [`GetIdentityProviderOutput`](crate::output::GetIdentityProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1529,6 +1552,7 @@ impl std::fmt::Debug for GetBrowserSettingsOutput {
 }
 /// See [`GetBrowserSettingsOutput`](crate::output::GetBrowserSettingsOutput)
 pub mod get_browser_settings_output {
+    ///
     /// A builder for [`GetBrowserSettingsOutput`](crate::output::GetBrowserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1576,6 +1600,7 @@ impl std::fmt::Debug for DisassociateUserSettingsOutput {
 }
 /// See [`DisassociateUserSettingsOutput`](crate::output::DisassociateUserSettingsOutput)
 pub mod disassociate_user_settings_output {
+    ///
     /// A builder for [`DisassociateUserSettingsOutput`](crate::output::DisassociateUserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1606,6 +1631,7 @@ impl std::fmt::Debug for DisassociateTrustStoreOutput {
 }
 /// See [`DisassociateTrustStoreOutput`](crate::output::DisassociateTrustStoreOutput)
 pub mod disassociate_trust_store_output {
+    ///
     /// A builder for [`DisassociateTrustStoreOutput`](crate::output::DisassociateTrustStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1636,6 +1662,7 @@ impl std::fmt::Debug for DisassociateNetworkSettingsOutput {
 }
 /// See [`DisassociateNetworkSettingsOutput`](crate::output::DisassociateNetworkSettingsOutput)
 pub mod disassociate_network_settings_output {
+    ///
     /// A builder for [`DisassociateNetworkSettingsOutput`](crate::output::DisassociateNetworkSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1666,6 +1693,7 @@ impl std::fmt::Debug for DisassociateBrowserSettingsOutput {
 }
 /// See [`DisassociateBrowserSettingsOutput`](crate::output::DisassociateBrowserSettingsOutput)
 pub mod disassociate_browser_settings_output {
+    ///
     /// A builder for [`DisassociateBrowserSettingsOutput`](crate::output::DisassociateBrowserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1696,6 +1724,7 @@ impl std::fmt::Debug for DeleteUserSettingsOutput {
 }
 /// See [`DeleteUserSettingsOutput`](crate::output::DeleteUserSettingsOutput)
 pub mod delete_user_settings_output {
+    ///
     /// A builder for [`DeleteUserSettingsOutput`](crate::output::DeleteUserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1726,6 +1755,7 @@ impl std::fmt::Debug for DeleteTrustStoreOutput {
 }
 /// See [`DeleteTrustStoreOutput`](crate::output::DeleteTrustStoreOutput)
 pub mod delete_trust_store_output {
+    ///
     /// A builder for [`DeleteTrustStoreOutput`](crate::output::DeleteTrustStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1756,6 +1786,7 @@ impl std::fmt::Debug for DeletePortalOutput {
 }
 /// See [`DeletePortalOutput`](crate::output::DeletePortalOutput)
 pub mod delete_portal_output {
+    ///
     /// A builder for [`DeletePortalOutput`](crate::output::DeletePortalOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1786,6 +1817,7 @@ impl std::fmt::Debug for DeleteNetworkSettingsOutput {
 }
 /// See [`DeleteNetworkSettingsOutput`](crate::output::DeleteNetworkSettingsOutput)
 pub mod delete_network_settings_output {
+    ///
     /// A builder for [`DeleteNetworkSettingsOutput`](crate::output::DeleteNetworkSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1816,6 +1848,7 @@ impl std::fmt::Debug for DeleteIdentityProviderOutput {
 }
 /// See [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput)
 pub mod delete_identity_provider_output {
+    ///
     /// A builder for [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1846,6 +1879,7 @@ impl std::fmt::Debug for DeleteBrowserSettingsOutput {
 }
 /// See [`DeleteBrowserSettingsOutput`](crate::output::DeleteBrowserSettingsOutput)
 pub mod delete_browser_settings_output {
+    ///
     /// A builder for [`DeleteBrowserSettingsOutput`](crate::output::DeleteBrowserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1886,6 +1920,7 @@ impl std::fmt::Debug for CreateUserSettingsOutput {
 }
 /// See [`CreateUserSettingsOutput`](crate::output::CreateUserSettingsOutput)
 pub mod create_user_settings_output {
+    ///
     /// A builder for [`CreateUserSettingsOutput`](crate::output::CreateUserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1943,6 +1978,7 @@ impl std::fmt::Debug for CreateTrustStoreOutput {
 }
 /// See [`CreateTrustStoreOutput`](crate::output::CreateTrustStoreOutput)
 pub mod create_trust_store_output {
+    ///
     /// A builder for [`CreateTrustStoreOutput`](crate::output::CreateTrustStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2007,6 +2043,7 @@ impl std::fmt::Debug for CreatePortalOutput {
 }
 /// See [`CreatePortalOutput`](crate::output::CreatePortalOutput)
 pub mod create_portal_output {
+    ///
     /// A builder for [`CreatePortalOutput`](crate::output::CreatePortalOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2076,6 +2113,7 @@ impl std::fmt::Debug for CreateNetworkSettingsOutput {
 }
 /// See [`CreateNetworkSettingsOutput`](crate::output::CreateNetworkSettingsOutput)
 pub mod create_network_settings_output {
+    ///
     /// A builder for [`CreateNetworkSettingsOutput`](crate::output::CreateNetworkSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2133,6 +2171,7 @@ impl std::fmt::Debug for CreateIdentityProviderOutput {
 }
 /// See [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput)
 pub mod create_identity_provider_output {
+    ///
     /// A builder for [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2190,6 +2229,7 @@ impl std::fmt::Debug for CreateBrowserSettingsOutput {
 }
 /// See [`CreateBrowserSettingsOutput`](crate::output::CreateBrowserSettingsOutput)
 pub mod create_browser_settings_output {
+    ///
     /// A builder for [`CreateBrowserSettingsOutput`](crate::output::CreateBrowserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2254,6 +2294,7 @@ impl std::fmt::Debug for AssociateUserSettingsOutput {
 }
 /// See [`AssociateUserSettingsOutput`](crate::output::AssociateUserSettingsOutput)
 pub mod associate_user_settings_output {
+    ///
     /// A builder for [`AssociateUserSettingsOutput`](crate::output::AssociateUserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2330,6 +2371,7 @@ impl std::fmt::Debug for AssociateTrustStoreOutput {
 }
 /// See [`AssociateTrustStoreOutput`](crate::output::AssociateTrustStoreOutput)
 pub mod associate_trust_store_output {
+    ///
     /// A builder for [`AssociateTrustStoreOutput`](crate::output::AssociateTrustStoreOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2406,6 +2448,7 @@ impl std::fmt::Debug for AssociateNetworkSettingsOutput {
 }
 /// See [`AssociateNetworkSettingsOutput`](crate::output::AssociateNetworkSettingsOutput)
 pub mod associate_network_settings_output {
+    ///
     /// A builder for [`AssociateNetworkSettingsOutput`](crate::output::AssociateNetworkSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2482,6 +2525,7 @@ impl std::fmt::Debug for AssociateBrowserSettingsOutput {
 }
 /// See [`AssociateBrowserSettingsOutput`](crate::output::AssociateBrowserSettingsOutput)
 pub mod associate_browser_settings_output {
+    ///
     /// A builder for [`AssociateBrowserSettingsOutput`](crate::output::AssociateBrowserSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

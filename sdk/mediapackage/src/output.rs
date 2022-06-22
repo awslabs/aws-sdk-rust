@@ -130,6 +130,7 @@ impl std::fmt::Debug for UpdateOriginEndpointOutput {
 }
 /// See [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput)
 pub mod update_origin_endpoint_output {
+    ///
     /// A builder for [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -457,6 +458,7 @@ impl std::fmt::Debug for UpdateChannelOutput {
 }
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput)
 pub mod update_channel_output {
+    ///
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -599,6 +601,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -629,6 +632,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -715,6 +719,7 @@ impl std::fmt::Debug for RotateIngestEndpointCredentialsOutput {
 }
 /// See [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput)
 pub mod rotate_ingest_endpoint_credentials_output {
+    ///
     /// A builder for [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -913,6 +918,7 @@ impl std::fmt::Debug for RotateChannelCredentialsOutput {
 }
 /// See [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput)
 pub mod rotate_channel_credentials_output {
+    ///
     /// A builder for [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1069,6 +1075,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1144,6 +1151,7 @@ impl std::fmt::Debug for ListOriginEndpointsOutput {
 }
 /// See [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput)
 pub mod list_origin_endpoints_output {
+    ///
     /// A builder for [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1227,6 +1235,7 @@ impl std::fmt::Debug for ListHarvestJobsOutput {
 }
 /// See [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput)
 pub mod list_harvest_jobs_output {
+    ///
     /// A builder for [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1309,6 +1318,7 @@ impl std::fmt::Debug for ListChannelsOutput {
 }
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput)
 pub mod list_channels_output {
+    ///
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1493,6 +1503,7 @@ impl std::fmt::Debug for DescribeOriginEndpointOutput {
 }
 /// See [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput)
 pub mod describe_origin_endpoint_output {
+    ///
     /// A builder for [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1830,6 +1841,7 @@ impl std::fmt::Debug for DescribeHarvestJobOutput {
 }
 /// See [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput)
 pub mod describe_harvest_job_output {
+    ///
     /// A builder for [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2032,6 +2044,7 @@ impl std::fmt::Debug for DescribeChannelOutput {
 }
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput)
 pub mod describe_channel_output {
+    ///
     /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2174,6 +2187,7 @@ impl std::fmt::Debug for DeleteOriginEndpointOutput {
 }
 /// See [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput)
 pub mod delete_origin_endpoint_output {
+    ///
     /// A builder for [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2204,6 +2218,7 @@ impl std::fmt::Debug for DeleteChannelOutput {
 }
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
 pub mod delete_channel_output {
+    ///
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2353,6 +2368,7 @@ impl std::fmt::Debug for CreateOriginEndpointOutput {
 }
 /// See [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput)
 pub mod create_origin_endpoint_output {
+    ///
     /// A builder for [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2690,6 +2706,7 @@ impl std::fmt::Debug for CreateHarvestJobOutput {
 }
 /// See [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput)
 pub mod create_harvest_job_output {
+    ///
     /// A builder for [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2892,6 +2909,7 @@ impl std::fmt::Debug for CreateChannelOutput {
 }
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput)
 pub mod create_channel_output {
+    ///
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3090,6 +3108,7 @@ impl std::fmt::Debug for ConfigureLogsOutput {
 }
 /// See [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput)
 pub mod configure_logs_output {
+    ///
     /// A builder for [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

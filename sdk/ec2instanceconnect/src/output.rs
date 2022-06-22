@@ -28,6 +28,7 @@ impl std::fmt::Debug for SendSshPublicKeyOutput {
 }
 /// See [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput)
 pub mod send_ssh_public_key_output {
+    ///
     /// A builder for [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +102,7 @@ impl std::fmt::Debug for SendSerialConsoleSshPublicKeyOutput {
 }
 /// See [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput)
 pub mod send_serial_console_ssh_public_key_output {
+    ///
     /// A builder for [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

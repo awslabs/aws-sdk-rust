@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateProjectOutput {
 }
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
 pub mod update_project_output {
+    ///
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdatePlacementOutput {
 }
 /// See [`UpdatePlacementOutput`](crate::output::UpdatePlacementOutput)
 pub mod update_placement_output {
+    ///
     /// A builder for [`UpdatePlacementOutput`](crate::output::UpdatePlacementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -145,6 +149,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -221,6 +226,7 @@ impl std::fmt::Debug for ListProjectsOutput {
 }
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput)
 pub mod list_projects_output {
+    ///
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -303,6 +309,7 @@ impl std::fmt::Debug for ListPlacementsOutput {
 }
 /// See [`ListPlacementsOutput`](crate::output::ListPlacementsOutput)
 pub mod list_placements_output {
+    ///
     /// A builder for [`ListPlacementsOutput`](crate::output::ListPlacementsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -382,6 +389,7 @@ impl std::fmt::Debug for GetDevicesInPlacementOutput {
 }
 /// See [`GetDevicesInPlacementOutput`](crate::output::GetDevicesInPlacementOutput)
 pub mod get_devices_in_placement_output {
+    ///
     /// A builder for [`GetDevicesInPlacementOutput`](crate::output::GetDevicesInPlacementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -443,6 +451,7 @@ impl std::fmt::Debug for DisassociateDeviceFromPlacementOutput {
 }
 /// See [`DisassociateDeviceFromPlacementOutput`](crate::output::DisassociateDeviceFromPlacementOutput)
 pub mod disassociate_device_from_placement_output {
+    ///
     /// A builder for [`DisassociateDeviceFromPlacementOutput`](crate::output::DisassociateDeviceFromPlacementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -483,6 +492,7 @@ impl std::fmt::Debug for DescribeProjectOutput {
 }
 /// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
 pub mod describe_project_output {
+    ///
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -540,6 +550,7 @@ impl std::fmt::Debug for DescribePlacementOutput {
 }
 /// See [`DescribePlacementOutput`](crate::output::DescribePlacementOutput)
 pub mod describe_placement_output {
+    ///
     /// A builder for [`DescribePlacementOutput`](crate::output::DescribePlacementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -587,6 +598,7 @@ impl std::fmt::Debug for DeleteProjectOutput {
 }
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
 pub mod delete_project_output {
+    ///
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -617,6 +629,7 @@ impl std::fmt::Debug for DeletePlacementOutput {
 }
 /// See [`DeletePlacementOutput`](crate::output::DeletePlacementOutput)
 pub mod delete_placement_output {
+    ///
     /// A builder for [`DeletePlacementOutput`](crate::output::DeletePlacementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -647,6 +660,7 @@ impl std::fmt::Debug for CreateProjectOutput {
 }
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput)
 pub mod create_project_output {
+    ///
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -677,6 +691,7 @@ impl std::fmt::Debug for CreatePlacementOutput {
 }
 /// See [`CreatePlacementOutput`](crate::output::CreatePlacementOutput)
 pub mod create_placement_output {
+    ///
     /// A builder for [`CreatePlacementOutput`](crate::output::CreatePlacementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -707,6 +722,7 @@ impl std::fmt::Debug for AssociateDeviceWithPlacementOutput {
 }
 /// See [`AssociateDeviceWithPlacementOutput`](crate::output::AssociateDeviceWithPlacementOutput)
 pub mod associate_device_with_placement_output {
+    ///
     /// A builder for [`AssociateDeviceWithPlacementOutput`](crate::output::AssociateDeviceWithPlacementOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

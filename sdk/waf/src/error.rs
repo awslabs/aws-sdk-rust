@@ -11156,6 +11156,7 @@ impl std::fmt::Display for WafStaleDataException {
 impl std::error::Error for WafStaleDataException {}
 /// See [`WafStaleDataException`](crate::error::WafStaleDataException)
 pub mod waf_stale_data_exception {
+    ///
     /// A builder for [`WafStaleDataException`](crate::error::WafStaleDataException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11223,6 +11224,7 @@ impl std::fmt::Display for WafNonexistentItemException {
 impl std::error::Error for WafNonexistentItemException {}
 /// See [`WafNonexistentItemException`](crate::error::WafNonexistentItemException)
 pub mod waf_nonexistent_item_exception {
+    ///
     /// A builder for [`WafNonexistentItemException`](crate::error::WafNonexistentItemException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11296,6 +11298,7 @@ impl std::fmt::Display for WafNonexistentContainerException {
 impl std::error::Error for WafNonexistentContainerException {}
 /// See [`WafNonexistentContainerException`](crate::error::WafNonexistentContainerException)
 pub mod waf_nonexistent_container_exception {
+    ///
     /// A builder for [`WafNonexistentContainerException`](crate::error::WafNonexistentContainerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11360,6 +11363,7 @@ impl std::fmt::Display for WafLimitsExceededException {
 impl std::error::Error for WafLimitsExceededException {}
 /// See [`WafLimitsExceededException`](crate::error::WafLimitsExceededException)
 pub mod waf_limits_exceeded_exception {
+    ///
     /// A builder for [`WafLimitsExceededException`](crate::error::WafLimitsExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11461,6 +11465,7 @@ impl std::fmt::Display for WafInvalidParameterException {
 impl std::error::Error for WafInvalidParameterException {}
 /// See [`WafInvalidParameterException`](crate::error::WafInvalidParameterException)
 pub mod waf_invalid_parameter_exception {
+    ///
     /// A builder for [`WafInvalidParameterException`](crate::error::WafInvalidParameterException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11577,6 +11582,7 @@ impl std::fmt::Display for WafInvalidOperationException {
 impl std::error::Error for WafInvalidOperationException {}
 /// See [`WafInvalidOperationException`](crate::error::WafInvalidOperationException)
 pub mod waf_invalid_operation_exception {
+    ///
     /// A builder for [`WafInvalidOperationException`](crate::error::WafInvalidOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11641,6 +11647,7 @@ impl std::fmt::Display for WafInvalidAccountException {
 impl std::error::Error for WafInvalidAccountException {}
 /// See [`WafInvalidAccountException`](crate::error::WafInvalidAccountException)
 pub mod waf_invalid_account_exception {
+    ///
     /// A builder for [`WafInvalidAccountException`](crate::error::WafInvalidAccountException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11705,6 +11712,7 @@ impl std::fmt::Display for WafInternalErrorException {
 impl std::error::Error for WafInternalErrorException {}
 /// See [`WafInternalErrorException`](crate::error::WafInternalErrorException)
 pub mod waf_internal_error_exception {
+    ///
     /// A builder for [`WafInternalErrorException`](crate::error::WafInternalErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11772,6 +11780,7 @@ impl std::fmt::Display for WafSubscriptionNotFoundException {
 impl std::error::Error for WafSubscriptionNotFoundException {}
 /// See [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException)
 pub mod waf_subscription_not_found_exception {
+    ///
     /// A builder for [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11840,6 +11849,7 @@ impl std::fmt::Display for WafReferencedItemException {
 impl std::error::Error for WafReferencedItemException {}
 /// See [`WafReferencedItemException`](crate::error::WafReferencedItemException)
 pub mod waf_referenced_item_exception {
+    ///
     /// A builder for [`WafReferencedItemException`](crate::error::WafReferencedItemException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11907,6 +11917,7 @@ impl std::fmt::Display for WafInvalidRegexPatternException {
 impl std::error::Error for WafInvalidRegexPatternException {}
 /// See [`WafInvalidRegexPatternException`](crate::error::WafInvalidRegexPatternException)
 pub mod waf_invalid_regex_pattern_exception {
+    ///
     /// A builder for [`WafInvalidRegexPatternException`](crate::error::WafInvalidRegexPatternException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11971,6 +11982,7 @@ impl std::fmt::Display for WafDisallowedNameException {
 impl std::error::Error for WafDisallowedNameException {}
 /// See [`WafDisallowedNameException`](crate::error::WafDisallowedNameException)
 pub mod waf_disallowed_name_exception {
+    ///
     /// A builder for [`WafDisallowedNameException`](crate::error::WafDisallowedNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12038,6 +12050,7 @@ impl std::fmt::Display for WafTagOperationInternalErrorException {
 impl std::error::Error for WafTagOperationInternalErrorException {}
 /// See [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException)
 pub mod waf_tag_operation_internal_error_exception {
+    ///
     /// A builder for [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12102,6 +12115,7 @@ impl std::fmt::Display for WafTagOperationException {
 impl std::error::Error for WafTagOperationException {}
 /// See [`WafTagOperationException`](crate::error::WafTagOperationException)
 pub mod waf_tag_operation_exception {
+    ///
     /// A builder for [`WafTagOperationException`](crate::error::WafTagOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12166,6 +12180,7 @@ impl std::fmt::Display for WafBadRequestException {
 impl std::error::Error for WafBadRequestException {}
 /// See [`WafBadRequestException`](crate::error::WafBadRequestException)
 pub mod waf_bad_request_exception {
+    ///
     /// A builder for [`WafBadRequestException`](crate::error::WafBadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12244,6 +12259,7 @@ impl std::fmt::Display for WafInvalidPermissionPolicyException {
 impl std::error::Error for WafInvalidPermissionPolicyException {}
 /// See [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException)
 pub mod waf_invalid_permission_policy_exception {
+    ///
     /// A builder for [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12311,6 +12327,7 @@ impl std::fmt::Display for WafServiceLinkedRoleErrorException {
 impl std::error::Error for WafServiceLinkedRoleErrorException {}
 /// See [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException)
 pub mod waf_service_linked_role_error_exception {
+    ///
     /// A builder for [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12381,6 +12398,7 @@ impl std::fmt::Display for WafNonEmptyEntityException {
 impl std::error::Error for WafNonEmptyEntityException {}
 /// See [`WafNonEmptyEntityException`](crate::error::WafNonEmptyEntityException)
 pub mod waf_non_empty_entity_exception {
+    ///
     /// A builder for [`WafNonEmptyEntityException`](crate::error::WafNonEmptyEntityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12473,6 +12491,7 @@ impl std::fmt::Display for WafEntityMigrationException {
 impl std::error::Error for WafEntityMigrationException {}
 /// See [`WafEntityMigrationException`](crate::error::WafEntityMigrationException)
 pub mod waf_entity_migration_exception {
+    ///
     /// A builder for [`WafEntityMigrationException`](crate::error::WafEntityMigrationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

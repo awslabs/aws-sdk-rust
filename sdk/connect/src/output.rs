@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateUserSecurityProfilesOutput {
 }
 /// See [`UpdateUserSecurityProfilesOutput`](crate::output::UpdateUserSecurityProfilesOutput)
 pub mod update_user_security_profiles_output {
+    ///
     /// A builder for [`UpdateUserSecurityProfilesOutput`](crate::output::UpdateUserSecurityProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdateUserRoutingProfileOutput {
 }
 /// See [`UpdateUserRoutingProfileOutput`](crate::output::UpdateUserRoutingProfileOutput)
 pub mod update_user_routing_profile_output {
+    ///
     /// A builder for [`UpdateUserRoutingProfileOutput`](crate::output::UpdateUserRoutingProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UpdateUserPhoneConfigOutput {
 }
 /// See [`UpdateUserPhoneConfigOutput`](crate::output::UpdateUserPhoneConfigOutput)
 pub mod update_user_phone_config_output {
+    ///
     /// A builder for [`UpdateUserPhoneConfigOutput`](crate::output::UpdateUserPhoneConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for UpdateUserIdentityInfoOutput {
 }
 /// See [`UpdateUserIdentityInfoOutput`](crate::output::UpdateUserIdentityInfoOutput)
 pub mod update_user_identity_info_output {
+    ///
     /// A builder for [`UpdateUserIdentityInfoOutput`](crate::output::UpdateUserIdentityInfoOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for UpdateUserHierarchyStructureOutput {
 }
 /// See [`UpdateUserHierarchyStructureOutput`](crate::output::UpdateUserHierarchyStructureOutput)
 pub mod update_user_hierarchy_structure_output {
+    ///
     /// A builder for [`UpdateUserHierarchyStructureOutput`](crate::output::UpdateUserHierarchyStructureOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -161,6 +166,7 @@ impl std::fmt::Debug for UpdateUserHierarchyGroupNameOutput {
 }
 /// See [`UpdateUserHierarchyGroupNameOutput`](crate::output::UpdateUserHierarchyGroupNameOutput)
 pub mod update_user_hierarchy_group_name_output {
+    ///
     /// A builder for [`UpdateUserHierarchyGroupNameOutput`](crate::output::UpdateUserHierarchyGroupNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -191,6 +197,7 @@ impl std::fmt::Debug for UpdateUserHierarchyOutput {
 }
 /// See [`UpdateUserHierarchyOutput`](crate::output::UpdateUserHierarchyOutput)
 pub mod update_user_hierarchy_output {
+    ///
     /// A builder for [`UpdateUserHierarchyOutput`](crate::output::UpdateUserHierarchyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -221,6 +228,7 @@ impl std::fmt::Debug for UpdateSecurityProfileOutput {
 }
 /// See [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput)
 pub mod update_security_profile_output {
+    ///
     /// A builder for [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -251,6 +259,7 @@ impl std::fmt::Debug for UpdateRoutingProfileQueuesOutput {
 }
 /// See [`UpdateRoutingProfileQueuesOutput`](crate::output::UpdateRoutingProfileQueuesOutput)
 pub mod update_routing_profile_queues_output {
+    ///
     /// A builder for [`UpdateRoutingProfileQueuesOutput`](crate::output::UpdateRoutingProfileQueuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -281,6 +290,7 @@ impl std::fmt::Debug for UpdateRoutingProfileNameOutput {
 }
 /// See [`UpdateRoutingProfileNameOutput`](crate::output::UpdateRoutingProfileNameOutput)
 pub mod update_routing_profile_name_output {
+    ///
     /// A builder for [`UpdateRoutingProfileNameOutput`](crate::output::UpdateRoutingProfileNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -311,6 +321,7 @@ impl std::fmt::Debug for UpdateRoutingProfileDefaultOutboundQueueOutput {
 }
 /// See [`UpdateRoutingProfileDefaultOutboundQueueOutput`](crate::output::UpdateRoutingProfileDefaultOutboundQueueOutput)
 pub mod update_routing_profile_default_outbound_queue_output {
+    ///
     /// A builder for [`UpdateRoutingProfileDefaultOutboundQueueOutput`](crate::output::UpdateRoutingProfileDefaultOutboundQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -342,6 +353,7 @@ impl std::fmt::Debug for UpdateRoutingProfileConcurrencyOutput {
 }
 /// See [`UpdateRoutingProfileConcurrencyOutput`](crate::output::UpdateRoutingProfileConcurrencyOutput)
 pub mod update_routing_profile_concurrency_output {
+    ///
     /// A builder for [`UpdateRoutingProfileConcurrencyOutput`](crate::output::UpdateRoutingProfileConcurrencyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -372,6 +384,7 @@ impl std::fmt::Debug for UpdateQuickConnectNameOutput {
 }
 /// See [`UpdateQuickConnectNameOutput`](crate::output::UpdateQuickConnectNameOutput)
 pub mod update_quick_connect_name_output {
+    ///
     /// A builder for [`UpdateQuickConnectNameOutput`](crate::output::UpdateQuickConnectNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -402,6 +415,7 @@ impl std::fmt::Debug for UpdateQuickConnectConfigOutput {
 }
 /// See [`UpdateQuickConnectConfigOutput`](crate::output::UpdateQuickConnectConfigOutput)
 pub mod update_quick_connect_config_output {
+    ///
     /// A builder for [`UpdateQuickConnectConfigOutput`](crate::output::UpdateQuickConnectConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -432,6 +446,7 @@ impl std::fmt::Debug for UpdateQueueStatusOutput {
 }
 /// See [`UpdateQueueStatusOutput`](crate::output::UpdateQueueStatusOutput)
 pub mod update_queue_status_output {
+    ///
     /// A builder for [`UpdateQueueStatusOutput`](crate::output::UpdateQueueStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -462,6 +477,7 @@ impl std::fmt::Debug for UpdateQueueOutboundCallerConfigOutput {
 }
 /// See [`UpdateQueueOutboundCallerConfigOutput`](crate::output::UpdateQueueOutboundCallerConfigOutput)
 pub mod update_queue_outbound_caller_config_output {
+    ///
     /// A builder for [`UpdateQueueOutboundCallerConfigOutput`](crate::output::UpdateQueueOutboundCallerConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -492,6 +508,7 @@ impl std::fmt::Debug for UpdateQueueNameOutput {
 }
 /// See [`UpdateQueueNameOutput`](crate::output::UpdateQueueNameOutput)
 pub mod update_queue_name_output {
+    ///
     /// A builder for [`UpdateQueueNameOutput`](crate::output::UpdateQueueNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -522,6 +539,7 @@ impl std::fmt::Debug for UpdateQueueMaxContactsOutput {
 }
 /// See [`UpdateQueueMaxContactsOutput`](crate::output::UpdateQueueMaxContactsOutput)
 pub mod update_queue_max_contacts_output {
+    ///
     /// A builder for [`UpdateQueueMaxContactsOutput`](crate::output::UpdateQueueMaxContactsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -552,6 +570,7 @@ impl std::fmt::Debug for UpdateQueueHoursOfOperationOutput {
 }
 /// See [`UpdateQueueHoursOfOperationOutput`](crate::output::UpdateQueueHoursOfOperationOutput)
 pub mod update_queue_hours_of_operation_output {
+    ///
     /// A builder for [`UpdateQueueHoursOfOperationOutput`](crate::output::UpdateQueueHoursOfOperationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -599,6 +618,7 @@ impl std::fmt::Debug for UpdatePhoneNumberOutput {
 }
 /// See [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput)
 pub mod update_phone_number_output {
+    ///
     /// A builder for [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -661,6 +681,7 @@ impl std::fmt::Debug for UpdateInstanceStorageConfigOutput {
 }
 /// See [`UpdateInstanceStorageConfigOutput`](crate::output::UpdateInstanceStorageConfigOutput)
 pub mod update_instance_storage_config_output {
+    ///
     /// A builder for [`UpdateInstanceStorageConfigOutput`](crate::output::UpdateInstanceStorageConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -691,6 +712,7 @@ impl std::fmt::Debug for UpdateInstanceAttributeOutput {
 }
 /// See [`UpdateInstanceAttributeOutput`](crate::output::UpdateInstanceAttributeOutput)
 pub mod update_instance_attribute_output {
+    ///
     /// A builder for [`UpdateInstanceAttributeOutput`](crate::output::UpdateInstanceAttributeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -721,6 +743,7 @@ impl std::fmt::Debug for UpdateHoursOfOperationOutput {
 }
 /// See [`UpdateHoursOfOperationOutput`](crate::output::UpdateHoursOfOperationOutput)
 pub mod update_hours_of_operation_output {
+    ///
     /// A builder for [`UpdateHoursOfOperationOutput`](crate::output::UpdateHoursOfOperationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -751,6 +774,7 @@ impl std::fmt::Debug for UpdateContactScheduleOutput {
 }
 /// See [`UpdateContactScheduleOutput`](crate::output::UpdateContactScheduleOutput)
 pub mod update_contact_schedule_output {
+    ///
     /// A builder for [`UpdateContactScheduleOutput`](crate::output::UpdateContactScheduleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -781,6 +805,7 @@ impl std::fmt::Debug for UpdateContactFlowNameOutput {
 }
 /// See [`UpdateContactFlowNameOutput`](crate::output::UpdateContactFlowNameOutput)
 pub mod update_contact_flow_name_output {
+    ///
     /// A builder for [`UpdateContactFlowNameOutput`](crate::output::UpdateContactFlowNameOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -811,6 +836,7 @@ impl std::fmt::Debug for UpdateContactFlowModuleMetadataOutput {
 }
 /// See [`UpdateContactFlowModuleMetadataOutput`](crate::output::UpdateContactFlowModuleMetadataOutput)
 pub mod update_contact_flow_module_metadata_output {
+    ///
     /// A builder for [`UpdateContactFlowModuleMetadataOutput`](crate::output::UpdateContactFlowModuleMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -841,6 +867,7 @@ impl std::fmt::Debug for UpdateContactFlowModuleContentOutput {
 }
 /// See [`UpdateContactFlowModuleContentOutput`](crate::output::UpdateContactFlowModuleContentOutput)
 pub mod update_contact_flow_module_content_output {
+    ///
     /// A builder for [`UpdateContactFlowModuleContentOutput`](crate::output::UpdateContactFlowModuleContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -871,6 +898,7 @@ impl std::fmt::Debug for UpdateContactFlowMetadataOutput {
 }
 /// See [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
 pub mod update_contact_flow_metadata_output {
+    ///
     /// A builder for [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -901,6 +929,7 @@ impl std::fmt::Debug for UpdateContactFlowContentOutput {
 }
 /// See [`UpdateContactFlowContentOutput`](crate::output::UpdateContactFlowContentOutput)
 pub mod update_contact_flow_content_output {
+    ///
     /// A builder for [`UpdateContactFlowContentOutput`](crate::output::UpdateContactFlowContentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -931,6 +960,7 @@ impl std::fmt::Debug for UpdateContactAttributesOutput {
 }
 /// See [`UpdateContactAttributesOutput`](crate::output::UpdateContactAttributesOutput)
 pub mod update_contact_attributes_output {
+    ///
     /// A builder for [`UpdateContactAttributesOutput`](crate::output::UpdateContactAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -961,6 +991,7 @@ impl std::fmt::Debug for UpdateContactOutput {
 }
 /// See [`UpdateContactOutput`](crate::output::UpdateContactOutput)
 pub mod update_contact_output {
+    ///
     /// A builder for [`UpdateContactOutput`](crate::output::UpdateContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -991,6 +1022,7 @@ impl std::fmt::Debug for UpdateAgentStatusOutput {
 }
 /// See [`UpdateAgentStatusOutput`](crate::output::UpdateAgentStatusOutput)
 pub mod update_agent_status_output {
+    ///
     /// A builder for [`UpdateAgentStatusOutput`](crate::output::UpdateAgentStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1021,6 +1053,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1051,6 +1084,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1081,6 +1115,7 @@ impl std::fmt::Debug for SuspendContactRecordingOutput {
 }
 /// See [`SuspendContactRecordingOutput`](crate::output::SuspendContactRecordingOutput)
 pub mod suspend_contact_recording_output {
+    ///
     /// A builder for [`SuspendContactRecordingOutput`](crate::output::SuspendContactRecordingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1111,6 +1146,7 @@ impl std::fmt::Debug for StopContactStreamingOutput {
 }
 /// See [`StopContactStreamingOutput`](crate::output::StopContactStreamingOutput)
 pub mod stop_contact_streaming_output {
+    ///
     /// A builder for [`StopContactStreamingOutput`](crate::output::StopContactStreamingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1141,6 +1177,7 @@ impl std::fmt::Debug for StopContactRecordingOutput {
 }
 /// See [`StopContactRecordingOutput`](crate::output::StopContactRecordingOutput)
 pub mod stop_contact_recording_output {
+    ///
     /// A builder for [`StopContactRecordingOutput`](crate::output::StopContactRecordingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1171,6 +1208,7 @@ impl std::fmt::Debug for StopContactOutput {
 }
 /// See [`StopContactOutput`](crate::output::StopContactOutput)
 pub mod stop_contact_output {
+    ///
     /// A builder for [`StopContactOutput`](crate::output::StopContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1211,6 +1249,7 @@ impl std::fmt::Debug for StartTaskContactOutput {
 }
 /// See [`StartTaskContactOutput`](crate::output::StartTaskContactOutput)
 pub mod start_task_contact_output {
+    ///
     /// A builder for [`StartTaskContactOutput`](crate::output::StartTaskContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1265,6 +1304,7 @@ impl std::fmt::Debug for StartOutboundVoiceContactOutput {
 }
 /// See [`StartOutboundVoiceContactOutput`](crate::output::StartOutboundVoiceContactOutput)
 pub mod start_outbound_voice_contact_output {
+    ///
     /// A builder for [`StartOutboundVoiceContactOutput`](crate::output::StartOutboundVoiceContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1319,6 +1359,7 @@ impl std::fmt::Debug for StartContactStreamingOutput {
 }
 /// See [`StartContactStreamingOutput`](crate::output::StartContactStreamingOutput)
 pub mod start_contact_streaming_output {
+    ///
     /// A builder for [`StartContactStreamingOutput`](crate::output::StartContactStreamingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1363,6 +1404,7 @@ impl std::fmt::Debug for StartContactRecordingOutput {
 }
 /// See [`StartContactRecordingOutput`](crate::output::StartContactRecordingOutput)
 pub mod start_contact_recording_output {
+    ///
     /// A builder for [`StartContactRecordingOutput`](crate::output::StartContactRecordingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1417,6 +1459,7 @@ impl std::fmt::Debug for StartChatContactOutput {
 }
 /// See [`StartChatContactOutput`](crate::output::StartChatContactOutput)
 pub mod start_chat_contact_output {
+    ///
     /// A builder for [`StartChatContactOutput`](crate::output::StartChatContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1511,6 +1554,7 @@ impl std::fmt::Debug for SearchVocabulariesOutput {
 }
 /// See [`SearchVocabulariesOutput`](crate::output::SearchVocabulariesOutput)
 pub mod search_vocabularies_output {
+    ///
     /// A builder for [`SearchVocabulariesOutput`](crate::output::SearchVocabulariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1601,6 +1645,7 @@ impl std::fmt::Debug for SearchUsersOutput {
 }
 /// See [`SearchUsersOutput`](crate::output::SearchUsersOutput)
 pub mod search_users_output {
+    ///
     /// A builder for [`SearchUsersOutput`](crate::output::SearchUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1698,6 +1743,7 @@ impl std::fmt::Debug for SearchAvailablePhoneNumbersOutput {
 }
 /// See [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput)
 pub mod search_available_phone_numbers_output {
+    ///
     /// A builder for [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1767,6 +1813,7 @@ impl std::fmt::Debug for ResumeContactRecordingOutput {
 }
 /// See [`ResumeContactRecordingOutput`](crate::output::ResumeContactRecordingOutput)
 pub mod resume_contact_recording_output {
+    ///
     /// A builder for [`ResumeContactRecordingOutput`](crate::output::ResumeContactRecordingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1797,6 +1844,7 @@ impl std::fmt::Debug for ReleasePhoneNumberOutput {
 }
 /// See [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput)
 pub mod release_phone_number_output {
+    ///
     /// A builder for [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1827,6 +1875,7 @@ impl std::fmt::Debug for PutUserStatusOutput {
 }
 /// See [`PutUserStatusOutput`](crate::output::PutUserStatusOutput)
 pub mod put_user_status_output {
+    ///
     /// A builder for [`PutUserStatusOutput`](crate::output::PutUserStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1874,6 +1923,7 @@ impl std::fmt::Debug for ListUsersOutput {
 }
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput)
 pub mod list_users_output {
+    ///
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1962,6 +2012,7 @@ impl std::fmt::Debug for ListUserHierarchyGroupsOutput {
 }
 /// See [`ListUserHierarchyGroupsOutput`](crate::output::ListUserHierarchyGroupsOutput)
 pub mod list_user_hierarchy_groups_output {
+    ///
     /// A builder for [`ListUserHierarchyGroupsOutput`](crate::output::ListUserHierarchyGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2048,6 +2099,7 @@ impl std::fmt::Debug for ListUseCasesOutput {
 }
 /// See [`ListUseCasesOutput`](crate::output::ListUseCasesOutput)
 pub mod list_use_cases_output {
+    ///
     /// A builder for [`ListUseCasesOutput`](crate::output::ListUseCasesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2127,6 +2179,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2209,6 +2262,7 @@ impl std::fmt::Debug for ListSecurityProfilesOutput {
 }
 /// See [`ListSecurityProfilesOutput`](crate::output::ListSecurityProfilesOutput)
 pub mod list_security_profiles_output {
+    ///
     /// A builder for [`ListSecurityProfilesOutput`](crate::output::ListSecurityProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2295,6 +2349,7 @@ impl std::fmt::Debug for ListSecurityProfilePermissionsOutput {
 }
 /// See [`ListSecurityProfilePermissionsOutput`](crate::output::ListSecurityProfilePermissionsOutput)
 pub mod list_security_profile_permissions_output {
+    ///
     /// A builder for [`ListSecurityProfilePermissionsOutput`](crate::output::ListSecurityProfilePermissionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2377,6 +2432,7 @@ impl std::fmt::Debug for ListSecurityKeysOutput {
 }
 /// See [`ListSecurityKeysOutput`](crate::output::ListSecurityKeysOutput)
 pub mod list_security_keys_output {
+    ///
     /// A builder for [`ListSecurityKeysOutput`](crate::output::ListSecurityKeysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2465,6 +2521,7 @@ impl std::fmt::Debug for ListRoutingProfilesOutput {
 }
 /// See [`ListRoutingProfilesOutput`](crate::output::ListRoutingProfilesOutput)
 pub mod list_routing_profiles_output {
+    ///
     /// A builder for [`ListRoutingProfilesOutput`](crate::output::ListRoutingProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2557,6 +2614,7 @@ impl std::fmt::Debug for ListRoutingProfileQueuesOutput {
 }
 /// See [`ListRoutingProfileQueuesOutput`](crate::output::ListRoutingProfileQueuesOutput)
 pub mod list_routing_profile_queues_output {
+    ///
     /// A builder for [`ListRoutingProfileQueuesOutput`](crate::output::ListRoutingProfileQueuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2654,6 +2712,7 @@ impl std::fmt::Debug for ListQuickConnectsOutput {
 }
 /// See [`ListQuickConnectsOutput`](crate::output::ListQuickConnectsOutput)
 pub mod list_quick_connects_output {
+    ///
     /// A builder for [`ListQuickConnectsOutput`](crate::output::ListQuickConnectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2740,6 +2799,7 @@ impl std::fmt::Debug for ListQueuesOutput {
 }
 /// See [`ListQueuesOutput`](crate::output::ListQueuesOutput)
 pub mod list_queues_output {
+    ///
     /// A builder for [`ListQueuesOutput`](crate::output::ListQueuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2829,6 +2889,7 @@ impl std::fmt::Debug for ListQueueQuickConnectsOutput {
 }
 /// See [`ListQueueQuickConnectsOutput`](crate::output::ListQueueQuickConnectsOutput)
 pub mod list_queue_quick_connects_output {
+    ///
     /// A builder for [`ListQueueQuickConnectsOutput`](crate::output::ListQueueQuickConnectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2915,6 +2976,7 @@ impl std::fmt::Debug for ListPromptsOutput {
 }
 /// See [`ListPromptsOutput`](crate::output::ListPromptsOutput)
 pub mod list_prompts_output {
+    ///
     /// A builder for [`ListPromptsOutput`](crate::output::ListPromptsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3004,6 +3066,7 @@ impl std::fmt::Debug for ListPhoneNumbersV2Output {
 }
 /// See [`ListPhoneNumbersV2Output`](crate::output::ListPhoneNumbersV2Output)
 pub mod list_phone_numbers_v2_output {
+    ///
     /// A builder for [`ListPhoneNumbersV2Output`](crate::output::ListPhoneNumbersV2Output)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3093,6 +3156,7 @@ impl std::fmt::Debug for ListPhoneNumbersOutput {
 }
 /// See [`ListPhoneNumbersOutput`](crate::output::ListPhoneNumbersOutput)
 pub mod list_phone_numbers_output {
+    ///
     /// A builder for [`ListPhoneNumbersOutput`](crate::output::ListPhoneNumbersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3179,6 +3243,7 @@ impl std::fmt::Debug for ListLexBotsOutput {
 }
 /// See [`ListLexBotsOutput`](crate::output::ListLexBotsOutput)
 pub mod list_lex_bots_output {
+    ///
     /// A builder for [`ListLexBotsOutput`](crate::output::ListLexBotsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3261,6 +3326,7 @@ impl std::fmt::Debug for ListLambdaFunctionsOutput {
 }
 /// See [`ListLambdaFunctionsOutput`](crate::output::ListLambdaFunctionsOutput)
 pub mod list_lambda_functions_output {
+    ///
     /// A builder for [`ListLambdaFunctionsOutput`](crate::output::ListLambdaFunctionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3349,6 +3415,7 @@ impl std::fmt::Debug for ListIntegrationAssociationsOutput {
 }
 /// See [`ListIntegrationAssociationsOutput`](crate::output::ListIntegrationAssociationsOutput)
 pub mod list_integration_associations_output {
+    ///
     /// A builder for [`ListIntegrationAssociationsOutput`](crate::output::ListIntegrationAssociationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3437,6 +3504,7 @@ impl std::fmt::Debug for ListInstanceStorageConfigsOutput {
 }
 /// See [`ListInstanceStorageConfigsOutput`](crate::output::ListInstanceStorageConfigsOutput)
 pub mod list_instance_storage_configs_output {
+    ///
     /// A builder for [`ListInstanceStorageConfigsOutput`](crate::output::ListInstanceStorageConfigsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3520,6 +3588,7 @@ impl std::fmt::Debug for ListInstancesOutput {
 }
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput)
 pub mod list_instances_output {
+    ///
     /// A builder for [`ListInstancesOutput`](crate::output::ListInstancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3603,6 +3672,7 @@ impl std::fmt::Debug for ListInstanceAttributesOutput {
 }
 /// See [`ListInstanceAttributesOutput`](crate::output::ListInstanceAttributesOutput)
 pub mod list_instance_attributes_output {
+    ///
     /// A builder for [`ListInstanceAttributesOutput`](crate::output::ListInstanceAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3691,6 +3761,7 @@ impl std::fmt::Debug for ListHoursOfOperationsOutput {
 }
 /// See [`ListHoursOfOperationsOutput`](crate::output::ListHoursOfOperationsOutput)
 pub mod list_hours_of_operations_output {
+    ///
     /// A builder for [`ListHoursOfOperationsOutput`](crate::output::ListHoursOfOperationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3780,6 +3851,7 @@ impl std::fmt::Debug for ListDefaultVocabulariesOutput {
 }
 /// See [`ListDefaultVocabulariesOutput`](crate::output::ListDefaultVocabulariesOutput)
 pub mod list_default_vocabularies_output {
+    ///
     /// A builder for [`ListDefaultVocabulariesOutput`](crate::output::ListDefaultVocabulariesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3867,6 +3939,7 @@ impl std::fmt::Debug for ListContactReferencesOutput {
 }
 /// See [`ListContactReferencesOutput`](crate::output::ListContactReferencesOutput)
 pub mod list_contact_references_output {
+    ///
     /// A builder for [`ListContactReferencesOutput`](crate::output::ListContactReferencesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3957,6 +4030,7 @@ impl std::fmt::Debug for ListContactFlowsOutput {
 }
 /// See [`ListContactFlowsOutput`](crate::output::ListContactFlowsOutput)
 pub mod list_contact_flows_output {
+    ///
     /// A builder for [`ListContactFlowsOutput`](crate::output::ListContactFlowsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4049,6 +4123,7 @@ impl std::fmt::Debug for ListContactFlowModulesOutput {
 }
 /// See [`ListContactFlowModulesOutput`](crate::output::ListContactFlowModulesOutput)
 pub mod list_contact_flow_modules_output {
+    ///
     /// A builder for [`ListContactFlowModulesOutput`](crate::output::ListContactFlowModulesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4135,6 +4210,7 @@ impl std::fmt::Debug for ListBotsOutput {
 }
 /// See [`ListBotsOutput`](crate::output::ListBotsOutput)
 pub mod list_bots_output {
+    ///
     /// A builder for [`ListBotsOutput`](crate::output::ListBotsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4217,6 +4293,7 @@ impl std::fmt::Debug for ListApprovedOriginsOutput {
 }
 /// See [`ListApprovedOriginsOutput`](crate::output::ListApprovedOriginsOutput)
 pub mod list_approved_origins_output {
+    ///
     /// A builder for [`ListApprovedOriginsOutput`](crate::output::ListApprovedOriginsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4302,6 +4379,7 @@ impl std::fmt::Debug for ListAgentStatusesOutput {
 }
 /// See [`ListAgentStatusesOutput`](crate::output::ListAgentStatusesOutput)
 pub mod list_agent_statuses_output {
+    ///
     /// A builder for [`ListAgentStatusesOutput`](crate::output::ListAgentStatusesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4392,6 +4470,7 @@ impl std::fmt::Debug for GetMetricDataOutput {
 }
 /// See [`GetMetricDataOutput`](crate::output::GetMetricDataOutput)
 pub mod get_metric_data_output {
+    ///
     /// A builder for [`GetMetricDataOutput`](crate::output::GetMetricDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4472,6 +4551,7 @@ impl std::fmt::Debug for GetFederationTokenOutput {
 }
 /// See [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput)
 pub mod get_federation_token_output {
+    ///
     /// A builder for [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4545,6 +4625,7 @@ impl std::fmt::Debug for GetCurrentMetricDataOutput {
 }
 /// See [`GetCurrentMetricDataOutput`](crate::output::GetCurrentMetricDataOutput)
 pub mod get_current_metric_data_output {
+    ///
     /// A builder for [`GetCurrentMetricDataOutput`](crate::output::GetCurrentMetricDataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4642,6 +4723,7 @@ impl std::fmt::Debug for GetContactAttributesOutput {
 }
 /// See [`GetContactAttributesOutput`](crate::output::GetContactAttributesOutput)
 pub mod get_contact_attributes_output {
+    ///
     /// A builder for [`GetContactAttributesOutput`](crate::output::GetContactAttributesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4703,6 +4785,7 @@ impl std::fmt::Debug for DisassociateSecurityKeyOutput {
 }
 /// See [`DisassociateSecurityKeyOutput`](crate::output::DisassociateSecurityKeyOutput)
 pub mod disassociate_security_key_output {
+    ///
     /// A builder for [`DisassociateSecurityKeyOutput`](crate::output::DisassociateSecurityKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4733,6 +4816,7 @@ impl std::fmt::Debug for DisassociateRoutingProfileQueuesOutput {
 }
 /// See [`DisassociateRoutingProfileQueuesOutput`](crate::output::DisassociateRoutingProfileQueuesOutput)
 pub mod disassociate_routing_profile_queues_output {
+    ///
     /// A builder for [`DisassociateRoutingProfileQueuesOutput`](crate::output::DisassociateRoutingProfileQueuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4763,6 +4847,7 @@ impl std::fmt::Debug for DisassociateQueueQuickConnectsOutput {
 }
 /// See [`DisassociateQueueQuickConnectsOutput`](crate::output::DisassociateQueueQuickConnectsOutput)
 pub mod disassociate_queue_quick_connects_output {
+    ///
     /// A builder for [`DisassociateQueueQuickConnectsOutput`](crate::output::DisassociateQueueQuickConnectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4793,6 +4878,7 @@ impl std::fmt::Debug for DisassociatePhoneNumberContactFlowOutput {
 }
 /// See [`DisassociatePhoneNumberContactFlowOutput`](crate::output::DisassociatePhoneNumberContactFlowOutput)
 pub mod disassociate_phone_number_contact_flow_output {
+    ///
     /// A builder for [`DisassociatePhoneNumberContactFlowOutput`](crate::output::DisassociatePhoneNumberContactFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4823,6 +4909,7 @@ impl std::fmt::Debug for DisassociateLexBotOutput {
 }
 /// See [`DisassociateLexBotOutput`](crate::output::DisassociateLexBotOutput)
 pub mod disassociate_lex_bot_output {
+    ///
     /// A builder for [`DisassociateLexBotOutput`](crate::output::DisassociateLexBotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4853,6 +4940,7 @@ impl std::fmt::Debug for DisassociateLambdaFunctionOutput {
 }
 /// See [`DisassociateLambdaFunctionOutput`](crate::output::DisassociateLambdaFunctionOutput)
 pub mod disassociate_lambda_function_output {
+    ///
     /// A builder for [`DisassociateLambdaFunctionOutput`](crate::output::DisassociateLambdaFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4883,6 +4971,7 @@ impl std::fmt::Debug for DisassociateInstanceStorageConfigOutput {
 }
 /// See [`DisassociateInstanceStorageConfigOutput`](crate::output::DisassociateInstanceStorageConfigOutput)
 pub mod disassociate_instance_storage_config_output {
+    ///
     /// A builder for [`DisassociateInstanceStorageConfigOutput`](crate::output::DisassociateInstanceStorageConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4913,6 +5002,7 @@ impl std::fmt::Debug for DisassociateBotOutput {
 }
 /// See [`DisassociateBotOutput`](crate::output::DisassociateBotOutput)
 pub mod disassociate_bot_output {
+    ///
     /// A builder for [`DisassociateBotOutput`](crate::output::DisassociateBotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4943,6 +5033,7 @@ impl std::fmt::Debug for DisassociateApprovedOriginOutput {
 }
 /// See [`DisassociateApprovedOriginOutput`](crate::output::DisassociateApprovedOriginOutput)
 pub mod disassociate_approved_origin_output {
+    ///
     /// A builder for [`DisassociateApprovedOriginOutput`](crate::output::DisassociateApprovedOriginOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4983,6 +5074,7 @@ impl std::fmt::Debug for DescribeVocabularyOutput {
 }
 /// See [`DescribeVocabularyOutput`](crate::output::DescribeVocabularyOutput)
 pub mod describe_vocabulary_output {
+    ///
     /// A builder for [`DescribeVocabularyOutput`](crate::output::DescribeVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5040,6 +5132,7 @@ impl std::fmt::Debug for DescribeUserHierarchyStructureOutput {
 }
 /// See [`DescribeUserHierarchyStructureOutput`](crate::output::DescribeUserHierarchyStructureOutput)
 pub mod describe_user_hierarchy_structure_output {
+    ///
     /// A builder for [`DescribeUserHierarchyStructureOutput`](crate::output::DescribeUserHierarchyStructureOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5097,6 +5190,7 @@ impl std::fmt::Debug for DescribeUserHierarchyGroupOutput {
 }
 /// See [`DescribeUserHierarchyGroupOutput`](crate::output::DescribeUserHierarchyGroupOutput)
 pub mod describe_user_hierarchy_group_output {
+    ///
     /// A builder for [`DescribeUserHierarchyGroupOutput`](crate::output::DescribeUserHierarchyGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5154,6 +5248,7 @@ impl std::fmt::Debug for DescribeUserOutput {
 }
 /// See [`DescribeUserOutput`](crate::output::DescribeUserOutput)
 pub mod describe_user_output {
+    ///
     /// A builder for [`DescribeUserOutput`](crate::output::DescribeUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5206,6 +5301,7 @@ impl std::fmt::Debug for DescribeSecurityProfileOutput {
 }
 /// See [`DescribeSecurityProfileOutput`](crate::output::DescribeSecurityProfileOutput)
 pub mod describe_security_profile_output {
+    ///
     /// A builder for [`DescribeSecurityProfileOutput`](crate::output::DescribeSecurityProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5263,6 +5359,7 @@ impl std::fmt::Debug for DescribeRoutingProfileOutput {
 }
 /// See [`DescribeRoutingProfileOutput`](crate::output::DescribeRoutingProfileOutput)
 pub mod describe_routing_profile_output {
+    ///
     /// A builder for [`DescribeRoutingProfileOutput`](crate::output::DescribeRoutingProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5320,6 +5417,7 @@ impl std::fmt::Debug for DescribeQuickConnectOutput {
 }
 /// See [`DescribeQuickConnectOutput`](crate::output::DescribeQuickConnectOutput)
 pub mod describe_quick_connect_output {
+    ///
     /// A builder for [`DescribeQuickConnectOutput`](crate::output::DescribeQuickConnectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5377,6 +5475,7 @@ impl std::fmt::Debug for DescribeQueueOutput {
 }
 /// See [`DescribeQueueOutput`](crate::output::DescribeQueueOutput)
 pub mod describe_queue_output {
+    ///
     /// A builder for [`DescribeQueueOutput`](crate::output::DescribeQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5434,6 +5533,7 @@ impl std::fmt::Debug for DescribePhoneNumberOutput {
 }
 /// See [`DescribePhoneNumberOutput`](crate::output::DescribePhoneNumberOutput)
 pub mod describe_phone_number_output {
+    ///
     /// A builder for [`DescribePhoneNumberOutput`](crate::output::DescribePhoneNumberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5495,6 +5595,7 @@ impl std::fmt::Debug for DescribeInstanceStorageConfigOutput {
 }
 /// See [`DescribeInstanceStorageConfigOutput`](crate::output::DescribeInstanceStorageConfigOutput)
 pub mod describe_instance_storage_config_output {
+    ///
     /// A builder for [`DescribeInstanceStorageConfigOutput`](crate::output::DescribeInstanceStorageConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5552,6 +5653,7 @@ impl std::fmt::Debug for DescribeInstanceAttributeOutput {
 }
 /// See [`DescribeInstanceAttributeOutput`](crate::output::DescribeInstanceAttributeOutput)
 pub mod describe_instance_attribute_output {
+    ///
     /// A builder for [`DescribeInstanceAttributeOutput`](crate::output::DescribeInstanceAttributeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5609,6 +5711,7 @@ impl std::fmt::Debug for DescribeInstanceOutput {
 }
 /// See [`DescribeInstanceOutput`](crate::output::DescribeInstanceOutput)
 pub mod describe_instance_output {
+    ///
     /// A builder for [`DescribeInstanceOutput`](crate::output::DescribeInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5663,6 +5766,7 @@ impl std::fmt::Debug for DescribeHoursOfOperationOutput {
 }
 /// See [`DescribeHoursOfOperationOutput`](crate::output::DescribeHoursOfOperationOutput)
 pub mod describe_hours_of_operation_output {
+    ///
     /// A builder for [`DescribeHoursOfOperationOutput`](crate::output::DescribeHoursOfOperationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5720,6 +5824,7 @@ impl std::fmt::Debug for DescribeContactFlowModuleOutput {
 }
 /// See [`DescribeContactFlowModuleOutput`](crate::output::DescribeContactFlowModuleOutput)
 pub mod describe_contact_flow_module_output {
+    ///
     /// A builder for [`DescribeContactFlowModuleOutput`](crate::output::DescribeContactFlowModuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5777,6 +5882,7 @@ impl std::fmt::Debug for DescribeContactFlowOutput {
 }
 /// See [`DescribeContactFlowOutput`](crate::output::DescribeContactFlowOutput)
 pub mod describe_contact_flow_output {
+    ///
     /// A builder for [`DescribeContactFlowOutput`](crate::output::DescribeContactFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5834,6 +5940,7 @@ impl std::fmt::Debug for DescribeContactOutput {
 }
 /// See [`DescribeContactOutput`](crate::output::DescribeContactOutput)
 pub mod describe_contact_output {
+    ///
     /// A builder for [`DescribeContactOutput`](crate::output::DescribeContactOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5888,6 +5995,7 @@ impl std::fmt::Debug for DescribeAgentStatusOutput {
 }
 /// See [`DescribeAgentStatusOutput`](crate::output::DescribeAgentStatusOutput)
 pub mod describe_agent_status_output {
+    ///
     /// A builder for [`DescribeAgentStatusOutput`](crate::output::DescribeAgentStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5959,6 +6067,7 @@ impl std::fmt::Debug for DeleteVocabularyOutput {
 }
 /// See [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput)
 pub mod delete_vocabulary_output {
+    ///
     /// A builder for [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6036,6 +6145,7 @@ impl std::fmt::Debug for DeleteUserHierarchyGroupOutput {
 }
 /// See [`DeleteUserHierarchyGroupOutput`](crate::output::DeleteUserHierarchyGroupOutput)
 pub mod delete_user_hierarchy_group_output {
+    ///
     /// A builder for [`DeleteUserHierarchyGroupOutput`](crate::output::DeleteUserHierarchyGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6066,6 +6176,7 @@ impl std::fmt::Debug for DeleteUserOutput {
 }
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput)
 pub mod delete_user_output {
+    ///
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6096,6 +6207,7 @@ impl std::fmt::Debug for DeleteUseCaseOutput {
 }
 /// See [`DeleteUseCaseOutput`](crate::output::DeleteUseCaseOutput)
 pub mod delete_use_case_output {
+    ///
     /// A builder for [`DeleteUseCaseOutput`](crate::output::DeleteUseCaseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6126,6 +6238,7 @@ impl std::fmt::Debug for DeleteSecurityProfileOutput {
 }
 /// See [`DeleteSecurityProfileOutput`](crate::output::DeleteSecurityProfileOutput)
 pub mod delete_security_profile_output {
+    ///
     /// A builder for [`DeleteSecurityProfileOutput`](crate::output::DeleteSecurityProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6156,6 +6269,7 @@ impl std::fmt::Debug for DeleteQuickConnectOutput {
 }
 /// See [`DeleteQuickConnectOutput`](crate::output::DeleteQuickConnectOutput)
 pub mod delete_quick_connect_output {
+    ///
     /// A builder for [`DeleteQuickConnectOutput`](crate::output::DeleteQuickConnectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6186,6 +6300,7 @@ impl std::fmt::Debug for DeleteIntegrationAssociationOutput {
 }
 /// See [`DeleteIntegrationAssociationOutput`](crate::output::DeleteIntegrationAssociationOutput)
 pub mod delete_integration_association_output {
+    ///
     /// A builder for [`DeleteIntegrationAssociationOutput`](crate::output::DeleteIntegrationAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6216,6 +6331,7 @@ impl std::fmt::Debug for DeleteInstanceOutput {
 }
 /// See [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput)
 pub mod delete_instance_output {
+    ///
     /// A builder for [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6246,6 +6362,7 @@ impl std::fmt::Debug for DeleteHoursOfOperationOutput {
 }
 /// See [`DeleteHoursOfOperationOutput`](crate::output::DeleteHoursOfOperationOutput)
 pub mod delete_hours_of_operation_output {
+    ///
     /// A builder for [`DeleteHoursOfOperationOutput`](crate::output::DeleteHoursOfOperationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6276,6 +6393,7 @@ impl std::fmt::Debug for DeleteContactFlowModuleOutput {
 }
 /// See [`DeleteContactFlowModuleOutput`](crate::output::DeleteContactFlowModuleOutput)
 pub mod delete_contact_flow_module_output {
+    ///
     /// A builder for [`DeleteContactFlowModuleOutput`](crate::output::DeleteContactFlowModuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6306,6 +6424,7 @@ impl std::fmt::Debug for DeleteContactFlowOutput {
 }
 /// See [`DeleteContactFlowOutput`](crate::output::DeleteContactFlowOutput)
 pub mod delete_contact_flow_output {
+    ///
     /// A builder for [`DeleteContactFlowOutput`](crate::output::DeleteContactFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6360,6 +6479,7 @@ impl std::fmt::Debug for CreateVocabularyOutput {
 }
 /// See [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput)
 pub mod create_vocabulary_output {
+    ///
     /// A builder for [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6454,6 +6574,7 @@ impl std::fmt::Debug for CreateUserHierarchyGroupOutput {
 }
 /// See [`CreateUserHierarchyGroupOutput`](crate::output::CreateUserHierarchyGroupOutput)
 pub mod create_user_hierarchy_group_output {
+    ///
     /// A builder for [`CreateUserHierarchyGroupOutput`](crate::output::CreateUserHierarchyGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6533,6 +6654,7 @@ impl std::fmt::Debug for CreateUserOutput {
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput)
 pub mod create_user_output {
+    ///
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6606,6 +6728,7 @@ impl std::fmt::Debug for CreateUseCaseOutput {
 }
 /// See [`CreateUseCaseOutput`](crate::output::CreateUseCaseOutput)
 pub mod create_use_case_output {
+    ///
     /// A builder for [`CreateUseCaseOutput`](crate::output::CreateUseCaseOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6679,6 +6802,7 @@ impl std::fmt::Debug for CreateSecurityProfileOutput {
 }
 /// See [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput)
 pub mod create_security_profile_output {
+    ///
     /// A builder for [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6758,6 +6882,7 @@ impl std::fmt::Debug for CreateRoutingProfileOutput {
 }
 /// See [`CreateRoutingProfileOutput`](crate::output::CreateRoutingProfileOutput)
 pub mod create_routing_profile_output {
+    ///
     /// A builder for [`CreateRoutingProfileOutput`](crate::output::CreateRoutingProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6837,6 +6962,7 @@ impl std::fmt::Debug for CreateQuickConnectOutput {
 }
 /// See [`CreateQuickConnectOutput`](crate::output::CreateQuickConnectOutput)
 pub mod create_quick_connect_output {
+    ///
     /// A builder for [`CreateQuickConnectOutput`](crate::output::CreateQuickConnectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6916,6 +7042,7 @@ impl std::fmt::Debug for CreateQueueOutput {
 }
 /// See [`CreateQueueOutput`](crate::output::CreateQueueOutput)
 pub mod create_queue_output {
+    ///
     /// A builder for [`CreateQueueOutput`](crate::output::CreateQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6995,6 +7122,7 @@ impl std::fmt::Debug for CreateIntegrationAssociationOutput {
 }
 /// See [`CreateIntegrationAssociationOutput`](crate::output::CreateIntegrationAssociationOutput)
 pub mod create_integration_association_output {
+    ///
     /// A builder for [`CreateIntegrationAssociationOutput`](crate::output::CreateIntegrationAssociationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7077,6 +7205,7 @@ impl std::fmt::Debug for CreateInstanceOutput {
 }
 /// See [`CreateInstanceOutput`](crate::output::CreateInstanceOutput)
 pub mod create_instance_output {
+    ///
     /// A builder for [`CreateInstanceOutput`](crate::output::CreateInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7150,6 +7279,7 @@ impl std::fmt::Debug for CreateHoursOfOperationOutput {
 }
 /// See [`CreateHoursOfOperationOutput`](crate::output::CreateHoursOfOperationOutput)
 pub mod create_hours_of_operation_output {
+    ///
     /// A builder for [`CreateHoursOfOperationOutput`](crate::output::CreateHoursOfOperationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7229,6 +7359,7 @@ impl std::fmt::Debug for CreateContactFlowModuleOutput {
 }
 /// See [`CreateContactFlowModuleOutput`](crate::output::CreateContactFlowModuleOutput)
 pub mod create_contact_flow_module_output {
+    ///
     /// A builder for [`CreateContactFlowModuleOutput`](crate::output::CreateContactFlowModuleOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7302,6 +7433,7 @@ impl std::fmt::Debug for CreateContactFlowOutput {
 }
 /// See [`CreateContactFlowOutput`](crate::output::CreateContactFlowOutput)
 pub mod create_contact_flow_output {
+    ///
     /// A builder for [`CreateContactFlowOutput`](crate::output::CreateContactFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7381,6 +7513,7 @@ impl std::fmt::Debug for CreateAgentStatusOutput {
 }
 /// See [`CreateAgentStatusOutput`](crate::output::CreateAgentStatusOutput)
 pub mod create_agent_status_output {
+    ///
     /// A builder for [`CreateAgentStatusOutput`](crate::output::CreateAgentStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7460,6 +7593,7 @@ impl std::fmt::Debug for ClaimPhoneNumberOutput {
 }
 /// See [`ClaimPhoneNumberOutput`](crate::output::ClaimPhoneNumberOutput)
 pub mod claim_phone_number_output {
+    ///
     /// A builder for [`ClaimPhoneNumberOutput`](crate::output::ClaimPhoneNumberOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7532,6 +7666,7 @@ impl std::fmt::Debug for AssociateSecurityKeyOutput {
 }
 /// See [`AssociateSecurityKeyOutput`](crate::output::AssociateSecurityKeyOutput)
 pub mod associate_security_key_output {
+    ///
     /// A builder for [`AssociateSecurityKeyOutput`](crate::output::AssociateSecurityKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7579,6 +7714,7 @@ impl std::fmt::Debug for AssociateRoutingProfileQueuesOutput {
 }
 /// See [`AssociateRoutingProfileQueuesOutput`](crate::output::AssociateRoutingProfileQueuesOutput)
 pub mod associate_routing_profile_queues_output {
+    ///
     /// A builder for [`AssociateRoutingProfileQueuesOutput`](crate::output::AssociateRoutingProfileQueuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7609,6 +7745,7 @@ impl std::fmt::Debug for AssociateQueueQuickConnectsOutput {
 }
 /// See [`AssociateQueueQuickConnectsOutput`](crate::output::AssociateQueueQuickConnectsOutput)
 pub mod associate_queue_quick_connects_output {
+    ///
     /// A builder for [`AssociateQueueQuickConnectsOutput`](crate::output::AssociateQueueQuickConnectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7639,6 +7776,7 @@ impl std::fmt::Debug for AssociatePhoneNumberContactFlowOutput {
 }
 /// See [`AssociatePhoneNumberContactFlowOutput`](crate::output::AssociatePhoneNumberContactFlowOutput)
 pub mod associate_phone_number_contact_flow_output {
+    ///
     /// A builder for [`AssociatePhoneNumberContactFlowOutput`](crate::output::AssociatePhoneNumberContactFlowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7669,6 +7807,7 @@ impl std::fmt::Debug for AssociateLexBotOutput {
 }
 /// See [`AssociateLexBotOutput`](crate::output::AssociateLexBotOutput)
 pub mod associate_lex_bot_output {
+    ///
     /// A builder for [`AssociateLexBotOutput`](crate::output::AssociateLexBotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7699,6 +7838,7 @@ impl std::fmt::Debug for AssociateLambdaFunctionOutput {
 }
 /// See [`AssociateLambdaFunctionOutput`](crate::output::AssociateLambdaFunctionOutput)
 pub mod associate_lambda_function_output {
+    ///
     /// A builder for [`AssociateLambdaFunctionOutput`](crate::output::AssociateLambdaFunctionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7739,6 +7879,7 @@ impl std::fmt::Debug for AssociateInstanceStorageConfigOutput {
 }
 /// See [`AssociateInstanceStorageConfigOutput`](crate::output::AssociateInstanceStorageConfigOutput)
 pub mod associate_instance_storage_config_output {
+    ///
     /// A builder for [`AssociateInstanceStorageConfigOutput`](crate::output::AssociateInstanceStorageConfigOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7786,6 +7927,7 @@ impl std::fmt::Debug for AssociateDefaultVocabularyOutput {
 }
 /// See [`AssociateDefaultVocabularyOutput`](crate::output::AssociateDefaultVocabularyOutput)
 pub mod associate_default_vocabulary_output {
+    ///
     /// A builder for [`AssociateDefaultVocabularyOutput`](crate::output::AssociateDefaultVocabularyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7816,6 +7958,7 @@ impl std::fmt::Debug for AssociateBotOutput {
 }
 /// See [`AssociateBotOutput`](crate::output::AssociateBotOutput)
 pub mod associate_bot_output {
+    ///
     /// A builder for [`AssociateBotOutput`](crate::output::AssociateBotOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7846,6 +7989,7 @@ impl std::fmt::Debug for AssociateApprovedOriginOutput {
 }
 /// See [`AssociateApprovedOriginOutput`](crate::output::AssociateApprovedOriginOutput)
 pub mod associate_approved_origin_output {
+    ///
     /// A builder for [`AssociateApprovedOriginOutput`](crate::output::AssociateApprovedOriginOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

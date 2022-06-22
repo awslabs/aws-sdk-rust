@@ -24039,6 +24039,7 @@ impl std::fmt::Display for OperationTimeoutException {
 impl std::error::Error for OperationTimeoutException {}
 /// See [`OperationTimeoutException`](crate::error::OperationTimeoutException)
 pub mod operation_timeout_exception {
+    ///
     /// A builder for [`OperationTimeoutException`](crate::error::OperationTimeoutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24103,6 +24104,7 @@ impl std::fmt::Display for InvalidInputException {
 impl std::error::Error for InvalidInputException {}
 /// See [`InvalidInputException`](crate::error::InvalidInputException)
 pub mod invalid_input_exception {
+    ///
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24167,6 +24169,7 @@ impl std::fmt::Display for InternalServiceException {
 impl std::error::Error for InternalServiceException {}
 /// See [`InternalServiceException`](crate::error::InternalServiceException)
 pub mod internal_service_exception {
+    ///
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24231,6 +24234,7 @@ impl std::fmt::Display for EntityNotFoundException {
 impl std::error::Error for EntityNotFoundException {}
 /// See [`EntityNotFoundException`](crate::error::EntityNotFoundException)
 pub mod entity_not_found_exception {
+    ///
     /// A builder for [`EntityNotFoundException`](crate::error::EntityNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24295,6 +24299,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
+    ///
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24359,6 +24364,7 @@ impl std::fmt::Display for GlueEncryptionException {
 impl std::error::Error for GlueEncryptionException {}
 /// See [`GlueEncryptionException`](crate::error::GlueEncryptionException)
 pub mod glue_encryption_exception {
+    ///
     /// A builder for [`GlueEncryptionException`](crate::error::GlueEncryptionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24423,6 +24429,7 @@ impl std::fmt::Display for ResourceNumberLimitExceededException {
 impl std::error::Error for ResourceNumberLimitExceededException {}
 /// See [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
 pub mod resource_number_limit_exceeded_exception {
+    ///
     /// A builder for [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24487,6 +24494,7 @@ impl std::fmt::Display for ResourceNotReadyException {
 impl std::error::Error for ResourceNotReadyException {}
 /// See [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
 pub mod resource_not_ready_exception {
+    ///
     /// A builder for [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24551,6 +24559,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
+    ///
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24615,6 +24624,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException)
 pub mod validation_exception {
+    ///
     /// A builder for [`ValidationException`](crate::error::ValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24679,6 +24689,7 @@ impl std::fmt::Display for VersionMismatchException {
 impl std::error::Error for VersionMismatchException {}
 /// See [`VersionMismatchException`](crate::error::VersionMismatchException)
 pub mod version_mismatch_exception {
+    ///
     /// A builder for [`VersionMismatchException`](crate::error::VersionMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24743,6 +24754,7 @@ impl std::fmt::Display for SchedulerTransitioningException {
 impl std::error::Error for SchedulerTransitioningException {}
 /// See [`SchedulerTransitioningException`](crate::error::SchedulerTransitioningException)
 pub mod scheduler_transitioning_exception {
+    ///
     /// A builder for [`SchedulerTransitioningException`](crate::error::SchedulerTransitioningException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24807,6 +24819,7 @@ impl std::fmt::Display for CrawlerRunningException {
 impl std::error::Error for CrawlerRunningException {}
 /// See [`CrawlerRunningException`](crate::error::CrawlerRunningException)
 pub mod crawler_running_exception {
+    ///
     /// A builder for [`CrawlerRunningException`](crate::error::CrawlerRunningException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24871,6 +24884,7 @@ impl std::fmt::Display for IllegalBlueprintStateException {
 impl std::error::Error for IllegalBlueprintStateException {}
 /// See [`IllegalBlueprintStateException`](crate::error::IllegalBlueprintStateException)
 pub mod illegal_blueprint_state_exception {
+    ///
     /// A builder for [`IllegalBlueprintStateException`](crate::error::IllegalBlueprintStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24935,6 +24949,7 @@ impl std::fmt::Display for IllegalWorkflowStateException {
 impl std::error::Error for IllegalWorkflowStateException {}
 /// See [`IllegalWorkflowStateException`](crate::error::IllegalWorkflowStateException)
 pub mod illegal_workflow_state_exception {
+    ///
     /// A builder for [`IllegalWorkflowStateException`](crate::error::IllegalWorkflowStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -24999,6 +25014,7 @@ impl std::fmt::Display for IllegalSessionStateException {
 impl std::error::Error for IllegalSessionStateException {}
 /// See [`IllegalSessionStateException`](crate::error::IllegalSessionStateException)
 pub mod illegal_session_state_exception {
+    ///
     /// A builder for [`IllegalSessionStateException`](crate::error::IllegalSessionStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25063,6 +25079,7 @@ impl std::fmt::Display for SchedulerNotRunningException {
 impl std::error::Error for SchedulerNotRunningException {}
 /// See [`SchedulerNotRunningException`](crate::error::SchedulerNotRunningException)
 pub mod scheduler_not_running_exception {
+    ///
     /// A builder for [`SchedulerNotRunningException`](crate::error::SchedulerNotRunningException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25127,6 +25144,7 @@ impl std::fmt::Display for CrawlerStoppingException {
 impl std::error::Error for CrawlerStoppingException {}
 /// See [`CrawlerStoppingException`](crate::error::CrawlerStoppingException)
 pub mod crawler_stopping_exception {
+    ///
     /// A builder for [`CrawlerStoppingException`](crate::error::CrawlerStoppingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25191,6 +25209,7 @@ impl std::fmt::Display for CrawlerNotRunningException {
 impl std::error::Error for CrawlerNotRunningException {}
 /// See [`CrawlerNotRunningException`](crate::error::CrawlerNotRunningException)
 pub mod crawler_not_running_exception {
+    ///
     /// A builder for [`CrawlerNotRunningException`](crate::error::CrawlerNotRunningException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25255,6 +25274,7 @@ impl std::fmt::Display for ConcurrentRunsExceededException {
 impl std::error::Error for ConcurrentRunsExceededException {}
 /// See [`ConcurrentRunsExceededException`](crate::error::ConcurrentRunsExceededException)
 pub mod concurrent_runs_exceeded_exception {
+    ///
     /// A builder for [`ConcurrentRunsExceededException`](crate::error::ConcurrentRunsExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25322,6 +25342,7 @@ impl std::fmt::Display for MlTransformNotReadyException {
 impl std::error::Error for MlTransformNotReadyException {}
 /// See [`MlTransformNotReadyException`](crate::error::MlTransformNotReadyException)
 pub mod ml_transform_not_ready_exception {
+    ///
     /// A builder for [`MlTransformNotReadyException`](crate::error::MlTransformNotReadyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25386,6 +25407,7 @@ impl std::fmt::Display for SchedulerRunningException {
 impl std::error::Error for SchedulerRunningException {}
 /// See [`SchedulerRunningException`](crate::error::SchedulerRunningException)
 pub mod scheduler_running_exception {
+    ///
     /// A builder for [`SchedulerRunningException`](crate::error::SchedulerRunningException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25450,6 +25472,7 @@ impl std::fmt::Display for NoScheduleException {
 impl std::error::Error for NoScheduleException {}
 /// See [`NoScheduleException`](crate::error::NoScheduleException)
 pub mod no_schedule_exception {
+    ///
     /// A builder for [`NoScheduleException`](crate::error::NoScheduleException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25514,6 +25537,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
 pub mod already_exists_exception {
+    ///
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25578,6 +25602,7 @@ impl std::fmt::Display for ConditionCheckFailureException {
 impl std::error::Error for ConditionCheckFailureException {}
 /// See [`ConditionCheckFailureException`](crate::error::ConditionCheckFailureException)
 pub mod condition_check_failure_exception {
+    ///
     /// A builder for [`ConditionCheckFailureException`](crate::error::ConditionCheckFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25642,6 +25667,7 @@ impl std::fmt::Display for PermissionTypeMismatchException {
 impl std::error::Error for PermissionTypeMismatchException {}
 /// See [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
 pub mod permission_type_mismatch_exception {
+    ///
     /// A builder for [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25706,6 +25732,7 @@ impl std::fmt::Display for InvalidStateException {
 impl std::error::Error for InvalidStateException {}
 /// See [`InvalidStateException`](crate::error::InvalidStateException)
 pub mod invalid_state_exception {
+    ///
     /// A builder for [`InvalidStateException`](crate::error::InvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25770,6 +25797,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException)
 pub mod conflict_exception {
+    ///
     /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -25834,6 +25862,7 @@ impl std::fmt::Display for IdempotentParameterMismatchException {
 impl std::error::Error for IdempotentParameterMismatchException {}
 /// See [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
 pub mod idempotent_parameter_mismatch_exception {
+    ///
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

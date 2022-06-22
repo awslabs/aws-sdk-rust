@@ -3780,6 +3780,7 @@ impl std::fmt::Display for ServiceQuotaExceededException {
 impl std::error::Error for ServiceQuotaExceededException {}
 /// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
 pub mod service_quota_exceeded_exception {
+    ///
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3853,6 +3854,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3932,6 +3934,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3996,6 +3999,7 @@ impl std::fmt::Display for UnknownSubscriptionException {
 impl std::error::Error for UnknownSubscriptionException {}
 /// See [`UnknownSubscriptionException`](crate::error::UnknownSubscriptionException)
 pub mod unknown_subscription_exception {
+    ///
     /// A builder for [`UnknownSubscriptionException`](crate::error::UnknownSubscriptionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4060,6 +4064,7 @@ impl std::fmt::Display for UnknownMonitorException {
 impl std::error::Error for UnknownMonitorException {}
 /// See [`UnknownMonitorException`](crate::error::UnknownMonitorException)
 pub mod unknown_monitor_exception {
+    ///
     /// A builder for [`UnknownMonitorException`](crate::error::UnknownMonitorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4133,6 +4138,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException)
 pub mod too_many_tags_exception {
+    ///
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4212,6 +4218,7 @@ impl std::fmt::Display for UnresolvableUsageUnitException {
 impl std::error::Error for UnresolvableUsageUnitException {}
 /// See [`UnresolvableUsageUnitException`](crate::error::UnresolvableUsageUnitException)
 pub mod unresolvable_usage_unit_exception {
+    ///
     /// A builder for [`UnresolvableUsageUnitException`](crate::error::UnresolvableUsageUnitException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4276,6 +4283,7 @@ impl std::fmt::Display for DataUnavailableException {
 impl std::error::Error for DataUnavailableException {}
 /// See [`DataUnavailableException`](crate::error::DataUnavailableException)
 pub mod data_unavailable_exception {
+    ///
     /// A builder for [`DataUnavailableException`](crate::error::DataUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4340,6 +4348,7 @@ impl std::fmt::Display for RequestChangedException {
 impl std::error::Error for RequestChangedException {}
 /// See [`RequestChangedException`](crate::error::RequestChangedException)
 pub mod request_changed_exception {
+    ///
     /// A builder for [`RequestChangedException`](crate::error::RequestChangedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4404,6 +4413,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
+    ///
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4468,6 +4478,7 @@ impl std::fmt::Display for BillExpirationException {
 impl std::error::Error for BillExpirationException {}
 /// See [`BillExpirationException`](crate::error::BillExpirationException)
 pub mod bill_expiration_exception {
+    ///
     /// A builder for [`BillExpirationException`](crate::error::BillExpirationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

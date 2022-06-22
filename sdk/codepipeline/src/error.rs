@@ -4780,6 +4780,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException)
 pub mod validation_exception {
+    ///
     /// A builder for [`ValidationException`](crate::error::ValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4844,6 +4845,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4908,6 +4910,7 @@ impl std::fmt::Display for InvalidStructureException {
 impl std::error::Error for InvalidStructureException {}
 /// See [`InvalidStructureException`](crate::error::InvalidStructureException)
 pub mod invalid_structure_exception {
+    ///
     /// A builder for [`InvalidStructureException`](crate::error::InvalidStructureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4972,6 +4975,7 @@ impl std::fmt::Display for InvalidStageDeclarationException {
 impl std::error::Error for InvalidStageDeclarationException {}
 /// See [`InvalidStageDeclarationException`](crate::error::InvalidStageDeclarationException)
 pub mod invalid_stage_declaration_exception {
+    ///
     /// A builder for [`InvalidStageDeclarationException`](crate::error::InvalidStageDeclarationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5036,6 +5040,7 @@ impl std::fmt::Display for InvalidBlockerDeclarationException {
 impl std::error::Error for InvalidBlockerDeclarationException {}
 /// See [`InvalidBlockerDeclarationException`](crate::error::InvalidBlockerDeclarationException)
 pub mod invalid_blocker_declaration_exception {
+    ///
     /// A builder for [`InvalidBlockerDeclarationException`](crate::error::InvalidBlockerDeclarationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5100,6 +5105,7 @@ impl std::fmt::Display for InvalidActionDeclarationException {
 impl std::error::Error for InvalidActionDeclarationException {}
 /// See [`InvalidActionDeclarationException`](crate::error::InvalidActionDeclarationException)
 pub mod invalid_action_declaration_exception {
+    ///
     /// A builder for [`InvalidActionDeclarationException`](crate::error::InvalidActionDeclarationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5164,6 +5170,7 @@ impl std::fmt::Display for RequestFailedException {
 impl std::error::Error for RequestFailedException {}
 /// See [`RequestFailedException`](crate::error::RequestFailedException)
 pub mod request_failed_exception {
+    ///
     /// A builder for [`RequestFailedException`](crate::error::RequestFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5228,6 +5235,7 @@ impl std::fmt::Display for ActionTypeNotFoundException {
 impl std::error::Error for ActionTypeNotFoundException {}
 /// See [`ActionTypeNotFoundException`](crate::error::ActionTypeNotFoundException)
 pub mod action_type_not_found_exception {
+    ///
     /// A builder for [`ActionTypeNotFoundException`](crate::error::ActionTypeNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5292,6 +5300,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5356,6 +5365,7 @@ impl std::fmt::Display for InvalidTagsException {
 impl std::error::Error for InvalidTagsException {}
 /// See [`InvalidTagsException`](crate::error::InvalidTagsException)
 pub mod invalid_tags_exception {
+    ///
     /// A builder for [`InvalidTagsException`](crate::error::InvalidTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5420,6 +5430,7 @@ impl std::fmt::Display for InvalidArnException {
 impl std::error::Error for InvalidArnException {}
 /// See [`InvalidArnException`](crate::error::InvalidArnException)
 pub mod invalid_arn_exception {
+    ///
     /// A builder for [`InvalidArnException`](crate::error::InvalidArnException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5484,6 +5495,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
+    ///
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5548,6 +5560,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException)
 pub mod too_many_tags_exception {
+    ///
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5612,6 +5625,7 @@ impl std::fmt::Display for PipelineNotFoundException {
 impl std::error::Error for PipelineNotFoundException {}
 /// See [`PipelineNotFoundException`](crate::error::PipelineNotFoundException)
 pub mod pipeline_not_found_exception {
+    ///
     /// A builder for [`PipelineNotFoundException`](crate::error::PipelineNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5676,6 +5690,7 @@ impl std::fmt::Display for PipelineExecutionNotStoppableException {
 impl std::error::Error for PipelineExecutionNotStoppableException {}
 /// See [`PipelineExecutionNotStoppableException`](crate::error::PipelineExecutionNotStoppableException)
 pub mod pipeline_execution_not_stoppable_exception {
+    ///
     /// A builder for [`PipelineExecutionNotStoppableException`](crate::error::PipelineExecutionNotStoppableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5740,6 +5755,7 @@ impl std::fmt::Display for DuplicatedStopRequestException {
 impl std::error::Error for DuplicatedStopRequestException {}
 /// See [`DuplicatedStopRequestException`](crate::error::DuplicatedStopRequestException)
 pub mod duplicated_stop_request_exception {
+    ///
     /// A builder for [`DuplicatedStopRequestException`](crate::error::DuplicatedStopRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5804,6 +5820,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException)
 pub mod conflict_exception {
+    ///
     /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5868,6 +5885,7 @@ impl std::fmt::Display for StageNotRetryableException {
 impl std::error::Error for StageNotRetryableException {}
 /// See [`StageNotRetryableException`](crate::error::StageNotRetryableException)
 pub mod stage_not_retryable_exception {
+    ///
     /// A builder for [`StageNotRetryableException`](crate::error::StageNotRetryableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5932,6 +5950,7 @@ impl std::fmt::Display for StageNotFoundException {
 impl std::error::Error for StageNotFoundException {}
 /// See [`StageNotFoundException`](crate::error::StageNotFoundException)
 pub mod stage_not_found_exception {
+    ///
     /// A builder for [`StageNotFoundException`](crate::error::StageNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5996,6 +6015,7 @@ impl std::fmt::Display for NotLatestPipelineExecutionException {
 impl std::error::Error for NotLatestPipelineExecutionException {}
 /// See [`NotLatestPipelineExecutionException`](crate::error::NotLatestPipelineExecutionException)
 pub mod not_latest_pipeline_execution_exception {
+    ///
     /// A builder for [`NotLatestPipelineExecutionException`](crate::error::NotLatestPipelineExecutionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6060,6 +6080,7 @@ impl std::fmt::Display for WebhookNotFoundException {
 impl std::error::Error for WebhookNotFoundException {}
 /// See [`WebhookNotFoundException`](crate::error::WebhookNotFoundException)
 pub mod webhook_not_found_exception {
+    ///
     /// A builder for [`WebhookNotFoundException`](crate::error::WebhookNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6124,6 +6145,7 @@ impl std::fmt::Display for InvalidWebhookFilterPatternException {
 impl std::error::Error for InvalidWebhookFilterPatternException {}
 /// See [`InvalidWebhookFilterPatternException`](crate::error::InvalidWebhookFilterPatternException)
 pub mod invalid_webhook_filter_pattern_exception {
+    ///
     /// A builder for [`InvalidWebhookFilterPatternException`](crate::error::InvalidWebhookFilterPatternException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6188,6 +6210,7 @@ impl std::fmt::Display for InvalidWebhookAuthenticationParametersException {
 impl std::error::Error for InvalidWebhookAuthenticationParametersException {}
 /// See [`InvalidWebhookAuthenticationParametersException`](crate::error::InvalidWebhookAuthenticationParametersException)
 pub mod invalid_webhook_authentication_parameters_exception {
+    ///
     /// A builder for [`InvalidWebhookAuthenticationParametersException`](crate::error::InvalidWebhookAuthenticationParametersException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6252,6 +6275,7 @@ impl std::fmt::Display for JobNotFoundException {
 impl std::error::Error for JobNotFoundException {}
 /// See [`JobNotFoundException`](crate::error::JobNotFoundException)
 pub mod job_not_found_exception {
+    ///
     /// A builder for [`JobNotFoundException`](crate::error::JobNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6316,6 +6340,7 @@ impl std::fmt::Display for InvalidJobStateException {
 impl std::error::Error for InvalidJobStateException {}
 /// See [`InvalidJobStateException`](crate::error::InvalidJobStateException)
 pub mod invalid_job_state_exception {
+    ///
     /// A builder for [`InvalidJobStateException`](crate::error::InvalidJobStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6380,6 +6405,7 @@ impl std::fmt::Display for InvalidClientTokenException {
 impl std::error::Error for InvalidClientTokenException {}
 /// See [`InvalidClientTokenException`](crate::error::InvalidClientTokenException)
 pub mod invalid_client_token_exception {
+    ///
     /// A builder for [`InvalidClientTokenException`](crate::error::InvalidClientTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6444,6 +6470,7 @@ impl std::fmt::Display for OutputVariablesSizeExceededException {
 impl std::error::Error for OutputVariablesSizeExceededException {}
 /// See [`OutputVariablesSizeExceededException`](crate::error::OutputVariablesSizeExceededException)
 pub mod output_variables_size_exceeded_exception {
+    ///
     /// A builder for [`OutputVariablesSizeExceededException`](crate::error::OutputVariablesSizeExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6508,6 +6535,7 @@ impl std::fmt::Display for InvalidApprovalTokenException {
 impl std::error::Error for InvalidApprovalTokenException {}
 /// See [`InvalidApprovalTokenException`](crate::error::InvalidApprovalTokenException)
 pub mod invalid_approval_token_exception {
+    ///
     /// A builder for [`InvalidApprovalTokenException`](crate::error::InvalidApprovalTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6572,6 +6600,7 @@ impl std::fmt::Display for ApprovalAlreadyCompletedException {
 impl std::error::Error for ApprovalAlreadyCompletedException {}
 /// See [`ApprovalAlreadyCompletedException`](crate::error::ApprovalAlreadyCompletedException)
 pub mod approval_already_completed_exception {
+    ///
     /// A builder for [`ApprovalAlreadyCompletedException`](crate::error::ApprovalAlreadyCompletedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6636,6 +6665,7 @@ impl std::fmt::Display for ActionNotFoundException {
 impl std::error::Error for ActionNotFoundException {}
 /// See [`ActionNotFoundException`](crate::error::ActionNotFoundException)
 pub mod action_not_found_exception {
+    ///
     /// A builder for [`ActionNotFoundException`](crate::error::ActionNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6700,6 +6730,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
+    ///
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6764,6 +6795,7 @@ impl std::fmt::Display for PipelineExecutionNotFoundException {
 impl std::error::Error for PipelineExecutionNotFoundException {}
 /// See [`PipelineExecutionNotFoundException`](crate::error::PipelineExecutionNotFoundException)
 pub mod pipeline_execution_not_found_exception {
+    ///
     /// A builder for [`PipelineExecutionNotFoundException`](crate::error::PipelineExecutionNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6828,6 +6860,7 @@ impl std::fmt::Display for InvalidJobException {
 impl std::error::Error for InvalidJobException {}
 /// See [`InvalidJobException`](crate::error::InvalidJobException)
 pub mod invalid_job_exception {
+    ///
     /// A builder for [`InvalidJobException`](crate::error::InvalidJobException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6892,6 +6925,7 @@ impl std::fmt::Display for PipelineVersionNotFoundException {
 impl std::error::Error for PipelineVersionNotFoundException {}
 /// See [`PipelineVersionNotFoundException`](crate::error::PipelineVersionNotFoundException)
 pub mod pipeline_version_not_found_exception {
+    ///
     /// A builder for [`PipelineVersionNotFoundException`](crate::error::PipelineVersionNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6956,6 +6990,7 @@ impl std::fmt::Display for PipelineNameInUseException {
 impl std::error::Error for PipelineNameInUseException {}
 /// See [`PipelineNameInUseException`](crate::error::PipelineNameInUseException)
 pub mod pipeline_name_in_use_exception {
+    ///
     /// A builder for [`PipelineNameInUseException`](crate::error::PipelineNameInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7020,6 +7055,7 @@ impl std::fmt::Display for InvalidNonceException {
 impl std::error::Error for InvalidNonceException {}
 /// See [`InvalidNonceException`](crate::error::InvalidNonceException)
 pub mod invalid_nonce_exception {
+    ///
     /// A builder for [`InvalidNonceException`](crate::error::InvalidNonceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

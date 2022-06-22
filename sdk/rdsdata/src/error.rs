@@ -918,6 +918,7 @@ impl std::fmt::Display for StatementTimeoutException {
 impl std::error::Error for StatementTimeoutException {}
 /// See [`StatementTimeoutException`](crate::error::StatementTimeoutException)
 pub mod statement_timeout_exception {
+    ///
     /// A builder for [`StatementTimeoutException`](crate::error::StatementTimeoutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -994,6 +995,7 @@ impl std::fmt::Display for ServiceUnavailableError {
 impl std::error::Error for ServiceUnavailableError {}
 /// See [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
 pub mod service_unavailable_error {
+    ///
     /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1058,6 +1060,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException)
 pub mod not_found_exception {
+    ///
     /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1122,6 +1125,7 @@ impl std::fmt::Display for InternalServerErrorException {
 impl std::error::Error for InternalServerErrorException {}
 /// See [`InternalServerErrorException`](crate::error::InternalServerErrorException)
 pub mod internal_server_error_exception {
+    ///
     /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1186,6 +1190,7 @@ impl std::fmt::Display for ForbiddenException {
 impl std::error::Error for ForbiddenException {}
 /// See [`ForbiddenException`](crate::error::ForbiddenException)
 pub mod forbidden_exception {
+    ///
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1250,6 +1255,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException)
 pub mod bad_request_exception {
+    ///
     /// A builder for [`BadRequestException`](crate::error::BadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1314,6 +1320,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
+    ///
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

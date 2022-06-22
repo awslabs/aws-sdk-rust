@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateLongTermPricingOutput {
 }
 /// See [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput)
 pub mod update_long_term_pricing_output {
+    ///
     /// A builder for [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdateJobShipmentStateOutput {
 }
 /// See [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput)
 pub mod update_job_shipment_state_output {
+    ///
     /// A builder for [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UpdateJobOutput {
 }
 /// See [`UpdateJobOutput`](crate::output::UpdateJobOutput)
 pub mod update_job_output {
+    ///
     /// A builder for [`UpdateJobOutput`](crate::output::UpdateJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for UpdateClusterOutput {
 }
 /// See [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
 pub mod update_cluster_output {
+    ///
     /// A builder for [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -151,6 +155,7 @@ impl std::fmt::Debug for ListLongTermPricingOutput {
 }
 /// See [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput)
 pub mod list_long_term_pricing_output {
+    ///
     /// A builder for [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -237,6 +242,7 @@ impl std::fmt::Debug for ListJobsOutput {
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput)
 pub mod list_jobs_output {
+    ///
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -319,6 +325,7 @@ impl std::fmt::Debug for ListCompatibleImagesOutput {
 }
 /// See [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput)
 pub mod list_compatible_images_output {
+    ///
     /// A builder for [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -402,6 +409,7 @@ impl std::fmt::Debug for ListClustersOutput {
 }
 /// See [`ListClustersOutput`](crate::output::ListClustersOutput)
 pub mod list_clusters_output {
+    ///
     /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -485,6 +493,7 @@ impl std::fmt::Debug for ListClusterJobsOutput {
 }
 /// See [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput)
 pub mod list_cluster_jobs_output {
+    ///
     /// A builder for [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -560,6 +569,7 @@ impl std::fmt::Debug for GetSoftwareUpdatesOutput {
 }
 /// See [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput)
 pub mod get_software_updates_output {
+    ///
     /// A builder for [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -621,6 +631,7 @@ impl std::fmt::Debug for GetSnowballUsageOutput {
 }
 /// See [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput)
 pub mod get_snowball_usage_output {
+    ///
     /// A builder for [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -687,6 +698,7 @@ impl std::fmt::Debug for GetJobUnlockCodeOutput {
 }
 /// See [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput)
 pub mod get_job_unlock_code_output {
+    ///
     /// A builder for [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -741,6 +753,7 @@ impl std::fmt::Debug for GetJobManifestOutput {
 }
 /// See [`GetJobManifestOutput`](crate::output::GetJobManifestOutput)
 pub mod get_job_manifest_output {
+    ///
     /// A builder for [`GetJobManifestOutput`](crate::output::GetJobManifestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -809,6 +822,7 @@ impl std::fmt::Debug for DescribeReturnShippingLabelOutput {
 }
 /// See [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput)
 pub mod describe_return_shipping_label_output {
+    ///
     /// A builder for [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -903,6 +917,7 @@ impl std::fmt::Debug for DescribeJobOutput {
 }
 /// See [`DescribeJobOutput`](crate::output::DescribeJobOutput)
 pub mod describe_job_output {
+    ///
     /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -981,6 +996,7 @@ impl std::fmt::Debug for DescribeClusterOutput {
 }
 /// See [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
 pub mod describe_cluster_output {
+    ///
     /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1045,6 +1061,7 @@ impl std::fmt::Debug for DescribeAddressesOutput {
 }
 /// See [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput)
 pub mod describe_addresses_output {
+    ///
     /// A builder for [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1120,6 +1137,7 @@ impl std::fmt::Debug for DescribeAddressOutput {
 }
 /// See [`DescribeAddressOutput`](crate::output::DescribeAddressOutput)
 pub mod describe_address_output {
+    ///
     /// A builder for [`DescribeAddressOutput`](crate::output::DescribeAddressOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1174,6 +1192,7 @@ impl std::fmt::Debug for CreateReturnShippingLabelOutput {
 }
 /// See [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput)
 pub mod create_return_shipping_label_output {
+    ///
     /// A builder for [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1231,6 +1250,7 @@ impl std::fmt::Debug for CreateLongTermPricingOutput {
 }
 /// See [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput)
 pub mod create_long_term_pricing_output {
+    ///
     /// A builder for [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1288,6 +1308,7 @@ impl std::fmt::Debug for CreateJobOutput {
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput)
 pub mod create_job_output {
+    ///
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1342,6 +1363,7 @@ impl std::fmt::Debug for CreateClusterOutput {
 }
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput)
 pub mod create_cluster_output {
+    ///
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1396,6 +1418,7 @@ impl std::fmt::Debug for CreateAddressOutput {
 }
 /// See [`CreateAddressOutput`](crate::output::CreateAddressOutput)
 pub mod create_address_output {
+    ///
     /// A builder for [`CreateAddressOutput`](crate::output::CreateAddressOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1440,6 +1463,7 @@ impl std::fmt::Debug for CancelJobOutput {
 }
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput)
 pub mod cancel_job_output {
+    ///
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1470,6 +1494,7 @@ impl std::fmt::Debug for CancelClusterOutput {
 }
 /// See [`CancelClusterOutput`](crate::output::CancelClusterOutput)
 pub mod cancel_cluster_output {
+    ///
     /// A builder for [`CancelClusterOutput`](crate::output::CancelClusterOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

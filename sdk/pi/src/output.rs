@@ -28,6 +28,7 @@ impl std::fmt::Debug for ListAvailableResourceMetricsOutput {
 }
 /// See [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput)
 pub mod list_available_resource_metrics_output {
+    ///
     /// A builder for [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -111,6 +112,7 @@ impl std::fmt::Debug for ListAvailableResourceDimensionsOutput {
 }
 /// See [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput)
 pub mod list_available_resource_dimensions_output {
+    ///
     /// A builder for [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -215,6 +217,7 @@ impl std::fmt::Debug for GetResourceMetricsOutput {
 }
 /// See [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput)
 pub mod get_resource_metrics_output {
+    ///
     /// A builder for [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -346,6 +349,7 @@ impl std::fmt::Debug for GetResourceMetadataOutput {
 }
 /// See [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput)
 pub mod get_resource_metadata_output {
+    ///
     /// A builder for [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -429,6 +433,7 @@ impl std::fmt::Debug for GetDimensionKeyDetailsOutput {
 }
 /// See [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput)
 pub mod get_dimension_key_details_output {
+    ///
     /// A builder for [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -520,6 +525,7 @@ impl std::fmt::Debug for DescribeDimensionKeysOutput {
 }
 /// See [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput)
 pub mod describe_dimension_keys_output {
+    ///
     /// A builder for [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

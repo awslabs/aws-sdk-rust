@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateSchedulingPolicyOutput {
 }
 /// See [`UpdateSchedulingPolicyOutput`](crate::output::UpdateSchedulingPolicyOutput)
 pub mod update_scheduling_policy_output {
+    ///
     /// A builder for [`UpdateSchedulingPolicyOutput`](crate::output::UpdateSchedulingPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -58,6 +59,7 @@ impl std::fmt::Debug for UpdateJobQueueOutput {
 }
 /// See [`UpdateJobQueueOutput`](crate::output::UpdateJobQueueOutput)
 pub mod update_job_queue_output {
+    ///
     /// A builder for [`UpdateJobQueueOutput`](crate::output::UpdateJobQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -137,6 +139,7 @@ impl std::fmt::Debug for UpdateComputeEnvironmentOutput {
 }
 /// See [`UpdateComputeEnvironmentOutput`](crate::output::UpdateComputeEnvironmentOutput)
 pub mod update_compute_environment_output {
+    ///
     /// A builder for [`UpdateComputeEnvironmentOutput`](crate::output::UpdateComputeEnvironmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -199,6 +202,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -229,6 +233,7 @@ impl std::fmt::Debug for TerminateJobOutput {
 }
 /// See [`TerminateJobOutput`](crate::output::TerminateJobOutput)
 pub mod terminate_job_output {
+    ///
     /// A builder for [`TerminateJobOutput`](crate::output::TerminateJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -259,6 +264,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -313,6 +319,7 @@ impl std::fmt::Debug for SubmitJobOutput {
 }
 /// See [`SubmitJobOutput`](crate::output::SubmitJobOutput)
 pub mod submit_job_output {
+    ///
     /// A builder for [`SubmitJobOutput`](crate::output::SubmitJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -405,6 +412,7 @@ impl std::fmt::Debug for RegisterJobDefinitionOutput {
 }
 /// See [`RegisterJobDefinitionOutput`](crate::output::RegisterJobDefinitionOutput)
 pub mod register_job_definition_output {
+    ///
     /// A builder for [`RegisterJobDefinitionOutput`](crate::output::RegisterJobDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -493,6 +501,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -572,6 +581,7 @@ impl std::fmt::Debug for ListSchedulingPoliciesOutput {
 }
 /// See [`ListSchedulingPoliciesOutput`](crate::output::ListSchedulingPoliciesOutput)
 pub mod list_scheduling_policies_output {
+    ///
     /// A builder for [`ListSchedulingPoliciesOutput`](crate::output::ListSchedulingPoliciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -658,6 +668,7 @@ impl std::fmt::Debug for ListJobsOutput {
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput)
 pub mod list_jobs_output {
+    ///
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -736,6 +747,7 @@ impl std::fmt::Debug for DescribeSchedulingPoliciesOutput {
 }
 /// See [`DescribeSchedulingPoliciesOutput`](crate::output::DescribeSchedulingPoliciesOutput)
 pub mod describe_scheduling_policies_output {
+    ///
     /// A builder for [`DescribeSchedulingPoliciesOutput`](crate::output::DescribeSchedulingPoliciesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -800,6 +812,7 @@ impl std::fmt::Debug for DescribeJobsOutput {
 }
 /// See [`DescribeJobsOutput`](crate::output::DescribeJobsOutput)
 pub mod describe_jobs_output {
+    ///
     /// A builder for [`DescribeJobsOutput`](crate::output::DescribeJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -868,6 +881,7 @@ impl std::fmt::Debug for DescribeJobQueuesOutput {
 }
 /// See [`DescribeJobQueuesOutput`](crate::output::DescribeJobQueuesOutput)
 pub mod describe_job_queues_output {
+    ///
     /// A builder for [`DescribeJobQueuesOutput`](crate::output::DescribeJobQueuesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -950,6 +964,7 @@ impl std::fmt::Debug for DescribeJobDefinitionsOutput {
 }
 /// See [`DescribeJobDefinitionsOutput`](crate::output::DescribeJobDefinitionsOutput)
 pub mod describe_job_definitions_output {
+    ///
     /// A builder for [`DescribeJobDefinitionsOutput`](crate::output::DescribeJobDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1035,6 +1050,7 @@ impl std::fmt::Debug for DescribeComputeEnvironmentsOutput {
 }
 /// See [`DescribeComputeEnvironmentsOutput`](crate::output::DescribeComputeEnvironmentsOutput)
 pub mod describe_compute_environments_output {
+    ///
     /// A builder for [`DescribeComputeEnvironmentsOutput`](crate::output::DescribeComputeEnvironmentsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1104,6 +1120,7 @@ impl std::fmt::Debug for DeregisterJobDefinitionOutput {
 }
 /// See [`DeregisterJobDefinitionOutput`](crate::output::DeregisterJobDefinitionOutput)
 pub mod deregister_job_definition_output {
+    ///
     /// A builder for [`DeregisterJobDefinitionOutput`](crate::output::DeregisterJobDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1134,6 +1151,7 @@ impl std::fmt::Debug for DeleteSchedulingPolicyOutput {
 }
 /// See [`DeleteSchedulingPolicyOutput`](crate::output::DeleteSchedulingPolicyOutput)
 pub mod delete_scheduling_policy_output {
+    ///
     /// A builder for [`DeleteSchedulingPolicyOutput`](crate::output::DeleteSchedulingPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1164,6 +1182,7 @@ impl std::fmt::Debug for DeleteJobQueueOutput {
 }
 /// See [`DeleteJobQueueOutput`](crate::output::DeleteJobQueueOutput)
 pub mod delete_job_queue_output {
+    ///
     /// A builder for [`DeleteJobQueueOutput`](crate::output::DeleteJobQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1194,6 +1213,7 @@ impl std::fmt::Debug for DeleteComputeEnvironmentOutput {
 }
 /// See [`DeleteComputeEnvironmentOutput`](crate::output::DeleteComputeEnvironmentOutput)
 pub mod delete_compute_environment_output {
+    ///
     /// A builder for [`DeleteComputeEnvironmentOutput`](crate::output::DeleteComputeEnvironmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1241,6 +1261,7 @@ impl std::fmt::Debug for CreateSchedulingPolicyOutput {
 }
 /// See [`CreateSchedulingPolicyOutput`](crate::output::CreateSchedulingPolicyOutput)
 pub mod create_scheduling_policy_output {
+    ///
     /// A builder for [`CreateSchedulingPolicyOutput`](crate::output::CreateSchedulingPolicyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1314,6 +1335,7 @@ impl std::fmt::Debug for CreateJobQueueOutput {
 }
 /// See [`CreateJobQueueOutput`](crate::output::CreateJobQueueOutput)
 pub mod create_job_queue_output {
+    ///
     /// A builder for [`CreateJobQueueOutput`](crate::output::CreateJobQueueOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1393,6 +1415,7 @@ impl std::fmt::Debug for CreateComputeEnvironmentOutput {
 }
 /// See [`CreateComputeEnvironmentOutput`](crate::output::CreateComputeEnvironmentOutput)
 pub mod create_compute_environment_output {
+    ///
     /// A builder for [`CreateComputeEnvironmentOutput`](crate::output::CreateComputeEnvironmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1455,6 +1478,7 @@ impl std::fmt::Debug for CancelJobOutput {
 }
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput)
 pub mod cancel_job_output {
+    ///
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

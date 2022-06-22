@@ -185,6 +185,7 @@ impl std::fmt::Debug for VoiceConnectorGroup {
 }
 /// See [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup)
 pub mod voice_connector_group {
+    ///
     /// A builder for [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -328,6 +329,7 @@ impl std::fmt::Debug for VoiceConnectorItem {
 }
 /// See [`VoiceConnectorItem`](crate::model::VoiceConnectorItem)
 pub mod voice_connector_item {
+    ///
     /// A builder for [`VoiceConnectorItem`](crate::model::VoiceConnectorItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -446,6 +448,7 @@ impl std::fmt::Debug for VoiceConnector {
 }
 /// See [`VoiceConnector`](crate::model::VoiceConnector)
 pub mod voice_connector {
+    ///
     /// A builder for [`VoiceConnector`](crate::model::VoiceConnector)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -657,6 +660,7 @@ impl std::fmt::Debug for UserSettings {
 }
 /// See [`UserSettings`](crate::model::UserSettings)
 pub mod user_settings {
+    ///
     /// A builder for [`UserSettings`](crate::model::UserSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -728,6 +732,7 @@ impl std::fmt::Debug for TelephonySettings {
 }
 /// See [`TelephonySettings`](crate::model::TelephonySettings)
 pub mod telephony_settings {
+    ///
     /// A builder for [`TelephonySettings`](crate::model::TelephonySettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -900,6 +905,7 @@ impl std::fmt::Debug for User {
 }
 /// See [`User`](crate::model::User)
 pub mod user {
+    ///
     /// A builder for [`User`](crate::model::User)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1139,6 +1145,7 @@ impl std::fmt::Debug for AlexaForBusinessMetadata {
 }
 /// See [`AlexaForBusinessMetadata`](crate::model::AlexaForBusinessMetadata)
 pub mod alexa_for_business_metadata {
+    ///
     /// A builder for [`AlexaForBusinessMetadata`](crate::model::AlexaForBusinessMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1502,6 +1509,7 @@ impl std::fmt::Debug for SipRule {
 }
 /// See [`SipRule`](crate::model::SipRule)
 pub mod sip_rule {
+    ///
     /// A builder for [`SipRule`](crate::model::SipRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1679,6 +1687,7 @@ impl std::fmt::Debug for SipRuleTargetApplication {
 }
 /// See [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication)
 pub mod sip_rule_target_application {
+    ///
     /// A builder for [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1815,6 +1824,7 @@ impl std::fmt::Debug for SipMediaApplicationCall {
 }
 /// See [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall)
 pub mod sip_media_application_call {
+    ///
     /// A builder for [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1907,6 +1917,7 @@ impl std::fmt::Debug for SipMediaApplication {
 }
 /// See [`SipMediaApplication`](crate::model::SipMediaApplication)
 pub mod sip_media_application {
+    ///
     /// A builder for [`SipMediaApplication`](crate::model::SipMediaApplication)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2040,6 +2051,7 @@ impl std::fmt::Debug for SipMediaApplicationEndpoint {
 }
 /// See [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint)
 pub mod sip_media_application_endpoint {
+    ///
     /// A builder for [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2122,6 +2134,7 @@ impl std::fmt::Debug for RoomMembership {
 }
 /// See [`RoomMembership`](crate::model::RoomMembership)
 pub mod room_membership {
+    ///
     /// A builder for [`RoomMembership`](crate::model::RoomMembership)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2313,6 +2326,7 @@ impl std::fmt::Debug for Member {
 }
 /// See [`Member`](crate::model::Member)
 pub mod member {
+    ///
     /// A builder for [`Member`](crate::model::Member)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2512,6 +2526,7 @@ impl std::fmt::Debug for Room {
 }
 /// See [`Room`](crate::model::Room)
 pub mod room {
+    ///
     /// A builder for [`Room`](crate::model::Room)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2718,6 +2733,7 @@ impl std::fmt::Debug for ProxySession {
 }
 /// See [`ProxySession`](crate::model::ProxySession)
 pub mod proxy_session {
+    ///
     /// A builder for [`ProxySession`](crate::model::ProxySession)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2972,6 +2988,7 @@ impl std::fmt::Debug for GeoMatchParams {
 }
 /// See [`GeoMatchParams`](crate::model::GeoMatchParams)
 pub mod geo_match_params {
+    ///
     /// A builder for [`GeoMatchParams`](crate::model::GeoMatchParams)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3155,6 +3172,7 @@ impl std::fmt::Debug for Participant {
 }
 /// See [`Participant`](crate::model::Participant)
 pub mod participant {
+    ///
     /// A builder for [`Participant`](crate::model::Participant)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3422,6 +3440,7 @@ impl std::fmt::Debug for PhoneNumber {
 }
 /// See [`PhoneNumber`](crate::model::PhoneNumber)
 pub mod phone_number {
+    ///
     /// A builder for [`PhoneNumber`](crate::model::PhoneNumber)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3742,6 +3761,7 @@ impl std::fmt::Debug for PhoneNumberAssociation {
 }
 /// See [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation)
 pub mod phone_number_association {
+    ///
     /// A builder for [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3934,6 +3954,7 @@ impl std::fmt::Debug for PhoneNumberCapabilities {
 }
 /// See [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities)
 pub mod phone_number_capabilities {
+    ///
     /// A builder for [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4254,6 +4275,7 @@ impl std::fmt::Debug for VoiceConnectorSettings {
 }
 /// See [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings)
 pub mod voice_connector_settings {
+    ///
     /// A builder for [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4308,6 +4330,7 @@ impl std::fmt::Debug for BusinessCallingSettings {
 }
 /// See [`BusinessCallingSettings`](crate::model::BusinessCallingSettings)
 pub mod business_calling_settings {
+    ///
     /// A builder for [`BusinessCallingSettings`](crate::model::BusinessCallingSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4473,6 +4496,7 @@ impl std::fmt::Debug for Bot {
 }
 /// See [`Bot`](crate::model::Bot)
 pub mod bot {
+    ///
     /// A builder for [`Bot`](crate::model::Bot)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4690,6 +4714,7 @@ impl std::fmt::Debug for AccountSettings {
 }
 /// See [`AccountSettings`](crate::model::AccountSettings)
 pub mod account_settings {
+    ///
     /// A builder for [`AccountSettings`](crate::model::AccountSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4815,6 +4840,7 @@ impl std::fmt::Debug for Account {
 }
 /// See [`Account`](crate::model::Account)
 pub mod account {
+    ///
     /// A builder for [`Account`](crate::model::Account)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4999,6 +5025,7 @@ impl std::fmt::Debug for SigninDelegateGroup {
 }
 /// See [`SigninDelegateGroup`](crate::model::SigninDelegateGroup)
 pub mod signin_delegate_group {
+    ///
     /// A builder for [`SigninDelegateGroup`](crate::model::SigninDelegateGroup)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5183,6 +5210,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5267,6 +5295,7 @@ impl std::fmt::Debug for TranscriptionConfiguration {
 }
 /// See [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
 pub mod transcription_configuration {
+    ///
     /// A builder for [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5390,6 +5419,7 @@ impl std::fmt::Debug for EngineTranscribeMedicalSettings {
 }
 /// See [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
 pub mod engine_transcribe_medical_settings {
+    ///
     /// A builder for [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5935,6 +5965,7 @@ impl std::fmt::Debug for EngineTranscribeSettings {
 }
 /// See [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
 pub mod engine_transcribe_settings {
+    ///
     /// A builder for [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6705,6 +6736,7 @@ impl std::fmt::Debug for Credential {
 }
 /// See [`Credential`](crate::model::Credential)
 pub mod credential {
+    ///
     /// A builder for [`Credential`](crate::model::Credential)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6799,6 +6831,7 @@ impl std::fmt::Debug for Termination {
 }
 /// See [`Termination`](crate::model::Termination)
 pub mod termination {
+    ///
     /// A builder for [`Termination`](crate::model::Termination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6942,6 +6975,7 @@ impl std::fmt::Debug for StreamingConfiguration {
 }
 /// See [`StreamingConfiguration`](crate::model::StreamingConfiguration)
 pub mod streaming_configuration {
+    ///
     /// A builder for [`StreamingConfiguration`](crate::model::StreamingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7033,6 +7067,7 @@ impl std::fmt::Debug for StreamingNotificationTarget {
 }
 /// See [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget)
 pub mod streaming_notification_target {
+    ///
     /// A builder for [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7173,6 +7208,7 @@ impl std::fmt::Debug for Proxy {
 }
 /// See [`Proxy`](crate::model::Proxy)
 pub mod proxy {
+    ///
     /// A builder for [`Proxy`](crate::model::Proxy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7287,6 +7323,7 @@ impl std::fmt::Debug for Origination {
 }
 /// See [`Origination`](crate::model::Origination)
 pub mod origination {
+    ///
     /// A builder for [`Origination`](crate::model::Origination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7392,6 +7429,7 @@ impl std::fmt::Debug for OriginationRoute {
 }
 /// See [`OriginationRoute`](crate::model::OriginationRoute)
 pub mod origination_route {
+    ///
     /// A builder for [`OriginationRoute`](crate::model::OriginationRoute)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7559,6 +7597,7 @@ impl std::fmt::Debug for LoggingConfiguration {
 }
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration)
 pub mod logging_configuration {
+    ///
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7625,6 +7664,7 @@ impl std::fmt::Debug for EmergencyCallingConfiguration {
 }
 /// See [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration)
 pub mod emergency_calling_configuration {
+    ///
     /// A builder for [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7703,6 +7743,7 @@ impl std::fmt::Debug for DnisEmergencyCallingConfiguration {
 }
 /// See [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration)
 pub mod dnis_emergency_calling_configuration {
+    ///
     /// A builder for [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7793,6 +7834,7 @@ impl std::fmt::Debug for SipMediaApplicationLoggingConfiguration {
 }
 /// See [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration)
 pub mod sip_media_application_logging_configuration {
+    ///
     /// A builder for [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7866,6 +7908,7 @@ impl std::fmt::Debug for RetentionSettings {
 }
 /// See [`RetentionSettings`](crate::model::RetentionSettings)
 pub mod retention_settings {
+    ///
     /// A builder for [`RetentionSettings`](crate::model::RetentionSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7946,6 +7989,7 @@ impl std::fmt::Debug for ConversationRetentionSettings {
 }
 /// See [`ConversationRetentionSettings`](crate::model::ConversationRetentionSettings)
 pub mod conversation_retention_settings {
+    ///
     /// A builder for [`ConversationRetentionSettings`](crate::model::ConversationRetentionSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8000,6 +8044,7 @@ impl std::fmt::Debug for RoomRetentionSettings {
 }
 /// See [`RoomRetentionSettings`](crate::model::RoomRetentionSettings)
 pub mod room_retention_settings {
+    ///
     /// A builder for [`RoomRetentionSettings`](crate::model::RoomRetentionSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8071,6 +8116,7 @@ impl std::fmt::Debug for EventsConfiguration {
 }
 /// See [`EventsConfiguration`](crate::model::EventsConfiguration)
 pub mod events_configuration {
+    ///
     /// A builder for [`EventsConfiguration`](crate::model::EventsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8167,6 +8213,7 @@ impl std::fmt::Debug for AppInstanceStreamingConfiguration {
 }
 /// See [`AppInstanceStreamingConfiguration`](crate::model::AppInstanceStreamingConfiguration)
 pub mod app_instance_streaming_configuration {
+    ///
     /// A builder for [`AppInstanceStreamingConfiguration`](crate::model::AppInstanceStreamingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8296,6 +8343,7 @@ impl std::fmt::Debug for AppInstanceRetentionSettings {
 }
 /// See [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings)
 pub mod app_instance_retention_settings {
+    ///
     /// A builder for [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8357,6 +8405,7 @@ impl std::fmt::Debug for ChannelRetentionSettings {
 }
 /// See [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings)
 pub mod channel_retention_settings {
+    ///
     /// A builder for [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8424,6 +8473,7 @@ impl std::fmt::Debug for PhoneNumberCountry {
 }
 /// See [`PhoneNumberCountry`](crate::model::PhoneNumberCountry)
 pub mod phone_number_country {
+    ///
     /// A builder for [`PhoneNumberCountry`](crate::model::PhoneNumberCountry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8540,6 +8590,7 @@ impl std::fmt::Debug for PhoneNumberOrder {
 }
 /// See [`PhoneNumberOrder`](crate::model::PhoneNumberOrder)
 pub mod phone_number_order {
+    ///
     /// A builder for [`PhoneNumberOrder`](crate::model::PhoneNumberOrder)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8686,6 +8737,7 @@ impl std::fmt::Debug for OrderedPhoneNumber {
 }
 /// See [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber)
 pub mod ordered_phone_number {
+    ///
     /// A builder for [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8901,6 +8953,7 @@ impl std::fmt::Debug for Meeting {
 }
 /// See [`Meeting`](crate::model::Meeting)
 pub mod meeting {
+    ///
     /// A builder for [`Meeting`](crate::model::Meeting)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9046,6 +9099,7 @@ impl std::fmt::Debug for MediaPlacement {
 }
 /// See [`MediaPlacement`](crate::model::MediaPlacement)
 pub mod media_placement {
+    ///
     /// A builder for [`MediaPlacement`](crate::model::MediaPlacement)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9270,6 +9324,7 @@ impl std::fmt::Debug for MediaCapturePipeline {
 }
 /// See [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
 pub mod media_capture_pipeline {
+    ///
     /// A builder for [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9454,6 +9509,7 @@ impl std::fmt::Debug for ChimeSdkMeetingConfiguration {
 }
 /// See [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration)
 pub mod chime_sdk_meeting_configuration {
+    ///
     /// A builder for [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9544,6 +9600,7 @@ impl std::fmt::Debug for ArtifactsConfiguration {
 }
 /// See [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration)
 pub mod artifacts_configuration {
+    ///
     /// A builder for [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9638,6 +9695,7 @@ impl std::fmt::Debug for ContentArtifactsConfiguration {
 }
 /// See [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration)
 pub mod content_artifacts_configuration {
+    ///
     /// A builder for [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9823,6 +9881,7 @@ impl std::fmt::Debug for VideoArtifactsConfiguration {
 }
 /// See [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration)
 pub mod video_artifacts_configuration {
+    ///
     /// A builder for [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9946,6 +10005,7 @@ impl std::fmt::Debug for AudioArtifactsConfiguration {
 }
 /// See [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration)
 pub mod audio_artifacts_configuration {
+    ///
     /// A builder for [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10060,6 +10120,7 @@ impl std::fmt::Debug for SourceConfiguration {
 }
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration)
 pub mod source_configuration {
+    ///
     /// A builder for [`SourceConfiguration`](crate::model::SourceConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10124,6 +10185,7 @@ impl std::fmt::Debug for SelectedVideoStreams {
 }
 /// See [`SelectedVideoStreams`](crate::model::SelectedVideoStreams)
 pub mod selected_video_streams {
+    ///
     /// A builder for [`SelectedVideoStreams`](crate::model::SelectedVideoStreams)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10383,6 +10445,7 @@ impl std::fmt::Debug for ChannelModeratedByAppInstanceUserSummary {
 }
 /// See [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
 pub mod channel_moderated_by_app_instance_user_summary {
+    ///
     /// A builder for [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10475,6 +10538,7 @@ impl std::fmt::Debug for ChannelSummary {
 }
 /// See [`ChannelSummary`](crate::model::ChannelSummary)
 pub mod channel_summary {
+    ///
     /// A builder for [`ChannelSummary`](crate::model::ChannelSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10650,6 +10714,7 @@ impl std::fmt::Debug for ChannelModeratorSummary {
 }
 /// See [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary)
 pub mod channel_moderator_summary {
+    ///
     /// A builder for [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10711,6 +10776,7 @@ impl std::fmt::Debug for Identity {
 }
 /// See [`Identity`](crate::model::Identity)
 pub mod identity {
+    ///
     /// A builder for [`Identity`](crate::model::Identity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10833,6 +10899,7 @@ impl std::fmt::Debug for ChannelMessageSummary {
 }
 /// See [`ChannelMessageSummary`](crate::model::ChannelMessageSummary)
 pub mod channel_message_summary {
+    ///
     /// A builder for [`ChannelMessageSummary`](crate::model::ChannelMessageSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11063,6 +11130,7 @@ impl std::fmt::Debug for ChannelMembershipForAppInstanceUserSummary {
 }
 /// See [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary)
 pub mod channel_membership_for_app_instance_user_summary {
+    ///
     /// A builder for [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11146,6 +11214,7 @@ impl std::fmt::Debug for AppInstanceUserMembershipSummary {
 }
 /// See [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary)
 pub mod app_instance_user_membership_summary {
+    ///
     /// A builder for [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11273,6 +11342,7 @@ impl std::fmt::Debug for ChannelMembershipSummary {
 }
 /// See [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary)
 pub mod channel_membership_summary {
+    ///
     /// A builder for [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11327,6 +11397,7 @@ impl std::fmt::Debug for ChannelBanSummary {
 }
 /// See [`ChannelBanSummary`](crate::model::ChannelBanSummary)
 pub mod channel_ban_summary {
+    ///
     /// A builder for [`ChannelBanSummary`](crate::model::ChannelBanSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11396,6 +11467,7 @@ impl std::fmt::Debug for Attendee {
 }
 /// See [`Attendee`](crate::model::Attendee)
 pub mod attendee {
+    ///
     /// A builder for [`Attendee`](crate::model::Attendee)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11491,6 +11563,7 @@ impl std::fmt::Debug for AppInstanceUserSummary {
 }
 /// See [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary)
 pub mod app_instance_user_summary {
+    ///
     /// A builder for [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11586,6 +11659,7 @@ impl std::fmt::Debug for AppInstanceSummary {
 }
 /// See [`AppInstanceSummary`](crate::model::AppInstanceSummary)
 pub mod app_instance_summary {
+    ///
     /// A builder for [`AppInstanceSummary`](crate::model::AppInstanceSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11667,6 +11741,7 @@ impl std::fmt::Debug for AppInstanceAdminSummary {
 }
 /// See [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary)
 pub mod app_instance_admin_summary {
+    ///
     /// A builder for [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11740,6 +11815,7 @@ impl std::fmt::Debug for Invite {
 }
 /// See [`Invite`](crate::model::Invite)
 pub mod invite {
+    ///
     /// A builder for [`Invite`](crate::model::Invite)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11905,6 +11981,7 @@ impl std::fmt::Debug for TerminationHealth {
 }
 /// See [`TerminationHealth`](crate::model::TerminationHealth)
 pub mod termination_health {
+    ///
     /// A builder for [`TerminationHealth`](crate::model::TerminationHealth)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11974,6 +12051,7 @@ impl std::fmt::Debug for MessagingSessionEndpoint {
 }
 /// See [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint)
 pub mod messaging_session_endpoint {
+    ///
     /// A builder for [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12096,6 +12174,7 @@ impl std::fmt::Debug for ChannelMessage {
 }
 /// See [`ChannelMessage`](crate::model::ChannelMessage)
 pub mod channel_message {
+    ///
     /// A builder for [`ChannelMessage`](crate::model::ChannelMessage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12299,6 +12378,7 @@ impl std::fmt::Debug for PhoneNumberError {
 }
 /// See [`PhoneNumberError`](crate::model::PhoneNumberError)
 pub mod phone_number_error {
+    ///
     /// A builder for [`PhoneNumberError`](crate::model::PhoneNumberError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12407,6 +12487,7 @@ impl std::fmt::Debug for ChannelModerator {
 }
 /// See [`ChannelModerator`](crate::model::ChannelModerator)
 pub mod channel_moderator {
+    ///
     /// A builder for [`ChannelModerator`](crate::model::ChannelModerator)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12538,6 +12619,7 @@ impl std::fmt::Debug for ChannelMembership {
 }
 /// See [`ChannelMembership`](crate::model::ChannelMembership)
 pub mod channel_membership {
+    ///
     /// A builder for [`ChannelMembership`](crate::model::ChannelMembership)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12685,6 +12767,7 @@ impl std::fmt::Debug for ChannelBan {
 }
 /// See [`ChannelBan`](crate::model::ChannelBan)
 pub mod channel_ban {
+    ///
     /// A builder for [`ChannelBan`](crate::model::ChannelBan)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12837,6 +12920,7 @@ impl std::fmt::Debug for Channel {
 }
 /// See [`Channel`](crate::model::Channel)
 pub mod channel {
+    ///
     /// A builder for [`Channel`](crate::model::Channel)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13030,6 +13114,7 @@ impl std::fmt::Debug for AppInstanceUser {
 }
 /// See [`AppInstanceUser`](crate::model::AppInstanceUser)
 pub mod app_instance_user {
+    ///
     /// A builder for [`AppInstanceUser`](crate::model::AppInstanceUser)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13155,6 +13240,7 @@ impl std::fmt::Debug for AppInstanceAdmin {
 }
 /// See [`AppInstanceAdmin`](crate::model::AppInstanceAdmin)
 pub mod app_instance_admin {
+    ///
     /// A builder for [`AppInstanceAdmin`](crate::model::AppInstanceAdmin)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13267,6 +13353,7 @@ impl std::fmt::Debug for AppInstance {
 }
 /// See [`AppInstance`](crate::model::AppInstance)
 pub mod app_instance {
+    ///
     /// A builder for [`AppInstance`](crate::model::AppInstance)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13392,6 +13479,7 @@ impl std::fmt::Debug for CreateAttendeeError {
 }
 /// See [`CreateAttendeeError`](crate::model::CreateAttendeeError)
 pub mod create_attendee_error {
+    ///
     /// A builder for [`CreateAttendeeError`](crate::model::CreateAttendeeError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13483,6 +13571,7 @@ impl std::fmt::Debug for CreateAttendeeRequestItem {
 }
 /// See [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem)
 pub mod create_attendee_request_item {
+    ///
     /// A builder for [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13568,6 +13657,7 @@ impl std::fmt::Debug for MeetingNotificationConfiguration {
 }
 /// See [`MeetingNotificationConfiguration`](crate::model::MeetingNotificationConfiguration)
 pub mod meeting_notification_configuration {
+    ///
     /// A builder for [`MeetingNotificationConfiguration`](crate::model::MeetingNotificationConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13654,6 +13744,7 @@ impl std::fmt::Debug for UserError {
 }
 /// See [`UserError`](crate::model::UserError)
 pub mod user_error {
+    ///
     /// A builder for [`UserError`](crate::model::UserError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13764,6 +13855,7 @@ impl std::fmt::Debug for UpdateUserRequestItem {
 }
 /// See [`UpdateUserRequestItem`](crate::model::UpdateUserRequestItem)
 pub mod update_user_request_item {
+    ///
     /// A builder for [`UpdateUserRequestItem`](crate::model::UpdateUserRequestItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13878,6 +13970,7 @@ impl std::fmt::Debug for UpdatePhoneNumberRequestItem {
 }
 /// See [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem)
 pub mod update_phone_number_request_item {
+    ///
     /// A builder for [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13976,6 +14069,7 @@ impl std::fmt::Debug for MemberError {
 }
 /// See [`MemberError`](crate::model::MemberError)
 pub mod member_error {
+    ///
     /// A builder for [`MemberError`](crate::model::MemberError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14067,6 +14161,7 @@ impl std::fmt::Debug for MembershipItem {
 }
 /// See [`MembershipItem`](crate::model::MembershipItem)
 pub mod membership_item {
+    ///
     /// A builder for [`MembershipItem`](crate::model::MembershipItem)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14150,6 +14245,7 @@ impl std::fmt::Debug for BatchCreateChannelMembershipError {
 }
 /// See [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError)
 pub mod batch_create_channel_membership_error {
+    ///
     /// A builder for [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14255,6 +14351,7 @@ impl std::fmt::Debug for BatchChannelMemberships {
 }
 /// See [`BatchChannelMemberships`](crate::model::BatchChannelMemberships)
 pub mod batch_channel_memberships {
+    ///
     /// A builder for [`BatchChannelMemberships`](crate::model::BatchChannelMemberships)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

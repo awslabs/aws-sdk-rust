@@ -111,6 +111,7 @@ impl std::fmt::Debug for RevocationConfiguration {
 }
 /// See [`RevocationConfiguration`](crate::model::RevocationConfiguration)
 pub mod revocation_configuration {
+    ///
     /// A builder for [`RevocationConfiguration`](crate::model::RevocationConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -195,6 +196,7 @@ impl std::fmt::Debug for OcspConfiguration {
 }
 /// See [`OcspConfiguration`](crate::model::OcspConfiguration)
 pub mod ocsp_configuration {
+    ///
     /// A builder for [`OcspConfiguration`](crate::model::OcspConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -332,6 +334,7 @@ impl std::fmt::Debug for CrlConfiguration {
 }
 /// See [`CrlConfiguration`](crate::model::CrlConfiguration)
 pub mod crl_configuration {
+    ///
     /// A builder for [`CrlConfiguration`](crate::model::CrlConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -508,6 +511,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -697,6 +701,7 @@ impl std::fmt::Debug for Permission {
 }
 /// See [`Permission`](crate::model::Permission)
 pub mod permission {
+    ///
     /// A builder for [`Permission`](crate::model::Permission)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -997,6 +1002,7 @@ impl std::fmt::Debug for CertificateAuthority {
 }
 /// See [`CertificateAuthority`](crate::model::CertificateAuthority)
 pub mod certificate_authority {
+    ///
     /// A builder for [`CertificateAuthority`](crate::model::CertificateAuthority)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1340,6 +1346,7 @@ impl std::fmt::Debug for CertificateAuthorityConfiguration {
 }
 /// See [`CertificateAuthorityConfiguration`](crate::model::CertificateAuthorityConfiguration)
 pub mod certificate_authority_configuration {
+    ///
     /// A builder for [`CertificateAuthorityConfiguration`](crate::model::CertificateAuthorityConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1457,6 +1464,7 @@ impl std::fmt::Debug for CsrExtensions {
 }
 /// See [`CsrExtensions`](crate::model::CsrExtensions)
 pub mod csr_extensions {
+    ///
     /// A builder for [`CsrExtensions`](crate::model::CsrExtensions)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1543,6 +1551,7 @@ impl std::fmt::Debug for AccessDescription {
 }
 /// See [`AccessDescription`](crate::model::AccessDescription)
 pub mod access_description {
+    ///
     /// A builder for [`AccessDescription`](crate::model::AccessDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1667,6 +1676,7 @@ impl std::fmt::Debug for GeneralName {
 }
 /// See [`GeneralName`](crate::model::GeneralName)
 pub mod general_name {
+    ///
     /// A builder for [`GeneralName`](crate::model::GeneralName)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1830,6 +1840,7 @@ impl std::fmt::Debug for EdiPartyName {
 }
 /// See [`EdiPartyName`](crate::model::EdiPartyName)
 pub mod edi_party_name {
+    ///
     /// A builder for [`EdiPartyName`](crate::model::EdiPartyName)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2008,6 +2019,7 @@ impl std::fmt::Debug for Asn1Subject {
 }
 /// See [`Asn1Subject`](crate::model::Asn1Subject)
 pub mod asn1_subject {
+    ///
     /// A builder for [`Asn1Subject`](crate::model::Asn1Subject)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2272,6 +2284,7 @@ impl std::fmt::Debug for CustomAttribute {
 }
 /// See [`CustomAttribute`](crate::model::CustomAttribute)
 pub mod custom_attribute {
+    ///
     /// A builder for [`CustomAttribute`](crate::model::CustomAttribute)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2350,6 +2363,7 @@ impl std::fmt::Debug for OtherName {
 }
 /// See [`OtherName`](crate::model::OtherName)
 pub mod other_name {
+    ///
     /// A builder for [`OtherName`](crate::model::OtherName)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2423,6 +2437,7 @@ impl std::fmt::Debug for AccessMethod {
 }
 /// See [`AccessMethod`](crate::model::AccessMethod)
 pub mod access_method {
+    ///
     /// A builder for [`AccessMethod`](crate::model::AccessMethod)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2614,6 +2629,7 @@ impl std::fmt::Debug for KeyUsage {
 }
 /// See [`KeyUsage`](crate::model::KeyUsage)
 pub mod key_usage {
+    ///
     /// A builder for [`KeyUsage`](crate::model::KeyUsage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3116,6 +3132,7 @@ impl std::fmt::Debug for Validity {
 }
 /// See [`Validity`](crate::model::Validity)
 pub mod validity {
+    ///
     /// A builder for [`Validity`](crate::model::Validity)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3294,6 +3311,7 @@ impl std::fmt::Debug for ApiPassthrough {
 }
 /// See [`ApiPassthrough`](crate::model::ApiPassthrough)
 pub mod api_passthrough {
+    ///
     /// A builder for [`ApiPassthrough`](crate::model::ApiPassthrough)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3402,6 +3420,7 @@ impl std::fmt::Debug for Extensions {
 }
 /// See [`Extensions`](crate::model::Extensions)
 pub mod extensions {
+    ///
     /// A builder for [`Extensions`](crate::model::Extensions)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3574,6 +3593,7 @@ impl std::fmt::Debug for CustomExtension {
 }
 /// See [`CustomExtension`](crate::model::CustomExtension)
 pub mod custom_extension {
+    ///
     /// A builder for [`CustomExtension`](crate::model::CustomExtension)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3673,6 +3693,7 @@ impl std::fmt::Debug for ExtendedKeyUsage {
 }
 /// See [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage)
 pub mod extended_key_usage {
+    ///
     /// A builder for [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3851,6 +3872,7 @@ impl std::fmt::Debug for PolicyInformation {
 }
 /// See [`PolicyInformation`](crate::model::PolicyInformation)
 pub mod policy_information {
+    ///
     /// A builder for [`PolicyInformation`](crate::model::PolicyInformation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3937,6 +3959,7 @@ impl std::fmt::Debug for PolicyQualifierInfo {
 }
 /// See [`PolicyQualifierInfo`](crate::model::PolicyQualifierInfo)
 pub mod policy_qualifier_info {
+    ///
     /// A builder for [`PolicyQualifierInfo`](crate::model::PolicyQualifierInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4009,6 +4032,7 @@ impl std::fmt::Debug for Qualifier {
 }
 /// See [`Qualifier`](crate::model::Qualifier)
 pub mod qualifier {
+    ///
     /// A builder for [`Qualifier`](crate::model::Qualifier)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

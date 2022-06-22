@@ -219,6 +219,7 @@ impl std::fmt::Debug for RepositoryDescription {
 }
 /// See [`RepositoryDescription`](crate::model::RepositoryDescription)
 pub mod repository_description {
+    ///
     /// A builder for [`RepositoryDescription`](crate::model::RepositoryDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -409,6 +410,7 @@ impl std::fmt::Debug for RepositoryExternalConnectionInfo {
 }
 /// See [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo)
 pub mod repository_external_connection_info {
+    ///
     /// A builder for [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -620,6 +622,7 @@ impl std::fmt::Debug for UpstreamRepositoryInfo {
 }
 /// See [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo)
 pub mod upstream_repository_info {
+    ///
     /// A builder for [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -677,6 +680,7 @@ impl std::fmt::Debug for UpstreamRepository {
 }
 /// See [`UpstreamRepository`](crate::model::UpstreamRepository)
 pub mod upstream_repository {
+    ///
     /// A builder for [`UpstreamRepository`](crate::model::UpstreamRepository)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -757,6 +761,7 @@ impl std::fmt::Debug for PackageVersionError {
 }
 /// See [`PackageVersionError`](crate::model::PackageVersionError)
 pub mod package_version_error {
+    ///
     /// A builder for [`PackageVersionError`](crate::model::PackageVersionError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -944,6 +949,7 @@ impl std::fmt::Debug for SuccessfulPackageVersionInfo {
 }
 /// See [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo)
 pub mod successful_package_version_info {
+    ///
     /// A builder for [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1112,6 +1118,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1192,6 +1199,7 @@ impl std::fmt::Debug for ResourcePolicy {
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy)
 pub mod resource_policy {
+    ///
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1305,6 +1313,7 @@ impl std::fmt::Debug for RepositorySummary {
 }
 /// See [`RepositorySummary`](crate::model::RepositorySummary)
 pub mod repository_summary {
+    ///
     /// A builder for [`RepositorySummary`](crate::model::RepositorySummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1450,6 +1459,7 @@ impl std::fmt::Debug for PackageVersionSummary {
 }
 /// See [`PackageVersionSummary`](crate::model::PackageVersionSummary)
 pub mod package_version_summary {
+    ///
     /// A builder for [`PackageVersionSummary`](crate::model::PackageVersionSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1627,6 +1637,7 @@ impl std::fmt::Debug for PackageDependency {
 }
 /// See [`PackageDependency`](crate::model::PackageDependency)
 pub mod package_dependency {
+    ///
     /// A builder for [`PackageDependency`](crate::model::PackageDependency)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1753,6 +1764,7 @@ impl std::fmt::Debug for AssetSummary {
 }
 /// See [`AssetSummary`](crate::model::AssetSummary)
 pub mod asset_summary {
+    ///
     /// A builder for [`AssetSummary`](crate::model::AssetSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1945,6 +1957,7 @@ impl std::fmt::Debug for PackageSummary {
 }
 /// See [`PackageSummary`](crate::model::PackageSummary)
 pub mod package_summary {
+    ///
     /// A builder for [`PackageSummary`](crate::model::PackageSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2089,6 +2102,7 @@ impl std::fmt::Debug for DomainSummary {
 }
 /// See [`DomainSummary`](crate::model::DomainSummary)
 pub mod domain_summary {
+    ///
     /// A builder for [`DomainSummary`](crate::model::DomainSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2386,6 +2400,7 @@ impl std::fmt::Debug for PackageVersionDescription {
 }
 /// See [`PackageVersionDescription`](crate::model::PackageVersionDescription)
 pub mod package_version_description {
+    ///
     /// A builder for [`PackageVersionDescription`](crate::model::PackageVersionDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2634,6 +2649,7 @@ impl std::fmt::Debug for LicenseInfo {
 }
 /// See [`LicenseInfo`](crate::model::LicenseInfo)
 pub mod license_info {
+    ///
     /// A builder for [`LicenseInfo`](crate::model::LicenseInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2764,6 +2780,7 @@ impl std::fmt::Debug for DomainDescription {
 }
 /// See [`DomainDescription`](crate::model::DomainDescription)
 pub mod domain_description {
+    ///
     /// A builder for [`DomainDescription`](crate::model::DomainDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

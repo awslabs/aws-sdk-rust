@@ -162,6 +162,7 @@ impl std::fmt::Debug for Item {
 }
 /// See [`Item`](crate::model::Item)
 pub mod item {
+    ///
     /// A builder for [`Item`](crate::model::Item)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

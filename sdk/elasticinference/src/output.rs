@@ -11,6 +11,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -85,6 +87,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -154,6 +157,7 @@ impl std::fmt::Debug for DescribeAcceleratorTypesOutput {
 }
 /// See [`DescribeAcceleratorTypesOutput`](crate::output::DescribeAcceleratorTypesOutput)
 pub mod describe_accelerator_types_output {
+    ///
     /// A builder for [`DescribeAcceleratorTypesOutput`](crate::output::DescribeAcceleratorTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -228,6 +232,7 @@ impl std::fmt::Debug for DescribeAcceleratorsOutput {
 }
 /// See [`DescribeAcceleratorsOutput`](crate::output::DescribeAcceleratorsOutput)
 pub mod describe_accelerators_output {
+    ///
     /// A builder for [`DescribeAcceleratorsOutput`](crate::output::DescribeAcceleratorsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -310,6 +315,7 @@ impl std::fmt::Debug for DescribeAcceleratorOfferingsOutput {
 }
 /// See [`DescribeAcceleratorOfferingsOutput`](crate::output::DescribeAcceleratorOfferingsOutput)
 pub mod describe_accelerator_offerings_output {
+    ///
     /// A builder for [`DescribeAcceleratorOfferingsOutput`](crate::output::DescribeAcceleratorOfferingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

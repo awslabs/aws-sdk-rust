@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateWirelessGatewayOutput {
 }
 /// See [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput)
 pub mod update_wireless_gateway_output {
+    ///
     /// A builder for [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UpdateWirelessDeviceOutput {
 }
 /// See [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput)
 pub mod update_wireless_device_output {
+    ///
     /// A builder for [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for UpdateResourceEventConfigurationOutput {
 }
 /// See [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
 pub mod update_resource_event_configuration_output {
+    ///
     /// A builder for [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -101,6 +104,7 @@ impl std::fmt::Debug for UpdatePartnerAccountOutput {
 }
 /// See [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput)
 pub mod update_partner_account_output {
+    ///
     /// A builder for [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -131,6 +135,7 @@ impl std::fmt::Debug for UpdateNetworkAnalyzerConfigurationOutput {
 }
 /// See [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
 pub mod update_network_analyzer_configuration_output {
+    ///
     /// A builder for [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -161,6 +166,7 @@ impl std::fmt::Debug for UpdateMulticastGroupOutput {
 }
 /// See [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
 pub mod update_multicast_group_output {
+    ///
     /// A builder for [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -191,6 +197,7 @@ impl std::fmt::Debug for UpdateLogLevelsByResourceTypesOutput {
 }
 /// See [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput)
 pub mod update_log_levels_by_resource_types_output {
+    ///
     /// A builder for [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -221,6 +228,7 @@ impl std::fmt::Debug for UpdateFuotaTaskOutput {
 }
 /// See [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
 pub mod update_fuota_task_output {
+    ///
     /// A builder for [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -251,6 +259,7 @@ impl std::fmt::Debug for UpdateEventConfigurationByResourceTypesOutput {
 }
 /// See [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput)
 pub mod update_event_configuration_by_resource_types_output {
+    ///
     /// A builder for [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -282,6 +291,7 @@ impl std::fmt::Debug for UpdateDestinationOutput {
 }
 /// See [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
 pub mod update_destination_output {
+    ///
     /// A builder for [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -312,6 +322,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -352,6 +363,7 @@ impl std::fmt::Debug for TestWirelessDeviceOutput {
 }
 /// See [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput)
 pub mod test_wireless_device_output {
+    ///
     /// A builder for [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -396,6 +408,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -426,6 +439,7 @@ impl std::fmt::Debug for StartMulticastGroupSessionOutput {
 }
 /// See [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
 pub mod start_multicast_group_session_output {
+    ///
     /// A builder for [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -456,6 +470,7 @@ impl std::fmt::Debug for StartFuotaTaskOutput {
 }
 /// See [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
 pub mod start_fuota_task_output {
+    ///
     /// A builder for [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -487,6 +502,7 @@ impl std::fmt::Debug for StartBulkDisassociateWirelessDeviceFromMulticastGroupOu
 }
 /// See [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
 pub mod start_bulk_disassociate_wireless_device_from_multicast_group_output {
+    ///
     /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -522,6 +538,7 @@ impl std::fmt::Debug for StartBulkAssociateWirelessDeviceWithMulticastGroupOutpu
 }
 /// See [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
 pub mod start_bulk_associate_wireless_device_with_multicast_group_output {
+    ///
     /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -566,6 +583,7 @@ impl std::fmt::Debug for SendDataToWirelessDeviceOutput {
 }
 /// See [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput)
 pub mod send_data_to_wireless_device_output {
+    ///
     /// A builder for [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -620,6 +638,7 @@ impl std::fmt::Debug for SendDataToMulticastGroupOutput {
 }
 /// See [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
 pub mod send_data_to_multicast_group_output {
+    ///
     /// A builder for [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -664,6 +683,7 @@ impl std::fmt::Debug for ResetResourceLogLevelOutput {
 }
 /// See [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput)
 pub mod reset_resource_log_level_output {
+    ///
     /// A builder for [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -694,6 +714,7 @@ impl std::fmt::Debug for ResetAllResourceLogLevelsOutput {
 }
 /// See [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput)
 pub mod reset_all_resource_log_levels_output {
+    ///
     /// A builder for [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -724,6 +745,7 @@ impl std::fmt::Debug for PutResourceLogLevelOutput {
 }
 /// See [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput)
 pub mod put_resource_log_level_output {
+    ///
     /// A builder for [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -774,6 +796,7 @@ impl std::fmt::Debug for ListWirelessGatewayTaskDefinitionsOutput {
 }
 /// See [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput)
 pub mod list_wireless_gateway_task_definitions_output {
+    ///
     /// A builder for [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -863,6 +886,7 @@ impl std::fmt::Debug for ListWirelessGatewaysOutput {
 }
 /// See [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput)
 pub mod list_wireless_gateways_output {
+    ///
     /// A builder for [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -952,6 +976,7 @@ impl std::fmt::Debug for ListWirelessDevicesOutput {
 }
 /// See [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput)
 pub mod list_wireless_devices_output {
+    ///
     /// A builder for [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1031,6 +1056,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1099,6 +1125,7 @@ impl std::fmt::Debug for ListServiceProfilesOutput {
 }
 /// See [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput)
 pub mod list_service_profiles_output {
+    ///
     /// A builder for [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1188,6 +1215,7 @@ impl std::fmt::Debug for ListQueuedMessagesOutput {
 }
 /// See [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
 pub mod list_queued_messages_output {
+    ///
     /// A builder for [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1277,6 +1305,7 @@ impl std::fmt::Debug for ListPartnerAccountsOutput {
 }
 /// See [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput)
 pub mod list_partner_accounts_output {
+    ///
     /// A builder for [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1368,6 +1397,7 @@ impl std::fmt::Debug for ListNetworkAnalyzerConfigurationsOutput {
 }
 /// See [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput)
 pub mod list_network_analyzer_configurations_output {
+    ///
     /// A builder for [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1457,6 +1487,7 @@ impl std::fmt::Debug for ListMulticastGroupsByFuotaTaskOutput {
 }
 /// See [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
 pub mod list_multicast_groups_by_fuota_task_output {
+    ///
     /// A builder for [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1543,6 +1574,7 @@ impl std::fmt::Debug for ListMulticastGroupsOutput {
 }
 /// See [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
 pub mod list_multicast_groups_output {
+    ///
     /// A builder for [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1626,6 +1658,7 @@ impl std::fmt::Debug for ListFuotaTasksOutput {
 }
 /// See [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
 pub mod list_fuota_tasks_output {
+    ///
     /// A builder for [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1711,6 +1744,7 @@ impl std::fmt::Debug for ListEventConfigurationsOutput {
 }
 /// See [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput)
 pub mod list_event_configurations_output {
+    ///
     /// A builder for [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1797,6 +1831,7 @@ impl std::fmt::Debug for ListDeviceProfilesOutput {
 }
 /// See [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput)
 pub mod list_device_profiles_output {
+    ///
     /// A builder for [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1880,6 +1915,7 @@ impl std::fmt::Debug for ListDestinationsOutput {
 }
 /// See [`ListDestinationsOutput`](crate::output::ListDestinationsOutput)
 pub mod list_destinations_output {
+    ///
     /// A builder for [`ListDestinationsOutput`](crate::output::ListDestinationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1976,6 +2012,7 @@ impl std::fmt::Debug for GetWirelessGatewayTaskDefinitionOutput {
 }
 /// See [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput)
 pub mod get_wireless_gateway_task_definition_output {
+    ///
     /// A builder for [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2100,6 +2137,7 @@ impl std::fmt::Debug for GetWirelessGatewayTaskOutput {
 }
 /// See [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput)
 pub mod get_wireless_gateway_task_output {
+    ///
     /// A builder for [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2234,6 +2272,7 @@ impl std::fmt::Debug for GetWirelessGatewayStatisticsOutput {
 }
 /// See [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput)
 pub mod get_wireless_gateway_statistics_output {
+    ///
     /// A builder for [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2321,6 +2360,7 @@ impl std::fmt::Debug for GetWirelessGatewayFirmwareInformationOutput {
 }
 /// See [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput)
 pub mod get_wireless_gateway_firmware_information_output {
+    ///
     /// A builder for [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2388,6 +2428,7 @@ impl std::fmt::Debug for GetWirelessGatewayCertificateOutput {
 }
 /// See [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput)
 pub mod get_wireless_gateway_certificate_output {
+    ///
     /// A builder for [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2507,6 +2548,7 @@ impl std::fmt::Debug for GetWirelessGatewayOutput {
 }
 /// See [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput)
 pub mod get_wireless_gateway_output {
+    ///
     /// A builder for [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2657,6 +2699,7 @@ impl std::fmt::Debug for GetWirelessDeviceStatisticsOutput {
 }
 /// See [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput)
 pub mod get_wireless_device_statistics_output {
+    ///
     /// A builder for [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2822,6 +2865,7 @@ impl std::fmt::Debug for GetWirelessDeviceOutput {
 }
 /// See [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput)
 pub mod get_wireless_device_output {
+    ///
     /// A builder for [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3017,6 +3061,7 @@ impl std::fmt::Debug for GetServiceProfileOutput {
 }
 /// See [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput)
 pub mod get_service_profile_output {
+    ///
     /// A builder for [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3124,6 +3169,7 @@ impl std::fmt::Debug for GetServiceEndpointOutput {
 }
 /// See [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput)
 pub mod get_service_endpoint_output {
+    ///
     /// A builder for [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3208,6 +3254,7 @@ impl std::fmt::Debug for GetResourceLogLevelOutput {
 }
 /// See [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput)
 pub mod get_resource_log_level_output {
+    ///
     /// A builder for [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3288,6 +3335,7 @@ impl std::fmt::Debug for GetResourceEventConfigurationOutput {
 }
 /// See [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
 pub mod get_resource_event_configuration_output {
+    ///
     /// A builder for [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3407,6 +3455,7 @@ impl std::fmt::Debug for GetPartnerAccountOutput {
 }
 /// See [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput)
 pub mod get_partner_account_output {
+    ///
     /// A builder for [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3511,6 +3560,7 @@ impl std::fmt::Debug for GetNetworkAnalyzerConfigurationOutput {
 }
 /// See [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
 pub mod get_network_analyzer_configuration_output {
+    ///
     /// A builder for [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3646,6 +3696,7 @@ impl std::fmt::Debug for GetMulticastGroupSessionOutput {
 }
 /// See [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
 pub mod get_multicast_group_session_output {
+    ///
     /// A builder for [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3745,6 +3796,7 @@ impl std::fmt::Debug for GetMulticastGroupOutput {
 }
 /// See [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
 pub mod get_multicast_group_output {
+    ///
     /// A builder for [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3903,6 +3955,7 @@ impl std::fmt::Debug for GetLogLevelsByResourceTypesOutput {
 }
 /// See [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput)
 pub mod get_log_levels_by_resource_types_output {
+    ///
     /// A builder for [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4066,6 +4119,7 @@ impl std::fmt::Debug for GetFuotaTaskOutput {
 }
 /// See [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
 pub mod get_fuota_task_output {
+    ///
     /// A builder for [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4261,6 +4315,7 @@ impl std::fmt::Debug for GetEventConfigurationByResourceTypesOutput {
 }
 /// See [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput)
 pub mod get_event_configuration_by_resource_types_output {
+    ///
     /// A builder for [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4401,6 +4456,7 @@ impl std::fmt::Debug for GetDeviceProfileOutput {
 }
 /// See [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput)
 pub mod get_device_profile_output {
+    ///
     /// A builder for [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4529,6 +4585,7 @@ impl std::fmt::Debug for GetDestinationOutput {
 }
 /// See [`GetDestinationOutput`](crate::output::GetDestinationOutput)
 pub mod get_destination_output {
+    ///
     /// A builder for [`GetDestinationOutput`](crate::output::GetDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4636,6 +4693,7 @@ impl std::fmt::Debug for DisassociateWirelessGatewayFromThingOutput {
 }
 /// See [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput)
 pub mod disassociate_wireless_gateway_from_thing_output {
+    ///
     /// A builder for [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4666,6 +4724,7 @@ impl std::fmt::Debug for DisassociateWirelessGatewayFromCertificateOutput {
 }
 /// See [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput)
 pub mod disassociate_wireless_gateway_from_certificate_output {
+    ///
     /// A builder for [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4697,6 +4756,7 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromThingOutput {
 }
 /// See [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput)
 pub mod disassociate_wireless_device_from_thing_output {
+    ///
     /// A builder for [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4727,6 +4787,7 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromMulticastGroupOutput {
 }
 /// See [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
 pub mod disassociate_wireless_device_from_multicast_group_output {
+    ///
     /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4758,6 +4819,7 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromFuotaTaskOutput {
 }
 /// See [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
 pub mod disassociate_wireless_device_from_fuota_task_output {
+    ///
     /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4789,6 +4851,7 @@ impl std::fmt::Debug for DisassociateMulticastGroupFromFuotaTaskOutput {
 }
 /// See [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
 pub mod disassociate_multicast_group_from_fuota_task_output {
+    ///
     /// A builder for [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4820,6 +4883,7 @@ impl std::fmt::Debug for DisassociateAwsAccountFromPartnerAccountOutput {
 }
 /// See [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput)
 pub mod disassociate_aws_account_from_partner_account_output {
+    ///
     /// A builder for [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4851,6 +4915,7 @@ impl std::fmt::Debug for DeleteWirelessGatewayTaskDefinitionOutput {
 }
 /// See [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput)
 pub mod delete_wireless_gateway_task_definition_output {
+    ///
     /// A builder for [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4881,6 +4946,7 @@ impl std::fmt::Debug for DeleteWirelessGatewayTaskOutput {
 }
 /// See [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput)
 pub mod delete_wireless_gateway_task_output {
+    ///
     /// A builder for [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4911,6 +4977,7 @@ impl std::fmt::Debug for DeleteWirelessGatewayOutput {
 }
 /// See [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput)
 pub mod delete_wireless_gateway_output {
+    ///
     /// A builder for [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4941,6 +5008,7 @@ impl std::fmt::Debug for DeleteWirelessDeviceOutput {
 }
 /// See [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput)
 pub mod delete_wireless_device_output {
+    ///
     /// A builder for [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4971,6 +5039,7 @@ impl std::fmt::Debug for DeleteServiceProfileOutput {
 }
 /// See [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput)
 pub mod delete_service_profile_output {
+    ///
     /// A builder for [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5001,6 +5070,7 @@ impl std::fmt::Debug for DeleteQueuedMessagesOutput {
 }
 /// See [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
 pub mod delete_queued_messages_output {
+    ///
     /// A builder for [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5031,6 +5101,7 @@ impl std::fmt::Debug for DeleteNetworkAnalyzerConfigurationOutput {
 }
 /// See [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput)
 pub mod delete_network_analyzer_configuration_output {
+    ///
     /// A builder for [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5061,6 +5132,7 @@ impl std::fmt::Debug for DeleteMulticastGroupOutput {
 }
 /// See [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
 pub mod delete_multicast_group_output {
+    ///
     /// A builder for [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5091,6 +5163,7 @@ impl std::fmt::Debug for DeleteFuotaTaskOutput {
 }
 /// See [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
 pub mod delete_fuota_task_output {
+    ///
     /// A builder for [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5121,6 +5194,7 @@ impl std::fmt::Debug for DeleteDeviceProfileOutput {
 }
 /// See [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput)
 pub mod delete_device_profile_output {
+    ///
     /// A builder for [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5151,6 +5225,7 @@ impl std::fmt::Debug for DeleteDestinationOutput {
 }
 /// See [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
 pub mod delete_destination_output {
+    ///
     /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5198,6 +5273,7 @@ impl std::fmt::Debug for CreateWirelessGatewayTaskDefinitionOutput {
 }
 /// See [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput)
 pub mod create_wireless_gateway_task_definition_output {
+    ///
     /// A builder for [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5274,6 +5350,7 @@ impl std::fmt::Debug for CreateWirelessGatewayTaskOutput {
 }
 /// See [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput)
 pub mod create_wireless_gateway_task_output {
+    ///
     /// A builder for [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5356,6 +5433,7 @@ impl std::fmt::Debug for CreateWirelessGatewayOutput {
 }
 /// See [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput)
 pub mod create_wireless_gateway_output {
+    ///
     /// A builder for [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5429,6 +5507,7 @@ impl std::fmt::Debug for CreateWirelessDeviceOutput {
 }
 /// See [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput)
 pub mod create_wireless_device_output {
+    ///
     /// A builder for [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5502,6 +5581,7 @@ impl std::fmt::Debug for CreateServiceProfileOutput {
 }
 /// See [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput)
 pub mod create_service_profile_output {
+    ///
     /// A builder for [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5575,6 +5655,7 @@ impl std::fmt::Debug for CreateNetworkAnalyzerConfigurationOutput {
 }
 /// See [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput)
 pub mod create_network_analyzer_configuration_output {
+    ///
     /// A builder for [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5648,6 +5729,7 @@ impl std::fmt::Debug for CreateMulticastGroupOutput {
 }
 /// See [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
 pub mod create_multicast_group_output {
+    ///
     /// A builder for [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5721,6 +5803,7 @@ impl std::fmt::Debug for CreateFuotaTaskOutput {
 }
 /// See [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
 pub mod create_fuota_task_output {
+    ///
     /// A builder for [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5794,6 +5877,7 @@ impl std::fmt::Debug for CreateDeviceProfileOutput {
 }
 /// See [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput)
 pub mod create_device_profile_output {
+    ///
     /// A builder for [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5867,6 +5951,7 @@ impl std::fmt::Debug for CreateDestinationOutput {
 }
 /// See [`CreateDestinationOutput`](crate::output::CreateDestinationOutput)
 pub mod create_destination_output {
+    ///
     /// A builder for [`CreateDestinationOutput`](crate::output::CreateDestinationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5923,6 +6008,7 @@ impl std::fmt::Debug for CancelMulticastGroupSessionOutput {
 }
 /// See [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
 pub mod cancel_multicast_group_session_output {
+    ///
     /// A builder for [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5953,6 +6039,7 @@ impl std::fmt::Debug for AssociateWirelessGatewayWithThingOutput {
 }
 /// See [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput)
 pub mod associate_wireless_gateway_with_thing_output {
+    ///
     /// A builder for [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5993,6 +6080,7 @@ impl std::fmt::Debug for AssociateWirelessGatewayWithCertificateOutput {
 }
 /// See [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput)
 pub mod associate_wireless_gateway_with_certificate_output {
+    ///
     /// A builder for [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6040,6 +6128,7 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithThingOutput {
 }
 /// See [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput)
 pub mod associate_wireless_device_with_thing_output {
+    ///
     /// A builder for [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6070,6 +6159,7 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithMulticastGroupOutput {
 }
 /// See [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
 pub mod associate_wireless_device_with_multicast_group_output {
+    ///
     /// A builder for [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6101,6 +6191,7 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithFuotaTaskOutput {
 }
 /// See [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
 pub mod associate_wireless_device_with_fuota_task_output {
+    ///
     /// A builder for [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6131,6 +6222,7 @@ impl std::fmt::Debug for AssociateMulticastGroupWithFuotaTaskOutput {
 }
 /// See [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
 pub mod associate_multicast_group_with_fuota_task_output {
+    ///
     /// A builder for [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6178,6 +6270,7 @@ impl std::fmt::Debug for AssociateAwsAccountWithPartnerAccountOutput {
 }
 /// See [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput)
 pub mod associate_aws_account_with_partner_account_output {
+    ///
     /// A builder for [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

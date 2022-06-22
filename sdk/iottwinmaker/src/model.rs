@@ -95,6 +95,7 @@ impl std::fmt::Debug for ParentEntityUpdateRequest {
 }
 /// See [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest)
 pub mod parent_entity_update_request {
+    ///
     /// A builder for [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -249,6 +250,7 @@ impl std::fmt::Debug for ComponentUpdateRequest {
 }
 /// See [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest)
 pub mod component_update_request {
+    ///
     /// A builder for [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -376,6 +378,7 @@ impl std::fmt::Debug for PropertyRequest {
 }
 /// See [`PropertyRequest`](crate::model::PropertyRequest)
 pub mod property_request {
+    ///
     /// A builder for [`PropertyRequest`](crate::model::PropertyRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -580,6 +583,7 @@ impl std::fmt::Debug for DataValue {
 }
 /// See [`DataValue`](crate::model::DataValue)
 pub mod data_value {
+    ///
     /// A builder for [`DataValue`](crate::model::DataValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -766,6 +770,7 @@ impl std::fmt::Debug for RelationshipValue {
 }
 /// See [`RelationshipValue`](crate::model::RelationshipValue)
 pub mod relationship_value {
+    ///
     /// A builder for [`RelationshipValue`](crate::model::RelationshipValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -884,6 +889,7 @@ impl std::fmt::Debug for PropertyDefinitionRequest {
 }
 /// See [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest)
 pub mod property_definition_request {
+    ///
     /// A builder for [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1058,6 +1064,7 @@ impl std::fmt::Debug for DataType {
 }
 /// See [`DataType`](crate::model::DataType)
 pub mod data_type {
+    ///
     /// A builder for [`DataType`](crate::model::DataType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1188,6 +1195,7 @@ impl std::fmt::Debug for Relationship {
 }
 /// See [`Relationship`](crate::model::Relationship)
 pub mod relationship {
+    ///
     /// A builder for [`Relationship`](crate::model::Relationship)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1421,6 +1429,7 @@ impl std::fmt::Debug for FunctionRequest {
 }
 /// See [`FunctionRequest`](crate::model::FunctionRequest)
 pub mod function_request {
+    ///
     /// A builder for [`FunctionRequest`](crate::model::FunctionRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1512,6 +1521,7 @@ impl std::fmt::Debug for DataConnector {
 }
 /// See [`DataConnector`](crate::model::DataConnector)
 pub mod data_connector {
+    ///
     /// A builder for [`DataConnector`](crate::model::DataConnector)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1581,6 +1591,7 @@ impl std::fmt::Debug for LambdaFunction {
 }
 /// See [`LambdaFunction`](crate::model::LambdaFunction)
 pub mod lambda_function {
+    ///
     /// A builder for [`LambdaFunction`](crate::model::LambdaFunction)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1716,6 +1727,7 @@ impl std::fmt::Debug for WorkspaceSummary {
 }
 /// See [`WorkspaceSummary`](crate::model::WorkspaceSummary)
 pub mod workspace_summary {
+    ///
     /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1859,6 +1871,7 @@ impl std::fmt::Debug for SceneSummary {
 }
 /// See [`SceneSummary`](crate::model::SceneSummary)
 pub mod scene_summary {
+    ///
     /// A builder for [`SceneSummary`](crate::model::SceneSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2038,6 +2051,7 @@ impl std::fmt::Debug for EntitySummary {
 }
 /// See [`EntitySummary`](crate::model::EntitySummary)
 pub mod entity_summary {
+    ///
     /// A builder for [`EntitySummary`](crate::model::EntitySummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2204,6 +2218,7 @@ impl std::fmt::Debug for Status {
 }
 /// See [`Status`](crate::model::Status)
 pub mod status {
+    ///
     /// A builder for [`Status`](crate::model::Status)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2277,6 +2292,7 @@ impl std::fmt::Debug for ErrorDetails {
 }
 /// See [`ErrorDetails`](crate::model::ErrorDetails)
 pub mod error_details {
+    ///
     /// A builder for [`ErrorDetails`](crate::model::ErrorDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2499,6 +2515,7 @@ impl std::fmt::Debug for ComponentTypeSummary {
 }
 /// See [`ComponentTypeSummary`](crate::model::ComponentTypeSummary)
 pub mod component_type_summary {
+    ///
     /// A builder for [`ComponentTypeSummary`](crate::model::ComponentTypeSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2699,6 +2716,7 @@ impl std::fmt::Debug for PropertyValueHistory {
 }
 /// See [`PropertyValueHistory`](crate::model::PropertyValueHistory)
 pub mod property_value_history {
+    ///
     /// A builder for [`PropertyValueHistory`](crate::model::PropertyValueHistory)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2821,6 +2839,7 @@ impl std::fmt::Debug for PropertyValue {
 }
 /// See [`PropertyValue`](crate::model::PropertyValue)
 pub mod property_value {
+    ///
     /// A builder for [`PropertyValue`](crate::model::PropertyValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2953,6 +2972,7 @@ impl std::fmt::Debug for EntityPropertyReference {
 }
 /// See [`EntityPropertyReference`](crate::model::EntityPropertyReference)
 pub mod entity_property_reference {
+    ///
     /// A builder for [`EntityPropertyReference`](crate::model::EntityPropertyReference)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3128,6 +3148,7 @@ impl std::fmt::Debug for InterpolationParameters {
 }
 /// See [`InterpolationParameters`](crate::model::InterpolationParameters)
 pub mod interpolation_parameters {
+    ///
     /// A builder for [`InterpolationParameters`](crate::model::InterpolationParameters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3262,6 +3283,7 @@ impl std::fmt::Debug for PropertyFilter {
 }
 /// See [`PropertyFilter`](crate::model::PropertyFilter)
 pub mod property_filter {
+    ///
     /// A builder for [`PropertyFilter`](crate::model::PropertyFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3352,6 +3374,7 @@ impl std::fmt::Debug for PropertyLatestValue {
 }
 /// See [`PropertyLatestValue`](crate::model::PropertyLatestValue)
 pub mod property_latest_value {
+    ///
     /// A builder for [`PropertyLatestValue`](crate::model::PropertyLatestValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3465,6 +3488,7 @@ impl std::fmt::Debug for ComponentResponse {
 }
 /// See [`ComponentResponse`](crate::model::ComponentResponse)
 pub mod component_response {
+    ///
     /// A builder for [`ComponentResponse`](crate::model::ComponentResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3609,6 +3633,7 @@ impl std::fmt::Debug for PropertyResponse {
 }
 /// See [`PropertyResponse`](crate::model::PropertyResponse)
 pub mod property_response {
+    ///
     /// A builder for [`PropertyResponse`](crate::model::PropertyResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3745,6 +3770,7 @@ impl std::fmt::Debug for PropertyDefinitionResponse {
 }
 /// See [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse)
 pub mod property_definition_response {
+    ///
     /// A builder for [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3948,6 +3974,7 @@ impl std::fmt::Debug for FunctionResponse {
 }
 /// See [`FunctionResponse`](crate::model::FunctionResponse)
 pub mod function_response {
+    ///
     /// A builder for [`FunctionResponse`](crate::model::FunctionResponse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4064,6 +4091,7 @@ impl std::fmt::Debug for ComponentRequest {
 }
 /// See [`ComponentRequest`](crate::model::ComponentRequest)
 pub mod component_request {
+    ///
     /// A builder for [`ComponentRequest`](crate::model::ComponentRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4162,6 +4190,7 @@ impl std::fmt::Debug for BatchPutPropertyErrorEntry {
 }
 /// See [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry)
 pub mod batch_put_property_error_entry {
+    ///
     /// A builder for [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4239,6 +4268,7 @@ impl std::fmt::Debug for BatchPutPropertyError {
 }
 /// See [`BatchPutPropertyError`](crate::model::BatchPutPropertyError)
 pub mod batch_put_property_error {
+    ///
     /// A builder for [`BatchPutPropertyError`](crate::model::BatchPutPropertyError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4332,6 +4362,7 @@ impl std::fmt::Debug for PropertyValueEntry {
 }
 /// See [`PropertyValueEntry`](crate::model::PropertyValueEntry)
 pub mod property_value_entry {
+    ///
     /// A builder for [`PropertyValueEntry`](crate::model::PropertyValueEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

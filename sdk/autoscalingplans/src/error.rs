@@ -786,6 +786,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException)
 pub mod validation_exception {
+    ///
     /// A builder for [`ValidationException`](crate::error::ValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -850,6 +851,7 @@ impl std::fmt::Display for ObjectNotFoundException {
 impl std::error::Error for ObjectNotFoundException {}
 /// See [`ObjectNotFoundException`](crate::error::ObjectNotFoundException)
 pub mod object_not_found_exception {
+    ///
     /// A builder for [`ObjectNotFoundException`](crate::error::ObjectNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -914,6 +916,7 @@ impl std::fmt::Display for InternalServiceException {
 impl std::error::Error for InternalServiceException {}
 /// See [`InternalServiceException`](crate::error::InternalServiceException)
 pub mod internal_service_exception {
+    ///
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -978,6 +981,7 @@ impl std::fmt::Display for ConcurrentUpdateException {
 impl std::error::Error for ConcurrentUpdateException {}
 /// See [`ConcurrentUpdateException`](crate::error::ConcurrentUpdateException)
 pub mod concurrent_update_exception {
+    ///
     /// A builder for [`ConcurrentUpdateException`](crate::error::ConcurrentUpdateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1042,6 +1046,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
+    ///
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1106,6 +1111,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

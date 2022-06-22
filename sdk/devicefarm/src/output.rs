@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateVpceConfigurationOutput {
 }
 /// See [`UpdateVpceConfigurationOutput`](crate::output::UpdateVpceConfigurationOutput)
 pub mod update_vpce_configuration_output {
+    ///
     /// A builder for [`UpdateVpceConfigurationOutput`](crate::output::UpdateVpceConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -78,6 +79,7 @@ impl std::fmt::Debug for UpdateUploadOutput {
 }
 /// See [`UpdateUploadOutput`](crate::output::UpdateUploadOutput)
 pub mod update_upload_output {
+    ///
     /// A builder for [`UpdateUploadOutput`](crate::output::UpdateUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -132,6 +134,7 @@ impl std::fmt::Debug for UpdateTestGridProjectOutput {
 }
 /// See [`UpdateTestGridProjectOutput`](crate::output::UpdateTestGridProjectOutput)
 pub mod update_test_grid_project_output {
+    ///
     /// A builder for [`UpdateTestGridProjectOutput`](crate::output::UpdateTestGridProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -189,6 +192,7 @@ impl std::fmt::Debug for UpdateProjectOutput {
 }
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
 pub mod update_project_output {
+    ///
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -243,6 +247,7 @@ impl std::fmt::Debug for UpdateNetworkProfileOutput {
 }
 /// See [`UpdateNetworkProfileOutput`](crate::output::UpdateNetworkProfileOutput)
 pub mod update_network_profile_output {
+    ///
     /// A builder for [`UpdateNetworkProfileOutput`](crate::output::UpdateNetworkProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -300,6 +305,7 @@ impl std::fmt::Debug for UpdateInstanceProfileOutput {
 }
 /// See [`UpdateInstanceProfileOutput`](crate::output::UpdateInstanceProfileOutput)
 pub mod update_instance_profile_output {
+    ///
     /// A builder for [`UpdateInstanceProfileOutput`](crate::output::UpdateInstanceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -357,6 +363,7 @@ impl std::fmt::Debug for UpdateDevicePoolOutput {
 }
 /// See [`UpdateDevicePoolOutput`](crate::output::UpdateDevicePoolOutput)
 pub mod update_device_pool_output {
+    ///
     /// A builder for [`UpdateDevicePoolOutput`](crate::output::UpdateDevicePoolOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -414,6 +421,7 @@ impl std::fmt::Debug for UpdateDeviceInstanceOutput {
 }
 /// See [`UpdateDeviceInstanceOutput`](crate::output::UpdateDeviceInstanceOutput)
 pub mod update_device_instance_output {
+    ///
     /// A builder for [`UpdateDeviceInstanceOutput`](crate::output::UpdateDeviceInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -461,6 +469,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -491,6 +500,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -531,6 +541,7 @@ impl std::fmt::Debug for StopRunOutput {
 }
 /// See [`StopRunOutput`](crate::output::StopRunOutput)
 pub mod stop_run_output {
+    ///
     /// A builder for [`StopRunOutput`](crate::output::StopRunOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -583,6 +594,7 @@ impl std::fmt::Debug for StopRemoteAccessSessionOutput {
 }
 /// See [`StopRemoteAccessSessionOutput`](crate::output::StopRemoteAccessSessionOutput)
 pub mod stop_remote_access_session_output {
+    ///
     /// A builder for [`StopRemoteAccessSessionOutput`](crate::output::StopRemoteAccessSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -640,6 +652,7 @@ impl std::fmt::Debug for StopJobOutput {
 }
 /// See [`StopJobOutput`](crate::output::StopJobOutput)
 pub mod stop_job_output {
+    ///
     /// A builder for [`StopJobOutput`](crate::output::StopJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -692,6 +705,7 @@ impl std::fmt::Debug for ScheduleRunOutput {
 }
 /// See [`ScheduleRunOutput`](crate::output::ScheduleRunOutput)
 pub mod schedule_run_output {
+    ///
     /// A builder for [`ScheduleRunOutput`](crate::output::ScheduleRunOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -744,6 +758,7 @@ impl std::fmt::Debug for RenewOfferingOutput {
 }
 /// See [`RenewOfferingOutput`](crate::output::RenewOfferingOutput)
 pub mod renew_offering_output {
+    ///
     /// A builder for [`RenewOfferingOutput`](crate::output::RenewOfferingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -801,6 +816,7 @@ impl std::fmt::Debug for PurchaseOfferingOutput {
 }
 /// See [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput)
 pub mod purchase_offering_output {
+    ///
     /// A builder for [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -865,6 +881,7 @@ impl std::fmt::Debug for ListVpceConfigurationsOutput {
 }
 /// See [`ListVpceConfigurationsOutput`](crate::output::ListVpceConfigurationsOutput)
 pub mod list_vpce_configurations_output {
+    ///
     /// A builder for [`ListVpceConfigurationsOutput`](crate::output::ListVpceConfigurationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -948,6 +965,7 @@ impl std::fmt::Debug for ListUploadsOutput {
 }
 /// See [`ListUploadsOutput`](crate::output::ListUploadsOutput)
 pub mod list_uploads_output {
+    ///
     /// A builder for [`ListUploadsOutput`](crate::output::ListUploadsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1062,6 +1080,7 @@ impl std::fmt::Debug for ListUniqueProblemsOutput {
 }
 /// See [`ListUniqueProblemsOutput`](crate::output::ListUniqueProblemsOutput)
 pub mod list_unique_problems_output {
+    ///
     /// A builder for [`ListUniqueProblemsOutput`](crate::output::ListUniqueProblemsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1178,6 +1197,7 @@ impl std::fmt::Debug for ListTestsOutput {
 }
 /// See [`ListTestsOutput`](crate::output::ListTestsOutput)
 pub mod list_tests_output {
+    ///
     /// A builder for [`ListTestsOutput`](crate::output::ListTestsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1260,6 +1280,7 @@ impl std::fmt::Debug for ListTestGridSessionsOutput {
 }
 /// See [`ListTestGridSessionsOutput`](crate::output::ListTestGridSessionsOutput)
 pub mod list_test_grid_sessions_output {
+    ///
     /// A builder for [`ListTestGridSessionsOutput`](crate::output::ListTestGridSessionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1343,6 +1364,7 @@ impl std::fmt::Debug for ListTestGridSessionArtifactsOutput {
 }
 /// See [`ListTestGridSessionArtifactsOutput`](crate::output::ListTestGridSessionArtifactsOutput)
 pub mod list_test_grid_session_artifacts_output {
+    ///
     /// A builder for [`ListTestGridSessionArtifactsOutput`](crate::output::ListTestGridSessionArtifactsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1426,6 +1448,7 @@ impl std::fmt::Debug for ListTestGridSessionActionsOutput {
 }
 /// See [`ListTestGridSessionActionsOutput`](crate::output::ListTestGridSessionActionsOutput)
 pub mod list_test_grid_session_actions_output {
+    ///
     /// A builder for [`ListTestGridSessionActionsOutput`](crate::output::ListTestGridSessionActionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1508,6 +1531,7 @@ impl std::fmt::Debug for ListTestGridProjectsOutput {
 }
 /// See [`ListTestGridProjectsOutput`](crate::output::ListTestGridProjectsOutput)
 pub mod list_test_grid_projects_output {
+    ///
     /// A builder for [`ListTestGridProjectsOutput`](crate::output::ListTestGridProjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1584,6 +1608,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1652,6 +1677,7 @@ impl std::fmt::Debug for ListSuitesOutput {
 }
 /// See [`ListSuitesOutput`](crate::output::ListSuitesOutput)
 pub mod list_suites_output {
+    ///
     /// A builder for [`ListSuitesOutput`](crate::output::ListSuitesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1734,6 +1760,7 @@ impl std::fmt::Debug for ListSamplesOutput {
 }
 /// See [`ListSamplesOutput`](crate::output::ListSamplesOutput)
 pub mod list_samples_output {
+    ///
     /// A builder for [`ListSamplesOutput`](crate::output::ListSamplesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1816,6 +1843,7 @@ impl std::fmt::Debug for ListRunsOutput {
 }
 /// See [`ListRunsOutput`](crate::output::ListRunsOutput)
 pub mod list_runs_output {
+    ///
     /// A builder for [`ListRunsOutput`](crate::output::ListRunsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1901,6 +1929,7 @@ impl std::fmt::Debug for ListRemoteAccessSessionsOutput {
 }
 /// See [`ListRemoteAccessSessionsOutput`](crate::output::ListRemoteAccessSessionsOutput)
 pub mod list_remote_access_sessions_output {
+    ///
     /// A builder for [`ListRemoteAccessSessionsOutput`](crate::output::ListRemoteAccessSessionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1984,6 +2013,7 @@ impl std::fmt::Debug for ListProjectsOutput {
 }
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput)
 pub mod list_projects_output {
+    ///
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2069,6 +2099,7 @@ impl std::fmt::Debug for ListOfferingTransactionsOutput {
 }
 /// See [`ListOfferingTransactionsOutput`](crate::output::ListOfferingTransactionsOutput)
 pub mod list_offering_transactions_output {
+    ///
     /// A builder for [`ListOfferingTransactionsOutput`](crate::output::ListOfferingTransactionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2152,6 +2183,7 @@ impl std::fmt::Debug for ListOfferingsOutput {
 }
 /// See [`ListOfferingsOutput`](crate::output::ListOfferingsOutput)
 pub mod list_offerings_output {
+    ///
     /// A builder for [`ListOfferingsOutput`](crate::output::ListOfferingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2234,6 +2266,7 @@ impl std::fmt::Debug for ListOfferingPromotionsOutput {
 }
 /// See [`ListOfferingPromotionsOutput`](crate::output::ListOfferingPromotionsOutput)
 pub mod list_offering_promotions_output {
+    ///
     /// A builder for [`ListOfferingPromotionsOutput`](crate::output::ListOfferingPromotionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2317,6 +2350,7 @@ impl std::fmt::Debug for ListNetworkProfilesOutput {
 }
 /// See [`ListNetworkProfilesOutput`](crate::output::ListNetworkProfilesOutput)
 pub mod list_network_profiles_output {
+    ///
     /// A builder for [`ListNetworkProfilesOutput`](crate::output::ListNetworkProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2400,6 +2434,7 @@ impl std::fmt::Debug for ListJobsOutput {
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput)
 pub mod list_jobs_output {
+    ///
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2482,6 +2517,7 @@ impl std::fmt::Debug for ListInstanceProfilesOutput {
 }
 /// See [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput)
 pub mod list_instance_profiles_output {
+    ///
     /// A builder for [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2565,6 +2601,7 @@ impl std::fmt::Debug for ListDevicesOutput {
 }
 /// See [`ListDevicesOutput`](crate::output::ListDevicesOutput)
 pub mod list_devices_output {
+    ///
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2647,6 +2684,7 @@ impl std::fmt::Debug for ListDevicePoolsOutput {
 }
 /// See [`ListDevicePoolsOutput`](crate::output::ListDevicePoolsOutput)
 pub mod list_device_pools_output {
+    ///
     /// A builder for [`ListDevicePoolsOutput`](crate::output::ListDevicePoolsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2729,6 +2767,7 @@ impl std::fmt::Debug for ListDeviceInstancesOutput {
 }
 /// See [`ListDeviceInstancesOutput`](crate::output::ListDeviceInstancesOutput)
 pub mod list_device_instances_output {
+    ///
     /// A builder for [`ListDeviceInstancesOutput`](crate::output::ListDeviceInstancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2812,6 +2851,7 @@ impl std::fmt::Debug for ListArtifactsOutput {
 }
 /// See [`ListArtifactsOutput`](crate::output::ListArtifactsOutput)
 pub mod list_artifacts_output {
+    ///
     /// A builder for [`ListArtifactsOutput`](crate::output::ListArtifactsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2887,6 +2927,7 @@ impl std::fmt::Debug for InstallToRemoteAccessSessionOutput {
 }
 /// See [`InstallToRemoteAccessSessionOutput`](crate::output::InstallToRemoteAccessSessionOutput)
 pub mod install_to_remote_access_session_output {
+    ///
     /// A builder for [`InstallToRemoteAccessSessionOutput`](crate::output::InstallToRemoteAccessSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2941,6 +2982,7 @@ impl std::fmt::Debug for GetVpceConfigurationOutput {
 }
 /// See [`GetVpceConfigurationOutput`](crate::output::GetVpceConfigurationOutput)
 pub mod get_vpce_configuration_output {
+    ///
     /// A builder for [`GetVpceConfigurationOutput`](crate::output::GetVpceConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2998,6 +3040,7 @@ impl std::fmt::Debug for GetUploadOutput {
 }
 /// See [`GetUploadOutput`](crate::output::GetUploadOutput)
 pub mod get_upload_output {
+    ///
     /// A builder for [`GetUploadOutput`](crate::output::GetUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3052,6 +3095,7 @@ impl std::fmt::Debug for GetTestGridSessionOutput {
 }
 /// See [`GetTestGridSessionOutput`](crate::output::GetTestGridSessionOutput)
 pub mod get_test_grid_session_output {
+    ///
     /// A builder for [`GetTestGridSessionOutput`](crate::output::GetTestGridSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3109,6 +3153,7 @@ impl std::fmt::Debug for GetTestGridProjectOutput {
 }
 /// See [`GetTestGridProjectOutput`](crate::output::GetTestGridProjectOutput)
 pub mod get_test_grid_project_output {
+    ///
     /// A builder for [`GetTestGridProjectOutput`](crate::output::GetTestGridProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3166,6 +3211,7 @@ impl std::fmt::Debug for GetTestOutput {
 }
 /// See [`GetTestOutput`](crate::output::GetTestOutput)
 pub mod get_test_output {
+    ///
     /// A builder for [`GetTestOutput`](crate::output::GetTestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3218,6 +3264,7 @@ impl std::fmt::Debug for GetSuiteOutput {
 }
 /// See [`GetSuiteOutput`](crate::output::GetSuiteOutput)
 pub mod get_suite_output {
+    ///
     /// A builder for [`GetSuiteOutput`](crate::output::GetSuiteOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3270,6 +3317,7 @@ impl std::fmt::Debug for GetRunOutput {
 }
 /// See [`GetRunOutput`](crate::output::GetRunOutput)
 pub mod get_run_output {
+    ///
     /// A builder for [`GetRunOutput`](crate::output::GetRunOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3322,6 +3370,7 @@ impl std::fmt::Debug for GetRemoteAccessSessionOutput {
 }
 /// See [`GetRemoteAccessSessionOutput`](crate::output::GetRemoteAccessSessionOutput)
 pub mod get_remote_access_session_output {
+    ///
     /// A builder for [`GetRemoteAccessSessionOutput`](crate::output::GetRemoteAccessSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3379,6 +3428,7 @@ impl std::fmt::Debug for GetProjectOutput {
 }
 /// See [`GetProjectOutput`](crate::output::GetProjectOutput)
 pub mod get_project_output {
+    ///
     /// A builder for [`GetProjectOutput`](crate::output::GetProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3459,6 +3509,7 @@ impl std::fmt::Debug for GetOfferingStatusOutput {
 }
 /// See [`GetOfferingStatusOutput`](crate::output::GetOfferingStatusOutput)
 pub mod get_offering_status_output {
+    ///
     /// A builder for [`GetOfferingStatusOutput`](crate::output::GetOfferingStatusOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3571,6 +3622,7 @@ impl std::fmt::Debug for GetNetworkProfileOutput {
 }
 /// See [`GetNetworkProfileOutput`](crate::output::GetNetworkProfileOutput)
 pub mod get_network_profile_output {
+    ///
     /// A builder for [`GetNetworkProfileOutput`](crate::output::GetNetworkProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3628,6 +3680,7 @@ impl std::fmt::Debug for GetJobOutput {
 }
 /// See [`GetJobOutput`](crate::output::GetJobOutput)
 pub mod get_job_output {
+    ///
     /// A builder for [`GetJobOutput`](crate::output::GetJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3680,6 +3733,7 @@ impl std::fmt::Debug for GetInstanceProfileOutput {
 }
 /// See [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput)
 pub mod get_instance_profile_output {
+    ///
     /// A builder for [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3750,6 +3804,7 @@ impl std::fmt::Debug for GetDevicePoolCompatibilityOutput {
 }
 /// See [`GetDevicePoolCompatibilityOutput`](crate::output::GetDevicePoolCompatibilityOutput)
 pub mod get_device_pool_compatibility_output {
+    ///
     /// A builder for [`GetDevicePoolCompatibilityOutput`](crate::output::GetDevicePoolCompatibilityOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3842,6 +3897,7 @@ impl std::fmt::Debug for GetDevicePoolOutput {
 }
 /// See [`GetDevicePoolOutput`](crate::output::GetDevicePoolOutput)
 pub mod get_device_pool_output {
+    ///
     /// A builder for [`GetDevicePoolOutput`](crate::output::GetDevicePoolOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3899,6 +3955,7 @@ impl std::fmt::Debug for GetDeviceInstanceOutput {
 }
 /// See [`GetDeviceInstanceOutput`](crate::output::GetDeviceInstanceOutput)
 pub mod get_device_instance_output {
+    ///
     /// A builder for [`GetDeviceInstanceOutput`](crate::output::GetDeviceInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3956,6 +4013,7 @@ impl std::fmt::Debug for GetDeviceOutput {
 }
 /// See [`GetDeviceOutput`](crate::output::GetDeviceOutput)
 pub mod get_device_output {
+    ///
     /// A builder for [`GetDeviceOutput`](crate::output::GetDeviceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4010,6 +4068,7 @@ impl std::fmt::Debug for GetAccountSettingsOutput {
 }
 /// See [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput)
 pub mod get_account_settings_output {
+    ///
     /// A builder for [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4057,6 +4116,7 @@ impl std::fmt::Debug for DeleteVpceConfigurationOutput {
 }
 /// See [`DeleteVpceConfigurationOutput`](crate::output::DeleteVpceConfigurationOutput)
 pub mod delete_vpce_configuration_output {
+    ///
     /// A builder for [`DeleteVpceConfigurationOutput`](crate::output::DeleteVpceConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4087,6 +4147,7 @@ impl std::fmt::Debug for DeleteUploadOutput {
 }
 /// See [`DeleteUploadOutput`](crate::output::DeleteUploadOutput)
 pub mod delete_upload_output {
+    ///
     /// A builder for [`DeleteUploadOutput`](crate::output::DeleteUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4117,6 +4178,7 @@ impl std::fmt::Debug for DeleteTestGridProjectOutput {
 }
 /// See [`DeleteTestGridProjectOutput`](crate::output::DeleteTestGridProjectOutput)
 pub mod delete_test_grid_project_output {
+    ///
     /// A builder for [`DeleteTestGridProjectOutput`](crate::output::DeleteTestGridProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4147,6 +4209,7 @@ impl std::fmt::Debug for DeleteRunOutput {
 }
 /// See [`DeleteRunOutput`](crate::output::DeleteRunOutput)
 pub mod delete_run_output {
+    ///
     /// A builder for [`DeleteRunOutput`](crate::output::DeleteRunOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4177,6 +4240,7 @@ impl std::fmt::Debug for DeleteRemoteAccessSessionOutput {
 }
 /// See [`DeleteRemoteAccessSessionOutput`](crate::output::DeleteRemoteAccessSessionOutput)
 pub mod delete_remote_access_session_output {
+    ///
     /// A builder for [`DeleteRemoteAccessSessionOutput`](crate::output::DeleteRemoteAccessSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4207,6 +4271,7 @@ impl std::fmt::Debug for DeleteProjectOutput {
 }
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
 pub mod delete_project_output {
+    ///
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4237,6 +4302,7 @@ impl std::fmt::Debug for DeleteNetworkProfileOutput {
 }
 /// See [`DeleteNetworkProfileOutput`](crate::output::DeleteNetworkProfileOutput)
 pub mod delete_network_profile_output {
+    ///
     /// A builder for [`DeleteNetworkProfileOutput`](crate::output::DeleteNetworkProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4267,6 +4333,7 @@ impl std::fmt::Debug for DeleteInstanceProfileOutput {
 }
 /// See [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput)
 pub mod delete_instance_profile_output {
+    ///
     /// A builder for [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4297,6 +4364,7 @@ impl std::fmt::Debug for DeleteDevicePoolOutput {
 }
 /// See [`DeleteDevicePoolOutput`](crate::output::DeleteDevicePoolOutput)
 pub mod delete_device_pool_output {
+    ///
     /// A builder for [`DeleteDevicePoolOutput`](crate::output::DeleteDevicePoolOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4337,6 +4405,7 @@ impl std::fmt::Debug for CreateVpceConfigurationOutput {
 }
 /// See [`CreateVpceConfigurationOutput`](crate::output::CreateVpceConfigurationOutput)
 pub mod create_vpce_configuration_output {
+    ///
     /// A builder for [`CreateVpceConfigurationOutput`](crate::output::CreateVpceConfigurationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4394,6 +4463,7 @@ impl std::fmt::Debug for CreateUploadOutput {
 }
 /// See [`CreateUploadOutput`](crate::output::CreateUploadOutput)
 pub mod create_upload_output {
+    ///
     /// A builder for [`CreateUploadOutput`](crate::output::CreateUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4455,6 +4525,7 @@ impl std::fmt::Debug for CreateTestGridUrlOutput {
 }
 /// See [`CreateTestGridUrlOutput`](crate::output::CreateTestGridUrlOutput)
 pub mod create_test_grid_url_output {
+    ///
     /// A builder for [`CreateTestGridUrlOutput`](crate::output::CreateTestGridUrlOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4524,6 +4595,7 @@ impl std::fmt::Debug for CreateTestGridProjectOutput {
 }
 /// See [`CreateTestGridProjectOutput`](crate::output::CreateTestGridProjectOutput)
 pub mod create_test_grid_project_output {
+    ///
     /// A builder for [`CreateTestGridProjectOutput`](crate::output::CreateTestGridProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4581,6 +4653,7 @@ impl std::fmt::Debug for CreateRemoteAccessSessionOutput {
 }
 /// See [`CreateRemoteAccessSessionOutput`](crate::output::CreateRemoteAccessSessionOutput)
 pub mod create_remote_access_session_output {
+    ///
     /// A builder for [`CreateRemoteAccessSessionOutput`](crate::output::CreateRemoteAccessSessionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4638,6 +4711,7 @@ impl std::fmt::Debug for CreateProjectOutput {
 }
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput)
 pub mod create_project_output {
+    ///
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4692,6 +4766,7 @@ impl std::fmt::Debug for CreateNetworkProfileOutput {
 }
 /// See [`CreateNetworkProfileOutput`](crate::output::CreateNetworkProfileOutput)
 pub mod create_network_profile_output {
+    ///
     /// A builder for [`CreateNetworkProfileOutput`](crate::output::CreateNetworkProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4749,6 +4824,7 @@ impl std::fmt::Debug for CreateInstanceProfileOutput {
 }
 /// See [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput)
 pub mod create_instance_profile_output {
+    ///
     /// A builder for [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4806,6 +4882,7 @@ impl std::fmt::Debug for CreateDevicePoolOutput {
 }
 /// See [`CreateDevicePoolOutput`](crate::output::CreateDevicePoolOutput)
 pub mod create_device_pool_output {
+    ///
     /// A builder for [`CreateDevicePoolOutput`](crate::output::CreateDevicePoolOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -241,6 +241,7 @@ impl std::fmt::Debug for Domain {
 }
 /// See [`Domain`](crate::model::Domain)
 pub mod domain {
+    ///
     /// A builder for [`Domain`](crate::model::Domain)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -395,6 +396,7 @@ impl std::fmt::Debug for ServerSideEncryptionConfiguration {
 }
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration)
 pub mod server_side_encryption_configuration {
+    ///
     /// A builder for [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -515,6 +517,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -658,6 +661,7 @@ impl std::fmt::Debug for SpeakerEnrollmentJob {
 }
 /// See [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob)
 pub mod speaker_enrollment_job {
+    ///
     /// A builder for [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -871,6 +875,7 @@ impl std::fmt::Debug for JobProgress {
 }
 /// See [`JobProgress`](crate::model::JobProgress)
 pub mod job_progress {
+    ///
     /// A builder for [`JobProgress`](crate::model::JobProgress)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -932,6 +937,7 @@ impl std::fmt::Debug for FailureDetails {
 }
 /// See [`FailureDetails`](crate::model::FailureDetails)
 pub mod failure_details {
+    ///
     /// A builder for [`FailureDetails`](crate::model::FailureDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1005,6 +1011,7 @@ impl std::fmt::Debug for OutputDataConfig {
 }
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig)
 pub mod output_data_config {
+    ///
     /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1071,6 +1078,7 @@ impl std::fmt::Debug for InputDataConfig {
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig)
 pub mod input_data_config {
+    ///
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1140,6 +1148,7 @@ impl std::fmt::Debug for EnrollmentConfig {
 }
 /// See [`EnrollmentConfig`](crate::model::EnrollmentConfig)
 pub mod enrollment_config {
+    ///
     /// A builder for [`EnrollmentConfig`](crate::model::EnrollmentConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1229,6 +1238,7 @@ impl std::fmt::Debug for EnrollmentJobFraudDetectionConfig {
 }
 /// See [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig)
 pub mod enrollment_job_fraud_detection_config {
+    ///
     /// A builder for [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1558,6 +1568,7 @@ impl std::fmt::Debug for FraudsterRegistrationJob {
 }
 /// See [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob)
 pub mod fraudster_registration_job {
+    ///
     /// A builder for [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1787,6 +1798,7 @@ impl std::fmt::Debug for RegistrationConfig {
 }
 /// See [`RegistrationConfig`](crate::model::RegistrationConfig)
 pub mod registration_config {
+    ///
     /// A builder for [`RegistrationConfig`](crate::model::RegistrationConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2033,6 +2045,7 @@ impl std::fmt::Debug for Speaker {
 }
 /// See [`Speaker`](crate::model::Speaker)
 pub mod speaker {
+    ///
     /// A builder for [`Speaker`](crate::model::Speaker)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2282,6 +2295,7 @@ impl std::fmt::Debug for SpeakerSummary {
 }
 /// See [`SpeakerSummary`](crate::model::SpeakerSummary)
 pub mod speaker_summary {
+    ///
     /// A builder for [`SpeakerSummary`](crate::model::SpeakerSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2475,6 +2489,7 @@ impl std::fmt::Debug for SpeakerEnrollmentJobSummary {
 }
 /// See [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary)
 pub mod speaker_enrollment_job_summary {
+    ///
     /// A builder for [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2677,6 +2692,7 @@ impl std::fmt::Debug for FraudsterRegistrationJobSummary {
 }
 /// See [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary)
 pub mod fraudster_registration_job_summary {
+    ///
     /// A builder for [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2885,6 +2901,7 @@ impl std::fmt::Debug for DomainSummary {
 }
 /// See [`DomainSummary`](crate::model::DomainSummary)
 pub mod domain_summary {
+    ///
     /// A builder for [`DomainSummary`](crate::model::DomainSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3087,6 +3104,7 @@ impl std::fmt::Debug for FraudDetectionResult {
 }
 /// See [`FraudDetectionResult`](crate::model::FraudDetectionResult)
 pub mod fraud_detection_result {
+    ///
     /// A builder for [`FraudDetectionResult`](crate::model::FraudDetectionResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3240,6 +3258,7 @@ impl std::fmt::Debug for FraudRiskDetails {
 }
 /// See [`FraudRiskDetails`](crate::model::FraudRiskDetails)
 pub mod fraud_risk_details {
+    ///
     /// A builder for [`FraudRiskDetails`](crate::model::FraudRiskDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3304,6 +3323,7 @@ impl std::fmt::Debug for KnownFraudsterRisk {
 }
 /// See [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk)
 pub mod known_fraudster_risk {
+    ///
     /// A builder for [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3483,6 +3503,7 @@ impl std::fmt::Debug for FraudDetectionConfiguration {
 }
 /// See [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration)
 pub mod fraud_detection_configuration {
+    ///
     /// A builder for [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3592,6 +3613,7 @@ impl std::fmt::Debug for AuthenticationResult {
 }
 /// See [`AuthenticationResult`](crate::model::AuthenticationResult)
 pub mod authentication_result {
+    ///
     /// A builder for [`AuthenticationResult`](crate::model::AuthenticationResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3751,6 +3773,7 @@ impl std::fmt::Debug for AuthenticationConfiguration {
 }
 /// See [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration)
 pub mod authentication_configuration {
+    ///
     /// A builder for [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3961,6 +3984,7 @@ impl std::fmt::Debug for Fraudster {
 }
 /// See [`Fraudster`](crate::model::Fraudster)
 pub mod fraudster {
+    ///
     /// A builder for [`Fraudster`](crate::model::Fraudster)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

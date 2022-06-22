@@ -28,6 +28,7 @@ impl std::fmt::Debug for UpdateAppInstanceUserEndpointOutput {
 }
 /// See [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput)
 pub mod update_app_instance_user_endpoint_output {
+    ///
     /// A builder for [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -97,6 +98,7 @@ impl std::fmt::Debug for UpdateAppInstanceUserOutput {
 }
 /// See [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput)
 pub mod update_app_instance_user_output {
+    ///
     /// A builder for [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -154,6 +156,7 @@ impl std::fmt::Debug for UpdateAppInstanceOutput {
 }
 /// See [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput)
 pub mod update_app_instance_output {
+    ///
     /// A builder for [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -201,6 +204,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -231,6 +235,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -278,6 +283,7 @@ impl std::fmt::Debug for RegisterAppInstanceUserEndpointOutput {
 }
 /// See [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput)
 pub mod register_app_instance_user_endpoint_output {
+    ///
     /// A builder for [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -363,6 +369,7 @@ impl std::fmt::Debug for PutAppInstanceRetentionSettingsOutput {
 }
 /// See [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput)
 pub mod put_app_instance_retention_settings_output {
+    ///
     /// A builder for [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -439,6 +446,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -517,6 +525,7 @@ impl std::fmt::Debug for ListAppInstanceUsersOutput {
 }
 /// See [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput)
 pub mod list_app_instance_users_output {
+    ///
     /// A builder for [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -621,6 +630,7 @@ impl std::fmt::Debug for ListAppInstanceUserEndpointsOutput {
 }
 /// See [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput)
 pub mod list_app_instance_user_endpoints_output {
+    ///
     /// A builder for [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -707,6 +717,7 @@ impl std::fmt::Debug for ListAppInstancesOutput {
 }
 /// See [`ListAppInstancesOutput`](crate::output::ListAppInstancesOutput)
 pub mod list_app_instances_output {
+    ///
     /// A builder for [`ListAppInstancesOutput`](crate::output::ListAppInstancesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -800,6 +811,7 @@ impl std::fmt::Debug for ListAppInstanceAdminsOutput {
 }
 /// See [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput)
 pub mod list_app_instance_admins_output {
+    ///
     /// A builder for [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -907,6 +919,7 @@ impl std::fmt::Debug for GetAppInstanceRetentionSettingsOutput {
 }
 /// See [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput)
 pub mod get_app_instance_retention_settings_output {
+    ///
     /// A builder for [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -988,6 +1001,7 @@ impl std::fmt::Debug for DescribeAppInstanceUserEndpointOutput {
 }
 /// See [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput)
 pub mod describe_app_instance_user_endpoint_output {
+    ///
     /// A builder for [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1049,6 +1063,7 @@ impl std::fmt::Debug for DescribeAppInstanceUserOutput {
 }
 /// See [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput)
 pub mod describe_app_instance_user_output {
+    ///
     /// A builder for [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1106,6 +1121,7 @@ impl std::fmt::Debug for DescribeAppInstanceAdminOutput {
 }
 /// See [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput)
 pub mod describe_app_instance_admin_output {
+    ///
     /// A builder for [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1163,6 +1179,7 @@ impl std::fmt::Debug for DescribeAppInstanceOutput {
 }
 /// See [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput)
 pub mod describe_app_instance_output {
+    ///
     /// A builder for [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1210,6 +1227,7 @@ impl std::fmt::Debug for DeregisterAppInstanceUserEndpointOutput {
 }
 /// See [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput)
 pub mod deregister_app_instance_user_endpoint_output {
+    ///
     /// A builder for [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1240,6 +1258,7 @@ impl std::fmt::Debug for DeleteAppInstanceUserOutput {
 }
 /// See [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput)
 pub mod delete_app_instance_user_output {
+    ///
     /// A builder for [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1270,6 +1289,7 @@ impl std::fmt::Debug for DeleteAppInstanceAdminOutput {
 }
 /// See [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput)
 pub mod delete_app_instance_admin_output {
+    ///
     /// A builder for [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1300,6 +1320,7 @@ impl std::fmt::Debug for DeleteAppInstanceOutput {
 }
 /// See [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput)
 pub mod delete_app_instance_output {
+    ///
     /// A builder for [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1340,6 +1361,7 @@ impl std::fmt::Debug for CreateAppInstanceUserOutput {
 }
 /// See [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput)
 pub mod create_app_instance_user_output {
+    ///
     /// A builder for [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1404,6 +1426,7 @@ impl std::fmt::Debug for CreateAppInstanceAdminOutput {
 }
 /// See [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput)
 pub mod create_app_instance_admin_output {
+    ///
     /// A builder for [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1476,6 +1499,7 @@ impl std::fmt::Debug for CreateAppInstanceOutput {
 }
 /// See [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput)
 pub mod create_app_instance_output {
+    ///
     /// A builder for [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

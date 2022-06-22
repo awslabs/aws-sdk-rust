@@ -9239,6 +9239,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException)
 pub mod not_found_exception {
+    ///
     /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9303,6 +9304,7 @@ impl std::fmt::Display for NameInUseException {
 impl std::error::Error for NameInUseException {}
 /// See [`NameInUseException`](crate::error::NameInUseException)
 pub mod name_in_use_exception {
+    ///
     /// A builder for [`NameInUseException`](crate::error::NameInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9367,6 +9369,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
+    ///
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9431,6 +9434,7 @@ impl std::fmt::Display for InvalidSecretsManagerResourceException {
 impl std::error::Error for InvalidSecretsManagerResourceException {}
 /// See [`InvalidSecretsManagerResourceException`](crate::error::InvalidSecretsManagerResourceException)
 pub mod invalid_secrets_manager_resource_exception {
+    ///
     /// A builder for [`InvalidSecretsManagerResourceException`](crate::error::InvalidSecretsManagerResourceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9495,6 +9499,7 @@ impl std::fmt::Display for InvalidCertificateAuthorityException {
 impl std::error::Error for InvalidCertificateAuthorityException {}
 /// See [`InvalidCertificateAuthorityException`](crate::error::InvalidCertificateAuthorityException)
 pub mod invalid_certificate_authority_exception {
+    ///
     /// A builder for [`InvalidCertificateAuthorityException`](crate::error::InvalidCertificateAuthorityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9559,6 +9564,7 @@ impl std::fmt::Display for DeviceNotRegisteredException {
 impl std::error::Error for DeviceNotRegisteredException {}
 /// See [`DeviceNotRegisteredException`](crate::error::DeviceNotRegisteredException)
 pub mod device_not_registered_exception {
+    ///
     /// A builder for [`DeviceNotRegisteredException`](crate::error::DeviceNotRegisteredException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9623,6 +9629,7 @@ impl std::fmt::Display for InvalidUserStatusException {
 impl std::error::Error for InvalidUserStatusException {}
 /// See [`InvalidUserStatusException`](crate::error::InvalidUserStatusException)
 pub mod invalid_user_status_exception {
+    ///
     /// A builder for [`InvalidUserStatusException`](crate::error::InvalidUserStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9687,6 +9694,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9751,6 +9759,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
 pub mod already_exists_exception {
+    ///
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9815,6 +9824,7 @@ impl std::fmt::Display for InvalidDeviceException {
 impl std::error::Error for InvalidDeviceException {}
 /// See [`InvalidDeviceException`](crate::error::InvalidDeviceException)
 pub mod invalid_device_exception {
+    ///
     /// A builder for [`InvalidDeviceException`](crate::error::InvalidDeviceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9879,6 +9889,7 @@ impl std::fmt::Display for UnauthorizedException {
 impl std::error::Error for UnauthorizedException {}
 /// See [`UnauthorizedException`](crate::error::UnauthorizedException)
 pub mod unauthorized_exception {
+    ///
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9952,6 +9963,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException)
 pub mod resource_in_use_exception {
+    ///
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10031,6 +10043,7 @@ impl std::fmt::Display for ResourceAssociatedException {
 impl std::error::Error for ResourceAssociatedException {}
 /// See [`ResourceAssociatedException`](crate::error::ResourceAssociatedException)
 pub mod resource_associated_exception {
+    ///
     /// A builder for [`ResourceAssociatedException`](crate::error::ResourceAssociatedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10095,6 +10108,7 @@ impl std::fmt::Display for InvalidServiceLinkedRoleStateException {
 impl std::error::Error for InvalidServiceLinkedRoleStateException {}
 /// See [`InvalidServiceLinkedRoleStateException`](crate::error::InvalidServiceLinkedRoleStateException)
 pub mod invalid_service_linked_role_state_exception {
+    ///
     /// A builder for [`InvalidServiceLinkedRoleStateException`](crate::error::InvalidServiceLinkedRoleStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10159,6 +10173,7 @@ impl std::fmt::Display for SkillNotLinkedException {
 impl std::error::Error for SkillNotLinkedException {}
 /// See [`SkillNotLinkedException`](crate::error::SkillNotLinkedException)
 pub mod skill_not_linked_exception {
+    ///
     /// A builder for [`SkillNotLinkedException`](crate::error::SkillNotLinkedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

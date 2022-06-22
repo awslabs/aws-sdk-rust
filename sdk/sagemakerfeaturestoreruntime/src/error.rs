@@ -495,6 +495,7 @@ impl std::fmt::Display for ValidationError {
 impl std::error::Error for ValidationError {}
 /// See [`ValidationError`](crate::error::ValidationError)
 pub mod validation_error {
+    ///
     /// A builder for [`ValidationError`](crate::error::ValidationError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -559,6 +560,7 @@ impl std::fmt::Display for ServiceUnavailable {
 impl std::error::Error for ServiceUnavailable {}
 /// See [`ServiceUnavailable`](crate::error::ServiceUnavailable)
 pub mod service_unavailable {
+    ///
     /// A builder for [`ServiceUnavailable`](crate::error::ServiceUnavailable)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -623,6 +625,7 @@ impl std::fmt::Display for InternalFailure {
 impl std::error::Error for InternalFailure {}
 /// See [`InternalFailure`](crate::error::InternalFailure)
 pub mod internal_failure {
+    ///
     /// A builder for [`InternalFailure`](crate::error::InternalFailure)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -687,6 +690,7 @@ impl std::fmt::Display for AccessForbidden {
 impl std::error::Error for AccessForbidden {}
 /// See [`AccessForbidden`](crate::error::AccessForbidden)
 pub mod access_forbidden {
+    ///
     /// A builder for [`AccessForbidden`](crate::error::AccessForbidden)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -751,6 +755,7 @@ impl std::fmt::Display for ResourceNotFound {
 impl std::error::Error for ResourceNotFound {}
 /// See [`ResourceNotFound`](crate::error::ResourceNotFound)
 pub mod resource_not_found {
+    ///
     /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

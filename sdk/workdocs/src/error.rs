@@ -6322,6 +6322,7 @@ impl std::fmt::Display for UnauthorizedResourceAccessException {
 impl std::error::Error for UnauthorizedResourceAccessException {}
 /// See [`UnauthorizedResourceAccessException`](crate::error::UnauthorizedResourceAccessException)
 pub mod unauthorized_resource_access_exception {
+    ///
     /// A builder for [`UnauthorizedResourceAccessException`](crate::error::UnauthorizedResourceAccessException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6395,6 +6396,7 @@ impl std::fmt::Display for UnauthorizedOperationException {
 impl std::error::Error for UnauthorizedOperationException {}
 /// See [`UnauthorizedOperationException`](crate::error::UnauthorizedOperationException)
 pub mod unauthorized_operation_exception {
+    ///
     /// A builder for [`UnauthorizedOperationException`](crate::error::UnauthorizedOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6471,6 +6473,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
 pub mod service_unavailable_exception {
+    ///
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6535,6 +6538,7 @@ impl std::fmt::Display for InvalidArgumentException {
 impl std::error::Error for InvalidArgumentException {}
 /// See [`InvalidArgumentException`](crate::error::InvalidArgumentException)
 pub mod invalid_argument_exception {
+    ///
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6599,6 +6603,7 @@ impl std::fmt::Display for IllegalUserStateException {
 impl std::error::Error for IllegalUserStateException {}
 /// See [`IllegalUserStateException`](crate::error::IllegalUserStateException)
 pub mod illegal_user_state_exception {
+    ///
     /// A builder for [`IllegalUserStateException`](crate::error::IllegalUserStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6663,6 +6668,7 @@ impl std::fmt::Display for FailedDependencyException {
 impl std::error::Error for FailedDependencyException {}
 /// See [`FailedDependencyException`](crate::error::FailedDependencyException)
 pub mod failed_dependency_exception {
+    ///
     /// A builder for [`FailedDependencyException`](crate::error::FailedDependencyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6736,6 +6742,7 @@ impl std::fmt::Display for EntityNotExistsException {
 impl std::error::Error for EntityNotExistsException {}
 /// See [`EntityNotExistsException`](crate::error::EntityNotExistsException)
 pub mod entity_not_exists_exception {
+    ///
     /// A builder for [`EntityNotExistsException`](crate::error::EntityNotExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6829,6 +6836,7 @@ impl std::fmt::Display for DeactivatingLastSystemUserException {
 impl std::error::Error for DeactivatingLastSystemUserException {}
 /// See [`DeactivatingLastSystemUserException`](crate::error::DeactivatingLastSystemUserException)
 pub mod deactivating_last_system_user_exception {
+    ///
     /// A builder for [`DeactivatingLastSystemUserException`](crate::error::DeactivatingLastSystemUserException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6905,6 +6913,7 @@ impl std::fmt::Display for ProhibitedStateException {
 impl std::error::Error for ProhibitedStateException {}
 /// See [`ProhibitedStateException`](crate::error::ProhibitedStateException)
 pub mod prohibited_state_exception {
+    ///
     /// A builder for [`ProhibitedStateException`](crate::error::ProhibitedStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6969,6 +6978,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7033,6 +7043,7 @@ impl std::fmt::Display for EntityAlreadyExistsException {
 impl std::error::Error for EntityAlreadyExistsException {}
 /// See [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
 pub mod entity_already_exists_exception {
+    ///
     /// A builder for [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7097,6 +7108,7 @@ impl std::fmt::Display for ConflictingOperationException {
 impl std::error::Error for ConflictingOperationException {}
 /// See [`ConflictingOperationException`](crate::error::ConflictingOperationException)
 pub mod conflicting_operation_exception {
+    ///
     /// A builder for [`ConflictingOperationException`](crate::error::ConflictingOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7161,6 +7173,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
 pub mod concurrent_modification_exception {
+    ///
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7225,6 +7238,7 @@ impl std::fmt::Display for InvalidOperationException {
 impl std::error::Error for InvalidOperationException {}
 /// See [`InvalidOperationException`](crate::error::InvalidOperationException)
 pub mod invalid_operation_exception {
+    ///
     /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7289,6 +7303,7 @@ impl std::fmt::Display for StorageLimitWillExceedException {
 impl std::error::Error for StorageLimitWillExceedException {}
 /// See [`StorageLimitWillExceedException`](crate::error::StorageLimitWillExceedException)
 pub mod storage_limit_will_exceed_exception {
+    ///
     /// A builder for [`StorageLimitWillExceedException`](crate::error::StorageLimitWillExceedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7353,6 +7368,7 @@ impl std::fmt::Display for StorageLimitExceededException {
 impl std::error::Error for StorageLimitExceededException {}
 /// See [`StorageLimitExceededException`](crate::error::StorageLimitExceededException)
 pub mod storage_limit_exceeded_exception {
+    ///
     /// A builder for [`StorageLimitExceededException`](crate::error::StorageLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7417,6 +7433,7 @@ impl std::fmt::Display for ResourceAlreadyCheckedOutException {
 impl std::error::Error for ResourceAlreadyCheckedOutException {}
 /// See [`ResourceAlreadyCheckedOutException`](crate::error::ResourceAlreadyCheckedOutException)
 pub mod resource_already_checked_out_exception {
+    ///
     /// A builder for [`ResourceAlreadyCheckedOutException`](crate::error::ResourceAlreadyCheckedOutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7481,6 +7498,7 @@ impl std::fmt::Display for DraftUploadOutOfSyncException {
 impl std::error::Error for DraftUploadOutOfSyncException {}
 /// See [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException)
 pub mod draft_upload_out_of_sync_exception {
+    ///
     /// A builder for [`DraftUploadOutOfSyncException`](crate::error::DraftUploadOutOfSyncException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7545,6 +7563,7 @@ impl std::fmt::Display for InvalidPasswordException {
 impl std::error::Error for InvalidPasswordException {}
 /// See [`InvalidPasswordException`](crate::error::InvalidPasswordException)
 pub mod invalid_password_exception {
+    ///
     /// A builder for [`InvalidPasswordException`](crate::error::InvalidPasswordException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7609,6 +7628,7 @@ impl std::fmt::Display for RequestedEntityTooLargeException {
 impl std::error::Error for RequestedEntityTooLargeException {}
 /// See [`RequestedEntityTooLargeException`](crate::error::RequestedEntityTooLargeException)
 pub mod requested_entity_too_large_exception {
+    ///
     /// A builder for [`RequestedEntityTooLargeException`](crate::error::RequestedEntityTooLargeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7673,6 +7693,7 @@ impl std::fmt::Display for DocumentLockedForCommentsException {
 impl std::error::Error for DocumentLockedForCommentsException {}
 /// See [`DocumentLockedForCommentsException`](crate::error::DocumentLockedForCommentsException)
 pub mod document_locked_for_comments_exception {
+    ///
     /// A builder for [`DocumentLockedForCommentsException`](crate::error::DocumentLockedForCommentsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7737,6 +7758,7 @@ impl std::fmt::Display for TooManySubscriptionsException {
 impl std::error::Error for TooManySubscriptionsException {}
 /// See [`TooManySubscriptionsException`](crate::error::TooManySubscriptionsException)
 pub mod too_many_subscriptions_exception {
+    ///
     /// A builder for [`TooManySubscriptionsException`](crate::error::TooManySubscriptionsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7801,6 +7823,7 @@ impl std::fmt::Display for TooManyLabelsException {
 impl std::error::Error for TooManyLabelsException {}
 /// See [`TooManyLabelsException`](crate::error::TooManyLabelsException)
 pub mod too_many_labels_exception {
+    ///
     /// A builder for [`TooManyLabelsException`](crate::error::TooManyLabelsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7865,6 +7888,7 @@ impl std::fmt::Display for CustomMetadataLimitExceededException {
 impl std::error::Error for CustomMetadataLimitExceededException {}
 /// See [`CustomMetadataLimitExceededException`](crate::error::CustomMetadataLimitExceededException)
 pub mod custom_metadata_limit_exceeded_exception {
+    ///
     /// A builder for [`CustomMetadataLimitExceededException`](crate::error::CustomMetadataLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7929,6 +7953,7 @@ impl std::fmt::Display for InvalidCommentOperationException {
 impl std::error::Error for InvalidCommentOperationException {}
 /// See [`InvalidCommentOperationException`](crate::error::InvalidCommentOperationException)
 pub mod invalid_comment_operation_exception {
+    ///
     /// A builder for [`InvalidCommentOperationException`](crate::error::InvalidCommentOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -21,6 +21,7 @@ impl std::fmt::Debug for StopSnomedctInferenceJobOutput {
 }
 /// See [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput)
 pub mod stop_snomedct_inference_job_output {
+    ///
     /// A builder for [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -75,6 +76,7 @@ impl std::fmt::Debug for StopRxNormInferenceJobOutput {
 }
 /// See [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput)
 pub mod stop_rx_norm_inference_job_output {
+    ///
     /// A builder for [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -129,6 +131,7 @@ impl std::fmt::Debug for StopPhiDetectionJobOutput {
 }
 /// See [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput)
 pub mod stop_phi_detection_job_output {
+    ///
     /// A builder for [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -183,6 +186,7 @@ impl std::fmt::Debug for StopIcd10CmInferenceJobOutput {
 }
 /// See [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput)
 pub mod stop_icd10_cm_inference_job_output {
+    ///
     /// A builder for [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -237,6 +241,7 @@ impl std::fmt::Debug for StopEntitiesDetectionV2JobOutput {
 }
 /// See [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput)
 pub mod stop_entities_detection_v2_job_output {
+    ///
     /// A builder for [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -291,6 +296,7 @@ impl std::fmt::Debug for StartSnomedctInferenceJobOutput {
 }
 /// See [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput)
 pub mod start_snomedct_inference_job_output {
+    ///
     /// A builder for [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -345,6 +351,7 @@ impl std::fmt::Debug for StartRxNormInferenceJobOutput {
 }
 /// See [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput)
 pub mod start_rx_norm_inference_job_output {
+    ///
     /// A builder for [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -399,6 +406,7 @@ impl std::fmt::Debug for StartPhiDetectionJobOutput {
 }
 /// See [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput)
 pub mod start_phi_detection_job_output {
+    ///
     /// A builder for [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -453,6 +461,7 @@ impl std::fmt::Debug for StartIcd10CmInferenceJobOutput {
 }
 /// See [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput)
 pub mod start_icd10_cm_inference_job_output {
+    ///
     /// A builder for [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -507,6 +516,7 @@ impl std::fmt::Debug for StartEntitiesDetectionV2JobOutput {
 }
 /// See [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput)
 pub mod start_entities_detection_v2_job_output {
+    ///
     /// A builder for [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -574,6 +584,7 @@ impl std::fmt::Debug for ListSnomedctInferenceJobsOutput {
 }
 /// See [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput)
 pub mod list_snomedct_inference_jobs_output {
+    ///
     /// A builder for [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -671,6 +682,7 @@ impl std::fmt::Debug for ListRxNormInferenceJobsOutput {
 }
 /// See [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput)
 pub mod list_rx_norm_inference_jobs_output {
+    ///
     /// A builder for [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -768,6 +780,7 @@ impl std::fmt::Debug for ListPhiDetectionJobsOutput {
 }
 /// See [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput)
 pub mod list_phi_detection_jobs_output {
+    ///
     /// A builder for [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -865,6 +878,7 @@ impl std::fmt::Debug for ListIcd10CmInferenceJobsOutput {
 }
 /// See [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput)
 pub mod list_icd10_cm_inference_jobs_output {
+    ///
     /// A builder for [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -962,6 +976,7 @@ impl std::fmt::Debug for ListEntitiesDetectionV2JobsOutput {
 }
 /// See [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput)
 pub mod list_entities_detection_v2_jobs_output {
+    ///
     /// A builder for [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1074,6 +1089,7 @@ impl std::fmt::Debug for InferSnomedctOutput {
 }
 /// See [`InferSnomedctOutput`](crate::output::InferSnomedctOutput)
 pub mod infer_snomedct_output {
+    ///
     /// A builder for [`InferSnomedctOutput`](crate::output::InferSnomedctOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1211,6 +1227,7 @@ impl std::fmt::Debug for InferRxNormOutput {
 }
 /// See [`InferRxNormOutput`](crate::output::InferRxNormOutput)
 pub mod infer_rx_norm_output {
+    ///
     /// A builder for [`InferRxNormOutput`](crate::output::InferRxNormOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1318,6 +1335,7 @@ impl std::fmt::Debug for InferIcd10CmOutput {
 }
 /// See [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput)
 pub mod infer_icd10_cm_output {
+    ///
     /// A builder for [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1425,6 +1443,7 @@ impl std::fmt::Debug for DetectPhiOutput {
 }
 /// See [`DetectPhiOutput`](crate::output::DetectPhiOutput)
 pub mod detect_phi_output {
+    ///
     /// A builder for [`DetectPhiOutput`](crate::output::DetectPhiOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1539,6 +1558,7 @@ impl std::fmt::Debug for DetectEntitiesV2Output {
 }
 /// See [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output)
 pub mod detect_entities_v2_output {
+    ///
     /// A builder for [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1675,6 +1695,7 @@ impl std::fmt::Debug for DetectEntitiesOutput {
 }
 /// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput)
 pub mod detect_entities_output {
+    ///
     /// A builder for [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1796,6 +1817,7 @@ impl std::fmt::Debug for DescribeSnomedctInferenceJobOutput {
 }
 /// See [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput)
 pub mod describe_snomedct_inference_job_output {
+    ///
     /// A builder for [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1864,6 +1886,7 @@ impl std::fmt::Debug for DescribeRxNormInferenceJobOutput {
 }
 /// See [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput)
 pub mod describe_rx_norm_inference_job_output {
+    ///
     /// A builder for [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1932,6 +1955,7 @@ impl std::fmt::Debug for DescribePhiDetectionJobOutput {
 }
 /// See [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput)
 pub mod describe_phi_detection_job_output {
+    ///
     /// A builder for [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2000,6 +2024,7 @@ impl std::fmt::Debug for DescribeIcd10CmInferenceJobOutput {
 }
 /// See [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput)
 pub mod describe_icd10_cm_inference_job_output {
+    ///
     /// A builder for [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2068,6 +2093,7 @@ impl std::fmt::Debug for DescribeEntitiesDetectionV2JobOutput {
 }
 /// See [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput)
 pub mod describe_entities_detection_v2_job_output {
+    ///
     /// A builder for [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -164,6 +164,7 @@ impl std::fmt::Display for RateExceededException {
 impl std::error::Error for RateExceededException {}
 /// See [`RateExceededException`](crate::error::RateExceededException)
 pub mod rate_exceeded_exception {
+    ///
     /// A builder for [`RateExceededException`](crate::error::RateExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -228,6 +229,7 @@ impl std::fmt::Display for OccConflictException {
 impl std::error::Error for OccConflictException {}
 /// See [`OccConflictException`](crate::error::OccConflictException)
 pub mod occ_conflict_exception {
+    ///
     /// A builder for [`OccConflictException`](crate::error::OccConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -292,6 +294,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -365,6 +368,7 @@ impl std::fmt::Display for InvalidSessionException {
 impl std::error::Error for InvalidSessionException {}
 /// See [`InvalidSessionException`](crate::error::InvalidSessionException)
 pub mod invalid_session_exception {
+    ///
     /// A builder for [`InvalidSessionException`](crate::error::InvalidSessionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -441,6 +445,7 @@ impl std::fmt::Display for CapacityExceededException {
 impl std::error::Error for CapacityExceededException {}
 /// See [`CapacityExceededException`](crate::error::CapacityExceededException)
 pub mod capacity_exceeded_exception {
+    ///
     /// A builder for [`CapacityExceededException`](crate::error::CapacityExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -514,6 +519,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException)
 pub mod bad_request_exception {
+    ///
     /// A builder for [`BadRequestException`](crate::error::BadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpgradeLensReviewOutput {
 }
 /// See [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput)
 pub mod upgrade_lens_review_output {
+    ///
     /// A builder for [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -58,6 +59,7 @@ impl std::fmt::Debug for UpdateWorkloadShareOutput {
 }
 /// See [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput)
 pub mod update_workload_share_output {
+    ///
     /// A builder for [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -127,6 +129,7 @@ impl std::fmt::Debug for UpdateWorkloadOutput {
 }
 /// See [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput)
 pub mod update_workload_output {
+    ///
     /// A builder for [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -181,6 +184,7 @@ impl std::fmt::Debug for UpdateShareInvitationOutput {
 }
 /// See [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput)
 pub mod update_share_invitation_output {
+    ///
     /// A builder for [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -245,6 +249,7 @@ impl std::fmt::Debug for UpdateLensReviewOutput {
 }
 /// See [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput)
 pub mod update_lens_review_output {
+    ///
     /// A builder for [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -337,6 +342,7 @@ impl std::fmt::Debug for UpdateAnswerOutput {
 }
 /// See [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput)
 pub mod update_answer_output {
+    ///
     /// A builder for [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -419,6 +425,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -449,6 +456,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -506,6 +514,7 @@ impl std::fmt::Debug for ListWorkloadSharesOutput {
 }
 /// See [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput)
 pub mod list_workload_shares_output {
+    ///
     /// A builder for [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -604,6 +613,7 @@ impl std::fmt::Debug for ListWorkloadsOutput {
 }
 /// See [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput)
 pub mod list_workloads_output {
+    ///
     /// A builder for [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -684,6 +694,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -766,6 +777,7 @@ impl std::fmt::Debug for ListShareInvitationsOutput {
 }
 /// See [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput)
 pub mod list_share_invitations_output {
+    ///
     /// A builder for [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -855,6 +867,7 @@ impl std::fmt::Debug for ListNotificationsOutput {
 }
 /// See [`ListNotificationsOutput`](crate::output::ListNotificationsOutput)
 pub mod list_notifications_output {
+    ///
     /// A builder for [`ListNotificationsOutput`](crate::output::ListNotificationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -945,6 +958,7 @@ impl std::fmt::Debug for ListMilestonesOutput {
 }
 /// See [`ListMilestonesOutput`](crate::output::ListMilestonesOutput)
 pub mod list_milestones_output {
+    ///
     /// A builder for [`ListMilestonesOutput`](crate::output::ListMilestonesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1040,6 +1054,7 @@ impl std::fmt::Debug for ListLensSharesOutput {
 }
 /// See [`ListLensSharesOutput`](crate::output::ListLensSharesOutput)
 pub mod list_lens_shares_output {
+    ///
     /// A builder for [`ListLensSharesOutput`](crate::output::ListLensSharesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1139,6 +1154,7 @@ impl std::fmt::Debug for ListLensReviewsOutput {
 }
 /// See [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput)
 pub mod list_lens_reviews_output {
+    ///
     /// A builder for [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1282,6 +1298,7 @@ impl std::fmt::Debug for ListLensReviewImprovementsOutput {
 }
 /// See [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput)
 pub mod list_lens_review_improvements_output {
+    ///
     /// A builder for [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1417,6 +1434,7 @@ impl std::fmt::Debug for ListLensesOutput {
 }
 /// See [`ListLensesOutput`](crate::output::ListLensesOutput)
 pub mod list_lenses_output {
+    ///
     /// A builder for [`ListLensesOutput`](crate::output::ListLensesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1531,6 +1549,7 @@ impl std::fmt::Debug for ListAnswersOutput {
 }
 /// See [`ListAnswersOutput`](crate::output::ListAnswersOutput)
 pub mod list_answers_output {
+    ///
     /// A builder for [`ListAnswersOutput`](crate::output::ListAnswersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1666,6 +1685,7 @@ impl std::fmt::Debug for ImportLensOutput {
 }
 /// See [`ImportLensOutput`](crate::output::ImportLensOutput)
 pub mod import_lens_output {
+    ///
     /// A builder for [`ImportLensOutput`](crate::output::ImportLensOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1735,6 +1755,7 @@ impl std::fmt::Debug for GetWorkloadOutput {
 }
 /// See [`GetWorkloadOutput`](crate::output::GetWorkloadOutput)
 pub mod get_workload_output {
+    ///
     /// A builder for [`GetWorkloadOutput`](crate::output::GetWorkloadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1796,6 +1817,7 @@ impl std::fmt::Debug for GetMilestoneOutput {
 }
 /// See [`GetMilestoneOutput`](crate::output::GetMilestoneOutput)
 pub mod get_milestone_output {
+    ///
     /// A builder for [`GetMilestoneOutput`](crate::output::GetMilestoneOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1902,6 +1924,7 @@ impl std::fmt::Debug for GetLensVersionDifferenceOutput {
 }
 /// See [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput)
 pub mod get_lens_version_difference_output {
+    ///
     /// A builder for [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2046,6 +2069,7 @@ impl std::fmt::Debug for GetLensReviewReportOutput {
 }
 /// See [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput)
 pub mod get_lens_review_report_output {
+    ///
     /// A builder for [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2145,6 +2169,7 @@ impl std::fmt::Debug for GetLensReviewOutput {
 }
 /// See [`GetLensReviewOutput`](crate::output::GetLensReviewOutput)
 pub mod get_lens_review_output {
+    ///
     /// A builder for [`GetLensReviewOutput`](crate::output::GetLensReviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2228,6 +2253,7 @@ impl std::fmt::Debug for GetLensOutput {
 }
 /// See [`GetLensOutput`](crate::output::GetLensOutput)
 pub mod get_lens_output {
+    ///
     /// A builder for [`GetLensOutput`](crate::output::GetLensOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2312,6 +2338,7 @@ impl std::fmt::Debug for GetAnswerOutput {
 }
 /// See [`GetAnswerOutput`](crate::output::GetAnswerOutput)
 pub mod get_answer_output {
+    ///
     /// A builder for [`GetAnswerOutput`](crate::output::GetAnswerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2418,6 +2445,7 @@ impl std::fmt::Debug for ExportLensOutput {
 }
 /// See [`ExportLensOutput`](crate::output::ExportLensOutput)
 pub mod export_lens_output {
+    ///
     /// A builder for [`ExportLensOutput`](crate::output::ExportLensOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2462,6 +2490,7 @@ impl std::fmt::Debug for DisassociateLensesOutput {
 }
 /// See [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput)
 pub mod disassociate_lenses_output {
+    ///
     /// A builder for [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2492,6 +2521,7 @@ impl std::fmt::Debug for DeleteWorkloadShareOutput {
 }
 /// See [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput)
 pub mod delete_workload_share_output {
+    ///
     /// A builder for [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2522,6 +2552,7 @@ impl std::fmt::Debug for DeleteWorkloadOutput {
 }
 /// See [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput)
 pub mod delete_workload_output {
+    ///
     /// A builder for [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2552,6 +2583,7 @@ impl std::fmt::Debug for DeleteLensShareOutput {
 }
 /// See [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput)
 pub mod delete_lens_share_output {
+    ///
     /// A builder for [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2582,6 +2614,7 @@ impl std::fmt::Debug for DeleteLensOutput {
 }
 /// See [`DeleteLensOutput`](crate::output::DeleteLensOutput)
 pub mod delete_lens_output {
+    ///
     /// A builder for [`DeleteLensOutput`](crate::output::DeleteLensOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2629,6 +2662,7 @@ impl std::fmt::Debug for CreateWorkloadShareOutput {
 }
 /// See [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput)
 pub mod create_workload_share_output {
+    ///
     /// A builder for [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2702,6 +2736,7 @@ impl std::fmt::Debug for CreateWorkloadOutput {
 }
 /// See [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput)
 pub mod create_workload_output {
+    ///
     /// A builder for [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2777,6 +2812,7 @@ impl std::fmt::Debug for CreateMilestoneOutput {
 }
 /// See [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput)
 pub mod create_milestone_output {
+    ///
     /// A builder for [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2852,6 +2888,7 @@ impl std::fmt::Debug for CreateLensVersionOutput {
 }
 /// See [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput)
 pub mod create_lens_version_output {
+    ///
     /// A builder for [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2918,6 +2955,7 @@ impl std::fmt::Debug for CreateLensShareOutput {
 }
 /// See [`CreateLensShareOutput`](crate::output::CreateLensShareOutput)
 pub mod create_lens_share_output {
+    ///
     /// A builder for [`CreateLensShareOutput`](crate::output::CreateLensShareOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2962,6 +3000,7 @@ impl std::fmt::Debug for AssociateLensesOutput {
 }
 /// See [`AssociateLensesOutput`](crate::output::AssociateLensesOutput)
 pub mod associate_lenses_output {
+    ///
     /// A builder for [`AssociateLensesOutput`](crate::output::AssociateLensesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

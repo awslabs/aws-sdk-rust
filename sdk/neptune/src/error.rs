@@ -8105,6 +8105,7 @@ impl std::fmt::Display for InvalidDbInstanceStateFault {
 impl std::error::Error for InvalidDbInstanceStateFault {}
 /// See [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
 pub mod invalid_db_instance_state_fault {
+    ///
     /// A builder for [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8169,6 +8170,7 @@ impl std::fmt::Display for InvalidDbClusterStateFault {
 impl std::error::Error for InvalidDbClusterStateFault {}
 /// See [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
 pub mod invalid_db_cluster_state_fault {
+    ///
     /// A builder for [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8233,6 +8235,7 @@ impl std::fmt::Display for DbClusterNotFoundFault {
 impl std::error::Error for DbClusterNotFoundFault {}
 /// See [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
 pub mod db_cluster_not_found_fault {
+    ///
     /// A builder for [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8297,6 +8300,7 @@ impl std::fmt::Display for StorageQuotaExceededFault {
 impl std::error::Error for StorageQuotaExceededFault {}
 /// See [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault)
 pub mod storage_quota_exceeded_fault {
+    ///
     /// A builder for [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8361,6 +8365,7 @@ impl std::fmt::Display for OptionGroupNotFoundFault {
 impl std::error::Error for OptionGroupNotFoundFault {}
 /// See [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault)
 pub mod option_group_not_found_fault {
+    ///
     /// A builder for [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8425,6 +8430,7 @@ impl std::fmt::Display for KmsKeyNotAccessibleFault {
 impl std::error::Error for KmsKeyNotAccessibleFault {}
 /// See [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
 pub mod kms_key_not_accessible_fault {
+    ///
     /// A builder for [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8492,6 +8498,7 @@ impl std::fmt::Display for InvalidVpcNetworkStateFault {
 impl std::error::Error for InvalidVpcNetworkStateFault {}
 /// See [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
 pub mod invalid_vpc_network_state_fault {
+    ///
     /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8556,6 +8563,7 @@ impl std::fmt::Display for InvalidSubnet {
 impl std::error::Error for InvalidSubnet {}
 /// See [`InvalidSubnet`](crate::error::InvalidSubnet)
 pub mod invalid_subnet {
+    ///
     /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8620,6 +8628,7 @@ impl std::fmt::Display for InvalidRestoreFault {
 impl std::error::Error for InvalidRestoreFault {}
 /// See [`InvalidRestoreFault`](crate::error::InvalidRestoreFault)
 pub mod invalid_restore_fault {
+    ///
     /// A builder for [`InvalidRestoreFault`](crate::error::InvalidRestoreFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8687,6 +8696,7 @@ impl std::fmt::Display for InvalidDbSnapshotStateFault {
 impl std::error::Error for InvalidDbSnapshotStateFault {}
 /// See [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
 pub mod invalid_db_snapshot_state_fault {
+    ///
     /// A builder for [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8754,6 +8764,7 @@ impl std::fmt::Display for InvalidDbClusterSnapshotStateFault {
 impl std::error::Error for InvalidDbClusterSnapshotStateFault {}
 /// See [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
 pub mod invalid_db_cluster_snapshot_state_fault {
+    ///
     /// A builder for [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8818,6 +8829,7 @@ impl std::fmt::Display for InsufficientStorageClusterCapacityFault {
 impl std::error::Error for InsufficientStorageClusterCapacityFault {}
 /// See [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault)
 pub mod insufficient_storage_cluster_capacity_fault {
+    ///
     /// A builder for [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8885,6 +8897,7 @@ impl std::fmt::Display for InsufficientDbClusterCapacityFault {
 impl std::error::Error for InsufficientDbClusterCapacityFault {}
 /// See [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
 pub mod insufficient_db_cluster_capacity_fault {
+    ///
     /// A builder for [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8949,6 +8962,7 @@ impl std::fmt::Display for DbSubnetGroupNotFoundFault {
 impl std::error::Error for DbSubnetGroupNotFoundFault {}
 /// See [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
 pub mod db_subnet_group_not_found_fault {
+    ///
     /// A builder for [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9016,6 +9030,7 @@ impl std::fmt::Display for DbClusterSnapshotNotFoundFault {
 impl std::error::Error for DbClusterSnapshotNotFoundFault {}
 /// See [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
 pub mod db_cluster_snapshot_not_found_fault {
+    ///
     /// A builder for [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9083,6 +9098,7 @@ impl std::fmt::Display for DbClusterQuotaExceededFault {
 impl std::error::Error for DbClusterQuotaExceededFault {}
 /// See [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
 pub mod db_cluster_quota_exceeded_fault {
+    ///
     /// A builder for [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9150,6 +9166,7 @@ impl std::fmt::Display for DbClusterParameterGroupNotFoundFault {
 impl std::error::Error for DbClusterParameterGroupNotFoundFault {}
 /// See [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
 pub mod db_cluster_parameter_group_not_found_fault {
+    ///
     /// A builder for [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9217,6 +9234,7 @@ impl std::fmt::Display for DbClusterAlreadyExistsFault {
 impl std::error::Error for DbClusterAlreadyExistsFault {}
 /// See [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
 pub mod db_cluster_already_exists_fault {
+    ///
     /// A builder for [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9281,6 +9299,7 @@ impl std::fmt::Display for DbSnapshotNotFoundFault {
 impl std::error::Error for DbSnapshotNotFoundFault {}
 /// See [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
 pub mod db_snapshot_not_found_fault {
+    ///
     /// A builder for [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9348,6 +9367,7 @@ impl std::fmt::Display for InvalidDbParameterGroupStateFault {
 impl std::error::Error for InvalidDbParameterGroupStateFault {}
 /// See [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
 pub mod invalid_db_parameter_group_state_fault {
+    ///
     /// A builder for [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9415,6 +9435,7 @@ impl std::fmt::Display for DbParameterGroupNotFoundFault {
 impl std::error::Error for DbParameterGroupNotFoundFault {}
 /// See [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
 pub mod db_parameter_group_not_found_fault {
+    ///
     /// A builder for [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9479,6 +9500,7 @@ impl std::fmt::Display for DbInstanceNotFoundFault {
 impl std::error::Error for DbInstanceNotFoundFault {}
 /// See [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
 pub mod db_instance_not_found_fault {
+    ///
     /// A builder for [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9543,6 +9565,7 @@ impl std::fmt::Display for SubscriptionNotFoundFault {
 impl std::error::Error for SubscriptionNotFoundFault {}
 /// See [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault)
 pub mod subscription_not_found_fault {
+    ///
     /// A builder for [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9607,6 +9630,7 @@ impl std::fmt::Display for SourceNotFoundFault {
 impl std::error::Error for SourceNotFoundFault {}
 /// See [`SourceNotFoundFault`](crate::error::SourceNotFoundFault)
 pub mod source_not_found_fault {
+    ///
     /// A builder for [`SourceNotFoundFault`](crate::error::SourceNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9671,6 +9695,7 @@ impl std::fmt::Display for DbClusterRoleNotFoundFault {
 impl std::error::Error for DbClusterRoleNotFoundFault {}
 /// See [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
 pub mod db_cluster_role_not_found_fault {
+    ///
     /// A builder for [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9735,6 +9760,7 @@ impl std::fmt::Display for SubscriptionCategoryNotFoundFault {
 impl std::error::Error for SubscriptionCategoryNotFoundFault {}
 /// See [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault)
 pub mod subscription_category_not_found_fault {
+    ///
     /// A builder for [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9799,6 +9825,7 @@ impl std::fmt::Display for SnsTopicArnNotFoundFault {
 impl std::error::Error for SnsTopicArnNotFoundFault {}
 /// See [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
 pub mod sns_topic_arn_not_found_fault {
+    ///
     /// A builder for [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9863,6 +9890,7 @@ impl std::fmt::Display for SnsNoAuthorizationFault {
 impl std::error::Error for SnsNoAuthorizationFault {}
 /// See [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
 pub mod sns_no_authorization_fault {
+    ///
     /// A builder for [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9927,6 +9955,7 @@ impl std::fmt::Display for SnsInvalidTopicFault {
 impl std::error::Error for SnsInvalidTopicFault {}
 /// See [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
 pub mod sns_invalid_topic_fault {
+    ///
     /// A builder for [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9991,6 +10020,7 @@ impl std::fmt::Display for EventSubscriptionQuotaExceededFault {
 impl std::error::Error for EventSubscriptionQuotaExceededFault {}
 /// See [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault)
 pub mod event_subscription_quota_exceeded_fault {
+    ///
     /// A builder for [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10055,6 +10085,7 @@ impl std::fmt::Display for SubnetAlreadyInUse {
 impl std::error::Error for SubnetAlreadyInUse {}
 /// See [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse)
 pub mod subnet_already_in_use {
+    ///
     /// A builder for [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10119,6 +10150,7 @@ impl std::fmt::Display for DbSubnetQuotaExceededFault {
 impl std::error::Error for DbSubnetQuotaExceededFault {}
 /// See [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
 pub mod db_subnet_quota_exceeded_fault {
+    ///
     /// A builder for [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10186,6 +10218,7 @@ impl std::fmt::Display for DbSubnetGroupDoesNotCoverEnoughAZs {
 impl std::error::Error for DbSubnetGroupDoesNotCoverEnoughAZs {}
 /// See [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
 pub mod db_subnet_group_does_not_cover_enough_a_zs {
+    ///
     /// A builder for [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10250,6 +10283,7 @@ impl std::fmt::Display for StorageTypeNotSupportedFault {
 impl std::error::Error for StorageTypeNotSupportedFault {}
 /// See [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault)
 pub mod storage_type_not_supported_fault {
+    ///
     /// A builder for [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10317,6 +10351,7 @@ impl std::fmt::Display for ProvisionedIopsNotAvailableInAzFault {
 impl std::error::Error for ProvisionedIopsNotAvailableInAzFault {}
 /// See [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
 pub mod provisioned_iops_not_available_in_az_fault {
+    ///
     /// A builder for [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10384,6 +10419,7 @@ impl std::fmt::Display for InvalidDbSecurityGroupStateFault {
 impl std::error::Error for InvalidDbSecurityGroupStateFault {}
 /// See [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
 pub mod invalid_db_security_group_state_fault {
+    ///
     /// A builder for [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10451,6 +10487,7 @@ impl std::fmt::Display for InsufficientDbInstanceCapacityFault {
 impl std::error::Error for InsufficientDbInstanceCapacityFault {}
 /// See [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
 pub mod insufficient_db_instance_capacity_fault {
+    ///
     /// A builder for [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10515,6 +10552,7 @@ impl std::fmt::Display for DomainNotFoundFault {
 impl std::error::Error for DomainNotFoundFault {}
 /// See [`DomainNotFoundFault`](crate::error::DomainNotFoundFault)
 pub mod domain_not_found_fault {
+    ///
     /// A builder for [`DomainNotFoundFault`](crate::error::DomainNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10582,6 +10620,7 @@ impl std::fmt::Display for DbUpgradeDependencyFailureFault {
 impl std::error::Error for DbUpgradeDependencyFailureFault {}
 /// See [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
 pub mod db_upgrade_dependency_failure_fault {
+    ///
     /// A builder for [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10649,6 +10688,7 @@ impl std::fmt::Display for DbSecurityGroupNotFoundFault {
 impl std::error::Error for DbSecurityGroupNotFoundFault {}
 /// See [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
 pub mod db_security_group_not_found_fault {
+    ///
     /// A builder for [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10716,6 +10756,7 @@ impl std::fmt::Display for DbInstanceAlreadyExistsFault {
 impl std::error::Error for DbInstanceAlreadyExistsFault {}
 /// See [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
 pub mod db_instance_already_exists_fault {
+    ///
     /// A builder for [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10780,6 +10821,7 @@ impl std::fmt::Display for CertificateNotFoundFault {
 impl std::error::Error for CertificateNotFoundFault {}
 /// See [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault)
 pub mod certificate_not_found_fault {
+    ///
     /// A builder for [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10845,6 +10887,7 @@ impl std::fmt::Display for AuthorizationNotFoundFault {
 impl std::error::Error for AuthorizationNotFoundFault {}
 /// See [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault)
 pub mod authorization_not_found_fault {
+    ///
     /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10909,6 +10952,7 @@ impl std::fmt::Display for SharedSnapshotQuotaExceededFault {
 impl std::error::Error for SharedSnapshotQuotaExceededFault {}
 /// See [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault)
 pub mod shared_snapshot_quota_exceeded_fault {
+    ///
     /// A builder for [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10976,6 +11020,7 @@ impl std::fmt::Display for InvalidDbClusterEndpointStateFault {
 impl std::error::Error for InvalidDbClusterEndpointStateFault {}
 /// See [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
 pub mod invalid_db_cluster_endpoint_state_fault {
+    ///
     /// A builder for [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11043,6 +11088,7 @@ impl std::fmt::Display for DbClusterEndpointNotFoundFault {
 impl std::error::Error for DbClusterEndpointNotFoundFault {}
 /// See [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
 pub mod db_cluster_endpoint_not_found_fault {
+    ///
     /// A builder for [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11110,6 +11156,7 @@ impl std::fmt::Display for InvalidDbSubnetGroupStateFault {
 impl std::error::Error for InvalidDbSubnetGroupStateFault {}
 /// See [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
 pub mod invalid_db_subnet_group_state_fault {
+    ///
     /// A builder for [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11174,6 +11221,7 @@ impl std::fmt::Display for ResourceNotFoundFault {
 impl std::error::Error for ResourceNotFoundFault {}
 /// See [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault)
 pub mod resource_not_found_fault {
+    ///
     /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11238,6 +11286,7 @@ impl std::fmt::Display for InvalidEventSubscriptionStateFault {
 impl std::error::Error for InvalidEventSubscriptionStateFault {}
 /// See [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault)
 pub mod invalid_event_subscription_state_fault {
+    ///
     /// A builder for [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11302,6 +11351,7 @@ impl std::fmt::Display for InvalidDbSubnetStateFault {
 impl std::error::Error for InvalidDbSubnetStateFault {}
 /// See [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
 pub mod invalid_db_subnet_state_fault {
+    ///
     /// A builder for [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11366,6 +11416,7 @@ impl std::fmt::Display for SnapshotQuotaExceededFault {
 impl std::error::Error for SnapshotQuotaExceededFault {}
 /// See [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault)
 pub mod snapshot_quota_exceeded_fault {
+    ///
     /// A builder for [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11433,6 +11484,7 @@ impl std::fmt::Display for DbSnapshotAlreadyExistsFault {
 impl std::error::Error for DbSnapshotAlreadyExistsFault {}
 /// See [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
 pub mod db_snapshot_already_exists_fault {
+    ///
     /// A builder for [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11500,6 +11552,7 @@ impl std::fmt::Display for DbClusterSnapshotAlreadyExistsFault {
 impl std::error::Error for DbClusterSnapshotAlreadyExistsFault {}
 /// See [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
 pub mod db_cluster_snapshot_already_exists_fault {
+    ///
     /// A builder for [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11564,6 +11617,7 @@ impl std::fmt::Display for SubscriptionAlreadyExistFault {
 impl std::error::Error for SubscriptionAlreadyExistFault {}
 /// See [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault)
 pub mod subscription_already_exist_fault {
+    ///
     /// A builder for [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11631,6 +11685,7 @@ impl std::fmt::Display for DbSubnetGroupQuotaExceededFault {
 impl std::error::Error for DbSubnetGroupQuotaExceededFault {}
 /// See [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
 pub mod db_subnet_group_quota_exceeded_fault {
+    ///
     /// A builder for [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11698,6 +11753,7 @@ impl std::fmt::Display for DbSubnetGroupAlreadyExistsFault {
 impl std::error::Error for DbSubnetGroupAlreadyExistsFault {}
 /// See [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
 pub mod db_subnet_group_already_exists_fault {
+    ///
     /// A builder for [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11765,6 +11821,7 @@ impl std::fmt::Display for DbParameterGroupQuotaExceededFault {
 impl std::error::Error for DbParameterGroupQuotaExceededFault {}
 /// See [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
 pub mod db_parameter_group_quota_exceeded_fault {
+    ///
     /// A builder for [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11832,6 +11889,7 @@ impl std::fmt::Display for DbParameterGroupAlreadyExistsFault {
 impl std::error::Error for DbParameterGroupAlreadyExistsFault {}
 /// See [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
 pub mod db_parameter_group_already_exists_fault {
+    ///
     /// A builder for [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11896,6 +11954,7 @@ impl std::fmt::Display for InstanceQuotaExceededFault {
 impl std::error::Error for InstanceQuotaExceededFault {}
 /// See [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault)
 pub mod instance_quota_exceeded_fault {
+    ///
     /// A builder for [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11963,6 +12022,7 @@ impl std::fmt::Display for DbClusterEndpointQuotaExceededFault {
 impl std::error::Error for DbClusterEndpointQuotaExceededFault {}
 /// See [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
 pub mod db_cluster_endpoint_quota_exceeded_fault {
+    ///
     /// A builder for [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12030,6 +12090,7 @@ impl std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
 impl std::error::Error for DbClusterEndpointAlreadyExistsFault {}
 /// See [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
 pub mod db_cluster_endpoint_already_exists_fault {
+    ///
     /// A builder for [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12097,6 +12158,7 @@ impl std::fmt::Display for DbClusterRoleQuotaExceededFault {
 impl std::error::Error for DbClusterRoleQuotaExceededFault {}
 /// See [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
 pub mod db_cluster_role_quota_exceeded_fault {
+    ///
     /// A builder for [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12164,6 +12226,7 @@ impl std::fmt::Display for DbClusterRoleAlreadyExistsFault {
 impl std::error::Error for DbClusterRoleAlreadyExistsFault {}
 /// See [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
 pub mod db_cluster_role_already_exists_fault {
+    ///
     /// A builder for [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

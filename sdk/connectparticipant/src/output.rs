@@ -28,6 +28,7 @@ impl std::fmt::Debug for StartAttachmentUploadOutput {
 }
 /// See [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput)
 pub mod start_attachment_upload_output {
+    ///
     /// A builder for [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -109,6 +110,7 @@ impl std::fmt::Debug for SendMessageOutput {
 }
 /// See [`SendMessageOutput`](crate::output::SendMessageOutput)
 pub mod send_message_output {
+    ///
     /// A builder for [`SendMessageOutput`](crate::output::SendMessageOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -189,6 +191,7 @@ impl std::fmt::Debug for SendEventOutput {
 }
 /// See [`SendEventOutput`](crate::output::SendEventOutput)
 pub mod send_event_output {
+    ///
     /// A builder for [`SendEventOutput`](crate::output::SendEventOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -274,6 +277,7 @@ impl std::fmt::Debug for GetTranscriptOutput {
 }
 /// See [`GetTranscriptOutput`](crate::output::GetTranscriptOutput)
 pub mod get_transcript_output {
+    ///
     /// A builder for [`GetTranscriptOutput`](crate::output::GetTranscriptOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -371,6 +375,7 @@ impl std::fmt::Debug for GetAttachmentOutput {
 }
 /// See [`GetAttachmentOutput`](crate::output::GetAttachmentOutput)
 pub mod get_attachment_output {
+    ///
     /// A builder for [`GetAttachmentOutput`](crate::output::GetAttachmentOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -427,6 +432,7 @@ impl std::fmt::Debug for DisconnectParticipantOutput {
 }
 /// See [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput)
 pub mod disconnect_participant_output {
+    ///
     /// A builder for [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -476,6 +482,7 @@ impl std::fmt::Debug for CreateParticipantConnectionOutput {
 }
 /// See [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput)
 pub mod create_participant_connection_output {
+    ///
     /// A builder for [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -541,6 +548,7 @@ impl std::fmt::Debug for CompleteAttachmentUploadOutput {
 }
 /// See [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput)
 pub mod complete_attachment_upload_output {
+    ///
     /// A builder for [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

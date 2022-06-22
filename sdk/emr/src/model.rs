@@ -83,6 +83,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -166,6 +167,7 @@ impl std::fmt::Debug for ExecutionEngineConfig {
 }
 /// See [`ExecutionEngineConfig`](crate::model::ExecutionEngineConfig)
 pub mod execution_engine_config {
+    ///
     /// A builder for [`ExecutionEngineConfig`](crate::model::ExecutionEngineConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -304,6 +306,7 @@ impl std::fmt::Debug for AutoTerminationPolicy {
 }
 /// See [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy)
 pub mod auto_termination_policy {
+    ///
     /// A builder for [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -370,6 +373,7 @@ impl std::fmt::Debug for PlacementGroupConfig {
 }
 /// See [`PlacementGroupConfig`](crate::model::PlacementGroupConfig)
 pub mod placement_group_config {
+    ///
     /// A builder for [`PlacementGroupConfig`](crate::model::PlacementGroupConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -568,6 +572,7 @@ impl std::fmt::Debug for ManagedScalingPolicy {
 }
 /// See [`ManagedScalingPolicy`](crate::model::ManagedScalingPolicy)
 pub mod managed_scaling_policy {
+    ///
     /// A builder for [`ManagedScalingPolicy`](crate::model::ManagedScalingPolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -659,6 +664,7 @@ impl std::fmt::Debug for ComputeLimits {
 }
 /// See [`ComputeLimits`](crate::model::ComputeLimits)
 pub mod compute_limits {
+    ///
     /// A builder for [`ComputeLimits`](crate::model::ComputeLimits)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -857,6 +863,7 @@ impl std::fmt::Debug for KerberosAttributes {
 }
 /// See [`KerberosAttributes`](crate::model::KerberosAttributes)
 pub mod kerberos_attributes {
+    ///
     /// A builder for [`KerberosAttributes`](crate::model::KerberosAttributes)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1105,6 +1112,7 @@ impl std::fmt::Debug for Configuration {
 }
 /// See [`Configuration`](crate::model::Configuration)
 pub mod configuration {
+    ///
     /// A builder for [`Configuration`](crate::model::Configuration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1238,6 +1246,7 @@ impl std::fmt::Debug for Application {
 }
 /// See [`Application`](crate::model::Application)
 pub mod application {
+    ///
     /// A builder for [`Application`](crate::model::Application)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1361,6 +1370,7 @@ impl std::fmt::Debug for SupportedProductConfig {
 }
 /// See [`SupportedProductConfig`](crate::model::SupportedProductConfig)
 pub mod supported_product_config {
+    ///
     /// A builder for [`SupportedProductConfig`](crate::model::SupportedProductConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1445,6 +1455,7 @@ impl std::fmt::Debug for BootstrapActionConfig {
 }
 /// See [`BootstrapActionConfig`](crate::model::BootstrapActionConfig)
 pub mod bootstrap_action_config {
+    ///
     /// A builder for [`BootstrapActionConfig`](crate::model::BootstrapActionConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1525,6 +1536,7 @@ impl std::fmt::Debug for ScriptBootstrapActionConfig {
 }
 /// See [`ScriptBootstrapActionConfig`](crate::model::ScriptBootstrapActionConfig)
 pub mod script_bootstrap_action_config {
+    ///
     /// A builder for [`ScriptBootstrapActionConfig`](crate::model::ScriptBootstrapActionConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1630,6 +1642,7 @@ impl std::fmt::Debug for StepConfig {
 }
 /// See [`StepConfig`](crate::model::StepConfig)
 pub mod step_config {
+    ///
     /// A builder for [`StepConfig`](crate::model::StepConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1751,6 +1764,7 @@ impl std::fmt::Debug for HadoopJarStepConfig {
 }
 /// See [`HadoopJarStepConfig`](crate::model::HadoopJarStepConfig)
 pub mod hadoop_jar_step_config {
+    ///
     /// A builder for [`HadoopJarStepConfig`](crate::model::HadoopJarStepConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1866,6 +1880,7 @@ impl std::fmt::Debug for KeyValue {
 }
 /// See [`KeyValue`](crate::model::KeyValue)
 pub mod key_value {
+    ///
     /// A builder for [`KeyValue`](crate::model::KeyValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2140,6 +2155,7 @@ impl std::fmt::Debug for JobFlowInstancesConfig {
 }
 /// See [`JobFlowInstancesConfig`](crate::model::JobFlowInstancesConfig)
 pub mod job_flow_instances_config {
+    ///
     /// A builder for [`JobFlowInstancesConfig`](crate::model::JobFlowInstancesConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2500,6 +2516,7 @@ impl std::fmt::Debug for PlacementType {
 }
 /// See [`PlacementType`](crate::model::PlacementType)
 pub mod placement_type {
+    ///
     /// A builder for [`PlacementType`](crate::model::PlacementType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2632,6 +2649,7 @@ impl std::fmt::Debug for InstanceFleetConfig {
 }
 /// See [`InstanceFleetConfig`](crate::model::InstanceFleetConfig)
 pub mod instance_fleet_config {
+    ///
     /// A builder for [`InstanceFleetConfig`](crate::model::InstanceFleetConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2792,6 +2810,7 @@ impl std::fmt::Debug for InstanceFleetProvisioningSpecifications {
 }
 /// See [`InstanceFleetProvisioningSpecifications`](crate::model::InstanceFleetProvisioningSpecifications)
 pub mod instance_fleet_provisioning_specifications {
+    ///
     /// A builder for [`InstanceFleetProvisioningSpecifications`](crate::model::InstanceFleetProvisioningSpecifications)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2894,6 +2913,7 @@ impl std::fmt::Debug for OnDemandProvisioningSpecification {
 }
 /// See [`OnDemandProvisioningSpecification`](crate::model::OnDemandProvisioningSpecification)
 pub mod on_demand_provisioning_specification {
+    ///
     /// A builder for [`OnDemandProvisioningSpecification`](crate::model::OnDemandProvisioningSpecification)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3011,6 +3031,7 @@ impl std::fmt::Debug for OnDemandCapacityReservationOptions {
 }
 /// See [`OnDemandCapacityReservationOptions`](crate::model::OnDemandCapacityReservationOptions)
 pub mod on_demand_capacity_reservation_options {
+    ///
     /// A builder for [`OnDemandCapacityReservationOptions`](crate::model::OnDemandCapacityReservationOptions)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3317,6 +3338,7 @@ impl std::fmt::Debug for SpotProvisioningSpecification {
 }
 /// See [`SpotProvisioningSpecification`](crate::model::SpotProvisioningSpecification)
 pub mod spot_provisioning_specification {
+    ///
     /// A builder for [`SpotProvisioningSpecification`](crate::model::SpotProvisioningSpecification)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3577,6 +3599,7 @@ impl std::fmt::Debug for InstanceTypeConfig {
 }
 /// See [`InstanceTypeConfig`](crate::model::InstanceTypeConfig)
 pub mod instance_type_config {
+    ///
     /// A builder for [`InstanceTypeConfig`](crate::model::InstanceTypeConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3735,6 +3758,7 @@ impl std::fmt::Debug for EbsConfiguration {
 }
 /// See [`EbsConfiguration`](crate::model::EbsConfiguration)
 pub mod ebs_configuration {
+    ///
     /// A builder for [`EbsConfiguration`](crate::model::EbsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3821,6 +3845,7 @@ impl std::fmt::Debug for EbsBlockDeviceConfig {
 }
 /// See [`EbsBlockDeviceConfig`](crate::model::EbsBlockDeviceConfig)
 pub mod ebs_block_device_config {
+    ///
     /// A builder for [`EbsBlockDeviceConfig`](crate::model::EbsBlockDeviceConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3904,6 +3929,7 @@ impl std::fmt::Debug for VolumeSpecification {
 }
 /// See [`VolumeSpecification`](crate::model::VolumeSpecification)
 pub mod volume_specification {
+    ///
     /// A builder for [`VolumeSpecification`](crate::model::VolumeSpecification)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4110,6 +4136,7 @@ impl std::fmt::Debug for InstanceGroupConfig {
 }
 /// See [`InstanceGroupConfig`](crate::model::InstanceGroupConfig)
 pub mod instance_group_config {
+    ///
     /// A builder for [`InstanceGroupConfig`](crate::model::InstanceGroupConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4309,6 +4336,7 @@ impl std::fmt::Debug for AutoScalingPolicy {
 }
 /// See [`AutoScalingPolicy`](crate::model::AutoScalingPolicy)
 pub mod auto_scaling_policy {
+    ///
     /// A builder for [`AutoScalingPolicy`](crate::model::AutoScalingPolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4408,6 +4436,7 @@ impl std::fmt::Debug for ScalingRule {
 }
 /// See [`ScalingRule`](crate::model::ScalingRule)
 pub mod scaling_rule {
+    ///
     /// A builder for [`ScalingRule`](crate::model::ScalingRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4509,6 +4538,7 @@ impl std::fmt::Debug for ScalingTrigger {
 }
 /// See [`ScalingTrigger`](crate::model::ScalingTrigger)
 pub mod scaling_trigger {
+    ///
     /// A builder for [`ScalingTrigger`](crate::model::ScalingTrigger)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4626,6 +4656,7 @@ impl std::fmt::Debug for CloudWatchAlarmDefinition {
 }
 /// See [`CloudWatchAlarmDefinition`](crate::model::CloudWatchAlarmDefinition)
 pub mod cloud_watch_alarm_definition {
+    ///
     /// A builder for [`CloudWatchAlarmDefinition`](crate::model::CloudWatchAlarmDefinition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4798,6 +4829,7 @@ impl std::fmt::Debug for MetricDimension {
 }
 /// See [`MetricDimension`](crate::model::MetricDimension)
 pub mod metric_dimension {
+    ///
     /// A builder for [`MetricDimension`](crate::model::MetricDimension)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5195,6 +5227,7 @@ impl std::fmt::Debug for ScalingAction {
 }
 /// See [`ScalingAction`](crate::model::ScalingAction)
 pub mod scaling_action {
+    ///
     /// A builder for [`ScalingAction`](crate::model::ScalingAction)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5282,6 +5315,7 @@ impl std::fmt::Debug for SimpleScalingPolicyConfiguration {
 }
 /// See [`SimpleScalingPolicyConfiguration`](crate::model::SimpleScalingPolicyConfiguration)
 pub mod simple_scaling_policy_configuration {
+    ///
     /// A builder for [`SimpleScalingPolicyConfiguration`](crate::model::SimpleScalingPolicyConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5488,6 +5522,7 @@ impl std::fmt::Debug for ScalingConstraints {
 }
 /// See [`ScalingConstraints`](crate::model::ScalingConstraints)
 pub mod scaling_constraints {
+    ///
     /// A builder for [`ScalingConstraints`](crate::model::ScalingConstraints)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5597,6 +5632,7 @@ impl std::fmt::Debug for BlockPublicAccessConfiguration {
 }
 /// See [`BlockPublicAccessConfiguration`](crate::model::BlockPublicAccessConfiguration)
 pub mod block_public_access_configuration {
+    ///
     /// A builder for [`BlockPublicAccessConfiguration`](crate::model::BlockPublicAccessConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5758,6 +5794,7 @@ impl std::fmt::Debug for PortRange {
 }
 /// See [`PortRange`](crate::model::PortRange)
 pub mod port_range {
+    ///
     /// A builder for [`PortRange`](crate::model::PortRange)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5838,6 +5875,7 @@ impl std::fmt::Debug for AutoScalingPolicyDescription {
 }
 /// See [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription)
 pub mod auto_scaling_policy_description {
+    ///
     /// A builder for [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5940,6 +5978,7 @@ impl std::fmt::Debug for AutoScalingPolicyStatus {
 }
 /// See [`AutoScalingPolicyStatus`](crate::model::AutoScalingPolicyStatus)
 pub mod auto_scaling_policy_status {
+    ///
     /// A builder for [`AutoScalingPolicyStatus`](crate::model::AutoScalingPolicyStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6025,6 +6064,7 @@ impl std::fmt::Debug for AutoScalingPolicyStateChangeReason {
 }
 /// See [`AutoScalingPolicyStateChangeReason`](crate::model::AutoScalingPolicyStateChangeReason)
 pub mod auto_scaling_policy_state_change_reason {
+    ///
     /// A builder for [`AutoScalingPolicyStateChangeReason`](crate::model::AutoScalingPolicyStateChangeReason)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6269,6 +6309,7 @@ impl std::fmt::Debug for InstanceGroupModifyConfig {
 }
 /// See [`InstanceGroupModifyConfig`](crate::model::InstanceGroupModifyConfig)
 pub mod instance_group_modify_config {
+    ///
     /// A builder for [`InstanceGroupModifyConfig`](crate::model::InstanceGroupModifyConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6478,6 +6519,7 @@ impl std::fmt::Debug for ShrinkPolicy {
 }
 /// See [`ShrinkPolicy`](crate::model::ShrinkPolicy)
 pub mod shrink_policy {
+    ///
     /// A builder for [`ShrinkPolicy`](crate::model::ShrinkPolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6564,6 +6606,7 @@ impl std::fmt::Debug for InstanceResizePolicy {
 }
 /// See [`InstanceResizePolicy`](crate::model::InstanceResizePolicy)
 pub mod instance_resize_policy {
+    ///
     /// A builder for [`InstanceResizePolicy`](crate::model::InstanceResizePolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6676,6 +6719,7 @@ impl std::fmt::Debug for InstanceFleetModifyConfig {
 }
 /// See [`InstanceFleetModifyConfig`](crate::model::InstanceFleetModifyConfig)
 pub mod instance_fleet_modify_config {
+    ///
     /// A builder for [`InstanceFleetModifyConfig`](crate::model::InstanceFleetModifyConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6792,6 +6836,7 @@ impl std::fmt::Debug for SessionMappingSummary {
 }
 /// See [`SessionMappingSummary`](crate::model::SessionMappingSummary)
 pub mod session_mapping_summary {
+    ///
     /// A builder for [`SessionMappingSummary`](crate::model::SessionMappingSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6960,6 +7005,7 @@ impl std::fmt::Debug for StudioSummary {
 }
 /// See [`StudioSummary`](crate::model::StudioSummary)
 pub mod studio_summary {
+    ///
     /// A builder for [`StudioSummary`](crate::model::StudioSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7172,6 +7218,7 @@ impl std::fmt::Debug for StepSummary {
 }
 /// See [`StepSummary`](crate::model::StepSummary)
 pub mod step_summary {
+    ///
     /// A builder for [`StepSummary`](crate::model::StepSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7301,6 +7348,7 @@ impl std::fmt::Debug for StepStatus {
 }
 /// See [`StepStatus`](crate::model::StepStatus)
 pub mod step_status {
+    ///
     /// A builder for [`StepStatus`](crate::model::StepStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7414,6 +7462,7 @@ impl std::fmt::Debug for StepTimeline {
 }
 /// See [`StepTimeline`](crate::model::StepTimeline)
 pub mod step_timeline {
+    ///
     /// A builder for [`StepTimeline`](crate::model::StepTimeline)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7515,6 +7564,7 @@ impl std::fmt::Debug for FailureDetails {
 }
 /// See [`FailureDetails`](crate::model::FailureDetails)
 pub mod failure_details {
+    ///
     /// A builder for [`FailureDetails`](crate::model::FailureDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7600,6 +7650,7 @@ impl std::fmt::Debug for StepStateChangeReason {
 }
 /// See [`StepStateChangeReason`](crate::model::StepStateChangeReason)
 pub mod step_state_change_reason {
+    ///
     /// A builder for [`StepStateChangeReason`](crate::model::StepStateChangeReason)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7828,6 +7879,7 @@ impl std::fmt::Debug for HadoopStepConfig {
 }
 /// See [`HadoopStepConfig`](crate::model::HadoopStepConfig)
 pub mod hadoop_step_config {
+    ///
     /// A builder for [`HadoopStepConfig`](crate::model::HadoopStepConfig)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7951,6 +8003,7 @@ impl std::fmt::Debug for SecurityConfigurationSummary {
 }
 /// See [`SecurityConfigurationSummary`](crate::model::SecurityConfigurationSummary)
 pub mod security_configuration_summary {
+    ///
     /// A builder for [`SecurityConfigurationSummary`](crate::model::SecurityConfigurationSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8027,6 +8080,7 @@ impl std::fmt::Debug for ReleaseLabelFilter {
 }
 /// See [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter)
 pub mod release_label_filter {
+    ///
     /// A builder for [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8152,6 +8206,7 @@ impl std::fmt::Debug for NotebookExecutionSummary {
 }
 /// See [`NotebookExecutionSummary`](crate::model::NotebookExecutionSummary)
 pub mod notebook_execution_summary {
+    ///
     /// A builder for [`NotebookExecutionSummary`](crate::model::NotebookExecutionSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8480,6 +8535,7 @@ impl std::fmt::Debug for Instance {
 }
 /// See [`Instance`](crate::model::Instance)
 pub mod instance {
+    ///
     /// A builder for [`Instance`](crate::model::Instance)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8709,6 +8765,7 @@ impl std::fmt::Debug for EbsVolume {
 }
 /// See [`EbsVolume`](crate::model::EbsVolume)
 pub mod ebs_volume {
+    ///
     /// A builder for [`EbsVolume`](crate::model::EbsVolume)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8791,6 +8848,7 @@ impl std::fmt::Debug for InstanceStatus {
 }
 /// See [`InstanceStatus`](crate::model::InstanceStatus)
 pub mod instance_status {
+    ///
     /// A builder for [`InstanceStatus`](crate::model::InstanceStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8896,6 +8954,7 @@ impl std::fmt::Debug for InstanceTimeline {
 }
 /// See [`InstanceTimeline`](crate::model::InstanceTimeline)
 pub mod instance_timeline {
+    ///
     /// A builder for [`InstanceTimeline`](crate::model::InstanceTimeline)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8990,6 +9049,7 @@ impl std::fmt::Debug for InstanceStateChangeReason {
 }
 /// See [`InstanceStateChangeReason`](crate::model::InstanceStateChangeReason)
 pub mod instance_state_change_reason {
+    ///
     /// A builder for [`InstanceStateChangeReason`](crate::model::InstanceStateChangeReason)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9400,6 +9460,7 @@ impl std::fmt::Debug for InstanceGroup {
 }
 /// See [`InstanceGroup`](crate::model::InstanceGroup)
 pub mod instance_group {
+    ///
     /// A builder for [`InstanceGroup`](crate::model::InstanceGroup)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9733,6 +9794,7 @@ impl std::fmt::Debug for EbsBlockDevice {
 }
 /// See [`EbsBlockDevice`](crate::model::EbsBlockDevice)
 pub mod ebs_block_device {
+    ///
     /// A builder for [`EbsBlockDevice`](crate::model::EbsBlockDevice)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9818,6 +9880,7 @@ impl std::fmt::Debug for InstanceGroupStatus {
 }
 /// See [`InstanceGroupStatus`](crate::model::InstanceGroupStatus)
 pub mod instance_group_status {
+    ///
     /// A builder for [`InstanceGroupStatus`](crate::model::InstanceGroupStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9923,6 +9986,7 @@ impl std::fmt::Debug for InstanceGroupTimeline {
 }
 /// See [`InstanceGroupTimeline`](crate::model::InstanceGroupTimeline)
 pub mod instance_group_timeline {
+    ///
     /// A builder for [`InstanceGroupTimeline`](crate::model::InstanceGroupTimeline)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10017,6 +10081,7 @@ impl std::fmt::Debug for InstanceGroupStateChangeReason {
 }
 /// See [`InstanceGroupStateChangeReason`](crate::model::InstanceGroupStateChangeReason)
 pub mod instance_group_state_change_reason {
+    ///
     /// A builder for [`InstanceGroupStateChangeReason`](crate::model::InstanceGroupStateChangeReason)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10342,6 +10407,7 @@ impl std::fmt::Debug for InstanceFleet {
 }
 /// See [`InstanceFleet`](crate::model::InstanceFleet)
 pub mod instance_fleet {
+    ///
     /// A builder for [`InstanceFleet`](crate::model::InstanceFleet)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10595,6 +10661,7 @@ impl std::fmt::Debug for InstanceTypeSpecification {
 }
 /// See [`InstanceTypeSpecification`](crate::model::InstanceTypeSpecification)
 pub mod instance_type_specification {
+    ///
     /// A builder for [`InstanceTypeSpecification`](crate::model::InstanceTypeSpecification)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10798,6 +10865,7 @@ impl std::fmt::Debug for InstanceFleetStatus {
 }
 /// See [`InstanceFleetStatus`](crate::model::InstanceFleetStatus)
 pub mod instance_fleet_status {
+    ///
     /// A builder for [`InstanceFleetStatus`](crate::model::InstanceFleetStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10923,6 +10991,7 @@ impl std::fmt::Debug for InstanceFleetTimeline {
 }
 /// See [`InstanceFleetTimeline`](crate::model::InstanceFleetTimeline)
 pub mod instance_fleet_timeline {
+    ///
     /// A builder for [`InstanceFleetTimeline`](crate::model::InstanceFleetTimeline)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11019,6 +11088,7 @@ impl std::fmt::Debug for InstanceFleetStateChangeReason {
 }
 /// See [`InstanceFleetStateChangeReason`](crate::model::InstanceFleetStateChangeReason)
 pub mod instance_fleet_state_change_reason {
+    ///
     /// A builder for [`InstanceFleetStateChangeReason`](crate::model::InstanceFleetStateChangeReason)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11274,6 +11344,7 @@ impl std::fmt::Debug for ClusterSummary {
 }
 /// See [`ClusterSummary`](crate::model::ClusterSummary)
 pub mod cluster_summary {
+    ///
     /// A builder for [`ClusterSummary`](crate::model::ClusterSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11407,6 +11478,7 @@ impl std::fmt::Debug for ClusterStatus {
 }
 /// See [`ClusterStatus`](crate::model::ClusterStatus)
 pub mod cluster_status {
+    ///
     /// A builder for [`ClusterStatus`](crate::model::ClusterStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11508,6 +11580,7 @@ impl std::fmt::Debug for ClusterTimeline {
 }
 /// See [`ClusterTimeline`](crate::model::ClusterTimeline)
 pub mod cluster_timeline {
+    ///
     /// A builder for [`ClusterTimeline`](crate::model::ClusterTimeline)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11602,6 +11675,7 @@ impl std::fmt::Debug for ClusterStateChangeReason {
 }
 /// See [`ClusterStateChangeReason`](crate::model::ClusterStateChangeReason)
 pub mod cluster_state_change_reason {
+    ///
     /// A builder for [`ClusterStateChangeReason`](crate::model::ClusterStateChangeReason)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11856,6 +11930,7 @@ impl std::fmt::Debug for Command {
 }
 /// See [`Command`](crate::model::Command)
 pub mod command {
+    ///
     /// A builder for [`Command`](crate::model::Command)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11985,6 +12060,7 @@ impl std::fmt::Debug for SessionMappingDetail {
 }
 /// See [`SessionMappingDetail`](crate::model::SessionMappingDetail)
 pub mod session_mapping_detail {
+    ///
     /// A builder for [`SessionMappingDetail`](crate::model::SessionMappingDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12133,6 +12209,7 @@ impl std::fmt::Debug for BlockPublicAccessConfigurationMetadata {
 }
 /// See [`BlockPublicAccessConfigurationMetadata`](crate::model::BlockPublicAccessConfigurationMetadata)
 pub mod block_public_access_configuration_metadata {
+    ///
     /// A builder for [`BlockPublicAccessConfigurationMetadata`](crate::model::BlockPublicAccessConfigurationMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12323,6 +12400,7 @@ impl std::fmt::Debug for Studio {
 }
 /// See [`Studio`](crate::model::Studio)
 pub mod studio {
+    ///
     /// A builder for [`Studio`](crate::model::Studio)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12640,6 +12718,7 @@ impl std::fmt::Debug for Step {
 }
 /// See [`Step`](crate::model::Step)
 pub mod step {
+    ///
     /// A builder for [`Step`](crate::model::Step)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12752,6 +12831,7 @@ impl std::fmt::Debug for OsRelease {
 }
 /// See [`OsRelease`](crate::model::OsRelease)
 pub mod os_release {
+    ///
     /// A builder for [`OsRelease`](crate::model::OsRelease)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12811,6 +12891,7 @@ impl std::fmt::Debug for SimplifiedApplication {
 }
 /// See [`SimplifiedApplication`](crate::model::SimplifiedApplication)
 pub mod simplified_application {
+    ///
     /// A builder for [`SimplifiedApplication`](crate::model::SimplifiedApplication)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12988,6 +13069,7 @@ impl std::fmt::Debug for NotebookExecution {
 }
 /// See [`NotebookExecution`](crate::model::NotebookExecution)
 pub mod notebook_execution {
+    ///
     /// A builder for [`NotebookExecution`](crate::model::NotebookExecution)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13354,6 +13436,7 @@ impl std::fmt::Debug for JobFlowDetail {
 }
 /// See [`JobFlowDetail`](crate::model::JobFlowDetail)
 pub mod job_flow_detail {
+    ///
     /// A builder for [`JobFlowDetail`](crate::model::JobFlowDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13630,6 +13713,7 @@ impl std::fmt::Debug for BootstrapActionDetail {
 }
 /// See [`BootstrapActionDetail`](crate::model::BootstrapActionDetail)
 pub mod bootstrap_action_detail {
+    ///
     /// A builder for [`BootstrapActionDetail`](crate::model::BootstrapActionDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13700,6 +13784,7 @@ impl std::fmt::Debug for StepDetail {
 }
 /// See [`StepDetail`](crate::model::StepDetail)
 pub mod step_detail {
+    ///
     /// A builder for [`StepDetail`](crate::model::StepDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13804,6 +13889,7 @@ impl std::fmt::Debug for StepExecutionStatusDetail {
 }
 /// See [`StepExecutionStatusDetail`](crate::model::StepExecutionStatusDetail)
 pub mod step_execution_status_detail {
+    ///
     /// A builder for [`StepExecutionStatusDetail`](crate::model::StepExecutionStatusDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14091,6 +14177,7 @@ impl std::fmt::Debug for JobFlowInstancesDetail {
 }
 /// See [`JobFlowInstancesDetail`](crate::model::JobFlowInstancesDetail)
 pub mod job_flow_instances_detail {
+    ///
     /// A builder for [`JobFlowInstancesDetail`](crate::model::JobFlowInstancesDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14423,6 +14510,7 @@ impl std::fmt::Debug for InstanceGroupDetail {
 }
 /// See [`InstanceGroupDetail`](crate::model::InstanceGroupDetail)
 pub mod instance_group_detail {
+    ///
     /// A builder for [`InstanceGroupDetail`](crate::model::InstanceGroupDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14710,6 +14798,7 @@ impl std::fmt::Debug for JobFlowExecutionStatusDetail {
 }
 /// See [`JobFlowExecutionStatusDetail`](crate::model::JobFlowExecutionStatusDetail)
 pub mod job_flow_execution_status_detail {
+    ///
     /// A builder for [`JobFlowExecutionStatusDetail`](crate::model::JobFlowExecutionStatusDetail)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -15152,6 +15241,7 @@ impl std::fmt::Debug for Cluster {
 }
 /// See [`Cluster`](crate::model::Cluster)
 pub mod cluster {
+    ///
     /// A builder for [`Cluster`](crate::model::Cluster)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -15807,6 +15897,7 @@ impl std::fmt::Debug for Ec2InstanceAttributes {
 }
 /// See [`Ec2InstanceAttributes`](crate::model::Ec2InstanceAttributes)
 pub mod ec2_instance_attributes {
+    ///
     /// A builder for [`Ec2InstanceAttributes`](crate::model::Ec2InstanceAttributes)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -16071,6 +16162,7 @@ impl std::fmt::Debug for CancelStepsInfo {
 }
 /// See [`CancelStepsInfo`](crate::model::CancelStepsInfo)
 pub mod cancel_steps_info {
+    ///
     /// A builder for [`CancelStepsInfo`](crate::model::CancelStepsInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

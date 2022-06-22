@@ -11482,6 +11482,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException)
 pub mod validation_exception {
+    ///
     /// A builder for [`ValidationException`](crate::error::ValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11546,6 +11547,7 @@ impl std::fmt::Display for RetryableConflictException {
 impl std::error::Error for RetryableConflictException {}
 /// See [`RetryableConflictException`](crate::error::RetryableConflictException)
 pub mod retryable_conflict_exception {
+    ///
     /// A builder for [`RetryableConflictException`](crate::error::RetryableConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11610,6 +11612,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11674,6 +11677,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11738,6 +11742,7 @@ impl std::fmt::Display for InvalidAttachmentException {
 impl std::error::Error for InvalidAttachmentException {}
 /// See [`InvalidAttachmentException`](crate::error::InvalidAttachmentException)
 pub mod invalid_attachment_exception {
+    ///
     /// A builder for [`InvalidAttachmentException`](crate::error::InvalidAttachmentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11802,6 +11807,7 @@ impl std::fmt::Display for InvalidArnException {
 impl std::error::Error for InvalidArnException {}
 /// See [`InvalidArnException`](crate::error::InvalidArnException)
 pub mod invalid_arn_exception {
+    ///
     /// A builder for [`InvalidArnException`](crate::error::InvalidArnException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11866,6 +11872,7 @@ impl std::fmt::Display for InternalServiceException {
 impl std::error::Error for InternalServiceException {}
 /// See [`InternalServiceException`](crate::error::InternalServiceException)
 pub mod internal_service_exception {
+    ///
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11930,6 +11937,7 @@ impl std::fmt::Display for IncompatibleSchemaException {
 impl std::error::Error for IncompatibleSchemaException {}
 /// See [`IncompatibleSchemaException`](crate::error::IncompatibleSchemaException)
 pub mod incompatible_schema_exception {
+    ///
     /// A builder for [`IncompatibleSchemaException`](crate::error::IncompatibleSchemaException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11994,6 +12002,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
+    ///
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12058,6 +12067,7 @@ impl std::fmt::Display for SchemaAlreadyExistsException {
 impl std::error::Error for SchemaAlreadyExistsException {}
 /// See [`SchemaAlreadyExistsException`](crate::error::SchemaAlreadyExistsException)
 pub mod schema_already_exists_exception {
+    ///
     /// A builder for [`SchemaAlreadyExistsException`](crate::error::SchemaAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12122,6 +12132,7 @@ impl std::fmt::Display for InvalidRuleException {
 impl std::error::Error for InvalidRuleException {}
 /// See [`InvalidRuleException`](crate::error::InvalidRuleException)
 pub mod invalid_rule_exception {
+    ///
     /// A builder for [`InvalidRuleException`](crate::error::InvalidRuleException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12186,6 +12197,7 @@ impl std::fmt::Display for InvalidFacetUpdateException {
 impl std::error::Error for InvalidFacetUpdateException {}
 /// See [`InvalidFacetUpdateException`](crate::error::InvalidFacetUpdateException)
 pub mod invalid_facet_update_exception {
+    ///
     /// A builder for [`InvalidFacetUpdateException`](crate::error::InvalidFacetUpdateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12250,6 +12262,7 @@ impl std::fmt::Display for FacetValidationException {
 impl std::error::Error for FacetValidationException {}
 /// See [`FacetValidationException`](crate::error::FacetValidationException)
 pub mod facet_validation_exception {
+    ///
     /// A builder for [`FacetValidationException`](crate::error::FacetValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12314,6 +12327,7 @@ impl std::fmt::Display for FacetNotFoundException {
 impl std::error::Error for FacetNotFoundException {}
 /// See [`FacetNotFoundException`](crate::error::FacetNotFoundException)
 pub mod facet_not_found_exception {
+    ///
     /// A builder for [`FacetNotFoundException`](crate::error::FacetNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12378,6 +12392,7 @@ impl std::fmt::Display for LinkNameAlreadyInUseException {
 impl std::error::Error for LinkNameAlreadyInUseException {}
 /// See [`LinkNameAlreadyInUseException`](crate::error::LinkNameAlreadyInUseException)
 pub mod link_name_already_in_use_exception {
+    ///
     /// A builder for [`LinkNameAlreadyInUseException`](crate::error::LinkNameAlreadyInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12442,6 +12457,7 @@ impl std::fmt::Display for DirectoryNotEnabledException {
 impl std::error::Error for DirectoryNotEnabledException {}
 /// See [`DirectoryNotEnabledException`](crate::error::DirectoryNotEnabledException)
 pub mod directory_not_enabled_exception {
+    ///
     /// A builder for [`DirectoryNotEnabledException`](crate::error::DirectoryNotEnabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12506,6 +12522,7 @@ impl std::fmt::Display for InvalidTaggingRequestException {
 impl std::error::Error for InvalidTaggingRequestException {}
 /// See [`InvalidTaggingRequestException`](crate::error::InvalidTaggingRequestException)
 pub mod invalid_tagging_request_exception {
+    ///
     /// A builder for [`InvalidTaggingRequestException`](crate::error::InvalidTaggingRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12570,6 +12587,7 @@ impl std::fmt::Display for InvalidSchemaDocException {
 impl std::error::Error for InvalidSchemaDocException {}
 /// See [`InvalidSchemaDocException`](crate::error::InvalidSchemaDocException)
 pub mod invalid_schema_doc_exception {
+    ///
     /// A builder for [`InvalidSchemaDocException`](crate::error::InvalidSchemaDocException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12634,6 +12652,7 @@ impl std::fmt::Display for SchemaAlreadyPublishedException {
 impl std::error::Error for SchemaAlreadyPublishedException {}
 /// See [`SchemaAlreadyPublishedException`](crate::error::SchemaAlreadyPublishedException)
 pub mod schema_already_published_exception {
+    ///
     /// A builder for [`SchemaAlreadyPublishedException`](crate::error::SchemaAlreadyPublishedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12698,6 +12717,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
 pub mod invalid_next_token_exception {
+    ///
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12762,6 +12782,7 @@ impl std::fmt::Display for NotPolicyException {
 impl std::error::Error for NotPolicyException {}
 /// See [`NotPolicyException`](crate::error::NotPolicyException)
 pub mod not_policy_exception {
+    ///
     /// A builder for [`NotPolicyException`](crate::error::NotPolicyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12826,6 +12847,7 @@ impl std::fmt::Display for CannotListParentOfRootException {
 impl std::error::Error for CannotListParentOfRootException {}
 /// See [`CannotListParentOfRootException`](crate::error::CannotListParentOfRootException)
 pub mod cannot_list_parent_of_root_exception {
+    ///
     /// A builder for [`CannotListParentOfRootException`](crate::error::CannotListParentOfRootException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12890,6 +12912,7 @@ impl std::fmt::Display for NotNodeException {
 impl std::error::Error for NotNodeException {}
 /// See [`NotNodeException`](crate::error::NotNodeException)
 pub mod not_node_exception {
+    ///
     /// A builder for [`NotNodeException`](crate::error::NotNodeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12954,6 +12977,7 @@ impl std::fmt::Display for NotIndexException {
 impl std::error::Error for NotIndexException {}
 /// See [`NotIndexException`](crate::error::NotIndexException)
 pub mod not_index_exception {
+    ///
     /// A builder for [`NotIndexException`](crate::error::NotIndexException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13018,6 +13042,7 @@ impl std::fmt::Display for DirectoryDeletedException {
 impl std::error::Error for DirectoryDeletedException {}
 /// See [`DirectoryDeletedException`](crate::error::DirectoryDeletedException)
 pub mod directory_deleted_exception {
+    ///
     /// A builder for [`DirectoryDeletedException`](crate::error::DirectoryDeletedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13082,6 +13107,7 @@ impl std::fmt::Display for ObjectAlreadyDetachedException {
 impl std::error::Error for ObjectAlreadyDetachedException {}
 /// See [`ObjectAlreadyDetachedException`](crate::error::ObjectAlreadyDetachedException)
 pub mod object_already_detached_exception {
+    ///
     /// A builder for [`ObjectAlreadyDetachedException`](crate::error::ObjectAlreadyDetachedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13146,6 +13172,7 @@ impl std::fmt::Display for StillContainsLinksException {
 impl std::error::Error for StillContainsLinksException {}
 /// See [`StillContainsLinksException`](crate::error::StillContainsLinksException)
 pub mod still_contains_links_exception {
+    ///
     /// A builder for [`StillContainsLinksException`](crate::error::StillContainsLinksException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13210,6 +13237,7 @@ impl std::fmt::Display for ObjectNotDetachedException {
 impl std::error::Error for ObjectNotDetachedException {}
 /// See [`ObjectNotDetachedException`](crate::error::ObjectNotDetachedException)
 pub mod object_not_detached_exception {
+    ///
     /// A builder for [`ObjectNotDetachedException`](crate::error::ObjectNotDetachedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13274,6 +13302,7 @@ impl std::fmt::Display for FacetInUseException {
 impl std::error::Error for FacetInUseException {}
 /// See [`FacetInUseException`](crate::error::FacetInUseException)
 pub mod facet_in_use_exception {
+    ///
     /// A builder for [`FacetInUseException`](crate::error::FacetInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13338,6 +13367,7 @@ impl std::fmt::Display for DirectoryNotDisabledException {
 impl std::error::Error for DirectoryNotDisabledException {}
 /// See [`DirectoryNotDisabledException`](crate::error::DirectoryNotDisabledException)
 pub mod directory_not_disabled_exception {
+    ///
     /// A builder for [`DirectoryNotDisabledException`](crate::error::DirectoryNotDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13402,6 +13432,7 @@ impl std::fmt::Display for FacetAlreadyExistsException {
 impl std::error::Error for FacetAlreadyExistsException {}
 /// See [`FacetAlreadyExistsException`](crate::error::FacetAlreadyExistsException)
 pub mod facet_already_exists_exception {
+    ///
     /// A builder for [`FacetAlreadyExistsException`](crate::error::FacetAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13466,6 +13497,7 @@ impl std::fmt::Display for UnsupportedIndexTypeException {
 impl std::error::Error for UnsupportedIndexTypeException {}
 /// See [`UnsupportedIndexTypeException`](crate::error::UnsupportedIndexTypeException)
 pub mod unsupported_index_type_exception {
+    ///
     /// A builder for [`UnsupportedIndexTypeException`](crate::error::UnsupportedIndexTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13530,6 +13562,7 @@ impl std::fmt::Display for DirectoryAlreadyExistsException {
 impl std::error::Error for DirectoryAlreadyExistsException {}
 /// See [`DirectoryAlreadyExistsException`](crate::error::DirectoryAlreadyExistsException)
 pub mod directory_already_exists_exception {
+    ///
     /// A builder for [`DirectoryAlreadyExistsException`](crate::error::DirectoryAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13610,6 +13643,7 @@ impl std::fmt::Display for BatchWriteException {
 impl std::error::Error for BatchWriteException {}
 /// See [`BatchWriteException`](crate::error::BatchWriteException)
 pub mod batch_write_exception {
+    ///
     /// A builder for [`BatchWriteException`](crate::error::BatchWriteException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13701,6 +13735,7 @@ impl std::fmt::Display for IndexedAttributeMissingException {
 impl std::error::Error for IndexedAttributeMissingException {}
 /// See [`IndexedAttributeMissingException`](crate::error::IndexedAttributeMissingException)
 pub mod indexed_attribute_missing_exception {
+    ///
     /// A builder for [`IndexedAttributeMissingException`](crate::error::IndexedAttributeMissingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

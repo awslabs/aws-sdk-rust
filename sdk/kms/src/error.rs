@@ -7612,6 +7612,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException)
 pub mod not_found_exception {
+    ///
     /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7677,6 +7678,7 @@ impl std::fmt::Display for KmsInvalidStateException {
 impl std::error::Error for KmsInvalidStateException {}
 /// See [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
 pub mod kms_invalid_state_exception {
+    ///
     /// A builder for [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7741,6 +7743,7 @@ impl std::fmt::Display for KmsInvalidMacException {
 impl std::error::Error for KmsInvalidMacException {}
 /// See [`KmsInvalidMacException`](crate::error::KmsInvalidMacException)
 pub mod kms_invalid_mac_exception {
+    ///
     /// A builder for [`KmsInvalidMacException`](crate::error::KmsInvalidMacException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7805,6 +7808,7 @@ impl std::fmt::Display for KmsInternalException {
 impl std::error::Error for KmsInternalException {}
 /// See [`KmsInternalException`](crate::error::KmsInternalException)
 pub mod kms_internal_exception {
+    ///
     /// A builder for [`KmsInternalException`](crate::error::KmsInternalException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7869,6 +7873,7 @@ impl std::fmt::Display for KeyUnavailableException {
 impl std::error::Error for KeyUnavailableException {}
 /// See [`KeyUnavailableException`](crate::error::KeyUnavailableException)
 pub mod key_unavailable_exception {
+    ///
     /// A builder for [`KeyUnavailableException`](crate::error::KeyUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7939,6 +7944,7 @@ impl std::fmt::Display for InvalidKeyUsageException {
 impl std::error::Error for InvalidKeyUsageException {}
 /// See [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException)
 pub mod invalid_key_usage_exception {
+    ///
     /// A builder for [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8003,6 +8009,7 @@ impl std::fmt::Display for InvalidGrantTokenException {
 impl std::error::Error for InvalidGrantTokenException {}
 /// See [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException)
 pub mod invalid_grant_token_exception {
+    ///
     /// A builder for [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8067,6 +8074,7 @@ impl std::fmt::Display for DisabledException {
 impl std::error::Error for DisabledException {}
 /// See [`DisabledException`](crate::error::DisabledException)
 pub mod disabled_exception {
+    ///
     /// A builder for [`DisabledException`](crate::error::DisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8134,6 +8142,7 @@ impl std::fmt::Display for KmsInvalidSignatureException {
 impl std::error::Error for KmsInvalidSignatureException {}
 /// See [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException)
 pub mod kms_invalid_signature_exception {
+    ///
     /// A builder for [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8198,6 +8207,7 @@ impl std::fmt::Display for DependencyTimeoutException {
 impl std::error::Error for DependencyTimeoutException {}
 /// See [`DependencyTimeoutException`](crate::error::DependencyTimeoutException)
 pub mod dependency_timeout_exception {
+    ///
     /// A builder for [`DependencyTimeoutException`](crate::error::DependencyTimeoutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8262,6 +8272,7 @@ impl std::fmt::Display for UnsupportedOperationException {
 impl std::error::Error for UnsupportedOperationException {}
 /// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
 pub mod unsupported_operation_exception {
+    ///
     /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8326,6 +8337,7 @@ impl std::fmt::Display for InvalidArnException {
 impl std::error::Error for InvalidArnException {}
 /// See [`InvalidArnException`](crate::error::InvalidArnException)
 pub mod invalid_arn_exception {
+    ///
     /// A builder for [`InvalidArnException`](crate::error::InvalidArnException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8390,6 +8402,7 @@ impl std::fmt::Display for CustomKeyStoreNotFoundException {
 impl std::error::Error for CustomKeyStoreNotFoundException {}
 /// See [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException)
 pub mod custom_key_store_not_found_exception {
+    ///
     /// A builder for [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8454,6 +8467,7 @@ impl std::fmt::Display for CustomKeyStoreNameInUseException {
 impl std::error::Error for CustomKeyStoreNameInUseException {}
 /// See [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException)
 pub mod custom_key_store_name_in_use_exception {
+    ///
     /// A builder for [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8524,6 +8538,7 @@ impl std::fmt::Display for CustomKeyStoreInvalidStateException {
 impl std::error::Error for CustomKeyStoreInvalidStateException {}
 /// See [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException)
 pub mod custom_key_store_invalid_state_exception {
+    ///
     /// A builder for [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8590,6 +8605,7 @@ impl std::fmt::Display for CloudHsmClusterNotRelatedException {
 impl std::error::Error for CloudHsmClusterNotRelatedException {}
 /// See [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException)
 pub mod cloud_hsm_cluster_not_related_exception {
+    ///
     /// A builder for [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8654,6 +8670,7 @@ impl std::fmt::Display for CloudHsmClusterNotFoundException {
 impl std::error::Error for CloudHsmClusterNotFoundException {}
 /// See [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException)
 pub mod cloud_hsm_cluster_not_found_exception {
+    ///
     /// A builder for [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8718,6 +8735,7 @@ impl std::fmt::Display for CloudHsmClusterNotActiveException {
 impl std::error::Error for CloudHsmClusterNotActiveException {}
 /// See [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException)
 pub mod cloud_hsm_cluster_not_active_exception {
+    ///
     /// A builder for [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8789,6 +8807,7 @@ impl std::fmt::Display for CloudHsmClusterInvalidConfigurationException {
 impl std::error::Error for CloudHsmClusterInvalidConfigurationException {}
 /// See [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException)
 pub mod cloud_hsm_cluster_invalid_configuration_exception {
+    ///
     /// A builder for [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8853,6 +8872,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8917,6 +8937,7 @@ impl std::fmt::Display for TagException {
 impl std::error::Error for TagException {}
 /// See [`TagException`](crate::error::TagException)
 pub mod tag_exception {
+    ///
     /// A builder for [`TagException`](crate::error::TagException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8981,6 +9002,7 @@ impl std::fmt::Display for InvalidGrantIdException {
 impl std::error::Error for InvalidGrantIdException {}
 /// See [`InvalidGrantIdException`](crate::error::InvalidGrantIdException)
 pub mod invalid_grant_id_exception {
+    ///
     /// A builder for [`InvalidGrantIdException`](crate::error::InvalidGrantIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9045,6 +9067,7 @@ impl std::fmt::Display for MalformedPolicyDocumentException {
 impl std::error::Error for MalformedPolicyDocumentException {}
 /// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
 pub mod malformed_policy_document_exception {
+    ///
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9109,6 +9132,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
 pub mod already_exists_exception {
+    ///
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9174,6 +9198,7 @@ impl std::fmt::Display for InvalidCiphertextException {
 impl std::error::Error for InvalidCiphertextException {}
 /// See [`InvalidCiphertextException`](crate::error::InvalidCiphertextException)
 pub mod invalid_ciphertext_exception {
+    ///
     /// A builder for [`InvalidCiphertextException`](crate::error::InvalidCiphertextException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9238,6 +9263,7 @@ impl std::fmt::Display for IncorrectKeyException {
 impl std::error::Error for IncorrectKeyException {}
 /// See [`IncorrectKeyException`](crate::error::IncorrectKeyException)
 pub mod incorrect_key_exception {
+    ///
     /// A builder for [`IncorrectKeyException`](crate::error::IncorrectKeyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9302,6 +9328,7 @@ impl std::fmt::Display for InvalidMarkerException {
 impl std::error::Error for InvalidMarkerException {}
 /// See [`InvalidMarkerException`](crate::error::InvalidMarkerException)
 pub mod invalid_marker_exception {
+    ///
     /// A builder for [`InvalidMarkerException`](crate::error::InvalidMarkerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9366,6 +9393,7 @@ impl std::fmt::Display for InvalidImportTokenException {
 impl std::error::Error for InvalidImportTokenException {}
 /// See [`InvalidImportTokenException`](crate::error::InvalidImportTokenException)
 pub mod invalid_import_token_exception {
+    ///
     /// A builder for [`InvalidImportTokenException`](crate::error::InvalidImportTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9430,6 +9458,7 @@ impl std::fmt::Display for IncorrectKeyMaterialException {
 impl std::error::Error for IncorrectKeyMaterialException {}
 /// See [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException)
 pub mod incorrect_key_material_exception {
+    ///
     /// A builder for [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9494,6 +9523,7 @@ impl std::fmt::Display for ExpiredImportTokenException {
 impl std::error::Error for ExpiredImportTokenException {}
 /// See [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException)
 pub mod expired_import_token_exception {
+    ///
     /// A builder for [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9561,6 +9591,7 @@ impl std::fmt::Display for CustomKeyStoreHasCmKsException {
 impl std::error::Error for CustomKeyStoreHasCmKsException {}
 /// See [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException)
 pub mod custom_key_store_has_cm_ks_exception {
+    ///
     /// A builder for [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9626,6 +9657,7 @@ impl std::fmt::Display for IncorrectTrustAnchorException {
 impl std::error::Error for IncorrectTrustAnchorException {}
 /// See [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException)
 pub mod incorrect_trust_anchor_exception {
+    ///
     /// A builder for [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9691,6 +9723,7 @@ impl std::fmt::Display for CloudHsmClusterInUseException {
 impl std::error::Error for CloudHsmClusterInUseException {}
 /// See [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException)
 pub mod cloud_hsm_cluster_in_use_exception {
+    ///
     /// A builder for [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9755,6 +9788,7 @@ impl std::fmt::Display for InvalidAliasNameException {
 impl std::error::Error for InvalidAliasNameException {}
 /// See [`InvalidAliasNameException`](crate::error::InvalidAliasNameException)
 pub mod invalid_alias_name_exception {
+    ///
     /// A builder for [`InvalidAliasNameException`](crate::error::InvalidAliasNameException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

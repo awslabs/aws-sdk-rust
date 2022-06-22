@@ -28,6 +28,7 @@ impl std::fmt::Debug for InvokeEndpointAsyncOutput {
 }
 /// See [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput)
 pub mod invoke_endpoint_async_output {
+    ///
     /// A builder for [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -127,6 +128,7 @@ impl std::fmt::Debug for InvokeEndpointOutput {
 }
 /// See [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput)
 pub mod invoke_endpoint_output {
+    ///
     /// A builder for [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

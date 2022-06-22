@@ -489,6 +489,7 @@ impl std::fmt::Display for UnauthorizedClientException {
 impl std::error::Error for UnauthorizedClientException {}
 /// See [`UnauthorizedClientException`](crate::error::UnauthorizedClientException)
 pub mod unauthorized_client_exception {
+    ///
     /// A builder for [`UnauthorizedClientException`](crate::error::UnauthorizedClientException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -596,6 +597,7 @@ impl std::fmt::Display for SlowDownException {
 impl std::error::Error for SlowDownException {}
 /// See [`SlowDownException`](crate::error::SlowDownException)
 pub mod slow_down_exception {
+    ///
     /// A builder for [`SlowDownException`](crate::error::SlowDownException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -703,6 +705,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException)
 pub mod invalid_request_exception {
+    ///
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -810,6 +813,7 @@ impl std::fmt::Display for InvalidClientException {
 impl std::error::Error for InvalidClientException {}
 /// See [`InvalidClientException`](crate::error::InvalidClientException)
 pub mod invalid_client_exception {
+    ///
     /// A builder for [`InvalidClientException`](crate::error::InvalidClientException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -917,6 +921,7 @@ impl std::fmt::Display for InternalServerException {
 impl std::error::Error for InternalServerException {}
 /// See [`InternalServerException`](crate::error::InternalServerException)
 pub mod internal_server_exception {
+    ///
     /// A builder for [`InternalServerException`](crate::error::InternalServerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1024,6 +1029,7 @@ impl std::fmt::Display for InvalidScopeException {
 impl std::error::Error for InvalidScopeException {}
 /// See [`InvalidScopeException`](crate::error::InvalidScopeException)
 pub mod invalid_scope_exception {
+    ///
     /// A builder for [`InvalidScopeException`](crate::error::InvalidScopeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1131,6 +1137,7 @@ impl std::fmt::Display for InvalidClientMetadataException {
 impl std::error::Error for InvalidClientMetadataException {}
 /// See [`InvalidClientMetadataException`](crate::error::InvalidClientMetadataException)
 pub mod invalid_client_metadata_exception {
+    ///
     /// A builder for [`InvalidClientMetadataException`](crate::error::InvalidClientMetadataException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1238,6 +1245,7 @@ impl std::fmt::Display for UnsupportedGrantTypeException {
 impl std::error::Error for UnsupportedGrantTypeException {}
 /// See [`UnsupportedGrantTypeException`](crate::error::UnsupportedGrantTypeException)
 pub mod unsupported_grant_type_exception {
+    ///
     /// A builder for [`UnsupportedGrantTypeException`](crate::error::UnsupportedGrantTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1345,6 +1353,7 @@ impl std::fmt::Display for InvalidGrantException {
 impl std::error::Error for InvalidGrantException {}
 /// See [`InvalidGrantException`](crate::error::InvalidGrantException)
 pub mod invalid_grant_exception {
+    ///
     /// A builder for [`InvalidGrantException`](crate::error::InvalidGrantException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1452,6 +1461,7 @@ impl std::fmt::Display for ExpiredTokenException {
 impl std::error::Error for ExpiredTokenException {}
 /// See [`ExpiredTokenException`](crate::error::ExpiredTokenException)
 pub mod expired_token_exception {
+    ///
     /// A builder for [`ExpiredTokenException`](crate::error::ExpiredTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1559,6 +1569,7 @@ impl std::fmt::Display for AuthorizationPendingException {
 impl std::error::Error for AuthorizationPendingException {}
 /// See [`AuthorizationPendingException`](crate::error::AuthorizationPendingException)
 pub mod authorization_pending_exception {
+    ///
     /// A builder for [`AuthorizationPendingException`](crate::error::AuthorizationPendingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1666,6 +1677,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException)
 pub mod access_denied_exception {
+    ///
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

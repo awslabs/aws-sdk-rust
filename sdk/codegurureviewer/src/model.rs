@@ -153,6 +153,7 @@ impl std::fmt::Debug for RepositoryAssociationSummary {
 }
 /// See [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary)
 pub mod repository_association_summary {
+    ///
     /// A builder for [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -534,6 +535,7 @@ impl std::fmt::Debug for RecommendationSummary {
 }
 /// See [`RecommendationSummary`](crate::model::RecommendationSummary)
 pub mod recommendation_summary {
+    ///
     /// A builder for [`RecommendationSummary`](crate::model::RecommendationSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -780,6 +782,7 @@ impl std::fmt::Debug for RuleMetadata {
 }
 /// See [`RuleMetadata`](crate::model::RuleMetadata)
 pub mod rule_metadata {
+    ///
     /// A builder for [`RuleMetadata`](crate::model::RuleMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1016,6 +1019,7 @@ impl std::fmt::Debug for RecommendationFeedbackSummary {
 }
 /// See [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary)
 pub mod recommendation_feedback_summary {
+    ///
     /// A builder for [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1199,6 +1203,7 @@ impl std::fmt::Debug for CodeReviewSummary {
 }
 /// See [`CodeReviewSummary`](crate::model::CodeReviewSummary)
 pub mod code_review_summary {
+    ///
     /// A builder for [`CodeReviewSummary`](crate::model::CodeReviewSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1453,6 +1458,7 @@ impl std::fmt::Debug for SourceCodeType {
 }
 /// See [`SourceCodeType`](crate::model::SourceCodeType)
 pub mod source_code_type {
+    ///
     /// A builder for [`SourceCodeType`](crate::model::SourceCodeType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1594,6 +1600,7 @@ impl std::fmt::Debug for RequestMetadata {
 }
 /// See [`RequestMetadata`](crate::model::RequestMetadata)
 pub mod request_metadata {
+    ///
     /// A builder for [`RequestMetadata`](crate::model::RequestMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1756,6 +1763,7 @@ impl std::fmt::Debug for EventInfo {
 }
 /// See [`EventInfo`](crate::model::EventInfo)
 pub mod event_info {
+    ///
     /// A builder for [`EventInfo`](crate::model::EventInfo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1829,6 +1837,7 @@ impl std::fmt::Debug for S3BucketRepository {
 }
 /// See [`S3BucketRepository`](crate::model::S3BucketRepository)
 pub mod s3_bucket_repository {
+    ///
     /// A builder for [`S3BucketRepository`](crate::model::S3BucketRepository)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1905,6 +1914,7 @@ impl std::fmt::Debug for S3RepositoryDetails {
 }
 /// See [`S3RepositoryDetails`](crate::model::S3RepositoryDetails)
 pub mod s3_repository_details {
+    ///
     /// A builder for [`S3RepositoryDetails`](crate::model::S3RepositoryDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1991,6 +2001,7 @@ impl std::fmt::Debug for CodeArtifacts {
 }
 /// See [`CodeArtifacts`](crate::model::CodeArtifacts)
 pub mod code_artifacts {
+    ///
     /// A builder for [`CodeArtifacts`](crate::model::CodeArtifacts)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2073,6 +2084,7 @@ impl std::fmt::Debug for BranchDiffSourceCodeType {
 }
 /// See [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType)
 pub mod branch_diff_source_code_type {
+    ///
     /// A builder for [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2145,6 +2157,7 @@ impl std::fmt::Debug for RepositoryHeadSourceCodeType {
 }
 /// See [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType)
 pub mod repository_head_source_code_type {
+    ///
     /// A builder for [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2213,6 +2226,7 @@ impl std::fmt::Debug for CommitDiffSourceCodeType {
 }
 /// See [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType)
 pub mod commit_diff_source_code_type {
+    ///
     /// A builder for [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2320,6 +2334,7 @@ impl std::fmt::Debug for MetricsSummary {
 }
 /// See [`MetricsSummary`](crate::model::MetricsSummary)
 pub mod metrics_summary {
+    ///
     /// A builder for [`MetricsSummary`](crate::model::MetricsSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2632,6 +2647,7 @@ impl std::fmt::Debug for RepositoryAssociation {
 }
 /// See [`RepositoryAssociation`](crate::model::RepositoryAssociation)
 pub mod repository_association {
+    ///
     /// A builder for [`RepositoryAssociation`](crate::model::RepositoryAssociation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2892,6 +2908,7 @@ impl std::fmt::Debug for KmsKeyDetails {
 }
 /// See [`KmsKeyDetails`](crate::model::KmsKeyDetails)
 pub mod kms_key_details {
+    ///
     /// A builder for [`KmsKeyDetails`](crate::model::KmsKeyDetails)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3053,6 +3070,7 @@ impl std::fmt::Debug for RecommendationFeedback {
 }
 /// See [`RecommendationFeedback`](crate::model::RecommendationFeedback)
 pub mod recommendation_feedback {
+    ///
     /// A builder for [`RecommendationFeedback`](crate::model::RecommendationFeedback)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3307,6 +3325,7 @@ impl std::fmt::Debug for CodeReview {
 }
 /// See [`CodeReview`](crate::model::CodeReview)
 pub mod code_review {
+    ///
     /// A builder for [`CodeReview`](crate::model::CodeReview)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3723,6 +3742,7 @@ impl std::fmt::Debug for Metrics {
 }
 /// See [`Metrics`](crate::model::Metrics)
 pub mod metrics {
+    ///
     /// A builder for [`Metrics`](crate::model::Metrics)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3815,6 +3835,7 @@ impl std::fmt::Debug for CodeReviewType {
 }
 /// See [`CodeReviewType`](crate::model::CodeReviewType)
 pub mod code_review_type {
+    ///
     /// A builder for [`CodeReviewType`](crate::model::CodeReviewType)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3902,6 +3923,7 @@ impl std::fmt::Debug for RepositoryAnalysis {
 }
 /// See [`RepositoryAnalysis`](crate::model::RepositoryAnalysis)
 pub mod repository_analysis {
+    ///
     /// A builder for [`RepositoryAnalysis`](crate::model::RepositoryAnalysis)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4000,6 +4022,7 @@ impl std::fmt::Debug for Repository {
 }
 /// See [`Repository`](crate::model::Repository)
 pub mod repository {
+    ///
     /// A builder for [`Repository`](crate::model::Repository)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4113,6 +4136,7 @@ impl std::fmt::Debug for S3Repository {
 }
 /// See [`S3Repository`](crate::model::S3Repository)
 pub mod s3_repository {
+    ///
     /// A builder for [`S3Repository`](crate::model::S3Repository)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4193,6 +4217,7 @@ impl std::fmt::Debug for ThirdPartySourceRepository {
 }
 /// See [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository)
 pub mod third_party_source_repository {
+    ///
     /// A builder for [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4274,6 +4299,7 @@ impl std::fmt::Debug for CodeCommitRepository {
 }
 /// See [`CodeCommitRepository`](crate::model::CodeCommitRepository)
 pub mod code_commit_repository {
+    ///
     /// A builder for [`CodeCommitRepository`](crate::model::CodeCommitRepository)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

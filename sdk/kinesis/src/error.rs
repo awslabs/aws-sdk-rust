@@ -3592,6 +3592,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3656,6 +3657,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException)
 pub mod limit_exceeded_exception {
+    ///
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3720,6 +3722,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException)
 pub mod resource_in_use_exception {
+    ///
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3784,6 +3787,7 @@ impl std::fmt::Display for InvalidArgumentException {
 impl std::error::Error for InvalidArgumentException {}
 /// See [`InvalidArgumentException`](crate::error::InvalidArgumentException)
 pub mod invalid_argument_exception {
+    ///
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3848,6 +3852,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException)
 pub mod validation_exception {
+    ///
     /// A builder for [`ValidationException`](crate::error::ValidationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3912,6 +3917,7 @@ impl std::fmt::Display for KmsInvalidStateException {
 impl std::error::Error for KmsInvalidStateException {}
 /// See [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
 pub mod kms_invalid_state_exception {
+    ///
     /// A builder for [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3976,6 +3982,7 @@ impl std::fmt::Display for KmsThrottlingException {
 impl std::error::Error for KmsThrottlingException {}
 /// See [`KmsThrottlingException`](crate::error::KmsThrottlingException)
 pub mod kms_throttling_exception {
+    ///
     /// A builder for [`KmsThrottlingException`](crate::error::KmsThrottlingException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4040,6 +4047,7 @@ impl std::fmt::Display for KmsOptInRequired {
 impl std::error::Error for KmsOptInRequired {}
 /// See [`KmsOptInRequired`](crate::error::KmsOptInRequired)
 pub mod kms_opt_in_required {
+    ///
     /// A builder for [`KmsOptInRequired`](crate::error::KmsOptInRequired)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4104,6 +4112,7 @@ impl std::fmt::Display for KmsNotFoundException {
 impl std::error::Error for KmsNotFoundException {}
 /// See [`KmsNotFoundException`](crate::error::KmsNotFoundException)
 pub mod kms_not_found_exception {
+    ///
     /// A builder for [`KmsNotFoundException`](crate::error::KmsNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4168,6 +4177,7 @@ impl std::fmt::Display for KmsDisabledException {
 impl std::error::Error for KmsDisabledException {}
 /// See [`KmsDisabledException`](crate::error::KmsDisabledException)
 pub mod kms_disabled_exception {
+    ///
     /// A builder for [`KmsDisabledException`](crate::error::KmsDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4232,6 +4242,7 @@ impl std::fmt::Display for KmsAccessDeniedException {
 impl std::error::Error for KmsAccessDeniedException {}
 /// See [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
 pub mod kms_access_denied_exception {
+    ///
     /// A builder for [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4296,6 +4307,7 @@ impl std::fmt::Display for ProvisionedThroughputExceededException {
 impl std::error::Error for ProvisionedThroughputExceededException {}
 /// See [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException)
 pub mod provisioned_throughput_exceeded_exception {
+    ///
     /// A builder for [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4360,6 +4372,7 @@ impl std::fmt::Display for ExpiredNextTokenException {
 impl std::error::Error for ExpiredNextTokenException {}
 /// See [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException)
 pub mod expired_next_token_exception {
+    ///
     /// A builder for [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4424,6 +4437,7 @@ impl std::fmt::Display for ExpiredIteratorException {
 impl std::error::Error for ExpiredIteratorException {}
 /// See [`ExpiredIteratorException`](crate::error::ExpiredIteratorException)
 pub mod expired_iterator_exception {
+    ///
     /// A builder for [`ExpiredIteratorException`](crate::error::ExpiredIteratorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

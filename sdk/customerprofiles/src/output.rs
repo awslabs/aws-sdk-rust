@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateProfileOutput {
 }
 /// See [`UpdateProfileOutput`](crate::output::UpdateProfileOutput)
 pub mod update_profile_output {
+    ///
     /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -130,6 +131,7 @@ impl std::fmt::Debug for UpdateDomainOutput {
 }
 /// See [`UpdateDomainOutput`](crate::output::UpdateDomainOutput)
 pub mod update_domain_output {
+    ///
     /// A builder for [`UpdateDomainOutput`](crate::output::UpdateDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -292,6 +294,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -322,6 +325,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -369,6 +373,7 @@ impl std::fmt::Debug for SearchProfilesOutput {
 }
 /// See [`SearchProfilesOutput`](crate::output::SearchProfilesOutput)
 pub mod search_profiles_output {
+    ///
     /// A builder for [`SearchProfilesOutput`](crate::output::SearchProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -540,6 +545,7 @@ impl std::fmt::Debug for PutProfileObjectTypeOutput {
 }
 /// See [`PutProfileObjectTypeOutput`](crate::output::PutProfileObjectTypeOutput)
 pub mod put_profile_object_type_output {
+    ///
     /// A builder for [`PutProfileObjectTypeOutput`](crate::output::PutProfileObjectTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -801,6 +807,7 @@ impl std::fmt::Debug for PutProfileObjectOutput {
 }
 /// See [`PutProfileObjectOutput`](crate::output::PutProfileObjectOutput)
 pub mod put_profile_object_output {
+    ///
     /// A builder for [`PutProfileObjectOutput`](crate::output::PutProfileObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -915,6 +922,7 @@ impl std::fmt::Debug for PutIntegrationOutput {
 }
 /// See [`PutIntegrationOutput`](crate::output::PutIntegrationOutput)
 pub mod put_integration_output {
+    ///
     /// A builder for [`PutIntegrationOutput`](crate::output::PutIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1096,6 +1104,7 @@ impl std::fmt::Debug for MergeProfilesOutput {
 }
 /// See [`MergeProfilesOutput`](crate::output::MergeProfilesOutput)
 pub mod merge_profiles_output {
+    ///
     /// A builder for [`MergeProfilesOutput`](crate::output::MergeProfilesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1157,6 +1166,7 @@ impl std::fmt::Debug for ListWorkflowsOutput {
 }
 /// See [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
 pub mod list_workflows_output {
+    ///
     /// A builder for [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1236,6 +1246,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1312,6 +1323,7 @@ impl std::fmt::Debug for ListProfileObjectTypeTemplatesOutput {
 }
 /// See [`ListProfileObjectTypeTemplatesOutput`](crate::output::ListProfileObjectTypeTemplatesOutput)
 pub mod list_profile_object_type_templates_output {
+    ///
     /// A builder for [`ListProfileObjectTypeTemplatesOutput`](crate::output::ListProfileObjectTypeTemplatesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1397,6 +1409,7 @@ impl std::fmt::Debug for ListProfileObjectTypesOutput {
 }
 /// See [`ListProfileObjectTypesOutput`](crate::output::ListProfileObjectTypesOutput)
 pub mod list_profile_object_types_output {
+    ///
     /// A builder for [`ListProfileObjectTypesOutput`](crate::output::ListProfileObjectTypesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1480,6 +1493,7 @@ impl std::fmt::Debug for ListProfileObjectsOutput {
 }
 /// See [`ListProfileObjectsOutput`](crate::output::ListProfileObjectsOutput)
 pub mod list_profile_objects_output {
+    ///
     /// A builder for [`ListProfileObjectsOutput`](crate::output::ListProfileObjectsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1562,6 +1576,7 @@ impl std::fmt::Debug for ListIntegrationsOutput {
 }
 /// See [`ListIntegrationsOutput`](crate::output::ListIntegrationsOutput)
 pub mod list_integrations_output {
+    ///
     /// A builder for [`ListIntegrationsOutput`](crate::output::ListIntegrationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1650,6 +1665,7 @@ impl std::fmt::Debug for ListIdentityResolutionJobsOutput {
 }
 /// See [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput)
 pub mod list_identity_resolution_jobs_output {
+    ///
     /// A builder for [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1736,6 +1752,7 @@ impl std::fmt::Debug for ListDomainsOutput {
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput)
 pub mod list_domains_output {
+    ///
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1818,6 +1835,7 @@ impl std::fmt::Debug for ListAccountIntegrationsOutput {
 }
 /// See [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput)
 pub mod list_account_integrations_output {
+    ///
     /// A builder for [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1914,6 +1932,7 @@ impl std::fmt::Debug for GetWorkflowStepsOutput {
 }
 /// See [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput)
 pub mod get_workflow_steps_output {
+    ///
     /// A builder for [`GetWorkflowStepsOutput`](crate::output::GetWorkflowStepsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2065,6 +2084,7 @@ impl std::fmt::Debug for GetWorkflowOutput {
 }
 /// See [`GetWorkflowOutput`](crate::output::GetWorkflowOutput)
 pub mod get_workflow_output {
+    ///
     /// A builder for [`GetWorkflowOutput`](crate::output::GetWorkflowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2278,6 +2298,7 @@ impl std::fmt::Debug for GetProfileObjectTypeTemplateOutput {
 }
 /// See [`GetProfileObjectTypeTemplateOutput`](crate::output::GetProfileObjectTypeTemplateOutput)
 pub mod get_profile_object_type_template_output {
+    ///
     /// A builder for [`GetProfileObjectTypeTemplateOutput`](crate::output::GetProfileObjectTypeTemplateOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2549,6 +2570,7 @@ impl std::fmt::Debug for GetProfileObjectTypeOutput {
 }
 /// See [`GetProfileObjectTypeOutput`](crate::output::GetProfileObjectTypeOutput)
 pub mod get_profile_object_type_output {
+    ///
     /// A builder for [`GetProfileObjectTypeOutput`](crate::output::GetProfileObjectTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2831,6 +2853,7 @@ impl std::fmt::Debug for GetMatchesOutput {
 }
 /// See [`GetMatchesOutput`](crate::output::GetMatchesOutput)
 pub mod get_matches_output {
+    ///
     /// A builder for [`GetMatchesOutput`](crate::output::GetMatchesOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2990,6 +3013,7 @@ impl std::fmt::Debug for GetIntegrationOutput {
 }
 /// See [`GetIntegrationOutput`](crate::output::GetIntegrationOutput)
 pub mod get_integration_output {
+    ///
     /// A builder for [`GetIntegrationOutput`](crate::output::GetIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3259,6 +3283,7 @@ impl std::fmt::Debug for GetIdentityResolutionJobOutput {
 }
 /// See [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput)
 pub mod get_identity_resolution_job_output {
+    ///
     /// A builder for [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3534,6 +3559,7 @@ impl std::fmt::Debug for GetDomainOutput {
 }
 /// See [`GetDomainOutput`](crate::output::GetDomainOutput)
 pub mod get_domain_output {
+    ///
     /// A builder for [`GetDomainOutput`](crate::output::GetDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3748,6 +3774,7 @@ impl std::fmt::Debug for GetAutoMergingPreviewOutput {
 }
 /// See [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput)
 pub mod get_auto_merging_preview_output {
+    ///
     /// A builder for [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3833,6 +3860,7 @@ impl std::fmt::Debug for DeleteWorkflowOutput {
 }
 /// See [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
 pub mod delete_workflow_output {
+    ///
     /// A builder for [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3873,6 +3901,7 @@ impl std::fmt::Debug for DeleteProfileObjectTypeOutput {
 }
 /// See [`DeleteProfileObjectTypeOutput`](crate::output::DeleteProfileObjectTypeOutput)
 pub mod delete_profile_object_type_output {
+    ///
     /// A builder for [`DeleteProfileObjectTypeOutput`](crate::output::DeleteProfileObjectTypeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3927,6 +3956,7 @@ impl std::fmt::Debug for DeleteProfileObjectOutput {
 }
 /// See [`DeleteProfileObjectOutput`](crate::output::DeleteProfileObjectOutput)
 pub mod delete_profile_object_output {
+    ///
     /// A builder for [`DeleteProfileObjectOutput`](crate::output::DeleteProfileObjectOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3981,6 +4011,7 @@ impl std::fmt::Debug for DeleteProfileKeyOutput {
 }
 /// See [`DeleteProfileKeyOutput`](crate::output::DeleteProfileKeyOutput)
 pub mod delete_profile_key_output {
+    ///
     /// A builder for [`DeleteProfileKeyOutput`](crate::output::DeleteProfileKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4035,6 +4066,7 @@ impl std::fmt::Debug for DeleteProfileOutput {
 }
 /// See [`DeleteProfileOutput`](crate::output::DeleteProfileOutput)
 pub mod delete_profile_output {
+    ///
     /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4089,6 +4121,7 @@ impl std::fmt::Debug for DeleteIntegrationOutput {
 }
 /// See [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput)
 pub mod delete_integration_output {
+    ///
     /// A builder for [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4143,6 +4176,7 @@ impl std::fmt::Debug for DeleteDomainOutput {
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
 pub mod delete_domain_output {
+    ///
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4197,6 +4231,7 @@ impl std::fmt::Debug for CreateProfileOutput {
 }
 /// See [`CreateProfileOutput`](crate::output::CreateProfileOutput)
 pub mod create_profile_output {
+    ///
     /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4258,6 +4293,7 @@ impl std::fmt::Debug for CreateIntegrationWorkflowOutput {
 }
 /// See [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput)
 pub mod create_integration_workflow_output {
+    ///
     /// A builder for [`CreateIntegrationWorkflowOutput`](crate::output::CreateIntegrationWorkflowOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4379,6 +4415,7 @@ impl std::fmt::Debug for CreateDomainOutput {
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput)
 pub mod create_domain_output {
+    ///
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4558,6 +4595,7 @@ impl std::fmt::Debug for AddProfileKeyOutput {
 }
 /// See [`AddProfileKeyOutput`](crate::output::AddProfileKeyOutput)
 pub mod add_profile_key_output {
+    ///
     /// A builder for [`AddProfileKeyOutput`](crate::output::AddProfileKeyOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

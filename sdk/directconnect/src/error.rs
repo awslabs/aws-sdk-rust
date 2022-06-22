@@ -7223,6 +7223,7 @@ impl std::fmt::Display for DirectConnectServerException {
 impl std::error::Error for DirectConnectServerException {}
 /// See [`DirectConnectServerException`](crate::error::DirectConnectServerException)
 pub mod direct_connect_server_exception {
+    ///
     /// A builder for [`DirectConnectServerException`](crate::error::DirectConnectServerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7287,6 +7288,7 @@ impl std::fmt::Display for DirectConnectClientException {
 impl std::error::Error for DirectConnectClientException {}
 /// See [`DirectConnectClientException`](crate::error::DirectConnectClientException)
 pub mod direct_connect_client_exception {
+    ///
     /// A builder for [`DirectConnectClientException`](crate::error::DirectConnectClientException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7351,6 +7353,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException)
 pub mod too_many_tags_exception {
+    ///
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7415,6 +7418,7 @@ impl std::fmt::Display for DuplicateTagKeysException {
 impl std::error::Error for DuplicateTagKeysException {}
 /// See [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException)
 pub mod duplicate_tag_keys_exception {
+    ///
     /// A builder for [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

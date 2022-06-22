@@ -2948,6 +2948,7 @@ impl std::fmt::Display for ServiceNotFound {
 impl std::error::Error for ServiceNotFound {}
 /// See [`ServiceNotFound`](crate::error::ServiceNotFound)
 pub mod service_not_found {
+    ///
     /// A builder for [`ServiceNotFound`](crate::error::ServiceNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3012,6 +3013,7 @@ impl std::fmt::Display for InvalidInput {
 impl std::error::Error for InvalidInput {}
 /// See [`InvalidInput`](crate::error::InvalidInput)
 pub mod invalid_input {
+    ///
     /// A builder for [`InvalidInput`](crate::error::InvalidInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3085,6 +3087,7 @@ impl std::fmt::Display for DuplicateRequest {
 impl std::error::Error for DuplicateRequest {}
 /// See [`DuplicateRequest`](crate::error::DuplicateRequest)
 pub mod duplicate_request {
+    ///
     /// A builder for [`DuplicateRequest`](crate::error::DuplicateRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3164,6 +3167,7 @@ impl std::fmt::Display for ResourceInUse {
 impl std::error::Error for ResourceInUse {}
 /// See [`ResourceInUse`](crate::error::ResourceInUse)
 pub mod resource_in_use {
+    ///
     /// A builder for [`ResourceInUse`](crate::error::ResourceInUse)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3228,6 +3232,7 @@ impl std::fmt::Display for NamespaceNotFound {
 impl std::error::Error for NamespaceNotFound {}
 /// See [`NamespaceNotFound`](crate::error::NamespaceNotFound)
 pub mod namespace_not_found {
+    ///
     /// A builder for [`NamespaceNotFound`](crate::error::NamespaceNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3292,6 +3297,7 @@ impl std::fmt::Display for InstanceNotFound {
 impl std::error::Error for InstanceNotFound {}
 /// See [`InstanceNotFound`](crate::error::InstanceNotFound)
 pub mod instance_not_found {
+    ///
     /// A builder for [`InstanceNotFound`](crate::error::InstanceNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3356,6 +3362,7 @@ impl std::fmt::Display for CustomHealthNotFound {
 impl std::error::Error for CustomHealthNotFound {}
 /// See [`CustomHealthNotFound`](crate::error::CustomHealthNotFound)
 pub mod custom_health_not_found {
+    ///
     /// A builder for [`CustomHealthNotFound`](crate::error::CustomHealthNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3420,6 +3427,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
 pub mod resource_not_found_exception {
+    ///
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3493,6 +3501,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException)
 pub mod too_many_tags_exception {
+    ///
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3572,6 +3581,7 @@ impl std::fmt::Display for ResourceLimitExceeded {
 impl std::error::Error for ResourceLimitExceeded {}
 /// See [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded)
 pub mod resource_limit_exceeded {
+    ///
     /// A builder for [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3636,6 +3646,7 @@ impl std::fmt::Display for OperationNotFound {
 impl std::error::Error for OperationNotFound {}
 /// See [`OperationNotFound`](crate::error::OperationNotFound)
 pub mod operation_not_found {
+    ///
     /// A builder for [`OperationNotFound`](crate::error::OperationNotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3700,6 +3711,7 @@ impl std::fmt::Display for RequestLimitExceeded {
 impl std::error::Error for RequestLimitExceeded {}
 /// See [`RequestLimitExceeded`](crate::error::RequestLimitExceeded)
 pub mod request_limit_exceeded {
+    ///
     /// A builder for [`RequestLimitExceeded`](crate::error::RequestLimitExceeded)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3780,6 +3792,7 @@ impl std::fmt::Display for ServiceAlreadyExists {
 impl std::error::Error for ServiceAlreadyExists {}
 /// See [`ServiceAlreadyExists`](crate::error::ServiceAlreadyExists)
 pub mod service_already_exists {
+    ///
     /// A builder for [`ServiceAlreadyExists`](crate::error::ServiceAlreadyExists)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3887,6 +3900,7 @@ impl std::fmt::Display for NamespaceAlreadyExists {
 impl std::error::Error for NamespaceAlreadyExists {}
 /// See [`NamespaceAlreadyExists`](crate::error::NamespaceAlreadyExists)
 pub mod namespace_already_exists {
+    ///
     /// A builder for [`NamespaceAlreadyExists`](crate::error::NamespaceAlreadyExists)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

@@ -401,6 +401,7 @@ impl std::fmt::Debug for CopyPartResult {
 }
 /// See [`CopyPartResult`](crate::model::CopyPartResult)
 pub mod copy_part_result {
+    ///
     /// A builder for [`CopyPartResult`](crate::model::CopyPartResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -610,6 +611,7 @@ impl std::fmt::Debug for EndEvent {
 }
 /// See [`EndEvent`](crate::model::EndEvent)
 pub mod end_event {
+    ///
     /// A builder for [`EndEvent`](crate::model::EndEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -640,6 +642,7 @@ impl std::fmt::Debug for ContinuationEvent {
 }
 /// See [`ContinuationEvent`](crate::model::ContinuationEvent)
 pub mod continuation_event {
+    ///
     /// A builder for [`ContinuationEvent`](crate::model::ContinuationEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -680,6 +683,7 @@ impl std::fmt::Debug for ProgressEvent {
 }
 /// See [`ProgressEvent`](crate::model::ProgressEvent)
 pub mod progress_event {
+    ///
     /// A builder for [`ProgressEvent`](crate::model::ProgressEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -748,6 +752,7 @@ impl std::fmt::Debug for Progress {
 }
 /// See [`Progress`](crate::model::Progress)
 pub mod progress {
+    ///
     /// A builder for [`Progress`](crate::model::Progress)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -826,6 +831,7 @@ impl std::fmt::Debug for StatsEvent {
 }
 /// See [`StatsEvent`](crate::model::StatsEvent)
 pub mod stats_event {
+    ///
     /// A builder for [`StatsEvent`](crate::model::StatsEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -894,6 +900,7 @@ impl std::fmt::Debug for Stats {
 }
 /// See [`Stats`](crate::model::Stats)
 pub mod stats {
+    ///
     /// A builder for [`Stats`](crate::model::Stats)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -972,6 +979,7 @@ impl std::fmt::Debug for RecordsEvent {
 }
 /// See [`RecordsEvent`](crate::model::RecordsEvent)
 pub mod records_event {
+    ///
     /// A builder for [`RecordsEvent`](crate::model::RecordsEvent)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1053,6 +1061,7 @@ impl std::fmt::Debug for ScanRange {
 }
 /// See [`ScanRange`](crate::model::ScanRange)
 pub mod scan_range {
+    ///
     /// A builder for [`ScanRange`](crate::model::ScanRange)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1146,6 +1155,7 @@ impl std::fmt::Debug for OutputSerialization {
 }
 /// See [`OutputSerialization`](crate::model::OutputSerialization)
 pub mod output_serialization {
+    ///
     /// A builder for [`OutputSerialization`](crate::model::OutputSerialization)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1212,6 +1222,7 @@ impl std::fmt::Debug for JsonOutput {
 }
 /// See [`JsonOutput`](crate::model::JsonOutput)
 pub mod json_output {
+    ///
     /// A builder for [`JsonOutput`](crate::model::JsonOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1305,6 +1316,7 @@ impl std::fmt::Debug for CsvOutput {
 }
 /// See [`CsvOutput`](crate::model::CsvOutput)
 pub mod csv_output {
+    ///
     /// A builder for [`CsvOutput`](crate::model::CsvOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1506,6 +1518,7 @@ impl std::fmt::Debug for InputSerialization {
 }
 /// See [`InputSerialization`](crate::model::InputSerialization)
 pub mod input_serialization {
+    ///
     /// A builder for [`InputSerialization`](crate::model::InputSerialization)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1592,6 +1605,7 @@ impl std::fmt::Debug for ParquetInput {
 }
 /// See [`ParquetInput`](crate::model::ParquetInput)
 pub mod parquet_input {
+    ///
     /// A builder for [`ParquetInput`](crate::model::ParquetInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1632,6 +1646,7 @@ impl std::fmt::Debug for JsonInput {
 }
 /// See [`JsonInput`](crate::model::JsonInput)
 pub mod json_input {
+    ///
     /// A builder for [`JsonInput`](crate::model::JsonInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1861,6 +1876,7 @@ impl std::fmt::Debug for CsvInput {
 }
 /// See [`CsvInput`](crate::model::CsvInput)
 pub mod csv_input {
+    ///
     /// A builder for [`CsvInput`](crate::model::CsvInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2082,6 +2098,7 @@ impl std::fmt::Debug for RequestProgress {
 }
 /// See [`RequestProgress`](crate::model::RequestProgress)
 pub mod request_progress {
+    ///
     /// A builder for [`RequestProgress`](crate::model::RequestProgress)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2233,6 +2250,7 @@ impl std::fmt::Debug for RestoreRequest {
 }
 /// See [`RestoreRequest`](crate::model::RestoreRequest)
 pub mod restore_request {
+    ///
     /// A builder for [`RestoreRequest`](crate::model::RestoreRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2373,6 +2391,7 @@ impl std::fmt::Debug for OutputLocation {
 }
 /// See [`OutputLocation`](crate::model::OutputLocation)
 pub mod output_location {
+    ///
     /// A builder for [`OutputLocation`](crate::model::OutputLocation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2474,6 +2493,7 @@ impl std::fmt::Debug for S3Location {
 }
 /// See [`S3Location`](crate::model::S3Location)
 pub mod s3_location {
+    ///
     /// A builder for [`S3Location`](crate::model::S3Location)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2646,6 +2666,7 @@ impl std::fmt::Debug for MetadataEntry {
 }
 /// See [`MetadataEntry`](crate::model::MetadataEntry)
 pub mod metadata_entry {
+    ///
     /// A builder for [`MetadataEntry`](crate::model::MetadataEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2712,6 +2733,7 @@ impl std::fmt::Debug for Tagging {
 }
 /// See [`Tagging`](crate::model::Tagging)
 pub mod tagging {
+    ///
     /// A builder for [`Tagging`](crate::model::Tagging)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2782,6 +2804,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag)
 pub mod tag {
+    ///
     /// A builder for [`Tag`](crate::model::Tag)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2855,6 +2878,7 @@ impl std::fmt::Debug for Grant {
 }
 /// See [`Grant`](crate::model::Grant)
 pub mod grant {
+    ///
     /// A builder for [`Grant`](crate::model::Grant)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3045,6 +3069,7 @@ impl std::fmt::Debug for Grantee {
 }
 /// See [`Grantee`](crate::model::Grantee)
 pub mod grantee {
+    ///
     /// A builder for [`Grantee`](crate::model::Grantee)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3332,6 +3357,7 @@ impl std::fmt::Debug for Encryption {
 }
 /// See [`Encryption`](crate::model::Encryption)
 pub mod encryption {
+    ///
     /// A builder for [`Encryption`](crate::model::Encryption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3434,6 +3460,7 @@ impl std::fmt::Debug for SelectParameters {
 }
 /// See [`SelectParameters`](crate::model::SelectParameters)
 pub mod select_parameters {
+    ///
     /// A builder for [`SelectParameters`](crate::model::SelectParameters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3643,6 +3670,7 @@ impl std::fmt::Debug for GlacierJobParameters {
 }
 /// See [`GlacierJobParameters`](crate::model::GlacierJobParameters)
 pub mod glacier_job_parameters {
+    ///
     /// A builder for [`GlacierJobParameters`](crate::model::GlacierJobParameters)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3734,6 +3762,7 @@ impl std::fmt::Debug for PublicAccessBlockConfiguration {
 }
 /// See [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration)
 pub mod public_access_block_configuration {
+    ///
     /// A builder for [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3849,6 +3878,7 @@ impl std::fmt::Debug for ObjectLockRetention {
 }
 /// See [`ObjectLockRetention`](crate::model::ObjectLockRetention)
 pub mod object_lock_retention {
+    ///
     /// A builder for [`ObjectLockRetention`](crate::model::ObjectLockRetention)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -3983,6 +4013,7 @@ impl std::fmt::Debug for ObjectLockConfiguration {
 }
 /// See [`ObjectLockConfiguration`](crate::model::ObjectLockConfiguration)
 pub mod object_lock_configuration {
+    ///
     /// A builder for [`ObjectLockConfiguration`](crate::model::ObjectLockConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4055,6 +4086,7 @@ impl std::fmt::Debug for ObjectLockRule {
 }
 /// See [`ObjectLockRule`](crate::model::ObjectLockRule)
 pub mod object_lock_rule {
+    ///
     /// A builder for [`ObjectLockRule`](crate::model::ObjectLockRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4131,6 +4163,7 @@ impl std::fmt::Debug for DefaultRetention {
 }
 /// See [`DefaultRetention`](crate::model::DefaultRetention)
 pub mod default_retention {
+    ///
     /// A builder for [`DefaultRetention`](crate::model::DefaultRetention)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4263,6 +4296,7 @@ impl std::fmt::Debug for ObjectLockLegalHold {
 }
 /// See [`ObjectLockLegalHold`](crate::model::ObjectLockLegalHold)
 pub mod object_lock_legal_hold {
+    ///
     /// A builder for [`ObjectLockLegalHold`](crate::model::ObjectLockLegalHold)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4327,6 +4361,7 @@ impl std::fmt::Debug for AccessControlPolicy {
 }
 /// See [`AccessControlPolicy`](crate::model::AccessControlPolicy)
 pub mod access_control_policy {
+    ///
     /// A builder for [`AccessControlPolicy`](crate::model::AccessControlPolicy)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4409,6 +4444,7 @@ impl std::fmt::Debug for Owner {
 }
 /// See [`Owner`](crate::model::Owner)
 pub mod owner {
+    ///
     /// A builder for [`Owner`](crate::model::Owner)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4502,6 +4538,7 @@ impl std::fmt::Debug for WebsiteConfiguration {
 }
 /// See [`WebsiteConfiguration`](crate::model::WebsiteConfiguration)
 pub mod website_configuration {
+    ///
     /// A builder for [`WebsiteConfiguration`](crate::model::WebsiteConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4625,6 +4662,7 @@ impl std::fmt::Debug for RoutingRule {
 }
 /// See [`RoutingRule`](crate::model::RoutingRule)
 pub mod routing_rule {
+    ///
     /// A builder for [`RoutingRule`](crate::model::RoutingRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4730,6 +4768,7 @@ impl std::fmt::Debug for Redirect {
 }
 /// See [`Redirect`](crate::model::Redirect)
 pub mod redirect {
+    ///
     /// A builder for [`Redirect`](crate::model::Redirect)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -4918,6 +4957,7 @@ impl std::fmt::Debug for Condition {
 }
 /// See [`Condition`](crate::model::Condition)
 pub mod condition {
+    ///
     /// A builder for [`Condition`](crate::model::Condition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5004,6 +5044,7 @@ impl std::fmt::Debug for RedirectAllRequestsTo {
 }
 /// See [`RedirectAllRequestsTo`](crate::model::RedirectAllRequestsTo)
 pub mod redirect_all_requests_to {
+    ///
     /// A builder for [`RedirectAllRequestsTo`](crate::model::RedirectAllRequestsTo)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5074,6 +5115,7 @@ impl std::fmt::Debug for IndexDocument {
 }
 /// See [`IndexDocument`](crate::model::IndexDocument)
 pub mod index_document {
+    ///
     /// A builder for [`IndexDocument`](crate::model::IndexDocument)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5136,6 +5178,7 @@ impl std::fmt::Debug for ErrorDocument {
 }
 /// See [`ErrorDocument`](crate::model::ErrorDocument)
 pub mod error_document {
+    ///
     /// A builder for [`ErrorDocument`](crate::model::ErrorDocument)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5199,6 +5242,7 @@ impl std::fmt::Debug for VersioningConfiguration {
 }
 /// See [`VersioningConfiguration`](crate::model::VersioningConfiguration)
 pub mod versioning_configuration {
+    ///
     /// A builder for [`VersioningConfiguration`](crate::model::VersioningConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5381,6 +5425,7 @@ impl std::fmt::Debug for RequestPaymentConfiguration {
 }
 /// See [`RequestPaymentConfiguration`](crate::model::RequestPaymentConfiguration)
 pub mod request_payment_configuration {
+    ///
     /// A builder for [`RequestPaymentConfiguration`](crate::model::RequestPaymentConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5495,6 +5540,7 @@ impl std::fmt::Debug for ReplicationConfiguration {
 }
 /// See [`ReplicationConfiguration`](crate::model::ReplicationConfiguration)
 pub mod replication_configuration {
+    ///
     /// A builder for [`ReplicationConfiguration`](crate::model::ReplicationConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5647,6 +5693,7 @@ impl std::fmt::Debug for ReplicationRule {
 }
 /// See [`ReplicationRule`](crate::model::ReplicationRule)
 pub mod replication_rule {
+    ///
     /// A builder for [`ReplicationRule`](crate::model::ReplicationRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -5846,6 +5893,7 @@ impl std::fmt::Debug for DeleteMarkerReplication {
 }
 /// See [`DeleteMarkerReplication`](crate::model::DeleteMarkerReplication)
 pub mod delete_marker_replication {
+    ///
     /// A builder for [`DeleteMarkerReplication`](crate::model::DeleteMarkerReplication)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6013,6 +6061,7 @@ impl std::fmt::Debug for Destination {
 }
 /// See [`Destination`](crate::model::Destination)
 pub mod destination {
+    ///
     /// A builder for [`Destination`](crate::model::Destination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6168,6 +6217,7 @@ impl std::fmt::Debug for Metrics {
 }
 /// See [`Metrics`](crate::model::Metrics)
 pub mod metrics {
+    ///
     /// A builder for [`Metrics`](crate::model::Metrics)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6242,6 +6292,7 @@ impl std::fmt::Debug for ReplicationTimeValue {
 }
 /// See [`ReplicationTimeValue`](crate::model::ReplicationTimeValue)
 pub mod replication_time_value {
+    ///
     /// A builder for [`ReplicationTimeValue`](crate::model::ReplicationTimeValue)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6360,6 +6411,7 @@ impl std::fmt::Debug for ReplicationTime {
 }
 /// See [`ReplicationTime`](crate::model::ReplicationTime)
 pub mod replication_time {
+    ///
     /// A builder for [`ReplicationTime`](crate::model::ReplicationTime)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6487,6 +6539,7 @@ impl std::fmt::Debug for EncryptionConfiguration {
 }
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration)
 pub mod encryption_configuration {
+    ///
     /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6544,6 +6597,7 @@ impl std::fmt::Debug for AccessControlTranslation {
 }
 /// See [`AccessControlTranslation`](crate::model::AccessControlTranslation)
 pub mod access_control_translation {
+    ///
     /// A builder for [`AccessControlTranslation`](crate::model::AccessControlTranslation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6650,6 +6704,7 @@ impl std::fmt::Debug for ExistingObjectReplication {
 }
 /// See [`ExistingObjectReplication`](crate::model::ExistingObjectReplication)
 pub mod existing_object_replication {
+    ///
     /// A builder for [`ExistingObjectReplication`](crate::model::ExistingObjectReplication)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6777,6 +6832,7 @@ impl std::fmt::Debug for SourceSelectionCriteria {
 }
 /// See [`SourceSelectionCriteria`](crate::model::SourceSelectionCriteria)
 pub mod source_selection_criteria {
+    ///
     /// A builder for [`SourceSelectionCriteria`](crate::model::SourceSelectionCriteria)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6859,6 +6915,7 @@ impl std::fmt::Debug for ReplicaModifications {
 }
 /// See [`ReplicaModifications`](crate::model::ReplicaModifications)
 pub mod replica_modifications {
+    ///
     /// A builder for [`ReplicaModifications`](crate::model::ReplicaModifications)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -6971,6 +7028,7 @@ impl std::fmt::Debug for SseKmsEncryptedObjects {
 }
 /// See [`SseKmsEncryptedObjects`](crate::model::SseKmsEncryptedObjects)
 pub mod sse_kms_encrypted_objects {
+    ///
     /// A builder for [`SseKmsEncryptedObjects`](crate::model::SseKmsEncryptedObjects)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7223,6 +7281,7 @@ impl std::fmt::Debug for ReplicationRuleAndOperator {
 }
 /// See [`ReplicationRuleAndOperator`](crate::model::ReplicationRuleAndOperator)
 pub mod replication_rule_and_operator {
+    ///
     /// A builder for [`ReplicationRuleAndOperator`](crate::model::ReplicationRuleAndOperator)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7298,6 +7357,7 @@ impl std::fmt::Debug for OwnershipControls {
 }
 /// See [`OwnershipControls`](crate::model::OwnershipControls)
 pub mod ownership_controls {
+    ///
     /// A builder for [`OwnershipControls`](crate::model::OwnershipControls)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7365,6 +7425,7 @@ impl std::fmt::Debug for OwnershipControlsRule {
 }
 /// See [`OwnershipControlsRule`](crate::model::OwnershipControlsRule)
 pub mod ownership_controls_rule {
+    ///
     /// A builder for [`OwnershipControlsRule`](crate::model::OwnershipControlsRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7533,6 +7594,7 @@ impl std::fmt::Debug for NotificationConfiguration {
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration)
 pub mod notification_configuration {
+    ///
     /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7653,6 +7715,7 @@ impl std::fmt::Debug for EventBridgeConfiguration {
 }
 /// See [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration)
 pub mod event_bridge_configuration {
+    ///
     /// A builder for [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7714,6 +7777,7 @@ impl std::fmt::Debug for LambdaFunctionConfiguration {
 }
 /// See [`LambdaFunctionConfiguration`](crate::model::LambdaFunctionConfiguration)
 pub mod lambda_function_configuration {
+    ///
     /// A builder for [`LambdaFunctionConfiguration`](crate::model::LambdaFunctionConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7819,6 +7883,7 @@ impl std::fmt::Debug for NotificationConfigurationFilter {
 }
 /// See [`NotificationConfigurationFilter`](crate::model::NotificationConfigurationFilter)
 pub mod notification_configuration_filter {
+    ///
     /// A builder for [`NotificationConfigurationFilter`](crate::model::NotificationConfigurationFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7871,6 +7936,7 @@ impl std::fmt::Debug for S3KeyFilter {
 }
 /// See [`S3KeyFilter`](crate::model::S3KeyFilter)
 pub mod s3_key_filter {
+    ///
     /// A builder for [`S3KeyFilter`](crate::model::S3KeyFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7941,6 +8007,7 @@ impl std::fmt::Debug for FilterRule {
 }
 /// See [`FilterRule`](crate::model::FilterRule)
 pub mod filter_rule {
+    ///
     /// A builder for [`FilterRule`](crate::model::FilterRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8145,6 +8212,7 @@ impl std::fmt::Debug for QueueConfiguration {
 }
 /// See [`QueueConfiguration`](crate::model::QueueConfiguration)
 pub mod queue_configuration {
+    ///
     /// A builder for [`QueueConfiguration`](crate::model::QueueConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8268,6 +8336,7 @@ impl std::fmt::Debug for TopicConfiguration {
 }
 /// See [`TopicConfiguration`](crate::model::TopicConfiguration)
 pub mod topic_configuration {
+    ///
     /// A builder for [`TopicConfiguration`](crate::model::TopicConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8377,6 +8446,7 @@ impl std::fmt::Debug for MetricsConfiguration {
 }
 /// See [`MetricsConfiguration`](crate::model::MetricsConfiguration)
 pub mod metrics_configuration {
+    ///
     /// A builder for [`MetricsConfiguration`](crate::model::MetricsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8541,6 +8611,7 @@ impl std::fmt::Debug for MetricsAndOperator {
 }
 /// See [`MetricsAndOperator`](crate::model::MetricsAndOperator)
 pub mod metrics_and_operator {
+    ///
     /// A builder for [`MetricsAndOperator`](crate::model::MetricsAndOperator)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8631,6 +8702,7 @@ impl std::fmt::Debug for BucketLoggingStatus {
 }
 /// See [`BucketLoggingStatus`](crate::model::BucketLoggingStatus)
 pub mod bucket_logging_status {
+    ///
     /// A builder for [`BucketLoggingStatus`](crate::model::BucketLoggingStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8704,6 +8776,7 @@ impl std::fmt::Debug for LoggingEnabled {
 }
 /// See [`LoggingEnabled`](crate::model::LoggingEnabled)
 pub mod logging_enabled {
+    ///
     /// A builder for [`LoggingEnabled`](crate::model::LoggingEnabled)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8807,6 +8880,7 @@ impl std::fmt::Debug for TargetGrant {
 }
 /// See [`TargetGrant`](crate::model::TargetGrant)
 pub mod target_grant {
+    ///
     /// A builder for [`TargetGrant`](crate::model::TargetGrant)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8935,6 +9009,7 @@ impl std::fmt::Debug for BucketLifecycleConfiguration {
 }
 /// See [`BucketLifecycleConfiguration`](crate::model::BucketLifecycleConfiguration)
 pub mod bucket_lifecycle_configuration {
+    ///
     /// A builder for [`BucketLifecycleConfiguration`](crate::model::BucketLifecycleConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9074,6 +9149,7 @@ impl std::fmt::Debug for LifecycleRule {
 }
 /// See [`LifecycleRule`](crate::model::LifecycleRule)
 pub mod lifecycle_rule {
+    ///
     /// A builder for [`LifecycleRule`](crate::model::LifecycleRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9273,6 +9349,7 @@ impl std::fmt::Debug for AbortIncompleteMultipartUpload {
 }
 /// See [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload)
 pub mod abort_incomplete_multipart_upload {
+    ///
     /// A builder for [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9334,6 +9411,7 @@ impl std::fmt::Debug for NoncurrentVersionExpiration {
 }
 /// See [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration)
 pub mod noncurrent_version_expiration {
+    ///
     /// A builder for [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9414,6 +9492,7 @@ impl std::fmt::Debug for NoncurrentVersionTransition {
 }
 /// See [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition)
 pub mod noncurrent_version_transition {
+    ///
     /// A builder for [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9587,6 +9666,7 @@ impl std::fmt::Debug for Transition {
 }
 /// See [`Transition`](crate::model::Transition)
 pub mod transition {
+    ///
     /// A builder for [`Transition`](crate::model::Transition)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9842,6 +9922,7 @@ impl std::fmt::Debug for LifecycleRuleAndOperator {
 }
 /// See [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator)
 pub mod lifecycle_rule_and_operator {
+    ///
     /// A builder for [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -9958,6 +10039,7 @@ impl std::fmt::Debug for LifecycleExpiration {
 }
 /// See [`LifecycleExpiration`](crate::model::LifecycleExpiration)
 pub mod lifecycle_expiration {
+    ///
     /// A builder for [`LifecycleExpiration`](crate::model::LifecycleExpiration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10084,6 +10166,7 @@ impl std::fmt::Debug for InventoryConfiguration {
 }
 /// See [`InventoryConfiguration`](crate::model::InventoryConfiguration)
 pub mod inventory_configuration {
+    ///
     /// A builder for [`InventoryConfiguration`](crate::model::InventoryConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10236,6 +10319,7 @@ impl std::fmt::Debug for InventorySchedule {
 }
 /// See [`InventorySchedule`](crate::model::InventorySchedule)
 pub mod inventory_schedule {
+    ///
     /// A builder for [`InventorySchedule`](crate::model::InventorySchedule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10511,6 +10595,7 @@ impl std::fmt::Debug for InventoryFilter {
 }
 /// See [`InventoryFilter`](crate::model::InventoryFilter)
 pub mod inventory_filter {
+    ///
     /// A builder for [`InventoryFilter`](crate::model::InventoryFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10567,6 +10652,7 @@ impl std::fmt::Debug for InventoryDestination {
 }
 /// See [`InventoryDestination`](crate::model::InventoryDestination)
 pub mod inventory_destination {
+    ///
     /// A builder for [`InventoryDestination`](crate::model::InventoryDestination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10660,6 +10746,7 @@ impl std::fmt::Debug for InventoryS3BucketDestination {
 }
 /// See [`InventoryS3BucketDestination`](crate::model::InventoryS3BucketDestination)
 pub mod inventory_s3_bucket_destination {
+    ///
     /// A builder for [`InventoryS3BucketDestination`](crate::model::InventoryS3BucketDestination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10779,6 +10866,7 @@ impl std::fmt::Debug for InventoryEncryption {
 }
 /// See [`InventoryEncryption`](crate::model::InventoryEncryption)
 pub mod inventory_encryption {
+    ///
     /// A builder for [`InventoryEncryption`](crate::model::InventoryEncryption)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10845,6 +10933,7 @@ impl std::fmt::Debug for Ssekms {
 }
 /// See [`Ssekms`](crate::model::Ssekms)
 pub mod ssekms {
+    ///
     /// A builder for [`Ssekms`](crate::model::Ssekms)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10889,6 +10978,7 @@ impl std::fmt::Debug for Sses3 {
 }
 /// See [`Sses3`](crate::model::Sses3)
 pub mod sses3 {
+    ///
     /// A builder for [`Sses3`](crate::model::Sses3)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11010,6 +11100,7 @@ impl std::fmt::Debug for IntelligentTieringConfiguration {
 }
 /// See [`IntelligentTieringConfiguration`](crate::model::IntelligentTieringConfiguration)
 pub mod intelligent_tiering_configuration {
+    ///
     /// A builder for [`IntelligentTieringConfiguration`](crate::model::IntelligentTieringConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11122,6 +11213,7 @@ impl std::fmt::Debug for Tiering {
 }
 /// See [`Tiering`](crate::model::Tiering)
 pub mod tiering {
+    ///
     /// A builder for [`Tiering`](crate::model::Tiering)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11319,6 +11411,7 @@ impl std::fmt::Debug for IntelligentTieringFilter {
 }
 /// See [`IntelligentTieringFilter`](crate::model::IntelligentTieringFilter)
 pub mod intelligent_tiering_filter {
+    ///
     /// A builder for [`IntelligentTieringFilter`](crate::model::IntelligentTieringFilter)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11411,6 +11504,7 @@ impl std::fmt::Debug for IntelligentTieringAndOperator {
 }
 /// See [`IntelligentTieringAndOperator`](crate::model::IntelligentTieringAndOperator)
 pub mod intelligent_tiering_and_operator {
+    ///
     /// A builder for [`IntelligentTieringAndOperator`](crate::model::IntelligentTieringAndOperator)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11486,6 +11580,7 @@ impl std::fmt::Debug for ServerSideEncryptionConfiguration {
 }
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration)
 pub mod server_side_encryption_configuration {
+    ///
     /// A builder for [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11563,6 +11658,7 @@ impl std::fmt::Debug for ServerSideEncryptionRule {
 }
 /// See [`ServerSideEncryptionRule`](crate::model::ServerSideEncryptionRule)
 pub mod server_side_encryption_rule {
+    ///
     /// A builder for [`ServerSideEncryptionRule`](crate::model::ServerSideEncryptionRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11662,6 +11758,7 @@ impl std::fmt::Debug for ServerSideEncryptionByDefault {
 }
 /// See [`ServerSideEncryptionByDefault`](crate::model::ServerSideEncryptionByDefault)
 pub mod server_side_encryption_by_default {
+    ///
     /// A builder for [`ServerSideEncryptionByDefault`](crate::model::ServerSideEncryptionByDefault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11750,6 +11847,7 @@ impl std::fmt::Debug for CorsConfiguration {
 }
 /// See [`CorsConfiguration`](crate::model::CorsConfiguration)
 pub mod cors_configuration {
+    ///
     /// A builder for [`CorsConfiguration`](crate::model::CorsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -11848,6 +11946,7 @@ impl std::fmt::Debug for CorsRule {
 }
 /// See [`CorsRule`](crate::model::CorsRule)
 pub mod cors_rule {
+    ///
     /// A builder for [`CorsRule`](crate::model::CorsRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12014,6 +12113,7 @@ impl std::fmt::Debug for AnalyticsConfiguration {
 }
 /// See [`AnalyticsConfiguration`](crate::model::AnalyticsConfiguration)
 pub mod analytics_configuration {
+    ///
     /// A builder for [`AnalyticsConfiguration`](crate::model::AnalyticsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12100,6 +12200,7 @@ impl std::fmt::Debug for StorageClassAnalysis {
 }
 /// See [`StorageClassAnalysis`](crate::model::StorageClassAnalysis)
 pub mod storage_class_analysis {
+    ///
     /// A builder for [`StorageClassAnalysis`](crate::model::StorageClassAnalysis)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12166,6 +12267,7 @@ impl std::fmt::Debug for StorageClassAnalysisDataExport {
 }
 /// See [`StorageClassAnalysisDataExport`](crate::model::StorageClassAnalysisDataExport)
 pub mod storage_class_analysis_data_export {
+    ///
     /// A builder for [`StorageClassAnalysisDataExport`](crate::model::StorageClassAnalysisDataExport)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12244,6 +12346,7 @@ impl std::fmt::Debug for AnalyticsExportDestination {
 }
 /// See [`AnalyticsExportDestination`](crate::model::AnalyticsExportDestination)
 pub mod analytics_export_destination {
+    ///
     /// A builder for [`AnalyticsExportDestination`](crate::model::AnalyticsExportDestination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12330,6 +12433,7 @@ impl std::fmt::Debug for AnalyticsS3BucketDestination {
 }
 /// See [`AnalyticsS3BucketDestination`](crate::model::AnalyticsS3BucketDestination)
 pub mod analytics_s3_bucket_destination {
+    ///
     /// A builder for [`AnalyticsS3BucketDestination`](crate::model::AnalyticsS3BucketDestination)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12605,6 +12709,7 @@ impl std::fmt::Debug for AnalyticsAndOperator {
 }
 /// See [`AnalyticsAndOperator`](crate::model::AnalyticsAndOperator)
 pub mod analytics_and_operator {
+    ///
     /// A builder for [`AnalyticsAndOperator`](crate::model::AnalyticsAndOperator)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12748,6 +12853,7 @@ impl std::fmt::Debug for AccelerateConfiguration {
 }
 /// See [`AccelerateConfiguration`](crate::model::AccelerateConfiguration)
 pub mod accelerate_configuration {
+    ///
     /// A builder for [`AccelerateConfiguration`](crate::model::AccelerateConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12867,6 +12973,7 @@ impl std::fmt::Debug for Initiator {
 }
 /// See [`Initiator`](crate::model::Initiator)
 pub mod initiator {
+    ///
     /// A builder for [`Initiator`](crate::model::Initiator)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -12954,6 +13061,7 @@ impl std::fmt::Debug for Part {
 }
 /// See [`Part`](crate::model::Part)
 pub mod part {
+    ///
     /// A builder for [`Part`](crate::model::Part)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13102,6 +13210,7 @@ impl std::fmt::Debug for CommonPrefix {
 }
 /// See [`CommonPrefix`](crate::model::CommonPrefix)
 pub mod common_prefix {
+    ///
     /// A builder for [`CommonPrefix`](crate::model::CommonPrefix)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13184,6 +13293,7 @@ impl std::fmt::Debug for DeleteMarkerEntry {
 }
 /// See [`DeleteMarkerEntry`](crate::model::DeleteMarkerEntry)
 pub mod delete_marker_entry {
+    ///
     /// A builder for [`DeleteMarkerEntry`](crate::model::DeleteMarkerEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13338,6 +13448,7 @@ impl std::fmt::Debug for ObjectVersion {
 }
 /// See [`ObjectVersion`](crate::model::ObjectVersion)
 pub mod object_version {
+    ///
     /// A builder for [`ObjectVersion`](crate::model::ObjectVersion)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13578,6 +13689,7 @@ impl std::fmt::Debug for Object {
 }
 /// See [`Object`](crate::model::Object)
 pub mod object {
+    ///
     /// A builder for [`Object`](crate::model::Object)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13836,6 +13948,7 @@ impl std::fmt::Debug for MultipartUpload {
 }
 /// See [`MultipartUpload`](crate::model::MultipartUpload)
 pub mod multipart_upload {
+    ///
     /// A builder for [`MultipartUpload`](crate::model::MultipartUpload)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -13966,6 +14079,7 @@ impl std::fmt::Debug for Bucket {
 }
 /// See [`Bucket`](crate::model::Bucket)
 pub mod bucket {
+    ///
     /// A builder for [`Bucket`](crate::model::Bucket)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -14145,6 +14259,7 @@ impl std::fmt::Debug for PolicyStatus {
 }
 /// See [`PolicyStatus`](crate::model::PolicyStatus)
 pub mod policy_status {
+    ///
     /// A builder for [`PolicyStatus`](crate::model::PolicyStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -15633,6 +15748,7 @@ impl std::fmt::Debug for Error {
 }
 /// See [`Error`](crate::model::Error)
 pub mod error {
+    ///
     /// A builder for [`Error`](crate::model::Error)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -16984,6 +17100,7 @@ impl std::fmt::Debug for DeletedObject {
 }
 /// See [`DeletedObject`](crate::model::DeletedObject)
 pub mod deleted_object {
+    ///
     /// A builder for [`DeletedObject`](crate::model::DeletedObject)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17084,6 +17201,7 @@ impl std::fmt::Debug for Delete {
 }
 /// See [`Delete`](crate::model::Delete)
 pub mod delete {
+    ///
     /// A builder for [`Delete`](crate::model::Delete)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17170,6 +17288,7 @@ impl std::fmt::Debug for ObjectIdentifier {
 }
 /// See [`ObjectIdentifier`](crate::model::ObjectIdentifier)
 pub mod object_identifier {
+    ///
     /// A builder for [`ObjectIdentifier`](crate::model::ObjectIdentifier)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17242,6 +17361,7 @@ impl std::fmt::Debug for CreateBucketConfiguration {
 }
 /// See [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration)
 pub mod create_bucket_configuration {
+    ///
     /// A builder for [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17309,6 +17429,7 @@ impl std::fmt::Debug for CopyObjectResult {
 }
 /// See [`CopyObjectResult`](crate::model::CopyObjectResult)
 pub mod copy_object_result {
+    ///
     /// A builder for [`CopyObjectResult`](crate::model::CopyObjectResult)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17490,6 +17611,7 @@ impl std::fmt::Debug for CompletedMultipartUpload {
 }
 /// See [`CompletedMultipartUpload`](crate::model::CompletedMultipartUpload)
 pub mod completed_multipart_upload {
+    ///
     /// A builder for [`CompletedMultipartUpload`](crate::model::CompletedMultipartUpload)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -17560,6 +17682,7 @@ impl std::fmt::Debug for CompletedPart {
 }
 /// See [`CompletedPart`](crate::model::CompletedPart)
 pub mod completed_part {
+    ///
     /// A builder for [`CompletedPart`](crate::model::CompletedPart)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

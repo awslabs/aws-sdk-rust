@@ -35,6 +35,7 @@ impl std::fmt::Debug for UpdateLedgerPermissionsModeOutput {
 }
 /// See [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput)
 pub mod update_ledger_permissions_mode_output {
+    ///
     /// A builder for [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -155,6 +156,7 @@ impl std::fmt::Debug for UpdateLedgerOutput {
 }
 /// See [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput)
 pub mod update_ledger_output {
+    ///
     /// A builder for [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -271,6 +273,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -301,6 +304,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -341,6 +345,7 @@ impl std::fmt::Debug for StreamJournalToKinesisOutput {
 }
 /// See [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput)
 pub mod stream_journal_to_kinesis_output {
+    ///
     /// A builder for [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -401,6 +406,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -491,6 +497,7 @@ impl std::fmt::Debug for ListLedgersOutput {
 }
 /// See [`ListLedgersOutput`](crate::output::ListLedgersOutput)
 pub mod list_ledgers_output {
+    ///
     /// A builder for [`ListLedgersOutput`](crate::output::ListLedgersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -590,6 +597,7 @@ impl std::fmt::Debug for ListJournalS3ExportsForLedgerOutput {
 }
 /// See [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput)
 pub mod list_journal_s3_exports_for_ledger_output {
+    ///
     /// A builder for [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -691,6 +699,7 @@ impl std::fmt::Debug for ListJournalS3ExportsOutput {
 }
 /// See [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput)
 pub mod list_journal_s3_exports_output {
+    ///
     /// A builder for [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -789,6 +798,7 @@ impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerOutput {
 }
 /// See [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput)
 pub mod list_journal_kinesis_streams_for_ledger_output {
+    ///
     /// A builder for [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -880,6 +890,7 @@ impl std::fmt::Debug for GetRevisionOutput {
 }
 /// See [`GetRevisionOutput`](crate::output::GetRevisionOutput)
 pub mod get_revision_output {
+    ///
     /// A builder for [`GetRevisionOutput`](crate::output::GetRevisionOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -956,6 +967,7 @@ impl std::fmt::Debug for GetDigestOutput {
 }
 /// See [`GetDigestOutput`](crate::output::GetDigestOutput)
 pub mod get_digest_output {
+    ///
     /// A builder for [`GetDigestOutput`](crate::output::GetDigestOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1032,6 +1044,7 @@ impl std::fmt::Debug for GetBlockOutput {
 }
 /// See [`GetBlockOutput`](crate::output::GetBlockOutput)
 pub mod get_block_output {
+    ///
     /// A builder for [`GetBlockOutput`](crate::output::GetBlockOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1100,6 +1113,7 @@ impl std::fmt::Debug for ExportJournalToS3Output {
 }
 /// See [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output)
 pub mod export_journal_to_s3_output {
+    ///
     /// A builder for [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1202,6 +1216,7 @@ impl std::fmt::Debug for DescribeLedgerOutput {
 }
 /// See [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput)
 pub mod describe_ledger_output {
+    ///
     /// A builder for [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1345,6 +1360,7 @@ impl std::fmt::Debug for DescribeJournalS3ExportOutput {
 }
 /// See [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput)
 pub mod describe_journal_s3_export_output {
+    ///
     /// A builder for [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1406,6 +1422,7 @@ impl std::fmt::Debug for DescribeJournalKinesisStreamOutput {
 }
 /// See [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput)
 pub mod describe_journal_kinesis_stream_output {
+    ///
     /// A builder for [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1453,6 +1470,7 @@ impl std::fmt::Debug for DeleteLedgerOutput {
 }
 /// See [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput)
 pub mod delete_ledger_output {
+    ///
     /// A builder for [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1537,6 +1555,7 @@ impl std::fmt::Debug for CreateLedgerOutput {
 }
 /// See [`CreateLedgerOutput`](crate::output::CreateLedgerOutput)
 pub mod create_ledger_output {
+    ///
     /// A builder for [`CreateLedgerOutput`](crate::output::CreateLedgerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1671,6 +1690,7 @@ impl std::fmt::Debug for CancelJournalKinesisStreamOutput {
 }
 /// See [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput)
 pub mod cancel_journal_kinesis_stream_output {
+    ///
     /// A builder for [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

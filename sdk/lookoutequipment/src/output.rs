@@ -11,6 +11,7 @@ impl std::fmt::Debug for UpdateInferenceSchedulerOutput {
 }
 /// See [`UpdateInferenceSchedulerOutput`](crate::output::UpdateInferenceSchedulerOutput)
 pub mod update_inference_scheduler_output {
+    ///
     /// A builder for [`UpdateInferenceSchedulerOutput`](crate::output::UpdateInferenceSchedulerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -41,6 +42,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -71,6 +73,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -139,6 +142,7 @@ impl std::fmt::Debug for StopInferenceSchedulerOutput {
 }
 /// See [`StopInferenceSchedulerOutput`](crate::output::StopInferenceSchedulerOutput)
 pub mod stop_inference_scheduler_output {
+    ///
     /// A builder for [`StopInferenceSchedulerOutput`](crate::output::StopInferenceSchedulerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -278,6 +282,7 @@ impl std::fmt::Debug for StartInferenceSchedulerOutput {
 }
 /// See [`StartInferenceSchedulerOutput`](crate::output::StartInferenceSchedulerOutput)
 pub mod start_inference_scheduler_output {
+    ///
     /// A builder for [`StartInferenceSchedulerOutput`](crate::output::StartInferenceSchedulerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -396,6 +401,7 @@ impl std::fmt::Debug for StartDataIngestionJobOutput {
 }
 /// See [`StartDataIngestionJobOutput`](crate::output::StartDataIngestionJobOutput)
 pub mod start_data_ingestion_job_output {
+    ///
     /// A builder for [`StartDataIngestionJobOutput`](crate::output::StartDataIngestionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -465,6 +471,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -539,6 +546,7 @@ impl std::fmt::Debug for ListSensorStatisticsOutput {
 }
 /// See [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput)
 pub mod list_sensor_statistics_output {
+    ///
     /// A builder for [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -625,6 +633,7 @@ impl std::fmt::Debug for ListModelsOutput {
 }
 /// See [`ListModelsOutput`](crate::output::ListModelsOutput)
 pub mod list_models_output {
+    ///
     /// A builder for [`ListModelsOutput`](crate::output::ListModelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -713,6 +722,7 @@ impl std::fmt::Debug for ListInferenceSchedulersOutput {
 }
 /// See [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput)
 pub mod list_inference_schedulers_output {
+    ///
     /// A builder for [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -805,6 +815,7 @@ impl std::fmt::Debug for ListInferenceExecutionsOutput {
 }
 /// See [`ListInferenceExecutionsOutput`](crate::output::ListInferenceExecutionsOutput)
 pub mod list_inference_executions_output {
+    ///
     /// A builder for [`ListInferenceExecutionsOutput`](crate::output::ListInferenceExecutionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -891,6 +902,7 @@ impl std::fmt::Debug for ListDatasetsOutput {
 }
 /// See [`ListDatasetsOutput`](crate::output::ListDatasetsOutput)
 pub mod list_datasets_output {
+    ///
     /// A builder for [`ListDatasetsOutput`](crate::output::ListDatasetsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -980,6 +992,7 @@ impl std::fmt::Debug for ListDataIngestionJobsOutput {
 }
 /// See [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput)
 pub mod list_data_ingestion_jobs_output {
+    ///
     /// A builder for [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1223,6 +1236,7 @@ impl std::fmt::Debug for DescribeModelOutput {
 }
 /// See [`DescribeModelOutput`](crate::output::DescribeModelOutput)
 pub mod describe_model_output {
+    ///
     /// A builder for [`DescribeModelOutput`](crate::output::DescribeModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1660,6 +1674,7 @@ impl std::fmt::Debug for DescribeInferenceSchedulerOutput {
 }
 /// See [`DescribeInferenceSchedulerOutput`](crate::output::DescribeInferenceSchedulerOutput)
 pub mod describe_inference_scheduler_output {
+    ///
     /// A builder for [`DescribeInferenceSchedulerOutput`](crate::output::DescribeInferenceSchedulerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1985,6 +2000,7 @@ impl std::fmt::Debug for DescribeDatasetOutput {
 }
 /// See [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput)
 pub mod describe_dataset_output {
+    ///
     /// A builder for [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2306,6 +2322,7 @@ impl std::fmt::Debug for DescribeDataIngestionJobOutput {
 }
 /// See [`DescribeDataIngestionJobOutput`](crate::output::DescribeDataIngestionJobOutput)
 pub mod describe_data_ingestion_job_output {
+    ///
     /// A builder for [`DescribeDataIngestionJobOutput`](crate::output::DescribeDataIngestionJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2525,6 +2542,7 @@ impl std::fmt::Debug for DeleteModelOutput {
 }
 /// See [`DeleteModelOutput`](crate::output::DeleteModelOutput)
 pub mod delete_model_output {
+    ///
     /// A builder for [`DeleteModelOutput`](crate::output::DeleteModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2555,6 +2573,7 @@ impl std::fmt::Debug for DeleteInferenceSchedulerOutput {
 }
 /// See [`DeleteInferenceSchedulerOutput`](crate::output::DeleteInferenceSchedulerOutput)
 pub mod delete_inference_scheduler_output {
+    ///
     /// A builder for [`DeleteInferenceSchedulerOutput`](crate::output::DeleteInferenceSchedulerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2585,6 +2604,7 @@ impl std::fmt::Debug for DeleteDatasetOutput {
 }
 /// See [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
 pub mod delete_dataset_output {
+    ///
     /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2632,6 +2652,7 @@ impl std::fmt::Debug for CreateModelOutput {
 }
 /// See [`CreateModelOutput`](crate::output::CreateModelOutput)
 pub mod create_model_output {
+    ///
     /// A builder for [`CreateModelOutput`](crate::output::CreateModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2712,6 +2733,7 @@ impl std::fmt::Debug for CreateInferenceSchedulerOutput {
 }
 /// See [`CreateInferenceSchedulerOutput`](crate::output::CreateInferenceSchedulerOutput)
 pub mod create_inference_scheduler_output {
+    ///
     /// A builder for [`CreateInferenceSchedulerOutput`](crate::output::CreateInferenceSchedulerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -2813,6 +2835,7 @@ impl std::fmt::Debug for CreateDatasetOutput {
 }
 /// See [`CreateDatasetOutput`](crate::output::CreateDatasetOutput)
 pub mod create_dataset_output {
+    ///
     /// A builder for [`CreateDatasetOutput`](crate::output::CreateDatasetOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]

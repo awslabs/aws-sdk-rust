@@ -21,6 +21,7 @@ impl std::fmt::Debug for UpdateInputOutput {
 }
 /// See [`UpdateInputOutput`](crate::output::UpdateInputOutput)
 pub mod update_input_output {
+    ///
     /// A builder for [`UpdateInputOutput`](crate::output::UpdateInputOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -83,6 +84,7 @@ impl std::fmt::Debug for UpdateDetectorModelOutput {
 }
 /// See [`UpdateDetectorModelOutput`](crate::output::UpdateDetectorModelOutput)
 pub mod update_detector_model_output {
+    ///
     /// A builder for [`UpdateDetectorModelOutput`](crate::output::UpdateDetectorModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -184,6 +186,7 @@ impl std::fmt::Debug for UpdateAlarmModelOutput {
 }
 /// See [`UpdateAlarmModelOutput`](crate::output::UpdateAlarmModelOutput)
 pub mod update_alarm_model_output {
+    ///
     /// A builder for [`UpdateAlarmModelOutput`](crate::output::UpdateAlarmModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -303,6 +306,7 @@ impl std::fmt::Debug for UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 pub mod untag_resource_output {
+    ///
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -333,6 +337,7 @@ impl std::fmt::Debug for TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput)
 pub mod tag_resource_output {
+    ///
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -373,6 +378,7 @@ impl std::fmt::Debug for StartDetectorModelAnalysisOutput {
 }
 /// See [`StartDetectorModelAnalysisOutput`](crate::output::StartDetectorModelAnalysisOutput)
 pub mod start_detector_model_analysis_output {
+    ///
     /// A builder for [`StartDetectorModelAnalysisOutput`](crate::output::StartDetectorModelAnalysisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -417,6 +423,7 @@ impl std::fmt::Debug for PutLoggingOptionsOutput {
 }
 /// See [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput)
 pub mod put_logging_options_output {
+    ///
     /// A builder for [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -457,6 +464,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
 pub mod list_tags_for_resource_output {
+    ///
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -525,6 +533,7 @@ impl std::fmt::Debug for ListInputsOutput {
 }
 /// See [`ListInputsOutput`](crate::output::ListInputsOutput)
 pub mod list_inputs_output {
+    ///
     /// A builder for [`ListInputsOutput`](crate::output::ListInputsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -607,6 +616,7 @@ impl std::fmt::Debug for ListInputRoutingsOutput {
 }
 /// See [`ListInputRoutingsOutput`](crate::output::ListInputRoutingsOutput)
 pub mod list_input_routings_output {
+    ///
     /// A builder for [`ListInputRoutingsOutput`](crate::output::ListInputRoutingsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -696,6 +706,7 @@ impl std::fmt::Debug for ListDetectorModelVersionsOutput {
 }
 /// See [`ListDetectorModelVersionsOutput`](crate::output::ListDetectorModelVersionsOutput)
 pub mod list_detector_model_versions_output {
+    ///
     /// A builder for [`ListDetectorModelVersionsOutput`](crate::output::ListDetectorModelVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -785,6 +796,7 @@ impl std::fmt::Debug for ListDetectorModelsOutput {
 }
 /// See [`ListDetectorModelsOutput`](crate::output::ListDetectorModelsOutput)
 pub mod list_detector_models_output {
+    ///
     /// A builder for [`ListDetectorModelsOutput`](crate::output::ListDetectorModelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -877,6 +889,7 @@ impl std::fmt::Debug for ListAlarmModelVersionsOutput {
 }
 /// See [`ListAlarmModelVersionsOutput`](crate::output::ListAlarmModelVersionsOutput)
 pub mod list_alarm_model_versions_output {
+    ///
     /// A builder for [`ListAlarmModelVersionsOutput`](crate::output::ListAlarmModelVersionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -963,6 +976,7 @@ impl std::fmt::Debug for ListAlarmModelsOutput {
 }
 /// See [`ListAlarmModelsOutput`](crate::output::ListAlarmModelsOutput)
 pub mod list_alarm_models_output {
+    ///
     /// A builder for [`ListAlarmModelsOutput`](crate::output::ListAlarmModelsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1046,6 +1060,7 @@ impl std::fmt::Debug for GetDetectorModelAnalysisResultsOutput {
 }
 /// See [`GetDetectorModelAnalysisResultsOutput`](crate::output::GetDetectorModelAnalysisResultsOutput)
 pub mod get_detector_model_analysis_results_output {
+    ///
     /// A builder for [`GetDetectorModelAnalysisResultsOutput`](crate::output::GetDetectorModelAnalysisResultsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1122,6 +1137,7 @@ impl std::fmt::Debug for DescribeLoggingOptionsOutput {
 }
 /// See [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput)
 pub mod describe_logging_options_output {
+    ///
     /// A builder for [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1179,6 +1195,7 @@ impl std::fmt::Debug for DescribeInputOutput {
 }
 /// See [`DescribeInputOutput`](crate::output::DescribeInputOutput)
 pub mod describe_input_output {
+    ///
     /// A builder for [`DescribeInputOutput`](crate::output::DescribeInputOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1241,6 +1258,7 @@ impl std::fmt::Debug for DescribeDetectorModelAnalysisOutput {
 }
 /// See [`DescribeDetectorModelAnalysisOutput`](crate::output::DescribeDetectorModelAnalysisOutput)
 pub mod describe_detector_model_analysis_output {
+    ///
     /// A builder for [`DescribeDetectorModelAnalysisOutput`](crate::output::DescribeDetectorModelAnalysisOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1308,6 +1326,7 @@ impl std::fmt::Debug for DescribeDetectorModelOutput {
 }
 /// See [`DescribeDetectorModelOutput`](crate::output::DescribeDetectorModelOutput)
 pub mod describe_detector_model_output {
+    ///
     /// A builder for [`DescribeDetectorModelOutput`](crate::output::DescribeDetectorModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1475,6 +1494,7 @@ impl std::fmt::Debug for DescribeAlarmModelOutput {
 }
 /// See [`DescribeAlarmModelOutput`](crate::output::DescribeAlarmModelOutput)
 pub mod describe_alarm_model_output {
+    ///
     /// A builder for [`DescribeAlarmModelOutput`](crate::output::DescribeAlarmModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1735,6 +1755,7 @@ impl std::fmt::Debug for DeleteInputOutput {
 }
 /// See [`DeleteInputOutput`](crate::output::DeleteInputOutput)
 pub mod delete_input_output {
+    ///
     /// A builder for [`DeleteInputOutput`](crate::output::DeleteInputOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1765,6 +1786,7 @@ impl std::fmt::Debug for DeleteDetectorModelOutput {
 }
 /// See [`DeleteDetectorModelOutput`](crate::output::DeleteDetectorModelOutput)
 pub mod delete_detector_model_output {
+    ///
     /// A builder for [`DeleteDetectorModelOutput`](crate::output::DeleteDetectorModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1795,6 +1817,7 @@ impl std::fmt::Debug for DeleteAlarmModelOutput {
 }
 /// See [`DeleteAlarmModelOutput`](crate::output::DeleteAlarmModelOutput)
 pub mod delete_alarm_model_output {
+    ///
     /// A builder for [`DeleteAlarmModelOutput`](crate::output::DeleteAlarmModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1835,6 +1858,7 @@ impl std::fmt::Debug for CreateInputOutput {
 }
 /// See [`CreateInputOutput`](crate::output::CreateInputOutput)
 pub mod create_input_output {
+    ///
     /// A builder for [`CreateInputOutput`](crate::output::CreateInputOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1897,6 +1921,7 @@ impl std::fmt::Debug for CreateDetectorModelOutput {
 }
 /// See [`CreateDetectorModelOutput`](crate::output::CreateDetectorModelOutput)
 pub mod create_detector_model_output {
+    ///
     /// A builder for [`CreateDetectorModelOutput`](crate::output::CreateDetectorModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1998,6 +2023,7 @@ impl std::fmt::Debug for CreateAlarmModelOutput {
 }
 /// See [`CreateAlarmModelOutput`](crate::output::CreateAlarmModelOutput)
 pub mod create_alarm_model_output {
+    ///
     /// A builder for [`CreateAlarmModelOutput`](crate::output::CreateAlarmModelOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
