@@ -112,7 +112,22 @@ pub(super) fn resolve_chain<'a>(
     profile_set: &'a ProfileSet,
     profile_override: Option<&str>,
 ) -> Result<ProfileChain<'a>, ProfileFileError> {
+    // If there are no profiles, allow flowing into the next provider
     if profile_set.is_empty() {
+        return Err(ProfileFileError::NoProfilesDefined);
+    }
+
+    // If:
+    // - There is no explicit profile override
+    // - We're looking for the default profile (no configuration)
+    // - There is not default profile
+    // Then:
+    // - Treat this situation as if no profiles were defined
+    if profile_override == None
+        && profile_set.selected_profile() == "default"
+        && profile_set.get_profile("default") == None
+    {
+        tracing::debug!("No default profile defined");
         return Err(ProfileFileError::NoProfilesDefined);
     }
     let mut source_profile_name =
@@ -221,6 +236,7 @@ mod static_credentials {
 mod credential_process {
     pub const CREDENTIAL_PROCESS: &str = "credential_process";
 }
+
 const PROVIDER_NAME: &str = "ProfileFile";
 
 fn base_provider(profile: &Profile) -> Result<BaseProvider, ProfileFileError> {
@@ -254,8 +270,8 @@ fn chain_provider(profile: &Profile) -> Result<NextProfile, ProfileFileError> {
         (None, None) => Err(ProfileFileError::InvalidCredentialSource {
             profile: profile.name().to_string(),
             message:
-                "profile must contain `source_profile` or `credential_source` but neither were defined"
-                    .into(),
+            "profile must contain `source_profile` or `credential_source` but neither were defined"
+                .into(),
         }),
         (Some(source_profile), None) if source_profile == profile.name() => {
             Ok(NextProfile::SelfReference)
