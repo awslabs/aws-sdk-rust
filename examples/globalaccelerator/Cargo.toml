@@ -10,11 +10,11 @@ tokio-stream = "0.1.8"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.13.0"
+version = "0.14.0"
 
 [dependencies.aws-sdk-globalaccelerator]
 path = "../../sdk/globalaccelerator"
-version = "0.13.0"
+version = "0.14.0"
 
 [dependencies.tokio]
 version = "1"

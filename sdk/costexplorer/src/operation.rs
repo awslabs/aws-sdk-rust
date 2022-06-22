@@ -846,6 +846,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsageForecast {
     }
 }
 
+/// Operation shape for `ListCostAllocationTags`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_cost_allocation_tags`](crate::client::Client::list_cost_allocation_tags).
+///
+/// See [`crate::client::fluent_builders::ListCostAllocationTags`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListCostAllocationTags {
+    _private: (),
+}
+impl ListCostAllocationTags {
+    /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsInput`](crate::input::ListCostAllocationTagsInput)
+    pub fn builder() -> crate::input::list_cost_allocation_tags_input::Builder {
+        crate::input::list_cost_allocation_tags_input::Builder::default()
+    }
+    /// Creates a new `ListCostAllocationTags` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListCostAllocationTags {
+    type Output = std::result::Result<
+        crate::output::ListCostAllocationTagsOutput,
+        crate::error::ListCostAllocationTagsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_cost_allocation_tags_error(response)
+        } else {
+            crate::operation_deser::parse_list_cost_allocation_tags_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListCostCategoryDefinitions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1076,6 +1110,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAnomalySubscriptio
             crate::operation_deser::parse_update_anomaly_subscription_error(response)
         } else {
             crate::operation_deser::parse_update_anomaly_subscription_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateCostAllocationTagsStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_cost_allocation_tags_status`](crate::client::Client::update_cost_allocation_tags_status).
+///
+/// See [`crate::client::fluent_builders::UpdateCostAllocationTagsStatus`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateCostAllocationTagsStatus {
+    _private: (),
+}
+impl UpdateCostAllocationTagsStatus {
+    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusInput`](crate::input::UpdateCostAllocationTagsStatusInput)
+    pub fn builder() -> crate::input::update_cost_allocation_tags_status_input::Builder {
+        crate::input::update_cost_allocation_tags_status_input::Builder::default()
+    }
+    /// Creates a new `UpdateCostAllocationTagsStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateCostAllocationTagsStatus {
+    type Output = std::result::Result<
+        crate::output::UpdateCostAllocationTagsStatusOutput,
+        crate::error::UpdateCostAllocationTagsStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_cost_allocation_tags_status_error(response)
+        } else {
+            crate::operation_deser::parse_update_cost_allocation_tags_status_response(response)
         }
     }
 }

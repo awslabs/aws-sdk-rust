@@ -5148,6 +5148,176 @@ impl DescribeRegionsInput {
     }
 }
 
+/// See [`DescribeSettingsInput`](crate::input::DescribeSettingsInput)
+pub mod describe_settings_input {
+
+    /// A builder for [`DescribeSettingsInput`](crate::input::DescribeSettingsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) directory_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::DirectoryConfigurationStatus>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the directory for which to retrieve information.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the directory for which to retrieve information.</p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_id = input;
+            self
+        }
+        /// <p>The status of the directory settings for which to retrieve information.</p>
+        pub fn status(mut self, input: crate::model::DirectoryConfigurationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the directory settings for which to retrieve information.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DirectoryConfigurationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSettingsInput`](crate::input::DescribeSettingsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeSettingsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeSettingsInput {
+                directory_id: self.directory_id,
+                status: self.status,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeSettingsInputOperationOutputAlias = crate::operation::DescribeSettings;
+#[doc(hidden)]
+pub type DescribeSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeSettings`](crate::operation::DescribeSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeSettings,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DirectoryService_20150416.DescribeSettings",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_settings(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeSettings",
+            "directoryservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeSettingsInput`](crate::input::DescribeSettingsInput)
+    pub fn builder() -> crate::input::describe_settings_input::Builder {
+        crate::input::describe_settings_input::Builder::default()
+    }
+}
+
 /// See [`DescribeSharedDirectoriesInput`](crate::input::DescribeSharedDirectoriesInput)
 pub mod describe_shared_directories_input {
 
@@ -10393,6 +10563,170 @@ impl UpdateRadiusInput {
     }
 }
 
+/// See [`UpdateSettingsInput`](crate::input::UpdateSettingsInput)
+pub mod update_settings_input {
+
+    /// A builder for [`UpdateSettingsInput`](crate::input::UpdateSettingsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) directory_id: std::option::Option<std::string::String>,
+        pub(crate) settings: std::option::Option<std::vec::Vec<crate::model::Setting>>,
+    }
+    impl Builder {
+        /// <p>The identifier of the directory for which to update settings.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the directory for which to update settings.</p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_id = input;
+            self
+        }
+        /// Appends an item to `settings`.
+        ///
+        /// To override the contents of this collection use [`set_settings`](Self::set_settings).
+        ///
+        /// <p>The list of <code>Setting</code> objects.</p>
+        pub fn settings(mut self, input: crate::model::Setting) -> Self {
+            let mut v = self.settings.unwrap_or_default();
+            v.push(input);
+            self.settings = Some(v);
+            self
+        }
+        /// <p>The list of <code>Setting</code> objects.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Setting>>,
+        ) -> Self {
+            self.settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSettingsInput`](crate::input::UpdateSettingsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateSettingsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateSettingsInput {
+                directory_id: self.directory_id,
+                settings: self.settings,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateSettingsInputOperationOutputAlias = crate::operation::UpdateSettings;
+#[doc(hidden)]
+pub type UpdateSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateSettings`](crate::operation::UpdateSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateSettings,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DirectoryService_20150416.UpdateSettings",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_settings(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSettings",
+            "directoryservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateSettingsInput`](crate::input::UpdateSettingsInput)
+    pub fn builder() -> crate::input::update_settings_input::Builder {
+        crate::input::update_settings_input::Builder::default()
+    }
+}
+
 /// See [`UpdateTrustInput`](crate::input::UpdateTrustInput)
 pub mod update_trust_input {
 
@@ -10739,6 +11073,34 @@ impl std::fmt::Debug for UpdateTrustInput {
         let mut formatter = f.debug_struct("UpdateTrustInput");
         formatter.field("trust_id", &self.trust_id);
         formatter.field("selective_auth", &self.selective_auth);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSettingsInput {
+    /// <p>The identifier of the directory for which to update settings.</p>
+    pub directory_id: std::option::Option<std::string::String>,
+    /// <p>The list of <code>Setting</code> objects.</p>
+    pub settings: std::option::Option<std::vec::Vec<crate::model::Setting>>,
+}
+impl UpdateSettingsInput {
+    /// <p>The identifier of the directory for which to update settings.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The list of <code>Setting</code> objects.</p>
+    pub fn settings(&self) -> std::option::Option<&[crate::model::Setting]> {
+        self.settings.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateSettingsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSettingsInput");
+        formatter.field("directory_id", &self.directory_id);
+        formatter.field("settings", &self.settings);
         formatter.finish()
     }
 }
@@ -11741,6 +12103,41 @@ impl std::fmt::Debug for DescribeSharedDirectoriesInput {
         formatter.field("shared_directory_ids", &self.shared_directory_ids);
         formatter.field("next_token", &self.next_token);
         formatter.field("limit", &self.limit);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSettingsInput {
+    /// <p>The identifier of the directory for which to retrieve information.</p>
+    pub directory_id: std::option::Option<std::string::String>,
+    /// <p>The status of the directory settings for which to retrieve information.</p>
+    pub status: std::option::Option<crate::model::DirectoryConfigurationStatus>,
+    /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSettingsInput {
+    /// <p>The identifier of the directory for which to retrieve information.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The status of the directory settings for which to retrieve information.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DirectoryConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeSettingsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSettingsInput");
+        formatter.field("directory_id", &self.directory_id);
+        formatter.field("status", &self.status);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }

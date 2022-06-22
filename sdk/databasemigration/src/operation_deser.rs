@@ -579,6 +579,136 @@ pub fn parse_create_event_subscription_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_fleet_advisor_collector_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateFleetAdvisorCollectorOutput,
+    crate::error::CreateFleetAdvisorCollectorError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateFleetAdvisorCollectorError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateFleetAdvisorCollectorError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedFault" => crate::error::CreateFleetAdvisorCollectorError {
+            meta: generic,
+            kind: crate::error::CreateFleetAdvisorCollectorErrorKind::AccessDeniedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetAdvisorCollectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidResourceStateFault" => crate::error::CreateFleetAdvisorCollectorError {
+            meta: generic,
+            kind: crate::error::CreateFleetAdvisorCollectorErrorKind::InvalidResourceStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetAdvisorCollectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceQuotaExceededFault" => crate::error::CreateFleetAdvisorCollectorError {
+            meta: generic,
+            kind: crate::error::CreateFleetAdvisorCollectorErrorKind::ResourceQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetAdvisorCollectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "S3AccessDeniedFault" => crate::error::CreateFleetAdvisorCollectorError {
+            meta: generic,
+            kind: crate::error::CreateFleetAdvisorCollectorErrorKind::S3AccessDeniedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::s3_access_denied_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_s3_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetAdvisorCollectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "S3ResourceNotFoundFault" => crate::error::CreateFleetAdvisorCollectorError {
+            meta: generic,
+            kind: crate::error::CreateFleetAdvisorCollectorErrorKind::S3ResourceNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::s3_resource_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_s3_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetAdvisorCollectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateFleetAdvisorCollectorError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_fleet_advisor_collector_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateFleetAdvisorCollectorOutput,
+    crate::error::CreateFleetAdvisorCollectorError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_fleet_advisor_collector_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_fleet_advisor_collector(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateFleetAdvisorCollectorError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_replication_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1334,6 +1464,157 @@ pub fn parse_delete_event_subscription_response(
             output,
         )
         .map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_fleet_advisor_collector_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteFleetAdvisorCollectorOutput,
+    crate::error::DeleteFleetAdvisorCollectorError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteFleetAdvisorCollectorError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteFleetAdvisorCollectorError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CollectorNotFoundFault" => crate::error::DeleteFleetAdvisorCollectorError {
+            meta: generic,
+            kind: crate::error::DeleteFleetAdvisorCollectorErrorKind::CollectorNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::collector_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_collector_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetAdvisorCollectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidResourceStateFault" => crate::error::DeleteFleetAdvisorCollectorError {
+            meta: generic,
+            kind: crate::error::DeleteFleetAdvisorCollectorErrorKind::InvalidResourceStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetAdvisorCollectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteFleetAdvisorCollectorError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_fleet_advisor_collector_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteFleetAdvisorCollectorOutput,
+    crate::error::DeleteFleetAdvisorCollectorError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_fleet_advisor_collector_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_fleet_advisor_databases_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteFleetAdvisorDatabasesOutput,
+    crate::error::DeleteFleetAdvisorDatabasesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteFleetAdvisorDatabasesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteFleetAdvisorDatabasesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidOperationFault" => crate::error::DeleteFleetAdvisorDatabasesError {
+            meta: generic,
+            kind: crate::error::DeleteFleetAdvisorDatabasesErrorKind::InvalidOperationFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_operation_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_operation_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetAdvisorDatabasesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundFault" => crate::error::DeleteFleetAdvisorDatabasesError {
+            meta: generic,
+            kind: crate::error::DeleteFleetAdvisorDatabasesErrorKind::ResourceNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetAdvisorDatabasesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteFleetAdvisorDatabasesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_fleet_advisor_databases_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteFleetAdvisorDatabasesOutput,
+    crate::error::DeleteFleetAdvisorDatabasesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_fleet_advisor_databases_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_delete_fleet_advisor_databases(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteFleetAdvisorDatabasesError::unhandled)?;
         output.build()
     })
 }
@@ -2124,6 +2405,311 @@ pub fn parse_describe_event_subscriptions_response(
             output,
         )
         .map_err(crate::error::DescribeEventSubscriptionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_collectors_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorCollectorsOutput,
+    crate::error::DescribeFleetAdvisorCollectorsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeFleetAdvisorCollectorsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeFleetAdvisorCollectorsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidResourceStateFault" => crate::error::DescribeFleetAdvisorCollectorsError {
+            meta: generic,
+            kind: crate::error::DescribeFleetAdvisorCollectorsErrorKind::InvalidResourceStateFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_resource_state_fault::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAdvisorCollectorsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::DescribeFleetAdvisorCollectorsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_collectors_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorCollectorsOutput,
+    crate::error::DescribeFleetAdvisorCollectorsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_fleet_advisor_collectors_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_fleet_advisor_collectors(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeFleetAdvisorCollectorsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_databases_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorDatabasesOutput,
+    crate::error::DescribeFleetAdvisorDatabasesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeFleetAdvisorDatabasesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeFleetAdvisorDatabasesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidResourceStateFault" => crate::error::DescribeFleetAdvisorDatabasesError {
+            meta: generic,
+            kind: crate::error::DescribeFleetAdvisorDatabasesErrorKind::InvalidResourceStateFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_resource_state_fault::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAdvisorDatabasesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::DescribeFleetAdvisorDatabasesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_databases_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorDatabasesOutput,
+    crate::error::DescribeFleetAdvisorDatabasesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_fleet_advisor_databases_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_fleet_advisor_databases(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeFleetAdvisorDatabasesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_lsa_analysis_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorLsaAnalysisOutput,
+    crate::error::DescribeFleetAdvisorLsaAnalysisError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeFleetAdvisorLsaAnalysisError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeFleetAdvisorLsaAnalysisError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidResourceStateFault" => crate::error::DescribeFleetAdvisorLsaAnalysisError {
+            meta: generic,
+            kind: crate::error::DescribeFleetAdvisorLsaAnalysisErrorKind::InvalidResourceStateFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_resource_state_fault::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAdvisorLsaAnalysisError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::DescribeFleetAdvisorLsaAnalysisError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_lsa_analysis_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorLsaAnalysisOutput,
+    crate::error::DescribeFleetAdvisorLsaAnalysisError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_fleet_advisor_lsa_analysis_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_fleet_advisor_lsa_analysis(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeFleetAdvisorLsaAnalysisError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_schema_object_summary_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput,
+    crate::error::DescribeFleetAdvisorSchemaObjectSummaryError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeFleetAdvisorSchemaObjectSummaryError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::DescribeFleetAdvisorSchemaObjectSummaryError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidResourceStateFault" => crate::error::DescribeFleetAdvisorSchemaObjectSummaryError { meta: generic, kind: crate::error::DescribeFleetAdvisorSchemaObjectSummaryErrorKind::InvalidResourceStateFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_resource_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAdvisorSchemaObjectSummaryError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeFleetAdvisorSchemaObjectSummaryError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_schema_object_summary_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput,
+    crate::error::DescribeFleetAdvisorSchemaObjectSummaryError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_fleet_advisor_schema_object_summary_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_fleet_advisor_schema_object_summary(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAdvisorSchemaObjectSummaryError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_schemas_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorSchemasOutput,
+    crate::error::DescribeFleetAdvisorSchemasError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeFleetAdvisorSchemasError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeFleetAdvisorSchemasError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidResourceStateFault" => crate::error::DescribeFleetAdvisorSchemasError {
+            meta: generic,
+            kind: crate::error::DescribeFleetAdvisorSchemasErrorKind::InvalidResourceStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAdvisorSchemasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeFleetAdvisorSchemasError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fleet_advisor_schemas_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFleetAdvisorSchemasOutput,
+    crate::error::DescribeFleetAdvisorSchemasError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_fleet_advisor_schemas_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_fleet_advisor_schemas(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeFleetAdvisorSchemasError::unhandled)?;
         output.build()
     })
 }
@@ -4158,6 +4744,84 @@ pub fn parse_remove_tags_from_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_tags_from_resource_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_run_fleet_advisor_lsa_analysis_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RunFleetAdvisorLsaAnalysisOutput,
+    crate::error::RunFleetAdvisorLsaAnalysisError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RunFleetAdvisorLsaAnalysisError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::RunFleetAdvisorLsaAnalysisError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidResourceStateFault" => crate::error::RunFleetAdvisorLsaAnalysisError {
+            meta: generic,
+            kind: crate::error::RunFleetAdvisorLsaAnalysisErrorKind::InvalidResourceStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RunFleetAdvisorLsaAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundFault" => crate::error::RunFleetAdvisorLsaAnalysisError {
+            meta: generic,
+            kind: crate::error::RunFleetAdvisorLsaAnalysisErrorKind::ResourceNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RunFleetAdvisorLsaAnalysisError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RunFleetAdvisorLsaAnalysisError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_run_fleet_advisor_lsa_analysis_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RunFleetAdvisorLsaAnalysisOutput,
+    crate::error::RunFleetAdvisorLsaAnalysisError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::run_fleet_advisor_lsa_analysis_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_run_fleet_advisor_lsa_analysis(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RunFleetAdvisorLsaAnalysisError::unhandled)?;
         output.build()
     })
 }

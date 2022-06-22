@@ -5,7 +5,7 @@ feedback purposes only. Do not use this SDK for production workloads.**
 
 You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds.
 
-For more information about the Amazon Redshift Data API, see [Using the Amazon Redshift Data API](https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html) in the _Amazon Redshift Cluster Management Guide_.
+For more information about the Amazon Redshift Data API and CLI usage examples, see [Using the Amazon Redshift Data API](https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html) in the _Amazon Redshift Cluster Management Guide_.
 
 ## Getting Started
 
@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.13.0"
-aws-sdk-redshiftdata = "0.13.0"
+aws-config = "0.14.0"
+aws-sdk-redshiftdata = "0.14.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

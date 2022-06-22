@@ -9,6 +9,16 @@ pub(crate) fn reflens_structure_crate_output_get_current_metric_data_output_next
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_get_current_user_data_output_next_token(
+    input: &crate::output::GetCurrentUserDataOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_get_metric_data_output_next_token(
     input: &crate::output::GetMetricDataOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -261,6 +271,16 @@ pub(crate) fn reflens_structure_crate_output_list_security_profile_permissions_o
 
 pub(crate) fn reflens_structure_crate_output_list_security_profiles_output_next_token(
     input: &crate::output::ListSecurityProfilesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_task_templates_output_next_token(
+    input: &crate::output::ListTaskTemplatesOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -573,6 +593,16 @@ pub(crate) fn lens_structure_crate_output_list_security_profiles_output_security
     input: crate::output::ListSecurityProfilesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::SecurityProfileSummary>> {
     let input = match input.security_profile_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_task_templates_output_task_templates(
+    input: crate::output::ListTaskTemplatesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::TaskTemplateMetadata>> {
+    let input = match input.task_templates {
         None => return None,
         Some(t) => t,
     };

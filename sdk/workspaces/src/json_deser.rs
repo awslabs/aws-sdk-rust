@@ -163,6 +163,15 @@ pub fn deser_structure_crate_error_operation_not_supported_exception_json_err(
                             .transpose()?,
                         );
                     }
+                    "reason" => {
+                        builder = builder.set_reason(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

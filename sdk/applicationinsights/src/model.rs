@@ -273,9 +273,9 @@ pub struct ApplicationInfo {
     /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
     /// </ul>
     pub remarks: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Indicates whether auto-configuration is turned on for this application. </p>
     pub auto_config_enabled: std::option::Option<bool>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The method used by Application Insights to onboard your resources. </p>
     pub discovery_type: std::option::Option<crate::model::DiscoveryType>,
 }
 impl ApplicationInfo {
@@ -307,11 +307,11 @@ impl ApplicationInfo {
     pub fn remarks(&self) -> std::option::Option<&str> {
         self.remarks.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Indicates whether auto-configuration is turned on for this application. </p>
     pub fn auto_config_enabled(&self) -> std::option::Option<bool> {
         self.auto_config_enabled
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The method used by Application Insights to onboard your resources. </p>
     pub fn discovery_type(&self) -> std::option::Option<&crate::model::DiscoveryType> {
         self.discovery_type.as_ref()
     }
@@ -421,22 +421,22 @@ pub mod application_info {
             self.remarks = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Indicates whether auto-configuration is turned on for this application. </p>
         pub fn auto_config_enabled(mut self, input: bool) -> Self {
             self.auto_config_enabled = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Indicates whether auto-configuration is turned on for this application. </p>
         pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_config_enabled = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The method used by Application Insights to onboard your resources. </p>
         pub fn discovery_type(mut self, input: crate::model::DiscoveryType) -> Self {
             self.discovery_type = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The method used by Application Insights to onboard your resources. </p>
         pub fn set_discovery_type(
             mut self,
             input: std::option::Option<crate::model::DiscoveryType>,
@@ -627,9 +627,9 @@ pub struct Problem {
     pub feedback: std::option::Option<
         std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
     >,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     pub recurring_count: std::option::Option<i64>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub last_recurrence_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Problem {
@@ -677,11 +677,11 @@ impl Problem {
     > {
         self.feedback.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     pub fn recurring_count(&self) -> std::option::Option<i64> {
         self.recurring_count
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub fn last_recurrence_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_recurrence_time.as_ref()
     }
@@ -857,22 +857,22 @@ pub mod problem {
             self.feedback = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
         pub fn recurring_count(mut self, input: i64) -> Self {
             self.recurring_count = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
         pub fn set_recurring_count(mut self, input: std::option::Option<i64>) -> Self {
             self.recurring_count = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The last time that the problem reoccurred after its last resolution. </p>
         pub fn last_recurrence_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_recurrence_time = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The last time that the problem reoccurred after its last resolution. </p>
         pub fn set_last_recurrence_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1031,6 +1031,8 @@ pub enum SeverityLevel {
     #[allow(missing_docs)] // documentation missing in model
     High,
     #[allow(missing_docs)] // documentation missing in model
+    Informative,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
     #[allow(missing_docs)] // documentation missing in model
     Medium,
@@ -1041,6 +1043,7 @@ impl std::convert::From<&str> for SeverityLevel {
     fn from(s: &str) -> Self {
         match s {
             "High" => SeverityLevel::High,
+            "Informative" => SeverityLevel::Informative,
             "Low" => SeverityLevel::Low,
             "Medium" => SeverityLevel::Medium,
             other => SeverityLevel::Unknown(other.to_owned()),
@@ -1059,6 +1062,7 @@ impl SeverityLevel {
     pub fn as_str(&self) -> &str {
         match self {
             SeverityLevel::High => "High",
+            SeverityLevel::Informative => "Informative",
             SeverityLevel::Low => "Low",
             SeverityLevel::Medium => "Medium",
             SeverityLevel::Unknown(s) => s.as_ref(),
@@ -1066,7 +1070,7 @@ impl SeverityLevel {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["High", "Low", "Medium"]
+        &["High", "Informative", "Low", "Medium"]
     }
 }
 impl AsRef<str> for SeverityLevel {
@@ -2887,6 +2891,57 @@ impl LogFilter {
     }
 }
 impl AsRef<str> for LogFilter {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum GroupingType {
+    #[allow(missing_docs)] // documentation missing in model
+    AccountBased,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for GroupingType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCOUNT_BASED" => GroupingType::AccountBased,
+            other => GroupingType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for GroupingType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(GroupingType::from(s))
+    }
+}
+impl GroupingType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            GroupingType::AccountBased => "ACCOUNT_BASED",
+            GroupingType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACCOUNT_BASED"]
+    }
+}
+impl AsRef<str> for GroupingType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

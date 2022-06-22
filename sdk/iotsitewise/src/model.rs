@@ -5474,6 +5474,8 @@ pub struct AssociatedAssetsSummary {
     pub status: std::option::Option<crate::model::AssetStatus>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
     pub hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
+    /// <p>A description for the asset.</p>
+    pub description: std::option::Option<std::string::String>,
 }
 impl AssociatedAssetsSummary {
     /// <p>The ID of the asset.</p>
@@ -5509,6 +5511,10 @@ impl AssociatedAssetsSummary {
     pub fn hierarchies(&self) -> std::option::Option<&[crate::model::AssetHierarchy]> {
         self.hierarchies.as_deref()
     }
+    /// <p>A description for the asset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociatedAssetsSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5521,6 +5527,7 @@ impl std::fmt::Debug for AssociatedAssetsSummary {
         formatter.field("last_update_date", &self.last_update_date);
         formatter.field("status", &self.status);
         formatter.field("hierarchies", &self.hierarchies);
+        formatter.field("description", &self.description);
         formatter.finish()
     }
 }
@@ -5539,6 +5546,7 @@ pub mod associated_assets_summary {
         pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AssetStatus>,
         pub(crate) hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
+        pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the asset.</p>
@@ -5641,6 +5649,16 @@ pub mod associated_assets_summary {
             self.hierarchies = input;
             self
         }
+        /// <p>A description for the asset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description for the asset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociatedAssetsSummary`](crate::model::AssociatedAssetsSummary)
         pub fn build(self) -> crate::model::AssociatedAssetsSummary {
             crate::model::AssociatedAssetsSummary {
@@ -5652,6 +5670,7 @@ pub mod associated_assets_summary {
                 last_update_date: self.last_update_date,
                 status: self.status,
                 hierarchies: self.hierarchies,
+                description: self.description,
             }
         }
     }
@@ -5813,6 +5832,8 @@ pub struct AssetSummary {
     pub status: std::option::Option<crate::model::AssetStatus>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
     pub hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
+    /// <p>A description for the asset.</p>
+    pub description: std::option::Option<std::string::String>,
 }
 impl AssetSummary {
     /// <p>The ID of the asset.</p>
@@ -5848,6 +5869,10 @@ impl AssetSummary {
     pub fn hierarchies(&self) -> std::option::Option<&[crate::model::AssetHierarchy]> {
         self.hierarchies.as_deref()
     }
+    /// <p>A description for the asset.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for AssetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5860,6 +5885,7 @@ impl std::fmt::Debug for AssetSummary {
         formatter.field("last_update_date", &self.last_update_date);
         formatter.field("status", &self.status);
         formatter.field("hierarchies", &self.hierarchies);
+        formatter.field("description", &self.description);
         formatter.finish()
     }
 }
@@ -5878,6 +5904,7 @@ pub mod asset_summary {
         pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AssetStatus>,
         pub(crate) hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
+        pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the asset.</p>
@@ -5980,6 +6007,16 @@ pub mod asset_summary {
             self.hierarchies = input;
             self
         }
+        /// <p>A description for the asset.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description for the asset.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssetSummary`](crate::model::AssetSummary)
         pub fn build(self) -> crate::model::AssetSummary {
             crate::model::AssetSummary {
@@ -5991,6 +6028,7 @@ pub mod asset_summary {
                 last_update_date: self.last_update_date,
                 status: self.status,
                 hierarchies: self.hierarchies,
+                description: self.description,
             }
         }
     }

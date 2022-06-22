@@ -3750,6 +3750,9 @@ pub struct ResourceRecordSet {
     /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
     /// </important>
     pub traffic_policy_instance_id: std::option::Option<std::string::String>,
+    /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+    /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
+    pub cidr_routing_config: std::option::Option<crate::model::CidrRoutingConfig>,
 }
 impl ResourceRecordSet {
     /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
@@ -3940,6 +3943,11 @@ impl ResourceRecordSet {
     pub fn traffic_policy_instance_id(&self) -> std::option::Option<&str> {
         self.traffic_policy_instance_id.as_deref()
     }
+    /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+    /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
+    pub fn cidr_routing_config(&self) -> std::option::Option<&crate::model::CidrRoutingConfig> {
+        self.cidr_routing_config.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceRecordSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3960,6 +3968,7 @@ impl std::fmt::Debug for ResourceRecordSet {
             "traffic_policy_instance_id",
             &self.traffic_policy_instance_id,
         );
+        formatter.field("cidr_routing_config", &self.cidr_routing_config);
         formatter.finish()
     }
 }
@@ -3984,6 +3993,7 @@ pub mod resource_record_set {
         pub(crate) alias_target: std::option::Option<crate::model::AliasTarget>,
         pub(crate) health_check_id: std::option::Option<std::string::String>,
         pub(crate) traffic_policy_instance_id: std::option::Option<std::string::String>,
+        pub(crate) cidr_routing_config: std::option::Option<crate::model::CidrRoutingConfig>,
     }
     impl Builder {
         /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
@@ -4418,6 +4428,21 @@ pub mod resource_record_set {
             self.traffic_policy_instance_id = input;
             self
         }
+        /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+        /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
+        pub fn cidr_routing_config(mut self, input: crate::model::CidrRoutingConfig) -> Self {
+            self.cidr_routing_config = Some(input);
+            self
+        }
+        /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+        /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
+        pub fn set_cidr_routing_config(
+            mut self,
+            input: std::option::Option<crate::model::CidrRoutingConfig>,
+        ) -> Self {
+            self.cidr_routing_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceRecordSet`](crate::model::ResourceRecordSet)
         pub fn build(self) -> crate::model::ResourceRecordSet {
             crate::model::ResourceRecordSet {
@@ -4434,6 +4459,7 @@ pub mod resource_record_set {
                 alias_target: self.alias_target,
                 health_check_id: self.health_check_id,
                 traffic_policy_instance_id: self.traffic_policy_instance_id,
+                cidr_routing_config: self.cidr_routing_config,
             }
         }
     }
@@ -4442,6 +4468,87 @@ impl ResourceRecordSet {
     /// Creates a new builder-style object to manufacture [`ResourceRecordSet`](crate::model::ResourceRecordSet)
     pub fn builder() -> crate::model::resource_record_set::Builder {
         crate::model::resource_record_set::Builder::default()
+    }
+}
+
+/// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+/// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CidrRoutingConfig {
+    /// <p>The CIDR collection ID.</p>
+    pub collection_id: std::option::Option<std::string::String>,
+    /// <p>The CIDR collection location name.</p>
+    pub location_name: std::option::Option<std::string::String>,
+}
+impl CidrRoutingConfig {
+    /// <p>The CIDR collection ID.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>The CIDR collection location name.</p>
+    pub fn location_name(&self) -> std::option::Option<&str> {
+        self.location_name.as_deref()
+    }
+}
+impl std::fmt::Debug for CidrRoutingConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CidrRoutingConfig");
+        formatter.field("collection_id", &self.collection_id);
+        formatter.field("location_name", &self.location_name);
+        formatter.finish()
+    }
+}
+/// See [`CidrRoutingConfig`](crate::model::CidrRoutingConfig)
+pub mod cidr_routing_config {
+
+    /// A builder for [`CidrRoutingConfig`](crate::model::CidrRoutingConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collection_id: std::option::Option<std::string::String>,
+        pub(crate) location_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The CIDR collection ID.</p>
+        pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collection_id = Some(input.into());
+            self
+        }
+        /// <p>The CIDR collection ID.</p>
+        pub fn set_collection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collection_id = input;
+            self
+        }
+        /// <p>The CIDR collection location name.</p>
+        pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_name = Some(input.into());
+            self
+        }
+        /// <p>The CIDR collection location name.</p>
+        pub fn set_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.location_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CidrRoutingConfig`](crate::model::CidrRoutingConfig)
+        pub fn build(self) -> crate::model::CidrRoutingConfig {
+            crate::model::CidrRoutingConfig {
+                collection_id: self.collection_id,
+                location_name: self.location_name,
+            }
+        }
+    }
+}
+impl CidrRoutingConfig {
+    /// Creates a new builder-style object to manufacture [`CidrRoutingConfig`](crate::model::CidrRoutingConfig)
+    pub fn builder() -> crate::model::cidr_routing_config::Builder {
+        crate::model::cidr_routing_config::Builder::default()
     }
 }
 
@@ -6241,6 +6348,253 @@ impl GeoLocationDetails {
     }
 }
 
+/// <p>A complex type that contains information about the CIDR location.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LocationSummary {
+    /// <p>A string that specifies a location name.</p>
+    pub location_name: std::option::Option<std::string::String>,
+}
+impl LocationSummary {
+    /// <p>A string that specifies a location name.</p>
+    pub fn location_name(&self) -> std::option::Option<&str> {
+        self.location_name.as_deref()
+    }
+}
+impl std::fmt::Debug for LocationSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LocationSummary");
+        formatter.field("location_name", &self.location_name);
+        formatter.finish()
+    }
+}
+/// See [`LocationSummary`](crate::model::LocationSummary)
+pub mod location_summary {
+
+    /// A builder for [`LocationSummary`](crate::model::LocationSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A string that specifies a location name.</p>
+        pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_name = Some(input.into());
+            self
+        }
+        /// <p>A string that specifies a location name.</p>
+        pub fn set_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.location_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LocationSummary`](crate::model::LocationSummary)
+        pub fn build(self) -> crate::model::LocationSummary {
+            crate::model::LocationSummary {
+                location_name: self.location_name,
+            }
+        }
+    }
+}
+impl LocationSummary {
+    /// Creates a new builder-style object to manufacture [`LocationSummary`](crate::model::LocationSummary)
+    pub fn builder() -> crate::model::location_summary::Builder {
+        crate::model::location_summary::Builder::default()
+    }
+}
+
+/// <p>A complex type that is an entry in an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CidrCollection.html">CidrCollection</a> array.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CollectionSummary {
+    /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Unique ID for the CIDR collection.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of a CIDR collection.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
+    pub version: std::option::Option<i64>,
+}
+impl CollectionSummary {
+    /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Unique ID for the CIDR collection.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of a CIDR collection.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+}
+impl std::fmt::Debug for CollectionSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CollectionSummary");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("version", &self.version);
+        formatter.finish()
+    }
+}
+/// See [`CollectionSummary`](crate::model::CollectionSummary)
+pub mod collection_summary {
+
+    /// A builder for [`CollectionSummary`](crate::model::CollectionSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Unique ID for the CIDR collection.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>Unique ID for the CIDR collection.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of a CIDR collection.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of a CIDR collection.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
+            self
+        }
+        /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CollectionSummary`](crate::model::CollectionSummary)
+        pub fn build(self) -> crate::model::CollectionSummary {
+            crate::model::CollectionSummary {
+                arn: self.arn,
+                id: self.id,
+                name: self.name,
+                version: self.version,
+            }
+        }
+    }
+}
+impl CollectionSummary {
+    /// Creates a new builder-style object to manufacture [`CollectionSummary`](crate::model::CollectionSummary)
+    pub fn builder() -> crate::model::collection_summary::Builder {
+        crate::model::collection_summary::Builder::default()
+    }
+}
+
+/// <p>A complex type that lists the CIDR blocks.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CidrBlockSummary {
+    /// <p>Value for the CIDR block.</p>
+    pub cidr_block: std::option::Option<std::string::String>,
+    /// <p>The location name of the CIDR block.</p>
+    pub location_name: std::option::Option<std::string::String>,
+}
+impl CidrBlockSummary {
+    /// <p>Value for the CIDR block.</p>
+    pub fn cidr_block(&self) -> std::option::Option<&str> {
+        self.cidr_block.as_deref()
+    }
+    /// <p>The location name of the CIDR block.</p>
+    pub fn location_name(&self) -> std::option::Option<&str> {
+        self.location_name.as_deref()
+    }
+}
+impl std::fmt::Debug for CidrBlockSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CidrBlockSummary");
+        formatter.field("cidr_block", &self.cidr_block);
+        formatter.field("location_name", &self.location_name);
+        formatter.finish()
+    }
+}
+/// See [`CidrBlockSummary`](crate::model::CidrBlockSummary)
+pub mod cidr_block_summary {
+
+    /// A builder for [`CidrBlockSummary`](crate::model::CidrBlockSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cidr_block: std::option::Option<std::string::String>,
+        pub(crate) location_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Value for the CIDR block.</p>
+        pub fn cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr_block = Some(input.into());
+            self
+        }
+        /// <p>Value for the CIDR block.</p>
+        pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr_block = input;
+            self
+        }
+        /// <p>The location name of the CIDR block.</p>
+        pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_name = Some(input.into());
+            self
+        }
+        /// <p>The location name of the CIDR block.</p>
+        pub fn set_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.location_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CidrBlockSummary`](crate::model::CidrBlockSummary)
+        pub fn build(self) -> crate::model::CidrBlockSummary {
+            crate::model::CidrBlockSummary {
+                cidr_block: self.cidr_block,
+                location_name: self.location_name,
+            }
+        }
+    }
+}
+impl CidrBlockSummary {
+    /// Creates a new builder-style object to manufacture [`CidrBlockSummary`](crate::model::CidrBlockSummary)
+    pub fn builder() -> crate::model::cidr_block_summary::Builder {
+        crate::model::cidr_block_summary::Builder::default()
+    }
+}
+
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7909,6 +8263,118 @@ impl AsRef<str> for AccountLimitType {
     }
 }
 
+/// <p>A complex type that identifies a CIDR collection.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CidrCollection {
+    /// <p>The ARN of the collection. Can be used to reference the collection in IAM policy or in another Amazon Web Services account.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The unique ID of the CIDR collection.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of a CIDR collection.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
+    pub version: std::option::Option<i64>,
+}
+impl CidrCollection {
+    /// <p>The ARN of the collection. Can be used to reference the collection in IAM policy or in another Amazon Web Services account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The unique ID of the CIDR collection.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of a CIDR collection.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
+    pub fn version(&self) -> std::option::Option<i64> {
+        self.version
+    }
+}
+impl std::fmt::Debug for CidrCollection {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CidrCollection");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("version", &self.version);
+        formatter.finish()
+    }
+}
+/// See [`CidrCollection`](crate::model::CidrCollection)
+pub mod cidr_collection {
+
+    /// A builder for [`CidrCollection`](crate::model::CidrCollection)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The ARN of the collection. Can be used to reference the collection in IAM policy or in another Amazon Web Services account.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the collection. Can be used to reference the collection in IAM policy or in another Amazon Web Services account.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The unique ID of the CIDR collection.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the CIDR collection.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of a CIDR collection.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of a CIDR collection.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
+        pub fn version(mut self, input: i64) -> Self {
+            self.version = Some(input);
+            self
+        }
+        /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
+        pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CidrCollection`](crate::model::CidrCollection)
+        pub fn build(self) -> crate::model::CidrCollection {
+            crate::model::CidrCollection {
+                arn: self.arn,
+                id: self.id,
+                name: self.name,
+                version: self.version,
+            }
+        }
+    }
+}
+impl CidrCollection {
+    /// Creates a new builder-style object to manufacture [`CidrCollection`](crate::model::CidrCollection)
+    pub fn builder() -> crate::model::cidr_collection::Builder {
+        crate::model::cidr_collection::Builder::default()
+    }
+}
+
 /// <p>The information for a change request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8154,6 +8620,169 @@ impl ChangeAction {
     }
 }
 impl AsRef<str> for ChangeAction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A complex type that contains information about the CIDR collection change.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CidrCollectionChange {
+    /// <p>Name of the location that is associated with the CIDR collection.</p>
+    pub location_name: std::option::Option<std::string::String>,
+    /// <p>CIDR collection change action. </p>
+    pub action: std::option::Option<crate::model::CidrCollectionChangeAction>,
+    /// <p>List of CIDR blocks.</p>
+    pub cidr_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CidrCollectionChange {
+    /// <p>Name of the location that is associated with the CIDR collection.</p>
+    pub fn location_name(&self) -> std::option::Option<&str> {
+        self.location_name.as_deref()
+    }
+    /// <p>CIDR collection change action. </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::CidrCollectionChangeAction> {
+        self.action.as_ref()
+    }
+    /// <p>List of CIDR blocks.</p>
+    pub fn cidr_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.cidr_list.as_deref()
+    }
+}
+impl std::fmt::Debug for CidrCollectionChange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CidrCollectionChange");
+        formatter.field("location_name", &self.location_name);
+        formatter.field("action", &self.action);
+        formatter.field("cidr_list", &self.cidr_list);
+        formatter.finish()
+    }
+}
+/// See [`CidrCollectionChange`](crate::model::CidrCollectionChange)
+pub mod cidr_collection_change {
+
+    /// A builder for [`CidrCollectionChange`](crate::model::CidrCollectionChange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_name: std::option::Option<std::string::String>,
+        pub(crate) action: std::option::Option<crate::model::CidrCollectionChangeAction>,
+        pub(crate) cidr_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>Name of the location that is associated with the CIDR collection.</p>
+        pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the location that is associated with the CIDR collection.</p>
+        pub fn set_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.location_name = input;
+            self
+        }
+        /// <p>CIDR collection change action. </p>
+        pub fn action(mut self, input: crate::model::CidrCollectionChangeAction) -> Self {
+            self.action = Some(input);
+            self
+        }
+        /// <p>CIDR collection change action. </p>
+        pub fn set_action(
+            mut self,
+            input: std::option::Option<crate::model::CidrCollectionChangeAction>,
+        ) -> Self {
+            self.action = input;
+            self
+        }
+        /// Appends an item to `cidr_list`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_list`](Self::set_cidr_list).
+        ///
+        /// <p>List of CIDR blocks.</p>
+        pub fn cidr_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.cidr_list.unwrap_or_default();
+            v.push(input.into());
+            self.cidr_list = Some(v);
+            self
+        }
+        /// <p>List of CIDR blocks.</p>
+        pub fn set_cidr_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.cidr_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CidrCollectionChange`](crate::model::CidrCollectionChange)
+        pub fn build(self) -> crate::model::CidrCollectionChange {
+            crate::model::CidrCollectionChange {
+                location_name: self.location_name,
+                action: self.action,
+                cidr_list: self.cidr_list,
+            }
+        }
+    }
+}
+impl CidrCollectionChange {
+    /// Creates a new builder-style object to manufacture [`CidrCollectionChange`](crate::model::CidrCollectionChange)
+    pub fn builder() -> crate::model::cidr_collection_change::Builder {
+        crate::model::cidr_collection_change::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CidrCollectionChangeAction {
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteIfExists,
+    #[allow(missing_docs)] // documentation missing in model
+    Put,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CidrCollectionChangeAction {
+    fn from(s: &str) -> Self {
+        match s {
+            "DELETE_IF_EXISTS" => CidrCollectionChangeAction::DeleteIfExists,
+            "PUT" => CidrCollectionChangeAction::Put,
+            other => CidrCollectionChangeAction::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CidrCollectionChangeAction {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CidrCollectionChangeAction::from(s))
+    }
+}
+impl CidrCollectionChangeAction {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CidrCollectionChangeAction::DeleteIfExists => "DELETE_IF_EXISTS",
+            CidrCollectionChangeAction::Put => "PUT",
+            CidrCollectionChangeAction::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DELETE_IF_EXISTS", "PUT"]
+    }
+}
+impl AsRef<str> for CidrCollectionChangeAction {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -5,10 +5,14 @@
 pub enum Error {
     /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
+    /// <p>The specified collector doesn't exist.</p>
+    CollectorNotFoundFault(crate::error::CollectorNotFoundFault),
     /// <p>There are not enough resources allocated to the database migration.</p>
     InsufficientResourceCapacityFault(crate::error::InsufficientResourceCapacityFault),
     /// <p>The certificate was not valid.</p>
     InvalidCertificateFault(crate::error::InvalidCertificateFault),
+    /// <p>The action or operation requested isn't valid.</p>
+    InvalidOperationFault(crate::error::InvalidOperationFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The subnet provided is invalid.</p>
@@ -58,8 +62,10 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedFault(inner) => inner.fmt(f),
+            Error::CollectorNotFoundFault(inner) => inner.fmt(f),
             Error::InsufficientResourceCapacityFault(inner) => inner.fmt(f),
             Error::InvalidCertificateFault(inner) => inner.fmt(f),
+            Error::InvalidOperationFault(inner) => inner.fmt(f),
             Error::InvalidResourceStateFault(inner) => inner.fmt(f),
             Error::InvalidSubnet(inner) => inner.fmt(f),
             Error::KmsAccessDeniedFault(inner) => inner.fmt(f),
@@ -224,6 +230,39 @@ where
                     Error::SnsNoAuthorizationFault(inner)
                 }
                 crate::error::CreateEventSubscriptionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFleetAdvisorCollectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateFleetAdvisorCollectorError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateFleetAdvisorCollectorErrorKind::AccessDeniedFault(inner) => {
+                    Error::AccessDeniedFault(inner)
+                }
+                crate::error::CreateFleetAdvisorCollectorErrorKind::InvalidResourceStateFault(
+                    inner,
+                ) => Error::InvalidResourceStateFault(inner),
+                crate::error::CreateFleetAdvisorCollectorErrorKind::ResourceQuotaExceededFault(
+                    inner,
+                ) => Error::ResourceQuotaExceededFault(inner),
+                crate::error::CreateFleetAdvisorCollectorErrorKind::S3AccessDeniedFault(inner) => {
+                    Error::S3AccessDeniedFault(inner)
+                }
+                crate::error::CreateFleetAdvisorCollectorErrorKind::S3ResourceNotFoundFault(
+                    inner,
+                ) => Error::S3ResourceNotFoundFault(inner),
+                crate::error::CreateFleetAdvisorCollectorErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -400,6 +439,54 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DeleteEventSubscriptionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetAdvisorCollectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetAdvisorCollectorError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteFleetAdvisorCollectorErrorKind::CollectorNotFoundFault(
+                    inner,
+                ) => Error::CollectorNotFoundFault(inner),
+                crate::error::DeleteFleetAdvisorCollectorErrorKind::InvalidResourceStateFault(
+                    inner,
+                ) => Error::InvalidResourceStateFault(inner),
+                crate::error::DeleteFleetAdvisorCollectorErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetAdvisorDatabasesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetAdvisorDatabasesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteFleetAdvisorDatabasesErrorKind::InvalidOperationFault(
+                    inner,
+                ) => Error::InvalidOperationFault(inner),
+                crate::error::DeleteFleetAdvisorDatabasesErrorKind::ResourceNotFoundFault(
+                    inner,
+                ) => Error::ResourceNotFoundFault(inner),
+                crate::error::DeleteFleetAdvisorDatabasesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -690,6 +777,115 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DescribeEventSubscriptionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorCollectorsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeFleetAdvisorCollectorsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeFleetAdvisorCollectorsErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
+                crate::error::DescribeFleetAdvisorCollectorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorDatabasesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorDatabasesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeFleetAdvisorDatabasesErrorKind::InvalidResourceStateFault(
+                    inner,
+                ) => Error::InvalidResourceStateFault(inner),
+                crate::error::DescribeFleetAdvisorDatabasesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorLsaAnalysisError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeFleetAdvisorLsaAnalysisError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeFleetAdvisorLsaAnalysisErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
+                crate::error::DescribeFleetAdvisorLsaAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeFleetAdvisorSchemaObjectSummaryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeFleetAdvisorSchemaObjectSummaryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeFleetAdvisorSchemaObjectSummaryErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
+                crate::error::DescribeFleetAdvisorSchemaObjectSummaryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorSchemasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorSchemasError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeFleetAdvisorSchemasErrorKind::InvalidResourceStateFault(
+                    inner,
+                ) => Error::InvalidResourceStateFault(inner),
+                crate::error::DescribeFleetAdvisorSchemasErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1291,6 +1487,30 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::RemoveTagsFromResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RunFleetAdvisorLsaAnalysisError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::RunFleetAdvisorLsaAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RunFleetAdvisorLsaAnalysisErrorKind::InvalidResourceStateFault(
+                    inner,
+                ) => Error::InvalidResourceStateFault(inner),
+                crate::error::RunFleetAdvisorLsaAnalysisErrorKind::ResourceNotFoundFault(inner) => {
+                    Error::ResourceNotFoundFault(inner)
+                }
+                crate::error::RunFleetAdvisorLsaAnalysisErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

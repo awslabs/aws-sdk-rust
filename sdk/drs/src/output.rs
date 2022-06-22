@@ -710,6 +710,8 @@ pub struct RetryDataReplicationOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>The source properties of the Source Server.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>The staging area of the source server.</p>
+    pub staging_area: std::option::Option<crate::model::StagingArea>,
 }
 impl RetryDataReplicationOutput {
     /// <p>The ID of the Source Server.</p>
@@ -747,6 +749,10 @@ impl RetryDataReplicationOutput {
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
+    /// <p>The staging area of the source server.</p>
+    pub fn staging_area(&self) -> std::option::Option<&crate::model::StagingArea> {
+        self.staging_area.as_ref()
+    }
 }
 impl std::fmt::Debug for RetryDataReplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -759,6 +765,7 @@ impl std::fmt::Debug for RetryDataReplicationOutput {
         formatter.field("data_replication_info", &self.data_replication_info);
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
+        formatter.field("staging_area", &self.staging_area);
         formatter.finish()
     }
 }
@@ -779,6 +786,7 @@ pub mod retry_data_replication_output {
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) staging_area: std::option::Option<crate::model::StagingArea>,
     }
     impl Builder {
         /// <p>The ID of the Source Server.</p>
@@ -894,6 +902,19 @@ pub mod retry_data_replication_output {
             self.source_properties = input;
             self
         }
+        /// <p>The staging area of the source server.</p>
+        pub fn staging_area(mut self, input: crate::model::StagingArea) -> Self {
+            self.staging_area = Some(input);
+            self
+        }
+        /// <p>The staging area of the source server.</p>
+        pub fn set_staging_area(
+            mut self,
+            input: std::option::Option<crate::model::StagingArea>,
+        ) -> Self {
+            self.staging_area = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput)
         pub fn build(self) -> crate::output::RetryDataReplicationOutput {
             crate::output::RetryDataReplicationOutput {
@@ -905,6 +926,7 @@ pub mod retry_data_replication_output {
                 data_replication_info: self.data_replication_info,
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
+                staging_area: self.staging_area,
             }
         }
     }
@@ -1627,6 +1649,8 @@ pub struct DisconnectSourceServerOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>The source properties of the Source Server.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>The staging area of the source server.</p>
+    pub staging_area: std::option::Option<crate::model::StagingArea>,
 }
 impl DisconnectSourceServerOutput {
     /// <p>The ID of the Source Server.</p>
@@ -1664,6 +1688,10 @@ impl DisconnectSourceServerOutput {
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
+    /// <p>The staging area of the source server.</p>
+    pub fn staging_area(&self) -> std::option::Option<&crate::model::StagingArea> {
+        self.staging_area.as_ref()
+    }
 }
 impl std::fmt::Debug for DisconnectSourceServerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1676,6 +1704,7 @@ impl std::fmt::Debug for DisconnectSourceServerOutput {
         formatter.field("data_replication_info", &self.data_replication_info);
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
+        formatter.field("staging_area", &self.staging_area);
         formatter.finish()
     }
 }
@@ -1696,6 +1725,7 @@ pub mod disconnect_source_server_output {
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) staging_area: std::option::Option<crate::model::StagingArea>,
     }
     impl Builder {
         /// <p>The ID of the Source Server.</p>
@@ -1811,6 +1841,19 @@ pub mod disconnect_source_server_output {
             self.source_properties = input;
             self
         }
+        /// <p>The staging area of the source server.</p>
+        pub fn staging_area(mut self, input: crate::model::StagingArea) -> Self {
+            self.staging_area = Some(input);
+            self
+        }
+        /// <p>The staging area of the source server.</p>
+        pub fn set_staging_area(
+            mut self,
+            input: std::option::Option<crate::model::StagingArea>,
+        ) -> Self {
+            self.staging_area = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DisconnectSourceServerOutput`](crate::output::DisconnectSourceServerOutput)
         pub fn build(self) -> crate::output::DisconnectSourceServerOutput {
             crate::output::DisconnectSourceServerOutput {
@@ -1822,6 +1865,7 @@ pub mod disconnect_source_server_output {
                 data_replication_info: self.data_replication_info,
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
+                staging_area: self.staging_area,
             }
         }
     }
@@ -3933,6 +3977,172 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStagingAccountsOutput {
+    /// <p>An array of staging AWS Accounts.</p>
+    pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
+    /// <p>The token of the next staging Account to retrieve.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStagingAccountsOutput {
+    /// <p>An array of staging AWS Accounts.</p>
+    pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
+        self.accounts.as_deref()
+    }
+    /// <p>The token of the next staging Account to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListStagingAccountsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListStagingAccountsOutput");
+        formatter.field("accounts", &self.accounts);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListStagingAccountsOutput`](crate::output::ListStagingAccountsOutput)
+pub mod list_staging_accounts_output {
+
+    /// A builder for [`ListStagingAccountsOutput`](crate::output::ListStagingAccountsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `accounts`.
+        ///
+        /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
+        ///
+        /// <p>An array of staging AWS Accounts.</p>
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
+            let mut v = self.accounts.unwrap_or_default();
+            v.push(input);
+            self.accounts = Some(v);
+            self
+        }
+        /// <p>An array of staging AWS Accounts.</p>
+        pub fn set_accounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Account>>,
+        ) -> Self {
+            self.accounts = input;
+            self
+        }
+        /// <p>The token of the next staging Account to retrieve.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token of the next staging Account to retrieve.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListStagingAccountsOutput`](crate::output::ListStagingAccountsOutput)
+        pub fn build(self) -> crate::output::ListStagingAccountsOutput {
+            crate::output::ListStagingAccountsOutput {
+                accounts: self.accounts,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListStagingAccountsOutput {
+    /// Creates a new builder-style object to manufacture [`ListStagingAccountsOutput`](crate::output::ListStagingAccountsOutput)
+    pub fn builder() -> crate::output::list_staging_accounts_output::Builder {
+        crate::output::list_staging_accounts_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListExtensibleSourceServersOutput {
+    /// <p>A list of source servers on a staging Account that are extensible.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::StagingSourceServer>>,
+    /// <p>The token of the next extensible source server to retrieve.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExtensibleSourceServersOutput {
+    /// <p>A list of source servers on a staging Account that are extensible.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::StagingSourceServer]> {
+        self.items.as_deref()
+    }
+    /// <p>The token of the next extensible source server to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListExtensibleSourceServersOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListExtensibleSourceServersOutput");
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListExtensibleSourceServersOutput`](crate::output::ListExtensibleSourceServersOutput)
+pub mod list_extensible_source_servers_output {
+
+    /// A builder for [`ListExtensibleSourceServersOutput`](crate::output::ListExtensibleSourceServersOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::StagingSourceServer>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of source servers on a staging Account that are extensible.</p>
+        pub fn items(mut self, input: crate::model::StagingSourceServer) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>A list of source servers on a staging Account that are extensible.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StagingSourceServer>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>The token of the next extensible source server to retrieve.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token of the next extensible source server to retrieve.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListExtensibleSourceServersOutput`](crate::output::ListExtensibleSourceServersOutput)
+        pub fn build(self) -> crate::output::ListExtensibleSourceServersOutput {
+            crate::output::ListExtensibleSourceServersOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListExtensibleSourceServersOutput {
+    /// Creates a new builder-style object to manufacture [`ListExtensibleSourceServersOutput`](crate::output::ListExtensibleSourceServersOutput)
+    pub fn builder() -> crate::output::list_extensible_source_servers_output::Builder {
+        crate::output::list_extensible_source_servers_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitializeServiceOutput {}
 impl std::fmt::Debug for InitializeServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3958,5 +4168,63 @@ impl InitializeServiceOutput {
     /// Creates a new builder-style object to manufacture [`InitializeServiceOutput`](crate::output::InitializeServiceOutput)
     pub fn builder() -> crate::output::initialize_service_output::Builder {
         crate::output::initialize_service_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateExtendedSourceServerOutput {
+    /// <p>Created extended source server.</p>
+    pub source_server: std::option::Option<crate::model::SourceServer>,
+}
+impl CreateExtendedSourceServerOutput {
+    /// <p>Created extended source server.</p>
+    pub fn source_server(&self) -> std::option::Option<&crate::model::SourceServer> {
+        self.source_server.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateExtendedSourceServerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateExtendedSourceServerOutput");
+        formatter.field("source_server", &self.source_server);
+        formatter.finish()
+    }
+}
+/// See [`CreateExtendedSourceServerOutput`](crate::output::CreateExtendedSourceServerOutput)
+pub mod create_extended_source_server_output {
+
+    /// A builder for [`CreateExtendedSourceServerOutput`](crate::output::CreateExtendedSourceServerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_server: std::option::Option<crate::model::SourceServer>,
+    }
+    impl Builder {
+        /// <p>Created extended source server.</p>
+        pub fn source_server(mut self, input: crate::model::SourceServer) -> Self {
+            self.source_server = Some(input);
+            self
+        }
+        /// <p>Created extended source server.</p>
+        pub fn set_source_server(
+            mut self,
+            input: std::option::Option<crate::model::SourceServer>,
+        ) -> Self {
+            self.source_server = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateExtendedSourceServerOutput`](crate::output::CreateExtendedSourceServerOutput)
+        pub fn build(self) -> crate::output::CreateExtendedSourceServerOutput {
+            crate::output::CreateExtendedSourceServerOutput {
+                source_server: self.source_server,
+            }
+        }
+    }
+}
+impl CreateExtendedSourceServerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateExtendedSourceServerOutput`](crate::output::CreateExtendedSourceServerOutput)
+    pub fn builder() -> crate::output::create_extended_source_server_output::Builder {
+        crate::output::create_extended_source_server_output::Builder::default()
     }
 }

@@ -331,7 +331,7 @@ pub struct ListProblemsOutput {
     pub problem_list: std::option::Option<std::vec::Vec<crate::model::Problem>>,
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The name of the resource group. </p>
     pub resource_group_name: std::option::Option<std::string::String>,
 }
 impl ListProblemsOutput {
@@ -343,7 +343,7 @@ impl ListProblemsOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The name of the resource group. </p>
     pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
@@ -398,12 +398,12 @@ pub mod list_problems_output {
             self.next_token = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The name of the resource group. </p>
         pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_group_name = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The name of the resource group. </p>
         pub fn set_resource_group_name(
             mut self,
             input: std::option::Option<std::string::String>,

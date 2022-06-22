@@ -16,6 +16,21 @@ pub fn serialize_operation_crate_operation_associate_vpc_with_hosted_zone(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_change_cidr_collection(
+    input: &crate::input::ChangeCidrCollectionInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    {
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
+        #[allow(unused_mut)]
+        let mut root = writer
+            .start_el("ChangeCidrCollectionRequest")
+            .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
+        crate::xml_ser::serialize_structure_crate_input_change_cidr_collection_input(input, root)?
+    }
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_change_resource_record_sets(
     input: &crate::input::ChangeResourceRecordSetsInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
@@ -44,6 +59,21 @@ pub fn serialize_operation_crate_operation_change_tags_for_resource(
             .start_el("ChangeTagsForResourceRequest")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
         crate::xml_ser::serialize_structure_crate_input_change_tags_for_resource_input(input, root)?
+    }
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_create_cidr_collection(
+    input: &crate::input::CreateCidrCollectionInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    {
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
+        #[allow(unused_mut)]
+        let mut root = writer
+            .start_el("CreateCidrCollectionRequest")
+            .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
+        crate::xml_ser::serialize_structure_crate_input_create_cidr_collection_input(input, root)?
     }
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

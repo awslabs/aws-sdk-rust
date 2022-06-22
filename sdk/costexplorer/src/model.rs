@@ -372,7 +372,7 @@ pub struct CostCategoryRule {
     pub rule: std::option::Option<crate::model::Expression>,
     /// <p>The value the line item is categorized as if the line item contains the matched dimension.</p>
     pub inherited_value: std::option::Option<crate::model::CostCategoryInheritedValueDimension>,
-    /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule that dynamically inherits the cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and specify the tag key to use.</p>
+    /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
     pub r#type: std::option::Option<crate::model::CostCategoryRuleType>,
 }
 impl CostCategoryRule {
@@ -392,7 +392,7 @@ impl CostCategoryRule {
     ) -> std::option::Option<&crate::model::CostCategoryInheritedValueDimension> {
         self.inherited_value.as_ref()
     }
-    /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule that dynamically inherits the cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and specify the tag key to use.</p>
+    /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::CostCategoryRuleType> {
         self.r#type.as_ref()
     }
@@ -461,12 +461,12 @@ pub mod cost_category_rule {
             self.inherited_value = input;
             self
         }
-        /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule that dynamically inherits the cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and specify the tag key to use.</p>
+        /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
         pub fn r#type(mut self, input: crate::model::CostCategoryRuleType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule that dynamically inherits the cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and specify the tag key to use.</p>
+        /// <p>You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule that dynamically inherits the cost category value. This value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to costs to be dynamically grouped based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::CostCategoryRuleType>,
@@ -547,19 +547,19 @@ impl AsRef<str> for CostCategoryRuleType {
     }
 }
 
-/// <p>When creating or updating a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility of defining a rule that dynamically inherits the cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs that are based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and specify the tag key to use.</p>
+/// <p>When you create or update a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility to define a rule that dynamically inherits the cost category value from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to dynamically group costs that are based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostCategoryInheritedValueDimension {
     /// <p>The name of the dimension that's used to group costs.</p>
-    /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value will be based on the value of the specified tag key.</p>
+    /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
     pub dimension_name: std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>,
     /// <p>The key to extract cost category values.</p>
     pub dimension_key: std::option::Option<std::string::String>,
 }
 impl CostCategoryInheritedValueDimension {
     /// <p>The name of the dimension that's used to group costs.</p>
-    /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value will be based on the value of the specified tag key.</p>
+    /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
     pub fn dimension_name(
         &self,
     ) -> std::option::Option<&crate::model::CostCategoryInheritedValueDimensionName> {
@@ -591,7 +591,7 @@ pub mod cost_category_inherited_value_dimension {
     }
     impl Builder {
         /// <p>The name of the dimension that's used to group costs.</p>
-        /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value will be based on the value of the specified tag key.</p>
+        /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
         pub fn dimension_name(
             mut self,
             input: crate::model::CostCategoryInheritedValueDimensionName,
@@ -600,7 +600,7 @@ pub mod cost_category_inherited_value_dimension {
             self
         }
         /// <p>The name of the dimension that's used to group costs.</p>
-        /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value will be based on the value of the specified tag key.</p>
+        /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
         pub fn set_dimension_name(
             mut self,
             input: std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>,
@@ -1557,6 +1557,231 @@ impl AsRef<str> for CostCategoryRuleVersion {
     }
 }
 
+/// <p>Gives a detailed description of the result of an action. It's on each cost allocation tag entry in the request. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateCostAllocationTagsStatusError {
+    /// <p>The key for the cost allocation tag. </p>
+    pub tag_key: std::option::Option<std::string::String>,
+    /// <p>An error code representing why the action failed on this entry. </p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A message explaining why the action failed on this entry. </p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl UpdateCostAllocationTagsStatusError {
+    /// <p>The key for the cost allocation tag. </p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>An error code representing why the action failed on this entry. </p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A message explaining why the action failed on this entry. </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateCostAllocationTagsStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateCostAllocationTagsStatusError");
+        formatter.field("tag_key", &self.tag_key);
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError)
+pub mod update_cost_allocation_tags_status_error {
+
+    /// A builder for [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_key: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The key for the cost allocation tag. </p>
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key = Some(input.into());
+            self
+        }
+        /// <p>The key for the cost allocation tag. </p>
+        pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_key = input;
+            self
+        }
+        /// <p>An error code representing why the action failed on this entry. </p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>An error code representing why the action failed on this entry. </p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A message explaining why the action failed on this entry. </p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message explaining why the action failed on this entry. </p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError)
+        pub fn build(self) -> crate::model::UpdateCostAllocationTagsStatusError {
+            crate::model::UpdateCostAllocationTagsStatusError {
+                tag_key: self.tag_key,
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl UpdateCostAllocationTagsStatusError {
+    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError)
+    pub fn builder() -> crate::model::update_cost_allocation_tags_status_error::Builder {
+        crate::model::update_cost_allocation_tags_status_error::Builder::default()
+    }
+}
+
+/// <p>The cost allocation tag status. The status of a key can either be active or inactive. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CostAllocationTagStatusEntry {
+    /// <p>The key for the cost allocation tag. </p>
+    pub tag_key: std::option::Option<std::string::String>,
+    /// <p>The status of a cost allocation tag. </p>
+    pub status: std::option::Option<crate::model::CostAllocationTagStatus>,
+}
+impl CostAllocationTagStatusEntry {
+    /// <p>The key for the cost allocation tag. </p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>The status of a cost allocation tag. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CostAllocationTagStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for CostAllocationTagStatusEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CostAllocationTagStatusEntry");
+        formatter.field("tag_key", &self.tag_key);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry)
+pub mod cost_allocation_tag_status_entry {
+
+    /// A builder for [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_key: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::CostAllocationTagStatus>,
+    }
+    impl Builder {
+        /// <p>The key for the cost allocation tag. </p>
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key = Some(input.into());
+            self
+        }
+        /// <p>The key for the cost allocation tag. </p>
+        pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_key = input;
+            self
+        }
+        /// <p>The status of a cost allocation tag. </p>
+        pub fn status(mut self, input: crate::model::CostAllocationTagStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of a cost allocation tag. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CostAllocationTagStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry)
+        pub fn build(self) -> crate::model::CostAllocationTagStatusEntry {
+            crate::model::CostAllocationTagStatusEntry {
+                tag_key: self.tag_key,
+                status: self.status,
+            }
+        }
+    }
+}
+impl CostAllocationTagStatusEntry {
+    /// Creates a new builder-style object to manufacture [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry)
+    pub fn builder() -> crate::model::cost_allocation_tag_status_entry::Builder {
+        crate::model::cost_allocation_tag_status_entry::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CostAllocationTagStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CostAllocationTagStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Active" => CostAllocationTagStatus::Active,
+            "Inactive" => CostAllocationTagStatus::Inactive,
+            other => CostAllocationTagStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CostAllocationTagStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CostAllocationTagStatus::from(s))
+    }
+}
+impl CostAllocationTagStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CostAllocationTagStatus::Active => "Active",
+            CostAllocationTagStatus::Inactive => "Inactive",
+            CostAllocationTagStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Inactive"]
+    }
+}
+impl AsRef<str> for CostAllocationTagStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The recipient of <code>AnomalySubscription</code> notifications. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1825,23 +2050,23 @@ impl AsRef<str> for AnomalySubscriptionFrequency {
     }
 }
 
-/// <p> The tag structure that contains a tag key and value. </p> <note>
+/// <p>The tag structure that contains a tag key and value. </p> <note>
 /// <p>Tagging is supported only for the following Cost Explorer resource types: <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTag {
-    /// <p> The key that is associated with the tag. </p>
+    /// <p>The key that's associated with the tag. </p>
     pub key: std::option::Option<std::string::String>,
-    /// <p> The value that is associated with the tag. </p>
+    /// <p>The value that's associated with the tag. </p>
     pub value: std::option::Option<std::string::String>,
 }
 impl ResourceTag {
-    /// <p> The key that is associated with the tag. </p>
+    /// <p>The key that's associated with the tag. </p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p> The value that is associated with the tag. </p>
+    /// <p>The value that's associated with the tag. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -1865,22 +2090,22 @@ pub mod resource_tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The key that is associated with the tag. </p>
+        /// <p>The key that's associated with the tag. </p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p> The key that is associated with the tag. </p>
+        /// <p>The key that's associated with the tag. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p> The value that is associated with the tag. </p>
+        /// <p>The value that's associated with the tag. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p> The value that is associated with the tag. </p>
+        /// <p>The value that's associated with the tag. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2372,6 +2597,160 @@ impl AsRef<str> for CostCategoryStatusComponent {
     }
 }
 
+/// <p>The cost allocation tag structure. This includes detailed metadata for the <code>CostAllocationTag</code> object. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CostAllocationTag {
+    /// <p>The key for the cost allocation tag. </p>
+    pub tag_key: std::option::Option<std::string::String>,
+    /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    pub r#type: std::option::Option<crate::model::CostAllocationTagType>,
+    /// <p>The status of a cost allocation tag. </p>
+    pub status: std::option::Option<crate::model::CostAllocationTagStatus>,
+}
+impl CostAllocationTag {
+    /// <p>The key for the cost allocation tag. </p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CostAllocationTagType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The status of a cost allocation tag. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CostAllocationTagStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for CostAllocationTag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CostAllocationTag");
+        formatter.field("tag_key", &self.tag_key);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`CostAllocationTag`](crate::model::CostAllocationTag)
+pub mod cost_allocation_tag {
+
+    /// A builder for [`CostAllocationTag`](crate::model::CostAllocationTag)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tag_key: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::CostAllocationTagType>,
+        pub(crate) status: std::option::Option<crate::model::CostAllocationTagStatus>,
+    }
+    impl Builder {
+        /// <p>The key for the cost allocation tag. </p>
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key = Some(input.into());
+            self
+        }
+        /// <p>The key for the cost allocation tag. </p>
+        pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_key = input;
+            self
+        }
+        /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+        pub fn r#type(mut self, input: crate::model::CostAllocationTagType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::CostAllocationTagType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The status of a cost allocation tag. </p>
+        pub fn status(mut self, input: crate::model::CostAllocationTagStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of a cost allocation tag. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CostAllocationTagStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CostAllocationTag`](crate::model::CostAllocationTag)
+        pub fn build(self) -> crate::model::CostAllocationTag {
+            crate::model::CostAllocationTag {
+                tag_key: self.tag_key,
+                r#type: self.r#type,
+                status: self.status,
+            }
+        }
+    }
+}
+impl CostAllocationTag {
+    /// Creates a new builder-style object to manufacture [`CostAllocationTag`](crate::model::CostAllocationTag)
+    pub fn builder() -> crate::model::cost_allocation_tag::Builder {
+        crate::model::cost_allocation_tag::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CostAllocationTagType {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsGenerated,
+    #[allow(missing_docs)] // documentation missing in model
+    UserDefined,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CostAllocationTagType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWSGenerated" => CostAllocationTagType::AwsGenerated,
+            "UserDefined" => CostAllocationTagType::UserDefined,
+            other => CostAllocationTagType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CostAllocationTagType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CostAllocationTagType::from(s))
+    }
+}
+impl CostAllocationTagType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CostAllocationTagType::AwsGenerated => "AWSGenerated",
+            CostAllocationTagType::UserDefined => "UserDefined",
+            CostAllocationTagType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AWSGenerated", "UserDefined"]
+    }
+}
+impl AsRef<str> for CostAllocationTagType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The forecast that's created for your query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2795,7 +3174,7 @@ impl AsRef<str> for Metric {
     }
 }
 
-/// <p>The details of how to sort the data.</p>
+/// <p>The details for how to sort the data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SortDefinition {
@@ -2933,7 +3312,7 @@ impl AsRef<str> for SortOrder {
 pub struct SavingsPlansUtilizationAggregates {
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     pub utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
-    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub savings: std::option::Option<crate::model::SavingsPlansSavings>,
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
     pub amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
@@ -2943,7 +3322,7 @@ impl SavingsPlansUtilizationAggregates {
     pub fn utilization(&self) -> std::option::Option<&crate::model::SavingsPlansUtilization> {
         self.utilization.as_ref()
     }
-    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub fn savings(&self) -> std::option::Option<&crate::model::SavingsPlansSavings> {
         self.savings.as_ref()
     }
@@ -2989,12 +3368,12 @@ pub mod savings_plans_utilization_aggregates {
             self.utilization = input;
             self
         }
-        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+        /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
         pub fn savings(mut self, input: crate::model::SavingsPlansSavings) -> Self {
             self.savings = Some(input);
             self
         }
-        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans, as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+        /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
         pub fn set_savings(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansSavings>,
@@ -3353,7 +3732,7 @@ impl SavingsPlansUtilization {
     }
 }
 
-/// <p>A single daily or monthly Savings Plans utilization rate, and details for your account. A management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values. </p>
+/// <p>A single daily or monthly Savings Plans utilization rate and details for your account. A management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansUtilizationDetail {
@@ -3364,7 +3743,7 @@ pub struct SavingsPlansUtilizationDetail {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     pub utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
-    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub savings: std::option::Option<crate::model::SavingsPlansSavings>,
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront and recurring Savings Plans fees.</p>
     pub amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
@@ -3385,7 +3764,7 @@ impl SavingsPlansUtilizationDetail {
     pub fn utilization(&self) -> std::option::Option<&crate::model::SavingsPlansUtilization> {
         self.utilization.as_ref()
     }
-    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub fn savings(&self) -> std::option::Option<&crate::model::SavingsPlansSavings> {
         self.savings.as_ref()
     }
@@ -3475,12 +3854,12 @@ pub mod savings_plans_utilization_detail {
             self.utilization = input;
             self
         }
-        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
         pub fn savings(mut self, input: crate::model::SavingsPlansSavings) -> Self {
             self.savings = Some(input);
             self
         }
-        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
         pub fn set_savings(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansSavings>,
@@ -3591,7 +3970,7 @@ impl AsRef<str> for SavingsPlansDataType {
     }
 }
 
-/// <p>The amount of Savings Plans utilization, in hours.</p>
+/// <p>The amount of Savings Plans utilization (in hours).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansUtilizationByTime {
@@ -3599,7 +3978,7 @@ pub struct SavingsPlansUtilizationByTime {
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     pub utilization: std::option::Option<crate::model::SavingsPlansUtilization>,
-    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub savings: std::option::Option<crate::model::SavingsPlansSavings>,
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
     pub amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
@@ -3613,7 +3992,7 @@ impl SavingsPlansUtilizationByTime {
     pub fn utilization(&self) -> std::option::Option<&crate::model::SavingsPlansUtilization> {
         self.utilization.as_ref()
     }
-    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+    /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub fn savings(&self) -> std::option::Option<&crate::model::SavingsPlansSavings> {
         self.savings.as_ref()
     }
@@ -3674,12 +4053,12 @@ pub mod savings_plans_utilization_by_time {
             self.utilization = input;
             self
         }
-        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+        /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
         pub fn savings(mut self, input: crate::model::SavingsPlansSavings) -> Self {
             self.savings = Some(input);
             self
         }
-        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
+        /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
         pub fn set_savings(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansSavings>,
@@ -3731,11 +4110,11 @@ pub struct SavingsPlansPurchaseRecommendation {
     pub savings_plans_type: std::option::Option<crate::model::SupportedSavingsPlansType>,
     /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
     pub term_in_years: std::option::Option<crate::model::TermInYears>,
-    /// <p>The payment option used to generate the recommendation.</p>
+    /// <p>The payment option that's used to generate the recommendation.</p>
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
-    /// <p>The lookback period in days, used to generate the recommendation.</p>
+    /// <p>The lookback period in days that's used to generate the recommendation.</p>
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
-    /// <p>Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
+    /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
     pub savings_plans_purchase_recommendation_details:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlansPurchaseRecommendationDetail>>,
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
@@ -3757,17 +4136,17 @@ impl SavingsPlansPurchaseRecommendation {
     pub fn term_in_years(&self) -> std::option::Option<&crate::model::TermInYears> {
         self.term_in_years.as_ref()
     }
-    /// <p>The payment option used to generate the recommendation.</p>
+    /// <p>The payment option that's used to generate the recommendation.</p>
     pub fn payment_option(&self) -> std::option::Option<&crate::model::PaymentOption> {
         self.payment_option.as_ref()
     }
-    /// <p>The lookback period in days, used to generate the recommendation.</p>
+    /// <p>The lookback period in days that's used to generate the recommendation.</p>
     pub fn lookback_period_in_days(
         &self,
     ) -> std::option::Option<&crate::model::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
-    /// <p>Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
+    /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
     pub fn savings_plans_purchase_recommendation_details(
         &self,
     ) -> std::option::Option<&[crate::model::SavingsPlansPurchaseRecommendationDetail]> {
@@ -3861,12 +4240,12 @@ pub mod savings_plans_purchase_recommendation {
             self.term_in_years = input;
             self
         }
-        /// <p>The payment option used to generate the recommendation.</p>
+        /// <p>The payment option that's used to generate the recommendation.</p>
         pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
             self.payment_option = Some(input);
             self
         }
-        /// <p>The payment option used to generate the recommendation.</p>
+        /// <p>The payment option that's used to generate the recommendation.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::PaymentOption>,
@@ -3874,7 +4253,7 @@ pub mod savings_plans_purchase_recommendation {
             self.payment_option = input;
             self
         }
-        /// <p>The lookback period in days, used to generate the recommendation.</p>
+        /// <p>The lookback period in days that's used to generate the recommendation.</p>
         pub fn lookback_period_in_days(
             mut self,
             input: crate::model::LookbackPeriodInDays,
@@ -3882,7 +4261,7 @@ pub mod savings_plans_purchase_recommendation {
             self.lookback_period_in_days = Some(input);
             self
         }
-        /// <p>The lookback period in days, used to generate the recommendation.</p>
+        /// <p>The lookback period in days that's used to generate the recommendation.</p>
         pub fn set_lookback_period_in_days(
             mut self,
             input: std::option::Option<crate::model::LookbackPeriodInDays>,
@@ -3894,7 +4273,7 @@ pub mod savings_plans_purchase_recommendation {
         ///
         /// To override the contents of this collection use [`set_savings_plans_purchase_recommendation_details`](Self::set_savings_plans_purchase_recommendation_details).
         ///
-        /// <p>Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
+        /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
         pub fn savings_plans_purchase_recommendation_details(
             mut self,
             input: crate::model::SavingsPlansPurchaseRecommendationDetail,
@@ -3906,7 +4285,7 @@ pub mod savings_plans_purchase_recommendation {
             self.savings_plans_purchase_recommendation_details = Some(v);
             self
         }
-        /// <p>Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
+        /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
         pub fn set_savings_plans_purchase_recommendation_details(
             mut self,
             input: std::option::Option<
@@ -3979,7 +4358,7 @@ pub struct SavingsPlansPurchaseRecommendationSummary {
     pub estimated_savings_percentage: std::option::Option<std::string::String>,
     /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans purchase.</p>
     pub estimated_monthly_savings_amount: std::option::Option<std::string::String>,
-    /// <p> The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
+    /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
     pub estimated_on_demand_cost_with_current_commitment: std::option::Option<std::string::String>,
 }
 impl SavingsPlansPurchaseRecommendationSummary {
@@ -4023,7 +4402,7 @@ impl SavingsPlansPurchaseRecommendationSummary {
     pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
         self.estimated_monthly_savings_amount.as_deref()
     }
-    /// <p> The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
+    /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
     pub fn estimated_on_demand_cost_with_current_commitment(&self) -> std::option::Option<&str> {
         self.estimated_on_demand_cost_with_current_commitment
             .as_deref()
@@ -4227,7 +4606,7 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.estimated_monthly_savings_amount = input;
             self
         }
-        /// <p> The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
+        /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
         pub fn estimated_on_demand_cost_with_current_commitment(
             mut self,
             input: impl Into<std::string::String>,
@@ -4235,7 +4614,7 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.estimated_on_demand_cost_with_current_commitment = Some(input.into());
             self
         }
-        /// <p> The estimated On-Demand costs you would expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
+        /// <p>The estimated On-Demand costs you expect with no additional commitment. It's based on your usage of the selected time period and the Savings Plans you own. </p>
         pub fn set_estimated_on_demand_cost_with_current_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4287,7 +4666,7 @@ pub struct SavingsPlansPurchaseRecommendationDetail {
     pub estimated_sp_cost: std::option::Option<std::string::String>,
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plans, over the length of the lookback period.</p>
     pub estimated_on_demand_cost: std::option::Option<std::string::String>,
-    /// <p> The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+    /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
     pub estimated_on_demand_cost_with_current_commitment: std::option::Option<std::string::String>,
     /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
     pub estimated_savings_amount: std::option::Option<std::string::String>,
@@ -4335,7 +4714,7 @@ impl SavingsPlansPurchaseRecommendationDetail {
     pub fn estimated_on_demand_cost(&self) -> std::option::Option<&str> {
         self.estimated_on_demand_cost.as_deref()
     }
-    /// <p> The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+    /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
     pub fn estimated_on_demand_cost_with_current_commitment(&self) -> std::option::Option<&str> {
         self.estimated_on_demand_cost_with_current_commitment
             .as_deref()
@@ -4530,7 +4909,7 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_on_demand_cost = input;
             self
         }
-        /// <p> The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+        /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
         pub fn estimated_on_demand_cost_with_current_commitment(
             mut self,
             input: impl Into<std::string::String>,
@@ -4538,7 +4917,7 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_on_demand_cost_with_current_commitment = Some(input.into());
             self
         }
-        /// <p> The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+        /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
         pub fn set_estimated_on_demand_cost_with_current_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5110,7 +5489,7 @@ impl AsRef<str> for AccountScope {
 pub struct SavingsPlansPurchaseRecommendationMetadata {
     /// <p>The unique identifier for the recommendation set.</p>
     pub recommendation_id: std::option::Option<std::string::String>,
-    /// <p>The timestamp showing when the recommendations were generated.</p>
+    /// <p>The timestamp that shows when the recommendations were generated.</p>
     pub generation_timestamp: std::option::Option<std::string::String>,
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
     pub additional_metadata: std::option::Option<std::string::String>,
@@ -5120,7 +5499,7 @@ impl SavingsPlansPurchaseRecommendationMetadata {
     pub fn recommendation_id(&self) -> std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>The timestamp showing when the recommendations were generated.</p>
+    /// <p>The timestamp that shows when the recommendations were generated.</p>
     pub fn generation_timestamp(&self) -> std::option::Option<&str> {
         self.generation_timestamp.as_deref()
     }
@@ -5163,12 +5542,12 @@ pub mod savings_plans_purchase_recommendation_metadata {
             self.recommendation_id = input;
             self
         }
-        /// <p>The timestamp showing when the recommendations were generated.</p>
+        /// <p>The timestamp that shows when the recommendations were generated.</p>
         pub fn generation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
             self.generation_timestamp = Some(input.into());
             self
         }
-        /// <p>The timestamp showing when the recommendations were generated.</p>
+        /// <p>The timestamp that shows when the recommendations were generated.</p>
         pub fn set_generation_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5206,7 +5585,7 @@ impl SavingsPlansPurchaseRecommendationMetadata {
     }
 }
 
-/// <p>The amount of Savings Plans eligible usage that is covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.</p>
+/// <p>The amount of Savings Plans eligible usage that's covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansCoverage {
@@ -5330,7 +5709,7 @@ impl SavingsPlansCoverage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsPlansCoverageData {
-    /// <p>The amount of your Amazon Web Services usage that is covered by a Savings Plans.</p>
+    /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
     pub spend_covered_by_savings_plans: std::option::Option<std::string::String>,
     /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
     pub on_demand_cost: std::option::Option<std::string::String>,
@@ -5340,7 +5719,7 @@ pub struct SavingsPlansCoverageData {
     pub coverage_percentage: std::option::Option<std::string::String>,
 }
 impl SavingsPlansCoverageData {
-    /// <p>The amount of your Amazon Web Services usage that is covered by a Savings Plans.</p>
+    /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
     pub fn spend_covered_by_savings_plans(&self) -> std::option::Option<&str> {
         self.spend_covered_by_savings_plans.as_deref()
     }
@@ -5383,7 +5762,7 @@ pub mod savings_plans_coverage_data {
         pub(crate) coverage_percentage: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The amount of your Amazon Web Services usage that is covered by a Savings Plans.</p>
+        /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
         pub fn spend_covered_by_savings_plans(
             mut self,
             input: impl Into<std::string::String>,
@@ -5391,7 +5770,7 @@ pub mod savings_plans_coverage_data {
             self.spend_covered_by_savings_plans = Some(input.into());
             self
         }
-        /// <p>The amount of your Amazon Web Services usage that is covered by a Savings Plans.</p>
+        /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
         pub fn set_spend_covered_by_savings_plans(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5589,7 +5968,7 @@ impl AsRef<str> for GroupDefinitionType {
     }
 }
 
-/// <p>You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+/// <p>You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or Reserved Instance (RI) benefits, or neither. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RightsizingRecommendationConfiguration {
@@ -5738,7 +6117,7 @@ pub struct RightsizingRecommendation {
     /// <p>The details for termination recommendations.</p>
     pub terminate_recommendation_detail:
         std::option::Option<crate::model::TerminateRecommendationDetail>,
-    /// <p> The list of possible reasons why the recommendation is generated such as under or over utilization of specific metrics (for example, CPU, Memory, Network). </p>
+    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     pub finding_reason_codes: std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>,
 }
 impl RightsizingRecommendation {
@@ -5766,7 +6145,7 @@ impl RightsizingRecommendation {
     ) -> std::option::Option<&crate::model::TerminateRecommendationDetail> {
         self.terminate_recommendation_detail.as_ref()
     }
-    /// <p> The list of possible reasons why the recommendation is generated such as under or over utilization of specific metrics (for example, CPU, Memory, Network). </p>
+    /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     pub fn finding_reason_codes(&self) -> std::option::Option<&[crate::model::FindingReasonCode]> {
         self.finding_reason_codes.as_deref()
     }
@@ -5879,14 +6258,14 @@ pub mod rightsizing_recommendation {
         ///
         /// To override the contents of this collection use [`set_finding_reason_codes`](Self::set_finding_reason_codes).
         ///
-        /// <p> The list of possible reasons why the recommendation is generated such as under or over utilization of specific metrics (for example, CPU, Memory, Network). </p>
+        /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
         pub fn finding_reason_codes(mut self, input: crate::model::FindingReasonCode) -> Self {
             let mut v = self.finding_reason_codes.unwrap_or_default();
             v.push(input);
             self.finding_reason_codes = Some(v);
             self
         }
-        /// <p> The list of possible reasons why the recommendation is generated such as under or over utilization of specific metrics (for example, CPU, Memory, Network). </p>
+        /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
         pub fn set_finding_reason_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>,
@@ -6134,7 +6513,7 @@ impl TerminateRecommendationDetail {
     }
 }
 
-/// <p> Details on the modification recommendation.</p>
+/// <p>Details for the modification recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyRecommendationDetail {
@@ -6215,7 +6594,7 @@ pub struct TargetInstance {
     pub resource_details: std::option::Option<crate::model::ResourceDetails>,
     /// <p>The expected utilization metrics for target instance type.</p>
     pub expected_resource_utilization: std::option::Option<crate::model::ResourceUtilization>,
-    /// <p> Explains the actions you might need to take in order to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
+    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
     pub platform_differences: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
 }
 impl TargetInstance {
@@ -6245,7 +6624,7 @@ impl TargetInstance {
     ) -> std::option::Option<&crate::model::ResourceUtilization> {
         self.expected_resource_utilization.as_ref()
     }
-    /// <p> Explains the actions you might need to take in order to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
+    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
     pub fn platform_differences(&self) -> std::option::Option<&[crate::model::PlatformDifference]> {
         self.platform_differences.as_deref()
     }
@@ -6366,14 +6745,14 @@ pub mod target_instance {
         ///
         /// To override the contents of this collection use [`set_platform_differences`](Self::set_platform_differences).
         ///
-        /// <p> Explains the actions you might need to take in order to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
+        /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
         pub fn platform_differences(mut self, input: crate::model::PlatformDifference) -> Self {
             let mut v = self.platform_differences.unwrap_or_default();
             v.push(input);
             self.platform_differences = Some(v);
             self
         }
-        /// <p> Explains the actions you might need to take in order to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
+        /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
         pub fn set_platform_differences(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
@@ -6539,33 +6918,33 @@ impl ResourceUtilization {
     }
 }
 
-/// <p>Utilization metrics of the instance. </p>
+/// <p>Utilization metrics for the instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2ResourceUtilization {
-    /// <p> The maximum observed or expected CPU utilization of the instance.</p>
+    /// <p>The maximum observed or expected CPU utilization of the instance.</p>
     pub max_cpu_utilization_percentage: std::option::Option<std::string::String>,
-    /// <p> The maximum observed or expected memory utilization of the instance.</p>
+    /// <p>The maximum observed or expected memory utilization of the instance.</p>
     pub max_memory_utilization_percentage: std::option::Option<std::string::String>,
-    /// <p> The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
+    /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
     pub max_storage_utilization_percentage: std::option::Option<std::string::String>,
     /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
     pub ebs_resource_utilization: std::option::Option<crate::model::EbsResourceUtilization>,
-    /// <p> The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
+    /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
     pub disk_resource_utilization: std::option::Option<crate::model::DiskResourceUtilization>,
-    /// <p> The network field that contains a list of network metrics that are associated with the current instance. </p>
+    /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
     pub network_resource_utilization: std::option::Option<crate::model::NetworkResourceUtilization>,
 }
 impl Ec2ResourceUtilization {
-    /// <p> The maximum observed or expected CPU utilization of the instance.</p>
+    /// <p>The maximum observed or expected CPU utilization of the instance.</p>
     pub fn max_cpu_utilization_percentage(&self) -> std::option::Option<&str> {
         self.max_cpu_utilization_percentage.as_deref()
     }
-    /// <p> The maximum observed or expected memory utilization of the instance.</p>
+    /// <p>The maximum observed or expected memory utilization of the instance.</p>
     pub fn max_memory_utilization_percentage(&self) -> std::option::Option<&str> {
         self.max_memory_utilization_percentage.as_deref()
     }
-    /// <p> The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
+    /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
     pub fn max_storage_utilization_percentage(&self) -> std::option::Option<&str> {
         self.max_storage_utilization_percentage.as_deref()
     }
@@ -6575,13 +6954,13 @@ impl Ec2ResourceUtilization {
     ) -> std::option::Option<&crate::model::EbsResourceUtilization> {
         self.ebs_resource_utilization.as_ref()
     }
-    /// <p> The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
+    /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
     pub fn disk_resource_utilization(
         &self,
     ) -> std::option::Option<&crate::model::DiskResourceUtilization> {
         self.disk_resource_utilization.as_ref()
     }
-    /// <p> The network field that contains a list of network metrics that are associated with the current instance. </p>
+    /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
     pub fn network_resource_utilization(
         &self,
     ) -> std::option::Option<&crate::model::NetworkResourceUtilization> {
@@ -6630,7 +7009,7 @@ pub mod ec2_resource_utilization {
             std::option::Option<crate::model::NetworkResourceUtilization>,
     }
     impl Builder {
-        /// <p> The maximum observed or expected CPU utilization of the instance.</p>
+        /// <p>The maximum observed or expected CPU utilization of the instance.</p>
         pub fn max_cpu_utilization_percentage(
             mut self,
             input: impl Into<std::string::String>,
@@ -6638,7 +7017,7 @@ pub mod ec2_resource_utilization {
             self.max_cpu_utilization_percentage = Some(input.into());
             self
         }
-        /// <p> The maximum observed or expected CPU utilization of the instance.</p>
+        /// <p>The maximum observed or expected CPU utilization of the instance.</p>
         pub fn set_max_cpu_utilization_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6646,7 +7025,7 @@ pub mod ec2_resource_utilization {
             self.max_cpu_utilization_percentage = input;
             self
         }
-        /// <p> The maximum observed or expected memory utilization of the instance.</p>
+        /// <p>The maximum observed or expected memory utilization of the instance.</p>
         pub fn max_memory_utilization_percentage(
             mut self,
             input: impl Into<std::string::String>,
@@ -6654,7 +7033,7 @@ pub mod ec2_resource_utilization {
             self.max_memory_utilization_percentage = Some(input.into());
             self
         }
-        /// <p> The maximum observed or expected memory utilization of the instance.</p>
+        /// <p>The maximum observed or expected memory utilization of the instance.</p>
         pub fn set_max_memory_utilization_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6662,7 +7041,7 @@ pub mod ec2_resource_utilization {
             self.max_memory_utilization_percentage = input;
             self
         }
-        /// <p> The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
+        /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
         pub fn max_storage_utilization_percentage(
             mut self,
             input: impl Into<std::string::String>,
@@ -6670,7 +7049,7 @@ pub mod ec2_resource_utilization {
             self.max_storage_utilization_percentage = Some(input.into());
             self
         }
-        /// <p> The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
+        /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
         pub fn set_max_storage_utilization_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6694,7 +7073,7 @@ pub mod ec2_resource_utilization {
             self.ebs_resource_utilization = input;
             self
         }
-        /// <p> The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
+        /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
         pub fn disk_resource_utilization(
             mut self,
             input: crate::model::DiskResourceUtilization,
@@ -6702,7 +7081,7 @@ pub mod ec2_resource_utilization {
             self.disk_resource_utilization = Some(input);
             self
         }
-        /// <p> The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
+        /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
         pub fn set_disk_resource_utilization(
             mut self,
             input: std::option::Option<crate::model::DiskResourceUtilization>,
@@ -6710,7 +7089,7 @@ pub mod ec2_resource_utilization {
             self.disk_resource_utilization = input;
             self
         }
-        /// <p> The network field that contains a list of network metrics that are associated with the current instance. </p>
+        /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
         pub fn network_resource_utilization(
             mut self,
             input: crate::model::NetworkResourceUtilization,
@@ -6718,7 +7097,7 @@ pub mod ec2_resource_utilization {
             self.network_resource_utilization = Some(input);
             self
         }
-        /// <p> The network field that contains a list of network metrics that are associated with the current instance. </p>
+        /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
         pub fn set_network_resource_utilization(
             mut self,
             input: std::option::Option<crate::model::NetworkResourceUtilization>,
@@ -6746,33 +7125,33 @@ impl Ec2ResourceUtilization {
     }
 }
 
-/// <p> The network field that contains a list of network metrics that are associated with the current instance. </p>
+/// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkResourceUtilization {
-    /// <p> The network inbound throughput utilization measured in Bytes per second. </p>
+    /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
     pub network_in_bytes_per_second: std::option::Option<std::string::String>,
-    /// <p> The network outbound throughput utilization measured in Bytes per second. </p>
+    /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
     pub network_out_bytes_per_second: std::option::Option<std::string::String>,
-    /// <p> The network ingress packets that are measured in packets per second. </p>
+    /// <p>The network inbound packets that are measured in packets per second. </p>
     pub network_packets_in_per_second: std::option::Option<std::string::String>,
-    /// <p> The network outgress packets that are measured in packets per second. </p>
+    /// <p>The network outbound packets that are measured in packets per second. </p>
     pub network_packets_out_per_second: std::option::Option<std::string::String>,
 }
 impl NetworkResourceUtilization {
-    /// <p> The network inbound throughput utilization measured in Bytes per second. </p>
+    /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
     pub fn network_in_bytes_per_second(&self) -> std::option::Option<&str> {
         self.network_in_bytes_per_second.as_deref()
     }
-    /// <p> The network outbound throughput utilization measured in Bytes per second. </p>
+    /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
     pub fn network_out_bytes_per_second(&self) -> std::option::Option<&str> {
         self.network_out_bytes_per_second.as_deref()
     }
-    /// <p> The network ingress packets that are measured in packets per second. </p>
+    /// <p>The network inbound packets that are measured in packets per second. </p>
     pub fn network_packets_in_per_second(&self) -> std::option::Option<&str> {
         self.network_packets_in_per_second.as_deref()
     }
-    /// <p> The network outgress packets that are measured in packets per second. </p>
+    /// <p>The network outbound packets that are measured in packets per second. </p>
     pub fn network_packets_out_per_second(&self) -> std::option::Option<&str> {
         self.network_packets_out_per_second.as_deref()
     }
@@ -6812,7 +7191,7 @@ pub mod network_resource_utilization {
         pub(crate) network_packets_out_per_second: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The network inbound throughput utilization measured in Bytes per second. </p>
+        /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
         pub fn network_in_bytes_per_second(
             mut self,
             input: impl Into<std::string::String>,
@@ -6820,7 +7199,7 @@ pub mod network_resource_utilization {
             self.network_in_bytes_per_second = Some(input.into());
             self
         }
-        /// <p> The network inbound throughput utilization measured in Bytes per second. </p>
+        /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
         pub fn set_network_in_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6828,7 +7207,7 @@ pub mod network_resource_utilization {
             self.network_in_bytes_per_second = input;
             self
         }
-        /// <p> The network outbound throughput utilization measured in Bytes per second. </p>
+        /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
         pub fn network_out_bytes_per_second(
             mut self,
             input: impl Into<std::string::String>,
@@ -6836,7 +7215,7 @@ pub mod network_resource_utilization {
             self.network_out_bytes_per_second = Some(input.into());
             self
         }
-        /// <p> The network outbound throughput utilization measured in Bytes per second. </p>
+        /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
         pub fn set_network_out_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6844,7 +7223,7 @@ pub mod network_resource_utilization {
             self.network_out_bytes_per_second = input;
             self
         }
-        /// <p> The network ingress packets that are measured in packets per second. </p>
+        /// <p>The network inbound packets that are measured in packets per second. </p>
         pub fn network_packets_in_per_second(
             mut self,
             input: impl Into<std::string::String>,
@@ -6852,7 +7231,7 @@ pub mod network_resource_utilization {
             self.network_packets_in_per_second = Some(input.into());
             self
         }
-        /// <p> The network ingress packets that are measured in packets per second. </p>
+        /// <p>The network inbound packets that are measured in packets per second. </p>
         pub fn set_network_packets_in_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6860,7 +7239,7 @@ pub mod network_resource_utilization {
             self.network_packets_in_per_second = input;
             self
         }
-        /// <p> The network outgress packets that are measured in packets per second. </p>
+        /// <p>The network outbound packets that are measured in packets per second. </p>
         pub fn network_packets_out_per_second(
             mut self,
             input: impl Into<std::string::String>,
@@ -6868,7 +7247,7 @@ pub mod network_resource_utilization {
             self.network_packets_out_per_second = Some(input.into());
             self
         }
-        /// <p> The network outgress packets that are measured in packets per second. </p>
+        /// <p>The network outbound packets that are measured in packets per second. </p>
         pub fn set_network_packets_out_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6894,33 +7273,33 @@ impl NetworkResourceUtilization {
     }
 }
 
-/// <p> The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
+/// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiskResourceUtilization {
-    /// <p> The maximum number of read operations per second. </p>
+    /// <p>The maximum number of read operations per second. </p>
     pub disk_read_ops_per_second: std::option::Option<std::string::String>,
-    /// <p> The maximum number of write operations per second. </p>
+    /// <p>The maximum number of write operations per second. </p>
     pub disk_write_ops_per_second: std::option::Option<std::string::String>,
-    /// <p> The maximum read throughput operations per second. </p>
+    /// <p>The maximum read throughput operations per second. </p>
     pub disk_read_bytes_per_second: std::option::Option<std::string::String>,
-    /// <p> The maximum write throughput operations per second. </p>
+    /// <p>The maximum write throughput operations per second. </p>
     pub disk_write_bytes_per_second: std::option::Option<std::string::String>,
 }
 impl DiskResourceUtilization {
-    /// <p> The maximum number of read operations per second. </p>
+    /// <p>The maximum number of read operations per second. </p>
     pub fn disk_read_ops_per_second(&self) -> std::option::Option<&str> {
         self.disk_read_ops_per_second.as_deref()
     }
-    /// <p> The maximum number of write operations per second. </p>
+    /// <p>The maximum number of write operations per second. </p>
     pub fn disk_write_ops_per_second(&self) -> std::option::Option<&str> {
         self.disk_write_ops_per_second.as_deref()
     }
-    /// <p> The maximum read throughput operations per second. </p>
+    /// <p>The maximum read throughput operations per second. </p>
     pub fn disk_read_bytes_per_second(&self) -> std::option::Option<&str> {
         self.disk_read_bytes_per_second.as_deref()
     }
-    /// <p> The maximum write throughput operations per second. </p>
+    /// <p>The maximum write throughput operations per second. </p>
     pub fn disk_write_bytes_per_second(&self) -> std::option::Option<&str> {
         self.disk_write_bytes_per_second.as_deref()
     }
@@ -6954,12 +7333,12 @@ pub mod disk_resource_utilization {
         pub(crate) disk_write_bytes_per_second: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The maximum number of read operations per second. </p>
+        /// <p>The maximum number of read operations per second. </p>
         pub fn disk_read_ops_per_second(mut self, input: impl Into<std::string::String>) -> Self {
             self.disk_read_ops_per_second = Some(input.into());
             self
         }
-        /// <p> The maximum number of read operations per second. </p>
+        /// <p>The maximum number of read operations per second. </p>
         pub fn set_disk_read_ops_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6967,12 +7346,12 @@ pub mod disk_resource_utilization {
             self.disk_read_ops_per_second = input;
             self
         }
-        /// <p> The maximum number of write operations per second. </p>
+        /// <p>The maximum number of write operations per second. </p>
         pub fn disk_write_ops_per_second(mut self, input: impl Into<std::string::String>) -> Self {
             self.disk_write_ops_per_second = Some(input.into());
             self
         }
-        /// <p> The maximum number of write operations per second. </p>
+        /// <p>The maximum number of write operations per second. </p>
         pub fn set_disk_write_ops_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6980,12 +7359,12 @@ pub mod disk_resource_utilization {
             self.disk_write_ops_per_second = input;
             self
         }
-        /// <p> The maximum read throughput operations per second. </p>
+        /// <p>The maximum read throughput operations per second. </p>
         pub fn disk_read_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
             self.disk_read_bytes_per_second = Some(input.into());
             self
         }
-        /// <p> The maximum read throughput operations per second. </p>
+        /// <p>The maximum read throughput operations per second. </p>
         pub fn set_disk_read_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6993,7 +7372,7 @@ pub mod disk_resource_utilization {
             self.disk_read_bytes_per_second = input;
             self
         }
-        /// <p> The maximum write throughput operations per second. </p>
+        /// <p>The maximum write throughput operations per second. </p>
         pub fn disk_write_bytes_per_second(
             mut self,
             input: impl Into<std::string::String>,
@@ -7001,7 +7380,7 @@ pub mod disk_resource_utilization {
             self.disk_write_bytes_per_second = Some(input.into());
             self
         }
-        /// <p> The maximum write throughput operations per second. </p>
+        /// <p>The maximum write throughput operations per second. </p>
         pub fn set_disk_write_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7154,15 +7533,15 @@ impl EbsResourceUtilization {
     }
 }
 
-/// <p>Details on the resource.</p>
+/// <p>Details for the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDetails {
-    /// <p>Details on the Amazon EC2 resource.</p>
+    /// <p>Details for the Amazon EC2 resource.</p>
     pub ec2_resource_details: std::option::Option<crate::model::Ec2ResourceDetails>,
 }
 impl ResourceDetails {
-    /// <p>Details on the Amazon EC2 resource.</p>
+    /// <p>Details for the Amazon EC2 resource.</p>
     pub fn ec2_resource_details(&self) -> std::option::Option<&crate::model::Ec2ResourceDetails> {
         self.ec2_resource_details.as_ref()
     }
@@ -7184,12 +7563,12 @@ pub mod resource_details {
         pub(crate) ec2_resource_details: std::option::Option<crate::model::Ec2ResourceDetails>,
     }
     impl Builder {
-        /// <p>Details on the Amazon EC2 resource.</p>
+        /// <p>Details for the Amazon EC2 resource.</p>
         pub fn ec2_resource_details(mut self, input: crate::model::Ec2ResourceDetails) -> Self {
             self.ec2_resource_details = Some(input);
             self
         }
-        /// <p>Details on the Amazon EC2 resource.</p>
+        /// <p>Details for the Amazon EC2 resource.</p>
         pub fn set_ec2_resource_details(
             mut self,
             input: std::option::Option<crate::model::Ec2ResourceDetails>,
@@ -7232,7 +7611,7 @@ pub struct Ec2ResourceDetails {
     pub network_performance: std::option::Option<std::string::String>,
     /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS storage.</p>
     pub storage: std::option::Option<std::string::String>,
-    /// <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+    /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
     pub vcpu: std::option::Option<std::string::String>,
 }
 impl Ec2ResourceDetails {
@@ -7268,7 +7647,7 @@ impl Ec2ResourceDetails {
     pub fn storage(&self) -> std::option::Option<&str> {
         self.storage.as_deref()
     }
-    /// <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+    /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
     pub fn vcpu(&self) -> std::option::Option<&str> {
         self.vcpu.as_deref()
     }
@@ -7395,12 +7774,12 @@ pub mod ec2_resource_details {
             self.storage = input;
             self
         }
-        /// <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+        /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
         pub fn vcpu(mut self, input: impl Into<std::string::String>) -> Self {
             self.vcpu = Some(input.into());
             self
         }
-        /// <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+        /// <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
         pub fn set_vcpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vcpu = input;
             self
@@ -7497,17 +7876,17 @@ pub struct CurrentInstance {
     pub resource_details: std::option::Option<crate::model::ResourceDetails>,
     /// <p>Utilization information of the current instance during the lookback period.</p>
     pub resource_utilization: std::option::Option<crate::model::ResourceUtilization>,
-    /// <p> The number of hours during the lookback period that's covered by reservations.</p>
+    /// <p>The number of hours during the lookback period that's covered by reservations.</p>
     pub reservation_covered_hours_in_lookback_period: std::option::Option<std::string::String>,
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
     pub savings_plans_covered_hours_in_lookback_period: std::option::Option<std::string::String>,
-    /// <p> The number of hours during the lookback period that's billed at On-Demand rates.</p>
+    /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
     pub on_demand_hours_in_lookback_period: std::option::Option<std::string::String>,
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
     pub total_running_hours_in_lookback_period: std::option::Option<std::string::String>,
     /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
     pub monthly_cost: std::option::Option<std::string::String>,
-    /// <p> The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+    /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub currency_code: std::option::Option<std::string::String>,
 }
 impl CurrentInstance {
@@ -7531,7 +7910,7 @@ impl CurrentInstance {
     pub fn resource_utilization(&self) -> std::option::Option<&crate::model::ResourceUtilization> {
         self.resource_utilization.as_ref()
     }
-    /// <p> The number of hours during the lookback period that's covered by reservations.</p>
+    /// <p>The number of hours during the lookback period that's covered by reservations.</p>
     pub fn reservation_covered_hours_in_lookback_period(&self) -> std::option::Option<&str> {
         self.reservation_covered_hours_in_lookback_period.as_deref()
     }
@@ -7540,7 +7919,7 @@ impl CurrentInstance {
         self.savings_plans_covered_hours_in_lookback_period
             .as_deref()
     }
-    /// <p> The number of hours during the lookback period that's billed at On-Demand rates.</p>
+    /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
     pub fn on_demand_hours_in_lookback_period(&self) -> std::option::Option<&str> {
         self.on_demand_hours_in_lookback_period.as_deref()
     }
@@ -7552,7 +7931,7 @@ impl CurrentInstance {
     pub fn monthly_cost(&self) -> std::option::Option<&str> {
         self.monthly_cost.as_deref()
     }
-    /// <p> The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+    /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn currency_code(&self) -> std::option::Option<&str> {
         self.currency_code.as_deref()
     }
@@ -7676,7 +8055,7 @@ pub mod current_instance {
             self.resource_utilization = input;
             self
         }
-        /// <p> The number of hours during the lookback period that's covered by reservations.</p>
+        /// <p>The number of hours during the lookback period that's covered by reservations.</p>
         pub fn reservation_covered_hours_in_lookback_period(
             mut self,
             input: impl Into<std::string::String>,
@@ -7684,7 +8063,7 @@ pub mod current_instance {
             self.reservation_covered_hours_in_lookback_period = Some(input.into());
             self
         }
-        /// <p> The number of hours during the lookback period that's covered by reservations.</p>
+        /// <p>The number of hours during the lookback period that's covered by reservations.</p>
         pub fn set_reservation_covered_hours_in_lookback_period(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7708,7 +8087,7 @@ pub mod current_instance {
             self.savings_plans_covered_hours_in_lookback_period = input;
             self
         }
-        /// <p> The number of hours during the lookback period that's billed at On-Demand rates.</p>
+        /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
         pub fn on_demand_hours_in_lookback_period(
             mut self,
             input: impl Into<std::string::String>,
@@ -7716,7 +8095,7 @@ pub mod current_instance {
             self.on_demand_hours_in_lookback_period = Some(input.into());
             self
         }
-        /// <p> The number of hours during the lookback period that's billed at On-Demand rates.</p>
+        /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
         pub fn set_on_demand_hours_in_lookback_period(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7750,12 +8129,12 @@ pub mod current_instance {
             self.monthly_cost = input;
             self
         }
-        /// <p> The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+        /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.currency_code = Some(input.into());
             self
         }
-        /// <p> The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+        /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9056,7 +9435,7 @@ impl ReservationPurchaseRecommendationSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservationPurchaseRecommendationDetail {
-    /// <p>The account that this RI recommendation is for.</p>
+    /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
     pub instance_details: std::option::Option<crate::model::InstanceDetails>,
@@ -9082,13 +9461,13 @@ pub struct ReservationPurchaseRecommendationDetail {
     pub estimated_break_even_in_months: std::option::Option<std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub currency_code: std::option::Option<std::string::String>,
-    /// <p>How much Amazon Web Services estimates that this specific recommendation could save you in a month.</p>
+    /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
     pub estimated_monthly_savings_amount: std::option::Option<std::string::String>,
-    /// <p>How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a percentage of your overall costs.</p>
+    /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
     pub estimated_monthly_savings_percentage: std::option::Option<std::string::String>,
     /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a month.</p>
     pub estimated_monthly_on_demand_cost: std::option::Option<std::string::String>,
-    /// <p>How much Amazon Web Services estimates that you would have spent for all usage during the specified historical period if you had a reservation.</p>
+    /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
     pub estimated_reservation_cost_for_lookback_period: std::option::Option<std::string::String>,
     /// <p>How much purchasing this instance costs you upfront.</p>
     pub upfront_cost: std::option::Option<std::string::String>,
@@ -9096,7 +9475,7 @@ pub struct ReservationPurchaseRecommendationDetail {
     pub recurring_standard_monthly_cost: std::option::Option<std::string::String>,
 }
 impl ReservationPurchaseRecommendationDetail {
-    /// <p>The account that this RI recommendation is for.</p>
+    /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -9148,11 +9527,11 @@ impl ReservationPurchaseRecommendationDetail {
     pub fn currency_code(&self) -> std::option::Option<&str> {
         self.currency_code.as_deref()
     }
-    /// <p>How much Amazon Web Services estimates that this specific recommendation could save you in a month.</p>
+    /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
     pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
         self.estimated_monthly_savings_amount.as_deref()
     }
-    /// <p>How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a percentage of your overall costs.</p>
+    /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
     pub fn estimated_monthly_savings_percentage(&self) -> std::option::Option<&str> {
         self.estimated_monthly_savings_percentage.as_deref()
     }
@@ -9160,7 +9539,7 @@ impl ReservationPurchaseRecommendationDetail {
     pub fn estimated_monthly_on_demand_cost(&self) -> std::option::Option<&str> {
         self.estimated_monthly_on_demand_cost.as_deref()
     }
-    /// <p>How much Amazon Web Services estimates that you would have spent for all usage during the specified historical period if you had a reservation.</p>
+    /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
     pub fn estimated_reservation_cost_for_lookback_period(&self) -> std::option::Option<&str> {
         self.estimated_reservation_cost_for_lookback_period
             .as_deref()
@@ -9275,12 +9654,12 @@ pub mod reservation_purchase_recommendation_detail {
         pub(crate) recurring_standard_monthly_cost: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account that this RI recommendation is for.</p>
+        /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account that this RI recommendation is for.</p>
+        /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -9468,7 +9847,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.currency_code = input;
             self
         }
-        /// <p>How much Amazon Web Services estimates that this specific recommendation could save you in a month.</p>
+        /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
         pub fn estimated_monthly_savings_amount(
             mut self,
             input: impl Into<std::string::String>,
@@ -9476,7 +9855,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_monthly_savings_amount = Some(input.into());
             self
         }
-        /// <p>How much Amazon Web Services estimates that this specific recommendation could save you in a month.</p>
+        /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
         pub fn set_estimated_monthly_savings_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9484,7 +9863,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_monthly_savings_amount = input;
             self
         }
-        /// <p>How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a percentage of your overall costs.</p>
+        /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
         pub fn estimated_monthly_savings_percentage(
             mut self,
             input: impl Into<std::string::String>,
@@ -9492,7 +9871,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_monthly_savings_percentage = Some(input.into());
             self
         }
-        /// <p>How much Amazon Web Services estimates that this specific recommendation could save you in a month, as a percentage of your overall costs.</p>
+        /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
         pub fn set_estimated_monthly_savings_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9516,7 +9895,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_monthly_on_demand_cost = input;
             self
         }
-        /// <p>How much Amazon Web Services estimates that you would have spent for all usage during the specified historical period if you had a reservation.</p>
+        /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
         pub fn estimated_reservation_cost_for_lookback_period(
             mut self,
             input: impl Into<std::string::String>,
@@ -9524,7 +9903,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_reservation_cost_for_lookback_period = Some(input.into());
             self
         }
-        /// <p>How much Amazon Web Services estimates that you would have spent for all usage during the specified historical period if you had a reservation.</p>
+        /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
         pub fn set_estimated_reservation_cost_for_lookback_period(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12458,7 +12837,7 @@ pub struct Anomaly {
     pub anomaly_start_date: std::option::Option<std::string::String>,
     /// <p>The last day the anomaly is detected. </p>
     pub anomaly_end_date: std::option::Option<std::string::String>,
-    /// <p>The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor). </p>
+    /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
     pub dimension_value: std::option::Option<std::string::String>,
     /// <p>The list of identified root causes for the anomaly. </p>
     pub root_causes: std::option::Option<std::vec::Vec<crate::model::RootCause>>,
@@ -12484,7 +12863,7 @@ impl Anomaly {
     pub fn anomaly_end_date(&self) -> std::option::Option<&str> {
         self.anomaly_end_date.as_deref()
     }
-    /// <p>The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor). </p>
+    /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
     pub fn dimension_value(&self) -> std::option::Option<&str> {
         self.dimension_value.as_deref()
     }
@@ -12578,12 +12957,12 @@ pub mod anomaly {
             self.anomaly_end_date = input;
             self
         }
-        /// <p>The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor). </p>
+        /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
         pub fn dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.dimension_value = Some(input.into());
             self
         }
-        /// <p>The dimension for the anomaly (for example, an Amazon Web Services service in a service monitor). </p>
+        /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
         pub fn set_dimension_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12827,11 +13206,11 @@ impl AnomalyScore {
     }
 }
 
-/// <p>The combination of Amazon Web Services service, linked account, Region, and usage type where a cost anomaly is observed. </p>
+/// <p>The combination of Amazon Web Service, linked account, Region, and usage type where a cost anomaly is observed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RootCause {
-    /// <p>The Amazon Web Services service name that's associated with the cost anomaly. </p>
+    /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
     pub service: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
     pub region: std::option::Option<std::string::String>,
@@ -12841,7 +13220,7 @@ pub struct RootCause {
     pub usage_type: std::option::Option<std::string::String>,
 }
 impl RootCause {
-    /// <p>The Amazon Web Services service name that's associated with the cost anomaly. </p>
+    /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
     pub fn service(&self) -> std::option::Option<&str> {
         self.service.as_deref()
     }
@@ -12881,12 +13260,12 @@ pub mod root_cause {
         pub(crate) usage_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services service name that's associated with the cost anomaly. </p>
+        /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
         pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
             self.service = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services service name that's associated with the cost anomaly. </p>
+        /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -13198,7 +13577,7 @@ pub struct CostCategory {
     pub cost_category_arn: std::option::Option<std::string::String>,
     /// <p>The effective state data of your Cost Category.</p>
     pub effective_start: std::option::Option<std::string::String>,
-    /// <p> The effective end data of your Cost Category.</p>
+    /// <p>The effective end data of your Cost Category.</p>
     pub effective_end: std::option::Option<std::string::String>,
     /// <p>The unique name of the Cost Category.</p>
     pub name: std::option::Option<std::string::String>,
@@ -13224,7 +13603,7 @@ impl CostCategory {
     pub fn effective_start(&self) -> std::option::Option<&str> {
         self.effective_start.as_deref()
     }
-    /// <p> The effective end data of your Cost Category.</p>
+    /// <p>The effective end data of your Cost Category.</p>
     pub fn effective_end(&self) -> std::option::Option<&str> {
         self.effective_end.as_deref()
     }
@@ -13318,12 +13697,12 @@ pub mod cost_category {
             self.effective_start = input;
             self
         }
-        /// <p> The effective end data of your Cost Category.</p>
+        /// <p>The effective end data of your Cost Category.</p>
         pub fn effective_end(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_end = Some(input.into());
             self
         }
-        /// <p> The effective end data of your Cost Category.</p>
+        /// <p>The effective end data of your Cost Category.</p>
         pub fn set_effective_end(
             mut self,
             input: std::option::Option<std::string::String>,

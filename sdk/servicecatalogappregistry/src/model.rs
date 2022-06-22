@@ -498,6 +498,99 @@ impl AsRef<str> for ResourceType {
     }
 }
 
+/// <p> The details related to a specific AttributeGroup. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AttributeGroupDetails {
+    /// <p>The unique identifier of the attribute group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the attribute group. </p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl AttributeGroupDetails {
+    /// <p>The unique identifier of the attribute group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the attribute group. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for AttributeGroupDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AttributeGroupDetails");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`AttributeGroupDetails`](crate::model::AttributeGroupDetails)
+pub mod attribute_group_details {
+
+    /// A builder for [`AttributeGroupDetails`](crate::model::AttributeGroupDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the attribute group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the attribute group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the attribute group. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the attribute group. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AttributeGroupDetails`](crate::model::AttributeGroupDetails)
+        pub fn build(self) -> crate::model::AttributeGroupDetails {
+            crate::model::AttributeGroupDetails {
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+            }
+        }
+    }
+}
+impl AttributeGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AttributeGroupDetails`](crate::model::AttributeGroupDetails)
+    pub fn builder() -> crate::model::attribute_group_details::Builder {
+        crate::model::attribute_group_details::Builder::default()
+    }
+}
+
 /// <p>Summary of a Amazon Web Services Service Catalog AppRegistry attribute group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

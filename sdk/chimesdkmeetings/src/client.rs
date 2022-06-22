@@ -103,11 +103,26 @@ impl Client {
     pub fn batch_create_attendee(&self) -> fluent_builders::BatchCreateAttendee {
         fluent_builders::BatchCreateAttendee::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`BatchUpdateAttendeeCapabilitiesExcept`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::set_meeting_id): <p>The ID of the meeting associated with the update request.</p>
+    ///   - [`excluded_attendee_ids(Vec<AttendeeIdItem>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::excluded_attendee_ids) / [`set_excluded_attendee_ids(Option<Vec<AttendeeIdItem>>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::set_excluded_attendee_ids): <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
+    ///   - [`capabilities(AttendeeCapabilities)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::set_capabilities): <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
+    /// - On success, responds with [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput)
+
+    /// - On failure, responds with [`SdkError<BatchUpdateAttendeeCapabilitiesExceptError>`](crate::error::BatchUpdateAttendeeCapabilitiesExceptError)
+    pub fn batch_update_attendee_capabilities_except(
+        &self,
+    ) -> fluent_builders::BatchUpdateAttendeeCapabilitiesExcept {
+        fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateAttendee`](crate::client::fluent_builders::CreateAttendee) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_meeting_id): <p>The unique ID of the meeting.</p>
     ///   - [`external_user_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::external_user_id) / [`set_external_user_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_external_user_id): <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    ///   - [`capabilities(AttendeeCapabilities)`](crate::client::fluent_builders::CreateAttendee::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::client::fluent_builders::CreateAttendee::set_capabilities): <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
     /// - On success, responds with [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput) with field(s):
     ///   - [`attendee(Option<Attendee>)`](crate::output::CreateAttendeeOutput::attendee): <p>The attendee information, including attendee ID and join token.</p>
     /// - On failure, responds with [`SdkError<CreateAttendeeError>`](crate::error::CreateAttendeeError)
@@ -226,6 +241,18 @@ impl Client {
     pub fn stop_meeting_transcription(&self) -> fluent_builders::StopMeetingTranscription {
         fluent_builders::StopMeetingTranscription::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateAttendeeCapabilities`](crate::client::fluent_builders::UpdateAttendeeCapabilities) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::set_meeting_id): <p>The ID of the meeting associated with the update request.</p>
+    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::set_attendee_id): <p>The ID of the attendee associated with the update request.</p>
+    ///   - [`capabilities(AttendeeCapabilities)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::set_capabilities): <p>The capabilties that you want to update.</p>
+    /// - On success, responds with [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput) with field(s):
+    ///   - [`attendee(Option<Attendee>)`](crate::output::UpdateAttendeeCapabilitiesOutput::attendee): <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>  <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+    /// - On failure, responds with [`SdkError<UpdateAttendeeCapabilitiesError>`](crate::error::UpdateAttendeeCapabilitiesError)
+    pub fn update_attendee_capabilities(&self) -> fluent_builders::UpdateAttendeeCapabilities {
+        fluent_builders::UpdateAttendeeCapabilities::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
 
@@ -304,6 +331,91 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `BatchUpdateAttendeeCapabilitiesExcept`.
+    ///
+    /// <p>Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code> table.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchUpdateAttendeeCapabilitiesExcept {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_update_attendee_capabilities_except_input::Builder,
+    }
+    impl BatchUpdateAttendeeCapabilitiesExcept {
+        /// Creates a new `BatchUpdateAttendeeCapabilitiesExcept`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::BatchUpdateAttendeeCapabilitiesExceptError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the meeting associated with the update request.</p>
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
+            self
+        }
+        /// <p>The ID of the meeting associated with the update request.</p>
+        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_meeting_id(input);
+            self
+        }
+        /// Appends an item to `ExcludedAttendeeIds`.
+        ///
+        /// To override the contents of this collection use [`set_excluded_attendee_ids`](Self::set_excluded_attendee_ids).
+        ///
+        /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
+        pub fn excluded_attendee_ids(mut self, input: crate::model::AttendeeIdItem) -> Self {
+            self.inner = self.inner.excluded_attendee_ids(input);
+            self
+        }
+        /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
+        pub fn set_excluded_attendee_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AttendeeIdItem>>,
+        ) -> Self {
+            self.inner = self.inner.set_excluded_attendee_ids(input);
+            self
+        }
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
+        pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
+            self.inner = self.inner.capabilities(input);
+            self
+        }
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
+        pub fn set_capabilities(
+            mut self,
+            input: std::option::Option<crate::model::AttendeeCapabilities>,
+        ) -> Self {
+            self.inner = self.inner.set_capabilities(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateAttendee`.
     ///
     /// <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
@@ -367,6 +479,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_external_user_id(input);
+            self
+        }
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
+        pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
+            self.inner = self.inner.capabilities(input);
+            self
+        }
+        /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p>
+        pub fn set_capabilities(
+            mut self,
+            input: std::option::Option<crate::model::AttendeeCapabilities>,
+        ) -> Self {
+            self.inner = self.inner.set_capabilities(input);
             self
         }
     }
@@ -1099,6 +1224,82 @@ pub mod fluent_builders {
         /// <p>The unique ID of the meeting for which you stop transcription.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_meeting_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateAttendeeCapabilities`.
+    ///
+    /// <p>The capabilties that you want to update.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateAttendeeCapabilities {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_attendee_capabilities_input::Builder,
+    }
+    impl UpdateAttendeeCapabilities {
+        /// Creates a new `UpdateAttendeeCapabilities`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateAttendeeCapabilitiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateAttendeeCapabilitiesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the meeting associated with the update request.</p>
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
+            self
+        }
+        /// <p>The ID of the meeting associated with the update request.</p>
+        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_meeting_id(input);
+            self
+        }
+        /// <p>The ID of the attendee associated with the update request.</p>
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
+            self
+        }
+        /// <p>The ID of the attendee associated with the update request.</p>
+        pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_attendee_id(input);
+            self
+        }
+        /// <p>The capabilties that you want to update.</p>
+        pub fn capabilities(mut self, input: crate::model::AttendeeCapabilities) -> Self {
+            self.inner = self.inner.capabilities(input);
+            self
+        }
+        /// <p>The capabilties that you want to update.</p>
+        pub fn set_capabilities(
+            mut self,
+            input: std::option::Option<crate::model::AttendeeCapabilities>,
+        ) -> Self {
+            self.inner = self.inner.set_capabilities(input);
             self
         }
     }

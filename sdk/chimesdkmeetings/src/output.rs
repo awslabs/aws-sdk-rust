@@ -2,6 +2,65 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAttendeeCapabilitiesOutput {
+    /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
+    /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+    pub attendee: std::option::Option<crate::model::Attendee>,
+}
+impl UpdateAttendeeCapabilitiesOutput {
+    /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
+    /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+    pub fn attendee(&self) -> std::option::Option<&crate::model::Attendee> {
+        self.attendee.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateAttendeeCapabilitiesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAttendeeCapabilitiesOutput");
+        formatter.field("attendee", &self.attendee);
+        formatter.finish()
+    }
+}
+/// See [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput)
+pub mod update_attendee_capabilities_output {
+
+    /// A builder for [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attendee: std::option::Option<crate::model::Attendee>,
+    }
+    impl Builder {
+        /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
+        /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+        pub fn attendee(mut self, input: crate::model::Attendee) -> Self {
+            self.attendee = Some(input);
+            self
+        }
+        /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
+        /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
+        pub fn set_attendee(mut self, input: std::option::Option<crate::model::Attendee>) -> Self {
+            self.attendee = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput)
+        pub fn build(self) -> crate::output::UpdateAttendeeCapabilitiesOutput {
+            crate::output::UpdateAttendeeCapabilitiesOutput {
+                attendee: self.attendee,
+            }
+        }
+    }
+}
+impl UpdateAttendeeCapabilitiesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput)
+    pub fn builder() -> crate::output::update_attendee_capabilities_output::Builder {
+        crate::output::update_attendee_capabilities_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMeetingTranscriptionOutput {}
 impl std::fmt::Debug for StopMeetingTranscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -534,6 +593,37 @@ impl CreateAttendeeOutput {
     /// Creates a new builder-style object to manufacture [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput)
     pub fn builder() -> crate::output::create_attendee_output::Builder {
         crate::output::create_attendee_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchUpdateAttendeeCapabilitiesExceptOutput {}
+impl std::fmt::Debug for BatchUpdateAttendeeCapabilitiesExceptOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchUpdateAttendeeCapabilitiesExceptOutput");
+        formatter.finish()
+    }
+}
+/// See [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput)
+pub mod batch_update_attendee_capabilities_except_output {
+
+    /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput)
+        pub fn build(self) -> crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput {
+            crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput {}
+        }
+    }
+}
+impl BatchUpdateAttendeeCapabilitiesExceptOutput {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput)
+    pub fn builder() -> crate::output::batch_update_attendee_capabilities_except_output::Builder {
+        crate::output::batch_update_attendee_capabilities_except_output::Builder::default()
     }
 }
 

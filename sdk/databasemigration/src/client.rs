@@ -138,7 +138,7 @@ impl Client {
     ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_password): <p>The password to be used to log in to the endpoint database.</p>
     ///   - [`server_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::server_name) / [`set_server_name(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_server_name): <p>The name of the server where the endpoint database resides.</p>
     ///   - [`port(i32)`](crate::client::fluent_builders::CreateEndpoint::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::CreateEndpoint::set_port): <p>The port used by the endpoint database.</p>
-    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_database_name): <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_database_name): <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
     ///   - [`extra_connection_attributes(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::extra_connection_attributes) / [`set_extra_connection_attributes(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_extra_connection_attributes): <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_kms_key_id): <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>  <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>  <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEndpoint::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEndpoint::set_tags): <p>One or more tags to be assigned to the endpoint.</p>
@@ -186,6 +186,23 @@ impl Client {
     /// - On failure, responds with [`SdkError<CreateEventSubscriptionError>`](crate::error::CreateEventSubscriptionError)
     pub fn create_event_subscription(&self) -> fluent_builders::CreateEventSubscription {
         fluent_builders::CreateEventSubscription::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateFleetAdvisorCollector`](crate::client::fluent_builders::CreateFleetAdvisorCollector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`collector_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::collector_name) / [`set_collector_name(Option<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::set_collector_name): <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::set_description): <p>A summary description of your Fleet Advisor collector.</p>
+    ///   - [`service_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::service_access_role_arn) / [`set_service_access_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::set_service_access_role_arn): <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    ///   - [`s3_bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::s3_bucket_name) / [`set_s3_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::set_s3_bucket_name): <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+    /// - On success, responds with [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput) with field(s):
+    ///   - [`collector_referenced_id(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::collector_referenced_id): <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
+    ///   - [`collector_name(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::collector_name): <p>The name of the new Fleet Advisor collector.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::description): <p>A summary description of the Fleet Advisor collector.</p>
+    ///   - [`service_access_role_arn(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::service_access_role_arn): <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    ///   - [`s3_bucket_name(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::s3_bucket_name): <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
+    /// - On failure, responds with [`SdkError<CreateFleetAdvisorCollectorError>`](crate::error::CreateFleetAdvisorCollectorError)
+    pub fn create_fleet_advisor_collector(&self) -> fluent_builders::CreateFleetAdvisorCollector {
+        fluent_builders::CreateFleetAdvisorCollector::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateReplicationInstance`](crate::client::fluent_builders::CreateReplicationInstance) operation.
     ///
@@ -286,6 +303,26 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteEventSubscriptionError>`](crate::error::DeleteEventSubscriptionError)
     pub fn delete_event_subscription(&self) -> fluent_builders::DeleteEventSubscription {
         fluent_builders::DeleteEventSubscription::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteFleetAdvisorCollector`](crate::client::fluent_builders::DeleteFleetAdvisorCollector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`collector_referenced_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFleetAdvisorCollector::collector_referenced_id) / [`set_collector_referenced_id(Option<String>)`](crate::client::fluent_builders::DeleteFleetAdvisorCollector::set_collector_referenced_id): <p>The reference ID of the Fleet Advisor collector to delete.</p>
+    /// - On success, responds with [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFleetAdvisorCollectorError>`](crate::error::DeleteFleetAdvisorCollectorError)
+    pub fn delete_fleet_advisor_collector(&self) -> fluent_builders::DeleteFleetAdvisorCollector {
+        fluent_builders::DeleteFleetAdvisorCollector::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteFleetAdvisorDatabases`](crate::client::fluent_builders::DeleteFleetAdvisorDatabases) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`database_ids(Vec<String>)`](crate::client::fluent_builders::DeleteFleetAdvisorDatabases::database_ids) / [`set_database_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteFleetAdvisorDatabases::set_database_ids): <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+    /// - On success, responds with [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput) with field(s):
+    ///   - [`database_ids(Option<Vec<String>>)`](crate::output::DeleteFleetAdvisorDatabasesOutput::database_ids): <p>The IDs of the databases that the operation deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteFleetAdvisorDatabasesError>`](crate::error::DeleteFleetAdvisorDatabasesError)
+    pub fn delete_fleet_advisor_databases(&self) -> fluent_builders::DeleteFleetAdvisorDatabases {
+        fluent_builders::DeleteFleetAdvisorDatabases::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteReplicationInstance`](crate::client::fluent_builders::DeleteReplicationInstance) operation.
     ///
@@ -475,6 +512,83 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeEventSubscriptionsError>`](crate::error::DescribeEventSubscriptionsError)
     pub fn describe_event_subscriptions(&self) -> fluent_builders::DescribeEventSubscriptions {
         fluent_builders::DescribeEventSubscriptions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeFleetAdvisorCollectors`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::set_filters): <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>  <ul>   <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>   <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>  </ul>  <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput) with field(s):
+    ///   - [`collectors(Option<Vec<CollectorResponse>>)`](crate::output::DescribeFleetAdvisorCollectorsOutput::collectors): <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorCollectorsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorCollectorsError>`](crate::error::DescribeFleetAdvisorCollectorsError)
+    pub fn describe_fleet_advisor_collectors(
+        &self,
+    ) -> fluent_builders::DescribeFleetAdvisorCollectors {
+        fluent_builders::DescribeFleetAdvisorCollectors::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeFleetAdvisorDatabases`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_filters): <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>  <ul>   <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>   <li> <p> <code>database-name</code> – The name of the database.</p> </li>   <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>   <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>   <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>   <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>  </ul>  <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput) with field(s):
+    ///   - [`databases(Option<Vec<DatabaseResponse>>)`](crate::output::DescribeFleetAdvisorDatabasesOutput::databases): <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorDatabasesOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorDatabasesError>`](crate::error::DescribeFleetAdvisorDatabasesError)
+    pub fn describe_fleet_advisor_databases(
+        &self,
+    ) -> fluent_builders::DescribeFleetAdvisorDatabases {
+        fluent_builders::DescribeFleetAdvisorDatabases::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeFleetAdvisorLsaAnalysis`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput) with field(s):
+    ///   - [`analysis(Option<Vec<FleetAdvisorLsaAnalysisResponse>>)`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput::analysis): <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorLsaAnalysisError>`](crate::error::DescribeFleetAdvisorLsaAnalysisError)
+    pub fn describe_fleet_advisor_lsa_analysis(
+        &self,
+    ) -> fluent_builders::DescribeFleetAdvisorLsaAnalysis {
+        fluent_builders::DescribeFleetAdvisorLsaAnalysis::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeFleetAdvisorSchemaObjectSummary`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::set_filters): <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>  <ul>   <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>  </ul>  <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput) with field(s):
+    ///   - [`fleet_advisor_schema_objects(Option<Vec<FleetAdvisorSchemaObjectResponse>>)`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput::fleet_advisor_schema_objects): <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorSchemaObjectSummaryError>`](crate::error::DescribeFleetAdvisorSchemaObjectSummaryError)
+    pub fn describe_fleet_advisor_schema_object_summary(
+        &self,
+    ) -> fluent_builders::DescribeFleetAdvisorSchemaObjectSummary {
+        fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeFleetAdvisorSchemas`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::set_filters): <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>  <ul>   <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>   <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>   <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>   <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>   <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>   <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>   <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>   <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>   <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>  </ul>  <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput) with field(s):
+    ///   - [`fleet_advisor_schemas(Option<Vec<SchemaResponse>>)`](crate::output::DescribeFleetAdvisorSchemasOutput::fleet_advisor_schemas): <p>A collection of <code>SchemaResponse</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorSchemasOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorSchemasError>`](crate::error::DescribeFleetAdvisorSchemasError)
+    pub fn describe_fleet_advisor_schemas(&self) -> fluent_builders::DescribeFleetAdvisorSchemas {
+        fluent_builders::DescribeFleetAdvisorSchemas::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeOrderableReplicationInstances`](crate::client::fluent_builders::DescribeOrderableReplicationInstances) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrderableReplicationInstances::into_paginator).
@@ -845,6 +959,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::error::RemoveTagsFromResourceError)
     pub fn remove_tags_from_resource(&self) -> fluent_builders::RemoveTagsFromResource {
         fluent_builders::RemoveTagsFromResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RunFleetAdvisorLsaAnalysis`](crate::client::fluent_builders::RunFleetAdvisorLsaAnalysis) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::RunFleetAdvisorLsaAnalysis::send) it.
+
+    /// - On success, responds with [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput) with field(s):
+    ///   - [`lsa_analysis_id(Option<String>)`](crate::output::RunFleetAdvisorLsaAnalysisOutput::lsa_analysis_id): <p>The ID of the LSA analysis run.</p>
+    ///   - [`status(Option<String>)`](crate::output::RunFleetAdvisorLsaAnalysisOutput::status): <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
+    /// - On failure, responds with [`SdkError<RunFleetAdvisorLsaAnalysisError>`](crate::error::RunFleetAdvisorLsaAnalysisError)
+    pub fn run_fleet_advisor_lsa_analysis(&self) -> fluent_builders::RunFleetAdvisorLsaAnalysis {
+        fluent_builders::RunFleetAdvisorLsaAnalysis::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StartReplicationTask`](crate::client::fluent_builders::StartReplicationTask) operation.
     ///
@@ -1265,12 +1390,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_port(input);
             self
         }
-        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1790,6 +1915,98 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateFleetAdvisorCollector`.
+    ///
+    /// <p>Creates a Fleet Advisor collector using the specified parameters.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateFleetAdvisorCollector {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_fleet_advisor_collector_input::Builder,
+    }
+    impl CreateFleetAdvisorCollector {
+        /// Creates a new `CreateFleetAdvisorCollector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateFleetAdvisorCollectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateFleetAdvisorCollectorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+        pub fn collector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collector_name(input.into());
+            self
+        }
+        /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+        pub fn set_collector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_collector_name(input);
+            self
+        }
+        /// <p>A summary description of your Fleet Advisor collector.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A summary description of your Fleet Advisor collector.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+        pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_access_role_arn(input.into());
+            self
+        }
+        /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+        pub fn set_service_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_service_access_role_arn(input);
+            self
+        }
+        /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
+            self
+        }
+        /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_s3_bucket_name(input);
             self
         }
     }
@@ -2659,6 +2876,122 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_subscription_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteFleetAdvisorCollector`.
+    ///
+    /// <p>Deletes the specified Fleet Advisor collector.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteFleetAdvisorCollector {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_fleet_advisor_collector_input::Builder,
+    }
+    impl DeleteFleetAdvisorCollector {
+        /// Creates a new `DeleteFleetAdvisorCollector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteFleetAdvisorCollectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteFleetAdvisorCollectorError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+        pub fn collector_referenced_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collector_referenced_id(input.into());
+            self
+        }
+        /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+        pub fn set_collector_referenced_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_collector_referenced_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteFleetAdvisorDatabases`.
+    ///
+    /// <p>Deletes the specified Fleet Advisor collector databases.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteFleetAdvisorDatabases {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_fleet_advisor_databases_input::Builder,
+    }
+    impl DeleteFleetAdvisorDatabases {
+        /// Creates a new `DeleteFleetAdvisorDatabases`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteFleetAdvisorDatabasesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteFleetAdvisorDatabasesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `DatabaseIds`.
+        ///
+        /// To override the contents of this collection use [`set_database_ids`](Self::set_database_ids).
+        ///
+        /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+        pub fn database_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_ids(input.into());
+            self
+        }
+        /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+        pub fn set_database_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_database_ids(input);
             self
         }
     }
@@ -3875,6 +4208,486 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeFleetAdvisorCollectors`.
+    ///
+    /// <p>Returns a list of the Fleet Advisor collectors in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeFleetAdvisorCollectors {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_fleet_advisor_collectors_input::Builder,
+    }
+    impl DescribeFleetAdvisorCollectors {
+        /// Creates a new `DescribeFleetAdvisorCollectors`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeFleetAdvisorCollectorsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorCollectorsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetAdvisorCollectorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeFleetAdvisorCollectorsPaginator {
+            crate::paginator::DescribeFleetAdvisorCollectorsPaginator::new(self.handle, self.inner)
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeFleetAdvisorDatabases`.
+    ///
+    /// <p>Returns a list of Fleet Advisor databases in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeFleetAdvisorDatabases {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_fleet_advisor_databases_input::Builder,
+    }
+    impl DescribeFleetAdvisorDatabases {
+        /// Creates a new `DescribeFleetAdvisorDatabases`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeFleetAdvisorDatabasesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorDatabasesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetAdvisorDatabasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeFleetAdvisorDatabasesPaginator {
+            crate::paginator::DescribeFleetAdvisorDatabasesPaginator::new(self.handle, self.inner)
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+        /// <ul>
+        /// <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+        /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+        /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+        /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+        /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+        /// <ul>
+        /// <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+        /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+        /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+        /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+        /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeFleetAdvisorLsaAnalysis`.
+    ///
+    /// <p>Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet Advisor collectors. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeFleetAdvisorLsaAnalysis {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_fleet_advisor_lsa_analysis_input::Builder,
+    }
+    impl DescribeFleetAdvisorLsaAnalysis {
+        /// Creates a new `DescribeFleetAdvisorLsaAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeFleetAdvisorLsaAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorLsaAnalysisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetAdvisorLsaAnalysisPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeFleetAdvisorLsaAnalysisPaginator {
+            crate::paginator::DescribeFleetAdvisorLsaAnalysisPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeFleetAdvisorSchemaObjectSummary`.
+    ///
+    /// <p>Provides descriptions of the schemas discovered by your Fleet Advisor collectors.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeFleetAdvisorSchemaObjectSummary {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_fleet_advisor_schema_object_summary_input::Builder,
+    }
+    impl DescribeFleetAdvisorSchemaObjectSummary {
+        /// Creates a new `DescribeFleetAdvisorSchemaObjectSummary`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeFleetAdvisorSchemaObjectSummaryError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator {
+            crate::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// </ul>
+        /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// </ul>
+        /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeFleetAdvisorSchemas`.
+    ///
+    /// <p>Returns a list of schemas detected by Fleet Advisor Collectors in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeFleetAdvisorSchemas {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_fleet_advisor_schemas_input::Builder,
+    }
+    impl DescribeFleetAdvisorSchemas {
+        /// Creates a new `DescribeFleetAdvisorSchemas`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeFleetAdvisorSchemasOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorSchemasError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetAdvisorSchemasPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeFleetAdvisorSchemasPaginator {
+            crate::paginator::DescribeFleetAdvisorSchemasPaginator::new(self.handle, self.inner)
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>
+        /// <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>
+        /// <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>
+        /// <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>
+        /// <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>
+        /// <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>
+        /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>
+        /// <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>
+        /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>
+        /// <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>
+        /// <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>
+        /// <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>
+        /// <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>
+        /// <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>
+        /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>
+        /// <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>
+        /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -6613,6 +7426,49 @@ pub mod fluent_builders {
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
             self
+        }
+    }
+    /// Fluent builder constructing a request to `RunFleetAdvisorLsaAnalysis`.
+    ///
+    /// <p>Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RunFleetAdvisorLsaAnalysis {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::run_fleet_advisor_lsa_analysis_input::Builder,
+    }
+    impl RunFleetAdvisorLsaAnalysis {
+        /// Creates a new `RunFleetAdvisorLsaAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RunFleetAdvisorLsaAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::RunFleetAdvisorLsaAnalysisError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `StartReplicationTask`.

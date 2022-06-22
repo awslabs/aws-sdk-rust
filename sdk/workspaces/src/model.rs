@@ -1902,7 +1902,7 @@ impl AsRef<str> for WorkspaceImageIngestionProcess {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultClientBrandingAttributes {
-    /// <p>The logo URL. This is the link where users can download the logo image. The only supported image format is <code>.png</code>.</p>
+    /// <p>The logo URL. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub logo_url: std::option::Option<std::string::String>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
@@ -1925,7 +1925,7 @@ pub struct DefaultClientBrandingAttributes {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DefaultClientBrandingAttributes {
-    /// <p>The logo URL. This is the link where users can download the logo image. The only supported image format is <code>.png</code>.</p>
+    /// <p>The logo URL. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub fn logo_url(&self) -> std::option::Option<&str> {
         self.logo_url.as_deref()
     }
@@ -1986,12 +1986,12 @@ pub mod default_client_branding_attributes {
         >,
     }
     impl Builder {
-        /// <p>The logo URL. This is the link where users can download the logo image. The only supported image format is <code>.png</code>.</p>
+        /// <p>The logo URL. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn logo_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.logo_url = Some(input.into());
             self
         }
-        /// <p>The logo URL. This is the link where users can download the logo image. The only supported image format is <code>.png</code>.</p>
+        /// <p>The logo URL. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn set_logo_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logo_url = input;
             self
@@ -2102,13 +2102,13 @@ impl DefaultClientBrandingAttributes {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IosClientBrandingAttributes {
-    /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+    /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub logo_url: std::option::Option<std::string::String>,
-    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub logo2x_url: std::option::Option<std::string::String>,
-    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub logo3x_url: std::option::Option<std::string::String>,
@@ -2133,17 +2133,17 @@ pub struct IosClientBrandingAttributes {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl IosClientBrandingAttributes {
-    /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+    /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub fn logo_url(&self) -> std::option::Option<&str> {
         self.logo_url.as_deref()
     }
-    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn logo2x_url(&self) -> std::option::Option<&str> {
         self.logo2x_url.as_deref()
     }
-    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn logo3x_url(&self) -> std::option::Option<&str> {
@@ -2210,38 +2210,38 @@ pub mod ios_client_branding_attributes {
         >,
     }
     impl Builder {
-        /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+        /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn logo_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.logo_url = Some(input.into());
             self
         }
-        /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+        /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn set_logo_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logo_url = input;
             self
         }
-        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
         /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
         /// </note>
         pub fn logo2x_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.logo2x_url = Some(input.into());
             self
         }
-        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
         /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
         /// </note>
         pub fn set_logo2x_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logo2x_url = input;
             self
         }
-        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
         /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
         /// </note>
         pub fn logo3x_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.logo3x_url = Some(input.into());
             self
         }
-        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
         /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
         /// </note>
         pub fn set_logo3x_url(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2356,7 +2356,7 @@ impl IosClientBrandingAttributes {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultImportClientBrandingAttributes {
-    /// <p>The logo. This is the link where users can download the logo image. The only image format accepted is <code>.png</code>.</p>
+    /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub logo: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
@@ -2379,7 +2379,7 @@ pub struct DefaultImportClientBrandingAttributes {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DefaultImportClientBrandingAttributes {
-    /// <p>The logo. This is the link where users can download the logo image. The only image format accepted is <code>.png</code>.</p>
+    /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub fn logo(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.logo.as_ref()
     }
@@ -2440,12 +2440,12 @@ pub mod default_import_client_branding_attributes {
         >,
     }
     impl Builder {
-        /// <p>The logo. This is the link where users can download the logo image. The only image format accepted is <code>.png</code>.</p>
+        /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn logo(mut self, input: aws_smithy_types::Blob) -> Self {
             self.logo = Some(input);
             self
         }
-        /// <p>The logo. This is the link where users can download the logo image. The only image format accepted is <code>.png</code>.</p>
+        /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn set_logo(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.logo = input;
             self
@@ -2556,13 +2556,13 @@ impl DefaultImportClientBrandingAttributes {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IosImportClientBrandingAttributes {
-    /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+    /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub logo: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub logo2x: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub logo3x: std::option::Option<aws_smithy_types::Blob>,
@@ -2587,17 +2587,17 @@ pub struct IosImportClientBrandingAttributes {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl IosImportClientBrandingAttributes {
-    /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+    /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub fn logo(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.logo.as_ref()
     }
-    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+    /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn logo2x(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.logo2x.as_ref()
     }
-    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+    /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn logo3x(&self) -> std::option::Option<&aws_smithy_types::Blob> {
@@ -2664,38 +2664,38 @@ pub mod ios_import_client_branding_attributes {
         >,
     }
     impl Builder {
-        /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+        /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn logo(mut self, input: aws_smithy_types::Blob) -> Self {
             self.logo = Some(input);
             self
         }
-        /// <p>The logo. This is the link where users can download the logo image. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.</p>
+        /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn set_logo(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.logo = input;
             self
         }
-        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
         /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
         /// </note>
         pub fn logo2x(mut self, input: aws_smithy_types::Blob) -> Self {
             self.logo2x = Some(input);
             self
         }
-        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x).</p> <note>
+        /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
         /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
         /// </note>
         pub fn set_logo2x(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.logo2x = input;
             self
         }
-        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
         /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
         /// </note>
         pub fn logo3x(mut self, input: aws_smithy_types::Blob) -> Self {
             self.logo3x = Some(input);
             self
         }
-        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).</p> <note>
+        /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
         /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
         /// </note>
         pub fn set_logo3x(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {

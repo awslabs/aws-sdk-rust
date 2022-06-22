@@ -1367,6 +1367,8 @@ pub struct DescribePredictorBacktestExportJobOutput {
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub format: std::option::Option<std::string::String>,
 }
 impl DescribePredictorBacktestExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
@@ -1414,6 +1416,10 @@ impl DescribePredictorBacktestExportJobOutput {
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePredictorBacktestExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1432,6 +1438,7 @@ impl std::fmt::Debug for DescribePredictorBacktestExportJobOutput {
         formatter.field("status", &self.status);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }
@@ -1450,6 +1457,7 @@ pub mod describe_predictor_backtest_export_job_output {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) format: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
@@ -1582,6 +1590,16 @@ pub mod describe_predictor_backtest_export_job_output {
             self.last_modification_time = input;
             self
         }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribePredictorBacktestExportJobOutput`](crate::output::DescribePredictorBacktestExportJobOutput)
         pub fn build(self) -> crate::output::DescribePredictorBacktestExportJobOutput {
             crate::output::DescribePredictorBacktestExportJobOutput {
@@ -1593,6 +1611,7 @@ pub mod describe_predictor_backtest_export_job_output {
                 status: self.status,
                 creation_time: self.creation_time,
                 last_modification_time: self.last_modification_time,
+                format: self.format,
             }
         }
     }
@@ -2581,6 +2600,8 @@ pub struct DescribeForecastExportJobOutput {
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub format: std::option::Option<std::string::String>,
 }
 impl DescribeForecastExportJobOutput {
     /// <p>The ARN of the forecast export job.</p>
@@ -2630,6 +2651,10 @@ impl DescribeForecastExportJobOutput {
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeForecastExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2642,6 +2667,7 @@ impl std::fmt::Debug for DescribeForecastExportJobOutput {
         formatter.field("status", &self.status);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }
@@ -2660,6 +2686,7 @@ pub mod describe_forecast_export_job_output {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) format: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the forecast export job.</p>
@@ -2787,6 +2814,16 @@ pub mod describe_forecast_export_job_output {
             self.last_modification_time = input;
             self
         }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeForecastExportJobOutput`](crate::output::DescribeForecastExportJobOutput)
         pub fn build(self) -> crate::output::DescribeForecastExportJobOutput {
             crate::output::DescribeForecastExportJobOutput {
@@ -2798,6 +2835,7 @@ pub mod describe_forecast_export_job_output {
                 status: self.status,
                 creation_time: self.creation_time,
                 last_modification_time: self.last_modification_time,
+                format: self.format,
             }
         }
     }
@@ -2848,6 +2886,8 @@ pub struct DescribeForecastOutput {
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time series to include in the forecast.</p>
+    pub time_series_selector: std::option::Option<crate::model::TimeSeriesSelector>,
 }
 impl DescribeForecastOutput {
     /// <p>The forecast ARN as specified in the request.</p>
@@ -2905,6 +2945,10 @@ impl DescribeForecastOutput {
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
+    /// <p>The time series to include in the forecast.</p>
+    pub fn time_series_selector(&self) -> std::option::Option<&crate::model::TimeSeriesSelector> {
+        self.time_series_selector.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeForecastOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2922,6 +2966,7 @@ impl std::fmt::Debug for DescribeForecastOutput {
         formatter.field("message", &self.message);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.field("time_series_selector", &self.time_series_selector);
         formatter.finish()
     }
 }
@@ -2942,6 +2987,7 @@ pub mod describe_forecast_output {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) time_series_selector: std::option::Option<crate::model::TimeSeriesSelector>,
     }
     impl Builder {
         /// <p>The forecast ARN as specified in the request.</p>
@@ -3101,6 +3147,19 @@ pub mod describe_forecast_output {
             self.last_modification_time = input;
             self
         }
+        /// <p>The time series to include in the forecast.</p>
+        pub fn time_series_selector(mut self, input: crate::model::TimeSeriesSelector) -> Self {
+            self.time_series_selector = Some(input);
+            self
+        }
+        /// <p>The time series to include in the forecast.</p>
+        pub fn set_time_series_selector(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesSelector>,
+        ) -> Self {
+            self.time_series_selector = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeForecastOutput`](crate::output::DescribeForecastOutput)
         pub fn build(self) -> crate::output::DescribeForecastOutput {
             crate::output::DescribeForecastOutput {
@@ -3114,6 +3173,7 @@ pub mod describe_forecast_output {
                 message: self.message,
                 creation_time: self.creation_time,
                 last_modification_time: self.last_modification_time,
+                time_series_selector: self.time_series_selector,
             }
         }
     }
@@ -3133,7 +3193,7 @@ pub struct DescribeExplainabilityExportOutput {
     pub explainability_export_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Explainability export.</p>
     pub explainability_export_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     pub explainability_arn: std::option::Option<std::string::String>,
     /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub destination: std::option::Option<crate::model::DataDestination>,
@@ -3158,6 +3218,8 @@ pub struct DescribeExplainabilityExportOutput {
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub format: std::option::Option<std::string::String>,
 }
 impl DescribeExplainabilityExportOutput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
@@ -3168,7 +3230,7 @@ impl DescribeExplainabilityExportOutput {
     pub fn explainability_export_name(&self) -> std::option::Option<&str> {
         self.explainability_export_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     pub fn explainability_arn(&self) -> std::option::Option<&str> {
         self.explainability_arn.as_deref()
     }
@@ -3205,6 +3267,10 @@ impl DescribeExplainabilityExportOutput {
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeExplainabilityExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3220,6 +3286,7 @@ impl std::fmt::Debug for DescribeExplainabilityExportOutput {
         formatter.field("status", &self.status);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }
@@ -3238,6 +3305,7 @@ pub mod describe_explainability_export_output {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) format: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
@@ -3266,12 +3334,12 @@ pub mod describe_explainability_export_output {
             self.explainability_export_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
         pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.explainability_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
         pub fn set_explainability_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3364,6 +3432,16 @@ pub mod describe_explainability_export_output {
             self.last_modification_time = input;
             self
         }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeExplainabilityExportOutput`](crate::output::DescribeExplainabilityExportOutput)
         pub fn build(self) -> crate::output::DescribeExplainabilityExportOutput {
             crate::output::DescribeExplainabilityExportOutput {
@@ -3375,6 +3453,7 @@ pub mod describe_explainability_export_output {
                 status: self.status,
                 creation_time: self.creation_time,
                 last_modification_time: self.last_modification_time,
+                format: self.format,
             }
         }
     }
@@ -3826,6 +3905,8 @@ pub struct DescribeDatasetImportJobOutput {
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The format of the imported data, CSV or PARQUET.</p>
+    pub format: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetImportJobOutput {
     /// <p>The name of the dataset import job.</p>
@@ -3910,6 +3991,10 @@ impl DescribeDatasetImportJobOutput {
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
+    /// <p>The format of the imported data, CSV or PARQUET.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3935,6 +4020,7 @@ impl std::fmt::Debug for DescribeDatasetImportJobOutput {
         formatter.field("message", &self.message);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }
@@ -3962,6 +4048,7 @@ pub mod describe_dataset_import_job_output {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) format: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the dataset import job.</p>
@@ -4192,6 +4279,16 @@ pub mod describe_dataset_import_job_output {
             self.last_modification_time = input;
             self
         }
+        /// <p>The format of the imported data, CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the imported data, CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDatasetImportJobOutput`](crate::output::DescribeDatasetImportJobOutput)
         pub fn build(self) -> crate::output::DescribeDatasetImportJobOutput {
             crate::output::DescribeDatasetImportJobOutput {
@@ -4212,6 +4309,7 @@ pub mod describe_dataset_import_job_output {
                 message: self.message,
                 creation_time: self.creation_time,
                 last_modification_time: self.last_modification_time,
+                format: self.format,
             }
         }
     }

@@ -2477,6 +2477,8 @@ pub struct DataSourceConfiguration {
     pub quip_configuration: std::option::Option<crate::model::QuipConfiguration>,
     /// <p>Provides the configuration information to connect to Jira as your data source.</p>
     pub jira_configuration: std::option::Option<crate::model::JiraConfiguration>,
+    /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+    pub git_hub_configuration: std::option::Option<crate::model::GitHubConfiguration>,
 }
 impl DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2559,6 +2561,10 @@ impl DataSourceConfiguration {
     pub fn jira_configuration(&self) -> std::option::Option<&crate::model::JiraConfiguration> {
         self.jira_configuration.as_ref()
     }
+    /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+    pub fn git_hub_configuration(&self) -> std::option::Option<&crate::model::GitHubConfiguration> {
+        self.git_hub_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2581,6 +2587,7 @@ impl std::fmt::Debug for DataSourceConfiguration {
         formatter.field("box_configuration", &self.box_configuration);
         formatter.field("quip_configuration", &self.quip_configuration);
         formatter.field("jira_configuration", &self.jira_configuration);
+        formatter.field("git_hub_configuration", &self.git_hub_configuration);
         formatter.finish()
     }
 }
@@ -2614,6 +2621,7 @@ pub mod data_source_configuration {
         pub(crate) box_configuration: std::option::Option<crate::model::BoxConfiguration>,
         pub(crate) quip_configuration: std::option::Option<crate::model::QuipConfiguration>,
         pub(crate) jira_configuration: std::option::Option<crate::model::JiraConfiguration>,
+        pub(crate) git_hub_configuration: std::option::Option<crate::model::GitHubConfiguration>,
     }
     impl Builder {
         /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
@@ -2838,6 +2846,19 @@ pub mod data_source_configuration {
             self.jira_configuration = input;
             self
         }
+        /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+        pub fn git_hub_configuration(mut self, input: crate::model::GitHubConfiguration) -> Self {
+            self.git_hub_configuration = Some(input);
+            self
+        }
+        /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+        pub fn set_git_hub_configuration(
+            mut self,
+            input: std::option::Option<crate::model::GitHubConfiguration>,
+        ) -> Self {
+            self.git_hub_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
         pub fn build(self) -> crate::model::DataSourceConfiguration {
             crate::model::DataSourceConfiguration {
@@ -2856,6 +2877,7 @@ pub mod data_source_configuration {
                 box_configuration: self.box_configuration,
                 quip_configuration: self.quip_configuration,
                 jira_configuration: self.jira_configuration,
+                git_hub_configuration: self.git_hub_configuration,
             }
         }
     }
@@ -2867,7 +2889,1410 @@ impl DataSourceConfiguration {
     }
 }
 
+/// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GitHubConfiguration {
+    /// <p>Configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
+    pub saa_s_configuration: std::option::Option<crate::model::SaaSConfiguration>,
+    /// <p>Configuration information to connect to GitHub Enterprise Server (on premises).</p>
+    pub on_premise_configuration: std::option::Option<crate::model::OnPremiseConfiguration>,
+    /// <p>The type of GitHub service you want to connect to—GitHub Enterprise Cloud (SaaS) or GitHub Enterprise Server (on premises).</p>
+    pub r#type: std::option::Option<crate::model::Type>,
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication for a GitHub data source</a>.</p> </li>
+    /// </ul>
+    pub secret_arn: std::option::Option<std::string::String>,
+    /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
+    pub use_change_log: bool,
+    /// <p>Configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
+    pub git_hub_document_crawl_properties:
+        std::option::Option<crate::model::GitHubDocumentCrawlProperties>,
+    /// <p>A list of names of the specific repositories you want to index.</p>
+    pub repository_filter: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to include certain folder names in your GitHub repository or repositories. Folder names that match the patterns are included in the index. Folder names that don't match the patterns are excluded from the index. If a folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+    pub inclusion_folder_name_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to include certain file types in your GitHub repository or repositories. File types that match the patterns are included in the index. File types that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub inclusion_file_type_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to include certain file names in your GitHub repository or repositories. File names that match the patterns are included in the index. File names that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub inclusion_file_name_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to exclude certain folder names in your GitHub repository or repositories. Folder names that match the patterns are excluded from the index. Folder names that don't match the patterns are included in the index. If a folder matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+    pub exclusion_folder_name_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to exclude certain file types in your GitHub repository or repositories. File types that match the patterns are excluded from the index. File types that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub exclusion_file_type_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to exclude certain file names in your GitHub repository or repositories. File names that match the patterns are excluded from the index. File names that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub exclusion_file_name_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Configuration information of an Amazon Virtual Private Cloud to connect to your GitHub. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map GitHub repository attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub git_hub_repository_configuration_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub commits to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub git_hub_commit_configuration_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub git_hub_issue_document_configuration_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub git_hub_issue_comment_configuration_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub git_hub_issue_attachment_configuration_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub git_hub_pull_request_comment_configuration_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull requests to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub git_hub_pull_request_document_configuration_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub git_hub_pull_request_document_attachment_configuration_field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+}
+impl GitHubConfiguration {
+    /// <p>Configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
+    pub fn saa_s_configuration(&self) -> std::option::Option<&crate::model::SaaSConfiguration> {
+        self.saa_s_configuration.as_ref()
+    }
+    /// <p>Configuration information to connect to GitHub Enterprise Server (on premises).</p>
+    pub fn on_premise_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OnPremiseConfiguration> {
+        self.on_premise_configuration.as_ref()
+    }
+    /// <p>The type of GitHub service you want to connect to—GitHub Enterprise Cloud (SaaS) or GitHub Enterprise Server (on premises).</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication for a GitHub data source</a>.</p> </li>
+    /// </ul>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
+    pub fn use_change_log(&self) -> bool {
+        self.use_change_log
+    }
+    /// <p>Configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
+    pub fn git_hub_document_crawl_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::GitHubDocumentCrawlProperties> {
+        self.git_hub_document_crawl_properties.as_ref()
+    }
+    /// <p>A list of names of the specific repositories you want to index.</p>
+    pub fn repository_filter(&self) -> std::option::Option<&[std::string::String]> {
+        self.repository_filter.as_deref()
+    }
+    /// <p>A list of regular expression patterns to include certain folder names in your GitHub repository or repositories. Folder names that match the patterns are included in the index. Folder names that don't match the patterns are excluded from the index. If a folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+    pub fn inclusion_folder_name_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.inclusion_folder_name_patterns.as_deref()
+    }
+    /// <p>A list of regular expression patterns to include certain file types in your GitHub repository or repositories. File types that match the patterns are included in the index. File types that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn inclusion_file_type_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.inclusion_file_type_patterns.as_deref()
+    }
+    /// <p>A list of regular expression patterns to include certain file names in your GitHub repository or repositories. File names that match the patterns are included in the index. File names that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn inclusion_file_name_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.inclusion_file_name_patterns.as_deref()
+    }
+    /// <p>A list of regular expression patterns to exclude certain folder names in your GitHub repository or repositories. Folder names that match the patterns are excluded from the index. Folder names that don't match the patterns are included in the index. If a folder matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+    pub fn exclusion_folder_name_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusion_folder_name_patterns.as_deref()
+    }
+    /// <p>A list of regular expression patterns to exclude certain file types in your GitHub repository or repositories. File types that match the patterns are excluded from the index. File types that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn exclusion_file_type_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusion_file_type_patterns.as_deref()
+    }
+    /// <p>A list of regular expression patterns to exclude certain file names in your GitHub repository or repositories. File names that match the patterns are excluded from the index. File names that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn exclusion_file_name_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusion_file_name_patterns.as_deref()
+    }
+    /// <p>Configuration information of an Amazon Virtual Private Cloud to connect to your GitHub. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn vpc_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map GitHub repository attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn git_hub_repository_configuration_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.git_hub_repository_configuration_field_mappings
+            .as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub commits to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn git_hub_commit_configuration_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.git_hub_commit_configuration_field_mappings.as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn git_hub_issue_document_configuration_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.git_hub_issue_document_configuration_field_mappings
+            .as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn git_hub_issue_comment_configuration_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.git_hub_issue_comment_configuration_field_mappings
+            .as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn git_hub_issue_attachment_configuration_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.git_hub_issue_attachment_configuration_field_mappings
+            .as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn git_hub_pull_request_comment_configuration_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.git_hub_pull_request_comment_configuration_field_mappings
+            .as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull requests to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn git_hub_pull_request_document_configuration_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.git_hub_pull_request_document_configuration_field_mappings
+            .as_deref()
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+    pub fn git_hub_pull_request_document_attachment_configuration_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
+        self.git_hub_pull_request_document_attachment_configuration_field_mappings
+            .as_deref()
+    }
+}
+impl std::fmt::Debug for GitHubConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GitHubConfiguration");
+        formatter.field("saa_s_configuration", &self.saa_s_configuration);
+        formatter.field("on_premise_configuration", &self.on_premise_configuration);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("secret_arn", &self.secret_arn);
+        formatter.field("use_change_log", &self.use_change_log);
+        formatter.field(
+            "git_hub_document_crawl_properties",
+            &self.git_hub_document_crawl_properties,
+        );
+        formatter.field("repository_filter", &self.repository_filter);
+        formatter.field(
+            "inclusion_folder_name_patterns",
+            &self.inclusion_folder_name_patterns,
+        );
+        formatter.field(
+            "inclusion_file_type_patterns",
+            &self.inclusion_file_type_patterns,
+        );
+        formatter.field(
+            "inclusion_file_name_patterns",
+            &self.inclusion_file_name_patterns,
+        );
+        formatter.field(
+            "exclusion_folder_name_patterns",
+            &self.exclusion_folder_name_patterns,
+        );
+        formatter.field(
+            "exclusion_file_type_patterns",
+            &self.exclusion_file_type_patterns,
+        );
+        formatter.field(
+            "exclusion_file_name_patterns",
+            &self.exclusion_file_name_patterns,
+        );
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.field(
+            "git_hub_repository_configuration_field_mappings",
+            &self.git_hub_repository_configuration_field_mappings,
+        );
+        formatter.field(
+            "git_hub_commit_configuration_field_mappings",
+            &self.git_hub_commit_configuration_field_mappings,
+        );
+        formatter.field(
+            "git_hub_issue_document_configuration_field_mappings",
+            &self.git_hub_issue_document_configuration_field_mappings,
+        );
+        formatter.field(
+            "git_hub_issue_comment_configuration_field_mappings",
+            &self.git_hub_issue_comment_configuration_field_mappings,
+        );
+        formatter.field(
+            "git_hub_issue_attachment_configuration_field_mappings",
+            &self.git_hub_issue_attachment_configuration_field_mappings,
+        );
+        formatter.field(
+            "git_hub_pull_request_comment_configuration_field_mappings",
+            &self.git_hub_pull_request_comment_configuration_field_mappings,
+        );
+        formatter.field(
+            "git_hub_pull_request_document_configuration_field_mappings",
+            &self.git_hub_pull_request_document_configuration_field_mappings,
+        );
+        formatter.field(
+            "git_hub_pull_request_document_attachment_configuration_field_mappings",
+            &self.git_hub_pull_request_document_attachment_configuration_field_mappings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GitHubConfiguration`](crate::model::GitHubConfiguration)
+pub mod git_hub_configuration {
+
+    /// A builder for [`GitHubConfiguration`](crate::model::GitHubConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) saa_s_configuration: std::option::Option<crate::model::SaaSConfiguration>,
+        pub(crate) on_premise_configuration:
+            std::option::Option<crate::model::OnPremiseConfiguration>,
+        pub(crate) r#type: std::option::Option<crate::model::Type>,
+        pub(crate) secret_arn: std::option::Option<std::string::String>,
+        pub(crate) use_change_log: std::option::Option<bool>,
+        pub(crate) git_hub_document_crawl_properties:
+            std::option::Option<crate::model::GitHubDocumentCrawlProperties>,
+        pub(crate) repository_filter: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) inclusion_folder_name_patterns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) inclusion_file_type_patterns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) inclusion_file_name_patterns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) exclusion_folder_name_patterns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) exclusion_file_type_patterns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) exclusion_file_name_patterns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        pub(crate) git_hub_repository_configuration_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) git_hub_commit_configuration_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) git_hub_issue_document_configuration_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) git_hub_issue_comment_configuration_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) git_hub_issue_attachment_configuration_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) git_hub_pull_request_comment_configuration_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) git_hub_pull_request_document_configuration_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        pub(crate) git_hub_pull_request_document_attachment_configuration_field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    }
+    impl Builder {
+        /// <p>Configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
+        pub fn saa_s_configuration(mut self, input: crate::model::SaaSConfiguration) -> Self {
+            self.saa_s_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
+        pub fn set_saa_s_configuration(
+            mut self,
+            input: std::option::Option<crate::model::SaaSConfiguration>,
+        ) -> Self {
+            self.saa_s_configuration = input;
+            self
+        }
+        /// <p>Configuration information to connect to GitHub Enterprise Server (on premises).</p>
+        pub fn on_premise_configuration(
+            mut self,
+            input: crate::model::OnPremiseConfiguration,
+        ) -> Self {
+            self.on_premise_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information to connect to GitHub Enterprise Server (on premises).</p>
+        pub fn set_on_premise_configuration(
+            mut self,
+            input: std::option::Option<crate::model::OnPremiseConfiguration>,
+        ) -> Self {
+            self.on_premise_configuration = input;
+            self
+        }
+        /// <p>The type of GitHub service you want to connect to—GitHub Enterprise Cloud (SaaS) or GitHub Enterprise Server (on premises).</p>
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of GitHub service you want to connect to—GitHub Enterprise Cloud (SaaS) or GitHub Enterprise Server (on premises).</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication for a GitHub data source</a>.</p> </li>
+        /// </ul>
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your GitHub. The secret must contain a JSON structure with the following keys:</p>
+        /// <ul>
+        /// <li> <p>githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication for a GitHub data source</a>.</p> </li>
+        /// </ul>
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
+            self
+        }
+        /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
+        pub fn use_change_log(mut self, input: bool) -> Self {
+            self.use_change_log = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
+        pub fn set_use_change_log(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_change_log = input;
+            self
+        }
+        /// <p>Configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
+        pub fn git_hub_document_crawl_properties(
+            mut self,
+            input: crate::model::GitHubDocumentCrawlProperties,
+        ) -> Self {
+            self.git_hub_document_crawl_properties = Some(input);
+            self
+        }
+        /// <p>Configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
+        pub fn set_git_hub_document_crawl_properties(
+            mut self,
+            input: std::option::Option<crate::model::GitHubDocumentCrawlProperties>,
+        ) -> Self {
+            self.git_hub_document_crawl_properties = input;
+            self
+        }
+        /// Appends an item to `repository_filter`.
+        ///
+        /// To override the contents of this collection use [`set_repository_filter`](Self::set_repository_filter).
+        ///
+        /// <p>A list of names of the specific repositories you want to index.</p>
+        pub fn repository_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.repository_filter.unwrap_or_default();
+            v.push(input.into());
+            self.repository_filter = Some(v);
+            self
+        }
+        /// <p>A list of names of the specific repositories you want to index.</p>
+        pub fn set_repository_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.repository_filter = input;
+            self
+        }
+        /// Appends an item to `inclusion_folder_name_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_folder_name_patterns`](Self::set_inclusion_folder_name_patterns).
+        ///
+        /// <p>A list of regular expression patterns to include certain folder names in your GitHub repository or repositories. Folder names that match the patterns are included in the index. Folder names that don't match the patterns are excluded from the index. If a folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+        pub fn inclusion_folder_name_patterns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.inclusion_folder_name_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.inclusion_folder_name_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to include certain folder names in your GitHub repository or repositories. Folder names that match the patterns are included in the index. Folder names that don't match the patterns are excluded from the index. If a folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+        pub fn set_inclusion_folder_name_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inclusion_folder_name_patterns = input;
+            self
+        }
+        /// Appends an item to `inclusion_file_type_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_file_type_patterns`](Self::set_inclusion_file_type_patterns).
+        ///
+        /// <p>A list of regular expression patterns to include certain file types in your GitHub repository or repositories. File types that match the patterns are included in the index. File types that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn inclusion_file_type_patterns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.inclusion_file_type_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.inclusion_file_type_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to include certain file types in your GitHub repository or repositories. File types that match the patterns are included in the index. File types that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_inclusion_file_type_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inclusion_file_type_patterns = input;
+            self
+        }
+        /// Appends an item to `inclusion_file_name_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_file_name_patterns`](Self::set_inclusion_file_name_patterns).
+        ///
+        /// <p>A list of regular expression patterns to include certain file names in your GitHub repository or repositories. File names that match the patterns are included in the index. File names that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn inclusion_file_name_patterns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.inclusion_file_name_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.inclusion_file_name_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to include certain file names in your GitHub repository or repositories. File names that match the patterns are included in the index. File names that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_inclusion_file_name_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inclusion_file_name_patterns = input;
+            self
+        }
+        /// Appends an item to `exclusion_folder_name_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_folder_name_patterns`](Self::set_exclusion_folder_name_patterns).
+        ///
+        /// <p>A list of regular expression patterns to exclude certain folder names in your GitHub repository or repositories. Folder names that match the patterns are excluded from the index. Folder names that don't match the patterns are included in the index. If a folder matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+        pub fn exclusion_folder_name_patterns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.exclusion_folder_name_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.exclusion_folder_name_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to exclude certain folder names in your GitHub repository or repositories. Folder names that match the patterns are excluded from the index. Folder names that don't match the patterns are included in the index. If a folder matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
+        pub fn set_exclusion_folder_name_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusion_folder_name_patterns = input;
+            self
+        }
+        /// Appends an item to `exclusion_file_type_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_file_type_patterns`](Self::set_exclusion_file_type_patterns).
+        ///
+        /// <p>A list of regular expression patterns to exclude certain file types in your GitHub repository or repositories. File types that match the patterns are excluded from the index. File types that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn exclusion_file_type_patterns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.exclusion_file_type_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.exclusion_file_type_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to exclude certain file types in your GitHub repository or repositories. File types that match the patterns are excluded from the index. File types that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_exclusion_file_type_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusion_file_type_patterns = input;
+            self
+        }
+        /// Appends an item to `exclusion_file_name_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_file_name_patterns`](Self::set_exclusion_file_name_patterns).
+        ///
+        /// <p>A list of regular expression patterns to exclude certain file names in your GitHub repository or repositories. File names that match the patterns are excluded from the index. File names that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn exclusion_file_name_patterns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.exclusion_file_name_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.exclusion_file_name_patterns = Some(v);
+            self
+        }
+        /// <p>A list of regular expression patterns to exclude certain file names in your GitHub repository or repositories. File names that match the patterns are excluded from the index. File names that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+        pub fn set_exclusion_file_name_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusion_file_name_patterns = input;
+            self
+        }
+        /// <p>Configuration information of an Amazon Virtual Private Cloud to connect to your GitHub. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn vpc_configuration(
+            mut self,
+            input: crate::model::DataSourceVpcConfiguration,
+        ) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        /// <p>Configuration information of an Amazon Virtual Private Cloud to connect to your GitHub. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
+        /// Appends an item to `git_hub_repository_configuration_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_git_hub_repository_configuration_field_mappings`](Self::set_git_hub_repository_configuration_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map GitHub repository attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn git_hub_repository_configuration_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self
+                .git_hub_repository_configuration_field_mappings
+                .unwrap_or_default();
+            v.push(input);
+            self.git_hub_repository_configuration_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map GitHub repository attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn set_git_hub_repository_configuration_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.git_hub_repository_configuration_field_mappings = input;
+            self
+        }
+        /// Appends an item to `git_hub_commit_configuration_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_git_hub_commit_configuration_field_mappings`](Self::set_git_hub_commit_configuration_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub commits to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn git_hub_commit_configuration_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self
+                .git_hub_commit_configuration_field_mappings
+                .unwrap_or_default();
+            v.push(input);
+            self.git_hub_commit_configuration_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub commits to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn set_git_hub_commit_configuration_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.git_hub_commit_configuration_field_mappings = input;
+            self
+        }
+        /// Appends an item to `git_hub_issue_document_configuration_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_git_hub_issue_document_configuration_field_mappings`](Self::set_git_hub_issue_document_configuration_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn git_hub_issue_document_configuration_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self
+                .git_hub_issue_document_configuration_field_mappings
+                .unwrap_or_default();
+            v.push(input);
+            self.git_hub_issue_document_configuration_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn set_git_hub_issue_document_configuration_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.git_hub_issue_document_configuration_field_mappings = input;
+            self
+        }
+        /// Appends an item to `git_hub_issue_comment_configuration_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_git_hub_issue_comment_configuration_field_mappings`](Self::set_git_hub_issue_comment_configuration_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn git_hub_issue_comment_configuration_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self
+                .git_hub_issue_comment_configuration_field_mappings
+                .unwrap_or_default();
+            v.push(input);
+            self.git_hub_issue_comment_configuration_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn set_git_hub_issue_comment_configuration_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.git_hub_issue_comment_configuration_field_mappings = input;
+            self
+        }
+        /// Appends an item to `git_hub_issue_attachment_configuration_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_git_hub_issue_attachment_configuration_field_mappings`](Self::set_git_hub_issue_attachment_configuration_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn git_hub_issue_attachment_configuration_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self
+                .git_hub_issue_attachment_configuration_field_mappings
+                .unwrap_or_default();
+            v.push(input);
+            self.git_hub_issue_attachment_configuration_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn set_git_hub_issue_attachment_configuration_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.git_hub_issue_attachment_configuration_field_mappings = input;
+            self
+        }
+        /// Appends an item to `git_hub_pull_request_comment_configuration_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_git_hub_pull_request_comment_configuration_field_mappings`](Self::set_git_hub_pull_request_comment_configuration_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn git_hub_pull_request_comment_configuration_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self
+                .git_hub_pull_request_comment_configuration_field_mappings
+                .unwrap_or_default();
+            v.push(input);
+            self.git_hub_pull_request_comment_configuration_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn set_git_hub_pull_request_comment_configuration_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.git_hub_pull_request_comment_configuration_field_mappings = input;
+            self
+        }
+        /// Appends an item to `git_hub_pull_request_document_configuration_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_git_hub_pull_request_document_configuration_field_mappings`](Self::set_git_hub_pull_request_document_configuration_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull requests to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn git_hub_pull_request_document_configuration_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self
+                .git_hub_pull_request_document_configuration_field_mappings
+                .unwrap_or_default();
+            v.push(input);
+            self.git_hub_pull_request_document_configuration_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull requests to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn set_git_hub_pull_request_document_configuration_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.git_hub_pull_request_document_configuration_field_mappings = input;
+            self
+        }
+        /// Appends an item to `git_hub_pull_request_document_attachment_configuration_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_git_hub_pull_request_document_attachment_configuration_field_mappings`](Self::set_git_hub_pull_request_document_attachment_configuration_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn git_hub_pull_request_document_attachment_configuration_field_mappings(
+            mut self,
+            input: crate::model::DataSourceToIndexFieldMapping,
+        ) -> Self {
+            let mut v = self
+                .git_hub_pull_request_document_attachment_configuration_field_mappings
+                .unwrap_or_default();
+            v.push(input);
+            self.git_hub_pull_request_document_attachment_configuration_field_mappings = Some(v);
+            self
+        }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
+        pub fn set_git_hub_pull_request_document_attachment_configuration_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.git_hub_pull_request_document_attachment_configuration_field_mappings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GitHubConfiguration`](crate::model::GitHubConfiguration)
+        pub fn build(self) -> crate::model::GitHubConfiguration {
+            crate::model::GitHubConfiguration {
+                saa_s_configuration: self.saa_s_configuration,
+                on_premise_configuration: self.on_premise_configuration,
+                r#type: self.r#type,
+                secret_arn: self.secret_arn,
+                use_change_log: self.use_change_log.unwrap_or_default(),
+                git_hub_document_crawl_properties: self.git_hub_document_crawl_properties,
+                repository_filter: self.repository_filter,
+                inclusion_folder_name_patterns: self.inclusion_folder_name_patterns,
+                inclusion_file_type_patterns: self.inclusion_file_type_patterns,
+                inclusion_file_name_patterns: self.inclusion_file_name_patterns,
+                exclusion_folder_name_patterns: self.exclusion_folder_name_patterns,
+                exclusion_file_type_patterns: self.exclusion_file_type_patterns,
+                exclusion_file_name_patterns: self.exclusion_file_name_patterns,
+                vpc_configuration: self.vpc_configuration,
+                git_hub_repository_configuration_field_mappings: self
+                    .git_hub_repository_configuration_field_mappings,
+                git_hub_commit_configuration_field_mappings: self
+                    .git_hub_commit_configuration_field_mappings,
+                git_hub_issue_document_configuration_field_mappings: self
+                    .git_hub_issue_document_configuration_field_mappings,
+                git_hub_issue_comment_configuration_field_mappings: self
+                    .git_hub_issue_comment_configuration_field_mappings,
+                git_hub_issue_attachment_configuration_field_mappings: self
+                    .git_hub_issue_attachment_configuration_field_mappings,
+                git_hub_pull_request_comment_configuration_field_mappings: self
+                    .git_hub_pull_request_comment_configuration_field_mappings,
+                git_hub_pull_request_document_configuration_field_mappings: self
+                    .git_hub_pull_request_document_configuration_field_mappings,
+                git_hub_pull_request_document_attachment_configuration_field_mappings: self
+                    .git_hub_pull_request_document_attachment_configuration_field_mappings,
+            }
+        }
+    }
+}
+impl GitHubConfiguration {
+    /// Creates a new builder-style object to manufacture [`GitHubConfiguration`](crate::model::GitHubConfiguration)
+    pub fn builder() -> crate::model::git_hub_configuration::Builder {
+        crate::model::git_hub_configuration::Builder::default()
+    }
+}
+
+/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub data_source_field_name: std::option::Option<std::string::String>,
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub date_field_format: std::option::Option<std::string::String>,
+    /// <p>The name of the field in the index.</p>
+    pub index_field_name: std::option::Option<std::string::String>,
+}
+impl DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
+        self.data_source_field_name.as_deref()
+    }
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub fn date_field_format(&self) -> std::option::Option<&str> {
+        self.date_field_format.as_deref()
+    }
+    /// <p>The name of the field in the index.</p>
+    pub fn index_field_name(&self) -> std::option::Option<&str> {
+        self.index_field_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceToIndexFieldMapping {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
+        formatter.field("data_source_field_name", &self.data_source_field_name);
+        formatter.field("date_field_format", &self.date_field_format);
+        formatter.field("index_field_name", &self.index_field_name);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+pub mod data_source_to_index_field_mapping {
+
+    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
+        pub(crate) date_field_format: std::option::Option<std::string::String>,
+        pub(crate) index_field_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn set_data_source_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_field_name = input;
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.date_field_format = Some(input.into());
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn set_date_field_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.date_field_format = input;
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_field_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn set_index_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.index_field_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
+            crate::model::DataSourceToIndexFieldMapping {
+                data_source_field_name: self.data_source_field_name,
+                date_field_format: self.date_field_format,
+                index_field_name: self.index_field_name,
+            }
+        }
+    }
+}
+impl DataSourceToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
+        crate::model::data_source_to_index_field_mapping::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DataSourceVpcConfiguration {
+    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DataSourceVpcConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+pub mod data_source_vpc_configuration {
+
+    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
+            crate::model::DataSourceVpcConfiguration {
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl DataSourceVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
+    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
+        crate::model::data_source_vpc_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GitHubDocumentCrawlProperties {
+    /// <p> <code>TRUE</code> to index all files with a repository.</p>
+    pub crawl_repository_documents: bool,
+    /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+    pub crawl_issue: bool,
+    /// <p> <code>TRUE</code> to index all comments on issues.</p>
+    pub crawl_issue_comment: bool,
+    /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+    pub crawl_issue_comment_attachment: bool,
+    /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+    pub crawl_pull_request: bool,
+    /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+    pub crawl_pull_request_comment: bool,
+    /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+    pub crawl_pull_request_comment_attachment: bool,
+}
+impl GitHubDocumentCrawlProperties {
+    /// <p> <code>TRUE</code> to index all files with a repository.</p>
+    pub fn crawl_repository_documents(&self) -> bool {
+        self.crawl_repository_documents
+    }
+    /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+    pub fn crawl_issue(&self) -> bool {
+        self.crawl_issue
+    }
+    /// <p> <code>TRUE</code> to index all comments on issues.</p>
+    pub fn crawl_issue_comment(&self) -> bool {
+        self.crawl_issue_comment
+    }
+    /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+    pub fn crawl_issue_comment_attachment(&self) -> bool {
+        self.crawl_issue_comment_attachment
+    }
+    /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+    pub fn crawl_pull_request(&self) -> bool {
+        self.crawl_pull_request
+    }
+    /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+    pub fn crawl_pull_request_comment(&self) -> bool {
+        self.crawl_pull_request_comment
+    }
+    /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+    pub fn crawl_pull_request_comment_attachment(&self) -> bool {
+        self.crawl_pull_request_comment_attachment
+    }
+}
+impl std::fmt::Debug for GitHubDocumentCrawlProperties {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GitHubDocumentCrawlProperties");
+        formatter.field(
+            "crawl_repository_documents",
+            &self.crawl_repository_documents,
+        );
+        formatter.field("crawl_issue", &self.crawl_issue);
+        formatter.field("crawl_issue_comment", &self.crawl_issue_comment);
+        formatter.field(
+            "crawl_issue_comment_attachment",
+            &self.crawl_issue_comment_attachment,
+        );
+        formatter.field("crawl_pull_request", &self.crawl_pull_request);
+        formatter.field(
+            "crawl_pull_request_comment",
+            &self.crawl_pull_request_comment,
+        );
+        formatter.field(
+            "crawl_pull_request_comment_attachment",
+            &self.crawl_pull_request_comment_attachment,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GitHubDocumentCrawlProperties`](crate::model::GitHubDocumentCrawlProperties)
+pub mod git_hub_document_crawl_properties {
+
+    /// A builder for [`GitHubDocumentCrawlProperties`](crate::model::GitHubDocumentCrawlProperties)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) crawl_repository_documents: std::option::Option<bool>,
+        pub(crate) crawl_issue: std::option::Option<bool>,
+        pub(crate) crawl_issue_comment: std::option::Option<bool>,
+        pub(crate) crawl_issue_comment_attachment: std::option::Option<bool>,
+        pub(crate) crawl_pull_request: std::option::Option<bool>,
+        pub(crate) crawl_pull_request_comment: std::option::Option<bool>,
+        pub(crate) crawl_pull_request_comment_attachment: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p> <code>TRUE</code> to index all files with a repository.</p>
+        pub fn crawl_repository_documents(mut self, input: bool) -> Self {
+            self.crawl_repository_documents = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to index all files with a repository.</p>
+        pub fn set_crawl_repository_documents(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_repository_documents = input;
+            self
+        }
+        /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+        pub fn crawl_issue(mut self, input: bool) -> Self {
+            self.crawl_issue = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+        pub fn set_crawl_issue(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_issue = input;
+            self
+        }
+        /// <p> <code>TRUE</code> to index all comments on issues.</p>
+        pub fn crawl_issue_comment(mut self, input: bool) -> Self {
+            self.crawl_issue_comment = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to index all comments on issues.</p>
+        pub fn set_crawl_issue_comment(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_issue_comment = input;
+            self
+        }
+        /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+        pub fn crawl_issue_comment_attachment(mut self, input: bool) -> Self {
+            self.crawl_issue_comment_attachment = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+        pub fn set_crawl_issue_comment_attachment(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.crawl_issue_comment_attachment = input;
+            self
+        }
+        /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+        pub fn crawl_pull_request(mut self, input: bool) -> Self {
+            self.crawl_pull_request = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+        pub fn set_crawl_pull_request(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_pull_request = input;
+            self
+        }
+        /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+        pub fn crawl_pull_request_comment(mut self, input: bool) -> Self {
+            self.crawl_pull_request_comment = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+        pub fn set_crawl_pull_request_comment(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_pull_request_comment = input;
+            self
+        }
+        /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+        pub fn crawl_pull_request_comment_attachment(mut self, input: bool) -> Self {
+            self.crawl_pull_request_comment_attachment = Some(input);
+            self
+        }
+        /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+        pub fn set_crawl_pull_request_comment_attachment(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.crawl_pull_request_comment_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GitHubDocumentCrawlProperties`](crate::model::GitHubDocumentCrawlProperties)
+        pub fn build(self) -> crate::model::GitHubDocumentCrawlProperties {
+            crate::model::GitHubDocumentCrawlProperties {
+                crawl_repository_documents: self.crawl_repository_documents.unwrap_or_default(),
+                crawl_issue: self.crawl_issue.unwrap_or_default(),
+                crawl_issue_comment: self.crawl_issue_comment.unwrap_or_default(),
+                crawl_issue_comment_attachment: self
+                    .crawl_issue_comment_attachment
+                    .unwrap_or_default(),
+                crawl_pull_request: self.crawl_pull_request.unwrap_or_default(),
+                crawl_pull_request_comment: self.crawl_pull_request_comment.unwrap_or_default(),
+                crawl_pull_request_comment_attachment: self
+                    .crawl_pull_request_comment_attachment
+                    .unwrap_or_default(),
+            }
+        }
+    }
+}
+impl GitHubDocumentCrawlProperties {
+    /// Creates a new builder-style object to manufacture [`GitHubDocumentCrawlProperties`](crate::model::GitHubDocumentCrawlProperties)
+    pub fn builder() -> crate::model::git_hub_document_crawl_properties::Builder {
+        crate::model::git_hub_document_crawl_properties::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Type {
+    #[allow(missing_docs)] // documentation missing in model
+    OnPremise,
+    #[allow(missing_docs)] // documentation missing in model
+    Saas,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Type {
+    fn from(s: &str) -> Self {
+        match s {
+            "ON_PREMISE" => Type::OnPremise,
+            "SAAS" => Type::Saas,
+            other => Type::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Type {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Type::from(s))
+    }
+}
+impl Type {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Type::OnPremise => "ON_PREMISE",
+            Type::Saas => "SAAS",
+            Type::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ON_PREMISE", "SAAS"]
+    }
+}
+impl AsRef<str> for Type {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Provides the configuration information to connect to GitHub Enterprise Server (on premises).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OnPremiseConfiguration {
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+    pub host_url: std::option::Option<std::string::String>,
+    /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+    pub organization_name: std::option::Option<std::string::String>,
+    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
+}
+impl OnPremiseConfiguration {
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+    pub fn host_url(&self) -> std::option::Option<&str> {
+        self.host_url.as_deref()
+    }
+    /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+    pub fn organization_name(&self) -> std::option::Option<&str> {
+        self.organization_name.as_deref()
+    }
+    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    pub fn ssl_certificate_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
+        self.ssl_certificate_s3_path.as_ref()
+    }
+}
+impl std::fmt::Debug for OnPremiseConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OnPremiseConfiguration");
+        formatter.field("host_url", &self.host_url);
+        formatter.field("organization_name", &self.organization_name);
+        formatter.field("ssl_certificate_s3_path", &self.ssl_certificate_s3_path);
+        formatter.finish()
+    }
+}
+/// See [`OnPremiseConfiguration`](crate::model::OnPremiseConfiguration)
+pub mod on_premise_configuration {
+
+    /// A builder for [`OnPremiseConfiguration`](crate::model::OnPremiseConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) host_url: std::option::Option<std::string::String>,
+        pub(crate) organization_name: std::option::Option<std::string::String>,
+        pub(crate) ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
+    }
+    impl Builder {
+        /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+        pub fn host_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_url = Some(input.into());
+            self
+        }
+        /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+        pub fn set_host_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_url = input;
+            self
+        }
+        /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+        pub fn organization_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+        pub fn set_organization_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_name = input;
+            self
+        }
+        /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+        pub fn ssl_certificate_s3_path(mut self, input: crate::model::S3Path) -> Self {
+            self.ssl_certificate_s3_path = Some(input);
+            self
+        }
+        /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+        pub fn set_ssl_certificate_s3_path(
+            mut self,
+            input: std::option::Option<crate::model::S3Path>,
+        ) -> Self {
+            self.ssl_certificate_s3_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OnPremiseConfiguration`](crate::model::OnPremiseConfiguration)
+        pub fn build(self) -> crate::model::OnPremiseConfiguration {
+            crate::model::OnPremiseConfiguration {
+                host_url: self.host_url,
+                organization_name: self.organization_name,
+                ssl_certificate_s3_path: self.ssl_certificate_s3_path,
+            }
+        }
+    }
+}
+impl OnPremiseConfiguration {
+    /// Creates a new builder-style object to manufacture [`OnPremiseConfiguration`](crate::model::OnPremiseConfiguration)
+    pub fn builder() -> crate::model::on_premise_configuration::Builder {
+        crate::model::on_premise_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SaaSConfiguration {
+    /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+    pub organization_name: std::option::Option<std::string::String>,
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
+    pub host_url: std::option::Option<std::string::String>,
+}
+impl SaaSConfiguration {
+    /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+    pub fn organization_name(&self) -> std::option::Option<&str> {
+        self.organization_name.as_deref()
+    }
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
+    pub fn host_url(&self) -> std::option::Option<&str> {
+        self.host_url.as_deref()
+    }
+}
+impl std::fmt::Debug for SaaSConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SaaSConfiguration");
+        formatter.field("organization_name", &self.organization_name);
+        formatter.field("host_url", &self.host_url);
+        formatter.finish()
+    }
+}
+/// See [`SaaSConfiguration`](crate::model::SaaSConfiguration)
+pub mod saa_s_configuration {
+
+    /// A builder for [`SaaSConfiguration`](crate::model::SaaSConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_name: std::option::Option<std::string::String>,
+        pub(crate) host_url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+        pub fn organization_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
+        pub fn set_organization_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_name = input;
+            self
+        }
+        /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
+        pub fn host_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_url = Some(input.into());
+            self
+        }
+        /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
+        pub fn set_host_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SaaSConfiguration`](crate::model::SaaSConfiguration)
+        pub fn build(self) -> crate::model::SaaSConfiguration {
+            crate::model::SaaSConfiguration {
+                organization_name: self.organization_name,
+                host_url: self.host_url,
+            }
+        }
+    }
+}
+impl SaaSConfiguration {
+    /// Creates a new builder-style object to manufacture [`SaaSConfiguration`](crate::model::SaaSConfiguration)
+    pub fn builder() -> crate::model::saa_s_configuration::Builder {
+        crate::model::saa_s_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to Jira as your data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JiraConfiguration {
@@ -2875,7 +4300,7 @@ pub struct JiraConfiguration {
     pub jira_account_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>.</p> </li>
+    /// <li> <p>jira-id—The ID of the Jira account.</p> </li>
     /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
     /// </ul>
     pub secret_arn: std::option::Option<std::string::String>,
@@ -2918,7 +4343,7 @@ impl JiraConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>.</p> </li>
+    /// <li> <p>jira-id—The ID of the Jira account.</p> </li>
     /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
     /// </ul>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
@@ -3055,7 +4480,7 @@ pub mod jira_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>.</p> </li>
+        /// <li> <p>jira-id—The ID of the Jira account.</p> </li>
         /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
         /// </ul>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3064,7 +4489,7 @@ pub mod jira_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
         /// <ul>
-        /// <li> <p>jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>.</p> </li>
+        /// <li> <p>jira-id—The ID of the Jira account.</p> </li>
         /// <li> <p>jiraCredentials—The password of the Jira account user.</p> </li>
         /// </ul>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3347,200 +4772,6 @@ impl JiraConfiguration {
     /// Creates a new builder-style object to manufacture [`JiraConfiguration`](crate::model::JiraConfiguration)
     pub fn builder() -> crate::model::jira_configuration::Builder {
         crate::model::jira_configuration::Builder::default()
-    }
-}
-
-/// <p>Provides the configuration information to connect to an Amazon VPC.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl DataSourceVpcConfiguration {
-    /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.subnet_ids.as_deref()
-    }
-    /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
-        self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceVpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-pub mod data_source_vpc_configuration {
-
-    /// A builder for [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// Appends an item to `subnet_ids`.
-        ///
-        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
-        ///
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// Appends an item to `security_group_ids`.
-        ///
-        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
-        ///
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-        pub fn build(self) -> crate::model::DataSourceVpcConfiguration {
-            crate::model::DataSourceVpcConfiguration {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-            }
-        }
-    }
-}
-impl DataSourceVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration)
-    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
-        crate::model::data_source_vpc_configuration::Builder::default()
-    }
-}
-
-/// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub data_source_field_name: std::option::Option<std::string::String>,
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub date_field_format: std::option::Option<std::string::String>,
-    /// <p>The name of the field in the index.</p>
-    pub index_field_name: std::option::Option<std::string::String>,
-}
-impl DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
-        self.data_source_field_name.as_deref()
-    }
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub fn date_field_format(&self) -> std::option::Option<&str> {
-        self.date_field_format.as_deref()
-    }
-    /// <p>The name of the field in the index.</p>
-    pub fn index_field_name(&self) -> std::option::Option<&str> {
-        self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-pub mod data_source_to_index_field_mapping {
-
-    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
-        pub(crate) date_field_format: std::option::Option<std::string::String>,
-        pub(crate) index_field_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.data_source_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn set_data_source_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_field_name = input;
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
-            self.date_field_format = Some(input.into());
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn set_date_field_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.date_field_format = input;
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.index_field_name = Some(input.into());
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn set_index_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.index_field_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
-            crate::model::DataSourceToIndexFieldMapping {
-                data_source_field_name: self.data_source_field_name,
-                date_field_format: self.date_field_format,
-                index_field_name: self.index_field_name,
-            }
-        }
-    }
-}
-impl DataSourceToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
-        crate::model::data_source_to_index_field_mapping::Builder::default()
     }
 }
 
@@ -17845,6 +19076,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Fsx,
     #[allow(missing_docs)] // documentation missing in model
+    Github,
+    #[allow(missing_docs)] // documentation missing in model
     Googledrive,
     #[allow(missing_docs)] // documentation missing in model
     Jira,
@@ -17877,6 +19110,7 @@ impl std::convert::From<&str> for DataSourceType {
             "CUSTOM" => DataSourceType::Custom,
             "DATABASE" => DataSourceType::Database,
             "FSX" => DataSourceType::Fsx,
+            "GITHUB" => DataSourceType::Github,
             "GOOGLEDRIVE" => DataSourceType::Googledrive,
             "JIRA" => DataSourceType::Jira,
             "ONEDRIVE" => DataSourceType::Onedrive,
@@ -17908,6 +19142,7 @@ impl DataSourceType {
             DataSourceType::Custom => "CUSTOM",
             DataSourceType::Database => "DATABASE",
             DataSourceType::Fsx => "FSX",
+            DataSourceType::Github => "GITHUB",
             DataSourceType::Googledrive => "GOOGLEDRIVE",
             DataSourceType::Jira => "JIRA",
             DataSourceType::Onedrive => "ONEDRIVE",
@@ -17930,6 +19165,7 @@ impl DataSourceType {
             "CUSTOM",
             "DATABASE",
             "FSX",
+            "GITHUB",
             "GOOGLEDRIVE",
             "JIRA",
             "ONEDRIVE",
@@ -19046,15 +20282,15 @@ impl FaqStatistics {
     }
 }
 
-/// <p>Provides the identifier of the KMScustomer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
+/// <p>Provides the identifier of the KMS key used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
-    /// <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric keys.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {
-    /// <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric keys.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -19076,12 +20312,12 @@ pub mod server_side_encryption_configuration {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.</p>
+        /// <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric keys.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.</p>
+        /// <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric keys.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -19205,6 +20441,7 @@ impl BatchPutDocumentResponseFailedDocument {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Document {
     /// <p>A unique identifier of the document in the index.</p>
+    /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The title of the document.</p>
     pub title: std::option::Option<std::string::String>,
@@ -19226,6 +20463,7 @@ pub struct Document {
 }
 impl Document {
     /// <p>A unique identifier of the document in the index.</p>
+    /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -19298,11 +20536,13 @@ pub mod document {
     }
     impl Builder {
         /// <p>A unique identifier of the document in the index.</p>
+        /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>A unique identifier of the document in the index.</p>
+        /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self

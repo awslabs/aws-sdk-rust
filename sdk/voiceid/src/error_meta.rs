@@ -109,6 +109,9 @@ where
                 crate::error::DeleteFraudsterErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
+                crate::error::DeleteFraudsterErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::DeleteFraudsterErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -313,6 +316,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::EvaluateSessionErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
+                }
+                crate::error::EvaluateSessionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::EvaluateSessionErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)

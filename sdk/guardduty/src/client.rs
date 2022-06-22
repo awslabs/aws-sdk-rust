@@ -91,6 +91,20 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`AcceptAdministratorInvitation`](crate::client::fluent_builders::AcceptAdministratorInvitation) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
+    ///   - [`administrator_id(impl Into<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::administrator_id) / [`set_administrator_id(Option<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::set_administrator_id): <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+    ///   - [`invitation_id(impl Into<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::invitation_id) / [`set_invitation_id(Option<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::set_invitation_id): <p>The value that is used to validate the administrator account to the member account.</p>
+    /// - On success, responds with [`AcceptAdministratorInvitationOutput`](crate::output::AcceptAdministratorInvitationOutput)
+
+    /// - On failure, responds with [`SdkError<AcceptAdministratorInvitationError>`](crate::error::AcceptAdministratorInvitationError)
+    pub fn accept_administrator_invitation(
+        &self,
+    ) -> fluent_builders::AcceptAdministratorInvitation {
+        fluent_builders::AcceptAdministratorInvitation::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`AcceptInvitation`](crate::client::fluent_builders::AcceptInvitation) operation.
     ///
     /// - The fluent builder is configurable:
@@ -340,6 +354,18 @@ impl Client {
     ) -> fluent_builders::DisableOrganizationAdminAccount {
         fluent_builders::DisableOrganizationAdminAccount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DisassociateFromAdministratorAccount`](crate::client::fluent_builders::DisassociateFromAdministratorAccount) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateFromAdministratorAccount::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DisassociateFromAdministratorAccount::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
+    /// - On success, responds with [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateFromAdministratorAccountError>`](crate::error::DisassociateFromAdministratorAccountError)
+    pub fn disassociate_from_administrator_account(
+        &self,
+    ) -> fluent_builders::DisassociateFromAdministratorAccount {
+        fluent_builders::DisassociateFromAdministratorAccount::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DisassociateFromMasterAccount`](crate::client::fluent_builders::DisassociateFromMasterAccount) operation.
     ///
     /// - The fluent builder is configurable:
@@ -374,6 +400,16 @@ impl Client {
         &self,
     ) -> fluent_builders::EnableOrganizationAdminAccount {
         fluent_builders::EnableOrganizationAdminAccount::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetAdministratorAccount`](crate::client::fluent_builders::GetAdministratorAccount) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetAdministratorAccount::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetAdministratorAccount::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
+    /// - On success, responds with [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput) with field(s):
+    ///   - [`administrator(Option<Administrator>)`](crate::output::GetAdministratorAccountOutput::administrator): <p>The administrator account details.</p>
+    /// - On failure, responds with [`SdkError<GetAdministratorAccountError>`](crate::error::GetAdministratorAccountError)
+    pub fn get_administrator_account(&self) -> fluent_builders::GetAdministratorAccount {
+        fluent_builders::GetAdministratorAccount::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetDetector`](crate::client::fluent_builders::GetDetector) operation.
     ///
@@ -489,6 +525,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetMembersError>`](crate::error::GetMembersError)
     pub fn get_members(&self) -> fluent_builders::GetMembers {
         fluent_builders::GetMembers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetRemainingFreeTrialDays`](crate::client::fluent_builders::GetRemainingFreeTrialDays) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetRemainingFreeTrialDays::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetRemainingFreeTrialDays::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetRemainingFreeTrialDays::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetRemainingFreeTrialDays::set_account_ids): <p>A list of account identifiers of the GuardDuty member account.</p>
+    /// - On success, responds with [`GetRemainingFreeTrialDaysOutput`](crate::output::GetRemainingFreeTrialDaysOutput) with field(s):
+    ///   - [`accounts(Option<Vec<AccountFreeTrialInfo>>)`](crate::output::GetRemainingFreeTrialDaysOutput::accounts): <p>The member accounts which were included in a request and were processed successfully.</p>
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::GetRemainingFreeTrialDaysOutput::unprocessed_accounts): <p>The member account that was included in a request but for which the request could not be processed.</p>
+    /// - On failure, responds with [`SdkError<GetRemainingFreeTrialDaysError>`](crate::error::GetRemainingFreeTrialDaysError)
+    pub fn get_remaining_free_trial_days(&self) -> fluent_builders::GetRemainingFreeTrialDays {
+        fluent_builders::GetRemainingFreeTrialDays::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetThreatIntelSet`](crate::client::fluent_builders::GetThreatIntelSet) operation.
     ///
@@ -843,6 +891,85 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `AcceptAdministratorInvitation`.
+    ///
+    /// <p>Accepts the invitation to be a member account and get monitored by a GuardDuty administrator account that sent the invitation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AcceptAdministratorInvitation {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::accept_administrator_invitation_input::Builder,
+    }
+    impl AcceptAdministratorInvitation {
+        /// Creates a new `AcceptAdministratorInvitation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AcceptAdministratorInvitationOutput,
+            aws_smithy_http::result::SdkError<crate::error::AcceptAdministratorInvitationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_detector_id(input);
+            self
+        }
+        /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+        pub fn administrator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.administrator_id(input.into());
+            self
+        }
+        /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+        pub fn set_administrator_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_administrator_id(input);
+            self
+        }
+        /// <p>The value that is used to validate the administrator account to the member account.</p>
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(input.into());
+            self
+        }
+        /// <p>The value that is used to validate the administrator account to the member account.</p>
+        pub fn set_invitation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_invitation_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `AcceptInvitation`.
     ///
     /// <p>Accepts the invitation to be monitored by a GuardDuty administrator account.</p>
@@ -2535,6 +2662,61 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisassociateFromAdministratorAccount`.
+    ///
+    /// <p>Disassociates the current GuardDuty member account from its administrator account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateFromAdministratorAccount {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::disassociate_from_administrator_account_input::Builder,
+    }
+    impl DisassociateFromAdministratorAccount {
+        /// Creates a new `DisassociateFromAdministratorAccount`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateFromAdministratorAccountOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateFromAdministratorAccountError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_detector_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DisassociateFromMasterAccount`.
     ///
     /// <p>Disassociates the current GuardDuty member account from its administrator account.</p>
@@ -2590,7 +2772,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateMembers`.
     ///
-    /// <p>Disassociates GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs. Member accounts added through <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Invitation</a> get deleted from the current GuardDuty administrator account after 30 days of disassociation.</p>
+    /// <p>Disassociates GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembers {
         handle: std::sync::Arc<super::Handle>,
@@ -2711,6 +2893,59 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_admin_account_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetAdministratorAccount`.
+    ///
+    /// <p>Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetAdministratorAccount {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_administrator_account_input::Builder,
+    }
+    impl GetAdministratorAccount {
+        /// Creates a new `GetAdministratorAccount`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetAdministratorAccountOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetAdministratorAccountError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_detector_id(input);
             self
         }
     }
@@ -3298,6 +3533,76 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetRemainingFreeTrialDays`.
+    ///
+    /// <p>Provides the number of days left for each data source used in the free trial period.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetRemainingFreeTrialDays {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_remaining_free_trial_days_input::Builder,
+    }
+    impl GetRemainingFreeTrialDays {
+        /// Creates a new `GetRemainingFreeTrialDays`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetRemainingFreeTrialDaysOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetRemainingFreeTrialDaysError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_detector_id(input);
+            self
+        }
+        /// Appends an item to `AccountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of account identifiers of the GuardDuty member account.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
+            self
+        }
+        /// <p>A list of account identifiers of the GuardDuty member account.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_ids(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetThreatIntelSet`.
     ///
     /// <p>Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.</p>
@@ -3366,7 +3671,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetUsageStatistics`.
     ///
-    /// <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled detectors or data sources the cost returned will include only the usage so far under 30 days, this may differ from the cost metrics in the console, which projects usage over 30 days to provide a monthly cost estimate. For more information see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.</p>
+    /// <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled detectors or data sources, the cost returned will include only the usage so far under 30 days. This may differ from the cost metrics in the console, which project usage over 30 days to provide a monthly cost estimate. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageStatistics {
         handle: std::sync::Arc<super::Handle>,

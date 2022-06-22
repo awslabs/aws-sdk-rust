@@ -2967,6 +2967,124 @@ impl GetReservedNodeExchangeConfigurationOptionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetClusterCredentialsWithIamOutput {
+    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
+    pub db_user: std::option::Option<std::string::String>,
+    /// <p>A temporary password that you provide when you connect to a database.</p>
+    pub db_password: std::option::Option<std::string::String>,
+    /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Reserved for future use.</p>
+    pub next_refresh_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetClusterCredentialsWithIamOutput {
+    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>A temporary password that you provide when you connect to a database.</p>
+    pub fn db_password(&self) -> std::option::Option<&str> {
+        self.db_password.as_deref()
+    }
+    /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.expiration.as_ref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_refresh_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.next_refresh_time.as_ref()
+    }
+}
+impl std::fmt::Debug for GetClusterCredentialsWithIamOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetClusterCredentialsWithIamOutput");
+        formatter.field("db_user", &self.db_user);
+        formatter.field("db_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("expiration", &self.expiration);
+        formatter.field("next_refresh_time", &self.next_refresh_time);
+        formatter.finish()
+    }
+}
+/// See [`GetClusterCredentialsWithIamOutput`](crate::output::GetClusterCredentialsWithIamOutput)
+pub mod get_cluster_credentials_with_iam_output {
+
+    /// A builder for [`GetClusterCredentialsWithIamOutput`](crate::output::GetClusterCredentialsWithIamOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) db_user: std::option::Option<std::string::String>,
+        pub(crate) db_password: std::option::Option<std::string::String>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) next_refresh_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_user = Some(input.into());
+            self
+        }
+        /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
+        pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_user = input;
+            self
+        }
+        /// <p>A temporary password that you provide when you connect to a database.</p>
+        pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_password = Some(input.into());
+            self
+        }
+        /// <p>A temporary password that you provide when you connect to a database.</p>
+        pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_password = input;
+            self
+        }
+        /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.expiration = Some(input);
+            self
+        }
+        /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
+        pub fn set_expiration(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.expiration = input;
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn next_refresh_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.next_refresh_time = Some(input);
+            self
+        }
+        /// <p>Reserved for future use.</p>
+        pub fn set_next_refresh_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.next_refresh_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetClusterCredentialsWithIamOutput`](crate::output::GetClusterCredentialsWithIamOutput)
+        pub fn build(self) -> crate::output::GetClusterCredentialsWithIamOutput {
+            crate::output::GetClusterCredentialsWithIamOutput {
+                db_user: self.db_user,
+                db_password: self.db_password,
+                expiration: self.expiration,
+                next_refresh_time: self.next_refresh_time,
+            }
+        }
+    }
+}
+impl GetClusterCredentialsWithIamOutput {
+    /// Creates a new builder-style object to manufacture [`GetClusterCredentialsWithIamOutput`](crate::output::GetClusterCredentialsWithIamOutput)
+    pub fn builder() -> crate::output::get_cluster_credentials_with_iam_output::Builder {
+        crate::output::get_cluster_credentials_with_iam_output::Builder::default()
+    }
+}
+
 /// <p>Temporary credentials with authorization to log on to an Amazon Redshift database. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

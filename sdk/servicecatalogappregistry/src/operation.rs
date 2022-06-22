@@ -507,6 +507,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttributeGroups {
     }
 }
 
+/// Operation shape for `ListAttributeGroupsForApplication`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_attribute_groups_for_application`](crate::client::Client::list_attribute_groups_for_application).
+///
+/// See [`crate::client::fluent_builders::ListAttributeGroupsForApplication`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAttributeGroupsForApplication {
+    _private: (),
+}
+impl ListAttributeGroupsForApplication {
+    /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationInput`](crate::input::ListAttributeGroupsForApplicationInput)
+    pub fn builder() -> crate::input::list_attribute_groups_for_application_input::Builder {
+        crate::input::list_attribute_groups_for_application_input::Builder::default()
+    }
+    /// Creates a new `ListAttributeGroupsForApplication` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAttributeGroupsForApplication {
+    type Output = std::result::Result<
+        crate::output::ListAttributeGroupsForApplicationOutput,
+        crate::error::ListAttributeGroupsForApplicationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_attribute_groups_for_application_error(response)
+        } else {
+            crate::operation_deser::parse_list_attribute_groups_for_application_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

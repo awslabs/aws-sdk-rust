@@ -223,6 +223,10 @@ pub struct UserPoolClientType {
         std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
     /// <p>Indicates whether token revocation is activated for the user pool client. When you create a new user pool client, token revocation is activated by default. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     pub enable_token_revocation: std::option::Option<bool>,
+    /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is true, Amazon Cognito accepts an <code>IpAddress</code> value that you send in the <code>UserContextData</code> parameter. The <code>UserContextData</code> parameter sends information to Amazon Cognito advanced security for risk analysis. You can send <code>UserContextData</code> when you sign in Amazon Cognito native users with the <code>InitiateAuth</code> and <code>RespondToAuthChallenge</code> API operations.</p>
+    /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is false, you can't send your user's source IP address to Amazon Cognito advanced security with unauthenticated API operations. <code>EnablePropagateAdditionalUserContextData</code> doesn't affect whether you can send a source IP address in a <code>ContextData</code> parameter with the authenticated API operations <code>AdminInitiateAuth</code> and <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
+    pub enable_propagate_additional_user_context_data: std::option::Option<bool>,
 }
 impl UserPoolClientType {
     /// <p>The user pool ID for the user pool client.</p>
@@ -384,6 +388,12 @@ impl UserPoolClientType {
     pub fn enable_token_revocation(&self) -> std::option::Option<bool> {
         self.enable_token_revocation
     }
+    /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is true, Amazon Cognito accepts an <code>IpAddress</code> value that you send in the <code>UserContextData</code> parameter. The <code>UserContextData</code> parameter sends information to Amazon Cognito advanced security for risk analysis. You can send <code>UserContextData</code> when you sign in Amazon Cognito native users with the <code>InitiateAuth</code> and <code>RespondToAuthChallenge</code> API operations.</p>
+    /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is false, you can't send your user's source IP address to Amazon Cognito advanced security with unauthenticated API operations. <code>EnablePropagateAdditionalUserContextData</code> doesn't affect whether you can send a source IP address in a <code>ContextData</code> parameter with the authenticated API operations <code>AdminInitiateAuth</code> and <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
+    pub fn enable_propagate_additional_user_context_data(&self) -> std::option::Option<bool> {
+        self.enable_propagate_additional_user_context_data
+    }
 }
 impl std::fmt::Debug for UserPoolClientType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -420,6 +430,10 @@ impl std::fmt::Debug for UserPoolClientType {
             &self.prevent_user_existence_errors,
         );
         formatter.field("enable_token_revocation", &self.enable_token_revocation);
+        formatter.field(
+            "enable_propagate_additional_user_context_data",
+            &self.enable_propagate_additional_user_context_data,
+        );
         formatter.finish()
     }
 }
@@ -458,6 +472,7 @@ pub mod user_pool_client_type {
         pub(crate) prevent_user_existence_errors:
             std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
         pub(crate) enable_token_revocation: std::option::Option<bool>,
+        pub(crate) enable_propagate_additional_user_context_data: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The user pool ID for the user pool client.</p>
@@ -913,6 +928,23 @@ pub mod user_pool_client_type {
             self.enable_token_revocation = input;
             self
         }
+        /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is true, Amazon Cognito accepts an <code>IpAddress</code> value that you send in the <code>UserContextData</code> parameter. The <code>UserContextData</code> parameter sends information to Amazon Cognito advanced security for risk analysis. You can send <code>UserContextData</code> when you sign in Amazon Cognito native users with the <code>InitiateAuth</code> and <code>RespondToAuthChallenge</code> API operations.</p>
+        /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is false, you can't send your user's source IP address to Amazon Cognito advanced security with unauthenticated API operations. <code>EnablePropagateAdditionalUserContextData</code> doesn't affect whether you can send a source IP address in a <code>ContextData</code> parameter with the authenticated API operations <code>AdminInitiateAuth</code> and <code>AdminRespondToAuthChallenge</code>.</p>
+        /// <p>You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
+        pub fn enable_propagate_additional_user_context_data(mut self, input: bool) -> Self {
+            self.enable_propagate_additional_user_context_data = Some(input);
+            self
+        }
+        /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is true, Amazon Cognito accepts an <code>IpAddress</code> value that you send in the <code>UserContextData</code> parameter. The <code>UserContextData</code> parameter sends information to Amazon Cognito advanced security for risk analysis. You can send <code>UserContextData</code> when you sign in Amazon Cognito native users with the <code>InitiateAuth</code> and <code>RespondToAuthChallenge</code> API operations.</p>
+        /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is false, you can't send your user's source IP address to Amazon Cognito advanced security with unauthenticated API operations. <code>EnablePropagateAdditionalUserContextData</code> doesn't affect whether you can send a source IP address in a <code>ContextData</code> parameter with the authenticated API operations <code>AdminInitiateAuth</code> and <code>AdminRespondToAuthChallenge</code>.</p>
+        /// <p>You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
+        pub fn set_enable_propagate_additional_user_context_data(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_propagate_additional_user_context_data = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserPoolClientType`](crate::model::UserPoolClientType)
         pub fn build(self) -> crate::model::UserPoolClientType {
             crate::model::UserPoolClientType {
@@ -939,6 +971,8 @@ pub mod user_pool_client_type {
                 analytics_configuration: self.analytics_configuration,
                 prevent_user_existence_errors: self.prevent_user_existence_errors,
                 enable_token_revocation: self.enable_token_revocation,
+                enable_propagate_additional_user_context_data: self
+                    .enable_propagate_additional_user_context_data,
             }
         }
     }
@@ -1295,23 +1329,23 @@ impl AsRef<str> for ExplicitAuthFlowsType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TokenValidityUnitsType {
-    /// <p> A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to hours.</p>
+    /// <p> A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours.</p>
     pub access_token: std::option::Option<crate::model::TimeUnitsType>,
-    /// <p>A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.</p>
+    /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours.</p>
     pub id_token: std::option::Option<crate::model::TimeUnitsType>,
-    /// <p>A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to days.</p>
+    /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days.</p>
     pub refresh_token: std::option::Option<crate::model::TimeUnitsType>,
 }
 impl TokenValidityUnitsType {
-    /// <p> A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to hours.</p>
+    /// <p> A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours.</p>
     pub fn access_token(&self) -> std::option::Option<&crate::model::TimeUnitsType> {
         self.access_token.as_ref()
     }
-    /// <p>A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.</p>
+    /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours.</p>
     pub fn id_token(&self) -> std::option::Option<&crate::model::TimeUnitsType> {
         self.id_token.as_ref()
     }
-    /// <p>A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to days.</p>
+    /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days.</p>
     pub fn refresh_token(&self) -> std::option::Option<&crate::model::TimeUnitsType> {
         self.refresh_token.as_ref()
     }
@@ -1337,12 +1371,12 @@ pub mod token_validity_units_type {
         pub(crate) refresh_token: std::option::Option<crate::model::TimeUnitsType>,
     }
     impl Builder {
-        /// <p> A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to hours.</p>
+        /// <p> A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours.</p>
         pub fn access_token(mut self, input: crate::model::TimeUnitsType) -> Self {
             self.access_token = Some(input);
             self
         }
-        /// <p> A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity, defaulting to hours.</p>
+        /// <p> A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours.</p>
         pub fn set_access_token(
             mut self,
             input: std::option::Option<crate::model::TimeUnitsType>,
@@ -1350,12 +1384,12 @@ pub mod token_validity_units_type {
             self.access_token = input;
             self
         }
-        /// <p>A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.</p>
+        /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours.</p>
         pub fn id_token(mut self, input: crate::model::TimeUnitsType) -> Self {
             self.id_token = Some(input);
             self
         }
-        /// <p>A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity, defaulting to hours.</p>
+        /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours.</p>
         pub fn set_id_token(
             mut self,
             input: std::option::Option<crate::model::TimeUnitsType>,
@@ -1363,12 +1397,12 @@ pub mod token_validity_units_type {
             self.id_token = input;
             self
         }
-        /// <p>A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to days.</p>
+        /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days.</p>
         pub fn refresh_token(mut self, input: crate::model::TimeUnitsType) -> Self {
             self.refresh_token = Some(input);
             self
         }
-        /// <p>A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity, defaulting to days.</p>
+        /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days.</p>
         pub fn set_refresh_token(
             mut self,
             input: std::option::Option<crate::model::TimeUnitsType>,
@@ -2616,7 +2650,7 @@ impl AsRef<str> for UserPoolMfaType {
     }
 }
 
-/// <p>The settings for updates to user attributes.</p>
+/// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserAttributeUpdateSettingsType {
@@ -5474,15 +5508,21 @@ impl AsRef<str> for UserImportJobStatusType {
     }
 }
 
-/// <p>Information that your app generates about a user's <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> session. Amazon Cognito advanced security features calculate risk levels for user sessions based on this context data.</p>
+/// <p>Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserContextDataType {
-    /// <p>Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>The source IP address of your user's device.</p>
+    pub ip_address: std::option::Option<std::string::String>,
+    /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub encoded_data: std::option::Option<std::string::String>,
 }
 impl UserContextDataType {
-    /// <p>Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>The source IP address of your user's device.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub fn encoded_data(&self) -> std::option::Option<&str> {
         self.encoded_data.as_deref()
     }
@@ -5490,6 +5530,7 @@ impl UserContextDataType {
 impl std::fmt::Debug for UserContextDataType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserContextDataType");
+        formatter.field("ip_address", &self.ip_address);
         formatter.field("encoded_data", &self.encoded_data);
         formatter.finish()
     }
@@ -5501,15 +5542,26 @@ pub mod user_context_data_type {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) ip_address: std::option::Option<std::string::String>,
         pub(crate) encoded_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>The source IP address of your user's device.</p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
+            self
+        }
+        /// <p>The source IP address of your user's device.</p>
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
+            self
+        }
+        /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
         pub fn encoded_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.encoded_data = Some(input.into());
             self
         }
-        /// <p>Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
         pub fn set_encoded_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.encoded_data = input;
             self
@@ -5517,6 +5569,7 @@ pub mod user_context_data_type {
         /// Consumes the builder and constructs a [`UserContextDataType`](crate::model::UserContextDataType)
         pub fn build(self) -> crate::model::UserContextDataType {
             crate::model::UserContextDataType {
+                ip_address: self.ip_address,
                 encoded_data: self.encoded_data,
             }
         }
@@ -8906,7 +8959,7 @@ pub struct UserPoolType {
         std::option::Option<crate::model::VerificationMessageTemplateType>,
     /// <p>The contents of the SMS authentication message.</p>
     pub sms_authentication_message: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
     pub user_attribute_update_settings:
         std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
     /// <p>Can be one of the following values:</p>
@@ -9033,7 +9086,7 @@ impl UserPoolType {
     pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
         self.sms_authentication_message.as_deref()
     }
-    /// <p></p>
+    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
     pub fn user_attribute_update_settings(
         &self,
     ) -> std::option::Option<&crate::model::UserAttributeUpdateSettingsType> {
@@ -9471,7 +9524,7 @@ pub mod user_pool_type {
             self.sms_authentication_message = input;
             self
         }
-        /// <p></p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
         pub fn user_attribute_update_settings(
             mut self,
             input: crate::model::UserAttributeUpdateSettingsType,
@@ -9479,7 +9532,7 @@ pub mod user_pool_type {
             self.user_attribute_update_settings = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
         pub fn set_user_attribute_update_settings(
             mut self,
             input: std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
@@ -10523,7 +10576,7 @@ impl DeviceSecretVerifierConfigType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContextDataType {
-    /// <p>Source IP address of your user.</p>
+    /// <p>The source IP address of your user's device.</p>
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>Your server endpoint where this API is invoked.</p>
     pub server_name: std::option::Option<std::string::String>,
@@ -10531,11 +10584,11 @@ pub struct ContextDataType {
     pub server_path: std::option::Option<std::string::String>,
     /// <p>HttpHeaders received on your server in same order.</p>
     pub http_headers: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
-    /// <p>Encoded data containing device fingerprinting details collected using the Amazon Cognito context data collection library.</p>
+    /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub encoded_data: std::option::Option<std::string::String>,
 }
 impl ContextDataType {
-    /// <p>Source IP address of your user.</p>
+    /// <p>The source IP address of your user's device.</p>
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
@@ -10551,7 +10604,7 @@ impl ContextDataType {
     pub fn http_headers(&self) -> std::option::Option<&[crate::model::HttpHeader]> {
         self.http_headers.as_deref()
     }
-    /// <p>Encoded data containing device fingerprinting details collected using the Amazon Cognito context data collection library.</p>
+    /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub fn encoded_data(&self) -> std::option::Option<&str> {
         self.encoded_data.as_deref()
     }
@@ -10581,12 +10634,12 @@ pub mod context_data_type {
         pub(crate) encoded_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Source IP address of your user.</p>
+        /// <p>The source IP address of your user's device.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_address = Some(input.into());
             self
         }
-        /// <p>Source IP address of your user.</p>
+        /// <p>The source IP address of your user's device.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -10630,12 +10683,12 @@ pub mod context_data_type {
             self.http_headers = input;
             self
         }
-        /// <p>Encoded data containing device fingerprinting details collected using the Amazon Cognito context data collection library.</p>
+        /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
         pub fn encoded_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.encoded_data = Some(input.into());
             self
         }
-        /// <p>Encoded data containing device fingerprinting details collected using the Amazon Cognito context data collection library.</p>
+        /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
         pub fn set_encoded_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.encoded_data = input;
             self
@@ -11055,7 +11108,7 @@ impl EventFeedbackType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventContextDataType {
-    /// <p>The user's IP address.</p>
+    /// <p>The source IP address of your user's device.</p>
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The user's device name.</p>
     pub device_name: std::option::Option<std::string::String>,
@@ -11067,7 +11120,7 @@ pub struct EventContextDataType {
     pub country: std::option::Option<std::string::String>,
 }
 impl EventContextDataType {
-    /// <p>The user's IP address.</p>
+    /// <p>The source IP address of your user's device.</p>
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
@@ -11113,12 +11166,12 @@ pub mod event_context_data_type {
         pub(crate) country: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The user's IP address.</p>
+        /// <p>The source IP address of your user's device.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_address = Some(input.into());
             self
         }
-        /// <p>The user's IP address.</p>
+        /// <p>The source IP address of your user's device.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self

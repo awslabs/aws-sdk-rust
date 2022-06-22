@@ -1436,6 +1436,7 @@ pub mod create_db_cluster_input {
         pub(crate) enable_cloudwatch_logs_exports:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) deletion_protection: std::option::Option<bool>,
+        pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -1862,6 +1863,19 @@ pub mod create_db_cluster_input {
             self.deletion_protection = input;
             self
         }
+        /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_identifier = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::input::CreateDbClusterInput)
         pub fn build(
             self,
@@ -1895,6 +1909,7 @@ pub mod create_db_cluster_input {
                 enable_iam_database_authentication: self.enable_iam_database_authentication,
                 enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
                 deletion_protection: self.deletion_protection,
+                global_cluster_identifier: self.global_cluster_identifier,
             })
         }
     }
@@ -4188,6 +4203,220 @@ impl CreateEventSubscriptionInput {
     }
 }
 
+/// See [`CreateGlobalClusterInput`](crate::input::CreateGlobalClusterInput)
+pub mod create_global_cluster_input {
+
+    /// A builder for [`CreateGlobalClusterInput`](crate::input::CreateGlobalClusterInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) source_db_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) engine: std::option::Option<std::string::String>,
+        pub(crate) engine_version: std::option::Option<std::string::String>,
+        pub(crate) deletion_protection: std::option::Option<bool>,
+        pub(crate) storage_encrypted: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The cluster identifier of the new global database cluster.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The cluster identifier of the new global database cluster.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_identifier = input;
+            self
+        }
+        /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+        pub fn source_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.source_db_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+        pub fn set_source_db_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_db_cluster_identifier = input;
+            self
+        }
+        /// <p>The name of the database engine to be used in the global database.</p>
+        /// <p>Valid values: <code>neptune</code> </p>
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
+            self
+        }
+        /// <p>The name of the database engine to be used in the global database.</p>
+        /// <p>Valid values: <code>neptune</code> </p>
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
+            self
+        }
+        /// <p>The Neptune engine version to be used by the global database.</p>
+        /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
+            self
+        }
+        /// <p>The Neptune engine version to be used by the global database.</p>
+        /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
+            self
+        }
+        /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
+            self
+        }
+        /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
+            self
+        }
+        /// <p>The storage encryption setting for the new global database cluster.</p>
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
+            self
+        }
+        /// <p>The storage encryption setting for the new global database cluster.</p>
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateGlobalClusterInput`](crate::input::CreateGlobalClusterInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateGlobalClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateGlobalClusterInput {
+                global_cluster_identifier: self.global_cluster_identifier,
+                source_db_cluster_identifier: self.source_db_cluster_identifier,
+                engine: self.engine,
+                engine_version: self.engine_version,
+                deletion_protection: self.deletion_protection,
+                storage_encrypted: self.storage_encrypted,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateGlobalClusterInputOperationOutputAlias = crate::operation::CreateGlobalCluster;
+#[doc(hidden)]
+pub type CreateGlobalClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateGlobalClusterInput {
+    /// Consumes the builder and constructs an Operation<[`CreateGlobalCluster`](crate::operation::CreateGlobalCluster)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateGlobalCluster,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateGlobalClusterInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateGlobalClusterInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_global_cluster(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateGlobalCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateGlobalCluster",
+            "neptune",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateGlobalClusterInput`](crate::input::CreateGlobalClusterInput)
+    pub fn builder() -> crate::input::create_global_cluster_input::Builder {
+        crate::input::create_global_cluster_input::Builder::default()
+    }
+}
+
 /// See [`DeleteDbClusterInput`](crate::input::DeleteDbClusterInput)
 pub mod delete_db_cluster_input {
 
@@ -5498,6 +5727,147 @@ impl DeleteEventSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionInput`](crate::input::DeleteEventSubscriptionInput)
     pub fn builder() -> crate::input::delete_event_subscription_input::Builder {
         crate::input::delete_event_subscription_input::Builder::default()
+    }
+}
+
+/// See [`DeleteGlobalClusterInput`](crate::input::DeleteGlobalClusterInput)
+pub mod delete_global_cluster_input {
+
+    /// A builder for [`DeleteGlobalClusterInput`](crate::input::DeleteGlobalClusterInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The cluster identifier of the global database cluster being deleted.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The cluster identifier of the global database cluster being deleted.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteGlobalClusterInput`](crate::input::DeleteGlobalClusterInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteGlobalClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteGlobalClusterInput {
+                global_cluster_identifier: self.global_cluster_identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteGlobalClusterInputOperationOutputAlias = crate::operation::DeleteGlobalCluster;
+#[doc(hidden)]
+pub type DeleteGlobalClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteGlobalClusterInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteGlobalCluster`](crate::operation::DeleteGlobalCluster)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteGlobalCluster,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteGlobalClusterInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteGlobalClusterInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_global_cluster(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteGlobalCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteGlobalCluster",
+            "neptune",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterInput`](crate::input::DeleteGlobalClusterInput)
+    pub fn builder() -> crate::input::delete_global_cluster_input::Builder {
+        crate::input::delete_global_cluster_input::Builder::default()
     }
 }
 
@@ -8883,6 +9253,179 @@ impl DescribeEventSubscriptionsInput {
     }
 }
 
+/// See [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput)
+pub mod describe_global_clusters_input {
+
+    /// A builder for [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
+        /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
+        /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_identifier = input;
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
+        /// <p>Default: <code>100</code> </p>
+        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
+        /// <p>Default: <code>100</code> </p>
+        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeGlobalClustersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeGlobalClustersInput {
+                global_cluster_identifier: self.global_cluster_identifier,
+                max_records: self.max_records,
+                marker: self.marker,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeGlobalClustersInputOperationOutputAlias = crate::operation::DescribeGlobalClusters;
+#[doc(hidden)]
+pub type DescribeGlobalClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeGlobalClustersInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeGlobalClusters`](crate::operation::DescribeGlobalClusters)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeGlobalClusters,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeGlobalClustersInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeGlobalClustersInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_global_clusters(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeGlobalClusters::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeGlobalClusters",
+            "neptune",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput)
+    pub fn builder() -> crate::input::describe_global_clusters_input::Builder {
+        crate::input::describe_global_clusters_input::Builder::default()
+    }
+}
+
 /// See [`DescribeOrderableDbInstanceOptionsInput`](crate::input::DescribeOrderableDbInstanceOptionsInput)
 pub mod describe_orderable_db_instance_options_input {
 
@@ -9637,6 +10180,169 @@ impl FailoverDbClusterInput {
     /// Creates a new builder-style object to manufacture [`FailoverDbClusterInput`](crate::input::FailoverDbClusterInput)
     pub fn builder() -> crate::input::failover_db_cluster_input::Builder {
         crate::input::failover_db_cluster_input::Builder::default()
+    }
+}
+
+/// See [`FailoverGlobalClusterInput`](crate::input::FailoverGlobalClusterInput)
+pub mod failover_global_cluster_input {
+
+    /// A builder for [`FailoverGlobalClusterInput`](crate::input::FailoverGlobalClusterInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) target_db_cluster_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
+        /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
+        /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_identifier = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
+        pub fn target_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.target_db_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
+        pub fn set_target_db_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_db_cluster_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FailoverGlobalClusterInput`](crate::input::FailoverGlobalClusterInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::FailoverGlobalClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::FailoverGlobalClusterInput {
+                global_cluster_identifier: self.global_cluster_identifier,
+                target_db_cluster_identifier: self.target_db_cluster_identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type FailoverGlobalClusterInputOperationOutputAlias = crate::operation::FailoverGlobalCluster;
+#[doc(hidden)]
+pub type FailoverGlobalClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl FailoverGlobalClusterInput {
+    /// Consumes the builder and constructs an Operation<[`FailoverGlobalCluster`](crate::operation::FailoverGlobalCluster)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::FailoverGlobalCluster,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::FailoverGlobalClusterInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::FailoverGlobalClusterInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_failover_global_cluster(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::FailoverGlobalCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "FailoverGlobalCluster",
+            "neptune",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterInput`](crate::input::FailoverGlobalClusterInput)
+    pub fn builder() -> crate::input::failover_global_cluster_input::Builder {
+        crate::input::failover_global_cluster_input::Builder::default()
     }
 }
 
@@ -12200,6 +12906,226 @@ impl ModifyEventSubscriptionInput {
     }
 }
 
+/// See [`ModifyGlobalClusterInput`](crate::input::ModifyGlobalClusterInput)
+pub mod modify_global_cluster_input {
+
+    /// A builder for [`ModifyGlobalClusterInput`](crate::input::ModifyGlobalClusterInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) new_global_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) deletion_protection: std::option::Option<bool>,
+        pub(crate) engine_version: std::option::Option<std::string::String>,
+        pub(crate) allow_major_version_upgrade: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
+        /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
+        /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_identifier = input;
+            self
+        }
+        /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// </ul>
+        /// <p>Example: <code>my-cluster2</code> </p>
+        pub fn new_global_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.new_global_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// </ul>
+        /// <p>Example: <code>my-cluster2</code> </p>
+        pub fn set_new_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.new_global_cluster_identifier = input;
+            self
+        }
+        /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
+            self
+        }
+        /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
+            self
+        }
+        /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+        /// <p>To list all of the available Neptune engine versions, use the following command:</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
+            self
+        }
+        /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+        /// <p>To list all of the available Neptune engine versions, use the following command:</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
+            self
+        }
+        /// <p>A value that indicates whether major version upgrades are allowed.</p>
+        /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+        /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.allow_major_version_upgrade = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether major version upgrades are allowed.</p>
+        /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+        /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
+        pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_major_version_upgrade = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyGlobalClusterInput`](crate::input::ModifyGlobalClusterInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ModifyGlobalClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ModifyGlobalClusterInput {
+                global_cluster_identifier: self.global_cluster_identifier,
+                new_global_cluster_identifier: self.new_global_cluster_identifier,
+                deletion_protection: self.deletion_protection,
+                engine_version: self.engine_version,
+                allow_major_version_upgrade: self.allow_major_version_upgrade,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ModifyGlobalClusterInputOperationOutputAlias = crate::operation::ModifyGlobalCluster;
+#[doc(hidden)]
+pub type ModifyGlobalClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ModifyGlobalClusterInput {
+    /// Consumes the builder and constructs an Operation<[`ModifyGlobalCluster`](crate::operation::ModifyGlobalCluster)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ModifyGlobalCluster,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ModifyGlobalClusterInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ModifyGlobalClusterInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_modify_global_cluster(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ModifyGlobalCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ModifyGlobalCluster",
+            "neptune",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterInput`](crate::input::ModifyGlobalClusterInput)
+    pub fn builder() -> crate::input::modify_global_cluster_input::Builder {
+        crate::input::modify_global_cluster_input::Builder::default()
+    }
+}
+
 /// See [`PromoteReadReplicaDbClusterInput`](crate::input::PromoteReadReplicaDbClusterInput)
 pub mod promote_read_replica_db_cluster_input {
 
@@ -12501,6 +13427,165 @@ impl RebootDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`RebootDbInstanceInput`](crate::input::RebootDbInstanceInput)
     pub fn builder() -> crate::input::reboot_db_instance_input::Builder {
         crate::input::reboot_db_instance_input::Builder::default()
+    }
+}
+
+/// See [`RemoveFromGlobalClusterInput`](crate::input::RemoveFromGlobalClusterInput)
+pub mod remove_from_global_cluster_input {
+
+    /// A builder for [`RemoveFromGlobalClusterInput`](crate::input::RemoveFromGlobalClusterInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_identifier = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
+        pub fn set_db_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RemoveFromGlobalClusterInput`](crate::input::RemoveFromGlobalClusterInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RemoveFromGlobalClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RemoveFromGlobalClusterInput {
+                global_cluster_identifier: self.global_cluster_identifier,
+                db_cluster_identifier: self.db_cluster_identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RemoveFromGlobalClusterInputOperationOutputAlias =
+    crate::operation::RemoveFromGlobalCluster;
+#[doc(hidden)]
+pub type RemoveFromGlobalClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl RemoveFromGlobalClusterInput {
+    /// Consumes the builder and constructs an Operation<[`RemoveFromGlobalCluster`](crate::operation::RemoveFromGlobalCluster)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveFromGlobalCluster,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RemoveFromGlobalClusterInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveFromGlobalClusterInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_remove_from_global_cluster(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveFromGlobalCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveFromGlobalCluster",
+            "neptune",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterInput`](crate::input::RemoveFromGlobalClusterInput)
+    pub fn builder() -> crate::input::remove_from_global_cluster_input::Builder {
+        crate::input::remove_from_global_cluster_input::Builder::default()
     }
 }
 
@@ -15189,6 +16274,34 @@ impl std::fmt::Debug for RemoveRoleFromDbClusterInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveFromGlobalClusterInput {
+    /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
+    pub global_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
+    pub db_cluster_identifier: std::option::Option<std::string::String>,
+}
+impl RemoveFromGlobalClusterInput {
+    /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for RemoveFromGlobalClusterInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RemoveFromGlobalClusterInput");
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
+        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootDbInstanceInput {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -15241,6 +16354,83 @@ impl std::fmt::Debug for PromoteReadReplicaDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PromoteReadReplicaDbClusterInput");
         formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyGlobalClusterInput {
+    /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
+    /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+    pub global_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster2</code> </p>
+    pub new_global_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
+    pub deletion_protection: std::option::Option<bool>,
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>To list all of the available Neptune engine versions, use the following command:</p>
+    pub engine_version: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
+    pub allow_major_version_upgrade: std::option::Option<bool>,
+}
+impl ModifyGlobalClusterInput {
+    /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
+    /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
+    /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster2</code> </p>
+    pub fn new_global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.new_global_cluster_identifier.as_deref()
+    }
+    /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>To list all of the available Neptune engine versions, use the following command:</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
+    pub fn allow_major_version_upgrade(&self) -> std::option::Option<bool> {
+        self.allow_major_version_upgrade
+    }
+}
+impl std::fmt::Debug for ModifyGlobalClusterInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyGlobalClusterInput");
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
+        formatter.field(
+            "new_global_cluster_identifier",
+            &self.new_global_cluster_identifier,
+        );
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field(
+            "allow_major_version_upgrade",
+            &self.allow_major_version_upgrade,
+        );
         formatter.finish()
     }
 }
@@ -16195,6 +17385,39 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FailoverGlobalClusterInput {
+    /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
+    /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+    pub global_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
+    pub target_db_cluster_identifier: std::option::Option<std::string::String>,
+}
+impl FailoverGlobalClusterInput {
+    /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
+    /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
+    pub fn target_db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.target_db_cluster_identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for FailoverGlobalClusterInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FailoverGlobalClusterInput");
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
+        formatter.field(
+            "target_db_cluster_identifier",
+            &self.target_db_cluster_identifier,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverDbClusterInput {
     /// <p>A DB cluster identifier to force a failover for. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -16378,6 +17601,47 @@ impl std::fmt::Debug for DescribeOrderableDbInstanceOptionsInput {
         formatter.field("license_model", &self.license_model);
         formatter.field("vpc", &self.vpc);
         formatter.field("filters", &self.filters);
+        formatter.field("max_records", &self.max_records);
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeGlobalClustersInput {
+    /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
+    /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+    pub global_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeGlobalClustersInput {
+    /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
+    /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeGlobalClustersInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeGlobalClustersInput");
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
         formatter.field("max_records", &self.max_records);
         formatter.field("marker", &self.marker);
         formatter.finish()
@@ -17367,6 +18631,27 @@ impl std::fmt::Debug for DescribeDbClusterEndpointsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteGlobalClusterInput {
+    /// <p>The cluster identifier of the global database cluster being deleted.</p>
+    pub global_cluster_identifier: std::option::Option<std::string::String>,
+}
+impl DeleteGlobalClusterInput {
+    /// <p>The cluster identifier of the global database cluster being deleted.</p>
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteGlobalClusterInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteGlobalClusterInput");
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the event notification subscription you want to delete.</p>
     pub subscription_name: std::option::Option<std::string::String>,
@@ -17673,6 +18958,69 @@ impl std::fmt::Debug for DeleteDbClusterInput {
             "final_db_snapshot_identifier",
             &self.final_db_snapshot_identifier,
         );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateGlobalClusterInput {
+    /// <p>The cluster identifier of the new global database cluster.</p>
+    pub global_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+    pub source_db_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>The name of the database engine to be used in the global database.</p>
+    /// <p>Valid values: <code>neptune</code> </p>
+    pub engine: std::option::Option<std::string::String>,
+    /// <p>The Neptune engine version to be used by the global database.</p>
+    /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
+    pub engine_version: std::option::Option<std::string::String>,
+    /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+    pub deletion_protection: std::option::Option<bool>,
+    /// <p>The storage encryption setting for the new global database cluster.</p>
+    pub storage_encrypted: std::option::Option<bool>,
+}
+impl CreateGlobalClusterInput {
+    /// <p>The cluster identifier of the new global database cluster.</p>
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
+    /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+    pub fn source_db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.source_db_cluster_identifier.as_deref()
+    }
+    /// <p>The name of the database engine to be used in the global database.</p>
+    /// <p>Valid values: <code>neptune</code> </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The Neptune engine version to be used by the global database.</p>
+    /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>The storage encryption setting for the new global database cluster.</p>
+    pub fn storage_encrypted(&self) -> std::option::Option<bool> {
+        self.storage_encrypted
+    }
+}
+impl std::fmt::Debug for CreateGlobalClusterInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateGlobalClusterInput");
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
+        formatter.field(
+            "source_db_cluster_identifier",
+            &self.source_db_cluster_identifier,
+        );
+        formatter.field("engine", &self.engine);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("storage_encrypted", &self.storage_encrypted);
         formatter.finish()
     }
 }
@@ -18578,6 +19926,8 @@ pub struct CreateDbClusterInput {
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
     pub deletion_protection: std::option::Option<bool>,
+    /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
+    pub global_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
@@ -18722,6 +20072,10 @@ impl CreateDbClusterInput {
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDbClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18766,6 +20120,7 @@ impl std::fmt::Debug for CreateDbClusterInput {
             &self.enable_cloudwatch_logs_exports,
         );
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
         formatter.finish()
     }
 }

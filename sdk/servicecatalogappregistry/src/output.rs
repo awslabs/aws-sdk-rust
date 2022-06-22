@@ -353,6 +353,96 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAttributeGroupsForApplicationOutput {
+    /// <p> The details related to a specific AttributeGroup. </p>
+    pub attribute_groups_details:
+        std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAttributeGroupsForApplicationOutput {
+    /// <p> The details related to a specific AttributeGroup. </p>
+    pub fn attribute_groups_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeGroupDetails]> {
+        self.attribute_groups_details.as_deref()
+    }
+    /// <p>The token to use to get the next page of results after a previous API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAttributeGroupsForApplicationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAttributeGroupsForApplicationOutput");
+        formatter.field("attribute_groups_details", &self.attribute_groups_details);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput)
+pub mod list_attribute_groups_for_application_output {
+
+    /// A builder for [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attribute_groups_details:
+            std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `attribute_groups_details`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_groups_details`](Self::set_attribute_groups_details).
+        ///
+        /// <p> The details related to a specific AttributeGroup. </p>
+        pub fn attribute_groups_details(
+            mut self,
+            input: crate::model::AttributeGroupDetails,
+        ) -> Self {
+            let mut v = self.attribute_groups_details.unwrap_or_default();
+            v.push(input);
+            self.attribute_groups_details = Some(v);
+            self
+        }
+        /// <p> The details related to a specific AttributeGroup. </p>
+        pub fn set_attribute_groups_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
+        ) -> Self {
+            self.attribute_groups_details = input;
+            self
+        }
+        /// <p>The token to use to get the next page of results after a previous API call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to get the next page of results after a previous API call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput)
+        pub fn build(self) -> crate::output::ListAttributeGroupsForApplicationOutput {
+            crate::output::ListAttributeGroupsForApplicationOutput {
+                attribute_groups_details: self.attribute_groups_details,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAttributeGroupsForApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput)
+    pub fn builder() -> crate::output::list_attribute_groups_for_application_output::Builder {
+        crate::output::list_attribute_groups_for_application_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttributeGroupsOutput {
     /// <p>This list of attribute groups.</p>
     pub attribute_groups: std::option::Option<std::vec::Vec<crate::model::AttributeGroupSummary>>,

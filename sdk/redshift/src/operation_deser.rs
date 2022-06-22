@@ -7956,6 +7956,85 @@ pub fn parse_get_cluster_credentials_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_cluster_credentials_with_iam_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetClusterCredentialsWithIamOutput,
+    crate::error::GetClusterCredentialsWithIAMError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetClusterCredentialsWithIAMError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ClusterNotFound" => crate::error::GetClusterCredentialsWithIAMError {
+            meta: generic,
+            kind: crate::error::GetClusterCredentialsWithIAMErrorKind::ClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperation" => crate::error::GetClusterCredentialsWithIAMError {
+            meta: generic,
+            kind: crate::error::GetClusterCredentialsWithIAMErrorKind::UnsupportedOperationFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetClusterCredentialsWithIAMError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_cluster_credentials_with_iam_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetClusterCredentialsWithIamOutput,
+    crate::error::GetClusterCredentialsWithIAMError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_cluster_credentials_with_iam_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_get_cluster_credentials_with_iam(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_reserved_node_exchange_configuration_options_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

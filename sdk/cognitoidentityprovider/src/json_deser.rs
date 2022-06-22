@@ -5978,6 +5978,14 @@ where
                                     )?,
                                 );
                             }
+                            "EnablePropagateAdditionalUserContextData" => {
+                                builder = builder
+                                    .set_enable_propagate_additional_user_context_data(
+                                        aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                            tokens.next(),
+                                        )?,
+                                    );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -606,6 +606,425 @@ impl AsRef<str> for DatasetKind {
     }
 }
 
+/// <p>The structure of a user account associated with a permission group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserByPermissionGroup {
+    /// <p>The unique identifier for the user.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>The current status of the user account. </p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
+    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// </ul>
+    pub status: std::option::Option<crate::model::UserStatus>,
+    /// <p>The first name of the user.</p>
+    pub first_name: std::option::Option<std::string::String>,
+    /// <p>The last name of the user.</p>
+    pub last_name: std::option::Option<std::string::String>,
+    /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
+    pub email_address: std::option::Option<std::string::String>,
+    /// <p> Indicates the type of user.</p>
+    /// <ul>
+    /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+    /// </ul>
+    pub r#type: std::option::Option<crate::model::UserType>,
+    /// <p>Indicates whether the user can access FinSpace API operations.</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
+    /// </ul>
+    pub api_access: std::option::Option<crate::model::ApiAccess>,
+    /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
+    pub api_access_principal_arn: std::option::Option<std::string::String>,
+    /// <p>Indicates the status of the user account within a permission group.</p>
+    /// <ul>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// </ul>
+    pub membership_status: std::option::Option<crate::model::PermissionGroupMembershipStatus>,
+}
+impl UserByPermissionGroup {
+    /// <p>The unique identifier for the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The current status of the user account. </p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
+    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::UserStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The first name of the user.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of the user.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p> Indicates the type of user.</p>
+    /// <ul>
+    /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Indicates whether the user can access FinSpace API operations.</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
+    /// </ul>
+    pub fn api_access(&self) -> std::option::Option<&crate::model::ApiAccess> {
+        self.api_access.as_ref()
+    }
+    /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
+    pub fn api_access_principal_arn(&self) -> std::option::Option<&str> {
+        self.api_access_principal_arn.as_deref()
+    }
+    /// <p>Indicates the status of the user account within a permission group.</p>
+    /// <ul>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// </ul>
+    pub fn membership_status(
+        &self,
+    ) -> std::option::Option<&crate::model::PermissionGroupMembershipStatus> {
+        self.membership_status.as_ref()
+    }
+}
+impl std::fmt::Debug for UserByPermissionGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserByPermissionGroup");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("status", &self.status);
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("api_access", &self.api_access);
+        formatter.field("api_access_principal_arn", &self.api_access_principal_arn);
+        formatter.field("membership_status", &self.membership_status);
+        formatter.finish()
+    }
+}
+/// See [`UserByPermissionGroup`](crate::model::UserByPermissionGroup)
+pub mod user_by_permission_group {
+
+    /// A builder for [`UserByPermissionGroup`](crate::model::UserByPermissionGroup)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::UserStatus>,
+        pub(crate) first_name: std::option::Option<std::string::String>,
+        pub(crate) last_name: std::option::Option<std::string::String>,
+        pub(crate) email_address: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::UserType>,
+        pub(crate) api_access: std::option::Option<crate::model::ApiAccess>,
+        pub(crate) api_access_principal_arn: std::option::Option<std::string::String>,
+        pub(crate) membership_status:
+            std::option::Option<crate::model::PermissionGroupMembershipStatus>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the user.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the user.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// <p>The current status of the user account. </p>
+        /// <ul>
+        /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
+        /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::UserStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current status of the user account. </p>
+        /// <ul>
+        /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
+        /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::UserStatus>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The first name of the user.</p>
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.first_name = Some(input.into());
+            self
+        }
+        /// <p>The first name of the user.</p>
+        pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.first_name = input;
+            self
+        }
+        /// <p>The last name of the user.</p>
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_name = Some(input.into());
+            self
+        }
+        /// <p>The last name of the user.</p>
+        pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_name = input;
+            self
+        }
+        /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
+            self
+        }
+        /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
+            self
+        }
+        /// <p> Indicates the type of user.</p>
+        /// <ul>
+        /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+        /// </ul>
+        pub fn r#type(mut self, input: crate::model::UserType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p> Indicates the type of user.</p>
+        /// <ul>
+        /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+        /// </ul>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Indicates whether the user can access FinSpace API operations.</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
+        /// </ul>
+        pub fn api_access(mut self, input: crate::model::ApiAccess) -> Self {
+            self.api_access = Some(input);
+            self
+        }
+        /// <p>Indicates whether the user can access FinSpace API operations.</p>
+        /// <ul>
+        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
+        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
+        /// </ul>
+        pub fn set_api_access(
+            mut self,
+            input: std::option::Option<crate::model::ApiAccess>,
+        ) -> Self {
+            self.api_access = input;
+            self
+        }
+        /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
+        pub fn api_access_principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_access_principal_arn = Some(input.into());
+            self
+        }
+        /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
+        pub fn set_api_access_principal_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.api_access_principal_arn = input;
+            self
+        }
+        /// <p>Indicates the status of the user account within a permission group.</p>
+        /// <ul>
+        /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+        /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+        /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+        /// </ul>
+        pub fn membership_status(
+            mut self,
+            input: crate::model::PermissionGroupMembershipStatus,
+        ) -> Self {
+            self.membership_status = Some(input);
+            self
+        }
+        /// <p>Indicates the status of the user account within a permission group.</p>
+        /// <ul>
+        /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+        /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+        /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+        /// </ul>
+        pub fn set_membership_status(
+            mut self,
+            input: std::option::Option<crate::model::PermissionGroupMembershipStatus>,
+        ) -> Self {
+            self.membership_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserByPermissionGroup`](crate::model::UserByPermissionGroup)
+        pub fn build(self) -> crate::model::UserByPermissionGroup {
+            crate::model::UserByPermissionGroup {
+                user_id: self.user_id,
+                status: self.status,
+                first_name: self.first_name,
+                last_name: self.last_name,
+                email_address: self.email_address,
+                r#type: self.r#type,
+                api_access: self.api_access,
+                api_access_principal_arn: self.api_access_principal_arn,
+                membership_status: self.membership_status,
+            }
+        }
+    }
+}
+impl UserByPermissionGroup {
+    /// Creates a new builder-style object to manufacture [`UserByPermissionGroup`](crate::model::UserByPermissionGroup)
+    pub fn builder() -> crate::model::user_by_permission_group::Builder {
+        crate::model::user_by_permission_group::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PermissionGroupMembershipStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    AdditionInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    AdditionSuccess,
+    #[allow(missing_docs)] // documentation missing in model
+    RemovalInProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PermissionGroupMembershipStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ADDITION_IN_PROGRESS" => PermissionGroupMembershipStatus::AdditionInProgress,
+            "ADDITION_SUCCESS" => PermissionGroupMembershipStatus::AdditionSuccess,
+            "REMOVAL_IN_PROGRESS" => PermissionGroupMembershipStatus::RemovalInProgress,
+            other => PermissionGroupMembershipStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PermissionGroupMembershipStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PermissionGroupMembershipStatus::from(s))
+    }
+}
+impl PermissionGroupMembershipStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PermissionGroupMembershipStatus::AdditionInProgress => "ADDITION_IN_PROGRESS",
+            PermissionGroupMembershipStatus::AdditionSuccess => "ADDITION_SUCCESS",
+            PermissionGroupMembershipStatus::RemovalInProgress => "REMOVAL_IN_PROGRESS",
+            PermissionGroupMembershipStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ADDITION_IN_PROGRESS",
+            "ADDITION_SUCCESS",
+            "REMOVAL_IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for PermissionGroupMembershipStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UserStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for UserStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATING" => UserStatus::Creating,
+            "DISABLED" => UserStatus::Disabled,
+            "ENABLED" => UserStatus::Enabled,
+            other => UserStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for UserStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UserStatus::from(s))
+    }
+}
+impl UserStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UserStatus::Creating => "CREATING",
+            UserStatus::Disabled => "DISABLED",
+            UserStatus::Enabled => "ENABLED",
+            UserStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CREATING", "DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for UserStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The details of the user account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -628,7 +1047,7 @@ pub struct User {
     /// <p> Indicates the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
-    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
@@ -679,7 +1098,7 @@ impl User {
     /// <p> Indicates the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
-    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
         self.r#type.as_ref()
@@ -824,7 +1243,7 @@ pub mod user {
         /// <p> Indicates the type of user.</p>
         /// <ul>
         /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
-        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::UserType) -> Self {
             self.r#type = Some(input);
@@ -833,7 +1252,7 @@ pub mod user {
         /// <p> Indicates the type of user.</p>
         /// <ul>
         /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
-        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
             self.r#type = input;
@@ -950,62 +1369,128 @@ impl User {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The structure of a permission group associated with a user account.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum UserStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Creating,
-    #[allow(missing_docs)] // documentation missing in model
-    Disabled,
-    #[allow(missing_docs)] // documentation missing in model
-    Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PermissionGroupByUser {
+    /// <p>The unique identifier for the permission group.</p>
+    pub permission_group_id: std::option::Option<std::string::String>,
+    /// <p>The name of the permission group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Indicates the status of the user account within a permission group.</p>
+    /// <ul>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// </ul>
+    pub membership_status: std::option::Option<crate::model::PermissionGroupMembershipStatus>,
 }
-impl std::convert::From<&str> for UserStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATING" => UserStatus::Creating,
-            "DISABLED" => UserStatus::Disabled,
-            "ENABLED" => UserStatus::Enabled,
-            other => UserStatus::Unknown(other.to_owned()),
-        }
+impl PermissionGroupByUser {
+    /// <p>The unique identifier for the permission group.</p>
+    pub fn permission_group_id(&self) -> std::option::Option<&str> {
+        self.permission_group_id.as_deref()
+    }
+    /// <p>The name of the permission group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Indicates the status of the user account within a permission group.</p>
+    /// <ul>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// </ul>
+    pub fn membership_status(
+        &self,
+    ) -> std::option::Option<&crate::model::PermissionGroupMembershipStatus> {
+        self.membership_status.as_ref()
     }
 }
-impl std::str::FromStr for UserStatus {
-    type Err = std::convert::Infallible;
+impl std::fmt::Debug for PermissionGroupByUser {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PermissionGroupByUser");
+        formatter.field("permission_group_id", &self.permission_group_id);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("membership_status", &self.membership_status);
+        formatter.finish()
+    }
+}
+/// See [`PermissionGroupByUser`](crate::model::PermissionGroupByUser)
+pub mod permission_group_by_user {
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UserStatus::from(s))
+    /// A builder for [`PermissionGroupByUser`](crate::model::PermissionGroupByUser)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) permission_group_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) membership_status:
+            std::option::Option<crate::model::PermissionGroupMembershipStatus>,
     }
-}
-impl UserStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UserStatus::Creating => "CREATING",
-            UserStatus::Disabled => "DISABLED",
-            UserStatus::Enabled => "ENABLED",
-            UserStatus::Unknown(s) => s.as_ref(),
+    impl Builder {
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn permission_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.permission_group_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn set_permission_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.permission_group_id = input;
+            self
+        }
+        /// <p>The name of the permission group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the permission group.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Indicates the status of the user account within a permission group.</p>
+        /// <ul>
+        /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+        /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+        /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+        /// </ul>
+        pub fn membership_status(
+            mut self,
+            input: crate::model::PermissionGroupMembershipStatus,
+        ) -> Self {
+            self.membership_status = Some(input);
+            self
+        }
+        /// <p>Indicates the status of the user account within a permission group.</p>
+        /// <ul>
+        /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+        /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+        /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+        /// </ul>
+        pub fn set_membership_status(
+            mut self,
+            input: std::option::Option<crate::model::PermissionGroupMembershipStatus>,
+        ) -> Self {
+            self.membership_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PermissionGroupByUser`](crate::model::PermissionGroupByUser)
+        pub fn build(self) -> crate::model::PermissionGroupByUser {
+            crate::model::PermissionGroupByUser {
+                permission_group_id: self.permission_group_id,
+                name: self.name,
+                membership_status: self.membership_status,
+            }
         }
     }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["CREATING", "DISABLED", "ENABLED"]
-    }
 }
-impl AsRef<str> for UserStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
+impl PermissionGroupByUser {
+    /// Creates a new builder-style object to manufacture [`PermissionGroupByUser`](crate::model::PermissionGroupByUser)
+    pub fn builder() -> crate::model::permission_group_by_user::Builder {
+        crate::model::permission_group_by_user::Builder::default()
     }
 }
 
@@ -1035,6 +1520,13 @@ pub struct PermissionGroup {
     pub create_time: i64,
     /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
     pub last_modified_time: i64,
+    /// <p>Indicates the status of the user account within a permission group.</p>
+    /// <ul>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// </ul>
+    pub membership_status: std::option::Option<crate::model::PermissionGroupMembershipStatus>,
 }
 impl PermissionGroup {
     /// <p> The unique identifier for the permission group.</p>
@@ -1072,6 +1564,17 @@ impl PermissionGroup {
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
     }
+    /// <p>Indicates the status of the user account within a permission group.</p>
+    /// <ul>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// </ul>
+    pub fn membership_status(
+        &self,
+    ) -> std::option::Option<&crate::model::PermissionGroupMembershipStatus> {
+        self.membership_status.as_ref()
+    }
 }
 impl std::fmt::Debug for PermissionGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1082,6 +1585,7 @@ impl std::fmt::Debug for PermissionGroup {
         formatter.field("application_permissions", &self.application_permissions);
         formatter.field("create_time", &self.create_time);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("membership_status", &self.membership_status);
         formatter.finish()
     }
 }
@@ -1099,6 +1603,8 @@ pub mod permission_group {
             std::option::Option<std::vec::Vec<crate::model::ApplicationPermission>>,
         pub(crate) create_time: std::option::Option<i64>,
         pub(crate) last_modified_time: std::option::Option<i64>,
+        pub(crate) membership_status:
+            std::option::Option<crate::model::PermissionGroupMembershipStatus>,
     }
     impl Builder {
         /// <p> The unique identifier for the permission group.</p>
@@ -1194,6 +1700,32 @@ pub mod permission_group {
             self.last_modified_time = input;
             self
         }
+        /// <p>Indicates the status of the user account within a permission group.</p>
+        /// <ul>
+        /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+        /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+        /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+        /// </ul>
+        pub fn membership_status(
+            mut self,
+            input: crate::model::PermissionGroupMembershipStatus,
+        ) -> Self {
+            self.membership_status = Some(input);
+            self
+        }
+        /// <p>Indicates the status of the user account within a permission group.</p>
+        /// <ul>
+        /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+        /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+        /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+        /// </ul>
+        pub fn set_membership_status(
+            mut self,
+            input: std::option::Option<crate::model::PermissionGroupMembershipStatus>,
+        ) -> Self {
+            self.membership_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PermissionGroup`](crate::model::PermissionGroup)
         pub fn build(self) -> crate::model::PermissionGroup {
             crate::model::PermissionGroup {
@@ -1203,6 +1735,7 @@ pub mod permission_group {
                 application_permissions: self.application_permissions,
                 create_time: self.create_time.unwrap_or_default(),
                 last_modified_time: self.last_modified_time.unwrap_or_default(),
+                membership_status: self.membership_status,
             }
         }
     }
@@ -1568,7 +2101,7 @@ pub struct DataViewDestinationTypeParams {
     /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
     /// </ul>
     pub destination_type: std::option::Option<std::string::String>,
-    /// <p>Data view export file format.</p>
+    /// <p>Dataview export file format.</p>
     /// <ul>
     /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
     /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
@@ -1589,7 +2122,7 @@ impl DataViewDestinationTypeParams {
     pub fn destination_type(&self) -> std::option::Option<&str> {
         self.destination_type.as_deref()
     }
-    /// <p>Data view export file format.</p>
+    /// <p>Dataview export file format.</p>
     /// <ul>
     /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
     /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
@@ -1660,7 +2193,7 @@ pub mod data_view_destination_type_params {
             self.destination_type = input;
             self
         }
-        /// <p>Data view export file format.</p>
+        /// <p>Dataview export file format.</p>
         /// <ul>
         /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
         /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
@@ -1672,7 +2205,7 @@ pub mod data_view_destination_type_params {
             self.s3_destination_export_file_format = Some(input);
             self
         }
-        /// <p>Data view export file format.</p>
+        /// <p>Dataview export file format.</p>
         /// <ul>
         /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
         /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>

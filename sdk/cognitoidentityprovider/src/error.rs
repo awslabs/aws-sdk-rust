@@ -1071,7 +1071,7 @@ pub struct AdminDisableProviderForUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminDisableProviderForUserErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -2239,7 +2239,7 @@ pub struct AdminLinkProviderForUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminLinkProviderForUserErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -3261,7 +3261,7 @@ pub struct AdminRespondToAuthChallengeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminRespondToAuthChallengeErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
@@ -4400,7 +4400,7 @@ pub struct AdminUpdateUserAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminUpdateUserAttributesErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -5601,7 +5601,7 @@ pub struct ConfirmSignUpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfirmSignUpErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
@@ -12929,7 +12929,7 @@ pub struct RespondToAuthChallengeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RespondToAuthChallengeErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
@@ -15738,7 +15738,7 @@ pub struct UpdateUserAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUserAttributesErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
@@ -16768,7 +16768,7 @@ pub struct VerifyUserAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyUserAttributeErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
@@ -17684,7 +17684,7 @@ impl CodeMismatchException {
     }
 }
 
-/// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias from a different account. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
+/// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasExistsException {

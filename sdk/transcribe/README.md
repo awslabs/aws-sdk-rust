@@ -3,7 +3,10 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Operations and objects for transcribing speech to text.
+Amazon Transcribe offers three main types of batch transcription: __Standard__, __Medical__, and __Call Analytics__.
+  - __Standard transcriptions__ are the most common option. Refer to for details.
+  - __Medical transcriptions__ are tailored to medical professionals and incorporate medical terms. A common use case for this service is transcribing doctor-patient dialogue into after-visit notes. Refer to for details.
+  - __Call Analytics transcriptions__ are designed for use with call center audio on two different channels; if you're looking for insight into customer service calls, use this option. Refer to for details.
 
 ## Getting Started
 
@@ -16,8 +19,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.13.0"
-aws-sdk-transcribe = "0.13.0"
+aws-config = "0.14.0"
+aws-sdk-transcribe = "0.14.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

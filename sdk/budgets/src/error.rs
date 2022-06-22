@@ -22,6 +22,8 @@ pub enum CreateBudgetErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -33,6 +35,7 @@ impl std::fmt::Display for CreateBudgetError {
             CreateBudgetErrorKind::DuplicateRecordException(_inner) => _inner.fmt(f),
             CreateBudgetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             CreateBudgetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -116,6 +119,10 @@ impl CreateBudgetError {
             CreateBudgetErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateBudgetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateBudgetErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for CreateBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -125,6 +132,7 @@ impl std::error::Error for CreateBudgetError {
             CreateBudgetErrorKind::DuplicateRecordException(_inner) => Some(_inner),
             CreateBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
             CreateBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -155,6 +163,8 @@ pub enum CreateBudgetActionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -167,6 +177,7 @@ impl std::fmt::Display for CreateBudgetActionError {
             CreateBudgetActionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             CreateBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             CreateBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -263,6 +274,13 @@ impl CreateBudgetActionError {
             CreateBudgetActionErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBudgetActionErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for CreateBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -273,6 +291,7 @@ impl std::error::Error for CreateBudgetActionError {
             CreateBudgetActionErrorKind::InternalErrorException(_inner) => Some(_inner),
             CreateBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -303,6 +322,8 @@ pub enum CreateNotificationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -315,6 +336,7 @@ impl std::fmt::Display for CreateNotificationError {
             CreateNotificationErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             CreateNotificationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             CreateNotificationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateNotificationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateNotificationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -411,6 +433,13 @@ impl CreateNotificationError {
             CreateNotificationErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateNotificationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateNotificationErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for CreateNotificationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -421,6 +450,7 @@ impl std::error::Error for CreateNotificationError {
             CreateNotificationErrorKind::InternalErrorException(_inner) => Some(_inner),
             CreateNotificationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateNotificationErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateNotificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -451,6 +481,8 @@ pub enum CreateSubscriberErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -463,6 +495,7 @@ impl std::fmt::Display for CreateSubscriberError {
             CreateSubscriberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             CreateSubscriberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             CreateSubscriberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateSubscriberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             CreateSubscriberErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -556,6 +589,13 @@ impl CreateSubscriberError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateSubscriberErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `CreateSubscriberErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSubscriberErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for CreateSubscriberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -566,6 +606,7 @@ impl std::error::Error for CreateSubscriberError {
             CreateSubscriberErrorKind::InternalErrorException(_inner) => Some(_inner),
             CreateSubscriberErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateSubscriberErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateSubscriberErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateSubscriberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -592,6 +633,8 @@ pub enum DeleteBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -602,6 +645,7 @@ impl std::fmt::Display for DeleteBudgetError {
             DeleteBudgetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DeleteBudgetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -675,6 +719,10 @@ impl DeleteBudgetError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBudgetErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `DeleteBudgetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteBudgetErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for DeleteBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -683,6 +731,7 @@ impl std::error::Error for DeleteBudgetError {
             DeleteBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
             DeleteBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -711,6 +760,8 @@ pub enum DeleteBudgetActionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -722,6 +773,7 @@ impl std::fmt::Display for DeleteBudgetActionError {
             DeleteBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteBudgetActionErrorKind::ResourceLockedException(_inner) => _inner.fmt(f),
+            DeleteBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -811,6 +863,13 @@ impl DeleteBudgetActionError {
             DeleteBudgetActionErrorKind::ResourceLockedException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBudgetActionErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -820,6 +879,7 @@ impl std::error::Error for DeleteBudgetActionError {
             DeleteBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteBudgetActionErrorKind::ResourceLockedException(_inner) => Some(_inner),
+            DeleteBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -846,6 +906,8 @@ pub enum DeleteNotificationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -856,6 +918,7 @@ impl std::fmt::Display for DeleteNotificationError {
             DeleteNotificationErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DeleteNotificationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteNotificationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteNotificationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteNotificationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -938,6 +1001,13 @@ impl DeleteNotificationError {
             DeleteNotificationErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteNotificationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteNotificationErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteNotificationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -946,6 +1016,7 @@ impl std::error::Error for DeleteNotificationError {
             DeleteNotificationErrorKind::InternalErrorException(_inner) => Some(_inner),
             DeleteNotificationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteNotificationErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteNotificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -972,6 +1043,8 @@ pub enum DeleteSubscriberErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -982,6 +1055,7 @@ impl std::fmt::Display for DeleteSubscriberError {
             DeleteSubscriberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DeleteSubscriberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteSubscriberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteSubscriberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteSubscriberErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1061,6 +1135,13 @@ impl DeleteSubscriberError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSubscriberErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSubscriberErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteSubscriberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1069,6 +1150,7 @@ impl std::error::Error for DeleteSubscriberError {
             DeleteSubscriberErrorKind::InternalErrorException(_inner) => Some(_inner),
             DeleteSubscriberErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteSubscriberErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteSubscriberErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteSubscriberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1095,6 +1177,8 @@ pub enum DescribeBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1105,6 +1189,7 @@ impl std::fmt::Display for DescribeBudgetError {
             DescribeBudgetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DescribeBudgetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DescribeBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1184,6 +1269,10 @@ impl DescribeBudgetError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeBudgetErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `DescribeBudgetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DescribeBudgetErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for DescribeBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1192,6 +1281,7 @@ impl std::error::Error for DescribeBudgetError {
             DescribeBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
             DescribeBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1218,6 +1308,8 @@ pub enum DescribeBudgetActionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1228,6 +1320,7 @@ impl std::fmt::Display for DescribeBudgetActionError {
             DescribeBudgetActionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DescribeBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DescribeBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1310,6 +1403,13 @@ impl DescribeBudgetActionError {
             DescribeBudgetActionErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetActionErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1318,6 +1418,7 @@ impl std::error::Error for DescribeBudgetActionError {
             DescribeBudgetActionErrorKind::InternalErrorException(_inner) => Some(_inner),
             DescribeBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1346,6 +1447,8 @@ pub enum DescribeBudgetActionHistoriesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1361,6 +1464,7 @@ impl std::fmt::Display for DescribeBudgetActionHistoriesError {
                 _inner.fmt(f)
             }
             DescribeBudgetActionHistoriesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeBudgetActionHistoriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1453,6 +1557,13 @@ impl DescribeBudgetActionHistoriesError {
             DescribeBudgetActionHistoriesErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeBudgetActionHistoriesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1466,6 +1577,7 @@ impl std::error::Error for DescribeBudgetActionHistoriesError {
                 Some(_inner)
             }
             DescribeBudgetActionHistoriesErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeBudgetActionHistoriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1492,6 +1604,8 @@ pub enum DescribeBudgetActionsForAccountErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1510,6 +1624,7 @@ impl std::fmt::Display for DescribeBudgetActionsForAccountError {
             DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(_inner) => {
                 _inner.fmt(f)
             }
+            DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeBudgetActionsForAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1595,6 +1710,13 @@ impl DescribeBudgetActionsForAccountError {
             DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeBudgetActionsForAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1609,6 +1731,7 @@ impl std::error::Error for DescribeBudgetActionsForAccountError {
             DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(_inner) => {
                 Some(_inner)
             }
+            DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeBudgetActionsForAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1637,6 +1760,8 @@ pub enum DescribeBudgetActionsForBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1654,6 +1779,7 @@ impl std::fmt::Display for DescribeBudgetActionsForBudgetError {
                 _inner.fmt(f)
             }
             DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeBudgetActionsForBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1746,6 +1872,13 @@ impl DescribeBudgetActionsForBudgetError {
             DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeBudgetActionsForBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1759,6 +1892,7 @@ impl std::error::Error for DescribeBudgetActionsForBudgetError {
                 Some(_inner)
             }
             DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeBudgetActionsForBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1789,6 +1923,8 @@ pub enum DescribeBudgetNotificationsForAccountErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1811,6 +1947,9 @@ impl std::fmt::Display for DescribeBudgetNotificationsForAccountError {
                 _inner.fmt(f)
             }
             DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_inner) => {
                 _inner.fmt(f)
             }
             DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1912,6 +2051,13 @@ impl DescribeBudgetNotificationsForAccountError {
             DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeBudgetNotificationsForAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1932,6 +2078,9 @@ impl std::error::Error for DescribeBudgetNotificationsForAccountError {
                 Some(_inner)
             }
             DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
             DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => {
@@ -1966,6 +2115,8 @@ pub enum DescribeBudgetPerformanceHistoryErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1988,6 +2139,7 @@ impl std::fmt::Display for DescribeBudgetPerformanceHistoryError {
                 _inner.fmt(f)
             }
             DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeBudgetPerformanceHistoryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2087,6 +2239,13 @@ impl DescribeBudgetPerformanceHistoryError {
             DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeBudgetPerformanceHistoryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2107,6 +2266,7 @@ impl std::error::Error for DescribeBudgetPerformanceHistoryError {
                 Some(_inner)
             }
             DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeBudgetPerformanceHistoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2137,6 +2297,8 @@ pub enum DescribeBudgetsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2149,6 +2311,7 @@ impl std::fmt::Display for DescribeBudgetsError {
             DescribeBudgetsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
             DescribeBudgetsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DescribeBudgetsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeBudgetsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeBudgetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2242,6 +2405,10 @@ impl DescribeBudgetsError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeBudgetsErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DescribeBudgetsErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for DescribeBudgetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2252,6 +2419,7 @@ impl std::error::Error for DescribeBudgetsError {
             DescribeBudgetsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             DescribeBudgetsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeBudgetsErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeBudgetsErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeBudgetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2282,6 +2450,8 @@ pub enum DescribeNotificationsForBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2302,6 +2472,7 @@ impl std::fmt::Display for DescribeNotificationsForBudgetError {
                 _inner.fmt(f)
             }
             DescribeNotificationsForBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeNotificationsForBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DescribeNotificationsForBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2401,6 +2572,13 @@ impl DescribeNotificationsForBudgetError {
             DescribeNotificationsForBudgetErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeNotificationsForBudgetErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeNotificationsForBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2417,6 +2595,7 @@ impl std::error::Error for DescribeNotificationsForBudgetError {
                 Some(_inner)
             }
             DescribeNotificationsForBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeNotificationsForBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeNotificationsForBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2447,6 +2626,8 @@ pub enum DescribeSubscribersForNotificationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2469,6 +2650,9 @@ impl std::fmt::Display for DescribeSubscribersForNotificationError {
                 _inner.fmt(f)
             }
             DescribeSubscribersForNotificationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeSubscribersForNotificationErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
             DescribeSubscribersForNotificationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2568,6 +2752,13 @@ impl DescribeSubscribersForNotificationError {
             DescribeSubscribersForNotificationErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSubscribersForNotificationErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeSubscribersForNotificationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2588,6 +2779,9 @@ impl std::error::Error for DescribeSubscribersForNotificationError {
                 Some(_inner)
             }
             DescribeSubscribersForNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeSubscribersForNotificationErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
             DescribeSubscribersForNotificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2616,6 +2810,8 @@ pub enum ExecuteBudgetActionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2627,6 +2823,7 @@ impl std::fmt::Display for ExecuteBudgetActionError {
             ExecuteBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ExecuteBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ExecuteBudgetActionErrorKind::ResourceLockedException(_inner) => _inner.fmt(f),
+            ExecuteBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             ExecuteBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2716,6 +2913,13 @@ impl ExecuteBudgetActionError {
             ExecuteBudgetActionErrorKind::ResourceLockedException(_)
         )
     }
+    /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteBudgetActionErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for ExecuteBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2725,6 +2929,7 @@ impl std::error::Error for ExecuteBudgetActionError {
             ExecuteBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ExecuteBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
             ExecuteBudgetActionErrorKind::ResourceLockedException(_inner) => Some(_inner),
+            ExecuteBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
             ExecuteBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2751,6 +2956,8 @@ pub enum UpdateBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2761,6 +2968,7 @@ impl std::fmt::Display for UpdateBudgetError {
             UpdateBudgetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             UpdateBudgetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             UpdateBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2834,6 +3042,10 @@ impl UpdateBudgetError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateBudgetErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `UpdateBudgetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateBudgetErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for UpdateBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2842,6 +3054,7 @@ impl std::error::Error for UpdateBudgetError {
             UpdateBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
             UpdateBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateBudgetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2870,6 +3083,8 @@ pub enum UpdateBudgetActionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2881,6 +3096,7 @@ impl std::fmt::Display for UpdateBudgetActionError {
             UpdateBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             UpdateBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateBudgetActionErrorKind::ResourceLockedException(_inner) => _inner.fmt(f),
+            UpdateBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2970,6 +3186,13 @@ impl UpdateBudgetActionError {
             UpdateBudgetActionErrorKind::ResourceLockedException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBudgetActionErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for UpdateBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2979,6 +3202,7 @@ impl std::error::Error for UpdateBudgetActionError {
             UpdateBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateBudgetActionErrorKind::ResourceLockedException(_inner) => Some(_inner),
+            UpdateBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateBudgetActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3007,6 +3231,8 @@ pub enum UpdateNotificationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3018,6 +3244,7 @@ impl std::fmt::Display for UpdateNotificationError {
             UpdateNotificationErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             UpdateNotificationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             UpdateNotificationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateNotificationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateNotificationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3107,6 +3334,13 @@ impl UpdateNotificationError {
             UpdateNotificationErrorKind::NotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateNotificationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNotificationErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for UpdateNotificationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3116,6 +3350,7 @@ impl std::error::Error for UpdateNotificationError {
             UpdateNotificationErrorKind::InternalErrorException(_inner) => Some(_inner),
             UpdateNotificationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateNotificationErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateNotificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3144,6 +3379,8 @@ pub enum UpdateSubscriberErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3155,6 +3392,7 @@ impl std::fmt::Display for UpdateSubscriberError {
             UpdateSubscriberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             UpdateSubscriberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             UpdateSubscriberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateSubscriberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UpdateSubscriberErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3241,6 +3479,13 @@ impl UpdateSubscriberError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateSubscriberErrorKind::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSubscriberErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for UpdateSubscriberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3250,8 +3495,74 @@ impl std::error::Error for UpdateSubscriberError {
             UpdateSubscriberErrorKind::InternalErrorException(_inner) => Some(_inner),
             UpdateSubscriberErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateSubscriberErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateSubscriberErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateSubscriberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
+    }
+}
+
+/// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThrottlingException {
+    /// <p>The error message the exception carries.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThrottlingException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ThrottlingException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottlingException")?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException)
+pub mod throttling_exception {
+
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error message the exception carries.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error message the exception carries.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
     }
 }
 
@@ -3278,8 +3589,8 @@ impl NotFoundException {
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
-        if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -3343,8 +3654,8 @@ impl InvalidParameterException {
 impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -3408,8 +3719,8 @@ impl InternalErrorException {
 impl std::fmt::Display for InternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalErrorException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -3473,8 +3784,8 @@ impl DuplicateRecordException {
 impl std::fmt::Display for DuplicateRecordException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateRecordException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -3538,8 +3849,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -3603,8 +3914,8 @@ impl ResourceLockedException {
 impl std::fmt::Display for ResourceLockedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLockedException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -3668,8 +3979,8 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
@@ -3733,8 +4044,8 @@ impl ExpiredNextTokenException {
 impl std::fmt::Display for ExpiredNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredNextTokenException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -3798,8 +4109,8 @@ impl CreationLimitExceededException {
 impl std::fmt::Display for CreationLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CreationLimitExceededException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }

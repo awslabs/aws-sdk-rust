@@ -2249,7 +2249,7 @@ pub mod create_cluster_input {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
         /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
@@ -2262,7 +2262,7 @@ pub mod create_cluster_input {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
         /// </ul>
         pub fn set_master_user_password(
             mut self,
@@ -16533,12 +16533,12 @@ pub mod get_cluster_credentials_input {
             self.db_name = input;
             self
         }
-        /// <p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>
+        /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>
+        /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16727,6 +16727,174 @@ impl GetClusterCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetClusterCredentialsInput`](crate::input::GetClusterCredentialsInput)
     pub fn builder() -> crate::input::get_cluster_credentials_input::Builder {
         crate::input::get_cluster_credentials_input::Builder::default()
+    }
+}
+
+/// See [`GetClusterCredentialsWithIamInput`](crate::input::GetClusterCredentialsWithIamInput)
+pub mod get_cluster_credentials_with_iam_input {
+
+    /// A builder for [`GetClusterCredentialsWithIamInput`](crate::input::GetClusterCredentialsWithIamInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) db_name: std::option::Option<std::string::String>,
+        pub(crate) cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) duration_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_name = input;
+            self
+        }
+        /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_identifier = input;
+            self
+        }
+        /// <p>The number of seconds until the returned temporary password expires.</p>
+        /// <p>Range: 900-3600. Default: 900.</p>
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.duration_seconds = Some(input);
+            self
+        }
+        /// <p>The number of seconds until the returned temporary password expires.</p>
+        /// <p>Range: 900-3600. Default: 900.</p>
+        pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetClusterCredentialsWithIamInput`](crate::input::GetClusterCredentialsWithIamInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetClusterCredentialsWithIamInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetClusterCredentialsWithIamInput {
+                db_name: self.db_name,
+                cluster_identifier: self.cluster_identifier,
+                duration_seconds: self.duration_seconds,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetClusterCredentialsWithIamInputOperationOutputAlias =
+    crate::operation::GetClusterCredentialsWithIAM;
+#[doc(hidden)]
+pub type GetClusterCredentialsWithIamInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl GetClusterCredentialsWithIamInput {
+    /// Consumes the builder and constructs an Operation<[`GetClusterCredentialsWithIAM`](crate::operation::GetClusterCredentialsWithIAM)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetClusterCredentialsWithIAM,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetClusterCredentialsWithIamInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetClusterCredentialsWithIamInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_cluster_credentials_with_iam(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetClusterCredentialsWithIAM::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetClusterCredentialsWithIAM",
+            "redshift",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetClusterCredentialsWithIamInput`](crate::input::GetClusterCredentialsWithIamInput)
+    pub fn builder() -> crate::input::get_cluster_credentials_with_iam_input::Builder {
+        crate::input::get_cluster_credentials_with_iam_input::Builder::default()
     }
 }
 
@@ -17583,7 +17751,7 @@ pub mod modify_cluster_input {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
         /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
@@ -17599,7 +17767,7 @@ pub mod modify_cluster_input {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
         /// </ul>
         pub fn set_master_user_password(
             mut self,
@@ -24940,7 +25108,7 @@ pub struct ModifyClusterInput {
     /// <li> <p>Must contain at least one uppercase letter.</p> </li>
     /// <li> <p>Must contain at least one lowercase letter.</p> </li>
     /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
     /// </ul>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
@@ -25058,7 +25226,7 @@ impl ModifyClusterInput {
     /// <li> <p>Must contain at least one uppercase letter.</p> </li>
     /// <li> <p>Must contain at least one lowercase letter.</p> </li>
     /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
     /// </ul>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -25378,6 +25546,43 @@ impl std::fmt::Debug for GetReservedNodeExchangeConfigurationOptionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetClusterCredentialsWithIamInput {
+    /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
+    pub db_name: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
+    pub cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>The number of seconds until the returned temporary password expires.</p>
+    /// <p>Range: 900-3600. Default: 900.</p>
+    pub duration_seconds: std::option::Option<i32>,
+}
+impl GetClusterCredentialsWithIamInput {
+    /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
+    pub fn db_name(&self) -> std::option::Option<&str> {
+        self.db_name.as_deref()
+    }
+    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The number of seconds until the returned temporary password expires.</p>
+    /// <p>Range: 900-3600. Default: 900.</p>
+    pub fn duration_seconds(&self) -> std::option::Option<i32> {
+        self.duration_seconds
+    }
+}
+impl std::fmt::Debug for GetClusterCredentialsWithIamInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetClusterCredentialsWithIamInput");
+        formatter.field("db_name", &self.db_name);
+        formatter.field("cluster_identifier", &self.cluster_identifier);
+        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.finish()
+    }
+}
+
 /// <p>The request parameters to get cluster credentials.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -25403,7 +25608,7 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
     pub db_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>
+    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Constraint: minimum 900, maximum 3600.</p>
@@ -25448,7 +25653,7 @@ impl GetClusterCredentialsInput {
     pub fn db_name(&self) -> std::option::Option<&str> {
         self.db_name.as_deref()
     }
-    /// <p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>
+    /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -28872,7 +29077,7 @@ pub struct CreateClusterInput {
     /// <li> <p>Must contain at least one uppercase letter.</p> </li>
     /// <li> <p>Must contain at least one lowercase letter.</p> </li>
     /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
     /// </ul>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>A list of security groups to be associated with this cluster.</p>
@@ -29033,7 +29238,7 @@ impl CreateClusterInput {
     /// <li> <p>Must contain at least one uppercase letter.</p> </li>
     /// <li> <p>Must contain at least one lowercase letter.</p> </li>
     /// <li> <p>Must contain one number.</p> </li>
-    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+    /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
     /// </ul>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()

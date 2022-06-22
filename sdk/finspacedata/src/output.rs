@@ -321,6 +321,89 @@ impl ResetUserPasswordOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListUsersByPermissionGroupOutput {
+    /// <p>Lists details of all users in a specific permission group.</p>
+    pub users: std::option::Option<std::vec::Vec<crate::model::UserByPermissionGroup>>,
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUsersByPermissionGroupOutput {
+    /// <p>Lists details of all users in a specific permission group.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::UserByPermissionGroup]> {
+        self.users.as_deref()
+    }
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListUsersByPermissionGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListUsersByPermissionGroupOutput");
+        formatter.field("users", &self.users);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput)
+pub mod list_users_by_permission_group_output {
+
+    /// A builder for [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserByPermissionGroup>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>Lists details of all users in a specific permission group.</p>
+        pub fn users(mut self, input: crate::model::UserByPermissionGroup) -> Self {
+            let mut v = self.users.unwrap_or_default();
+            v.push(input);
+            self.users = Some(v);
+            self
+        }
+        /// <p>Lists details of all users in a specific permission group.</p>
+        pub fn set_users(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UserByPermissionGroup>>,
+        ) -> Self {
+            self.users = input;
+            self
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput)
+        pub fn build(self) -> crate::output::ListUsersByPermissionGroupOutput {
+            crate::output::ListUsersByPermissionGroupOutput {
+                users: self.users,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListUsersByPermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput)
+    pub fn builder() -> crate::output::list_users_by_permission_group_output::Builder {
+        crate::output::list_users_by_permission_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>A list of all the user accounts.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -398,6 +481,90 @@ impl ListUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::output::ListUsersOutput)
     pub fn builder() -> crate::output::list_users_output::Builder {
         crate::output::list_users_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPermissionGroupsByUserOutput {
+    /// <p>A list of returned permission groups.</p>
+    pub permission_groups: std::option::Option<std::vec::Vec<crate::model::PermissionGroupByUser>>,
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPermissionGroupsByUserOutput {
+    /// <p>A list of returned permission groups.</p>
+    pub fn permission_groups(&self) -> std::option::Option<&[crate::model::PermissionGroupByUser]> {
+        self.permission_groups.as_deref()
+    }
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListPermissionGroupsByUserOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPermissionGroupsByUserOutput");
+        formatter.field("permission_groups", &self.permission_groups);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput)
+pub mod list_permission_groups_by_user_output {
+
+    /// A builder for [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) permission_groups:
+            std::option::Option<std::vec::Vec<crate::model::PermissionGroupByUser>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `permission_groups`.
+        ///
+        /// To override the contents of this collection use [`set_permission_groups`](Self::set_permission_groups).
+        ///
+        /// <p>A list of returned permission groups.</p>
+        pub fn permission_groups(mut self, input: crate::model::PermissionGroupByUser) -> Self {
+            let mut v = self.permission_groups.unwrap_or_default();
+            v.push(input);
+            self.permission_groups = Some(v);
+            self
+        }
+        /// <p>A list of returned permission groups.</p>
+        pub fn set_permission_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PermissionGroupByUser>>,
+        ) -> Self {
+            self.permission_groups = input;
+            self
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput)
+        pub fn build(self) -> crate::output::ListPermissionGroupsByUserOutput {
+            crate::output::ListPermissionGroupsByUserOutput {
+                permission_groups: self.permission_groups,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListPermissionGroupsByUserOutput {
+    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput)
+    pub fn builder() -> crate::output::list_permission_groups_by_user_output::Builder {
+        crate::output::list_permission_groups_by_user_output::Builder::default()
     }
 }
 
@@ -851,7 +1018,7 @@ pub struct GetUserOutput {
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p>
@@ -904,7 +1071,7 @@ impl GetUserOutput {
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
         self.r#type.as_ref()
@@ -1051,7 +1218,7 @@ pub mod get_user_output {
         /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::UserType) -> Self {
             self.r#type = Some(input);
@@ -1062,7 +1229,7 @@ pub mod get_user_output {
         /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
             self.r#type = input;
@@ -1253,6 +1420,64 @@ impl GetProgrammaticAccessCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput)
     pub fn builder() -> crate::output::get_programmatic_access_credentials_output::Builder {
         crate::output::get_programmatic_access_credentials_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPermissionGroupOutput {
+    /// <p>The structure for a permission group.</p>
+    pub permission_group: std::option::Option<crate::model::PermissionGroup>,
+}
+impl GetPermissionGroupOutput {
+    /// <p>The structure for a permission group.</p>
+    pub fn permission_group(&self) -> std::option::Option<&crate::model::PermissionGroup> {
+        self.permission_group.as_ref()
+    }
+}
+impl std::fmt::Debug for GetPermissionGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetPermissionGroupOutput");
+        formatter.field("permission_group", &self.permission_group);
+        formatter.finish()
+    }
+}
+/// See [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput)
+pub mod get_permission_group_output {
+
+    /// A builder for [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) permission_group: std::option::Option<crate::model::PermissionGroup>,
+    }
+    impl Builder {
+        /// <p>The structure for a permission group.</p>
+        pub fn permission_group(mut self, input: crate::model::PermissionGroup) -> Self {
+            self.permission_group = Some(input);
+            self
+        }
+        /// <p>The structure for a permission group.</p>
+        pub fn set_permission_group(
+            mut self,
+            input: std::option::Option<crate::model::PermissionGroup>,
+        ) -> Self {
+            self.permission_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput)
+        pub fn build(self) -> crate::output::GetPermissionGroupOutput {
+            crate::output::GetPermissionGroupOutput {
+                permission_group: self.permission_group,
+            }
+        }
+    }
+}
+impl GetPermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput)
+    pub fn builder() -> crate::output::get_permission_group_output::Builder {
+        crate::output::get_permission_group_output::Builder::default()
     }
 }
 
@@ -2295,6 +2520,61 @@ impl EnableUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateUserFromPermissionGroupOutput {
+    /// <p>The returned status code of the response.</p>
+    pub status_code: i32,
+}
+impl DisassociateUserFromPermissionGroupOutput {
+    /// <p>The returned status code of the response.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
+}
+impl std::fmt::Debug for DisassociateUserFromPermissionGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateUserFromPermissionGroupOutput");
+        formatter.field("status_code", &self.status_code);
+        formatter.finish()
+    }
+}
+/// See [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput)
+pub mod disassociate_user_from_permission_group_output {
+
+    /// A builder for [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status_code: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The returned status code of the response.</p>
+        pub fn status_code(mut self, input: i32) -> Self {
+            self.status_code = Some(input);
+            self
+        }
+        /// <p>The returned status code of the response.</p>
+        pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.status_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput)
+        pub fn build(self) -> crate::output::DisassociateUserFromPermissionGroupOutput {
+            crate::output::DisassociateUserFromPermissionGroupOutput {
+                status_code: self.status_code.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DisassociateUserFromPermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput)
+    pub fn builder() -> crate::output::disassociate_user_from_permission_group_output::Builder {
+        crate::output::disassociate_user_from_permission_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableUserOutput {
     /// <p>The unique identifier for the disabled user account.</p>
     pub user_id: std::option::Option<std::string::String>,
@@ -2773,5 +3053,60 @@ impl CreateChangesetOutput {
     /// Creates a new builder-style object to manufacture [`CreateChangesetOutput`](crate::output::CreateChangesetOutput)
     pub fn builder() -> crate::output::create_changeset_output::Builder {
         crate::output::create_changeset_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateUserToPermissionGroupOutput {
+    /// <p>The returned status code of the response.</p>
+    pub status_code: i32,
+}
+impl AssociateUserToPermissionGroupOutput {
+    /// <p>The returned status code of the response.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
+}
+impl std::fmt::Debug for AssociateUserToPermissionGroupOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateUserToPermissionGroupOutput");
+        formatter.field("status_code", &self.status_code);
+        formatter.finish()
+    }
+}
+/// See [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput)
+pub mod associate_user_to_permission_group_output {
+
+    /// A builder for [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status_code: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The returned status code of the response.</p>
+        pub fn status_code(mut self, input: i32) -> Self {
+            self.status_code = Some(input);
+            self
+        }
+        /// <p>The returned status code of the response.</p>
+        pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.status_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput)
+        pub fn build(self) -> crate::output::AssociateUserToPermissionGroupOutput {
+            crate::output::AssociateUserToPermissionGroupOutput {
+                status_code: self.status_code.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AssociateUserToPermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput)
+    pub fn builder() -> crate::output::associate_user_to_permission_group_output::Builder {
+        crate::output::associate_user_to_permission_group_output::Builder::default()
     }
 }

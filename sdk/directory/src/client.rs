@@ -451,6 +451,20 @@ impl Client {
     pub fn describe_regions(&self) -> fluent_builders::DescribeRegions {
         fluent_builders::DescribeRegions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeSettings`](crate::client::fluent_builders::DescribeSettings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSettings::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeSettings::set_directory_id): <p>The identifier of the directory for which to retrieve information.</p>
+    ///   - [`status(DirectoryConfigurationStatus)`](crate::client::fluent_builders::DescribeSettings::status) / [`set_status(Option<DirectoryConfigurationStatus>)`](crate::client::fluent_builders::DescribeSettings::set_status): <p>The status of the directory settings for which to retrieve information.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSettings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSettings::set_next_token): <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+    /// - On success, responds with [`DescribeSettingsOutput`](crate::output::DescribeSettingsOutput) with field(s):
+    ///   - [`directory_id(Option<String>)`](crate::output::DescribeSettingsOutput::directory_id): <p>The identifier of the directory.</p>
+    ///   - [`setting_entries(Option<Vec<SettingEntry>>)`](crate::output::DescribeSettingsOutput::setting_entries): <p>The list of <code>SettingEntry</code> objects that were retrieved.</p>  <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeSettingsOutput::next_token): <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSettings</code> to retrieve the next set of items. </p>
+    /// - On failure, responds with [`SdkError<DescribeSettingsError>`](crate::error::DescribeSettingsError)
+    pub fn describe_settings(&self) -> fluent_builders::DescribeSettings {
+        fluent_builders::DescribeSettings::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeSharedDirectories`](crate::client::fluent_builders::DescribeSharedDirectories) operation.
     ///
     /// - The fluent builder is configurable:
@@ -827,6 +841,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateRadiusError>`](crate::error::UpdateRadiusError)
     pub fn update_radius(&self) -> fluent_builders::UpdateRadius {
         fluent_builders::UpdateRadius::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateSettings`](crate::client::fluent_builders::UpdateSettings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSettings::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::UpdateSettings::set_directory_id): <p>The identifier of the directory for which to update settings.</p>
+    ///   - [`settings(Vec<Setting>)`](crate::client::fluent_builders::UpdateSettings::settings) / [`set_settings(Option<Vec<Setting>>)`](crate::client::fluent_builders::UpdateSettings::set_settings): <p>The list of <code>Setting</code> objects.</p>
+    /// - On success, responds with [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput) with field(s):
+    ///   - [`directory_id(Option<String>)`](crate::output::UpdateSettingsOutput::directory_id): <p>The identifier of the directory.</p>
+    /// - On failure, responds with [`SdkError<UpdateSettingsError>`](crate::error::UpdateSettingsError)
+    pub fn update_settings(&self) -> fluent_builders::UpdateSettings {
+        fluent_builders::UpdateSettings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateTrust`](crate::client::fluent_builders::UpdateTrust) operation.
     ///
@@ -3261,6 +3286,82 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeSettings`.
+    ///
+    /// <p>Retrieves information about the configurable settings for the specified directory.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeSettings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_settings_input::Builder,
+    }
+    impl DescribeSettings {
+        /// Creates a new `DescribeSettings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeSettingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeSettingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the directory for which to retrieve information.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
+            self
+        }
+        /// <p>The identifier of the directory for which to retrieve information.</p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_directory_id(input);
+            self
+        }
+        /// <p>The status of the directory settings for which to retrieve information.</p>
+        pub fn status(mut self, input: crate::model::DirectoryConfigurationStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        /// <p>The status of the directory settings for which to retrieve information.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DirectoryConfigurationStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
+        /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeSharedDirectories`.
     ///
     /// <p>Returns the shared directories in your account. </p>
@@ -5522,6 +5623,76 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RadiusSettings>,
         ) -> Self {
             self.inner = self.inner.set_radius_settings(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateSettings`.
+    ///
+    /// <p>Updates the configurable settings for the specified directory.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateSettings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_settings_input::Builder,
+    }
+    impl UpdateSettings {
+        /// Creates a new `UpdateSettings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSettingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSettingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the directory for which to update settings.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
+            self
+        }
+        /// <p>The identifier of the directory for which to update settings.</p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_directory_id(input);
+            self
+        }
+        /// Appends an item to `Settings`.
+        ///
+        /// To override the contents of this collection use [`set_settings`](Self::set_settings).
+        ///
+        /// <p>The list of <code>Setting</code> objects.</p>
+        pub fn settings(mut self, input: crate::model::Setting) -> Self {
+            self.inner = self.inner.settings(input);
+            self
+        }
+        /// <p>The list of <code>Setting</code> objects.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Setting>>,
+        ) -> Self {
+            self.inner = self.inner.set_settings(input);
             self
         }
     }

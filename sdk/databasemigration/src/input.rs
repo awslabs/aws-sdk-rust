@@ -622,12 +622,12 @@ pub mod create_endpoint_input {
             self.port = input;
             self
         }
-        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1413,6 +1413,194 @@ impl CreateEventSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionInput`](crate::input::CreateEventSubscriptionInput)
     pub fn builder() -> crate::input::create_event_subscription_input::Builder {
         crate::input::create_event_subscription_input::Builder::default()
+    }
+}
+
+/// See [`CreateFleetAdvisorCollectorInput`](crate::input::CreateFleetAdvisorCollectorInput)
+pub mod create_fleet_advisor_collector_input {
+
+    /// A builder for [`CreateFleetAdvisorCollectorInput`](crate::input::CreateFleetAdvisorCollectorInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collector_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) service_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+        pub fn collector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collector_name = Some(input.into());
+            self
+        }
+        /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+        pub fn set_collector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collector_name = input;
+            self
+        }
+        /// <p>A summary description of your Fleet Advisor collector.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A summary description of your Fleet Advisor collector.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+        pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+        pub fn set_service_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_access_role_arn = input;
+            self
+        }
+        /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFleetAdvisorCollectorInput`](crate::input::CreateFleetAdvisorCollectorInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateFleetAdvisorCollectorInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateFleetAdvisorCollectorInput {
+                collector_name: self.collector_name,
+                description: self.description,
+                service_access_role_arn: self.service_access_role_arn,
+                s3_bucket_name: self.s3_bucket_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateFleetAdvisorCollectorInputOperationOutputAlias =
+    crate::operation::CreateFleetAdvisorCollector;
+#[doc(hidden)]
+pub type CreateFleetAdvisorCollectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateFleetAdvisorCollectorInput {
+    /// Consumes the builder and constructs an Operation<[`CreateFleetAdvisorCollector`](crate::operation::CreateFleetAdvisorCollector)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateFleetAdvisorCollector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateFleetAdvisorCollectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateFleetAdvisorCollectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonDMSv20160101.CreateFleetAdvisorCollector",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_fleet_advisor_collector(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFleetAdvisorCollector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFleetAdvisorCollector",
+            "databasemigrationservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateFleetAdvisorCollectorInput`](crate::input::CreateFleetAdvisorCollectorInput)
+    pub fn builder() -> crate::input::create_fleet_advisor_collector_input::Builder {
+        crate::input::create_fleet_advisor_collector_input::Builder::default()
     }
 }
 
@@ -2984,6 +3172,304 @@ impl DeleteEventSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionInput`](crate::input::DeleteEventSubscriptionInput)
     pub fn builder() -> crate::input::delete_event_subscription_input::Builder {
         crate::input::delete_event_subscription_input::Builder::default()
+    }
+}
+
+/// See [`DeleteFleetAdvisorCollectorInput`](crate::input::DeleteFleetAdvisorCollectorInput)
+pub mod delete_fleet_advisor_collector_input {
+
+    /// A builder for [`DeleteFleetAdvisorCollectorInput`](crate::input::DeleteFleetAdvisorCollectorInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collector_referenced_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+        pub fn collector_referenced_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collector_referenced_id = Some(input.into());
+            self
+        }
+        /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+        pub fn set_collector_referenced_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collector_referenced_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteFleetAdvisorCollectorInput`](crate::input::DeleteFleetAdvisorCollectorInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteFleetAdvisorCollectorInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteFleetAdvisorCollectorInput {
+                collector_referenced_id: self.collector_referenced_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteFleetAdvisorCollectorInputOperationOutputAlias =
+    crate::operation::DeleteFleetAdvisorCollector;
+#[doc(hidden)]
+pub type DeleteFleetAdvisorCollectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteFleetAdvisorCollectorInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteFleetAdvisorCollector`](crate::operation::DeleteFleetAdvisorCollector)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteFleetAdvisorCollector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteFleetAdvisorCollectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteFleetAdvisorCollectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonDMSv20160101.DeleteFleetAdvisorCollector",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_fleet_advisor_collector(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFleetAdvisorCollector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFleetAdvisorCollector",
+            "databasemigrationservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorCollectorInput`](crate::input::DeleteFleetAdvisorCollectorInput)
+    pub fn builder() -> crate::input::delete_fleet_advisor_collector_input::Builder {
+        crate::input::delete_fleet_advisor_collector_input::Builder::default()
+    }
+}
+
+/// See [`DeleteFleetAdvisorDatabasesInput`](crate::input::DeleteFleetAdvisorDatabasesInput)
+pub mod delete_fleet_advisor_databases_input {
+
+    /// A builder for [`DeleteFleetAdvisorDatabasesInput`](crate::input::DeleteFleetAdvisorDatabasesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) database_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `database_ids`.
+        ///
+        /// To override the contents of this collection use [`set_database_ids`](Self::set_database_ids).
+        ///
+        /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+        pub fn database_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.database_ids.unwrap_or_default();
+            v.push(input.into());
+            self.database_ids = Some(v);
+            self
+        }
+        /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+        pub fn set_database_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.database_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteFleetAdvisorDatabasesInput`](crate::input::DeleteFleetAdvisorDatabasesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteFleetAdvisorDatabasesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteFleetAdvisorDatabasesInput {
+                database_ids: self.database_ids,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteFleetAdvisorDatabasesInputOperationOutputAlias =
+    crate::operation::DeleteFleetAdvisorDatabases;
+#[doc(hidden)]
+pub type DeleteFleetAdvisorDatabasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteFleetAdvisorDatabasesInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteFleetAdvisorDatabases`](crate::operation::DeleteFleetAdvisorDatabases)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteFleetAdvisorDatabases,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteFleetAdvisorDatabasesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteFleetAdvisorDatabasesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonDMSv20160101.DeleteFleetAdvisorDatabases",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_fleet_advisor_databases(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFleetAdvisorDatabases::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFleetAdvisorDatabases",
+            "databasemigrationservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorDatabasesInput`](crate::input::DeleteFleetAdvisorDatabasesInput)
+    pub fn builder() -> crate::input::delete_fleet_advisor_databases_input::Builder {
+        crate::input::delete_fleet_advisor_databases_input::Builder::default()
     }
 }
 
@@ -5477,6 +5963,929 @@ impl DescribeEventSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsInput`](crate::input::DescribeEventSubscriptionsInput)
     pub fn builder() -> crate::input::describe_event_subscriptions_input::Builder {
         crate::input::describe_event_subscriptions_input::Builder::default()
+    }
+}
+
+/// See [`DescribeFleetAdvisorCollectorsInput`](crate::input::DescribeFleetAdvisorCollectorsInput)
+pub mod describe_fleet_advisor_collectors_input {
+
+    /// A builder for [`DescribeFleetAdvisorCollectorsInput`](crate::input::DescribeFleetAdvisorCollectorsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorCollectorsInput`](crate::input::DescribeFleetAdvisorCollectorsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeFleetAdvisorCollectorsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeFleetAdvisorCollectorsInput {
+                filters: self.filters,
+                max_records: self.max_records,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeFleetAdvisorCollectorsInputOperationOutputAlias =
+    crate::operation::DescribeFleetAdvisorCollectors;
+#[doc(hidden)]
+pub type DescribeFleetAdvisorCollectorsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeFleetAdvisorCollectorsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeFleetAdvisorCollectors`](crate::operation::DescribeFleetAdvisorCollectors)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFleetAdvisorCollectors,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeFleetAdvisorCollectorsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFleetAdvisorCollectorsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonDMSv20160101.DescribeFleetAdvisorCollectors",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_collectors(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFleetAdvisorCollectors::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFleetAdvisorCollectors",
+            "databasemigrationservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorCollectorsInput`](crate::input::DescribeFleetAdvisorCollectorsInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_collectors_input::Builder {
+        crate::input::describe_fleet_advisor_collectors_input::Builder::default()
+    }
+}
+
+/// See [`DescribeFleetAdvisorDatabasesInput`](crate::input::DescribeFleetAdvisorDatabasesInput)
+pub mod describe_fleet_advisor_databases_input {
+
+    /// A builder for [`DescribeFleetAdvisorDatabasesInput`](crate::input::DescribeFleetAdvisorDatabasesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+        /// <ul>
+        /// <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+        /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+        /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+        /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+        /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+        /// <ul>
+        /// <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+        /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+        /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+        /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+        /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorDatabasesInput`](crate::input::DescribeFleetAdvisorDatabasesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeFleetAdvisorDatabasesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeFleetAdvisorDatabasesInput {
+                filters: self.filters,
+                max_records: self.max_records,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeFleetAdvisorDatabasesInputOperationOutputAlias =
+    crate::operation::DescribeFleetAdvisorDatabases;
+#[doc(hidden)]
+pub type DescribeFleetAdvisorDatabasesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeFleetAdvisorDatabasesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeFleetAdvisorDatabases`](crate::operation::DescribeFleetAdvisorDatabases)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFleetAdvisorDatabases,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeFleetAdvisorDatabasesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFleetAdvisorDatabasesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonDMSv20160101.DescribeFleetAdvisorDatabases",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_databases(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFleetAdvisorDatabases::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFleetAdvisorDatabases",
+            "databasemigrationservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorDatabasesInput`](crate::input::DescribeFleetAdvisorDatabasesInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_databases_input::Builder {
+        crate::input::describe_fleet_advisor_databases_input::Builder::default()
+    }
+}
+
+/// See [`DescribeFleetAdvisorLsaAnalysisInput`](crate::input::DescribeFleetAdvisorLsaAnalysisInput)
+pub mod describe_fleet_advisor_lsa_analysis_input {
+
+    /// A builder for [`DescribeFleetAdvisorLsaAnalysisInput`](crate::input::DescribeFleetAdvisorLsaAnalysisInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorLsaAnalysisInput`](crate::input::DescribeFleetAdvisorLsaAnalysisInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeFleetAdvisorLsaAnalysisInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeFleetAdvisorLsaAnalysisInput {
+                max_records: self.max_records,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeFleetAdvisorLsaAnalysisInputOperationOutputAlias =
+    crate::operation::DescribeFleetAdvisorLsaAnalysis;
+#[doc(hidden)]
+pub type DescribeFleetAdvisorLsaAnalysisInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeFleetAdvisorLsaAnalysisInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeFleetAdvisorLsaAnalysis`](crate::operation::DescribeFleetAdvisorLsaAnalysis)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFleetAdvisorLsaAnalysis,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeFleetAdvisorLsaAnalysisInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFleetAdvisorLsaAnalysisInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_lsa_analysis(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFleetAdvisorLsaAnalysis::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFleetAdvisorLsaAnalysis",
+            "databasemigrationservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorLsaAnalysisInput`](crate::input::DescribeFleetAdvisorLsaAnalysisInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_lsa_analysis_input::Builder {
+        crate::input::describe_fleet_advisor_lsa_analysis_input::Builder::default()
+    }
+}
+
+/// See [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput)
+pub mod describe_fleet_advisor_schema_object_summary_input {
+
+    /// A builder for [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// </ul>
+        /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+        /// </ul>
+        /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput {
+                filters: self.filters,
+                max_records: self.max_records,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeFleetAdvisorSchemaObjectSummaryInputOperationOutputAlias =
+    crate::operation::DescribeFleetAdvisorSchemaObjectSummary;
+#[doc(hidden)]
+pub type DescribeFleetAdvisorSchemaObjectSummaryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeFleetAdvisorSchemaObjectSummaryInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeFleetAdvisorSchemaObjectSummary`](crate::operation::DescribeFleetAdvisorSchemaObjectSummary)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFleetAdvisorSchemaObjectSummary,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_schema_object_summary(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFleetAdvisorSchemaObjectSummary::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFleetAdvisorSchemaObjectSummary",
+            "databasemigrationservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_schema_object_summary_input::Builder {
+        crate::input::describe_fleet_advisor_schema_object_summary_input::Builder::default()
+    }
+}
+
+/// See [`DescribeFleetAdvisorSchemasInput`](crate::input::DescribeFleetAdvisorSchemasInput)
+pub mod describe_fleet_advisor_schemas_input {
+
+    /// A builder for [`DescribeFleetAdvisorSchemasInput`](crate::input::DescribeFleetAdvisorSchemasInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>
+        /// <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>
+        /// <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>
+        /// <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>
+        /// <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>
+        /// <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>
+        /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>
+        /// <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>
+        /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
+        /// <ul>
+        /// <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>
+        /// <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>
+        /// <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>
+        /// <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>
+        /// <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>
+        /// <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>
+        /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>
+        /// <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>
+        /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
+        /// </ul>
+        /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        /// <p>Sets the maximum number of records returned in the response.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorSchemasInput`](crate::input::DescribeFleetAdvisorSchemasInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeFleetAdvisorSchemasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeFleetAdvisorSchemasInput {
+                filters: self.filters,
+                max_records: self.max_records,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeFleetAdvisorSchemasInputOperationOutputAlias =
+    crate::operation::DescribeFleetAdvisorSchemas;
+#[doc(hidden)]
+pub type DescribeFleetAdvisorSchemasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeFleetAdvisorSchemasInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeFleetAdvisorSchemas`](crate::operation::DescribeFleetAdvisorSchemas)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFleetAdvisorSchemas,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeFleetAdvisorSchemasInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFleetAdvisorSchemasInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonDMSv20160101.DescribeFleetAdvisorSchemas",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_schemas(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFleetAdvisorSchemas::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFleetAdvisorSchemas",
+            "databasemigrationservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemasInput`](crate::input::DescribeFleetAdvisorSchemasInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_schemas_input::Builder {
+        crate::input::describe_fleet_advisor_schemas_input::Builder::default()
     }
 }
 
@@ -10503,6 +11912,128 @@ impl RemoveTagsFromResourceInput {
     }
 }
 
+/// See [`RunFleetAdvisorLsaAnalysisInput`](crate::input::RunFleetAdvisorLsaAnalysisInput)
+pub mod run_fleet_advisor_lsa_analysis_input {
+
+    /// A builder for [`RunFleetAdvisorLsaAnalysisInput`](crate::input::RunFleetAdvisorLsaAnalysisInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`RunFleetAdvisorLsaAnalysisInput`](crate::input::RunFleetAdvisorLsaAnalysisInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RunFleetAdvisorLsaAnalysisInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RunFleetAdvisorLsaAnalysisInput {})
+        }
+    }
+}
+#[doc(hidden)]
+pub type RunFleetAdvisorLsaAnalysisInputOperationOutputAlias =
+    crate::operation::RunFleetAdvisorLsaAnalysis;
+#[doc(hidden)]
+pub type RunFleetAdvisorLsaAnalysisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl RunFleetAdvisorLsaAnalysisInput {
+    /// Consumes the builder and constructs an Operation<[`RunFleetAdvisorLsaAnalysis`](crate::operation::RunFleetAdvisorLsaAnalysis)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RunFleetAdvisorLsaAnalysis,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RunFleetAdvisorLsaAnalysisInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RunFleetAdvisorLsaAnalysisInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonDMSv20160101.RunFleetAdvisorLsaAnalysis",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_run_fleet_advisor_lsa_analysis(&self)?
+        );
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RunFleetAdvisorLsaAnalysis::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RunFleetAdvisorLsaAnalysis",
+            "databasemigrationservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RunFleetAdvisorLsaAnalysisInput`](crate::input::RunFleetAdvisorLsaAnalysisInput)
+    pub fn builder() -> crate::input::run_fleet_advisor_lsa_analysis_input::Builder {
+        crate::input::run_fleet_advisor_lsa_analysis_input::Builder::default()
+    }
+}
+
 /// See [`StartReplicationTaskInput`](crate::input::StartReplicationTaskInput)
 pub mod start_replication_task_input {
 
@@ -11727,6 +13258,17 @@ impl std::fmt::Debug for StartReplicationTaskInput {
         formatter.field("cdc_start_time", &self.cdc_start_time);
         formatter.field("cdc_start_position", &self.cdc_start_position);
         formatter.field("cdc_stop_position", &self.cdc_stop_position);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RunFleetAdvisorLsaAnalysisInput {}
+impl std::fmt::Debug for RunFleetAdvisorLsaAnalysisInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RunFleetAdvisorLsaAnalysisInput");
         formatter.finish()
     }
 }
@@ -13052,6 +14594,234 @@ impl std::fmt::Debug for DescribeOrderableReplicationInstancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorSchemasInput {
+    /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>
+    /// <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>
+    /// <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>
+    /// <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
+    /// </ul>
+    /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorSchemasInput {
+    /// <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>
+    /// <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>
+    /// <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>
+    /// <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
+    /// </ul>
+    /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorSchemasInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorSchemasInput");
+        formatter.field("filters", &self.filters);
+        formatter.field("max_records", &self.max_records);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorSchemaObjectSummaryInput {
+    /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorSchemaObjectSummaryInput {
+    /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorSchemaObjectSummaryInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorSchemaObjectSummaryInput");
+        formatter.field("filters", &self.filters);
+        formatter.field("max_records", &self.max_records);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorLsaAnalysisInput {
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorLsaAnalysisInput {
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorLsaAnalysisInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorLsaAnalysisInput");
+        formatter.field("max_records", &self.max_records);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorDatabasesInput {
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+    /// <ul>
+    /// <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+    /// </ul>
+    /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorDatabasesInput {
+    /// <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>
+    /// <ul>
+    /// <li> <p> <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// <li> <p> <code>database-name</code> – The name of the database.</p> </li>
+    /// <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>
+    /// <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>
+    /// <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
+    /// </ul>
+    /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorDatabasesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorDatabasesInput");
+        formatter.field("filters", &self.filters);
+        formatter.field("max_records", &self.max_records);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorCollectorsInput {
+    /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
+    /// </ul>
+    /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorCollectorsInput {
+    /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
+    /// </ul>
+    /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorCollectorsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorCollectorsInput");
+        formatter.field("filters", &self.filters);
+        formatter.field("max_records", &self.max_records);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13572,6 +15342,48 @@ impl std::fmt::Debug for DeleteReplicationInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFleetAdvisorDatabasesInput {
+    /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+    pub database_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteFleetAdvisorDatabasesInput {
+    /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+    pub fn database_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.database_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteFleetAdvisorDatabasesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFleetAdvisorDatabasesInput");
+        formatter.field("database_ids", &self.database_ids);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFleetAdvisorCollectorInput {
+    /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+    pub collector_referenced_id: std::option::Option<std::string::String>,
+}
+impl DeleteFleetAdvisorCollectorInput {
+    /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+    pub fn collector_referenced_id(&self) -> std::option::Option<&str> {
+        self.collector_referenced_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteFleetAdvisorCollectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFleetAdvisorCollectorInput");
+        formatter.field("collector_referenced_id", &self.collector_referenced_id);
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14019,6 +15831,48 @@ impl std::fmt::Debug for CreateReplicationInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFleetAdvisorCollectorInput {
+    /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+    pub collector_name: std::option::Option<std::string::String>,
+    /// <p>A summary description of your Fleet Advisor collector.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    pub service_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+    pub s3_bucket_name: std::option::Option<std::string::String>,
+}
+impl CreateFleetAdvisorCollectorInput {
+    /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
+    pub fn collector_name(&self) -> std::option::Option<&str> {
+        self.collector_name.as_deref()
+    }
+    /// <p>A summary description of your Fleet Advisor collector.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+        self.service_access_role_arn.as_deref()
+    }
+    /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateFleetAdvisorCollectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFleetAdvisorCollectorInput");
+        formatter.field("collector_name", &self.collector_name);
+        formatter.field("description", &self.description);
+        formatter.field("service_access_role_arn", &self.service_access_role_arn);
+        formatter.field("s3_bucket_name", &self.s3_bucket_name);
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14106,7 +15960,7 @@ pub struct CreateEndpointInput {
     pub server_name: std::option::Option<std::string::String>,
     /// <p>The port used by the endpoint database.</p>
     pub port: std::option::Option<i32>,
-    /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+    /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub extra_connection_attributes: std::option::Option<std::string::String>,
@@ -14202,7 +16056,7 @@ impl CreateEndpointInput {
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
+    /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }

@@ -4744,6 +4744,23 @@ pub fn parse_register_account_error(
                 tmp
             }),
         },
+        "ThrottlingException" => crate::error::RegisterAccountError {
+            meta: generic,
+            kind: crate::error::RegisterAccountErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterAccountError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::RegisterAccountError {
             meta: generic,
             kind: crate::error::RegisterAccountErrorKind::ValidationException({

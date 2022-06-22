@@ -509,6 +509,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventSubscription 
     }
 }
 
+/// Operation shape for `CreateGlobalCluster`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_global_cluster`](crate::client::Client::create_global_cluster).
+///
+/// See [`crate::client::fluent_builders::CreateGlobalCluster`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateGlobalCluster {
+    _private: (),
+}
+impl CreateGlobalCluster {
+    /// Creates a new builder-style object to manufacture [`CreateGlobalClusterInput`](crate::input::CreateGlobalClusterInput)
+    pub fn builder() -> crate::input::create_global_cluster_input::Builder {
+        crate::input::create_global_cluster_input::Builder::default()
+    }
+    /// Creates a new `CreateGlobalCluster` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateGlobalCluster {
+    type Output = std::result::Result<
+        crate::output::CreateGlobalClusterOutput,
+        crate::error::CreateGlobalClusterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_global_cluster_error(response)
+        } else {
+            crate::operation_deser::parse_create_global_cluster_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteDBCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -777,6 +811,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventSubscription 
             crate::operation_deser::parse_delete_event_subscription_error(response)
         } else {
             crate::operation_deser::parse_delete_event_subscription_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteGlobalCluster`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_global_cluster`](crate::client::Client::delete_global_cluster).
+///
+/// See [`crate::client::fluent_builders::DeleteGlobalCluster`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteGlobalCluster {
+    _private: (),
+}
+impl DeleteGlobalCluster {
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterInput`](crate::input::DeleteGlobalClusterInput)
+    pub fn builder() -> crate::input::delete_global_cluster_input::Builder {
+        crate::input::delete_global_cluster_input::Builder::default()
+    }
+    /// Creates a new `DeleteGlobalCluster` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteGlobalCluster {
+    type Output = std::result::Result<
+        crate::output::DeleteGlobalClusterOutput,
+        crate::error::DeleteGlobalClusterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_global_cluster_error(response)
+        } else {
+            crate::operation_deser::parse_delete_global_cluster_response(response)
         }
     }
 }
@@ -1325,6 +1393,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventSubscriptio
     }
 }
 
+/// Operation shape for `DescribeGlobalClusters`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_global_clusters`](crate::client::Client::describe_global_clusters).
+///
+/// See [`crate::client::fluent_builders::DescribeGlobalClusters`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeGlobalClusters {
+    _private: (),
+}
+impl DescribeGlobalClusters {
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput)
+    pub fn builder() -> crate::input::describe_global_clusters_input::Builder {
+        crate::input::describe_global_clusters_input::Builder::default()
+    }
+    /// Creates a new `DescribeGlobalClusters` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeGlobalClusters {
+    type Output = std::result::Result<
+        crate::output::DescribeGlobalClustersOutput,
+        crate::error::DescribeGlobalClustersError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_global_clusters_error(response)
+        } else {
+            crate::operation_deser::parse_describe_global_clusters_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeOrderableDBInstanceOptions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1459,6 +1561,40 @@ impl aws_smithy_http::response::ParseStrictResponse for FailoverDBCluster {
             crate::operation_deser::parse_failover_db_cluster_error(response)
         } else {
             crate::operation_deser::parse_failover_db_cluster_response(response)
+        }
+    }
+}
+
+/// Operation shape for `FailoverGlobalCluster`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`failover_global_cluster`](crate::client::Client::failover_global_cluster).
+///
+/// See [`crate::client::fluent_builders::FailoverGlobalCluster`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct FailoverGlobalCluster {
+    _private: (),
+}
+impl FailoverGlobalCluster {
+    /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterInput`](crate::input::FailoverGlobalClusterInput)
+    pub fn builder() -> crate::input::failover_global_cluster_input::Builder {
+        crate::input::failover_global_cluster_input::Builder::default()
+    }
+    /// Creates a new `FailoverGlobalCluster` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for FailoverGlobalCluster {
+    type Output = std::result::Result<
+        crate::output::FailoverGlobalClusterOutput,
+        crate::error::FailoverGlobalClusterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_failover_global_cluster_error(response)
+        } else {
+            crate::operation_deser::parse_failover_global_cluster_response(response)
         }
     }
 }
@@ -1769,6 +1905,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyEventSubscription 
     }
 }
 
+/// Operation shape for `ModifyGlobalCluster`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_global_cluster`](crate::client::Client::modify_global_cluster).
+///
+/// See [`crate::client::fluent_builders::ModifyGlobalCluster`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyGlobalCluster {
+    _private: (),
+}
+impl ModifyGlobalCluster {
+    /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterInput`](crate::input::ModifyGlobalClusterInput)
+    pub fn builder() -> crate::input::modify_global_cluster_input::Builder {
+        crate::input::modify_global_cluster_input::Builder::default()
+    }
+    /// Creates a new `ModifyGlobalCluster` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyGlobalCluster {
+    type Output = std::result::Result<
+        crate::output::ModifyGlobalClusterOutput,
+        crate::error::ModifyGlobalClusterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_global_cluster_error(response)
+        } else {
+            crate::operation_deser::parse_modify_global_cluster_response(response)
+        }
+    }
+}
+
 /// Operation shape for `PromoteReadReplicaDBCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1833,6 +2003,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootDBInstance {
             crate::operation_deser::parse_reboot_db_instance_error(response)
         } else {
             crate::operation_deser::parse_reboot_db_instance_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RemoveFromGlobalCluster`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`remove_from_global_cluster`](crate::client::Client::remove_from_global_cluster).
+///
+/// See [`crate::client::fluent_builders::RemoveFromGlobalCluster`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RemoveFromGlobalCluster {
+    _private: (),
+}
+impl RemoveFromGlobalCluster {
+    /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterInput`](crate::input::RemoveFromGlobalClusterInput)
+    pub fn builder() -> crate::input::remove_from_global_cluster_input::Builder {
+        crate::input::remove_from_global_cluster_input::Builder::default()
+    }
+    /// Creates a new `RemoveFromGlobalCluster` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RemoveFromGlobalCluster {
+    type Output = std::result::Result<
+        crate::output::RemoveFromGlobalClusterOutput,
+        crate::error::RemoveFromGlobalClusterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_remove_from_global_cluster_error(response)
+        } else {
+            crate::operation_deser::parse_remove_from_global_cluster_response(response)
         }
     }
 }

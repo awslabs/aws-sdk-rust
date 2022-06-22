@@ -3297,6 +3297,154 @@ impl std::error::Error for CreateSecurityProfileError {
     }
 }
 
+/// Error type for the `CreateTaskTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateTaskTemplateError {
+    /// Kind of error that occurred.
+    pub kind: CreateTaskTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateTaskTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateTaskTemplateErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p></p>
+    PropertyValidationException(crate::error::PropertyValidationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The service quota has been exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateTaskTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateTaskTemplateErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateTaskTemplateErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateTaskTemplateErrorKind::PropertyValidationException(_inner) => _inner.fmt(f),
+            CreateTaskTemplateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateTaskTemplateErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateTaskTemplateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateTaskTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateTaskTemplateError {
+    fn code(&self) -> Option<&str> {
+        CreateTaskTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateTaskTemplateError {
+    /// Creates a new `CreateTaskTemplateError`.
+    pub fn new(kind: CreateTaskTemplateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateTaskTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateTaskTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateTaskTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateTaskTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateTaskTemplateErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskTemplateErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateTaskTemplateErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskTemplateErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateTaskTemplateErrorKind::PropertyValidationException`.
+    pub fn is_property_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskTemplateErrorKind::PropertyValidationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateTaskTemplateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskTemplateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateTaskTemplateErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskTemplateErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateTaskTemplateErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTaskTemplateErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for CreateTaskTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateTaskTemplateErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateTaskTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateTaskTemplateErrorKind::PropertyValidationException(_inner) => Some(_inner),
+            CreateTaskTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateTaskTemplateErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateTaskTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateTaskTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateUseCase` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4868,6 +5016,143 @@ impl std::error::Error for DeleteSecurityProfileError {
             DeleteSecurityProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteSecurityProfileErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteSecurityProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteTaskTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteTaskTemplateError {
+    /// Kind of error that occurred.
+    pub kind: DeleteTaskTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteTaskTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteTaskTemplateErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteTaskTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteTaskTemplateErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteTaskTemplateErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteTaskTemplateErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteTaskTemplateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteTaskTemplateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteTaskTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteTaskTemplateError {
+    fn code(&self) -> Option<&str> {
+        DeleteTaskTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteTaskTemplateError {
+    /// Creates a new `DeleteTaskTemplateError`.
+    pub fn new(kind: DeleteTaskTemplateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteTaskTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteTaskTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteTaskTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteTaskTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteTaskTemplateErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskTemplateErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteTaskTemplateErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskTemplateErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteTaskTemplateErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskTemplateErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteTaskTemplateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskTemplateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteTaskTemplateErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTaskTemplateErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteTaskTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteTaskTemplateErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteTaskTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteTaskTemplateErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteTaskTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteTaskTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteTaskTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -9328,6 +9613,143 @@ impl std::error::Error for GetCurrentMetricDataError {
     }
 }
 
+/// Error type for the `GetCurrentUserData` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetCurrentUserDataError {
+    /// Kind of error that occurred.
+    pub kind: GetCurrentUserDataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetCurrentUserData` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetCurrentUserDataErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetCurrentUserDataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetCurrentUserDataErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetCurrentUserDataErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetCurrentUserDataErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            GetCurrentUserDataErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetCurrentUserDataErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetCurrentUserDataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetCurrentUserDataError {
+    fn code(&self) -> Option<&str> {
+        GetCurrentUserDataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetCurrentUserDataError {
+    /// Creates a new `GetCurrentUserDataError`.
+    pub fn new(kind: GetCurrentUserDataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetCurrentUserDataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetCurrentUserDataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetCurrentUserDataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetCurrentUserDataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetCurrentUserDataErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCurrentUserDataErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetCurrentUserDataErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCurrentUserDataErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetCurrentUserDataErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCurrentUserDataErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetCurrentUserDataErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCurrentUserDataErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetCurrentUserDataErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCurrentUserDataErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetCurrentUserDataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetCurrentUserDataErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetCurrentUserDataErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetCurrentUserDataErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            GetCurrentUserDataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetCurrentUserDataErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetCurrentUserDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetFederationToken` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9606,6 +10028,140 @@ impl std::error::Error for GetMetricDataError {
             GetMetricDataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetMetricDataErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetTaskTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetTaskTemplateError {
+    /// Kind of error that occurred.
+    pub kind: GetTaskTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetTaskTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetTaskTemplateErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetTaskTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetTaskTemplateErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetTaskTemplateErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetTaskTemplateErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            GetTaskTemplateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetTaskTemplateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetTaskTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetTaskTemplateError {
+    fn code(&self) -> Option<&str> {
+        GetTaskTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetTaskTemplateError {
+    /// Creates a new `GetTaskTemplateError`.
+    pub fn new(kind: GetTaskTemplateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetTaskTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetTaskTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetTaskTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetTaskTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetTaskTemplateErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTaskTemplateErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTaskTemplateErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTaskTemplateErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTaskTemplateErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTaskTemplateErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTaskTemplateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTaskTemplateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTaskTemplateErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetTaskTemplateErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for GetTaskTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetTaskTemplateErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetTaskTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetTaskTemplateErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            GetTaskTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetTaskTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetTaskTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -13105,6 +13661,143 @@ impl std::error::Error for ListTagsForResourceError {
     }
 }
 
+/// Error type for the `ListTaskTemplates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTaskTemplatesError {
+    /// Kind of error that occurred.
+    pub kind: ListTaskTemplatesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTaskTemplates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTaskTemplatesErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTaskTemplatesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTaskTemplatesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListTaskTemplatesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListTaskTemplatesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListTaskTemplatesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTaskTemplatesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListTaskTemplatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTaskTemplatesError {
+    fn code(&self) -> Option<&str> {
+        ListTaskTemplatesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTaskTemplatesError {
+    /// Creates a new `ListTaskTemplatesError`.
+    pub fn new(kind: ListTaskTemplatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTaskTemplatesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTaskTemplatesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTaskTemplatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTaskTemplatesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTaskTemplatesErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTaskTemplatesErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTaskTemplatesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTaskTemplatesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTaskTemplatesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTaskTemplatesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTaskTemplatesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTaskTemplatesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTaskTemplatesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTaskTemplatesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListTaskTemplatesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTaskTemplatesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListTaskTemplatesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListTaskTemplatesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListTaskTemplatesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTaskTemplatesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListTaskTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListUseCases` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15620,6 +16313,162 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `TransferContact` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TransferContactError {
+    /// Kind of error that occurred.
+    pub kind: TransferContactErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `TransferContact` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TransferContactErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An entity with the same name already exists.</p>
+    IdempotencyException(crate::error::IdempotencyException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The service quota has been exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TransferContactError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TransferContactErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            TransferContactErrorKind::IdempotencyException(_inner) => _inner.fmt(f),
+            TransferContactErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            TransferContactErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            TransferContactErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TransferContactErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            TransferContactErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            TransferContactErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for TransferContactError {
+    fn code(&self) -> Option<&str> {
+        TransferContactError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl TransferContactError {
+    /// Creates a new `TransferContactError`.
+    pub fn new(kind: TransferContactErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `TransferContactError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TransferContactErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `TransferContactError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TransferContactErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `TransferContactErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferContactErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TransferContactErrorKind::IdempotencyException`.
+    pub fn is_idempotency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferContactErrorKind::IdempotencyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TransferContactErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferContactErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TransferContactErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferContactErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TransferContactErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferContactErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TransferContactErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferContactErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TransferContactErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, TransferContactErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for TransferContactError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TransferContactErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            TransferContactErrorKind::IdempotencyException(_inner) => Some(_inner),
+            TransferContactErrorKind::InternalServiceException(_inner) => Some(_inner),
+            TransferContactErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            TransferContactErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TransferContactErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            TransferContactErrorKind::ThrottlingException(_inner) => Some(_inner),
+            TransferContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -19435,6 +20284,154 @@ impl std::error::Error for UpdateSecurityProfileError {
     }
 }
 
+/// Error type for the `UpdateTaskTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateTaskTemplateError {
+    /// Kind of error that occurred.
+    pub kind: UpdateTaskTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateTaskTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateTaskTemplateErrorKind {
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>One or more of the specified parameters are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p></p>
+    PropertyValidationException(crate::error::PropertyValidationException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The service quota has been exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateTaskTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateTaskTemplateErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdateTaskTemplateErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateTaskTemplateErrorKind::PropertyValidationException(_inner) => _inner.fmt(f),
+            UpdateTaskTemplateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTaskTemplateErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            UpdateTaskTemplateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateTaskTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateTaskTemplateError {
+    fn code(&self) -> Option<&str> {
+        UpdateTaskTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateTaskTemplateError {
+    /// Creates a new `UpdateTaskTemplateError`.
+    pub fn new(kind: UpdateTaskTemplateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateTaskTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateTaskTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateTaskTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateTaskTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateTaskTemplateErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskTemplateErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskTemplateErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskTemplateErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskTemplateErrorKind::PropertyValidationException`.
+    pub fn is_property_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskTemplateErrorKind::PropertyValidationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskTemplateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskTemplateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskTemplateErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskTemplateErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTaskTemplateErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTaskTemplateErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateTaskTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateTaskTemplateErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdateTaskTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateTaskTemplateErrorKind::PropertyValidationException(_inner) => Some(_inner),
+            UpdateTaskTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateTaskTemplateErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            UpdateTaskTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateTaskTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateUserHierarchy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -20938,6 +21935,174 @@ impl DuplicateResourceException {
     }
 }
 
+/// <p>The service quota has been exceeded.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+pub mod service_quota_exceeded_exception {
+
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
+    }
+}
+
+/// <p></p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PropertyValidationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub property_list:
+        std::option::Option<std::vec::Vec<crate::model::PropertyValidationExceptionProperty>>,
+}
+impl PropertyValidationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn property_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PropertyValidationExceptionProperty]> {
+        self.property_list.as_deref()
+    }
+}
+impl std::fmt::Debug for PropertyValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PropertyValidationException");
+        formatter.field("message", &self.message);
+        formatter.field("property_list", &self.property_list);
+        formatter.finish()
+    }
+}
+impl PropertyValidationException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PropertyValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PropertyValidationException")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PropertyValidationException {}
+/// See [`PropertyValidationException`](crate::error::PropertyValidationException)
+pub mod property_validation_exception {
+
+    /// A builder for [`PropertyValidationException`](crate::error::PropertyValidationException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) property_list:
+            std::option::Option<std::vec::Vec<crate::model::PropertyValidationExceptionProperty>>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Appends an item to `property_list`.
+        ///
+        /// To override the contents of this collection use [`set_property_list`](Self::set_property_list).
+        ///
+        pub fn property_list(
+            mut self,
+            input: crate::model::PropertyValidationExceptionProperty,
+        ) -> Self {
+            let mut v = self.property_list.unwrap_or_default();
+            v.push(input);
+            self.property_list = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_property_list(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::PropertyValidationExceptionProperty>,
+            >,
+        ) -> Self {
+            self.property_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PropertyValidationException`](crate::error::PropertyValidationException)
+        pub fn build(self) -> crate::error::PropertyValidationException {
+            crate::error::PropertyValidationException {
+                message: self.message,
+                property_list: self.property_list,
+            }
+        }
+    }
+}
+impl PropertyValidationException {
+    /// Creates a new builder-style object to manufacture [`PropertyValidationException`](crate::error::PropertyValidationException)
+    pub fn builder() -> crate::error::property_validation_exception::Builder {
+        crate::error::property_validation_exception::Builder::default()
+    }
+}
+
 /// <p>An entity with the same name already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20961,8 +22126,8 @@ impl IdempotencyException {
 impl std::fmt::Display for IdempotencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotencyException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -21026,8 +22191,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -21091,8 +22256,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -21165,8 +22330,8 @@ impl InvalidContactFlowModuleException {
 impl std::fmt::Display for InvalidContactFlowModuleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidContactFlowModuleException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -21259,8 +22424,8 @@ impl InvalidContactFlowException {
 impl std::fmt::Display for InvalidContactFlowException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidContactFlowException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -21345,8 +22510,8 @@ impl ContactNotFoundException {
 impl std::fmt::Display for ContactNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ContactNotFoundException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -21387,71 +22552,6 @@ impl ContactNotFoundException {
     }
 }
 
-/// <p>The service quota has been exceeded.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceQuotaExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceQuotaExceededException {}
-/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-pub mod service_quota_exceeded_exception {
-
-    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
-            crate::error::ServiceQuotaExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
-        crate::error::service_quota_exceeded_exception::Builder::default()
-    }
-}
-
 /// <p>The contact is not permitted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -21475,8 +22575,8 @@ impl OutboundContactNotPermittedException {
 impl std::fmt::Display for OutboundContactNotPermittedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OutboundContactNotPermittedException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -21540,8 +22640,8 @@ impl DestinationNotAllowedException {
 impl std::fmt::Display for DestinationNotAllowedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DestinationNotAllowedException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -21605,8 +22705,8 @@ impl UserNotFoundException {
 impl std::fmt::Display for UserNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserNotFoundException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -21670,8 +22770,8 @@ impl ContactFlowNotPublishedException {
 impl std::fmt::Display for ContactFlowNotPublishedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ContactFlowNotPublishedException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -21735,8 +22835,8 @@ impl ResourceConflictException {
 impl std::fmt::Display for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceConflictException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }

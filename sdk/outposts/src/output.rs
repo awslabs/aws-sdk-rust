@@ -302,6 +302,86 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartConnectionOutput {
+    /// <p> The ID of the connection. </p>
+    pub connection_id: std::option::Option<std::string::String>,
+    /// <p> The underlay IP address. </p>
+    pub underlay_ip_address: std::option::Option<std::string::String>,
+}
+impl StartConnectionOutput {
+    /// <p> The ID of the connection. </p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p> The underlay IP address. </p>
+    pub fn underlay_ip_address(&self) -> std::option::Option<&str> {
+        self.underlay_ip_address.as_deref()
+    }
+}
+impl std::fmt::Debug for StartConnectionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartConnectionOutput");
+        formatter.field("connection_id", &self.connection_id);
+        formatter.field("underlay_ip_address", &self.underlay_ip_address);
+        formatter.finish()
+    }
+}
+/// See [`StartConnectionOutput`](crate::output::StartConnectionOutput)
+pub mod start_connection_output {
+
+    /// A builder for [`StartConnectionOutput`](crate::output::StartConnectionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connection_id: std::option::Option<std::string::String>,
+        pub(crate) underlay_ip_address: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The ID of the connection. </p>
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the connection. </p>
+        pub fn set_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_id = input;
+            self
+        }
+        /// <p> The underlay IP address. </p>
+        pub fn underlay_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.underlay_ip_address = Some(input.into());
+            self
+        }
+        /// <p> The underlay IP address. </p>
+        pub fn set_underlay_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.underlay_ip_address = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartConnectionOutput`](crate::output::StartConnectionOutput)
+        pub fn build(self) -> crate::output::StartConnectionOutput {
+            crate::output::StartConnectionOutput {
+                connection_id: self.connection_id,
+                underlay_ip_address: self.underlay_ip_address,
+            }
+        }
+    }
+}
+impl StartConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`StartConnectionOutput`](crate::output::StartConnectionOutput)
+    pub fn builder() -> crate::output::start_connection_output::Builder {
+        crate::output::start_connection_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The resource tags.</p>
     pub tags:
@@ -1172,6 +1252,86 @@ impl GetOrderOutput {
     /// Creates a new builder-style object to manufacture [`GetOrderOutput`](crate::output::GetOrderOutput)
     pub fn builder() -> crate::output::get_order_output::Builder {
         crate::output::get_order_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetConnectionOutput {
+    /// <p> The ID of the connection you receive. </p>
+    pub connection_id: std::option::Option<std::string::String>,
+    /// <p> Information about a connection. </p>
+    pub connection_details: std::option::Option<crate::model::ConnectionDetails>,
+}
+impl GetConnectionOutput {
+    /// <p> The ID of the connection you receive. </p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p> Information about a connection. </p>
+    pub fn connection_details(&self) -> std::option::Option<&crate::model::ConnectionDetails> {
+        self.connection_details.as_ref()
+    }
+}
+impl std::fmt::Debug for GetConnectionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetConnectionOutput");
+        formatter.field("connection_id", &self.connection_id);
+        formatter.field("connection_details", &self.connection_details);
+        formatter.finish()
+    }
+}
+/// See [`GetConnectionOutput`](crate::output::GetConnectionOutput)
+pub mod get_connection_output {
+
+    /// A builder for [`GetConnectionOutput`](crate::output::GetConnectionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connection_id: std::option::Option<std::string::String>,
+        pub(crate) connection_details: std::option::Option<crate::model::ConnectionDetails>,
+    }
+    impl Builder {
+        /// <p> The ID of the connection you receive. </p>
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the connection you receive. </p>
+        pub fn set_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_id = input;
+            self
+        }
+        /// <p> Information about a connection. </p>
+        pub fn connection_details(mut self, input: crate::model::ConnectionDetails) -> Self {
+            self.connection_details = Some(input);
+            self
+        }
+        /// <p> Information about a connection. </p>
+        pub fn set_connection_details(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionDetails>,
+        ) -> Self {
+            self.connection_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetConnectionOutput`](crate::output::GetConnectionOutput)
+        pub fn build(self) -> crate::output::GetConnectionOutput {
+            crate::output::GetConnectionOutput {
+                connection_id: self.connection_id,
+                connection_details: self.connection_details,
+            }
+        }
+    }
+}
+impl GetConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::output::GetConnectionOutput)
+    pub fn builder() -> crate::output::get_connection_output::Builder {
+        crate::output::get_connection_output::Builder::default()
     }
 }
 

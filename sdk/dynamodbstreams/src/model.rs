@@ -835,7 +835,7 @@ pub enum AttributeValue {
     /// <p> <code>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</code> </p>
     Bs(std::vec::Vec<aws_smithy_types::Blob>),
     /// <p>An attribute of type List. For example:</p>
-    /// <p> <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+    /// <p> <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
     L(std::vec::Vec<crate::model::AttributeValue>),
     /// <p>An attribute of type Map. For example:</p>
     /// <p> <code>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</code> </p>

@@ -300,6 +300,83 @@ impl StartReplicationTaskOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RunFleetAdvisorLsaAnalysisOutput {
+    /// <p>The ID of the LSA analysis run.</p>
+    pub lsa_analysis_id: std::option::Option<std::string::String>,
+    /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl RunFleetAdvisorLsaAnalysisOutput {
+    /// <p>The ID of the LSA analysis run.</p>
+    pub fn lsa_analysis_id(&self) -> std::option::Option<&str> {
+        self.lsa_analysis_id.as_deref()
+    }
+    /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+impl std::fmt::Debug for RunFleetAdvisorLsaAnalysisOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RunFleetAdvisorLsaAnalysisOutput");
+        formatter.field("lsa_analysis_id", &self.lsa_analysis_id);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput)
+pub mod run_fleet_advisor_lsa_analysis_output {
+
+    /// A builder for [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lsa_analysis_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the LSA analysis run.</p>
+        pub fn lsa_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lsa_analysis_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the LSA analysis run.</p>
+        pub fn set_lsa_analysis_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lsa_analysis_id = input;
+            self
+        }
+        /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput)
+        pub fn build(self) -> crate::output::RunFleetAdvisorLsaAnalysisOutput {
+            crate::output::RunFleetAdvisorLsaAnalysisOutput {
+                lsa_analysis_id: self.lsa_analysis_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl RunFleetAdvisorLsaAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput)
+    pub fn builder() -> crate::output::run_fleet_advisor_lsa_analysis_output::Builder {
+        crate::output::run_fleet_advisor_lsa_analysis_output::Builder::default()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2100,6 +2177,440 @@ impl DescribeOrderableReplicationInstancesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorSchemasOutput {
+    /// <p>A collection of <code>SchemaResponse</code> objects.</p>
+    pub fleet_advisor_schemas: std::option::Option<std::vec::Vec<crate::model::SchemaResponse>>,
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorSchemasOutput {
+    /// <p>A collection of <code>SchemaResponse</code> objects.</p>
+    pub fn fleet_advisor_schemas(&self) -> std::option::Option<&[crate::model::SchemaResponse]> {
+        self.fleet_advisor_schemas.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorSchemasOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorSchemasOutput");
+        formatter.field("fleet_advisor_schemas", &self.fleet_advisor_schemas);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput)
+pub mod describe_fleet_advisor_schemas_output {
+
+    /// A builder for [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fleet_advisor_schemas:
+            std::option::Option<std::vec::Vec<crate::model::SchemaResponse>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `fleet_advisor_schemas`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_advisor_schemas`](Self::set_fleet_advisor_schemas).
+        ///
+        /// <p>A collection of <code>SchemaResponse</code> objects.</p>
+        pub fn fleet_advisor_schemas(mut self, input: crate::model::SchemaResponse) -> Self {
+            let mut v = self.fleet_advisor_schemas.unwrap_or_default();
+            v.push(input);
+            self.fleet_advisor_schemas = Some(v);
+            self
+        }
+        /// <p>A collection of <code>SchemaResponse</code> objects.</p>
+        pub fn set_fleet_advisor_schemas(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SchemaResponse>>,
+        ) -> Self {
+            self.fleet_advisor_schemas = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput)
+        pub fn build(self) -> crate::output::DescribeFleetAdvisorSchemasOutput {
+            crate::output::DescribeFleetAdvisorSchemasOutput {
+                fleet_advisor_schemas: self.fleet_advisor_schemas,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeFleetAdvisorSchemasOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput)
+    pub fn builder() -> crate::output::describe_fleet_advisor_schemas_output::Builder {
+        crate::output::describe_fleet_advisor_schemas_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorSchemaObjectSummaryOutput {
+    /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
+    pub fleet_advisor_schema_objects:
+        std::option::Option<std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>>,
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
+    /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
+    pub fn fleet_advisor_schema_objects(
+        &self,
+    ) -> std::option::Option<&[crate::model::FleetAdvisorSchemaObjectResponse]> {
+        self.fleet_advisor_schema_objects.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorSchemaObjectSummaryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorSchemaObjectSummaryOutput");
+        formatter.field(
+            "fleet_advisor_schema_objects",
+            &self.fleet_advisor_schema_objects,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput)
+pub mod describe_fleet_advisor_schema_object_summary_output {
+
+    /// A builder for [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fleet_advisor_schema_objects:
+            std::option::Option<std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `fleet_advisor_schema_objects`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_advisor_schema_objects`](Self::set_fleet_advisor_schema_objects).
+        ///
+        /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
+        pub fn fleet_advisor_schema_objects(
+            mut self,
+            input: crate::model::FleetAdvisorSchemaObjectResponse,
+        ) -> Self {
+            let mut v = self.fleet_advisor_schema_objects.unwrap_or_default();
+            v.push(input);
+            self.fleet_advisor_schema_objects = Some(v);
+            self
+        }
+        /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
+        pub fn set_fleet_advisor_schema_objects(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::FleetAdvisorSchemaObjectResponse>,
+            >,
+        ) -> Self {
+            self.fleet_advisor_schema_objects = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput)
+        pub fn build(self) -> crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput {
+            crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput {
+                fleet_advisor_schema_objects: self.fleet_advisor_schema_objects,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput)
+    pub fn builder() -> crate::output::describe_fleet_advisor_schema_object_summary_output::Builder
+    {
+        crate::output::describe_fleet_advisor_schema_object_summary_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorLsaAnalysisOutput {
+    /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
+    pub analysis: std::option::Option<std::vec::Vec<crate::model::FleetAdvisorLsaAnalysisResponse>>,
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorLsaAnalysisOutput {
+    /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
+    pub fn analysis(
+        &self,
+    ) -> std::option::Option<&[crate::model::FleetAdvisorLsaAnalysisResponse]> {
+        self.analysis.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorLsaAnalysisOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorLsaAnalysisOutput");
+        formatter.field("analysis", &self.analysis);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput)
+pub mod describe_fleet_advisor_lsa_analysis_output {
+
+    /// A builder for [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) analysis:
+            std::option::Option<std::vec::Vec<crate::model::FleetAdvisorLsaAnalysisResponse>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `analysis`.
+        ///
+        /// To override the contents of this collection use [`set_analysis`](Self::set_analysis).
+        ///
+        /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
+        pub fn analysis(mut self, input: crate::model::FleetAdvisorLsaAnalysisResponse) -> Self {
+            let mut v = self.analysis.unwrap_or_default();
+            v.push(input);
+            self.analysis = Some(v);
+            self
+        }
+        /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
+        pub fn set_analysis(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::FleetAdvisorLsaAnalysisResponse>,
+            >,
+        ) -> Self {
+            self.analysis = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput)
+        pub fn build(self) -> crate::output::DescribeFleetAdvisorLsaAnalysisOutput {
+            crate::output::DescribeFleetAdvisorLsaAnalysisOutput {
+                analysis: self.analysis,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeFleetAdvisorLsaAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput)
+    pub fn builder() -> crate::output::describe_fleet_advisor_lsa_analysis_output::Builder {
+        crate::output::describe_fleet_advisor_lsa_analysis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorDatabasesOutput {
+    /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
+    pub databases: std::option::Option<std::vec::Vec<crate::model::DatabaseResponse>>,
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorDatabasesOutput {
+    /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
+    pub fn databases(&self) -> std::option::Option<&[crate::model::DatabaseResponse]> {
+        self.databases.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorDatabasesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorDatabasesOutput");
+        formatter.field("databases", &self.databases);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput)
+pub mod describe_fleet_advisor_databases_output {
+
+    /// A builder for [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) databases: std::option::Option<std::vec::Vec<crate::model::DatabaseResponse>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `databases`.
+        ///
+        /// To override the contents of this collection use [`set_databases`](Self::set_databases).
+        ///
+        /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
+        pub fn databases(mut self, input: crate::model::DatabaseResponse) -> Self {
+            let mut v = self.databases.unwrap_or_default();
+            v.push(input);
+            self.databases = Some(v);
+            self
+        }
+        /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
+        pub fn set_databases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DatabaseResponse>>,
+        ) -> Self {
+            self.databases = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput)
+        pub fn build(self) -> crate::output::DescribeFleetAdvisorDatabasesOutput {
+            crate::output::DescribeFleetAdvisorDatabasesOutput {
+                databases: self.databases,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeFleetAdvisorDatabasesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput)
+    pub fn builder() -> crate::output::describe_fleet_advisor_databases_output::Builder {
+        crate::output::describe_fleet_advisor_databases_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetAdvisorCollectorsOutput {
+    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+    pub collectors: std::option::Option<std::vec::Vec<crate::model::CollectorResponse>>,
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFleetAdvisorCollectorsOutput {
+    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+    pub fn collectors(&self) -> std::option::Option<&[crate::model::CollectorResponse]> {
+        self.collectors.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFleetAdvisorCollectorsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFleetAdvisorCollectorsOutput");
+        formatter.field("collectors", &self.collectors);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput)
+pub mod describe_fleet_advisor_collectors_output {
+
+    /// A builder for [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collectors: std::option::Option<std::vec::Vec<crate::model::CollectorResponse>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `collectors`.
+        ///
+        /// To override the contents of this collection use [`set_collectors`](Self::set_collectors).
+        ///
+        /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+        pub fn collectors(mut self, input: crate::model::CollectorResponse) -> Self {
+            let mut v = self.collectors.unwrap_or_default();
+            v.push(input);
+            self.collectors = Some(v);
+            self
+        }
+        /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+        pub fn set_collectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CollectorResponse>>,
+        ) -> Self {
+            self.collectors = input;
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput)
+        pub fn build(self) -> crate::output::DescribeFleetAdvisorCollectorsOutput {
+            crate::output::DescribeFleetAdvisorCollectorsOutput {
+                collectors: self.collectors,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeFleetAdvisorCollectorsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput)
+    pub fn builder() -> crate::output::describe_fleet_advisor_collectors_output::Builder {
+        crate::output::describe_fleet_advisor_collectors_output::Builder::default()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3163,6 +3674,101 @@ impl DeleteReplicationInstanceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFleetAdvisorDatabasesOutput {
+    /// <p>The IDs of the databases that the operation deleted.</p>
+    pub database_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteFleetAdvisorDatabasesOutput {
+    /// <p>The IDs of the databases that the operation deleted.</p>
+    pub fn database_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.database_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteFleetAdvisorDatabasesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFleetAdvisorDatabasesOutput");
+        formatter.field("database_ids", &self.database_ids);
+        formatter.finish()
+    }
+}
+/// See [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput)
+pub mod delete_fleet_advisor_databases_output {
+
+    /// A builder for [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) database_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `database_ids`.
+        ///
+        /// To override the contents of this collection use [`set_database_ids`](Self::set_database_ids).
+        ///
+        /// <p>The IDs of the databases that the operation deleted.</p>
+        pub fn database_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.database_ids.unwrap_or_default();
+            v.push(input.into());
+            self.database_ids = Some(v);
+            self
+        }
+        /// <p>The IDs of the databases that the operation deleted.</p>
+        pub fn set_database_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.database_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput)
+        pub fn build(self) -> crate::output::DeleteFleetAdvisorDatabasesOutput {
+            crate::output::DeleteFleetAdvisorDatabasesOutput {
+                database_ids: self.database_ids,
+            }
+        }
+    }
+}
+impl DeleteFleetAdvisorDatabasesOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput)
+    pub fn builder() -> crate::output::delete_fleet_advisor_databases_output::Builder {
+        crate::output::delete_fleet_advisor_databases_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFleetAdvisorCollectorOutput {}
+impl std::fmt::Debug for DeleteFleetAdvisorCollectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFleetAdvisorCollectorOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput)
+pub mod delete_fleet_advisor_collector_output {
+
+    /// A builder for [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput)
+        pub fn build(self) -> crate::output::DeleteFleetAdvisorCollectorOutput {
+            crate::output::DeleteFleetAdvisorCollectorOutput {}
+        }
+    }
+}
+impl DeleteFleetAdvisorCollectorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput)
+    pub fn builder() -> crate::output::delete_fleet_advisor_collector_output::Builder {
+        crate::output::delete_fleet_advisor_collector_output::Builder::default()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3569,6 +4175,149 @@ impl CreateReplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationInstanceOutput`](crate::output::CreateReplicationInstanceOutput)
     pub fn builder() -> crate::output::create_replication_instance_output::Builder {
         crate::output::create_replication_instance_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFleetAdvisorCollectorOutput {
+    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
+    pub collector_referenced_id: std::option::Option<std::string::String>,
+    /// <p>The name of the new Fleet Advisor collector.</p>
+    pub collector_name: std::option::Option<std::string::String>,
+    /// <p>A summary description of the Fleet Advisor collector.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    pub service_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
+    pub s3_bucket_name: std::option::Option<std::string::String>,
+}
+impl CreateFleetAdvisorCollectorOutput {
+    /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
+    pub fn collector_referenced_id(&self) -> std::option::Option<&str> {
+        self.collector_referenced_id.as_deref()
+    }
+    /// <p>The name of the new Fleet Advisor collector.</p>
+    pub fn collector_name(&self) -> std::option::Option<&str> {
+        self.collector_name.as_deref()
+    }
+    /// <p>A summary description of the Fleet Advisor collector.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+        self.service_access_role_arn.as_deref()
+    }
+    /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateFleetAdvisorCollectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFleetAdvisorCollectorOutput");
+        formatter.field("collector_referenced_id", &self.collector_referenced_id);
+        formatter.field("collector_name", &self.collector_name);
+        formatter.field("description", &self.description);
+        formatter.field("service_access_role_arn", &self.service_access_role_arn);
+        formatter.field("s3_bucket_name", &self.s3_bucket_name);
+        formatter.finish()
+    }
+}
+/// See [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput)
+pub mod create_fleet_advisor_collector_output {
+
+    /// A builder for [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collector_referenced_id: std::option::Option<std::string::String>,
+        pub(crate) collector_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) service_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
+        pub fn collector_referenced_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collector_referenced_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
+        pub fn set_collector_referenced_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collector_referenced_id = input;
+            self
+        }
+        /// <p>The name of the new Fleet Advisor collector.</p>
+        pub fn collector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collector_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the new Fleet Advisor collector.</p>
+        pub fn set_collector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collector_name = input;
+            self
+        }
+        /// <p>A summary description of the Fleet Advisor collector.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A summary description of the Fleet Advisor collector.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+        pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+        pub fn set_service_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_access_role_arn = input;
+            self
+        }
+        /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput)
+        pub fn build(self) -> crate::output::CreateFleetAdvisorCollectorOutput {
+            crate::output::CreateFleetAdvisorCollectorOutput {
+                collector_referenced_id: self.collector_referenced_id,
+                collector_name: self.collector_name,
+                description: self.description,
+                service_access_role_arn: self.service_access_role_arn,
+                s3_bucket_name: self.s3_bucket_name,
+            }
+        }
+    }
+}
+impl CreateFleetAdvisorCollectorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput)
+    pub fn builder() -> crate::output::create_fleet_advisor_collector_output::Builder {
+        crate::output::create_fleet_advisor_collector_output::Builder::default()
     }
 }
 

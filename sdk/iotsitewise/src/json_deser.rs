@@ -1328,6 +1328,15 @@ pub fn deser_operation_crate_operation_describe_asset(
                             )?,
                         );
                     }
+                    "assetDescription" => {
+                        builder = builder.set_asset_description(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "assetHierarchies" => {
                         builder = builder.set_asset_hierarchies(
                             crate::json_deser::deser_list_com_amazonaws_iotsitewise_asset_hierarchies(tokens)?
@@ -8293,6 +8302,15 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_iotsitewise_asset_hierarchies(tokens)?
                                 );
                             }
+                            "description" => {
+                                builder = builder.set_description(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -8392,6 +8410,15 @@ where
                             "hierarchies" => {
                                 builder = builder.set_hierarchies(
                                     crate::json_deser::deser_list_com_amazonaws_iotsitewise_asset_hierarchies(tokens)?
+                                );
+                            }
+                            "description" => {
+                                builder = builder.set_description(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

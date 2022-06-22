@@ -35,6 +35,8 @@ pub enum Error {
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
     /// <p>The specified entity could not be found.</p>
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
+    /// <p>The specified directory setting is not compatible with other settings.</p>
+    IncompatibleSettingsException(crate::error::IncompatibleSettingsException),
     /// <p>The account does not have sufficient permission to perform the operation.</p>
     InsufficientPermissionsException(crate::error::InsufficientPermissionsException),
     /// <p>The certificate PEM that was provided has incorrect encoding.</p>
@@ -69,6 +71,8 @@ pub enum Error {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// <p>The specified directory setting is not supported.</p>
+    UnsupportedSettingsException(crate::error::UnsupportedSettingsException),
     /// <p>The user provided a username that does not exist in your directory.</p>
     UserDoesNotExistException(crate::error::UserDoesNotExistException),
     /// An unhandled error occurred.
@@ -93,6 +97,7 @@ impl std::fmt::Display for Error {
             Error::DomainControllerLimitExceededException(inner) => inner.fmt(f),
             Error::EntityAlreadyExistsException(inner) => inner.fmt(f),
             Error::EntityDoesNotExistException(inner) => inner.fmt(f),
+            Error::IncompatibleSettingsException(inner) => inner.fmt(f),
             Error::InsufficientPermissionsException(inner) => inner.fmt(f),
             Error::InvalidCertificateException(inner) => inner.fmt(f),
             Error::InvalidClientAuthStatusException(inner) => inner.fmt(f),
@@ -110,6 +115,7 @@ impl std::fmt::Display for Error {
             Error::SnapshotLimitExceededException(inner) => inner.fmt(f),
             Error::TagLimitExceededException(inner) => inner.fmt(f),
             Error::UnsupportedOperationException(inner) => inner.fmt(f),
+            Error::UnsupportedSettingsException(inner) => inner.fmt(f),
             Error::UserDoesNotExistException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -1001,6 +1007,41 @@ where
                     Error::UnsupportedOperationException(inner)
                 }
                 crate::error::DescribeRegionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeSettingsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeSettingsErrorKind::ClientException(inner) => {
+                    Error::ClientException(inner)
+                }
+                crate::error::DescribeSettingsErrorKind::DirectoryDoesNotExistException(inner) => {
+                    Error::DirectoryDoesNotExistException(inner)
+                }
+                crate::error::DescribeSettingsErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
+                }
+                crate::error::DescribeSettingsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::DescribeSettingsErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::DescribeSettingsErrorKind::UnsupportedOperationException(inner) => {
+                    Error::UnsupportedOperationException(inner)
+                }
+                crate::error::DescribeSettingsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -1976,6 +2017,43 @@ where
                     Error::ServiceException(inner)
                 }
                 crate::error::UpdateRadiusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSettingsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateSettingsErrorKind::ClientException(inner) => {
+                    Error::ClientException(inner)
+                }
+                crate::error::UpdateSettingsErrorKind::DirectoryDoesNotExistException(inner) => {
+                    Error::DirectoryDoesNotExistException(inner)
+                }
+                crate::error::UpdateSettingsErrorKind::DirectoryUnavailableException(inner) => {
+                    Error::DirectoryUnavailableException(inner)
+                }
+                crate::error::UpdateSettingsErrorKind::IncompatibleSettingsException(inner) => {
+                    Error::IncompatibleSettingsException(inner)
+                }
+                crate::error::UpdateSettingsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::UpdateSettingsErrorKind::ServiceException(inner) => {
+                    Error::ServiceException(inner)
+                }
+                crate::error::UpdateSettingsErrorKind::UnsupportedOperationException(inner) => {
+                    Error::UnsupportedOperationException(inner)
+                }
+                crate::error::UpdateSettingsErrorKind::UnsupportedSettingsException(inner) => {
+                    Error::UnsupportedSettingsException(inner)
+                }
+                crate::error::UpdateSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

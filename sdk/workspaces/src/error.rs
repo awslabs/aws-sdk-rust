@@ -7824,13 +7824,22 @@ impl ResourceNotFoundException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationNotSupportedException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The exception error message.</p>
     pub message: std::option::Option<std::string::String>,
+    /// <p>The exception error reason.</p>
+    pub reason: std::option::Option<std::string::String>,
+}
+impl OperationNotSupportedException {
+    /// <p>The exception error reason.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for OperationNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OperationNotSupportedException");
         formatter.field("message", &self.message);
+        formatter.field("reason", &self.reason);
         formatter.finish()
     }
 }
@@ -7858,22 +7867,34 @@ pub mod operation_not_supported_exception {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The exception error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The exception error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
+            self
+        }
+        /// <p>The exception error reason.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        /// <p>The exception error reason.</p>
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
             self
         }
         /// Consumes the builder and constructs a [`OperationNotSupportedException`](crate::error::OperationNotSupportedException)
         pub fn build(self) -> crate::error::OperationNotSupportedException {
             crate::error::OperationNotSupportedException {
                 message: self.message,
+                reason: self.reason,
             }
         }
     }

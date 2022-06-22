@@ -167,6 +167,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventSubscription 
     }
 }
 
+/// Operation shape for `CreateFleetAdvisorCollector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_fleet_advisor_collector`](crate::client::Client::create_fleet_advisor_collector).
+///
+/// See [`crate::client::fluent_builders::CreateFleetAdvisorCollector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateFleetAdvisorCollector {
+    _private: (),
+}
+impl CreateFleetAdvisorCollector {
+    /// Creates a new builder-style object to manufacture [`CreateFleetAdvisorCollectorInput`](crate::input::CreateFleetAdvisorCollectorInput)
+    pub fn builder() -> crate::input::create_fleet_advisor_collector_input::Builder {
+        crate::input::create_fleet_advisor_collector_input::Builder::default()
+    }
+    /// Creates a new `CreateFleetAdvisorCollector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateFleetAdvisorCollector {
+    type Output = std::result::Result<
+        crate::output::CreateFleetAdvisorCollectorOutput,
+        crate::error::CreateFleetAdvisorCollectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_fleet_advisor_collector_error(response)
+        } else {
+            crate::operation_deser::parse_create_fleet_advisor_collector_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateReplicationInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -399,6 +433,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventSubscription 
             crate::operation_deser::parse_delete_event_subscription_error(response)
         } else {
             crate::operation_deser::parse_delete_event_subscription_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteFleetAdvisorCollector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_fleet_advisor_collector`](crate::client::Client::delete_fleet_advisor_collector).
+///
+/// See [`crate::client::fluent_builders::DeleteFleetAdvisorCollector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteFleetAdvisorCollector {
+    _private: (),
+}
+impl DeleteFleetAdvisorCollector {
+    /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorCollectorInput`](crate::input::DeleteFleetAdvisorCollectorInput)
+    pub fn builder() -> crate::input::delete_fleet_advisor_collector_input::Builder {
+        crate::input::delete_fleet_advisor_collector_input::Builder::default()
+    }
+    /// Creates a new `DeleteFleetAdvisorCollector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteFleetAdvisorCollector {
+    type Output = std::result::Result<
+        crate::output::DeleteFleetAdvisorCollectorOutput,
+        crate::error::DeleteFleetAdvisorCollectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_fleet_advisor_collector_error(response)
+        } else {
+            crate::operation_deser::parse_delete_fleet_advisor_collector_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteFleetAdvisorDatabases`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_fleet_advisor_databases`](crate::client::Client::delete_fleet_advisor_databases).
+///
+/// See [`crate::client::fluent_builders::DeleteFleetAdvisorDatabases`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteFleetAdvisorDatabases {
+    _private: (),
+}
+impl DeleteFleetAdvisorDatabases {
+    /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorDatabasesInput`](crate::input::DeleteFleetAdvisorDatabasesInput)
+    pub fn builder() -> crate::input::delete_fleet_advisor_databases_input::Builder {
+        crate::input::delete_fleet_advisor_databases_input::Builder::default()
+    }
+    /// Creates a new `DeleteFleetAdvisorDatabases` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteFleetAdvisorDatabases {
+    type Output = std::result::Result<
+        crate::output::DeleteFleetAdvisorDatabasesOutput,
+        crate::error::DeleteFleetAdvisorDatabasesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_fleet_advisor_databases_error(response)
+        } else {
+            crate::operation_deser::parse_delete_fleet_advisor_databases_response(response)
         }
     }
 }
@@ -875,6 +977,180 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventSubscriptio
             crate::operation_deser::parse_describe_event_subscriptions_error(response)
         } else {
             crate::operation_deser::parse_describe_event_subscriptions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeFleetAdvisorCollectors`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_fleet_advisor_collectors`](crate::client::Client::describe_fleet_advisor_collectors).
+///
+/// See [`crate::client::fluent_builders::DescribeFleetAdvisorCollectors`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeFleetAdvisorCollectors {
+    _private: (),
+}
+impl DescribeFleetAdvisorCollectors {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorCollectorsInput`](crate::input::DescribeFleetAdvisorCollectorsInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_collectors_input::Builder {
+        crate::input::describe_fleet_advisor_collectors_input::Builder::default()
+    }
+    /// Creates a new `DescribeFleetAdvisorCollectors` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorCollectors {
+    type Output = std::result::Result<
+        crate::output::DescribeFleetAdvisorCollectorsOutput,
+        crate::error::DescribeFleetAdvisorCollectorsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_fleet_advisor_collectors_error(response)
+        } else {
+            crate::operation_deser::parse_describe_fleet_advisor_collectors_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeFleetAdvisorDatabases`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_fleet_advisor_databases`](crate::client::Client::describe_fleet_advisor_databases).
+///
+/// See [`crate::client::fluent_builders::DescribeFleetAdvisorDatabases`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeFleetAdvisorDatabases {
+    _private: (),
+}
+impl DescribeFleetAdvisorDatabases {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorDatabasesInput`](crate::input::DescribeFleetAdvisorDatabasesInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_databases_input::Builder {
+        crate::input::describe_fleet_advisor_databases_input::Builder::default()
+    }
+    /// Creates a new `DescribeFleetAdvisorDatabases` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorDatabases {
+    type Output = std::result::Result<
+        crate::output::DescribeFleetAdvisorDatabasesOutput,
+        crate::error::DescribeFleetAdvisorDatabasesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_fleet_advisor_databases_error(response)
+        } else {
+            crate::operation_deser::parse_describe_fleet_advisor_databases_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeFleetAdvisorLsaAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_fleet_advisor_lsa_analysis`](crate::client::Client::describe_fleet_advisor_lsa_analysis).
+///
+/// See [`crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeFleetAdvisorLsaAnalysis {
+    _private: (),
+}
+impl DescribeFleetAdvisorLsaAnalysis {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorLsaAnalysisInput`](crate::input::DescribeFleetAdvisorLsaAnalysisInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_lsa_analysis_input::Builder {
+        crate::input::describe_fleet_advisor_lsa_analysis_input::Builder::default()
+    }
+    /// Creates a new `DescribeFleetAdvisorLsaAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorLsaAnalysis {
+    type Output = std::result::Result<
+        crate::output::DescribeFleetAdvisorLsaAnalysisOutput,
+        crate::error::DescribeFleetAdvisorLsaAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_fleet_advisor_lsa_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_describe_fleet_advisor_lsa_analysis_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeFleetAdvisorSchemaObjectSummary`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_fleet_advisor_schema_object_summary`](crate::client::Client::describe_fleet_advisor_schema_object_summary).
+///
+/// See [`crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeFleetAdvisorSchemaObjectSummary {
+    _private: (),
+}
+impl DescribeFleetAdvisorSchemaObjectSummary {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_schema_object_summary_input::Builder {
+        crate::input::describe_fleet_advisor_schema_object_summary_input::Builder::default()
+    }
+    /// Creates a new `DescribeFleetAdvisorSchemaObjectSummary` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorSchemaObjectSummary {
+    type Output = std::result::Result<
+        crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput,
+        crate::error::DescribeFleetAdvisorSchemaObjectSummaryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_fleet_advisor_schema_object_summary_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_describe_fleet_advisor_schema_object_summary_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `DescribeFleetAdvisorSchemas`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_fleet_advisor_schemas`](crate::client::Client::describe_fleet_advisor_schemas).
+///
+/// See [`crate::client::fluent_builders::DescribeFleetAdvisorSchemas`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeFleetAdvisorSchemas {
+    _private: (),
+}
+impl DescribeFleetAdvisorSchemas {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemasInput`](crate::input::DescribeFleetAdvisorSchemasInput)
+    pub fn builder() -> crate::input::describe_fleet_advisor_schemas_input::Builder {
+        crate::input::describe_fleet_advisor_schemas_input::Builder::default()
+    }
+    /// Creates a new `DescribeFleetAdvisorSchemas` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorSchemas {
+    type Output = std::result::Result<
+        crate::output::DescribeFleetAdvisorSchemasOutput,
+        crate::error::DescribeFleetAdvisorSchemasError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_fleet_advisor_schemas_error(response)
+        } else {
+            crate::operation_deser::parse_describe_fleet_advisor_schemas_response(response)
         }
     }
 }
@@ -1700,6 +1976,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
             crate::operation_deser::parse_remove_tags_from_resource_error(response)
         } else {
             crate::operation_deser::parse_remove_tags_from_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `RunFleetAdvisorLsaAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`run_fleet_advisor_lsa_analysis`](crate::client::Client::run_fleet_advisor_lsa_analysis).
+///
+/// See [`crate::client::fluent_builders::RunFleetAdvisorLsaAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RunFleetAdvisorLsaAnalysis {
+    _private: (),
+}
+impl RunFleetAdvisorLsaAnalysis {
+    /// Creates a new builder-style object to manufacture [`RunFleetAdvisorLsaAnalysisInput`](crate::input::RunFleetAdvisorLsaAnalysisInput)
+    pub fn builder() -> crate::input::run_fleet_advisor_lsa_analysis_input::Builder {
+        crate::input::run_fleet_advisor_lsa_analysis_input::Builder::default()
+    }
+    /// Creates a new `RunFleetAdvisorLsaAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RunFleetAdvisorLsaAnalysis {
+    type Output = std::result::Result<
+        crate::output::RunFleetAdvisorLsaAnalysisOutput,
+        crate::error::RunFleetAdvisorLsaAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_run_fleet_advisor_lsa_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_run_fleet_advisor_lsa_analysis_response(response)
         }
     }
 }

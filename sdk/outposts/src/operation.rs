@@ -223,6 +223,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCatalogItem {
     }
 }
 
+/// Operation shape for `GetConnection`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_connection`](crate::client::Client::get_connection).
+///
+/// See [`crate::client::fluent_builders::GetConnection`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetConnection {
+    _private: (),
+}
+impl GetConnection {
+    /// Creates a new builder-style object to manufacture [`GetConnectionInput`](crate::input::GetConnectionInput)
+    pub fn builder() -> crate::input::get_connection_input::Builder {
+        crate::input::get_connection_input::Builder::default()
+    }
+    /// Creates a new `GetConnection` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetConnection {
+    type Output =
+        std::result::Result<crate::output::GetConnectionOutput, crate::error::GetConnectionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_connection_error(response)
+        } else {
+            crate::operation_deser::parse_get_connection_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetOrder`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -574,6 +606,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartConnection`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_connection`](crate::client::Client::start_connection).
+///
+/// See [`crate::client::fluent_builders::StartConnection`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartConnection {
+    _private: (),
+}
+impl StartConnection {
+    /// Creates a new builder-style object to manufacture [`StartConnectionInput`](crate::input::StartConnectionInput)
+    pub fn builder() -> crate::input::start_connection_input::Builder {
+        crate::input::start_connection_input::Builder::default()
+    }
+    /// Creates a new `StartConnection` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartConnection {
+    type Output = std::result::Result<
+        crate::output::StartConnectionOutput,
+        crate::error::StartConnectionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_connection_error(response)
+        } else {
+            crate::operation_deser::parse_start_connection_response(response)
         }
     }
 }

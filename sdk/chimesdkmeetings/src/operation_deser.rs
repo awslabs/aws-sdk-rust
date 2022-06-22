@@ -199,6 +199,134 @@ pub fn parse_batch_create_attendee_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_update_attendee_capabilities_except_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput,
+    crate::error::BatchUpdateAttendeeCapabilitiesExceptError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ConflictException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ConflictException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ForbiddenException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ForbiddenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NotFoundException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceUnavailableException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ServiceUnavailableException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_batch_update_attendee_capabilities_except_service_unavailable_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnauthorizedException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::UnauthorizedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::BatchUpdateAttendeeCapabilitiesExceptError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_update_attendee_capabilities_except_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput,
+    crate::error::BatchUpdateAttendeeCapabilitiesExceptError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::batch_update_attendee_capabilities_except_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_attendee_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAttendeeOutput, crate::error::CreateAttendeeError> {
@@ -1872,6 +2000,159 @@ pub fn parse_stop_meeting_transcription_response(
         #[allow(unused_mut)]
         let mut output = crate::output::stop_meeting_transcription_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_attendee_capabilities_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateAttendeeCapabilitiesOutput,
+    crate::error::UpdateAttendeeCapabilitiesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateAttendeeCapabilitiesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateAttendeeCapabilitiesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::UpdateAttendeeCapabilitiesError {
+            meta: generic,
+            kind: crate::error::UpdateAttendeeCapabilitiesErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAttendeeCapabilitiesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => {
+            crate::error::UpdateAttendeeCapabilitiesError {
+                meta: generic,
+                kind: crate::error::UpdateAttendeeCapabilitiesErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAttendeeCapabilitiesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ForbiddenException" => crate::error::UpdateAttendeeCapabilitiesError {
+            meta: generic,
+            kind: crate::error::UpdateAttendeeCapabilitiesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAttendeeCapabilitiesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::UpdateAttendeeCapabilitiesError {
+            meta: generic,
+            kind: crate::error::UpdateAttendeeCapabilitiesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAttendeeCapabilitiesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::UpdateAttendeeCapabilitiesError {
+            meta: generic,
+            kind: crate::error::UpdateAttendeeCapabilitiesErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAttendeeCapabilitiesError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_update_attendee_capabilities_service_unavailable_exception_retry_after_seconds(response.headers())
+                                                .map_err(|_|crate::error::UpdateAttendeeCapabilitiesError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedException" => crate::error::UpdateAttendeeCapabilitiesError {
+            meta: generic,
+            kind: crate::error::UpdateAttendeeCapabilitiesErrorKind::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAttendeeCapabilitiesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateAttendeeCapabilitiesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_attendee_capabilities_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateAttendeeCapabilitiesOutput,
+    crate::error::UpdateAttendeeCapabilitiesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_attendee_capabilities_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_attendee_capabilities(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateAttendeeCapabilitiesError::unhandled)?;
         output.build()
     })
 }

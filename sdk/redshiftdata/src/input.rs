@@ -15,6 +15,7 @@ pub mod batch_execute_statement_input {
         pub(crate) database: std::option::Option<std::string::String>,
         pub(crate) with_event: std::option::Option<bool>,
         pub(crate) statement_name: std::option::Option<std::string::String>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Appends an item to `sqls`.
@@ -102,6 +103,19 @@ pub mod batch_execute_statement_input {
             self.statement_name = input;
             self
         }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput)
         pub fn build(
             self,
@@ -117,6 +131,7 @@ pub mod batch_execute_statement_input {
                 database: self.database,
                 with_event: self.with_event,
                 statement_name: self.statement_name,
+                workgroup_name: self.workgroup_name,
             })
         }
     }
@@ -531,6 +546,7 @@ pub mod describe_table_input {
         pub(crate) table: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -629,6 +645,19 @@ pub mod describe_table_input {
             self.max_results = input;
             self
         }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTableInput`](crate::input::DescribeTableInput)
         pub fn build(
             self,
@@ -646,6 +675,7 @@ pub mod describe_table_input {
                 table: self.table,
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
+                workgroup_name: self.workgroup_name,
             })
         }
     }
@@ -775,6 +805,7 @@ pub mod execute_statement_input {
         pub(crate) with_event: std::option::Option<bool>,
         pub(crate) statement_name: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The SQL statement text to run. </p>
@@ -872,6 +903,19 @@ pub mod execute_statement_input {
             self.parameters = input;
             self
         }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
         pub fn build(
             self,
@@ -888,6 +932,7 @@ pub mod execute_statement_input {
                 with_event: self.with_event,
                 statement_name: self.statement_name,
                 parameters: self.parameters,
+                workgroup_name: self.workgroup_name,
             })
         }
     }
@@ -1170,6 +1215,7 @@ pub mod list_databases_input {
         pub(crate) db_user: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -1235,6 +1281,19 @@ pub mod list_databases_input {
             self.max_results = input;
             self
         }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::input::ListDatabasesInput)
         pub fn build(
             self,
@@ -1249,6 +1308,7 @@ pub mod list_databases_input {
                 db_user: self.db_user,
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
+                workgroup_name: self.workgroup_name,
             })
         }
     }
@@ -1378,6 +1438,7 @@ pub mod list_schemas_input {
         pub(crate) schema_pattern: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -1469,6 +1530,19 @@ pub mod list_schemas_input {
             self.max_results = input;
             self
         }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSchemasInput`](crate::input::ListSchemasInput)
         pub fn build(
             self,
@@ -1485,6 +1559,7 @@ pub mod list_schemas_input {
                 schema_pattern: self.schema_pattern,
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
+                workgroup_name: self.workgroup_name,
             })
         }
     }
@@ -1830,6 +1905,7 @@ pub mod list_tables_input {
         pub(crate) table_pattern: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) workgroup_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -1934,6 +2010,19 @@ pub mod list_tables_input {
             self.max_results = input;
             self
         }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workgroup_name = Some(input.into());
+            self
+        }
+        /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTablesInput`](crate::input::ListTablesInput)
         pub fn build(
             self,
@@ -1951,6 +2040,7 @@ pub mod list_tables_input {
                 table_pattern: self.table_pattern,
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
+                workgroup_name: self.workgroup_name,
             })
         }
     }
@@ -2087,6 +2177,8 @@ pub struct ListTablesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub max_results: i32,
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl ListTablesInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -2125,6 +2217,10 @@ impl ListTablesInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2138,6 +2234,7 @@ impl std::fmt::Debug for ListTablesInput {
         formatter.field("table_pattern", &self.table_pattern);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("workgroup_name", &self.workgroup_name);
         formatter.finish()
     }
 }
@@ -2229,6 +2326,8 @@ pub struct ListSchemasInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of schemas to return in the response. If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub max_results: i32,
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl ListSchemasInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -2263,6 +2362,10 @@ impl ListSchemasInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSchemasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2275,6 +2378,7 @@ impl std::fmt::Debug for ListSchemasInput {
         formatter.field("schema_pattern", &self.schema_pattern);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("workgroup_name", &self.workgroup_name);
         formatter.finish()
     }
 }
@@ -2295,6 +2399,8 @@ pub struct ListDatabasesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub max_results: i32,
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl ListDatabasesInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -2321,6 +2427,10 @@ impl ListDatabasesInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDatabasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2331,6 +2441,7 @@ impl std::fmt::Debug for ListDatabasesInput {
         formatter.field("db_user", &self.db_user);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("workgroup_name", &self.workgroup_name);
         formatter.finish()
     }
 }
@@ -2383,6 +2494,8 @@ pub struct ExecuteStatementInput {
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The parameters for the SQL statement.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl ExecuteStatementInput {
     /// <p>The SQL statement text to run. </p>
@@ -2417,6 +2530,10 @@ impl ExecuteStatementInput {
     pub fn parameters(&self) -> std::option::Option<&[crate::model::SqlParameter]> {
         self.parameters.as_deref()
     }
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2429,6 +2546,7 @@ impl std::fmt::Debug for ExecuteStatementInput {
         formatter.field("with_event", &self.with_event);
         formatter.field("statement_name", &self.statement_name);
         formatter.field("parameters", &self.parameters);
+        formatter.field("workgroup_name", &self.workgroup_name);
         formatter.finish()
     }
 }
@@ -2455,6 +2573,8 @@ pub struct DescribeTableInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub max_results: i32,
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl DescribeTableInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -2493,6 +2613,10 @@ impl DescribeTableInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2506,6 +2630,7 @@ impl std::fmt::Debug for DescribeTableInput {
         formatter.field("table", &self.table);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("workgroup_name", &self.workgroup_name);
         formatter.finish()
     }
 }
@@ -2570,6 +2695,8 @@ pub struct BatchExecuteStatementInput {
     pub with_event: std::option::Option<bool>,
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub statement_name: std::option::Option<std::string::String>,
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. </p>
@@ -2600,6 +2727,10 @@ impl BatchExecuteStatementInput {
     pub fn statement_name(&self) -> std::option::Option<&str> {
         self.statement_name.as_deref()
     }
+    /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2611,6 +2742,7 @@ impl std::fmt::Debug for BatchExecuteStatementInput {
         formatter.field("database", &self.database);
         formatter.field("with_event", &self.with_event);
         formatter.field("statement_name", &self.statement_name);
+        formatter.field("workgroup_name", &self.workgroup_name);
         formatter.finish()
     }
 }

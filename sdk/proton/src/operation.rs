@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptEnvironmentAccount
     }
 }
 
+/// Operation shape for `CancelComponentDeployment`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`cancel_component_deployment`](crate::client::Client::cancel_component_deployment).
+///
+/// See [`crate::client::fluent_builders::CancelComponentDeployment`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CancelComponentDeployment {
+    _private: (),
+}
+impl CancelComponentDeployment {
+    /// Creates a new builder-style object to manufacture [`CancelComponentDeploymentInput`](crate::input::CancelComponentDeploymentInput)
+    pub fn builder() -> crate::input::cancel_component_deployment_input::Builder {
+        crate::input::cancel_component_deployment_input::Builder::default()
+    }
+    /// Creates a new `CancelComponentDeployment` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CancelComponentDeployment {
+    type Output = std::result::Result<
+        crate::output::CancelComponentDeploymentOutput,
+        crate::error::CancelComponentDeploymentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_cancel_component_deployment_error(response)
+        } else {
+            crate::operation_deser::parse_cancel_component_deployment_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CancelEnvironmentDeployment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -131,6 +165,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelServicePipelineDep
             crate::operation_deser::parse_cancel_service_pipeline_deployment_error(response)
         } else {
             crate::operation_deser::parse_cancel_service_pipeline_deployment_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateComponent`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_component`](crate::client::Client::create_component).
+///
+/// See [`crate::client::fluent_builders::CreateComponent`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateComponent {
+    _private: (),
+}
+impl CreateComponent {
+    /// Creates a new builder-style object to manufacture [`CreateComponentInput`](crate::input::CreateComponentInput)
+    pub fn builder() -> crate::input::create_component_input::Builder {
+        crate::input::create_component_input::Builder::default()
+    }
+    /// Creates a new `CreateComponent` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateComponent {
+    type Output = std::result::Result<
+        crate::output::CreateComponentOutput,
+        crate::error::CreateComponentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_component_error(response)
+        } else {
+            crate::operation_deser::parse_create_component_response(response)
         }
     }
 }
@@ -435,6 +503,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTemplateSyncConfig
             crate::operation_deser::parse_create_template_sync_config_error(response)
         } else {
             crate::operation_deser::parse_create_template_sync_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteComponent`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_component`](crate::client::Client::delete_component).
+///
+/// See [`crate::client::fluent_builders::DeleteComponent`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteComponent {
+    _private: (),
+}
+impl DeleteComponent {
+    /// Creates a new builder-style object to manufacture [`DeleteComponentInput`](crate::input::DeleteComponentInput)
+    pub fn builder() -> crate::input::delete_component_input::Builder {
+        crate::input::delete_component_input::Builder::default()
+    }
+    /// Creates a new `DeleteComponent` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
+    type Output = std::result::Result<
+        crate::output::DeleteComponentOutput,
+        crate::error::DeleteComponentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_component_error(response)
+        } else {
+            crate::operation_deser::parse_delete_component_response(response)
         }
     }
 }
@@ -773,6 +875,38 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountSettings {
             crate::operation_deser::parse_get_account_settings_error(response)
         } else {
             crate::operation_deser::parse_get_account_settings_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetComponent`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_component`](crate::client::Client::get_component).
+///
+/// See [`crate::client::fluent_builders::GetComponent`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetComponent {
+    _private: (),
+}
+impl GetComponent {
+    /// Creates a new builder-style object to manufacture [`GetComponentInput`](crate::input::GetComponentInput)
+    pub fn builder() -> crate::input::get_component_input::Builder {
+        crate::input::get_component_input::Builder::default()
+    }
+    /// Creates a new `GetComponent` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
+    type Output =
+        std::result::Result<crate::output::GetComponentOutput, crate::error::GetComponentError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_component_error(response)
+        } else {
+            crate::operation_deser::parse_get_component_response(response)
         }
     }
 }
@@ -1175,6 +1309,106 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplateSyncStatus {
             crate::operation_deser::parse_get_template_sync_status_error(response)
         } else {
             crate::operation_deser::parse_get_template_sync_status_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListComponentOutputs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_component_outputs`](crate::client::Client::list_component_outputs).
+///
+/// See [`crate::client::fluent_builders::ListComponentOutputs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListComponentOutputs {
+    _private: (),
+}
+impl ListComponentOutputs {
+    /// Creates a new builder-style object to manufacture [`ListComponentOutputsInput`](crate::input::ListComponentOutputsInput)
+    pub fn builder() -> crate::input::list_component_outputs_input::Builder {
+        crate::input::list_component_outputs_input::Builder::default()
+    }
+    /// Creates a new `ListComponentOutputs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListComponentOutputs {
+    type Output = std::result::Result<
+        crate::output::ListComponentOutputsOutput,
+        crate::error::ListComponentOutputsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_component_outputs_error(response)
+        } else {
+            crate::operation_deser::parse_list_component_outputs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListComponentProvisionedResources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_component_provisioned_resources`](crate::client::Client::list_component_provisioned_resources).
+///
+/// See [`crate::client::fluent_builders::ListComponentProvisionedResources`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListComponentProvisionedResources {
+    _private: (),
+}
+impl ListComponentProvisionedResources {
+    /// Creates a new builder-style object to manufacture [`ListComponentProvisionedResourcesInput`](crate::input::ListComponentProvisionedResourcesInput)
+    pub fn builder() -> crate::input::list_component_provisioned_resources_input::Builder {
+        crate::input::list_component_provisioned_resources_input::Builder::default()
+    }
+    /// Creates a new `ListComponentProvisionedResources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListComponentProvisionedResources {
+    type Output = std::result::Result<
+        crate::output::ListComponentProvisionedResourcesOutput,
+        crate::error::ListComponentProvisionedResourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_component_provisioned_resources_error(response)
+        } else {
+            crate::operation_deser::parse_list_component_provisioned_resources_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListComponents`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_components`](crate::client::Client::list_components).
+///
+/// See [`crate::client::fluent_builders::ListComponents`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListComponents {
+    _private: (),
+}
+impl ListComponents {
+    /// Creates a new builder-style object to manufacture [`ListComponentsInput`](crate::input::ListComponentsInput)
+    pub fn builder() -> crate::input::list_components_input::Builder {
+        crate::input::list_components_input::Builder::default()
+    }
+    /// Creates a new `ListComponents` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
+    type Output =
+        std::result::Result<crate::output::ListComponentsOutput, crate::error::ListComponentsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_components_error(response)
+        } else {
+            crate::operation_deser::parse_list_components_response(response)
         }
     }
 }
@@ -1927,6 +2161,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccountSettings {
             crate::operation_deser::parse_update_account_settings_error(response)
         } else {
             crate::operation_deser::parse_update_account_settings_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateComponent`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_component`](crate::client::Client::update_component).
+///
+/// See [`crate::client::fluent_builders::UpdateComponent`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateComponent {
+    _private: (),
+}
+impl UpdateComponent {
+    /// Creates a new builder-style object to manufacture [`UpdateComponentInput`](crate::input::UpdateComponentInput)
+    pub fn builder() -> crate::input::update_component_input::Builder {
+        crate::input::update_component_input::Builder::default()
+    }
+    /// Creates a new `UpdateComponent` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateComponent {
+    type Output = std::result::Result<
+        crate::output::UpdateComponentOutput,
+        crate::error::UpdateComponentError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_component_error(response)
+        } else {
+            crate::operation_deser::parse_update_component_response(response)
         }
     }
 }

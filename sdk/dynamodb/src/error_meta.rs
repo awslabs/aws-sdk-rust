@@ -38,9 +38,9 @@ pub enum Error {
         crate::error::ItemCollectionSizeLimitExceededException,
     ),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>There is a soft account quota of 256 tables.</p>
+    /// <p>Up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 250 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
+    /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Point in time recovery has not yet been enabled for this source table.</p>
     PointInTimeRecoveryUnavailableException(crate::error::PointInTimeRecoveryUnavailableException),
@@ -60,7 +60,7 @@ pub enum Error {
     TableAlreadyExistsException(crate::error::TableAlreadyExistsException),
     /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::error::TableInUseException),
-    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
+    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// <p>The entire transaction request was canceled.</p>
     /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
@@ -79,13 +79,13 @@ pub enum Error {
     /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
     /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
     /// </ul> <note>
-    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>NONE</code> code and <code>Null</code> message.</p>
+    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p>
     /// </note>
     /// <p>Cancellation reason codes and possible error messages:</p>
     /// <ul>
     /// <li> <p>No Errors:</p>
     /// <ul>
-    /// <li> <p>Code: <code>NONE</code> </p> </li>
+    /// <li> <p>Code: <code>None</code> </p> </li>
     /// <li> <p>Message: <code>null</code> </p> </li>
     /// </ul> </li>
     /// <li> <p>Conditional Check Failed:</p>

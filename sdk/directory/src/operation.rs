@@ -968,6 +968,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRegions {
     }
 }
 
+/// Operation shape for `DescribeSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_settings`](crate::client::Client::describe_settings).
+///
+/// See [`crate::client::fluent_builders::DescribeSettings`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeSettings {
+    _private: (),
+}
+impl DescribeSettings {
+    /// Creates a new builder-style object to manufacture [`DescribeSettingsInput`](crate::input::DescribeSettingsInput)
+    pub fn builder() -> crate::input::describe_settings_input::Builder {
+        crate::input::describe_settings_input::Builder::default()
+    }
+    /// Creates a new `DescribeSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeSettings {
+    type Output = std::result::Result<
+        crate::output::DescribeSettingsOutput,
+        crate::error::DescribeSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_settings_error(response)
+        } else {
+            crate::operation_deser::parse_describe_settings_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeSharedDirectories`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2027,6 +2061,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRadius {
             crate::operation_deser::parse_update_radius_error(response)
         } else {
             crate::operation_deser::parse_update_radius_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_settings`](crate::client::Client::update_settings).
+///
+/// See [`crate::client::fluent_builders::UpdateSettings`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateSettings {
+    _private: (),
+}
+impl UpdateSettings {
+    /// Creates a new builder-style object to manufacture [`UpdateSettingsInput`](crate::input::UpdateSettingsInput)
+    pub fn builder() -> crate::input::update_settings_input::Builder {
+        crate::input::update_settings_input::Builder::default()
+    }
+    /// Creates a new `UpdateSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateSettings {
+    type Output =
+        std::result::Result<crate::output::UpdateSettingsOutput, crate::error::UpdateSettingsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_settings_error(response)
+        } else {
+            crate::operation_deser::parse_update_settings_response(response)
         }
     }
 }

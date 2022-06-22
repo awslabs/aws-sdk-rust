@@ -291,6 +291,22 @@ impl Client {
     pub fn list_attribute_groups(&self) -> fluent_builders::ListAttributeGroups {
         fluent_builders::ListAttributeGroups::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListAttributeGroupsForApplication`](crate::client::fluent_builders::ListAttributeGroupsForApplication) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttributeGroupsForApplication::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::set_application): <p>The name or ID of the application.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::set_next_token): <p>This token retrieves the next page of results after a previous API call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAttributeGroupsForApplication::set_max_results): <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
+    /// - On success, responds with [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput) with field(s):
+    ///   - [`attribute_groups_details(Option<Vec<AttributeGroupDetails>>)`](crate::output::ListAttributeGroupsForApplicationOutput::attribute_groups_details): <p> The details related to a specific AttributeGroup. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAttributeGroupsForApplicationOutput::next_token): <p>The token to use to get the next page of results after a previous API call.</p>
+    /// - On failure, responds with [`SdkError<ListAttributeGroupsForApplicationError>`](crate::error::ListAttributeGroupsForApplicationError)
+    pub fn list_attribute_groups_for_application(
+        &self,
+    ) -> fluent_builders::ListAttributeGroupsForApplication {
+        fluent_builders::ListAttributeGroupsForApplication::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -340,7 +356,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application): <p>The name or ID of the application that will be updated.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_name): <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_name): <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_description): <p>The new description of the application.</p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::output::UpdateApplicationOutput::application): <p>The updated information of the application.</p>
@@ -352,7 +368,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`attribute_group(impl Into<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::attribute_group) / [`set_attribute_group(Option<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::set_attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::set_name): <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::set_name): <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::set_description): <p>The description of the attribute group that the user provides.</p>
     ///   - [`attributes(impl Into<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::attributes) / [`set_attributes(Option<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::set_attributes): <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     /// - On success, responds with [`UpdateAttributeGroupOutput`](crate::output::UpdateAttributeGroupOutput) with field(s):
@@ -1445,6 +1461,90 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListAttributeGroupsForApplication`.
+    ///
+    /// <p>Lists the details of all attribute groups associated with a specific application. The results display in pages.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAttributeGroupsForApplication {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_attribute_groups_for_application_input::Builder,
+    }
+    impl ListAttributeGroupsForApplication {
+        /// Creates a new `ListAttributeGroupsForApplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAttributeGroupsForApplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAttributeGroupsForApplicationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAttributeGroupsForApplicationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAttributeGroupsForApplicationPaginator {
+            crate::paginator::ListAttributeGroupsForApplicationPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The name or ID of the application.</p>
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
+            self
+        }
+        /// <p>The name or ID of the application.</p>
+        pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_application(input);
+            self
+        }
+        /// <p>This token retrieves the next page of results after a previous API call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>This token retrieves the next page of results after a previous API call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all of the tags on the resource.</p>
@@ -1766,12 +1866,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application(input);
             self
         }
-        /// <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
+        /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
+        /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1842,12 +1942,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attribute_group(input);
             self
         }
-        /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
+        /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
+        /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self

@@ -1650,6 +1650,99 @@ impl GetThreatIntelSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRemainingFreeTrialDaysOutput {
+    /// <p>The member accounts which were included in a request and were processed successfully.</p>
+    pub accounts: std::option::Option<std::vec::Vec<crate::model::AccountFreeTrialInfo>>,
+    /// <p>The member account that was included in a request but for which the request could not be processed.</p>
+    pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl GetRemainingFreeTrialDaysOutput {
+    /// <p>The member accounts which were included in a request and were processed successfully.</p>
+    pub fn accounts(&self) -> std::option::Option<&[crate::model::AccountFreeTrialInfo]> {
+        self.accounts.as_deref()
+    }
+    /// <p>The member account that was included in a request but for which the request could not be processed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
+impl std::fmt::Debug for GetRemainingFreeTrialDaysOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetRemainingFreeTrialDaysOutput");
+        formatter.field("accounts", &self.accounts);
+        formatter.field("unprocessed_accounts", &self.unprocessed_accounts);
+        formatter.finish()
+    }
+}
+/// See [`GetRemainingFreeTrialDaysOutput`](crate::output::GetRemainingFreeTrialDaysOutput)
+pub mod get_remaining_free_trial_days_output {
+
+    /// A builder for [`GetRemainingFreeTrialDaysOutput`](crate::output::GetRemainingFreeTrialDaysOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::AccountFreeTrialInfo>>,
+        pub(crate) unprocessed_accounts:
+            std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+    }
+    impl Builder {
+        /// Appends an item to `accounts`.
+        ///
+        /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
+        ///
+        /// <p>The member accounts which were included in a request and were processed successfully.</p>
+        pub fn accounts(mut self, input: crate::model::AccountFreeTrialInfo) -> Self {
+            let mut v = self.accounts.unwrap_or_default();
+            v.push(input);
+            self.accounts = Some(v);
+            self
+        }
+        /// <p>The member accounts which were included in a request and were processed successfully.</p>
+        pub fn set_accounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AccountFreeTrialInfo>>,
+        ) -> Self {
+            self.accounts = input;
+            self
+        }
+        /// Appends an item to `unprocessed_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
+        ///
+        /// <p>The member account that was included in a request but for which the request could not be processed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
+            let mut v = self.unprocessed_accounts.unwrap_or_default();
+            v.push(input);
+            self.unprocessed_accounts = Some(v);
+            self
+        }
+        /// <p>The member account that was included in a request but for which the request could not be processed.</p>
+        pub fn set_unprocessed_accounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+        ) -> Self {
+            self.unprocessed_accounts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetRemainingFreeTrialDaysOutput`](crate::output::GetRemainingFreeTrialDaysOutput)
+        pub fn build(self) -> crate::output::GetRemainingFreeTrialDaysOutput {
+            crate::output::GetRemainingFreeTrialDaysOutput {
+                accounts: self.accounts,
+                unprocessed_accounts: self.unprocessed_accounts,
+            }
+        }
+    }
+}
+impl GetRemainingFreeTrialDaysOutput {
+    /// Creates a new builder-style object to manufacture [`GetRemainingFreeTrialDaysOutput`](crate::output::GetRemainingFreeTrialDaysOutput)
+    pub fn builder() -> crate::output::get_remaining_free_trial_days_output::Builder {
+        crate::output::get_remaining_free_trial_days_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMembersOutput {
     /// <p>A list of members.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
@@ -2617,6 +2710,64 @@ impl GetDetectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetAdministratorAccountOutput {
+    /// <p>The administrator account details.</p>
+    pub administrator: std::option::Option<crate::model::Administrator>,
+}
+impl GetAdministratorAccountOutput {
+    /// <p>The administrator account details.</p>
+    pub fn administrator(&self) -> std::option::Option<&crate::model::Administrator> {
+        self.administrator.as_ref()
+    }
+}
+impl std::fmt::Debug for GetAdministratorAccountOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetAdministratorAccountOutput");
+        formatter.field("administrator", &self.administrator);
+        formatter.finish()
+    }
+}
+/// See [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput)
+pub mod get_administrator_account_output {
+
+    /// A builder for [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) administrator: std::option::Option<crate::model::Administrator>,
+    }
+    impl Builder {
+        /// <p>The administrator account details.</p>
+        pub fn administrator(mut self, input: crate::model::Administrator) -> Self {
+            self.administrator = Some(input);
+            self
+        }
+        /// <p>The administrator account details.</p>
+        pub fn set_administrator(
+            mut self,
+            input: std::option::Option<crate::model::Administrator>,
+        ) -> Self {
+            self.administrator = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput)
+        pub fn build(self) -> crate::output::GetAdministratorAccountOutput {
+            crate::output::GetAdministratorAccountOutput {
+                administrator: self.administrator,
+            }
+        }
+    }
+}
+impl GetAdministratorAccountOutput {
+    /// Creates a new builder-style object to manufacture [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput)
+    pub fn builder() -> crate::output::get_administrator_account_output::Builder {
+        crate::output::get_administrator_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOrganizationAdminAccountOutput {}
 impl std::fmt::Debug for EnableOrganizationAdminAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2738,6 +2889,37 @@ impl DisassociateFromMasterAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput)
     pub fn builder() -> crate::output::disassociate_from_master_account_output::Builder {
         crate::output::disassociate_from_master_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateFromAdministratorAccountOutput {}
+impl std::fmt::Debug for DisassociateFromAdministratorAccountOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateFromAdministratorAccountOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput)
+pub mod disassociate_from_administrator_account_output {
+
+    /// A builder for [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput)
+        pub fn build(self) -> crate::output::DisassociateFromAdministratorAccountOutput {
+            crate::output::DisassociateFromAdministratorAccountOutput {}
+        }
+    }
+}
+impl DisassociateFromAdministratorAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput)
+    pub fn builder() -> crate::output::disassociate_from_administrator_account_output::Builder {
+        crate::output::disassociate_from_administrator_account_output::Builder::default()
     }
 }
 
@@ -3820,5 +4002,36 @@ impl AcceptInvitationOutput {
     /// Creates a new builder-style object to manufacture [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
     pub fn builder() -> crate::output::accept_invitation_output::Builder {
         crate::output::accept_invitation_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AcceptAdministratorInvitationOutput {}
+impl std::fmt::Debug for AcceptAdministratorInvitationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AcceptAdministratorInvitationOutput");
+        formatter.finish()
+    }
+}
+/// See [`AcceptAdministratorInvitationOutput`](crate::output::AcceptAdministratorInvitationOutput)
+pub mod accept_administrator_invitation_output {
+
+    /// A builder for [`AcceptAdministratorInvitationOutput`](crate::output::AcceptAdministratorInvitationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AcceptAdministratorInvitationOutput`](crate::output::AcceptAdministratorInvitationOutput)
+        pub fn build(self) -> crate::output::AcceptAdministratorInvitationOutput {
+            crate::output::AcceptAdministratorInvitationOutput {}
+        }
+    }
+}
+impl AcceptAdministratorInvitationOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptAdministratorInvitationOutput`](crate::output::AcceptAdministratorInvitationOutput)
+    pub fn builder() -> crate::output::accept_administrator_invitation_output::Builder {
+        crate::output::accept_administrator_invitation_output::Builder::default()
     }
 }

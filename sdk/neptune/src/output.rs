@@ -524,6 +524,68 @@ impl RemoveRoleFromDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveFromGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+}
+impl RemoveFromGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
+impl std::fmt::Debug for RemoveFromGlobalClusterOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RemoveFromGlobalClusterOutput");
+        formatter.field("global_cluster", &self.global_cluster);
+        formatter.finish()
+    }
+}
+/// See [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput)
+pub mod remove_from_global_cluster_output {
+
+    /// A builder for [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    }
+    impl Builder {
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
+            self
+        }
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn set_global_cluster(
+            mut self,
+            input: std::option::Option<crate::model::GlobalCluster>,
+        ) -> Self {
+            self.global_cluster = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput)
+        pub fn build(self) -> crate::output::RemoveFromGlobalClusterOutput {
+            crate::output::RemoveFromGlobalClusterOutput {
+                global_cluster: self.global_cluster,
+            }
+        }
+    }
+}
+impl RemoveFromGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput)
+    pub fn builder() -> crate::output::remove_from_global_cluster_output::Builder {
+        crate::output::remove_from_global_cluster_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
@@ -642,6 +704,68 @@ impl PromoteReadReplicaDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput)
     pub fn builder() -> crate::output::promote_read_replica_db_cluster_output::Builder {
         crate::output::promote_read_replica_db_cluster_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+}
+impl ModifyGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
+impl std::fmt::Debug for ModifyGlobalClusterOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyGlobalClusterOutput");
+        formatter.field("global_cluster", &self.global_cluster);
+        formatter.finish()
+    }
+}
+/// See [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput)
+pub mod modify_global_cluster_output {
+
+    /// A builder for [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    }
+    impl Builder {
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
+            self
+        }
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn set_global_cluster(
+            mut self,
+            input: std::option::Option<crate::model::GlobalCluster>,
+        ) -> Self {
+            self.global_cluster = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput)
+        pub fn build(self) -> crate::output::ModifyGlobalClusterOutput {
+            crate::output::ModifyGlobalClusterOutput {
+                global_cluster: self.global_cluster,
+            }
+        }
+    }
+}
+impl ModifyGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput)
+    pub fn builder() -> crate::output::modify_global_cluster_output::Builder {
+        crate::output::modify_global_cluster_output::Builder::default()
     }
 }
 
@@ -1053,7 +1177,7 @@ impl ModifyDbClusterParameterGroupOutput {
     }
 }
 
-/// <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:</p>
+/// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p>
 /// <ul>
 /// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li>
 /// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li>
@@ -1465,6 +1589,68 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FailoverGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+}
+impl FailoverGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
+impl std::fmt::Debug for FailoverGlobalClusterOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FailoverGlobalClusterOutput");
+        formatter.field("global_cluster", &self.global_cluster);
+        formatter.finish()
+    }
+}
+/// See [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput)
+pub mod failover_global_cluster_output {
+
+    /// A builder for [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    }
+    impl Builder {
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
+            self
+        }
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn set_global_cluster(
+            mut self,
+            input: std::option::Option<crate::model::GlobalCluster>,
+        ) -> Self {
+            self.global_cluster = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput)
+        pub fn build(self) -> crate::output::FailoverGlobalClusterOutput {
+            crate::output::FailoverGlobalClusterOutput {
+                global_cluster: self.global_cluster,
+            }
+        }
+    }
+}
+impl FailoverGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput)
+    pub fn builder() -> crate::output::failover_global_cluster_output::Builder {
+        crate::output::failover_global_cluster_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
@@ -1778,6 +1964,89 @@ impl DescribeOrderableDbInstanceOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput)
     pub fn builder() -> crate::output::describe_orderable_db_instance_options_output::Builder {
         crate::output::describe_orderable_db_instance_options_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeGlobalClustersOutput {
+    /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
+    pub marker: std::option::Option<std::string::String>,
+    /// <p>The list of global clusters and instances returned by this request.</p>
+    pub global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
+}
+impl DescribeGlobalClustersOutput {
+    /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The list of global clusters and instances returned by this request.</p>
+    pub fn global_clusters(&self) -> std::option::Option<&[crate::model::GlobalCluster]> {
+        self.global_clusters.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeGlobalClustersOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeGlobalClustersOutput");
+        formatter.field("marker", &self.marker);
+        formatter.field("global_clusters", &self.global_clusters);
+        formatter.finish()
+    }
+}
+/// See [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput)
+pub mod describe_global_clusters_output {
+
+    /// A builder for [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) marker: std::option::Option<std::string::String>,
+        pub(crate) global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
+    }
+    impl Builder {
+        /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Appends an item to `global_clusters`.
+        ///
+        /// To override the contents of this collection use [`set_global_clusters`](Self::set_global_clusters).
+        ///
+        /// <p>The list of global clusters and instances returned by this request.</p>
+        pub fn global_clusters(mut self, input: crate::model::GlobalCluster) -> Self {
+            let mut v = self.global_clusters.unwrap_or_default();
+            v.push(input);
+            self.global_clusters = Some(v);
+            self
+        }
+        /// <p>The list of global clusters and instances returned by this request.</p>
+        pub fn set_global_clusters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
+        ) -> Self {
+            self.global_clusters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput)
+        pub fn build(self) -> crate::output::DescribeGlobalClustersOutput {
+            crate::output::DescribeGlobalClustersOutput {
+                marker: self.marker,
+                global_clusters: self.global_clusters,
+            }
+        }
+    }
+}
+impl DescribeGlobalClustersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput)
+    pub fn builder() -> crate::output::describe_global_clusters_output::Builder {
+        crate::output::describe_global_clusters_output::Builder::default()
     }
 }
 
@@ -3058,6 +3327,68 @@ impl DescribeDbClusterEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+}
+impl DeleteGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteGlobalClusterOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteGlobalClusterOutput");
+        formatter.field("global_cluster", &self.global_cluster);
+        formatter.finish()
+    }
+}
+/// See [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput)
+pub mod delete_global_cluster_output {
+
+    /// A builder for [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    }
+    impl Builder {
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
+            self
+        }
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn set_global_cluster(
+            mut self,
+            input: std::option::Option<crate::model::GlobalCluster>,
+        ) -> Self {
+            self.global_cluster = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput)
+        pub fn build(self) -> crate::output::DeleteGlobalClusterOutput {
+            crate::output::DeleteGlobalClusterOutput {
+                global_cluster: self.global_cluster,
+            }
+        }
+    }
+}
+impl DeleteGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput)
+    pub fn builder() -> crate::output::delete_global_cluster_output::Builder {
+        crate::output::delete_global_cluster_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
@@ -3672,6 +4003,68 @@ impl DeleteDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput)
     pub fn builder() -> crate::output::delete_db_cluster_output::Builder {
         crate::output::delete_db_cluster_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+}
+impl CreateGlobalClusterOutput {
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateGlobalClusterOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateGlobalClusterOutput");
+        formatter.field("global_cluster", &self.global_cluster);
+        formatter.finish()
+    }
+}
+/// See [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput)
+pub mod create_global_cluster_output {
+
+    /// A builder for [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    }
+    impl Builder {
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn global_cluster(mut self, input: crate::model::GlobalCluster) -> Self {
+            self.global_cluster = Some(input);
+            self
+        }
+        /// <p>Contains the details of an Amazon Neptune global database.</p>
+        /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+        pub fn set_global_cluster(
+            mut self,
+            input: std::option::Option<crate::model::GlobalCluster>,
+        ) -> Self {
+            self.global_cluster = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput)
+        pub fn build(self) -> crate::output::CreateGlobalClusterOutput {
+            crate::output::CreateGlobalClusterOutput {
+                global_cluster: self.global_cluster,
+            }
+        }
+    }
+}
+impl CreateGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput)
+    pub fn builder() -> crate::output::create_global_cluster_output::Builder {
+        crate::output::create_global_cluster_output::Builder::default()
     }
 }
 

@@ -8,7 +8,8 @@
 #![allow(clippy::type_complexity)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.</p>
+//! <p>Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web
+//! service.</p>
 //!
 //! # Crate Organization
 //!

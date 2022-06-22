@@ -24,12 +24,12 @@ pub mod associate_external_connection_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -47,6 +47,7 @@ pub mod associate_external_connection_input {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -60,6 +61,7 @@ pub mod associate_external_connection_input {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -240,12 +242,12 @@ pub mod copy_package_versions_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -276,22 +278,12 @@ pub mod copy_package_versions_input {
             self.destination_repository = input;
             self
         }
-        /// <p> The format of the package that is copied. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package that is copied. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the package that is copied. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package that is copied. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -579,25 +571,25 @@ pub mod create_domain_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+        /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
         }
-        /// <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+        /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
-        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
-        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
         /// </important>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key = Some(input.into());
             self
         }
-        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
-        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
         /// </important>
         pub fn set_encryption_key(
             mut self,
@@ -781,12 +773,12 @@ pub mod create_repository_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -815,14 +807,14 @@ pub mod create_repository_input {
         ///
         /// To override the contents of this collection use [`set_upstreams`](Self::set_upstreams).
         ///
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
             let mut v = self.upstreams.unwrap_or_default();
             v.push(input);
             self.upstreams = Some(v);
             self
         }
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn set_upstreams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
@@ -1013,12 +1005,12 @@ pub mod delete_domain_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -1167,12 +1159,12 @@ pub mod delete_domain_permissions_policy_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -1348,12 +1340,12 @@ pub mod delete_package_versions_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -1368,22 +1360,12 @@ pub mod delete_package_versions_input {
             self.repository = input;
             self
         }
-        /// <p> The format of the package versions to delete. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> The format of the package versions to delete. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the package versions to delete. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> The format of the package versions to delete. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -1440,26 +1422,12 @@ pub mod delete_package_versions_input {
             self.versions = input;
             self
         }
-        /// <p> The expected status of the package version to delete. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> The expected status of the package version to delete. </p>
         pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
             self.expected_status = Some(input);
             self
         }
-        /// <p> The expected status of the package version to delete. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> The expected status of the package version to delete. </p>
         pub fn set_expected_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -1645,12 +1613,12 @@ pub mod delete_repository_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -1814,12 +1782,12 @@ pub mod delete_repository_permissions_policy_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -2004,12 +1972,12 @@ pub mod describe_domain_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -2162,12 +2130,12 @@ pub mod describe_package_version_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -2182,22 +2150,12 @@ pub mod describe_package_version_input {
             self.repository = input;
             self
         }
-        /// <p> A format that specifies the type of the requested package version. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the requested package version. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> A format that specifies the type of the requested package version. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the requested package version. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -2412,12 +2370,12 @@ pub mod describe_repository_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -2581,12 +2539,12 @@ pub mod disassociate_external_connection_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -2780,12 +2738,12 @@ pub mod dispose_package_versions_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -2800,22 +2758,12 @@ pub mod dispose_package_versions_input {
             self.repository = input;
             self
         }
-        /// <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of package versions you want to dispose. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of package versions you want to dispose. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -2897,26 +2845,12 @@ pub mod dispose_package_versions_input {
             self.version_revisions = input;
             self
         }
-        /// <p> The expected status of the package version to dispose. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> The expected status of the package version to dispose. </p>
         pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
             self.expected_status = Some(input);
             self
         }
-        /// <p> The expected status of the package version to dispose. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> The expected status of the package version to dispose. </p>
         pub fn set_expected_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -3103,12 +3037,12 @@ pub mod get_authorization_token_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -3273,12 +3207,12 @@ pub mod get_domain_permissions_policy_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -3434,12 +3368,12 @@ pub mod get_package_version_asset_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -3454,22 +3388,12 @@ pub mod get_package_version_asset_input {
             self.repository = input;
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package version with the requested asset file. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package version with the requested asset file. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3719,12 +3643,12 @@ pub mod get_package_version_readme_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -3739,22 +3663,16 @@ pub mod get_package_version_readme_input {
             self.repository = input;
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+        /// </note>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+        /// </note>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3971,12 +3889,12 @@ pub mod get_repository_endpoint_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -3991,22 +3909,12 @@ pub mod get_repository_endpoint_input {
             self.repository = input;
             self
         }
-        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -4166,12 +4074,12 @@ pub mod get_repository_permissions_policy_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -4492,12 +4400,12 @@ pub mod list_packages_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -4512,22 +4420,12 @@ pub mod list_packages_input {
             self.repository = input;
             self
         }
-        /// <p> The format of the packages. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the packages. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the packages. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the packages. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -4768,12 +4666,12 @@ pub mod list_package_version_assets_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -4788,22 +4686,12 @@ pub mod list_package_version_assets_input {
             self.repository = input;
             self
         }
-        /// <p> The format of the package that contains the returned package version assets. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package that contains the returned package version assets. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the package that contains the returned package version assets. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package that contains the returned package version assets. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -5058,12 +4946,12 @@ pub mod list_package_version_dependencies_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -5078,22 +4966,12 @@ pub mod list_package_version_dependencies_input {
             self.repository = input;
             self
         }
-        /// <p> The format of the package with the requested dependencies. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package with the requested dependencies. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the package with the requested dependencies. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package with the requested dependencies. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -5338,12 +5216,12 @@ pub mod list_package_versions_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -5358,22 +5236,12 @@ pub mod list_package_versions_input {
             self.repository = input;
             self
         }
-        /// <p> The format of the returned packages. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the returned packages. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the returned packages. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the returned packages. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -5411,26 +5279,12 @@ pub mod list_package_versions_input {
             self.package = input;
             self
         }
-        /// <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
         pub fn status(mut self, input: crate::model::PackageVersionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -5836,22 +5690,22 @@ pub mod list_repositories_in_domain_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
         }
-        /// <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
+        /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
         pub fn administrator_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.administrator_account = Some(input.into());
             self
         }
-        /// <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
+        /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
         pub fn set_administrator_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6204,12 +6058,12 @@ pub mod put_domain_permissions_policy_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -6385,12 +6239,12 @@ pub mod put_repository_permissions_policy_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -6955,12 +6809,12 @@ pub mod update_package_versions_status_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -6975,22 +6829,12 @@ pub mod update_package_versions_status_input {
             self.repository = input;
             self
         }
-        /// <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package with the statuses to update. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package with the statuses to update. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -7282,12 +7126,12 @@ pub mod update_repository_input {
             self.domain = input;
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_owner = Some(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_owner = input;
             self
@@ -7316,14 +7160,14 @@ pub mod update_repository_input {
         ///
         /// To override the contents of this collection use [`set_upstreams`](Self::set_upstreams).
         ///
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
             let mut v = self.upstreams.unwrap_or_default();
             v.push(input);
             self.upstreams = Some(v);
             self
         }
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn set_upstreams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
@@ -7482,13 +7326,13 @@ impl UpdateRepositoryInput {
 pub struct UpdateRepositoryInput {
     /// <p> The name of the domain associated with the repository to update. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to update. </p>
     pub repository: std::option::Option<std::string::String>,
     /// <p> An updated repository description. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
 }
 impl UpdateRepositoryInput {
@@ -7496,7 +7340,7 @@ impl UpdateRepositoryInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -7508,7 +7352,7 @@ impl UpdateRepositoryInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     pub fn upstreams(&self) -> std::option::Option<&[crate::model::UpstreamRepository]> {
         self.upstreams.as_deref()
     }
@@ -7531,16 +7375,11 @@ impl std::fmt::Debug for UpdateRepositoryInput {
 pub struct UpdatePackageVersionsStatusInput {
     /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package versions with the status you want to update. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the package with the statuses to update. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -7566,7 +7405,7 @@ impl UpdatePackageVersionsStatusInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -7574,12 +7413,7 @@ impl UpdatePackageVersionsStatusInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the package with the statuses to update. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -7695,7 +7529,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct PutRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to set the resource policy on. </p>
     pub repository: std::option::Option<std::string::String>,
@@ -7709,7 +7543,7 @@ impl PutRepositoryPermissionsPolicyInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -7744,7 +7578,7 @@ impl std::fmt::Debug for PutRepositoryPermissionsPolicyInput {
 pub struct PutDomainPermissionsPolicyInput {
     /// <p> The name of the domain on which to set the resource policy. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
     pub policy_revision: std::option::Option<std::string::String>,
@@ -7756,7 +7590,7 @@ impl PutDomainPermissionsPolicyInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -7807,9 +7641,9 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListRepositoriesInDomainInput {
     /// <p> The name of the domain that contains the returned list of repositories. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
-    /// <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
+    /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
     pub administrator_account: std::option::Option<std::string::String>,
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
     pub repository_prefix: std::option::Option<std::string::String>,
@@ -7823,11 +7657,11 @@ impl ListRepositoriesInDomainInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
+    /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
     pub fn administrator_account(&self) -> std::option::Option<&str> {
         self.administrator_account.as_deref()
     }
@@ -7898,16 +7732,11 @@ impl std::fmt::Debug for ListRepositoriesInput {
 pub struct ListPackageVersionsInput {
     /// <p> The name of the domain that contains the repository that contains the returned package versions. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The format of the returned packages. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the returned packages. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -7918,14 +7747,7 @@ pub struct ListPackageVersionsInput {
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package for which you want to return a list of package versions. </p>
     pub package: std::option::Option<std::string::String>,
-    /// <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>
-    /// <ul>
-    /// <li> <p> <code>Published</code> </p> </li>
-    /// <li> <p> <code>Unfinished</code> </p> </li>
-    /// <li> <p> <code>Unlisted</code> </p> </li>
-    /// <li> <p> <code>Archived</code> </p> </li>
-    /// <li> <p> <code>Disposed</code> </p> </li>
-    /// </ul>
+    /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
     /// <p> How to sort the returned list of package versions. </p>
     pub sort_by: std::option::Option<crate::model::PackageVersionSortType>,
@@ -7939,7 +7761,7 @@ impl ListPackageVersionsInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -7947,12 +7769,7 @@ impl ListPackageVersionsInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The format of the returned packages. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the returned packages. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -7969,14 +7786,7 @@ impl ListPackageVersionsInput {
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>
-    /// <ul>
-    /// <li> <p> <code>Published</code> </p> </li>
-    /// <li> <p> <code>Unfinished</code> </p> </li>
-    /// <li> <p> <code>Unlisted</code> </p> </li>
-    /// <li> <p> <code>Archived</code> </p> </li>
-    /// <li> <p> <code>Disposed</code> </p> </li>
-    /// </ul>
+    /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.status.as_ref()
     }
@@ -8016,16 +7826,11 @@ impl std::fmt::Debug for ListPackageVersionsInput {
 pub struct ListPackageVersionDependenciesInput {
     /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the requested package version. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The format of the package with the requested dependencies. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the package with the requested dependencies. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -8046,7 +7851,7 @@ impl ListPackageVersionDependenciesInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8054,12 +7859,7 @@ impl ListPackageVersionDependenciesInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The format of the package with the requested dependencies. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the package with the requested dependencies. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -8106,16 +7906,11 @@ impl std::fmt::Debug for ListPackageVersionDependenciesInput {
 pub struct ListPackageVersionAssetsInput {
     /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package that contains the returned package version assets. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The format of the package that contains the returned package version assets. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the package that contains the returned package version assets. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -8138,7 +7933,7 @@ impl ListPackageVersionAssetsInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8146,12 +7941,7 @@ impl ListPackageVersionAssetsInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The format of the package that contains the returned package version assets. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the package that contains the returned package version assets. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -8203,16 +7993,11 @@ impl std::fmt::Debug for ListPackageVersionAssetsInput {
 pub struct ListPackagesInput {
     /// <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository from which packages are to be listed. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The format of the packages. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the packages. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -8233,7 +8018,7 @@ impl ListPackagesInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8241,12 +8026,7 @@ impl ListPackagesInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The format of the packages. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the packages. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -8321,7 +8101,7 @@ impl std::fmt::Debug for ListDomainsInput {
 pub struct GetRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
     pub repository: std::option::Option<std::string::String>,
@@ -8331,7 +8111,7 @@ impl GetRepositoryPermissionsPolicyInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8356,16 +8136,11 @@ impl std::fmt::Debug for GetRepositoryPermissionsPolicyInput {
 pub struct GetRepositoryEndpointInput {
     /// <p> The name of the domain that contains the repository. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
 }
 impl GetRepositoryEndpointInput {
@@ -8373,7 +8148,7 @@ impl GetRepositoryEndpointInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8381,12 +8156,7 @@ impl GetRepositoryEndpointInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -8408,16 +8178,13 @@ impl std::fmt::Debug for GetRepositoryEndpointInput {
 pub struct GetPackageVersionReadmeInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package with the requested readme file. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+    /// </note>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -8436,7 +8203,7 @@ impl GetPackageVersionReadmeInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8444,12 +8211,9 @@ impl GetPackageVersionReadmeInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+    /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+    /// </note>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -8491,16 +8255,11 @@ impl std::fmt::Debug for GetPackageVersionReadmeInput {
 pub struct GetPackageVersionAssetInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package version with the requested asset. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the package version with the requested asset file. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -8523,7 +8282,7 @@ impl GetPackageVersionAssetInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8531,12 +8290,7 @@ impl GetPackageVersionAssetInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the package version with the requested asset file. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -8588,7 +8342,7 @@ impl std::fmt::Debug for GetPackageVersionAssetInput {
 pub struct GetDomainPermissionsPolicyInput {
     /// <p> The name of the domain to which the resource policy is attached. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
 }
 impl GetDomainPermissionsPolicyInput {
@@ -8596,7 +8350,7 @@ impl GetDomainPermissionsPolicyInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8616,7 +8370,7 @@ impl std::fmt::Debug for GetDomainPermissionsPolicyInput {
 pub struct GetAuthorizationTokenInput {
     /// <p> The name of the domain that is in scope for the generated authorization token. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
     pub duration_seconds: std::option::Option<i64>,
@@ -8626,7 +8380,7 @@ impl GetAuthorizationTokenInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8651,16 +8405,11 @@ impl std::fmt::Debug for GetAuthorizationTokenInput {
 pub struct DisposePackageVersionsInput {
     /// <p> The name of the domain that contains the repository you want to dispose. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package versions you want to dispose. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of package versions you want to dispose. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -8676,14 +8425,7 @@ pub struct DisposePackageVersionsInput {
     /// <p> The revisions of the package versions you want to dispose. </p>
     pub version_revisions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p> The expected status of the package version to dispose. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>Published</code> </p> </li>
-    /// <li> <p> <code>Unfinished</code> </p> </li>
-    /// <li> <p> <code>Unlisted</code> </p> </li>
-    /// <li> <p> <code>Archived</code> </p> </li>
-    /// <li> <p> <code>Disposed</code> </p> </li>
-    /// </ul>
+    /// <p> The expected status of the package version to dispose. </p>
     pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
 }
 impl DisposePackageVersionsInput {
@@ -8691,7 +8433,7 @@ impl DisposePackageVersionsInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8699,12 +8441,7 @@ impl DisposePackageVersionsInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of package versions you want to dispose. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -8732,14 +8469,7 @@ impl DisposePackageVersionsInput {
     {
         self.version_revisions.as_ref()
     }
-    /// <p> The expected status of the package version to dispose. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>Published</code> </p> </li>
-    /// <li> <p> <code>Unfinished</code> </p> </li>
-    /// <li> <p> <code>Unlisted</code> </p> </li>
-    /// <li> <p> <code>Archived</code> </p> </li>
-    /// <li> <p> <code>Disposed</code> </p> </li>
-    /// </ul>
+    /// <p> The expected status of the package version to dispose. </p>
     pub fn expected_status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.expected_status.as_ref()
     }
@@ -8766,7 +8496,7 @@ impl std::fmt::Debug for DisposePackageVersionsInput {
 pub struct DisassociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The name of the repository from which the external connection will be removed. </p>
     pub repository: std::option::Option<std::string::String>,
@@ -8778,7 +8508,7 @@ impl DisassociateExternalConnectionInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8808,7 +8538,7 @@ impl std::fmt::Debug for DisassociateExternalConnectionInput {
 pub struct DescribeRepositoryInput {
     /// <p> The name of the domain that contains the repository to describe. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> A string that specifies the name of the requested repository. </p>
     pub repository: std::option::Option<std::string::String>,
@@ -8818,7 +8548,7 @@ impl DescribeRepositoryInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8843,16 +8573,11 @@ impl std::fmt::Debug for DescribeRepositoryInput {
 pub struct DescribePackageVersionInput {
     /// <p> The name of the domain that contains the repository that contains the package version. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package version. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> A format that specifies the type of the requested package version. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the requested package version. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -8871,7 +8596,7 @@ impl DescribePackageVersionInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8879,12 +8604,7 @@ impl DescribePackageVersionInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> A format that specifies the type of the requested package version. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the requested package version. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -8926,7 +8646,7 @@ impl std::fmt::Debug for DescribePackageVersionInput {
 pub struct DescribeDomainInput {
     /// <p> A string that specifies the name of the requested domain. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
@@ -8934,7 +8654,7 @@ impl DescribeDomainInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8954,7 +8674,7 @@ impl std::fmt::Debug for DescribeDomainInput {
 pub struct DeleteRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
     pub repository: std::option::Option<std::string::String>,
@@ -8966,7 +8686,7 @@ impl DeleteRepositoryPermissionsPolicyInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -8996,7 +8716,7 @@ impl std::fmt::Debug for DeleteRepositoryPermissionsPolicyInput {
 pub struct DeleteRepositoryInput {
     /// <p> The name of the domain that contains the repository to delete. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to delete. </p>
     pub repository: std::option::Option<std::string::String>,
@@ -9006,7 +8726,7 @@ impl DeleteRepositoryInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -9031,16 +8751,11 @@ impl std::fmt::Debug for DeleteRepositoryInput {
 pub struct DeletePackageVersionsInput {
     /// <p> The name of the domain that contains the package to delete. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package versions to delete. </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The format of the package versions to delete. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> The format of the package versions to delete. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -9053,14 +8768,7 @@ pub struct DeletePackageVersionsInput {
     pub package: std::option::Option<std::string::String>,
     /// <p> An array of strings that specify the versions of the package to delete. </p>
     pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The expected status of the package version to delete. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>Published</code> </p> </li>
-    /// <li> <p> <code>Unfinished</code> </p> </li>
-    /// <li> <p> <code>Unlisted</code> </p> </li>
-    /// <li> <p> <code>Archived</code> </p> </li>
-    /// <li> <p> <code>Disposed</code> </p> </li>
-    /// </ul>
+    /// <p> The expected status of the package version to delete. </p>
     pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
 }
 impl DeletePackageVersionsInput {
@@ -9068,7 +8776,7 @@ impl DeletePackageVersionsInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -9076,12 +8784,7 @@ impl DeletePackageVersionsInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The format of the package versions to delete. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> The format of the package versions to delete. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -9102,14 +8805,7 @@ impl DeletePackageVersionsInput {
     pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
         self.versions.as_deref()
     }
-    /// <p> The expected status of the package version to delete. Valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>Published</code> </p> </li>
-    /// <li> <p> <code>Unfinished</code> </p> </li>
-    /// <li> <p> <code>Unlisted</code> </p> </li>
-    /// <li> <p> <code>Archived</code> </p> </li>
-    /// <li> <p> <code>Disposed</code> </p> </li>
-    /// </ul>
+    /// <p> The expected status of the package version to delete. </p>
     pub fn expected_status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.expected_status.as_ref()
     }
@@ -9135,7 +8831,7 @@ impl std::fmt::Debug for DeletePackageVersionsInput {
 pub struct DeleteDomainPermissionsPolicyInput {
     /// <p> The name of the domain associated with the resource policy to be deleted. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
     pub policy_revision: std::option::Option<std::string::String>,
@@ -9145,7 +8841,7 @@ impl DeleteDomainPermissionsPolicyInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -9170,7 +8866,7 @@ impl std::fmt::Debug for DeleteDomainPermissionsPolicyInput {
 pub struct DeleteDomainInput {
     /// <p> The name of the domain to delete. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
 }
 impl DeleteDomainInput {
@@ -9178,7 +8874,7 @@ impl DeleteDomainInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -9198,13 +8894,13 @@ impl std::fmt::Debug for DeleteDomainInput {
 pub struct CreateRepositoryInput {
     /// <p> The name of the domain that contains the created repository. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to create. </p>
     pub repository: std::option::Option<std::string::String>,
     /// <p> A description of the created repository. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
     /// <p>One or more tag key-value pairs for the repository.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9214,7 +8910,7 @@ impl CreateRepositoryInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -9226,7 +8922,7 @@ impl CreateRepositoryInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     pub fn upstreams(&self) -> std::option::Option<&[crate::model::UpstreamRepository]> {
         self.upstreams.as_deref()
     }
@@ -9252,22 +8948,22 @@ impl std::fmt::Debug for CreateRepositoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainInput {
-    /// <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+    /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
-    /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+    /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+    /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
     /// </important>
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>One or more tag key-value pairs for the domain.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDomainInput {
-    /// <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+    /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
-    /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+    /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+    /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
     /// </important>
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
@@ -9293,18 +8989,13 @@ impl std::fmt::Debug for CreateDomainInput {
 pub struct CopyPackageVersionsInput {
     /// <p> The name of the domain that contains the source and destination repositories. </p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package versions to copy. </p>
     pub source_repository: std::option::Option<std::string::String>,
     /// <p> The name of the repository into which package versions are copied. </p>
     pub destination_repository: std::option::Option<std::string::String>,
-    /// <p> The format of the package that is copied. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the package that is copied. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -9334,7 +9025,7 @@ impl CopyPackageVersionsInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -9346,12 +9037,7 @@ impl CopyPackageVersionsInput {
     pub fn destination_repository(&self) -> std::option::Option<&str> {
         self.destination_repository.as_deref()
     }
-    /// <p> The format of the package that is copied. The valid package types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// </ul>
+    /// <p> The format of the package that is copied. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -9416,13 +9102,14 @@ impl std::fmt::Debug for CopyPackageVersionsInput {
 pub struct AssociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to which the external connection is added. </p>
     pub repository: std::option::Option<std::string::String>,
     /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
     /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
     /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
     /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -9436,7 +9123,7 @@ impl AssociateExternalConnectionInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
@@ -9447,6 +9134,7 @@ impl AssociateExternalConnectionInput {
     /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
     /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
     /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
     /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
     /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>

@@ -64,6 +64,12 @@ pub enum Error {
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>You have exceeded the number of events you can subscribe to.</p>
     EventSubscriptionQuotaExceededFault(crate::error::EventSubscriptionQuotaExceededFault),
+    /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique name) to create a new global database cluster.</p>
+    GlobalClusterAlreadyExistsFault(crate::error::GlobalClusterAlreadyExistsFault),
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
+    /// <p>The number of global database clusters for this account is already at the maximum allowed.</p>
+    GlobalClusterQuotaExceededFault(crate::error::GlobalClusterQuotaExceededFault),
     /// <p>Request would result in user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
     /// <p>The DB cluster does not have enough capacity for the current operation.</p>
@@ -92,6 +98,8 @@ pub enum Error {
     InvalidDbSubnetStateFault(crate::error::InvalidDbSubnetStateFault),
     /// <p>The event subscription is in an invalid state.</p>
     InvalidEventSubscriptionStateFault(crate::error::InvalidEventSubscriptionStateFault),
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// <p>Cannot restore from vpc backup to non-vpc DB instance.</p>
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
@@ -166,6 +174,9 @@ impl std::fmt::Display for Error {
             Error::DbUpgradeDependencyFailureFault(inner) => inner.fmt(f),
             Error::DomainNotFoundFault(inner) => inner.fmt(f),
             Error::EventSubscriptionQuotaExceededFault(inner) => inner.fmt(f),
+            Error::GlobalClusterAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::GlobalClusterNotFoundFault(inner) => inner.fmt(f),
+            Error::GlobalClusterQuotaExceededFault(inner) => inner.fmt(f),
             Error::InstanceQuotaExceededFault(inner) => inner.fmt(f),
             Error::InsufficientDbClusterCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientDbInstanceCapacityFault(inner) => inner.fmt(f),
@@ -180,6 +191,7 @@ impl std::fmt::Display for Error {
             Error::InvalidDbSubnetGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidDbSubnetStateFault(inner) => inner.fmt(f),
             Error::InvalidEventSubscriptionStateFault(inner) => inner.fmt(f),
+            Error::InvalidGlobalClusterStateFault(inner) => inner.fmt(f),
             Error::InvalidRestoreFault(inner) => inner.fmt(f),
             Error::InvalidSubnet(inner) => inner.fmt(f),
             Error::InvalidVpcNetworkStateFault(inner) => inner.fmt(f),
@@ -397,6 +409,9 @@ where
                 crate::error::CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault(inner) => {
                     Error::DbSubnetGroupNotFoundFault(inner)
                 }
+                crate::error::CreateDBClusterErrorKind::GlobalClusterNotFoundFault(inner) => {
+                    Error::GlobalClusterNotFoundFault(inner)
+                }
                 crate::error::CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault(
                     inner,
                 ) => Error::InsufficientStorageClusterCapacityFault(inner),
@@ -408,6 +423,9 @@ where
                 }
                 crate::error::CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault(inner) => {
                     Error::InvalidDbSubnetGroupStateFault(inner)
+                }
+                crate::error::CreateDBClusterErrorKind::InvalidGlobalClusterStateFault(inner) => {
+                    Error::InvalidGlobalClusterStateFault(inner)
                 }
                 crate::error::CreateDBClusterErrorKind::InvalidSubnet(inner) => {
                     Error::InvalidSubnet(inner)
@@ -632,6 +650,35 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGlobalClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateGlobalClusterError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateGlobalClusterErrorKind::DbClusterNotFoundFault(inner) => {
+                    Error::DbClusterNotFoundFault(inner)
+                }
+                crate::error::CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault(
+                    inner,
+                ) => Error::GlobalClusterAlreadyExistsFault(inner),
+                crate::error::CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault(
+                    inner,
+                ) => Error::GlobalClusterQuotaExceededFault(inner),
+                crate::error::CreateGlobalClusterErrorKind::InvalidDbClusterStateFault(inner) => {
+                    Error::InvalidDbClusterStateFault(inner)
+                }
+                crate::error::CreateGlobalClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDBClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -805,6 +852,29 @@ where
                 crate::error::DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault(inner) => Error::SubscriptionNotFoundFault(inner),
                 crate::error::DeleteEventSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGlobalClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteGlobalClusterError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault(inner) => {
+                    Error::GlobalClusterNotFoundFault(inner)
+                }
+                crate::error::DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault(
+                    inner,
+                ) => Error::InvalidGlobalClusterStateFault(inner),
+                crate::error::DeleteGlobalClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1131,6 +1201,27 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGlobalClustersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeGlobalClustersError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault(
+                    inner,
+                ) => Error::GlobalClusterNotFoundFault(inner),
+                crate::error::DescribeGlobalClustersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<crate::error::DescribeOrderableDBInstanceOptionsError, R>,
@@ -1224,6 +1315,36 @@ where
                     Error::InvalidDbInstanceStateFault(inner)
                 }
                 crate::error::FailoverDBClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::FailoverGlobalClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::FailoverGlobalClusterError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::FailoverGlobalClusterErrorKind::DbClusterNotFoundFault(inner) => {
+                    Error::DbClusterNotFoundFault(inner)
+                }
+                crate::error::FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault(inner) => {
+                    Error::GlobalClusterNotFoundFault(inner)
+                }
+                crate::error::FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault(inner) => {
+                    Error::InvalidDbClusterStateFault(inner)
+                }
+                crate::error::FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault(
+                    inner,
+                ) => Error::InvalidGlobalClusterStateFault(inner),
+                crate::error::FailoverGlobalClusterErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1502,6 +1623,29 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyGlobalClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ModifyGlobalClusterError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault(inner) => {
+                    Error::GlobalClusterNotFoundFault(inner)
+                }
+                crate::error::ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault(
+                    inner,
+                ) => Error::InvalidGlobalClusterStateFault(inner),
+                crate::error::ModifyGlobalClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::PromoteReadReplicaDBClusterError, R>>
     for Error
 where
@@ -1542,6 +1686,33 @@ where
                     Error::InvalidDbInstanceStateFault(inner)
                 }
                 crate::error::RebootDBInstanceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveFromGlobalClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::RemoveFromGlobalClusterError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault(inner) => {
+                    Error::DbClusterNotFoundFault(inner)
+                }
+                crate::error::RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault(
+                    inner,
+                ) => Error::GlobalClusterNotFoundFault(inner),
+                crate::error::RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault(
+                    inner,
+                ) => Error::InvalidGlobalClusterStateFault(inner),
+                crate::error::RemoveFromGlobalClusterErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

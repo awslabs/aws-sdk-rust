@@ -99,8 +99,9 @@ impl Client {
     ///   - [`cwe_monitor_enabled(bool)`](crate::client::fluent_builders::CreateApplication::cwe_monitor_enabled) / [`set_cwe_monitor_enabled(Option<bool>)`](crate::client::fluent_builders::CreateApplication::set_cwe_monitor_enabled): <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     ///   - [`ops_item_sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::ops_item_sns_topic_arn) / [`set_ops_item_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_ops_item_sns_topic_arn): <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    ///   - [`auto_config_enabled(bool)`](crate::client::fluent_builders::CreateApplication::auto_config_enabled) / [`set_auto_config_enabled(Option<bool>)`](crate::client::fluent_builders::CreateApplication::set_auto_config_enabled): (undocumented)
-    ///   - [`auto_create(bool)`](crate::client::fluent_builders::CreateApplication::auto_create) / [`set_auto_create(Option<bool>)`](crate::client::fluent_builders::CreateApplication::set_auto_create): (undocumented)
+    ///   - [`auto_config_enabled(bool)`](crate::client::fluent_builders::CreateApplication::auto_config_enabled) / [`set_auto_config_enabled(Option<bool>)`](crate::client::fluent_builders::CreateApplication::set_auto_config_enabled): <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
+    ///   - [`auto_create(bool)`](crate::client::fluent_builders::CreateApplication::auto_create) / [`set_auto_create(Option<bool>)`](crate::client::fluent_builders::CreateApplication::set_auto_create): <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
+    ///   - [`grouping_type(GroupingType)`](crate::client::fluent_builders::CreateApplication::grouping_type) / [`set_grouping_type(Option<GroupingType>)`](crate::client::fluent_builders::CreateApplication::set_grouping_type): <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`application_info(Option<ApplicationInfo>)`](crate::output::CreateApplicationOutput::application_info): <p>Information about the application.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
@@ -209,7 +210,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`resource_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeComponentConfigurationRecommendation::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::client::fluent_builders::DescribeComponentConfigurationRecommendation::set_resource_group_name): <p>The name of the resource group.</p>
     ///   - [`component_name(impl Into<String>)`](crate::client::fluent_builders::DescribeComponentConfigurationRecommendation::component_name) / [`set_component_name(Option<String>)`](crate::client::fluent_builders::DescribeComponentConfigurationRecommendation::set_component_name): <p>The name of the component.</p>
-    ///   - [`tier(Tier)`](crate::client::fluent_builders::DescribeComponentConfigurationRecommendation::tier) / [`set_tier(Option<Tier>)`](crate::client::fluent_builders::DescribeComponentConfigurationRecommendation::set_tier): <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+    ///   - [`tier(Tier)`](crate::client::fluent_builders::DescribeComponentConfigurationRecommendation::tier) / [`set_tier(Option<Tier>)`](crate::client::fluent_builders::DescribeComponentConfigurationRecommendation::set_tier): <p>The tier of the application component.</p>
     /// - On success, responds with [`DescribeComponentConfigurationRecommendationOutput`](crate::output::DescribeComponentConfigurationRecommendationOutput) with field(s):
     ///   - [`component_configuration(Option<String>)`](crate::output::DescribeComponentConfigurationRecommendationOutput::component_configuration): <p>The recommended configuration settings of the component. The value is the escaped JSON of the configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeComponentConfigurationRecommendationError>`](crate::error::DescribeComponentConfigurationRecommendationError)
@@ -345,11 +346,11 @@ impl Client {
     ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListProblems::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListProblems::set_end_time): <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProblems::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProblems::set_max_results): <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProblems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProblems::set_next_token): <p>The token to request the next page of results.</p>
-    ///   - [`component_name(impl Into<String>)`](crate::client::fluent_builders::ListProblems::component_name) / [`set_component_name(Option<String>)`](crate::client::fluent_builders::ListProblems::set_component_name): (undocumented)
+    ///   - [`component_name(impl Into<String>)`](crate::client::fluent_builders::ListProblems::component_name) / [`set_component_name(Option<String>)`](crate::client::fluent_builders::ListProblems::set_component_name): <p> The name of the component. </p>
     /// - On success, responds with [`ListProblemsOutput`](crate::output::ListProblemsOutput) with field(s):
     ///   - [`problem_list(Option<Vec<Problem>>)`](crate::output::ListProblemsOutput::problem_list): <p>The list of problems. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProblemsOutput::next_token): <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
-    ///   - [`resource_group_name(Option<String>)`](crate::output::ListProblemsOutput::resource_group_name): (undocumented)
+    ///   - [`resource_group_name(Option<String>)`](crate::output::ListProblemsOutput::resource_group_name): <p> The name of the resource group. </p>
     /// - On failure, responds with [`SdkError<ListProblemsError>`](crate::error::ListProblemsError)
     pub fn list_problems(&self) -> fluent_builders::ListProblems {
         fluent_builders::ListProblems::new(self.handle.clone())
@@ -394,7 +395,7 @@ impl Client {
     ///   - [`cwe_monitor_enabled(bool)`](crate::client::fluent_builders::UpdateApplication::cwe_monitor_enabled) / [`set_cwe_monitor_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateApplication::set_cwe_monitor_enabled): <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     ///   - [`ops_item_sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::ops_item_sns_topic_arn) / [`set_ops_item_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_ops_item_sns_topic_arn): <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     ///   - [`remove_sns_topic(bool)`](crate::client::fluent_builders::UpdateApplication::remove_sns_topic) / [`set_remove_sns_topic(Option<bool>)`](crate::client::fluent_builders::UpdateApplication::set_remove_sns_topic): <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
-    ///   - [`auto_config_enabled(bool)`](crate::client::fluent_builders::UpdateApplication::auto_config_enabled) / [`set_auto_config_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateApplication::set_auto_config_enabled): (undocumented)
+    ///   - [`auto_config_enabled(bool)`](crate::client::fluent_builders::UpdateApplication::auto_config_enabled) / [`set_auto_config_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateApplication::set_auto_config_enabled): <p> Turns auto-configuration on or off. </p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
     ///   - [`application_info(Option<ApplicationInfo>)`](crate::output::UpdateApplicationOutput::application_info): <p>Information about the application. </p>
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
@@ -420,9 +421,9 @@ impl Client {
     ///   - [`resource_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateComponentConfiguration::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::client::fluent_builders::UpdateComponentConfiguration::set_resource_group_name): <p>The name of the resource group.</p>
     ///   - [`component_name(impl Into<String>)`](crate::client::fluent_builders::UpdateComponentConfiguration::component_name) / [`set_component_name(Option<String>)`](crate::client::fluent_builders::UpdateComponentConfiguration::set_component_name): <p>The name of the component.</p>
     ///   - [`monitor(bool)`](crate::client::fluent_builders::UpdateComponentConfiguration::monitor) / [`set_monitor(Option<bool>)`](crate::client::fluent_builders::UpdateComponentConfiguration::set_monitor): <p>Indicates whether the application component is monitored.</p>
-    ///   - [`tier(Tier)`](crate::client::fluent_builders::UpdateComponentConfiguration::tier) / [`set_tier(Option<Tier>)`](crate::client::fluent_builders::UpdateComponentConfiguration::set_tier): <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+    ///   - [`tier(Tier)`](crate::client::fluent_builders::UpdateComponentConfiguration::tier) / [`set_tier(Option<Tier>)`](crate::client::fluent_builders::UpdateComponentConfiguration::set_tier): <p>The tier of the application component.</p>
     ///   - [`component_configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateComponentConfiguration::component_configuration) / [`set_component_configuration(Option<String>)`](crate::client::fluent_builders::UpdateComponentConfiguration::set_component_configuration): <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-    ///   - [`auto_config_enabled(bool)`](crate::client::fluent_builders::UpdateComponentConfiguration::auto_config_enabled) / [`set_auto_config_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateComponentConfiguration::set_auto_config_enabled): (undocumented)
+    ///   - [`auto_config_enabled(bool)`](crate::client::fluent_builders::UpdateComponentConfiguration::auto_config_enabled) / [`set_auto_config_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateComponentConfiguration::set_auto_config_enabled): <p> Automatically configures the component by applying the recommended configurations. </p>
     /// - On success, responds with [`UpdateComponentConfigurationOutput`](crate::output::UpdateComponentConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateComponentConfigurationError>`](crate::error::UpdateComponentConfigurationError)
@@ -557,24 +558,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
         pub fn auto_config_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.auto_config_enabled(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
         pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_config_enabled(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
         pub fn auto_create(mut self, input: bool) -> Self {
             self.inner = self.inner.auto_create(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
         pub fn set_auto_create(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_create(input);
+            self
+        }
+        /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+        pub fn grouping_type(mut self, input: crate::model::GroupingType) -> Self {
+            self.inner = self.inner.grouping_type(input);
+            self
+        }
+        /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+        pub fn set_grouping_type(
+            mut self,
+            input: std::option::Option<crate::model::GroupingType>,
+        ) -> Self {
+            self.inner = self.inner.set_grouping_type(input);
             self
         }
     }
@@ -1231,12 +1245,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_component_name(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component.</p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
             self.inner = self.inner.tier(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.inner = self.inner.set_tier(input);
             self
@@ -2044,12 +2058,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The name of the component. </p>
         pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.component_name(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The name of the component. </p>
         pub fn set_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2352,12 +2366,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_remove_sns_topic(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Turns auto-configuration on or off. </p>
         pub fn auto_config_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.auto_config_enabled(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Turns auto-configuration on or off. </p>
         pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_config_enabled(input);
             self
@@ -2540,12 +2554,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitor(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component.</p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
             self.inner = self.inner.tier(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.inner = self.inner.set_tier(input);
             self
@@ -2563,12 +2577,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_component_configuration(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Automatically configures the component by applying the recommended configurations. </p>
         pub fn auto_config_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.auto_config_enabled(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Automatically configures the component by applying the recommended configurations. </p>
         pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_config_enabled(input);
             self

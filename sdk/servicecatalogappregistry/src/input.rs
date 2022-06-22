@@ -2606,6 +2606,192 @@ impl ListAttributeGroupsInput {
     }
 }
 
+/// See [`ListAttributeGroupsForApplicationInput`](crate::input::ListAttributeGroupsForApplicationInput)
+pub mod list_attribute_groups_for_application_input {
+
+    /// A builder for [`ListAttributeGroupsForApplicationInput`](crate::input::ListAttributeGroupsForApplicationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name or ID of the application.</p>
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application = Some(input.into());
+            self
+        }
+        /// <p>The name or ID of the application.</p>
+        pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application = input;
+            self
+        }
+        /// <p>This token retrieves the next page of results after a previous API call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>This token retrieves the next page of results after a previous API call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAttributeGroupsForApplicationInput`](crate::input::ListAttributeGroupsForApplicationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListAttributeGroupsForApplicationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAttributeGroupsForApplicationInput {
+                application: self.application,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAttributeGroupsForApplicationInputOperationOutputAlias =
+    crate::operation::ListAttributeGroupsForApplication;
+#[doc(hidden)]
+pub type ListAttributeGroupsForApplicationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListAttributeGroupsForApplicationInput {
+    /// Consumes the builder and constructs an Operation<[`ListAttributeGroupsForApplication`](crate::operation::ListAttributeGroupsForApplication)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAttributeGroupsForApplication,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAttributeGroupsForApplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_28 = &_input.application;
+                let input_28 = input_28.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "application",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let application = aws_smithy_http::label::fmt_string(input_28, false);
+                if application.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "application",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/applications/{application}/attribute-group-details",
+                    application = application
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListAttributeGroupsForApplicationInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_29) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+                }
+                if let Some(inner_30) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAttributeGroupsForApplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAttributeGroupsForApplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAttributeGroupsForApplication",
+            "servicecatalogappregistry",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationInput`](crate::input::ListAttributeGroupsForApplicationInput)
+    pub fn builder() -> crate::input::list_attribute_groups_for_application_input::Builder {
+        crate::input::list_attribute_groups_for_application_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
 pub mod list_tags_for_resource_input {
 
@@ -2663,14 +2849,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_28 = &_input.resource_arn;
-                let input_28 = input_28.as_ref().ok_or(
+                let input_31 = &_input.resource_arn;
+                let input_31 = input_31.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_28, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_31, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -2817,28 +3003,28 @@ impl SyncResourceInput {
                 _input: &crate::input::SyncResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_29 = &_input.resource_type;
-                let input_29 = input_29.as_ref().ok_or(
+                let input_32 = &_input.resource_type;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_type = aws_smithy_http::label::fmt_string(input_29, false);
+                let resource_type = aws_smithy_http::label::fmt_string(input_32, false);
                 if resource_type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_type",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_30 = &_input.resource;
-                let input_30 = input_30.as_ref().ok_or(
+                let input_33 = &_input.resource;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource = aws_smithy_http::label::fmt_string(input_30, false);
+                let resource = aws_smithy_http::label::fmt_string(input_33, false);
                 if resource.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource",
@@ -3004,14 +3190,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.resource_arn;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_34 = &_input.resource_arn;
+                let input_34 = input_34.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_31, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_34, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3178,14 +3364,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_32 = &_input.resource_arn;
-                let input_32 = input_32.as_ref().ok_or(
+                let input_35 = &_input.resource_arn;
+                let input_35 = input_35.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_32, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_35, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -3201,9 +3387,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_33) = &_input.tag_keys {
-                    for inner_34 in inner_33 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_34));
+                if let Some(inner_36) = &_input.tag_keys {
+                    for inner_37 in inner_36 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_37));
                     }
                 }
                 Ok(())
@@ -3295,12 +3481,12 @@ pub mod update_application_input {
             self.application = input;
             self
         }
-        /// <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
+        /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
+        /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3354,14 +3540,14 @@ impl UpdateApplicationInput {
                 _input: &crate::input::UpdateApplicationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_35 = &_input.application;
-                let input_35 = input_35.as_ref().ok_or(
+                let input_38 = &_input.application;
+                let input_38 = input_38.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "application",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let application = aws_smithy_http::label::fmt_string(input_35, false);
+                let application = aws_smithy_http::label::fmt_string(input_38, false);
                 if application.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application",
@@ -3480,12 +3666,12 @@ pub mod update_attribute_group_input {
             self.attribute_group = input;
             self
         }
-        /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
+        /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
+        /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3550,14 +3736,14 @@ impl UpdateAttributeGroupInput {
                 _input: &crate::input::UpdateAttributeGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.attribute_group;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_39 = &_input.attribute_group;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "attribute_group",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let attribute_group = aws_smithy_http::label::fmt_string(input_36, false);
+                let attribute_group = aws_smithy_http::label::fmt_string(input_39, false);
                 if attribute_group.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attribute_group",
@@ -3658,7 +3844,7 @@ impl UpdateAttributeGroupInput {
 pub struct UpdateAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: std::option::Option<std::string::String>,
-    /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
+    /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the attribute group that the user provides.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3670,7 +3856,7 @@ impl UpdateAttributeGroupInput {
     pub fn attribute_group(&self) -> std::option::Option<&str> {
         self.attribute_group.as_deref()
     }
-    /// <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
+    /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3700,7 +3886,7 @@ impl std::fmt::Debug for UpdateAttributeGroupInput {
 pub struct UpdateApplicationInput {
     /// <p>The name or ID of the application that will be updated.</p>
     pub application: std::option::Option<std::string::String>,
-    /// <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
+    /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The new description of the application.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3710,7 +3896,7 @@ impl UpdateApplicationInput {
     pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
-    /// <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
+    /// <p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3834,6 +4020,41 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAttributeGroupsForApplicationInput {
+    /// <p>The name or ID of the application.</p>
+    pub application: std::option::Option<std::string::String>,
+    /// <p>This token retrieves the next page of results after a previous API call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListAttributeGroupsForApplicationInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>This token retrieves the next page of results after a previous API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListAttributeGroupsForApplicationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAttributeGroupsForApplicationInput");
+        formatter.field("application", &self.application);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }

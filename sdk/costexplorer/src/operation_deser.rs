@@ -2236,6 +2236,84 @@ pub fn parse_get_usage_forecast_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_cost_allocation_tags_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListCostAllocationTagsOutput,
+    crate::error::ListCostAllocationTagsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListCostAllocationTagsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListCostAllocationTagsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidNextTokenException" => crate::error::ListCostAllocationTagsError {
+            meta: generic,
+            kind: crate::error::ListCostAllocationTagsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCostAllocationTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::ListCostAllocationTagsError {
+            meta: generic,
+            kind: crate::error::ListCostAllocationTagsErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCostAllocationTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListCostAllocationTagsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_cost_allocation_tags_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListCostAllocationTagsOutput,
+    crate::error::ListCostAllocationTagsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_cost_allocation_tags_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_cost_allocation_tags(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListCostAllocationTagsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_cost_category_definitions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2740,6 +2818,65 @@ pub fn parse_update_anomaly_subscription_response(
             output,
         )
         .map_err(crate::error::UpdateAnomalySubscriptionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_cost_allocation_tags_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateCostAllocationTagsStatusOutput,
+    crate::error::UpdateCostAllocationTagsStatusError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateCostAllocationTagsStatusError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateCostAllocationTagsStatusError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "LimitExceededException" => crate::error::UpdateCostAllocationTagsStatusError {
+            meta: generic,
+            kind: crate::error::UpdateCostAllocationTagsStatusErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCostAllocationTagsStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateCostAllocationTagsStatusError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_cost_allocation_tags_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateCostAllocationTagsStatusOutput,
+    crate::error::UpdateCostAllocationTagsStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_cost_allocation_tags_status_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_update_cost_allocation_tags_status(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::UpdateCostAllocationTagsStatusError::unhandled)?;
         output.build()
     })
 }

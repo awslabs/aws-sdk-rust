@@ -210,6 +210,7 @@ impl Client {
     ///   - [`enable_iam_database_authentication(bool)`](crate::client::fluent_builders::CreateDBCluster::enable_iam_database_authentication) / [`set_enable_iam_database_authentication(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_enable_iam_database_authentication): <p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p>  <p>Default: <code>false</code>.</p>
     ///   - [`enable_cloudwatch_logs_exports(Vec<String>)`](crate::client::fluent_builders::CreateDBCluster::enable_cloudwatch_logs_exports) / [`set_enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBCluster::set_enable_cloudwatch_logs_exports): <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
     ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::CreateDBCluster::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_deletion_protection): <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_global_cluster_identifier): <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
     /// - On success, responds with [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::output::CreateDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     /// - On failure, responds with [`SdkError<CreateDBClusterError>`](crate::error::CreateDBClusterError)
@@ -361,6 +362,21 @@ impl Client {
     pub fn create_event_subscription(&self) -> fluent_builders::CreateEventSubscription {
         fluent_builders::CreateEventSubscription::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateGlobalCluster`](crate::client::fluent_builders::CreateGlobalCluster) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateGlobalCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateGlobalCluster::set_global_cluster_identifier): <p>The cluster identifier of the new global database cluster.</p>
+    ///   - [`source_db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateGlobalCluster::source_db_cluster_identifier) / [`set_source_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateGlobalCluster::set_source_db_cluster_identifier): <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+    ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::CreateGlobalCluster::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::CreateGlobalCluster::set_engine): <p>The name of the database engine to be used in the global database.</p>  <p>Valid values: <code>neptune</code> </p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateGlobalCluster::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateGlobalCluster::set_engine_version): <p>The Neptune engine version to be used by the global database.</p>  <p>Valid values: <code>1.2.0.0</code> or above.</p>
+    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::CreateGlobalCluster::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::CreateGlobalCluster::set_deletion_protection): <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+    ///   - [`storage_encrypted(bool)`](crate::client::fluent_builders::CreateGlobalCluster::storage_encrypted) / [`set_storage_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateGlobalCluster::set_storage_encrypted): <p>The storage encryption setting for the new global database cluster.</p>
+    /// - On success, responds with [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput) with field(s):
+    ///   - [`global_cluster(Option<GlobalCluster>)`](crate::output::CreateGlobalClusterOutput::global_cluster): <p>Contains the details of an Amazon Neptune global database.</p>  <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    /// - On failure, responds with [`SdkError<CreateGlobalClusterError>`](crate::error::CreateGlobalClusterError)
+    pub fn create_global_cluster(&self) -> fluent_builders::CreateGlobalCluster {
+        fluent_builders::CreateGlobalCluster::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteDBCluster`](crate::client::fluent_builders::DeleteDBCluster) operation.
     ///
     /// - The fluent builder is configurable:
@@ -455,6 +471,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteEventSubscriptionError>`](crate::error::DeleteEventSubscriptionError)
     pub fn delete_event_subscription(&self) -> fluent_builders::DeleteEventSubscription {
         fluent_builders::DeleteEventSubscription::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteGlobalCluster`](crate::client::fluent_builders::DeleteGlobalCluster) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteGlobalCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DeleteGlobalCluster::set_global_cluster_identifier): <p>The cluster identifier of the global database cluster being deleted.</p>
+    /// - On success, responds with [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput) with field(s):
+    ///   - [`global_cluster(Option<GlobalCluster>)`](crate::output::DeleteGlobalClusterOutput::global_cluster): <p>Contains the details of an Amazon Neptune global database.</p>  <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    /// - On failure, responds with [`SdkError<DeleteGlobalClusterError>`](crate::error::DeleteGlobalClusterError)
+    pub fn delete_global_cluster(&self) -> fluent_builders::DeleteGlobalCluster {
+        fluent_builders::DeleteGlobalCluster::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDBClusterEndpoints`](crate::client::fluent_builders::DescribeDBClusterEndpoints) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterEndpoints::into_paginator).
@@ -709,6 +735,19 @@ impl Client {
     pub fn describe_event_subscriptions(&self) -> fluent_builders::DescribeEventSubscriptions {
         fluent_builders::DescribeEventSubscriptions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeGlobalClusters`](crate::client::fluent_builders::DescribeGlobalClusters) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::set_global_cluster_identifier): <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>  <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeGlobalClusters::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeGlobalClusters::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>  <p>Default: <code>100</code> </p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::set_marker): <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeGlobalClustersOutput::marker): <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
+    ///   - [`global_clusters(Option<Vec<GlobalCluster>>)`](crate::output::DescribeGlobalClustersOutput::global_clusters): <p>The list of global clusters and instances returned by this request.</p>
+    /// - On failure, responds with [`SdkError<DescribeGlobalClustersError>`](crate::error::DescribeGlobalClustersError)
+    pub fn describe_global_clusters(&self) -> fluent_builders::DescribeGlobalClusters {
+        fluent_builders::DescribeGlobalClusters::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeOrderableDBInstanceOptions`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::into_paginator).
     ///
@@ -769,6 +808,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<FailoverDBClusterError>`](crate::error::FailoverDBClusterError)
     pub fn failover_db_cluster(&self) -> fluent_builders::FailoverDBCluster {
         fluent_builders::FailoverDBCluster::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`FailoverGlobalCluster`](crate::client::fluent_builders::FailoverGlobalCluster) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::FailoverGlobalCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::FailoverGlobalCluster::set_global_cluster_identifier): <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>  <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+    ///   - [`target_db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::FailoverGlobalCluster::target_db_cluster_identifier) / [`set_target_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::FailoverGlobalCluster::set_target_db_cluster_identifier): <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
+    /// - On success, responds with [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput) with field(s):
+    ///   - [`global_cluster(Option<GlobalCluster>)`](crate::output::FailoverGlobalClusterOutput::global_cluster): <p>Contains the details of an Amazon Neptune global database.</p>  <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    /// - On failure, responds with [`SdkError<FailoverGlobalClusterError>`](crate::error::FailoverGlobalClusterError)
+    pub fn failover_global_cluster(&self) -> fluent_builders::FailoverGlobalCluster {
+        fluent_builders::FailoverGlobalCluster::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -941,6 +991,20 @@ impl Client {
     pub fn modify_event_subscription(&self) -> fluent_builders::ModifyEventSubscription {
         fluent_builders::ModifyEventSubscription::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ModifyGlobalCluster`](crate::client::fluent_builders::ModifyGlobalCluster) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::set_global_cluster_identifier): <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>  <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+    ///   - [`new_global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::new_global_cluster_identifier) / [`set_new_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::set_new_global_cluster_identifier): <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-cluster2</code> </p>
+    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::ModifyGlobalCluster::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::ModifyGlobalCluster::set_deletion_protection): <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::set_engine_version): <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>  <p>To list all of the available Neptune engine versions, use the following command:</p>
+    ///   - [`allow_major_version_upgrade(bool)`](crate::client::fluent_builders::ModifyGlobalCluster::allow_major_version_upgrade) / [`set_allow_major_version_upgrade(Option<bool>)`](crate::client::fluent_builders::ModifyGlobalCluster::set_allow_major_version_upgrade): <p>A value that indicates whether major version upgrades are allowed.</p>  <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>  <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
+    /// - On success, responds with [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput) with field(s):
+    ///   - [`global_cluster(Option<GlobalCluster>)`](crate::output::ModifyGlobalClusterOutput::global_cluster): <p>Contains the details of an Amazon Neptune global database.</p>  <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    /// - On failure, responds with [`SdkError<ModifyGlobalClusterError>`](crate::error::ModifyGlobalClusterError)
+    pub fn modify_global_cluster(&self) -> fluent_builders::ModifyGlobalCluster {
+        fluent_builders::ModifyGlobalCluster::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`PromoteReadReplicaDBCluster`](crate::client::fluent_builders::PromoteReadReplicaDBCluster) operation.
     ///
     /// - The fluent builder is configurable:
@@ -961,6 +1025,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<RebootDBInstanceError>`](crate::error::RebootDBInstanceError)
     pub fn reboot_db_instance(&self) -> fluent_builders::RebootDBInstance {
         fluent_builders::RebootDBInstance::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`RemoveFromGlobalCluster`](crate::client::fluent_builders::RemoveFromGlobalCluster) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RemoveFromGlobalCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RemoveFromGlobalCluster::set_global_cluster_identifier): <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RemoveFromGlobalCluster::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RemoveFromGlobalCluster::set_db_cluster_identifier): <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
+    /// - On success, responds with [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput) with field(s):
+    ///   - [`global_cluster(Option<GlobalCluster>)`](crate::output::RemoveFromGlobalClusterOutput::global_cluster): <p>Contains the details of an Amazon Neptune global database.</p>  <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    /// - On failure, responds with [`SdkError<RemoveFromGlobalClusterError>`](crate::error::RemoveFromGlobalClusterError)
+    pub fn remove_from_global_cluster(&self) -> fluent_builders::RemoveFromGlobalCluster {
+        fluent_builders::RemoveFromGlobalCluster::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`RemoveRoleFromDBCluster`](crate::client::fluent_builders::RemoveRoleFromDBCluster) operation.
     ///
@@ -2338,6 +2413,19 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_deletion_protection(input);
+            self
+        }
+        /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
+            self
+        }
+        /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
     }
@@ -3766,6 +3854,126 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateGlobalCluster`.
+    ///
+    /// <p>Creates a Neptune global database spread across multiple Amazon Regions. The global database contains a single primary cluster with read-write capability, and read-only secondary clusters that receive data from the primary cluster through high-speed replication performed by the Neptune storage subsystem.</p>
+    /// <p>You can create a global database that is initially empty, and then add a primary cluster and secondary clusters to it, or you can specify an existing Neptune cluster during the create operation to become the primary cluster of the global database.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateGlobalCluster {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_global_cluster_input::Builder,
+    }
+    impl CreateGlobalCluster {
+        /// Creates a new `CreateGlobalCluster`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateGlobalClusterOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateGlobalClusterError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The cluster identifier of the new global database cluster.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
+            self
+        }
+        /// <p>The cluster identifier of the new global database cluster.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_cluster_identifier(input);
+            self
+        }
+        /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+        pub fn source_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.source_db_cluster_identifier(input.into());
+            self
+        }
+        /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+        pub fn set_source_db_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_db_cluster_identifier(input);
+            self
+        }
+        /// <p>The name of the database engine to be used in the global database.</p>
+        /// <p>Valid values: <code>neptune</code> </p>
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
+            self
+        }
+        /// <p>The name of the database engine to be used in the global database.</p>
+        /// <p>Valid values: <code>neptune</code> </p>
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_engine(input);
+            self
+        }
+        /// <p>The Neptune engine version to be used by the global database.</p>
+        /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
+            self
+        }
+        /// <p>The Neptune engine version to be used by the global database.</p>
+        /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
+            self
+        }
+        /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
+            self
+        }
+        /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
+            self
+        }
+        /// <p>The storage encryption setting for the new global database cluster.</p>
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
+            self
+        }
+        /// <p>The storage encryption setting for the new global database cluster.</p>
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_storage_encrypted(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteDBCluster`.
     ///
     /// <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.</p>
@@ -4382,6 +4590,62 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_subscription_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteGlobalCluster`.
+    ///
+    /// <p>Deletes a global database. The primary and all secondary clusters must already be detached or deleted first.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteGlobalCluster {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_global_cluster_input::Builder,
+    }
+    impl DeleteGlobalCluster {
+        /// Creates a new `DeleteGlobalCluster`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteGlobalClusterOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteGlobalClusterError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The cluster identifier of the global database cluster being deleted.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
+            self
+        }
+        /// <p>The cluster identifier of the global database cluster being deleted.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_cluster_identifier(input);
             self
         }
     }
@@ -6330,6 +6594,88 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeGlobalClusters`.
+    ///
+    /// <p>Returns information about Neptune global database clusters. This API supports pagination.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeGlobalClusters {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_global_clusters_input::Builder,
+    }
+    impl DescribeGlobalClusters {
+        /// Creates a new `DescribeGlobalClusters`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeGlobalClustersOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeGlobalClustersError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
+        /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
+            self
+        }
+        /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
+        /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_cluster_identifier(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
+        /// <p>Default: <code>100</code> </p>
+        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
+            self
+        }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
+        /// <p>Default: <code>100</code> </p>
+        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
+            self
+        }
+        /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeOrderableDBInstanceOptions`.
     ///
     /// <p>Returns a list of orderable DB instance options for the specified engine.</p>
@@ -6743,6 +7089,83 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_target_db_instance_identifier(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `FailoverGlobalCluster`.
+    ///
+    /// <p>Initiates the failover process for a Neptune global database.</p>
+    /// <p>A failover for a Neptune global database promotes one of secondary read-only DB clusters to be the primary DB cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role of the current primary DB cluster and the selected target secondary DB cluster are switched. The selected secondary DB cluster assumes full read/write capabilities for the Neptune global database.</p> <note>
+    /// <p>This action applies <b>only</b> to Neptune global databases. This action is only intended for use on healthy Neptune global databases with healthy Neptune DB clusters and no region-wide outages, to test disaster recovery scenarios or to reconfigure the global database topology.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct FailoverGlobalCluster {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::failover_global_cluster_input::Builder,
+    }
+    impl FailoverGlobalCluster {
+        /// Creates a new `FailoverGlobalCluster`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::FailoverGlobalClusterOutput,
+            aws_smithy_http::result::SdkError<crate::error::FailoverGlobalClusterError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
+        /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
+            self
+        }
+        /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
+        /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_cluster_identifier(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
+        pub fn target_db_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.target_db_cluster_identifier(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
+        pub fn set_target_db_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_db_cluster_identifier(input);
             self
         }
     }
@@ -8376,6 +8799,133 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ModifyGlobalCluster`.
+    ///
+    /// <p>Modify a setting for an Amazon Neptune global cluster. You can change one or more database configuration parameters by specifying these parameters and their new values in the request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ModifyGlobalCluster {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::modify_global_cluster_input::Builder,
+    }
+    impl ModifyGlobalCluster {
+        /// Creates a new `ModifyGlobalCluster`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyGlobalClusterOutput,
+            aws_smithy_http::result::SdkError<crate::error::ModifyGlobalClusterError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
+        /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
+            self
+        }
+        /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
+        /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_cluster_identifier(input);
+            self
+        }
+        /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// </ul>
+        /// <p>Example: <code>my-cluster2</code> </p>
+        pub fn new_global_cluster_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.new_global_cluster_identifier(input.into());
+            self
+        }
+        /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+        /// </ul>
+        /// <p>Example: <code>my-cluster2</code> </p>
+        pub fn set_new_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_new_global_cluster_identifier(input);
+            self
+        }
+        /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
+            self
+        }
+        /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
+            self
+        }
+        /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+        /// <p>To list all of the available Neptune engine versions, use the following command:</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
+            self
+        }
+        /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+        /// <p>To list all of the available Neptune engine versions, use the following command:</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_version(input);
+            self
+        }
+        /// <p>A value that indicates whether major version upgrades are allowed.</p>
+        /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+        /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(input);
+            self
+        }
+        /// <p>A value that indicates whether major version upgrades are allowed.</p>
+        /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+        /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
+        pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_allow_major_version_upgrade(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PromoteReadReplicaDBCluster`.
     ///
     /// <p>Not supported.</p>
@@ -8506,6 +9056,75 @@ pub mod fluent_builders {
         /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.</p>
         pub fn set_force_failover(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_failover(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RemoveFromGlobalCluster`.
+    ///
+    /// <p>Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster becomes a normal standalone cluster with read-write capability instead of being read-only, and no longer receives data from a the primary cluster.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RemoveFromGlobalCluster {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::remove_from_global_cluster_input::Builder,
+    }
+    impl RemoveFromGlobalCluster {
+        /// Creates a new `RemoveFromGlobalCluster`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RemoveFromGlobalClusterOutput,
+            aws_smithy_http::result::SdkError<crate::error::RemoveFromGlobalClusterError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
+            self
+        }
+        /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_cluster_identifier(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
+        pub fn set_db_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_db_cluster_identifier(input);
             self
         }
     }

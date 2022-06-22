@@ -7,7 +7,7 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
+    /// <p> The operation did not succeed because of an error that occurred inside CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

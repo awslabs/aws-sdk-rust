@@ -2015,6 +2015,347 @@ impl EventSubscription {
     }
 }
 
+/// <p>Contains the details of an Amazon Neptune global database.</p>
+/// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GlobalCluster {
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
+    pub global_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
+    pub global_cluster_resource_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the global database.</p>
+    pub global_cluster_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the current state of this global database.</p>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The Neptune database engine used by the global database (<code>"neptune"</code>).</p>
+    pub engine: std::option::Option<std::string::String>,
+    /// <p>The Neptune engine version used by the global database.</p>
+    pub engine_version: std::option::Option<std::string::String>,
+    /// <p>The storage encryption setting for the global database.</p>
+    pub storage_encrypted: std::option::Option<bool>,
+    /// <p>The deletion protection setting for the global database.</p>
+    pub deletion_protection: std::option::Option<bool>,
+    /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
+    pub global_cluster_members:
+        std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
+}
+impl GlobalCluster {
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
+    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
+    /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
+    pub fn global_cluster_resource_id(&self) -> std::option::Option<&str> {
+        self.global_cluster_resource_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the global database.</p>
+    pub fn global_cluster_arn(&self) -> std::option::Option<&str> {
+        self.global_cluster_arn.as_deref()
+    }
+    /// <p>Specifies the current state of this global database.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The Neptune database engine used by the global database (<code>"neptune"</code>).</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The Neptune engine version used by the global database.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The storage encryption setting for the global database.</p>
+    pub fn storage_encrypted(&self) -> std::option::Option<bool> {
+        self.storage_encrypted
+    }
+    /// <p>The deletion protection setting for the global database.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
+    pub fn global_cluster_members(
+        &self,
+    ) -> std::option::Option<&[crate::model::GlobalClusterMember]> {
+        self.global_cluster_members.as_deref()
+    }
+}
+impl std::fmt::Debug for GlobalCluster {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GlobalCluster");
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
+        formatter.field(
+            "global_cluster_resource_id",
+            &self.global_cluster_resource_id,
+        );
+        formatter.field("global_cluster_arn", &self.global_cluster_arn);
+        formatter.field("status", &self.status);
+        formatter.field("engine", &self.engine);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("storage_encrypted", &self.storage_encrypted);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("global_cluster_members", &self.global_cluster_members);
+        formatter.finish()
+    }
+}
+/// See [`GlobalCluster`](crate::model::GlobalCluster)
+pub mod global_cluster {
+
+    /// A builder for [`GlobalCluster`](crate::model::GlobalCluster)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) global_cluster_resource_id: std::option::Option<std::string::String>,
+        pub(crate) global_cluster_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) engine: std::option::Option<std::string::String>,
+        pub(crate) engine_version: std::option::Option<std::string::String>,
+        pub(crate) storage_encrypted: std::option::Option<bool>,
+        pub(crate) deletion_protection: std::option::Option<bool>,
+        pub(crate) global_cluster_members:
+            std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
+    }
+    impl Builder {
+        /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
+        pub fn set_global_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_identifier = input;
+            self
+        }
+        /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
+        pub fn global_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_resource_id = Some(input.into());
+            self
+        }
+        /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
+        pub fn set_global_cluster_resource_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_resource_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the global database.</p>
+        pub fn global_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the global database.</p>
+        pub fn set_global_cluster_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_cluster_arn = input;
+            self
+        }
+        /// <p>Specifies the current state of this global database.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>Specifies the current state of this global database.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The Neptune database engine used by the global database (<code>"neptune"</code>).</p>
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
+            self
+        }
+        /// <p>The Neptune database engine used by the global database (<code>"neptune"</code>).</p>
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
+            self
+        }
+        /// <p>The Neptune engine version used by the global database.</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
+            self
+        }
+        /// <p>The Neptune engine version used by the global database.</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
+            self
+        }
+        /// <p>The storage encryption setting for the global database.</p>
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
+            self
+        }
+        /// <p>The storage encryption setting for the global database.</p>
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
+            self
+        }
+        /// <p>The deletion protection setting for the global database.</p>
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
+            self
+        }
+        /// <p>The deletion protection setting for the global database.</p>
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
+            self
+        }
+        /// Appends an item to `global_cluster_members`.
+        ///
+        /// To override the contents of this collection use [`set_global_cluster_members`](Self::set_global_cluster_members).
+        ///
+        /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
+        pub fn global_cluster_members(mut self, input: crate::model::GlobalClusterMember) -> Self {
+            let mut v = self.global_cluster_members.unwrap_or_default();
+            v.push(input);
+            self.global_cluster_members = Some(v);
+            self
+        }
+        /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
+        pub fn set_global_cluster_members(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
+        ) -> Self {
+            self.global_cluster_members = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlobalCluster`](crate::model::GlobalCluster)
+        pub fn build(self) -> crate::model::GlobalCluster {
+            crate::model::GlobalCluster {
+                global_cluster_identifier: self.global_cluster_identifier,
+                global_cluster_resource_id: self.global_cluster_resource_id,
+                global_cluster_arn: self.global_cluster_arn,
+                status: self.status,
+                engine: self.engine,
+                engine_version: self.engine_version,
+                storage_encrypted: self.storage_encrypted,
+                deletion_protection: self.deletion_protection,
+                global_cluster_members: self.global_cluster_members,
+            }
+        }
+    }
+}
+impl GlobalCluster {
+    /// Creates a new builder-style object to manufacture [`GlobalCluster`](crate::model::GlobalCluster)
+    pub fn builder() -> crate::model::global_cluster::Builder {
+        crate::model::global_cluster::Builder::default()
+    }
+}
+
+/// <p> A data structure with information about any primary and secondary clusters associated with an Neptune global database. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GlobalClusterMember {
+    /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
+    pub db_cluster_arn: std::option::Option<std::string::String>,
+    /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
+    pub readers: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> Specifies whether the Neptune cluster is the primary cluster (that is, has read-write capability) for the Neptune global database with which it is associated. </p>
+    pub is_writer: bool,
+}
+impl GlobalClusterMember {
+    /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
+    pub fn db_cluster_arn(&self) -> std::option::Option<&str> {
+        self.db_cluster_arn.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
+    pub fn readers(&self) -> std::option::Option<&[std::string::String]> {
+        self.readers.as_deref()
+    }
+    /// <p> Specifies whether the Neptune cluster is the primary cluster (that is, has read-write capability) for the Neptune global database with which it is associated. </p>
+    pub fn is_writer(&self) -> bool {
+        self.is_writer
+    }
+}
+impl std::fmt::Debug for GlobalClusterMember {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GlobalClusterMember");
+        formatter.field("db_cluster_arn", &self.db_cluster_arn);
+        formatter.field("readers", &self.readers);
+        formatter.field("is_writer", &self.is_writer);
+        formatter.finish()
+    }
+}
+/// See [`GlobalClusterMember`](crate::model::GlobalClusterMember)
+pub mod global_cluster_member {
+
+    /// A builder for [`GlobalClusterMember`](crate::model::GlobalClusterMember)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) db_cluster_arn: std::option::Option<std::string::String>,
+        pub(crate) readers: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) is_writer: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
+        pub fn db_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
+        pub fn set_db_cluster_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_arn = input;
+            self
+        }
+        /// Appends an item to `readers`.
+        ///
+        /// To override the contents of this collection use [`set_readers`](Self::set_readers).
+        ///
+        /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
+        pub fn readers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.readers.unwrap_or_default();
+            v.push(input.into());
+            self.readers = Some(v);
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
+        pub fn set_readers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.readers = input;
+            self
+        }
+        /// <p> Specifies whether the Neptune cluster is the primary cluster (that is, has read-write capability) for the Neptune global database with which it is associated. </p>
+        pub fn is_writer(mut self, input: bool) -> Self {
+            self.is_writer = Some(input);
+            self
+        }
+        /// <p> Specifies whether the Neptune cluster is the primary cluster (that is, has read-write capability) for the Neptune global database with which it is associated. </p>
+        pub fn set_is_writer(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_writer = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlobalClusterMember`](crate::model::GlobalClusterMember)
+        pub fn build(self) -> crate::model::GlobalClusterMember {
+            crate::model::GlobalClusterMember {
+                db_cluster_arn: self.db_cluster_arn,
+                readers: self.readers,
+                is_writer: self.is_writer.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl GlobalClusterMember {
+    /// Creates a new builder-style object to manufacture [`GlobalClusterMember`](crate::model::GlobalClusterMember)
+    pub fn builder() -> crate::model::global_cluster_member::Builder {
+        crate::model::global_cluster_member::Builder::default()
+    }
+}
+
 /// <p>Contains the details of an Amazon Neptune DB instance.</p>
 /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
 #[non_exhaustive]
@@ -5699,6 +6040,8 @@ pub struct OrderableDbInstanceOption {
     pub min_iops_per_gib: std::option::Option<f64>,
     /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
     pub max_iops_per_gib: std::option::Option<f64>,
+    /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
+    pub supports_global_databases: bool,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
@@ -5781,6 +6124,10 @@ impl OrderableDbInstanceOption {
     pub fn max_iops_per_gib(&self) -> std::option::Option<f64> {
         self.max_iops_per_gib
     }
+    /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
+    pub fn supports_global_databases(&self) -> bool {
+        self.supports_global_databases
+    }
 }
 impl std::fmt::Debug for OrderableDbInstanceOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5817,6 +6164,7 @@ impl std::fmt::Debug for OrderableDbInstanceOption {
         formatter.field("max_iops_per_db_instance", &self.max_iops_per_db_instance);
         formatter.field("min_iops_per_gib", &self.min_iops_per_gib);
         formatter.field("max_iops_per_gib", &self.max_iops_per_gib);
+        formatter.field("supports_global_databases", &self.supports_global_databases);
         formatter.finish()
     }
 }
@@ -5848,6 +6196,7 @@ pub mod orderable_db_instance_option {
         pub(crate) max_iops_per_db_instance: std::option::Option<i32>,
         pub(crate) min_iops_per_gib: std::option::Option<f64>,
         pub(crate) max_iops_per_gib: std::option::Option<f64>,
+        pub(crate) supports_global_databases: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The engine type of a DB instance.</p>
@@ -6077,6 +6426,16 @@ pub mod orderable_db_instance_option {
             self.max_iops_per_gib = input;
             self
         }
+        /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
+        pub fn supports_global_databases(mut self, input: bool) -> Self {
+            self.supports_global_databases = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
+        pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_global_databases = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption)
         pub fn build(self) -> crate::model::OrderableDbInstanceOption {
             crate::model::OrderableDbInstanceOption {
@@ -6104,6 +6463,7 @@ pub mod orderable_db_instance_option {
                 max_iops_per_db_instance: self.max_iops_per_db_instance,
                 min_iops_per_gib: self.min_iops_per_gib,
                 max_iops_per_gib: self.max_iops_per_gib,
+                supports_global_databases: self.supports_global_databases.unwrap_or_default(),
             }
         }
     }
@@ -6696,6 +7056,8 @@ pub struct DbEngineVersion {
     pub supports_log_exports_to_cloudwatch_logs: bool,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
     pub supports_read_replica: bool,
+    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    pub supports_global_databases: bool,
 }
 impl DbEngineVersion {
     /// <p>The name of the database engine.</p>
@@ -6746,6 +7108,10 @@ impl DbEngineVersion {
     pub fn supports_read_replica(&self) -> bool {
         self.supports_read_replica
     }
+    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    pub fn supports_global_databases(&self) -> bool {
+        self.supports_global_databases
+    }
 }
 impl std::fmt::Debug for DbEngineVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6768,6 +7134,7 @@ impl std::fmt::Debug for DbEngineVersion {
             &self.supports_log_exports_to_cloudwatch_logs,
         );
         formatter.field("supports_read_replica", &self.supports_read_replica);
+        formatter.field("supports_global_databases", &self.supports_global_databases);
         formatter.finish()
     }
 }
@@ -6792,6 +7159,7 @@ pub mod db_engine_version {
         pub(crate) exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) supports_log_exports_to_cloudwatch_logs: std::option::Option<bool>,
         pub(crate) supports_read_replica: std::option::Option<bool>,
+        pub(crate) supports_global_databases: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -6971,6 +7339,16 @@ pub mod db_engine_version {
             self.supports_read_replica = input;
             self
         }
+        /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+        pub fn supports_global_databases(mut self, input: bool) -> Self {
+            self.supports_global_databases = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+        pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_global_databases = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbEngineVersion`](crate::model::DbEngineVersion)
         pub fn build(self) -> crate::model::DbEngineVersion {
             crate::model::DbEngineVersion {
@@ -6988,6 +7366,7 @@ pub mod db_engine_version {
                     .supports_log_exports_to_cloudwatch_logs
                     .unwrap_or_default(),
                 supports_read_replica: self.supports_read_replica.unwrap_or_default(),
+                supports_global_databases: self.supports_global_databases.unwrap_or_default(),
             }
         }
     }
@@ -7071,6 +7450,8 @@ pub struct UpgradeTarget {
     pub auto_upgrade: bool,
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
     pub is_major_version_upgrade: bool,
+    /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
+    pub supports_global_databases: std::option::Option<bool>,
 }
 impl UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
@@ -7093,6 +7474,10 @@ impl UpgradeTarget {
     pub fn is_major_version_upgrade(&self) -> bool {
         self.is_major_version_upgrade
     }
+    /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
+    pub fn supports_global_databases(&self) -> std::option::Option<bool> {
+        self.supports_global_databases
+    }
 }
 impl std::fmt::Debug for UpgradeTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7102,6 +7487,7 @@ impl std::fmt::Debug for UpgradeTarget {
         formatter.field("description", &self.description);
         formatter.field("auto_upgrade", &self.auto_upgrade);
         formatter.field("is_major_version_upgrade", &self.is_major_version_upgrade);
+        formatter.field("supports_global_databases", &self.supports_global_databases);
         formatter.finish()
     }
 }
@@ -7117,6 +7503,7 @@ pub mod upgrade_target {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) auto_upgrade: std::option::Option<bool>,
         pub(crate) is_major_version_upgrade: std::option::Option<bool>,
+        pub(crate) supports_global_databases: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the upgrade target database engine.</p>
@@ -7172,6 +7559,16 @@ pub mod upgrade_target {
             self.is_major_version_upgrade = input;
             self
         }
+        /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
+        pub fn supports_global_databases(mut self, input: bool) -> Self {
+            self.supports_global_databases = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
+        pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_global_databases = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpgradeTarget`](crate::model::UpgradeTarget)
         pub fn build(self) -> crate::model::UpgradeTarget {
             crate::model::UpgradeTarget {
@@ -7180,6 +7577,7 @@ pub mod upgrade_target {
                 description: self.description,
                 auto_upgrade: self.auto_upgrade.unwrap_or_default(),
                 is_major_version_upgrade: self.is_major_version_upgrade.unwrap_or_default(),
+                supports_global_databases: self.supports_global_databases,
             }
         }
     }

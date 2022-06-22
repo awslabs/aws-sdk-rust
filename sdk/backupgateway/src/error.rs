@@ -588,6 +588,115 @@ impl std::error::Error for DisassociateGatewayFromServerError {
     }
 }
 
+/// Error type for the `GetGateway` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetGatewayError {
+    /// Kind of error that occurred.
+    pub kind: GetGatewayErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetGateway` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetGatewayErrorKind {
+    /// <p>The operation did not succeed because an internal error occurred. Try again later.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>A resource that is required for the action wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The operation did not succeed because a validation error occurred.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetGatewayError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetGatewayErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetGatewayErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetGatewayErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetGatewayErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetGatewayError {
+    fn code(&self) -> Option<&str> {
+        GetGatewayError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetGatewayError {
+    /// Creates a new `GetGatewayError`.
+    pub fn new(kind: GetGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetGatewayError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetGatewayErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetGatewayErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetGatewayErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetGatewayErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetGatewayErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGatewayErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetGatewayErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetGatewayErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetGatewayError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetGatewayErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetGatewayErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetGatewayErrorKind::ValidationException(_inner) => Some(_inner),
+            GetGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ImportHypervisorConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1726,6 +1835,121 @@ impl std::error::Error for UpdateGatewayInformationError {
             UpdateGatewayInformationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateGatewayInformationErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateGatewayInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateGatewaySoftwareNow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateGatewaySoftwareNowError {
+    /// Kind of error that occurred.
+    pub kind: UpdateGatewaySoftwareNowErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateGatewaySoftwareNow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateGatewaySoftwareNowErrorKind {
+    /// <p>The operation did not succeed because an internal error occurred. Try again later.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>A resource that is required for the action wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The operation did not succeed because a validation error occurred.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateGatewaySoftwareNowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateGatewaySoftwareNowErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateGatewaySoftwareNowErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateGatewaySoftwareNowErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateGatewaySoftwareNowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateGatewaySoftwareNowError {
+    fn code(&self) -> Option<&str> {
+        UpdateGatewaySoftwareNowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateGatewaySoftwareNowError {
+    /// Creates a new `UpdateGatewaySoftwareNowError`.
+    pub fn new(kind: UpdateGatewaySoftwareNowErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateGatewaySoftwareNowError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateGatewaySoftwareNowError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateGatewaySoftwareNowErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGatewaySoftwareNowErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateGatewaySoftwareNowErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGatewaySoftwareNowErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateGatewaySoftwareNowErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGatewaySoftwareNowErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateGatewaySoftwareNowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateGatewaySoftwareNowErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateGatewaySoftwareNowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateGatewaySoftwareNowErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateGatewaySoftwareNowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

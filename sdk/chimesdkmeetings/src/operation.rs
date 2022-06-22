@@ -33,6 +33,42 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateAttendee {
     }
 }
 
+/// Operation shape for `BatchUpdateAttendeeCapabilitiesExcept`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_update_attendee_capabilities_except`](crate::client::Client::batch_update_attendee_capabilities_except).
+///
+/// See [`crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchUpdateAttendeeCapabilitiesExcept {
+    _private: (),
+}
+impl BatchUpdateAttendeeCapabilitiesExcept {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::input::BatchUpdateAttendeeCapabilitiesExceptInput)
+    pub fn builder() -> crate::input::batch_update_attendee_capabilities_except_input::Builder {
+        crate::input::batch_update_attendee_capabilities_except_input::Builder::default()
+    }
+    /// Creates a new `BatchUpdateAttendeeCapabilitiesExcept` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateAttendeeCapabilitiesExcept {
+    type Output = std::result::Result<
+        crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput,
+        crate::error::BatchUpdateAttendeeCapabilitiesExceptError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_update_attendee_capabilities_except_error(response)
+        } else {
+            crate::operation_deser::parse_batch_update_attendee_capabilities_except_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `CreateAttendee`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -355,6 +391,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMeetingTranscription
             crate::operation_deser::parse_stop_meeting_transcription_error(response)
         } else {
             crate::operation_deser::parse_stop_meeting_transcription_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateAttendeeCapabilities`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_attendee_capabilities`](crate::client::Client::update_attendee_capabilities).
+///
+/// See [`crate::client::fluent_builders::UpdateAttendeeCapabilities`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateAttendeeCapabilities {
+    _private: (),
+}
+impl UpdateAttendeeCapabilities {
+    /// Creates a new builder-style object to manufacture [`UpdateAttendeeCapabilitiesInput`](crate::input::UpdateAttendeeCapabilitiesInput)
+    pub fn builder() -> crate::input::update_attendee_capabilities_input::Builder {
+        crate::input::update_attendee_capabilities_input::Builder::default()
+    }
+    /// Creates a new `UpdateAttendeeCapabilities` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateAttendeeCapabilities {
+    type Output = std::result::Result<
+        crate::output::UpdateAttendeeCapabilitiesOutput,
+        crate::error::UpdateAttendeeCapabilitiesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_attendee_capabilities_error(response)
+        } else {
+            crate::operation_deser::parse_update_attendee_capabilities_response(response)
         }
     }
 }

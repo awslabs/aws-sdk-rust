@@ -789,6 +789,149 @@ impl DisassociateGatewayFromServerInput {
     }
 }
 
+/// See [`GetGatewayInput`](crate::input::GetGatewayInput)
+pub mod get_gateway_input {
+
+    /// A builder for [`GetGatewayInput`](crate::input::GetGatewayInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) gateway_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetGatewayInput`](crate::input::GetGatewayInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetGatewayInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetGatewayInput {
+                gateway_arn: self.gateway_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetGatewayInputOperationOutputAlias = crate::operation::GetGateway;
+#[doc(hidden)]
+pub type GetGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetGatewayInput {
+    /// Consumes the builder and constructs an Operation<[`GetGateway`](crate::operation::GetGateway)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetGateway,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetGatewayInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetGatewayInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "BackupOnPremises_v20210101.GetGateway",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_gateway(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetGateway::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetGateway",
+            "backupgateway",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetGatewayInput`](crate::input::GetGatewayInput)
+    pub fn builder() -> crate::input::get_gateway_input::Builder {
+        crate::input::get_gateway_input::Builder::default()
+    }
+}
+
 /// See [`ImportHypervisorConfigurationInput`](crate::input::ImportHypervisorConfigurationInput)
 pub mod import_hypervisor_configuration_input {
 
@@ -2476,6 +2619,152 @@ impl UpdateGatewayInformationInput {
     }
 }
 
+/// See [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput)
+pub mod update_gateway_software_now_input {
+
+    /// A builder for [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) gateway_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateGatewaySoftwareNowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateGatewaySoftwareNowInput {
+                gateway_arn: self.gateway_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateGatewaySoftwareNowInputOperationOutputAlias =
+    crate::operation::UpdateGatewaySoftwareNow;
+#[doc(hidden)]
+pub type UpdateGatewaySoftwareNowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateGatewaySoftwareNowInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateGatewaySoftwareNow`](crate::operation::UpdateGatewaySoftwareNow)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateGatewaySoftwareNow,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateGatewaySoftwareNowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateGatewaySoftwareNowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "BackupOnPremises_v20210101.UpdateGatewaySoftwareNow",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_gateway_software_now(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateGatewaySoftwareNow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateGatewaySoftwareNow",
+            "backupgateway",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput)
+    pub fn builder() -> crate::input::update_gateway_software_now_input::Builder {
+        crate::input::update_gateway_software_now_input::Builder::default()
+    }
+}
+
 /// See [`UpdateHypervisorInput`](crate::input::UpdateHypervisorInput)
 pub mod update_hypervisor_input {
 
@@ -2487,6 +2776,7 @@ pub mod update_hypervisor_input {
         pub(crate) host: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
@@ -2532,6 +2822,16 @@ pub mod update_hypervisor_input {
             self.password = input;
             self
         }
+        /// <p>The updated name for the hypervisor</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The updated name for the hypervisor</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateHypervisorInput`](crate::input::UpdateHypervisorInput)
         pub fn build(
             self,
@@ -2544,6 +2844,7 @@ pub mod update_hypervisor_input {
                 host: self.host,
                 username: self.username,
                 password: self.password,
+                name: self.name,
             })
         }
     }
@@ -2775,6 +3076,8 @@ pub struct UpdateHypervisorInput {
     pub username: std::option::Option<std::string::String>,
     /// <p>The updated password for the hypervisor.</p>
     pub password: std::option::Option<std::string::String>,
+    /// <p>The updated name for the hypervisor</p>
+    pub name: std::option::Option<std::string::String>,
 }
 impl UpdateHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
@@ -2793,6 +3096,10 @@ impl UpdateHypervisorInput {
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
+    /// <p>The updated name for the hypervisor</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateHypervisorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2801,6 +3108,28 @@ impl std::fmt::Debug for UpdateHypervisorInput {
         formatter.field("host", &self.host);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateGatewaySoftwareNowInput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+    pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl UpdateGatewaySoftwareNowInput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateGatewaySoftwareNowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateGatewaySoftwareNowInput");
+        formatter.field("gateway_arn", &self.gateway_arn);
         formatter.finish()
     }
 }
@@ -3062,6 +3391,27 @@ impl std::fmt::Debug for UpdateGatewayInformationInput {
         let mut formatter = f.debug_struct("UpdateGatewayInformationInput");
         formatter.field("gateway_arn", &self.gateway_arn);
         formatter.field("gateway_display_name", &self.gateway_display_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetGatewayInput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl GetGatewayInput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for GetGatewayInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetGatewayInput");
+        formatter.field("gateway_arn", &self.gateway_arn);
         formatter.finish()
     }
 }

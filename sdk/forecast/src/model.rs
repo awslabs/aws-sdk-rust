@@ -2824,7 +2824,7 @@ impl ExplainabilitySummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExplainabilityConfig {
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
-    /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
+    /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
     pub time_series_granularity: std::option::Option<crate::model::TimeSeriesGranularity>,
     /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
@@ -2832,7 +2832,7 @@ pub struct ExplainabilityConfig {
 }
 impl ExplainabilityConfig {
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
-    /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
+    /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
     pub fn time_series_granularity(
         &self,
     ) -> std::option::Option<&crate::model::TimeSeriesGranularity> {
@@ -2867,7 +2867,7 @@ pub mod explainability_config {
     }
     impl Builder {
         /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
-        /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
+        /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
         pub fn time_series_granularity(
             mut self,
             input: crate::model::TimeSeriesGranularity,
@@ -2876,7 +2876,7 @@ pub mod explainability_config {
             self
         }
         /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
-        /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
+        /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
         pub fn set_time_series_granularity(
             mut self,
             input: std::option::Option<crate::model::TimeSeriesGranularity>,
@@ -6897,6 +6897,172 @@ impl BaselineMetric {
     /// Creates a new builder-style object to manufacture [`BaselineMetric`](crate::model::BaselineMetric)
     pub fn builder() -> crate::model::baseline_metric::Builder {
         crate::model::baseline_metric::Builder::default()
+    }
+}
+
+/// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
+/// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+/// <ul>
+/// <li> <p> <code>DataSource</code> </p> </li>
+/// <li> <p> <code>Format</code> </p> </li>
+/// <li> <p> <code>Schema</code> </p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeSeriesSelector {
+    /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+    pub time_series_identifiers: std::option::Option<crate::model::TimeSeriesIdentifiers>,
+}
+impl TimeSeriesSelector {
+    /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+    pub fn time_series_identifiers(
+        &self,
+    ) -> std::option::Option<&crate::model::TimeSeriesIdentifiers> {
+        self.time_series_identifiers.as_ref()
+    }
+}
+impl std::fmt::Debug for TimeSeriesSelector {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeSeriesSelector");
+        formatter.field("time_series_identifiers", &self.time_series_identifiers);
+        formatter.finish()
+    }
+}
+/// See [`TimeSeriesSelector`](crate::model::TimeSeriesSelector)
+pub mod time_series_selector {
+
+    /// A builder for [`TimeSeriesSelector`](crate::model::TimeSeriesSelector)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) time_series_identifiers:
+            std::option::Option<crate::model::TimeSeriesIdentifiers>,
+    }
+    impl Builder {
+        /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+        pub fn time_series_identifiers(
+            mut self,
+            input: crate::model::TimeSeriesIdentifiers,
+        ) -> Self {
+            self.time_series_identifiers = Some(input);
+            self
+        }
+        /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+        pub fn set_time_series_identifiers(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesIdentifiers>,
+        ) -> Self {
+            self.time_series_identifiers = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeSeriesSelector`](crate::model::TimeSeriesSelector)
+        pub fn build(self) -> crate::model::TimeSeriesSelector {
+            crate::model::TimeSeriesSelector {
+                time_series_identifiers: self.time_series_identifiers,
+            }
+        }
+    }
+}
+impl TimeSeriesSelector {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesSelector`](crate::model::TimeSeriesSelector)
+    pub fn builder() -> crate::model::time_series_selector::Builder {
+        crate::model::time_series_selector::Builder::default()
+    }
+}
+
+/// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeSeriesIdentifiers {
+    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    pub data_source: std::option::Option<crate::model::DataSource>,
+    /// <p>Defines the fields of a dataset.</p>
+    pub schema: std::option::Option<crate::model::Schema>,
+    /// <p>The format of the data, either CSV or PARQUET.</p>
+    pub format: std::option::Option<std::string::String>,
+}
+impl TimeSeriesIdentifiers {
+    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>Defines the fields of a dataset.</p>
+    pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
+        self.schema.as_ref()
+    }
+    /// <p>The format of the data, either CSV or PARQUET.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
+}
+impl std::fmt::Debug for TimeSeriesIdentifiers {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeSeriesIdentifiers");
+        formatter.field("data_source", &self.data_source);
+        formatter.field("schema", &self.schema);
+        formatter.field("format", &self.format);
+        formatter.finish()
+    }
+}
+/// See [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers)
+pub mod time_series_identifiers {
+
+    /// A builder for [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+        pub(crate) schema: std::option::Option<crate::model::Schema>,
+        pub(crate) format: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>Defines the fields of a dataset.</p>
+        pub fn schema(mut self, input: crate::model::Schema) -> Self {
+            self.schema = Some(input);
+            self
+        }
+        /// <p>Defines the fields of a dataset.</p>
+        pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
+            self.schema = input;
+            self
+        }
+        /// <p>The format of the data, either CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the data, either CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers)
+        pub fn build(self) -> crate::model::TimeSeriesIdentifiers {
+            crate::model::TimeSeriesIdentifiers {
+                data_source: self.data_source,
+                schema: self.schema,
+                format: self.format,
+            }
+        }
+    }
+}
+impl TimeSeriesIdentifiers {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers)
+    pub fn builder() -> crate::model::time_series_identifiers::Builder {
+        crate::model::time_series_identifiers::Builder::default()
     }
 }
 

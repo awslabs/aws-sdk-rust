@@ -277,7 +277,7 @@ impl Client {
     ///   - [`cluster_type(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::cluster_type) / [`set_cluster_type(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_cluster_type): <p>The type of the cluster. When cluster type is specified as</p>  <ul>   <li> <p> <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p> </li>   <li> <p> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p> </li>  </ul>  <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>  <p>Default: <code>multi-node</code> </p>
     ///   - [`node_type(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::node_type) / [`set_node_type(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_node_type): <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>  <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
     ///   - [`master_username(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::master_username) / [`set_master_username(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_master_username): <p>The user name associated with the admin user account for the cluster that is being created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>  </ul>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_master_user_password): <p>The password associated with the admin user account for the cluster that is being created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>  </ul>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_master_user_password): <p>The password associated with the admin user account for the cluster that is being created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>  </ul>
     ///   - [`cluster_security_groups(Vec<String>)`](crate::client::fluent_builders::CreateCluster::cluster_security_groups) / [`set_cluster_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_cluster_security_groups): <p>A list of security groups to be associated with this cluster.</p>  <p>Default: The default cluster security group for Amazon Redshift.</p>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateCluster::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_vpc_security_group_ids): <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>  <p>Default: The default VPC security group is associated with the cluster.</p>
     ///   - [`cluster_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::cluster_subnet_group_name) / [`set_cluster_subnet_group_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_cluster_subnet_group_name): <p>The name of a cluster subnet group to be associated with this cluster.</p>  <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
@@ -1400,7 +1400,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`db_user(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentials::db_user) / [`set_db_user(Option<String>)`](crate::client::fluent_builders::GetClusterCredentials::set_db_user): <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
     ///   - [`db_name(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentials::db_name) / [`set_db_name(Option<String>)`](crate::client::fluent_builders::GetClusterCredentials::set_db_name): <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
-    ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentials::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::GetClusterCredentials::set_cluster_identifier): <p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentials::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::GetClusterCredentials::set_cluster_identifier): <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
     ///   - [`duration_seconds(i32)`](crate::client::fluent_builders::GetClusterCredentials::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::client::fluent_builders::GetClusterCredentials::set_duration_seconds): <p>The number of seconds until the returned temporary password expires.</p>  <p>Constraint: minimum 900, maximum 3600.</p>  <p>Default: 900</p>
     ///   - [`auto_create(bool)`](crate::client::fluent_builders::GetClusterCredentials::auto_create) / [`set_auto_create(Option<bool>)`](crate::client::fluent_builders::GetClusterCredentials::set_auto_create): <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
     ///   - [`db_groups(Vec<String>)`](crate::client::fluent_builders::GetClusterCredentials::db_groups) / [`set_db_groups(Option<Vec<String>>)`](crate::client::fluent_builders::GetClusterCredentials::set_db_groups): <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>  <p>Database group name constraints</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
@@ -1411,6 +1411,23 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetClusterCredentialsError>`](crate::error::GetClusterCredentialsError)
     pub fn get_cluster_credentials(&self) -> fluent_builders::GetClusterCredentials {
         fluent_builders::GetClusterCredentials::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetClusterCredentialsWithIAM`](crate::client::fluent_builders::GetClusterCredentialsWithIAM) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`db_name(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentialsWithIAM::db_name) / [`set_db_name(Option<String>)`](crate::client::fluent_builders::GetClusterCredentialsWithIAM::set_db_name): <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::GetClusterCredentialsWithIAM::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::client::fluent_builders::GetClusterCredentialsWithIAM::set_cluster_identifier): <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
+    ///   - [`duration_seconds(i32)`](crate::client::fluent_builders::GetClusterCredentialsWithIAM::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::client::fluent_builders::GetClusterCredentialsWithIAM::set_duration_seconds): <p>The number of seconds until the returned temporary password expires.</p>  <p>Range: 900-3600. Default: 900.</p>
+    /// - On success, responds with [`GetClusterCredentialsWithIamOutput`](crate::output::GetClusterCredentialsWithIamOutput) with field(s):
+    ///   - [`db_user(Option<String>)`](crate::output::GetClusterCredentialsWithIamOutput::db_user): <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
+    ///   - [`db_password(Option<String>)`](crate::output::GetClusterCredentialsWithIamOutput::db_password): <p>A temporary password that you provide when you connect to a database.</p>
+    ///   - [`expiration(Option<DateTime>)`](crate::output::GetClusterCredentialsWithIamOutput::expiration): <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
+    ///   - [`next_refresh_time(Option<DateTime>)`](crate::output::GetClusterCredentialsWithIamOutput::next_refresh_time): <p>Reserved for future use.</p>
+    /// - On failure, responds with [`SdkError<GetClusterCredentialsWithIAMError>`](crate::error::GetClusterCredentialsWithIAMError)
+    pub fn get_cluster_credentials_with_iam(
+        &self,
+    ) -> fluent_builders::GetClusterCredentialsWithIAM {
+        fluent_builders::GetClusterCredentialsWithIAM::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetReservedNodeExchangeConfigurationOptions`](crate::client::fluent_builders::GetReservedNodeExchangeConfigurationOptions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetReservedNodeExchangeConfigurationOptions::into_paginator).
@@ -1478,7 +1495,7 @@ impl Client {
     ///   - [`number_of_nodes(i32)`](crate::client::fluent_builders::ModifyCluster::number_of_nodes) / [`set_number_of_nodes(Option<i32>)`](crate::client::fluent_builders::ModifyCluster::set_number_of_nodes): <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>  <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>  <p>Valid Values: Integer greater than <code>0</code>.</p>
     ///   - [`cluster_security_groups(Vec<String>)`](crate::client::fluent_builders::ModifyCluster::cluster_security_groups) / [`set_cluster_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyCluster::set_cluster_security_groups): <p>A list of cluster security groups to be authorized on this cluster. This change is asynchronously applied as soon as possible.</p>  <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>
     ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::ModifyCluster::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyCluster::set_vpc_security_group_ids): <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::ModifyCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::ModifyCluster::set_master_user_password): <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>   <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>  </note>  <p>Default: Uses existing setting.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>  </ul>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::ModifyCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::ModifyCluster::set_master_user_password): <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>   <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>  </note>  <p>Default: Uses existing setting.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>  </ul>
     ///   - [`cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyCluster::cluster_parameter_group_name) / [`set_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::ModifyCluster::set_cluster_parameter_group_name): <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>  <p>Default: Uses existing setting.</p>  <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
     ///   - [`automated_snapshot_retention_period(i32)`](crate::client::fluent_builders::ModifyCluster::automated_snapshot_retention_period) / [`set_automated_snapshot_retention_period(Option<i32>)`](crate::client::fluent_builders::ModifyCluster::set_automated_snapshot_retention_period): <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>  <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>  <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>  <p>Default: Uses existing setting.</p>  <p>Constraints: Must be a value from 0 to 35.</p>
     ///   - [`manual_snapshot_retention_period(i32)`](crate::client::fluent_builders::ModifyCluster::manual_snapshot_retention_period) / [`set_manual_snapshot_retention_period(Option<i32>)`](crate::client::fluent_builders::ModifyCluster::set_manual_snapshot_retention_period): <p>The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing manual snapshots.</p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>  <p>The default value is -1.</p>
@@ -3108,7 +3125,7 @@ pub mod fluent_builders {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
         /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
@@ -3121,7 +3138,7 @@ pub mod fluent_builders {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
         /// </ul>
         pub fn set_master_user_password(
             mut self,
@@ -10841,12 +10858,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_name(input);
             self
         }
-        /// <p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>
+        /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_identifier(input.into());
             self
         }
-        /// <p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>
+        /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10909,6 +10926,85 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_db_groups(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetClusterCredentialsWithIAM`.
+    ///
+    /// <p>Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift database. The database user is mapped 1:1 to the source Identity and Access Management (IAM) identity. For more information about IAM identities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM Identities (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access Management User Guide.</p>
+    /// <p>The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management Guide. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetClusterCredentialsWithIAM {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_cluster_credentials_with_iam_input::Builder,
+    }
+    impl GetClusterCredentialsWithIAM {
+        /// Creates a new `GetClusterCredentialsWithIAM`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetClusterCredentialsWithIamOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetClusterCredentialsWithIAMError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input.into());
+            self
+        }
+        /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_db_name(input);
+            self
+        }
+        /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
+            self
+        }
+        /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_cluster_identifier(input);
+            self
+        }
+        /// <p>The number of seconds until the returned temporary password expires.</p>
+        /// <p>Range: 900-3600. Default: 900.</p>
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration_seconds(input);
+            self
+        }
+        /// <p>The number of seconds until the returned temporary password expires.</p>
+        /// <p>Range: 900-3600. Default: 900.</p>
+        pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_duration_seconds(input);
             self
         }
     }
@@ -11428,7 +11524,7 @@ pub mod fluent_builders {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
         /// </ul>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.master_user_password(input.into());
@@ -11444,7 +11540,7 @@ pub mod fluent_builders {
         /// <li> <p>Must contain at least one uppercase letter.</p> </li>
         /// <li> <p>Must contain at least one lowercase letter.</p> </li>
         /// <li> <p>Must contain one number.</p> </li>
-        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except ' (single quote), " (double quote), \, /, or @.</p> </li>
+        /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
         /// </ul>
         pub fn set_master_user_password(
             mut self,

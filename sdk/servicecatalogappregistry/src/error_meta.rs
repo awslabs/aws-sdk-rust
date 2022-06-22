@@ -38,6 +38,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AssociateAttributeGroupErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::AssociateAttributeGroupErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -79,6 +82,9 @@ where
                 crate::error::AssociateResourceErrorKind::ServiceQuotaExceededException(inner) => {
                     Error::ServiceQuotaExceededException(inner)
                 }
+                crate::error::AssociateResourceErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::AssociateResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -104,6 +110,9 @@ where
                 }
                 crate::error::CreateApplicationErrorKind::ServiceQuotaExceededException(inner) => {
                     Error::ServiceQuotaExceededException(inner)
+                }
+                crate::error::CreateApplicationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -239,6 +248,9 @@ where
                 crate::error::DisassociateResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::DisassociateResourceErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::DisassociateResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -254,6 +266,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetApplicationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetApplicationErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::GetApplicationErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -305,6 +320,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetAttributeGroupErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::GetAttributeGroupErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -422,6 +440,29 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListAttributeGroupsForApplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListAttributeGroupsForApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListAttributeGroupsForApplicationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListAttributeGroupsForApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListAttributeGroupsForApplicationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::ListAttributeGroupsForApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -531,6 +572,9 @@ where
                 }
                 crate::error::UpdateApplicationErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateApplicationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::UpdateApplicationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

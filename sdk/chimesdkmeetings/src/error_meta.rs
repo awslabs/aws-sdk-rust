@@ -5,17 +5,19 @@
 pub enum Error {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
+    /// <p>Multiple instances of the same request have been made simultaneously.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>The request exceeds the resource limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -28,6 +30,7 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::BadRequestException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
@@ -80,6 +83,36 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::BatchUpdateAttendeeCapabilitiesExceptError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::BatchUpdateAttendeeCapabilitiesExceptError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+                crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -447,6 +480,42 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::StopMeetingTranscriptionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAttendeeCapabilitiesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateAttendeeCapabilitiesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateAttendeeCapabilitiesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::UpdateAttendeeCapabilitiesErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::UpdateAttendeeCapabilitiesErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::UpdateAttendeeCapabilitiesErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::UpdateAttendeeCapabilitiesErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::UpdateAttendeeCapabilitiesErrorKind::UnauthorizedException(inner) => {
+                    Error::UnauthorizedException(inner)
+                }
+                crate::error::UpdateAttendeeCapabilitiesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

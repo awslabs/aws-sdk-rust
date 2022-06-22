@@ -105,7 +105,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateLensShare`](crate::client::fluent_builders::CreateLensShare) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::CreateLensShare::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::CreateLensShare::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::CreateLensShare::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::CreateLensShare::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`shared_with(impl Into<String>)`](crate::client::fluent_builders::CreateLensShare::shared_with) / [`set_shared_with(Option<String>)`](crate::client::fluent_builders::CreateLensShare::set_shared_with): <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateLensShare::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateLensShare::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     /// - On success, responds with [`CreateLensShareOutput`](crate::output::CreateLensShareOutput) with field(s):
@@ -117,7 +117,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateLensVersion`](crate::client::fluent_builders::CreateLensVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::CreateLensVersion::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::CreateLensVersion::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::CreateLensVersion::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::CreateLensVersion::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_version(impl Into<String>)`](crate::client::fluent_builders::CreateLensVersion::lens_version) / [`set_lens_version(Option<String>)`](crate::client::fluent_builders::CreateLensVersion::set_lens_version): <p>The version of the lens being created.</p>
     ///   - [`is_major_version(bool)`](crate::client::fluent_builders::CreateLensVersion::is_major_version) / [`set_is_major_version(bool)`](crate::client::fluent_builders::CreateLensVersion::set_is_major_version): <p>Set to true if this new major lens version.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateLensVersion::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateLensVersion::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
@@ -183,7 +183,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteLens`](crate::client::fluent_builders::DeleteLens) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::DeleteLens::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::DeleteLens::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::DeleteLens::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::DeleteLens::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLens::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeleteLens::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     ///   - [`lens_status(LensStatusType)`](crate::client::fluent_builders::DeleteLens::lens_status) / [`set_lens_status(Option<LensStatusType>)`](crate::client::fluent_builders::DeleteLens::set_lens_status): <p>The status of the lens to be deleted.</p>
     /// - On success, responds with [`DeleteLensOutput`](crate::output::DeleteLensOutput)
@@ -196,7 +196,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`share_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLensShare::share_id) / [`set_share_id(Option<String>)`](crate::client::fluent_builders::DeleteLensShare::set_share_id): <p>The ID associated with the workload share.</p>
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::DeleteLensShare::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::DeleteLensShare::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::DeleteLensShare::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::DeleteLensShare::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLensShare::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeleteLensShare::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     /// - On success, responds with [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput)
 
@@ -241,7 +241,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ExportLens`](crate::client::fluent_builders::ExportLens) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ExportLens::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ExportLens::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ExportLens::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ExportLens::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_version(impl Into<String>)`](crate::client::fluent_builders::ExportLens::lens_version) / [`set_lens_version(Option<String>)`](crate::client::fluent_builders::ExportLens::set_lens_version): <p>The lens version to be exported.</p>
     /// - On success, responds with [`ExportLensOutput`](crate::output::ExportLensOutput) with field(s):
     ///   - [`lens_json(Option<String>)`](crate::output::ExportLensOutput::lens_json): <p>The JSON for the lens.</p>
@@ -253,13 +253,13 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::GetAnswer::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::GetAnswer::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetAnswer::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetAnswer::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetAnswer::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetAnswer::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`question_id(impl Into<String>)`](crate::client::fluent_builders::GetAnswer::question_id) / [`set_question_id(Option<String>)`](crate::client::fluent_builders::GetAnswer::set_question_id): <p>The ID of the question.</p>
     ///   - [`milestone_number(i32)`](crate::client::fluent_builders::GetAnswer::milestone_number) / [`set_milestone_number(i32)`](crate::client::fluent_builders::GetAnswer::set_milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     /// - On success, responds with [`GetAnswerOutput`](crate::output::GetAnswerOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::output::GetAnswerOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`milestone_number(i32)`](crate::output::GetAnswerOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
-    ///   - [`lens_alias(Option<String>)`](crate::output::GetAnswerOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::output::GetAnswerOutput::lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_arn(Option<String>)`](crate::output::GetAnswerOutput::lens_arn): <p>The ARN for the lens.</p>
     ///   - [`answer(Option<Answer>)`](crate::output::GetAnswerOutput::answer): <p>An answer of the question.</p>
     /// - On failure, responds with [`SdkError<GetAnswerError>`](crate::error::GetAnswerError)
@@ -269,7 +269,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetLens`](crate::client::fluent_builders::GetLens) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetLens::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetLens::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetLens::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetLens::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_version(impl Into<String>)`](crate::client::fluent_builders::GetLens::lens_version) / [`set_lens_version(Option<String>)`](crate::client::fluent_builders::GetLens::set_lens_version): <p>The lens version to be retrieved.</p>
     /// - On success, responds with [`GetLensOutput`](crate::output::GetLensOutput) with field(s):
     ///   - [`lens(Option<Lens>)`](crate::output::GetLensOutput::lens): <p>A lens return object.</p>
@@ -281,7 +281,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::GetLensReview::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::GetLensReview::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetLensReview::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetLensReview::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetLensReview::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetLensReview::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`milestone_number(i32)`](crate::client::fluent_builders::GetLensReview::milestone_number) / [`set_milestone_number(i32)`](crate::client::fluent_builders::GetLensReview::set_milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     /// - On success, responds with [`GetLensReviewOutput`](crate::output::GetLensReviewOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::output::GetLensReviewOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -295,7 +295,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::GetLensReviewReport::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::GetLensReviewReport::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetLensReviewReport::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetLensReviewReport::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetLensReviewReport::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetLensReviewReport::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`milestone_number(i32)`](crate::client::fluent_builders::GetLensReviewReport::milestone_number) / [`set_milestone_number(i32)`](crate::client::fluent_builders::GetLensReviewReport::set_milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     /// - On success, responds with [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::output::GetLensReviewReportOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -308,11 +308,11 @@ impl Client {
     /// Constructs a fluent builder for the [`GetLensVersionDifference`](crate::client::fluent_builders::GetLensVersionDifference) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetLensVersionDifference::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetLensVersionDifference::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::GetLensVersionDifference::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::GetLensVersionDifference::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`base_lens_version(impl Into<String>)`](crate::client::fluent_builders::GetLensVersionDifference::base_lens_version) / [`set_base_lens_version(Option<String>)`](crate::client::fluent_builders::GetLensVersionDifference::set_base_lens_version): <p>The base version of the lens.</p>
     ///   - [`target_lens_version(impl Into<String>)`](crate::client::fluent_builders::GetLensVersionDifference::target_lens_version) / [`set_target_lens_version(Option<String>)`](crate::client::fluent_builders::GetLensVersionDifference::set_target_lens_version): <p>The lens version to target a difference for.</p>
     /// - On success, responds with [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput) with field(s):
-    ///   - [`lens_alias(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_arn(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::lens_arn): <p>The ARN for the lens.</p>
     ///   - [`base_lens_version(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::base_lens_version): <p>The base version of the lens.</p>
     ///   - [`target_lens_version(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::target_lens_version): <p>The target lens version for the lens.</p>
@@ -347,7 +347,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ImportLens`](crate::client::fluent_builders::ImportLens) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ImportLens::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ImportLens::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ImportLens::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ImportLens::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`json_string(impl Into<String>)`](crate::client::fluent_builders::ImportLens::json_string) / [`set_json_string(Option<String>)`](crate::client::fluent_builders::ImportLens::set_json_string): <p>The JSON representation of a lens.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::ImportLens::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::ImportLens::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ImportLens::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ImportLens::set_tags): <p>Tags to associate to a lens.</p>
@@ -363,7 +363,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::ListAnswers::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::ListAnswers::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ListAnswers::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ListAnswers::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ListAnswers::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ListAnswers::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`pillar_id(impl Into<String>)`](crate::client::fluent_builders::ListAnswers::pillar_id) / [`set_pillar_id(Option<String>)`](crate::client::fluent_builders::ListAnswers::set_pillar_id): <p>The ID used to identify a pillar, for example, <code>security</code>.</p>  <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     ///   - [`milestone_number(i32)`](crate::client::fluent_builders::ListAnswers::milestone_number) / [`set_milestone_number(i32)`](crate::client::fluent_builders::ListAnswers::set_milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnswers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnswers::set_next_token): <p>The token to use to retrieve the next set of results.</p>
@@ -371,7 +371,7 @@ impl Client {
     /// - On success, responds with [`ListAnswersOutput`](crate::output::ListAnswersOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::output::ListAnswersOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`milestone_number(i32)`](crate::output::ListAnswersOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
-    ///   - [`lens_alias(Option<String>)`](crate::output::ListAnswersOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::output::ListAnswersOutput::lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_arn(Option<String>)`](crate::output::ListAnswersOutput::lens_arn): <p>The ARN for the lens.</p>
     ///   - [`answer_summaries(Option<Vec<AnswerSummary>>)`](crate::output::ListAnswersOutput::answer_summaries): <p>List of answer summaries of lens review in a workload.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnswersOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
@@ -400,7 +400,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`pillar_id(impl Into<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::pillar_id) / [`set_pillar_id(Option<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::set_pillar_id): <p>The ID used to identify a pillar, for example, <code>security</code>.</p>  <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     ///   - [`milestone_number(i32)`](crate::client::fluent_builders::ListLensReviewImprovements::milestone_number) / [`set_milestone_number(i32)`](crate::client::fluent_builders::ListLensReviewImprovements::set_milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLensReviewImprovements::set_next_token): <p>The token to use to retrieve the next set of results.</p>
@@ -408,7 +408,7 @@ impl Client {
     /// - On success, responds with [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::output::ListLensReviewImprovementsOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`milestone_number(i32)`](crate::output::ListLensReviewImprovementsOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
-    ///   - [`lens_alias(Option<String>)`](crate::output::ListLensReviewImprovementsOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::output::ListLensReviewImprovementsOutput::lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_arn(Option<String>)`](crate::output::ListLensReviewImprovementsOutput::lens_arn): <p>The ARN for the lens.</p>
     ///   - [`improvement_summaries(Option<Vec<ImprovementSummary>>)`](crate::output::ListLensReviewImprovementsOutput::improvement_summaries): <p>List of improvement summaries of lens review in a workload.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLensReviewImprovementsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
@@ -437,7 +437,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLensShares::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`shared_with_prefix(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_shared_with_prefix): <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLensShares::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLensShares::set_next_token): <p>The token to use to retrieve the next set of results.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLensShares::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLensShares::set_max_results): <p>The maximum number of results to return for this request.</p>
@@ -559,7 +559,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAnswer::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::UpdateAnswer::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::UpdateAnswer::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::UpdateAnswer::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::UpdateAnswer::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::UpdateAnswer::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`question_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAnswer::question_id) / [`set_question_id(Option<String>)`](crate::client::fluent_builders::UpdateAnswer::set_question_id): <p>The ID of the question.</p>
     ///   - [`selected_choices(Vec<String>)`](crate::client::fluent_builders::UpdateAnswer::selected_choices) / [`set_selected_choices(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateAnswer::set_selected_choices): <p>List of selected choice IDs in a question answer.</p>  <p>The values entered replace the previously selected choices.</p>
     ///   - [`choice_updates(HashMap<String, ChoiceUpdate>)`](crate::client::fluent_builders::UpdateAnswer::choice_updates) / [`set_choice_updates(Option<HashMap<String, ChoiceUpdate>>)`](crate::client::fluent_builders::UpdateAnswer::set_choice_updates): <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
@@ -568,7 +568,7 @@ impl Client {
     ///   - [`reason(AnswerReason)`](crate::client::fluent_builders::UpdateAnswer::reason) / [`set_reason(Option<AnswerReason>)`](crate::client::fluent_builders::UpdateAnswer::set_reason): <p>The reason why a question is not applicable to your workload.</p>
     /// - On success, responds with [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::output::UpdateAnswerOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`lens_alias(Option<String>)`](crate::output::UpdateAnswerOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::output::UpdateAnswerOutput::lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_arn(Option<String>)`](crate::output::UpdateAnswerOutput::lens_arn): <p>The ARN for the lens.</p>
     ///   - [`answer(Option<Answer>)`](crate::output::UpdateAnswerOutput::answer): <p>An answer of the question.</p>
     /// - On failure, responds with [`SdkError<UpdateAnswerError>`](crate::error::UpdateAnswerError)
@@ -579,7 +579,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLensReview::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::UpdateLensReview::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::UpdateLensReview::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::UpdateLensReview::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::UpdateLensReview::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::UpdateLensReview::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`lens_notes(impl Into<String>)`](crate::client::fluent_builders::UpdateLensReview::lens_notes) / [`set_lens_notes(Option<String>)`](crate::client::fluent_builders::UpdateLensReview::set_lens_notes): <p>The notes associated with the workload.</p>
     ///   - [`pillar_notes(HashMap<String, String>)`](crate::client::fluent_builders::UpdateLensReview::pillar_notes) / [`set_pillar_notes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateLensReview::set_pillar_notes): <p>List of pillar notes of a lens review in a workload.</p>
     /// - On success, responds with [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput) with field(s):
@@ -641,7 +641,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::client::fluent_builders::UpgradeLensReview::workload_id) / [`set_workload_id(Option<String>)`](crate::client::fluent_builders::UpgradeLensReview::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::UpgradeLensReview::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::UpgradeLensReview::set_lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_alias(impl Into<String>)`](crate::client::fluent_builders::UpgradeLensReview::lens_alias) / [`set_lens_alias(Option<String>)`](crate::client::fluent_builders::UpgradeLensReview::set_lens_alias): <p>The alias of the lens.</p>  <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>  <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     ///   - [`milestone_name(impl Into<String>)`](crate::client::fluent_builders::UpgradeLensReview::milestone_name) / [`set_milestone_name(Option<String>)`](crate::client::fluent_builders::UpgradeLensReview::set_milestone_name): <p>The name of the milestone in a workload.</p>  <p>Milestone names must be unique within a workload.</p>
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpgradeLensReview::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpgradeLensReview::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     /// - On success, responds with [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput)
@@ -780,13 +780,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -866,13 +870,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -1474,13 +1482,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -1575,13 +1587,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_share_id(input);
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -1882,13 +1898,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -1957,13 +1977,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -2034,13 +2058,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -2109,13 +2137,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -2186,13 +2218,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -2253,13 +2289,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -2458,13 +2498,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -2581,13 +2625,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -2798,13 +2846,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -2994,13 +3046,17 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListLensSharesPaginator {
             crate::paginator::ListLensSharesPaginator::new(self.handle, self.inner)
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -3308,7 +3364,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>List the tags for a resource.</p>
+    /// <p>List the tags for a resource.</p> <note>
+    /// <p>The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3535,7 +3593,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more tags to the specified resource.</p>
+    /// <p>Adds one or more tags to the specified resource.</p> <note>
+    /// <p>The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3611,7 +3671,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Deletes specified tags from a resource.</p>
+    /// <p>Deletes specified tags from a resource.</p> <note>
+    /// <p>The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.</p>
+    /// </note>
     /// <p>To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p>
     /// <p> <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3733,13 +3795,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -3883,13 +3949,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
@@ -4435,13 +4505,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_alias(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);

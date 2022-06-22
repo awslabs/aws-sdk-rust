@@ -216,6 +216,15 @@ pub fn deser_operation_crate_operation_batch_execute_statement(
                             .transpose()?,
                         );
                     }
+                    "WorkgroupName" => {
+                        builder = builder.set_workgroup_name(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -575,6 +584,15 @@ pub fn deser_operation_crate_operation_describe_statement(
                             crate::json_deser::deser_list_com_amazonaws_redshiftdata_sub_statement_list(tokens)?
                         );
                     }
+                    "WorkgroupName" => {
+                        builder = builder.set_workgroup_name(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -764,6 +782,15 @@ pub fn deser_operation_crate_operation_execute_statement(
                     }
                     "SecretArn" => {
                         builder = builder.set_secret_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "WorkgroupName" => {
+                        builder = builder.set_workgroup_name(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?

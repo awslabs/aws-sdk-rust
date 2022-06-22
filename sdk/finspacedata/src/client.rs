@@ -91,6 +91,20 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`AssociateUserToPermissionGroup`](crate::client::fluent_builders::AssociateUserToPermissionGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`permission_group_id(impl Into<String>)`](crate::client::fluent_builders::AssociateUserToPermissionGroup::permission_group_id) / [`set_permission_group_id(Option<String>)`](crate::client::fluent_builders::AssociateUserToPermissionGroup::set_permission_group_id): <p>The unique identifier for the permission group.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::AssociateUserToPermissionGroup::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::AssociateUserToPermissionGroup::set_user_id): <p>The unique identifier for the user.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::AssociateUserToPermissionGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::AssociateUserToPermissionGroup::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    /// - On success, responds with [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput) with field(s):
+    ///   - [`status_code(i32)`](crate::output::AssociateUserToPermissionGroupOutput::status_code): <p>The returned status code of the response.</p>
+    /// - On failure, responds with [`SdkError<AssociateUserToPermissionGroupError>`](crate::error::AssociateUserToPermissionGroupError)
+    pub fn associate_user_to_permission_group(
+        &self,
+    ) -> fluent_builders::AssociateUserToPermissionGroup {
+        fluent_builders::AssociateUserToPermissionGroup::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateChangeset`](crate::client::fluent_builders::CreateChangeset) operation.
     ///
     /// - The fluent builder is configurable:
@@ -202,6 +216,20 @@ impl Client {
     pub fn disable_user(&self) -> fluent_builders::DisableUser {
         fluent_builders::DisableUser::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DisassociateUserFromPermissionGroup`](crate::client::fluent_builders::DisassociateUserFromPermissionGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`permission_group_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateUserFromPermissionGroup::permission_group_id) / [`set_permission_group_id(Option<String>)`](crate::client::fluent_builders::DisassociateUserFromPermissionGroup::set_permission_group_id): <p>The unique identifier for the permission group.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateUserFromPermissionGroup::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DisassociateUserFromPermissionGroup::set_user_id): <p>The unique identifier for the user.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DisassociateUserFromPermissionGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DisassociateUserFromPermissionGroup::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    /// - On success, responds with [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput) with field(s):
+    ///   - [`status_code(i32)`](crate::output::DisassociateUserFromPermissionGroupOutput::status_code): <p>The returned status code of the response.</p>
+    /// - On failure, responds with [`SdkError<DisassociateUserFromPermissionGroupError>`](crate::error::DisassociateUserFromPermissionGroupError)
+    pub fn disassociate_user_from_permission_group(
+        &self,
+    ) -> fluent_builders::DisassociateUserFromPermissionGroup {
+        fluent_builders::DisassociateUserFromPermissionGroup::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`EnableUser`](crate::client::fluent_builders::EnableUser) operation.
     ///
     /// - The fluent builder is configurable:
@@ -277,6 +305,16 @@ impl Client {
     pub fn get_data_view(&self) -> fluent_builders::GetDataView {
         fluent_builders::GetDataView::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetPermissionGroup`](crate::client::fluent_builders::GetPermissionGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`permission_group_id(impl Into<String>)`](crate::client::fluent_builders::GetPermissionGroup::permission_group_id) / [`set_permission_group_id(Option<String>)`](crate::client::fluent_builders::GetPermissionGroup::set_permission_group_id): <p>The unique identifier for the permission group.</p>
+    /// - On success, responds with [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput) with field(s):
+    ///   - [`permission_group(Option<PermissionGroup>)`](crate::output::GetPermissionGroupOutput::permission_group): <p>The structure for a permission group.</p>
+    /// - On failure, responds with [`SdkError<GetPermissionGroupError>`](crate::error::GetPermissionGroupError)
+    pub fn get_permission_group(&self) -> fluent_builders::GetPermissionGroup {
+        fluent_builders::GetPermissionGroup::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetProgrammaticAccessCredentials`](crate::client::fluent_builders::GetProgrammaticAccessCredentials) operation.
     ///
     /// - The fluent builder is configurable:
@@ -301,7 +339,7 @@ impl Client {
     ///   - [`first_name(Option<String>)`](crate::output::GetUserOutput::first_name): <p>The first name of the user.</p>
     ///   - [`last_name(Option<String>)`](crate::output::GetUserOutput::last_name): <p>The last name of the user.</p>
     ///   - [`email_address(Option<String>)`](crate::output::GetUserOutput::email_address): <p>The email address that is associated with the user.</p>
-    ///   - [`r#type(Option<UserType>)`](crate::output::GetUserOutput::type): <p>Indicates the type of user. </p>  <ul>   <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>  </ul>  <ul>   <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>  </ul>
+    ///   - [`r#type(Option<UserType>)`](crate::output::GetUserOutput::type): <p>Indicates the type of user. </p>  <ul>   <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>  </ul>  <ul>   <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>  </ul>
     ///   - [`api_access(Option<ApiAccess>)`](crate::output::GetUserOutput::api_access): <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p>  <ul>   <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>   <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>  </ul>
     ///   - [`api_access_principal_arn(Option<String>)`](crate::output::GetUserOutput::api_access_principal_arn): <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
     ///   - [`create_time(i64)`](crate::output::GetUserOutput::create_time): <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
@@ -379,6 +417,19 @@ impl Client {
     pub fn list_permission_groups(&self) -> fluent_builders::ListPermissionGroups {
         fluent_builders::ListPermissionGroups::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListPermissionGroupsByUser`](crate::client::fluent_builders::ListPermissionGroupsByUser) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissionGroupsByUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::ListPermissionGroupsByUser::set_user_id): <p>The unique identifier for the user.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissionGroupsByUser::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissionGroupsByUser::set_next_token): <p>A token that indicates where a results page should begin.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissionGroupsByUser::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPermissionGroupsByUser::set_max_results): <p>The maximum number of results per page.</p>
+    /// - On success, responds with [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput) with field(s):
+    ///   - [`permission_groups(Option<Vec<PermissionGroupByUser>>)`](crate::output::ListPermissionGroupsByUserOutput::permission_groups): <p>A list of returned permission groups.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPermissionGroupsByUserOutput::next_token): <p>A token that indicates where a results page should begin.</p>
+    /// - On failure, responds with [`SdkError<ListPermissionGroupsByUserError>`](crate::error::ListPermissionGroupsByUserError)
+    pub fn list_permission_groups_by_user(&self) -> fluent_builders::ListPermissionGroupsByUser {
+        fluent_builders::ListPermissionGroupsByUser::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
     ///
@@ -391,6 +442,19 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
     pub fn list_users(&self) -> fluent_builders::ListUsers {
         fluent_builders::ListUsers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListUsersByPermissionGroup`](crate::client::fluent_builders::ListUsersByPermissionGroup) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`permission_group_id(impl Into<String>)`](crate::client::fluent_builders::ListUsersByPermissionGroup::permission_group_id) / [`set_permission_group_id(Option<String>)`](crate::client::fluent_builders::ListUsersByPermissionGroup::set_permission_group_id): <p>The unique identifier for the permission group.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsersByPermissionGroup::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsersByPermissionGroup::set_next_token): <p>A token that indicates where a results page should begin.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsersByPermissionGroup::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListUsersByPermissionGroup::set_max_results): <p>The maximum number of results per page.</p>
+    /// - On success, responds with [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput) with field(s):
+    ///   - [`users(Option<Vec<UserByPermissionGroup>>)`](crate::output::ListUsersByPermissionGroupOutput::users): <p>Lists details of all users in a specific permission group.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUsersByPermissionGroupOutput::next_token): <p>A token that indicates where a results page should begin.</p>
+    /// - On failure, responds with [`SdkError<ListUsersByPermissionGroupError>`](crate::error::ListUsersByPermissionGroupError)
+    pub fn list_users_by_permission_group(&self) -> fluent_builders::ListUsersByPermissionGroup {
+        fluent_builders::ListUsersByPermissionGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ResetUserPassword`](crate::client::fluent_builders::ResetUserPassword) operation.
     ///
@@ -453,7 +517,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_user_id): <p>The unique identifier for the user account to update.</p>
-    ///   - [`r#type(UserType)`](crate::client::fluent_builders::UpdateUser::type) / [`set_type(Option<UserType>)`](crate::client::fluent_builders::UpdateUser::set_type): <p>The option to indicate the type of user.</p>  <ul>   <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>   <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>  </ul>
+    ///   - [`r#type(UserType)`](crate::client::fluent_builders::UpdateUser::type) / [`set_type(Option<UserType>)`](crate::client::fluent_builders::UpdateUser::set_type): <p>The option to indicate the type of user.</p>  <ul>   <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>   <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>  </ul>
     ///   - [`first_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::first_name) / [`set_first_name(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_first_name): <p>The first name of the user.</p>
     ///   - [`last_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::last_name) / [`set_last_name(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_last_name): <p>The last name of the user.</p>
     ///   - [`api_access(ApiAccess)`](crate::client::fluent_builders::UpdateUser::api_access) / [`set_api_access(Option<ApiAccess>)`](crate::client::fluent_builders::UpdateUser::set_api_access): <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>  <ul>   <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>   <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>  </ul>
@@ -473,6 +537,82 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `AssociateUserToPermissionGroup`.
+    ///
+    /// <p>Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociateUserToPermissionGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::associate_user_to_permission_group_input::Builder,
+    }
+    impl AssociateUserToPermissionGroup {
+        /// Creates a new `AssociateUserToPermissionGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateUserToPermissionGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateUserToPermissionGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn permission_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_group_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn set_permission_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_group_id(input);
+            self
+        }
+        /// <p>The unique identifier for the user.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the user.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateChangeset`.
     ///
     /// <p>Creates a new Changeset in a FinSpace Dataset.</p>
@@ -1360,6 +1500,84 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisassociateUserFromPermissionGroup`.
+    ///
+    /// <p>Removes a user account from a permission group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateUserFromPermissionGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::disassociate_user_from_permission_group_input::Builder,
+    }
+    impl DisassociateUserFromPermissionGroup {
+        /// Creates a new `DisassociateUserFromPermissionGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateUserFromPermissionGroupOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateUserFromPermissionGroupError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn permission_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_group_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn set_permission_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_group_id(input);
+            self
+        }
+        /// <p>The unique identifier for the user.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the user.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `EnableUser`.
     ///
     /// <p> Allows the specified user to access the FinSpace web application and API.</p>
@@ -1599,6 +1817,62 @@ pub mod fluent_builders {
         /// <p>The unique identifier for the Dataset used in the Dataview.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetPermissionGroup`.
+    ///
+    /// <p>Retrieves the details of a specific permission group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetPermissionGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_permission_group_input::Builder,
+    }
+    impl GetPermissionGroup {
+        /// Creates a new `GetPermissionGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetPermissionGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetPermissionGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn permission_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_group_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn set_permission_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_group_id(input);
             self
         }
     }
@@ -2081,6 +2355,79 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListPermissionGroupsByUser`.
+    ///
+    /// <p>Lists all the permission groups that are associated with a specific user account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListPermissionGroupsByUser {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_permission_groups_by_user_input::Builder,
+    }
+    impl ListPermissionGroupsByUser {
+        /// Creates a new `ListPermissionGroupsByUser`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListPermissionGroupsByUserOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListPermissionGroupsByUserError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the user.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the user.</p>
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListUsers`.
     ///
     /// <p>Lists all available user accounts in FinSpace.</p>
@@ -2128,6 +2475,82 @@ pub mod fluent_builders {
         /// Paginators are used by calling [`send().await`](crate::paginator::ListUsersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
         pub fn into_paginator(self) -> crate::paginator::ListUsersPaginator {
             crate::paginator::ListUsersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that indicates where a results page should begin.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListUsersByPermissionGroup`.
+    ///
+    /// <p>Lists details of all the users in a specific permission group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListUsersByPermissionGroup {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_users_by_permission_group_input::Builder,
+    }
+    impl ListUsersByPermissionGroup {
+        /// Creates a new `ListUsersByPermissionGroup`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListUsersByPermissionGroupOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListUsersByPermissionGroupError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn permission_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_group_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the permission group.</p>
+        pub fn set_permission_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_group_id(input);
+            self
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2673,7 +3096,7 @@ pub mod fluent_builders {
         /// <p>The option to indicate the type of user.</p>
         /// <ul>
         /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
-        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::UserType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -2682,7 +3105,7 @@ pub mod fluent_builders {
         /// <p>The option to indicate the type of user.</p>
         /// <ul>
         /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
-        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permissions group.</p> </li>
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
             self.inner = self.inner.set_type(input);

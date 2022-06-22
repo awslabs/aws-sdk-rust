@@ -5974,6 +5974,8 @@ pub enum RegisterAccountErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5985,6 +5987,7 @@ impl std::fmt::Display for RegisterAccountError {
             RegisterAccountErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             RegisterAccountErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             RegisterAccountErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            RegisterAccountErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             RegisterAccountErrorKind::ValidationException(_inner) => _inner.fmt(f),
             RegisterAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -6061,6 +6064,10 @@ impl RegisterAccountError {
             RegisterAccountErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `RegisterAccountErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, RegisterAccountErrorKind::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `RegisterAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, RegisterAccountErrorKind::ValidationException(_))
@@ -6072,6 +6079,7 @@ impl std::error::Error for RegisterAccountError {
             RegisterAccountErrorKind::AccessDeniedException(_inner) => Some(_inner),
             RegisterAccountErrorKind::InternalServerException(_inner) => Some(_inner),
             RegisterAccountErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            RegisterAccountErrorKind::ThrottlingException(_inner) => Some(_inner),
             RegisterAccountErrorKind::ValidationException(_inner) => Some(_inner),
             RegisterAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -8085,5 +8093,70 @@ impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
     pub fn builder() -> crate::error::access_denied_exception::Builder {
         crate::error::access_denied_exception::Builder::default()
+    }
+}
+
+/// <p>The request was denied due to request throttling.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThrottlingException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ThrottlingException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottlingException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException)
+pub mod throttling_exception {
+
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
     }
 }

@@ -38,3 +38,63 @@ pub(crate) fn reflens_structure_crate_output_list_attribute_groups_output_next_t
     };
     Some(input)
 }
+
+pub(crate) fn reflens_structure_crate_output_list_attribute_groups_for_application_output_next_token(
+    input: &crate::output::ListAttributeGroupsForApplicationOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_applications_output_applications(
+    input: crate::output::ListApplicationsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>> {
+    let input = match input.applications {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_associated_attribute_groups_output_attribute_groups(
+    input: crate::output::ListAssociatedAttributeGroupsOutput,
+) -> std::option::Option<std::vec::Vec<std::string::String>> {
+    let input = match input.attribute_groups {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_associated_resources_output_resources(
+    input: crate::output::ListAssociatedResourcesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ResourceInfo>> {
+    let input = match input.resources {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_attribute_groups_output_attribute_groups(
+    input: crate::output::ListAttributeGroupsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AttributeGroupSummary>> {
+    let input = match input.attribute_groups {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_attribute_groups_for_application_output_attribute_groups_details(
+    input: crate::output::ListAttributeGroupsForApplicationOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>> {
+    let input = match input.attribute_groups_details {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

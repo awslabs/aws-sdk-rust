@@ -12,6 +12,8 @@ pub struct AssociateAttributeGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateAttributeGroupErrorKind {
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
@@ -26,6 +28,7 @@ pub enum AssociateAttributeGroupErrorKind {
 impl std::fmt::Display for AssociateAttributeGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            AssociateAttributeGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
             AssociateAttributeGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             AssociateAttributeGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             AssociateAttributeGroupErrorKind::ServiceQuotaExceededException(_inner) => {
@@ -86,6 +89,13 @@ impl AssociateAttributeGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `AssociateAttributeGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateAttributeGroupErrorKind::ConflictException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AssociateAttributeGroupErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -118,6 +128,7 @@ impl AssociateAttributeGroupError {
 impl std::error::Error for AssociateAttributeGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            AssociateAttributeGroupErrorKind::ConflictException(_inner) => Some(_inner),
             AssociateAttributeGroupErrorKind::InternalServerException(_inner) => Some(_inner),
             AssociateAttributeGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociateAttributeGroupErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
@@ -148,6 +159,8 @@ pub enum AssociateResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The maximum number of resources per account has been reached.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request has invalid or missing parameters.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -158,6 +171,7 @@ impl std::fmt::Display for AssociateResourceError {
             AssociateResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             AssociateResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             AssociateResourceErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            AssociateResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
             AssociateResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -237,6 +251,13 @@ impl AssociateResourceError {
             AssociateResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `AssociateResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateResourceErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for AssociateResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -245,6 +266,7 @@ impl std::error::Error for AssociateResourceError {
             AssociateResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             AssociateResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociateResourceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            AssociateResourceErrorKind::ValidationException(_inner) => Some(_inner),
             AssociateResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -269,6 +291,8 @@ pub enum CreateApplicationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The maximum number of resources per account has been reached.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request has invalid or missing parameters.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -278,6 +302,7 @@ impl std::fmt::Display for CreateApplicationError {
             CreateApplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateApplicationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateApplicationErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateApplicationErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -350,6 +375,13 @@ impl CreateApplicationError {
             CreateApplicationErrorKind::ServiceQuotaExceededException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateApplicationErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for CreateApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -357,6 +389,7 @@ impl std::error::Error for CreateApplicationError {
             CreateApplicationErrorKind::ConflictException(_inner) => Some(_inner),
             CreateApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateApplicationErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateApplicationErrorKind::ValidationException(_inner) => Some(_inner),
             CreateApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -850,6 +883,8 @@ pub enum DisassociateResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has invalid or missing parameters.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -858,6 +893,7 @@ impl std::fmt::Display for DisassociateResourceError {
         match &self.kind {
             DisassociateResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DisassociateResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DisassociateResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DisassociateResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -926,12 +962,20 @@ impl DisassociateResourceError {
             DisassociateResourceErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `DisassociateResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateResourceErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DisassociateResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DisassociateResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             DisassociateResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DisassociateResourceErrorKind::ValidationException(_inner) => Some(_inner),
             DisassociateResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -950,6 +994,8 @@ pub struct GetApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApplicationErrorKind {
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
@@ -962,6 +1008,7 @@ pub enum GetApplicationErrorKind {
 impl std::fmt::Display for GetApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetApplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             GetApplicationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetApplicationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetApplicationErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -1019,6 +1066,10 @@ impl GetApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetApplicationErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `GetApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -1041,6 +1092,7 @@ impl GetApplicationError {
 impl std::error::Error for GetApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetApplicationErrorKind::ConflictException(_inner) => Some(_inner),
             GetApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             GetApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetApplicationErrorKind::ValidationException(_inner) => Some(_inner),
@@ -1177,6 +1229,8 @@ pub struct GetAttributeGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAttributeGroupErrorKind {
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
@@ -1189,6 +1243,7 @@ pub enum GetAttributeGroupErrorKind {
 impl std::fmt::Display for GetAttributeGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetAttributeGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
             GetAttributeGroupErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             GetAttributeGroupErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetAttributeGroupErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -1246,6 +1301,10 @@ impl GetAttributeGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetAttributeGroupErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetAttributeGroupErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `GetAttributeGroupErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -1271,6 +1330,7 @@ impl GetAttributeGroupError {
 impl std::error::Error for GetAttributeGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetAttributeGroupErrorKind::ConflictException(_inner) => Some(_inner),
             GetAttributeGroupErrorKind::InternalServerException(_inner) => Some(_inner),
             GetAttributeGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAttributeGroupErrorKind::ValidationException(_inner) => Some(_inner),
@@ -1722,6 +1782,134 @@ impl std::error::Error for ListAttributeGroupsError {
             ListAttributeGroupsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListAttributeGroupsErrorKind::ValidationException(_inner) => Some(_inner),
             ListAttributeGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListAttributeGroupsForApplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAttributeGroupsForApplicationError {
+    /// Kind of error that occurred.
+    pub kind: ListAttributeGroupsForApplicationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListAttributeGroupsForApplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAttributeGroupsForApplicationErrorKind {
+    /// <p>The service is experiencing internal problems.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has invalid or missing parameters.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAttributeGroupsForApplicationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAttributeGroupsForApplicationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAttributeGroupsForApplicationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAttributeGroupsForApplicationErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAttributeGroupsForApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListAttributeGroupsForApplicationError {
+    fn code(&self) -> Option<&str> {
+        ListAttributeGroupsForApplicationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAttributeGroupsForApplicationError {
+    /// Creates a new `ListAttributeGroupsForApplicationError`.
+    pub fn new(
+        kind: ListAttributeGroupsForApplicationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAttributeGroupsForApplicationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAttributeGroupsForApplicationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAttributeGroupsForApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAttributeGroupsForApplicationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAttributeGroupsForApplicationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttributeGroupsForApplicationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAttributeGroupsForApplicationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttributeGroupsForApplicationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAttributeGroupsForApplicationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttributeGroupsForApplicationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListAttributeGroupsForApplicationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAttributeGroupsForApplicationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ListAttributeGroupsForApplicationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListAttributeGroupsForApplicationErrorKind::ValidationException(_inner) => Some(_inner),
+            ListAttributeGroupsForApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2193,6 +2381,8 @@ pub enum UpdateApplicationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has invalid or missing parameters.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2202,6 +2392,7 @@ impl std::fmt::Display for UpdateApplicationError {
             UpdateApplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateApplicationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateApplicationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateApplicationErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2274,6 +2465,13 @@ impl UpdateApplicationError {
             UpdateApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateApplicationErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for UpdateApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2281,6 +2479,7 @@ impl std::error::Error for UpdateApplicationError {
             UpdateApplicationErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateApplicationErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }

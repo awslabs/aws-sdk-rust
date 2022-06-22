@@ -1308,6 +1308,38 @@ impl aws_smithy_http::response::ParseStrictResponse for RedactChannelMessage {
     }
 }
 
+/// Operation shape for `SearchChannels`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_channels`](crate::client::Client::search_channels).
+///
+/// See [`crate::client::fluent_builders::SearchChannels`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchChannels {
+    _private: (),
+}
+impl SearchChannels {
+    /// Creates a new builder-style object to manufacture [`SearchChannelsInput`](crate::input::SearchChannelsInput)
+    pub fn builder() -> crate::input::search_channels_input::Builder {
+        crate::input::search_channels_input::Builder::default()
+    }
+    /// Creates a new `SearchChannels` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchChannels {
+    type Output =
+        std::result::Result<crate::output::SearchChannelsOutput, crate::error::SearchChannelsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_channels_error(response)
+        } else {
+            crate::operation_deser::parse_search_channels_response(response)
+        }
+    }
+}
+
 /// Operation shape for `SendChannelMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

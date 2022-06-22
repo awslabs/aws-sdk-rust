@@ -88,3 +88,13 @@ pub(crate) fn reflens_structure_crate_output_list_channels_moderated_by_app_inst
     };
     Some(input)
 }
+
+pub(crate) fn reflens_structure_crate_output_search_channels_output_next_token(
+    input: &crate::output::SearchChannelsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

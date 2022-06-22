@@ -1346,6 +1346,9 @@ where
                 crate::error::RedactChannelMessageErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
+                crate::error::RedactChannelMessageErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::RedactChannelMessageErrorKind::ForbiddenException(inner) => {
                     Error::ForbiddenException(inner)
                 }
@@ -1364,6 +1367,37 @@ where
                 crate::error::RedactChannelMessageErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchChannelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchChannelsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SearchChannelsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::SearchChannelsErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::SearchChannelsErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::SearchChannelsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::SearchChannelsErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::SearchChannelsErrorKind::UnauthorizedClientException(inner) => {
+                    Error::UnauthorizedClientException(inner)
+                }
+                crate::error::SearchChannelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

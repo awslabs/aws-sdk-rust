@@ -707,6 +707,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSecurityProfile {
     }
 }
 
+/// Operation shape for `CreateTaskTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_task_template`](crate::client::Client::create_task_template).
+///
+/// See [`crate::client::fluent_builders::CreateTaskTemplate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateTaskTemplate {
+    _private: (),
+}
+impl CreateTaskTemplate {
+    /// Creates a new builder-style object to manufacture [`CreateTaskTemplateInput`](crate::input::CreateTaskTemplateInput)
+    pub fn builder() -> crate::input::create_task_template_input::Builder {
+        crate::input::create_task_template_input::Builder::default()
+    }
+    /// Creates a new `CreateTaskTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateTaskTemplate {
+    type Output = std::result::Result<
+        crate::output::CreateTaskTemplateOutput,
+        crate::error::CreateTaskTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_task_template_error(response)
+        } else {
+            crate::operation_deser::parse_create_task_template_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateUseCase`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1071,6 +1105,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSecurityProfile {
             crate::operation_deser::parse_delete_security_profile_error(response)
         } else {
             crate::operation_deser::parse_delete_security_profile_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteTaskTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_task_template`](crate::client::Client::delete_task_template).
+///
+/// See [`crate::client::fluent_builders::DeleteTaskTemplate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteTaskTemplate {
+    _private: (),
+}
+impl DeleteTaskTemplate {
+    /// Creates a new builder-style object to manufacture [`DeleteTaskTemplateInput`](crate::input::DeleteTaskTemplateInput)
+    pub fn builder() -> crate::input::delete_task_template_input::Builder {
+        crate::input::delete_task_template_input::Builder::default()
+    }
+    /// Creates a new `DeleteTaskTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteTaskTemplate {
+    type Output = std::result::Result<
+        crate::output::DeleteTaskTemplateOutput,
+        crate::error::DeleteTaskTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_task_template_error(response)
+        } else {
+            crate::operation_deser::parse_delete_task_template_response(response)
         }
     }
 }
@@ -2155,6 +2223,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCurrentMetricData {
     }
 }
 
+/// Operation shape for `GetCurrentUserData`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_current_user_data`](crate::client::Client::get_current_user_data).
+///
+/// See [`crate::client::fluent_builders::GetCurrentUserData`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetCurrentUserData {
+    _private: (),
+}
+impl GetCurrentUserData {
+    /// Creates a new builder-style object to manufacture [`GetCurrentUserDataInput`](crate::input::GetCurrentUserDataInput)
+    pub fn builder() -> crate::input::get_current_user_data_input::Builder {
+        crate::input::get_current_user_data_input::Builder::default()
+    }
+    /// Creates a new `GetCurrentUserData` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetCurrentUserData {
+    type Output = std::result::Result<
+        crate::output::GetCurrentUserDataOutput,
+        crate::error::GetCurrentUserDataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_current_user_data_error(response)
+        } else {
+            crate::operation_deser::parse_get_current_user_data_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetFederationToken`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2217,6 +2319,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricData {
             crate::operation_deser::parse_get_metric_data_error(response)
         } else {
             crate::operation_deser::parse_get_metric_data_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetTaskTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_task_template`](crate::client::Client::get_task_template).
+///
+/// See [`crate::client::fluent_builders::GetTaskTemplate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTaskTemplate {
+    _private: (),
+}
+impl GetTaskTemplate {
+    /// Creates a new builder-style object to manufacture [`GetTaskTemplateInput`](crate::input::GetTaskTemplateInput)
+    pub fn builder() -> crate::input::get_task_template_input::Builder {
+        crate::input::get_task_template_input::Builder::default()
+    }
+    /// Creates a new `GetTaskTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTaskTemplate {
+    type Output = std::result::Result<
+        crate::output::GetTaskTemplateOutput,
+        crate::error::GetTaskTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_task_template_error(response)
+        } else {
+            crate::operation_deser::parse_get_task_template_response(response)
         }
     }
 }
@@ -3094,6 +3230,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
+/// Operation shape for `ListTaskTemplates`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_task_templates`](crate::client::Client::list_task_templates).
+///
+/// See [`crate::client::fluent_builders::ListTaskTemplates`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTaskTemplates {
+    _private: (),
+}
+impl ListTaskTemplates {
+    /// Creates a new builder-style object to manufacture [`ListTaskTemplatesInput`](crate::input::ListTaskTemplatesInput)
+    pub fn builder() -> crate::input::list_task_templates_input::Builder {
+        crate::input::list_task_templates_input::Builder::default()
+    }
+    /// Creates a new `ListTaskTemplates` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTaskTemplates {
+    type Output = std::result::Result<
+        crate::output::ListTaskTemplatesOutput,
+        crate::error::ListTaskTemplatesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_task_templates_error(response)
+        } else {
+            crate::operation_deser::parse_list_task_templates_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListUseCases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3723,6 +3893,40 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
             crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `TransferContact`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`transfer_contact`](crate::client::Client::transfer_contact).
+///
+/// See [`crate::client::fluent_builders::TransferContact`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct TransferContact {
+    _private: (),
+}
+impl TransferContact {
+    /// Creates a new builder-style object to manufacture [`TransferContactInput`](crate::input::TransferContactInput)
+    pub fn builder() -> crate::input::transfer_contact_input::Builder {
+        crate::input::transfer_contact_input::Builder::default()
+    }
+    /// Creates a new `TransferContact` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for TransferContact {
+    type Output = std::result::Result<
+        crate::output::TransferContactOutput,
+        crate::error::TransferContactError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_transfer_contact_error(response)
+        } else {
+            crate::operation_deser::parse_transfer_contact_response(response)
         }
     }
 }
@@ -4607,6 +4811,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecurityProfile {
             crate::operation_deser::parse_update_security_profile_error(response)
         } else {
             crate::operation_deser::parse_update_security_profile_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateTaskTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_task_template`](crate::client::Client::update_task_template).
+///
+/// See [`crate::client::fluent_builders::UpdateTaskTemplate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateTaskTemplate {
+    _private: (),
+}
+impl UpdateTaskTemplate {
+    /// Creates a new builder-style object to manufacture [`UpdateTaskTemplateInput`](crate::input::UpdateTaskTemplateInput)
+    pub fn builder() -> crate::input::update_task_template_input::Builder {
+        crate::input::update_task_template_input::Builder::default()
+    }
+    /// Creates a new `UpdateTaskTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateTaskTemplate {
+    type Output = std::result::Result<
+        crate::output::UpdateTaskTemplateOutput,
+        crate::error::UpdateTaskTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_task_template_error(response)
+        } else {
+            crate::operation_deser::parse_update_task_template_response(response)
         }
     }
 }

@@ -34,6 +34,32 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::AssociateUserToPermissionGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::AssociateUserToPermissionGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::AssociateUserToPermissionGroupErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::AssociateUserToPermissionGroupErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::AssociateUserToPermissionGroupErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::AssociateUserToPermissionGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::AssociateUserToPermissionGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::AssociateUserToPermissionGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::AssociateUserToPermissionGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateChangesetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -304,6 +330,36 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DisassociateUserFromPermissionGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisassociateUserFromPermissionGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DisassociateUserFromPermissionGroupErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DisassociateUserFromPermissionGroupErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::DisassociateUserFromPermissionGroupErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DisassociateUserFromPermissionGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DisassociateUserFromPermissionGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DisassociateUserFromPermissionGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DisassociateUserFromPermissionGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -423,6 +479,38 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetDataViewErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPermissionGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetPermissionGroupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetPermissionGroupErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetPermissionGroupErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetPermissionGroupErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetPermissionGroupErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetPermissionGroupErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetPermissionGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -626,6 +714,39 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionGroupsByUserError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListPermissionGroupsByUserError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListPermissionGroupsByUserErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListPermissionGroupsByUserErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::ListPermissionGroupsByUserErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::ListPermissionGroupsByUserErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListPermissionGroupsByUserErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListPermissionGroupsByUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUsersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -646,6 +767,39 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUsersByPermissionGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListUsersByPermissionGroupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListUsersByPermissionGroupErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListUsersByPermissionGroupErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::ListUsersByPermissionGroupErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::ListUsersByPermissionGroupErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListUsersByPermissionGroupErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListUsersByPermissionGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

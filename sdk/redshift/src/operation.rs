@@ -2901,6 +2901,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetClusterCredentials {
     }
 }
 
+/// Operation shape for `GetClusterCredentialsWithIAM`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_cluster_credentials_with_iam`](crate::client::Client::get_cluster_credentials_with_iam).
+///
+/// See [`crate::client::fluent_builders::GetClusterCredentialsWithIAM`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetClusterCredentialsWithIAM {
+    _private: (),
+}
+impl GetClusterCredentialsWithIAM {
+    /// Creates a new builder-style object to manufacture [`GetClusterCredentialsWithIamInput`](crate::input::GetClusterCredentialsWithIamInput)
+    pub fn builder() -> crate::input::get_cluster_credentials_with_iam_input::Builder {
+        crate::input::get_cluster_credentials_with_iam_input::Builder::default()
+    }
+    /// Creates a new `GetClusterCredentialsWithIAM` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetClusterCredentialsWithIAM {
+    type Output = std::result::Result<
+        crate::output::GetClusterCredentialsWithIamOutput,
+        crate::error::GetClusterCredentialsWithIAMError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_cluster_credentials_with_iam_error(response)
+        } else {
+            crate::operation_deser::parse_get_cluster_credentials_with_iam_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetReservedNodeExchangeConfigurationOptions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

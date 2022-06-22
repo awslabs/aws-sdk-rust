@@ -118,6 +118,61 @@ impl UpdateAnomalyDetectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAlertOutput {
+    /// <p>The ARN of the updated alert.</p>
+    pub alert_arn: std::option::Option<std::string::String>,
+}
+impl UpdateAlertOutput {
+    /// <p>The ARN of the updated alert.</p>
+    pub fn alert_arn(&self) -> std::option::Option<&str> {
+        self.alert_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateAlertOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAlertOutput");
+        formatter.field("alert_arn", &self.alert_arn);
+        formatter.finish()
+    }
+}
+/// See [`UpdateAlertOutput`](crate::output::UpdateAlertOutput)
+pub mod update_alert_output {
+
+    /// A builder for [`UpdateAlertOutput`](crate::output::UpdateAlertOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alert_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the updated alert.</p>
+        pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alert_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the updated alert.</p>
+        pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alert_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAlertOutput`](crate::output::UpdateAlertOutput)
+        pub fn build(self) -> crate::output::UpdateAlertOutput {
+            crate::output::UpdateAlertOutput {
+                alert_arn: self.alert_arn,
+            }
+        }
+    }
+}
+impl UpdateAlertOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAlertOutput`](crate::output::UpdateAlertOutput)
+    pub fn builder() -> crate::output::update_alert_output::Builder {
+        crate::output::update_alert_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

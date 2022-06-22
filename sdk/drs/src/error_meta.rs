@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>TYou do not have sufficient access to perform this action.</p>
+    /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
     ConflictException(crate::error::ConflictException),
@@ -34,6 +34,29 @@ impl std::fmt::Display for Error {
             Error::UninitializedAccountException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateExtendedSourceServerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateExtendedSourceServerError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateExtendedSourceServerErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CreateExtendedSourceServerErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::CreateExtendedSourceServerErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateExtendedSourceServerErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::CreateExtendedSourceServerErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::CreateExtendedSourceServerErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+                crate::error::CreateExtendedSourceServerErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::CreateExtendedSourceServerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
         }
     }
 }
@@ -488,6 +511,7 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetReplicationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetReplicationConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetReplicationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetReplicationConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -520,6 +544,59 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::InitializeServiceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListExtensibleSourceServersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListExtensibleSourceServersError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListExtensibleSourceServersErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListExtensibleSourceServersErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListExtensibleSourceServersErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListExtensibleSourceServersErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+                crate::error::ListExtensibleSourceServersErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::ListExtensibleSourceServersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStagingAccountsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListStagingAccountsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListStagingAccountsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListStagingAccountsErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListStagingAccountsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListStagingAccountsErrorKind::UninitializedAccountException(
+                    inner,
+                ) => Error::UninitializedAccountException(inner),
+                crate::error::ListStagingAccountsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListStagingAccountsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

@@ -79,6 +79,56 @@ pub(crate) fn reflens_structure_crate_output_describe_event_subscriptions_output
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_fleet_advisor_collectors_output_next_token(
+    input: &crate::output::DescribeFleetAdvisorCollectorsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_fleet_advisor_databases_output_next_token(
+    input: &crate::output::DescribeFleetAdvisorDatabasesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_fleet_advisor_lsa_analysis_output_next_token(
+    input: &crate::output::DescribeFleetAdvisorLsaAnalysisOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_fleet_advisor_schema_object_summary_output_next_token(
+    input: &crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_describe_fleet_advisor_schemas_output_next_token(
+    input: &crate::output::DescribeFleetAdvisorSchemasOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_orderable_replication_instances_output_marker(
     input: &crate::output::DescribeOrderableReplicationInstancesOutput,
 ) -> std::option::Option<&std::string::String> {

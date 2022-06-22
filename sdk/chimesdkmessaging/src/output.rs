@@ -424,6 +424,89 @@ impl SendChannelMessageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchChannelsOutput {
+    /// <p>A list of the channels in the request.</p>
+    pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
+    /// <p>The token returned from previous API responses until the number of channels is reached.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchChannelsOutput {
+    /// <p>A list of the channels in the request.</p>
+    pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
+        self.channels.as_deref()
+    }
+    /// <p>The token returned from previous API responses until the number of channels is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for SearchChannelsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchChannelsOutput");
+        formatter.field("channels", &self.channels);
+        formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`SearchChannelsOutput`](crate::output::SearchChannelsOutput)
+pub mod search_channels_output {
+
+    /// A builder for [`SearchChannelsOutput`](crate::output::SearchChannelsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `channels`.
+        ///
+        /// To override the contents of this collection use [`set_channels`](Self::set_channels).
+        ///
+        /// <p>A list of the channels in the request.</p>
+        pub fn channels(mut self, input: crate::model::ChannelSummary) -> Self {
+            let mut v = self.channels.unwrap_or_default();
+            v.push(input);
+            self.channels = Some(v);
+            self
+        }
+        /// <p>A list of the channels in the request.</p>
+        pub fn set_channels(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
+        ) -> Self {
+            self.channels = input;
+            self
+        }
+        /// <p>The token returned from previous API responses until the number of channels is reached.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token returned from previous API responses until the number of channels is reached.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchChannelsOutput`](crate::output::SearchChannelsOutput)
+        pub fn build(self) -> crate::output::SearchChannelsOutput {
+            crate::output::SearchChannelsOutput {
+                channels: self.channels,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl SearchChannelsOutput {
+    /// Creates a new builder-style object to manufacture [`SearchChannelsOutput`](crate::output::SearchChannelsOutput)
+    pub fn builder() -> crate::output::search_channels_output::Builder {
+        crate::output::search_channels_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedactChannelMessageOutput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
     pub channel_arn: std::option::Option<std::string::String>,
@@ -1132,7 +1215,7 @@ impl ListChannelMessagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChannelMembershipsForAppInstanceUserOutput {
-    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    /// <p>The information for the requested channel memberships.</p>
     pub channel_memberships: std::option::Option<
         std::vec::Vec<crate::model::ChannelMembershipForAppInstanceUserSummary>,
     >,
@@ -1140,7 +1223,7 @@ pub struct ListChannelMembershipsForAppInstanceUserOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsForAppInstanceUserOutput {
-    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    /// <p>The information for the requested channel memberships.</p>
     pub fn channel_memberships(
         &self,
     ) -> std::option::Option<&[crate::model::ChannelMembershipForAppInstanceUserSummary]> {
@@ -1176,7 +1259,7 @@ pub mod list_channel_memberships_for_app_instance_user_output {
         ///
         /// To override the contents of this collection use [`set_channel_memberships`](Self::set_channel_memberships).
         ///
-        /// <p>The token passed by previous API calls until all requested users are returned.</p>
+        /// <p>The information for the requested channel memberships.</p>
         pub fn channel_memberships(
             mut self,
             input: crate::model::ChannelMembershipForAppInstanceUserSummary,
@@ -1186,7 +1269,7 @@ pub mod list_channel_memberships_for_app_instance_user_output {
             self.channel_memberships = Some(v);
             self
         }
-        /// <p>The token passed by previous API calls until all requested users are returned.</p>
+        /// <p>The information for the requested channel memberships.</p>
         pub fn set_channel_memberships(
             mut self,
             input: std::option::Option<

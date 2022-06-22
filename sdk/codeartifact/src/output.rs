@@ -601,12 +601,7 @@ pub struct ListPackageVersionsOutput {
     /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
     /// </ul>
     pub default_display_version: std::option::Option<std::string::String>,
-    /// <p> A format of the package. Valid package format values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format of the package. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -631,12 +626,7 @@ impl ListPackageVersionsOutput {
     pub fn default_display_version(&self) -> std::option::Option<&str> {
         self.default_display_version.as_deref()
     }
-    /// <p> A format of the package. Valid package format values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format of the package. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -711,22 +701,12 @@ pub mod list_package_versions_output {
             self.default_display_version = input;
             self
         }
-        /// <p> A format of the package. Valid package format values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format of the package. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> A format of the package. Valid package format values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format of the package. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -817,12 +797,7 @@ impl ListPackageVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionDependenciesOutput {
-    /// <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the package that contains the returned dependencies. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -843,12 +818,7 @@ pub struct ListPackageVersionDependenciesOutput {
     pub dependencies: std::option::Option<std::vec::Vec<crate::model::PackageDependency>>,
 }
 impl ListPackageVersionDependenciesOutput {
-    /// <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> A format that specifies the type of the package that contains the returned dependencies. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -912,22 +882,12 @@ pub mod list_package_version_dependencies_output {
             std::option::Option<std::vec::Vec<crate::model::PackageDependency>>,
     }
     impl Builder {
-        /// <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package that contains the returned dependencies. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package that contains the returned dependencies. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -1528,12 +1488,7 @@ impl GetRepositoryEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionReadmeOutput {
-    /// <p> The format of the package with the requested readme file. Valid format types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> The format of the package with the requested readme file. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
     /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
@@ -1552,12 +1507,7 @@ pub struct GetPackageVersionReadmeOutput {
     pub readme: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionReadmeOutput {
-    /// <p> The format of the package with the requested readme file. Valid format types are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
-    /// <li> <p> <code>maven</code> </p> </li>
-    /// </ul>
+    /// <p> The format of the package with the requested readme file. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
@@ -1614,22 +1564,12 @@ pub mod get_package_version_readme_output {
         pub(crate) readme: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The format of the package with the requested readme file. Valid format types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> The format of the package with the requested readme file. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p> The format of the package with the requested readme file. Valid format types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> The format of the package with the requested readme file. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -2488,7 +2428,7 @@ impl DeleteRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackageVersionsOutput {
-    /// <p> A list of the package versions that were successfully deleted. </p>
+    /// <p> A list of the package versions that were successfully deleted. The status of every successful version will be <code>Deleted</code>. </p>
     pub successful_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
     >,
@@ -2506,7 +2446,7 @@ pub struct DeletePackageVersionsOutput {
     >,
 }
 impl DeletePackageVersionsOutput {
-    /// <p> A list of the package versions that were successfully deleted. </p>
+    /// <p> A list of the package versions that were successfully deleted. The status of every successful version will be <code>Deleted</code>. </p>
     pub fn successful_versions(
         &self,
     ) -> std::option::Option<
@@ -2561,7 +2501,7 @@ pub mod delete_package_versions_output {
         ///
         /// To override the contents of this collection use [`set_successful_versions`](Self::set_successful_versions).
         ///
-        /// <p> A list of the package versions that were successfully deleted. </p>
+        /// <p> A list of the package versions that were successfully deleted. The status of every successful version will be <code>Deleted</code>. </p>
         pub fn successful_versions(
             mut self,
             k: impl Into<std::string::String>,
@@ -2572,7 +2512,7 @@ pub mod delete_package_versions_output {
             self.successful_versions = Some(hash_map);
             self
         }
-        /// <p> A list of the package versions that were successfully deleted. </p>
+        /// <p> A list of the package versions that were successfully deleted. The status of every successful version will be <code>Deleted</code>. </p>
         pub fn set_successful_versions(
             mut self,
             input: std::option::Option<

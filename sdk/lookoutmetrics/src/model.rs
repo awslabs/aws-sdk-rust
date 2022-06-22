@@ -1058,17 +1058,26 @@ impl RdsSourceConfig {
 pub struct CloudWatchConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
     pub role_arn: std::option::Option<std::string::String>,
+    /// <p>Settings for backtest mode.</p>
+    pub back_test_configuration: std::option::Option<crate::model::BackTestConfiguration>,
 }
 impl CloudWatchConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>Settings for backtest mode.</p>
+    pub fn back_test_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::BackTestConfiguration> {
+        self.back_test_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CloudWatchConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchConfig");
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("back_test_configuration", &self.back_test_configuration);
         formatter.finish()
     }
 }
@@ -1080,6 +1089,8 @@ pub mod cloud_watch_config {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) back_test_configuration:
+            std::option::Option<crate::model::BackTestConfiguration>,
     }
     impl Builder {
         /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
@@ -1092,10 +1103,27 @@ pub mod cloud_watch_config {
             self.role_arn = input;
             self
         }
+        /// <p>Settings for backtest mode.</p>
+        pub fn back_test_configuration(
+            mut self,
+            input: crate::model::BackTestConfiguration,
+        ) -> Self {
+            self.back_test_configuration = Some(input);
+            self
+        }
+        /// <p>Settings for backtest mode.</p>
+        pub fn set_back_test_configuration(
+            mut self,
+            input: std::option::Option<crate::model::BackTestConfiguration>,
+        ) -> Self {
+            self.back_test_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CloudWatchConfig`](crate::model::CloudWatchConfig)
         pub fn build(self) -> crate::model::CloudWatchConfig {
             crate::model::CloudWatchConfig {
                 role_arn: self.role_arn,
+                back_test_configuration: self.back_test_configuration,
             }
         }
     }
@@ -2097,6 +2125,517 @@ impl AnomalyDetectorConfig {
     /// Creates a new builder-style object to manufacture [`AnomalyDetectorConfig`](crate::model::AnomalyDetectorConfig)
     pub fn builder() -> crate::model::anomaly_detector_config::Builder {
         crate::model::anomaly_detector_config::Builder::default()
+    }
+}
+
+/// <p>The configuration of the alert filters.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlertFilters {
+    /// <p>The list of measures that you want to get alerts for.</p>
+    pub metric_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
+    pub dimension_filter_list: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
+}
+impl AlertFilters {
+    /// <p>The list of measures that you want to get alerts for.</p>
+    pub fn metric_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.metric_list.as_deref()
+    }
+    /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
+    pub fn dimension_filter_list(&self) -> std::option::Option<&[crate::model::DimensionFilter]> {
+        self.dimension_filter_list.as_deref()
+    }
+}
+impl std::fmt::Debug for AlertFilters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlertFilters");
+        formatter.field("metric_list", &self.metric_list);
+        formatter.field("dimension_filter_list", &self.dimension_filter_list);
+        formatter.finish()
+    }
+}
+/// See [`AlertFilters`](crate::model::AlertFilters)
+pub mod alert_filters {
+
+    /// A builder for [`AlertFilters`](crate::model::AlertFilters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) dimension_filter_list:
+            std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
+    }
+    impl Builder {
+        /// Appends an item to `metric_list`.
+        ///
+        /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
+        ///
+        /// <p>The list of measures that you want to get alerts for.</p>
+        pub fn metric_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.metric_list.unwrap_or_default();
+            v.push(input.into());
+            self.metric_list = Some(v);
+            self
+        }
+        /// <p>The list of measures that you want to get alerts for.</p>
+        pub fn set_metric_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.metric_list = input;
+            self
+        }
+        /// Appends an item to `dimension_filter_list`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
+        ///
+        /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
+        pub fn dimension_filter_list(mut self, input: crate::model::DimensionFilter) -> Self {
+            let mut v = self.dimension_filter_list.unwrap_or_default();
+            v.push(input);
+            self.dimension_filter_list = Some(v);
+            self
+        }
+        /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
+        pub fn set_dimension_filter_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
+        ) -> Self {
+            self.dimension_filter_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlertFilters`](crate::model::AlertFilters)
+        pub fn build(self) -> crate::model::AlertFilters {
+            crate::model::AlertFilters {
+                metric_list: self.metric_list,
+                dimension_filter_list: self.dimension_filter_list,
+            }
+        }
+    }
+}
+impl AlertFilters {
+    /// Creates a new builder-style object to manufacture [`AlertFilters`](crate::model::AlertFilters)
+    pub fn builder() -> crate::model::alert_filters::Builder {
+        crate::model::alert_filters::Builder::default()
+    }
+}
+
+/// <p>The dimension filter, containing DimensionName and DimensionValueList.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DimensionFilter {
+    /// <p>The name of the dimension to filter on.</p>
+    pub dimension_name: std::option::Option<std::string::String>,
+    /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
+    pub dimension_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DimensionFilter {
+    /// <p>The name of the dimension to filter on.</p>
+    pub fn dimension_name(&self) -> std::option::Option<&str> {
+        self.dimension_name.as_deref()
+    }
+    /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
+    pub fn dimension_value_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.dimension_value_list.as_deref()
+    }
+}
+impl std::fmt::Debug for DimensionFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DimensionFilter");
+        formatter.field("dimension_name", &self.dimension_name);
+        formatter.field("dimension_value_list", &self.dimension_value_list);
+        formatter.finish()
+    }
+}
+/// See [`DimensionFilter`](crate::model::DimensionFilter)
+pub mod dimension_filter {
+
+    /// A builder for [`DimensionFilter`](crate::model::DimensionFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dimension_name: std::option::Option<std::string::String>,
+        pub(crate) dimension_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the dimension to filter on.</p>
+        pub fn dimension_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dimension_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the dimension to filter on.</p>
+        pub fn set_dimension_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dimension_name = input;
+            self
+        }
+        /// Appends an item to `dimension_value_list`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_value_list`](Self::set_dimension_value_list).
+        ///
+        /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
+        pub fn dimension_value_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.dimension_value_list.unwrap_or_default();
+            v.push(input.into());
+            self.dimension_value_list = Some(v);
+            self
+        }
+        /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
+        pub fn set_dimension_value_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.dimension_value_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DimensionFilter`](crate::model::DimensionFilter)
+        pub fn build(self) -> crate::model::DimensionFilter {
+            crate::model::DimensionFilter {
+                dimension_name: self.dimension_name,
+                dimension_value_list: self.dimension_value_list,
+            }
+        }
+    }
+}
+impl DimensionFilter {
+    /// Creates a new builder-style object to manufacture [`DimensionFilter`](crate::model::DimensionFilter)
+    pub fn builder() -> crate::model::dimension_filter::Builder {
+        crate::model::dimension_filter::Builder::default()
+    }
+}
+
+/// <p>A configuration that specifies the action to perform when anomalies are detected.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Action {
+    /// <p>A configuration for an Amazon SNS channel.</p>
+    pub sns_configuration: std::option::Option<crate::model::SnsConfiguration>,
+    /// <p>A configuration for an AWS Lambda channel.</p>
+    pub lambda_configuration: std::option::Option<crate::model::LambdaConfiguration>,
+}
+impl Action {
+    /// <p>A configuration for an Amazon SNS channel.</p>
+    pub fn sns_configuration(&self) -> std::option::Option<&crate::model::SnsConfiguration> {
+        self.sns_configuration.as_ref()
+    }
+    /// <p>A configuration for an AWS Lambda channel.</p>
+    pub fn lambda_configuration(&self) -> std::option::Option<&crate::model::LambdaConfiguration> {
+        self.lambda_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for Action {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Action");
+        formatter.field("sns_configuration", &self.sns_configuration);
+        formatter.field("lambda_configuration", &self.lambda_configuration);
+        formatter.finish()
+    }
+}
+/// See [`Action`](crate::model::Action)
+pub mod action {
+
+    /// A builder for [`Action`](crate::model::Action)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sns_configuration: std::option::Option<crate::model::SnsConfiguration>,
+        pub(crate) lambda_configuration: std::option::Option<crate::model::LambdaConfiguration>,
+    }
+    impl Builder {
+        /// <p>A configuration for an Amazon SNS channel.</p>
+        pub fn sns_configuration(mut self, input: crate::model::SnsConfiguration) -> Self {
+            self.sns_configuration = Some(input);
+            self
+        }
+        /// <p>A configuration for an Amazon SNS channel.</p>
+        pub fn set_sns_configuration(
+            mut self,
+            input: std::option::Option<crate::model::SnsConfiguration>,
+        ) -> Self {
+            self.sns_configuration = input;
+            self
+        }
+        /// <p>A configuration for an AWS Lambda channel.</p>
+        pub fn lambda_configuration(mut self, input: crate::model::LambdaConfiguration) -> Self {
+            self.lambda_configuration = Some(input);
+            self
+        }
+        /// <p>A configuration for an AWS Lambda channel.</p>
+        pub fn set_lambda_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LambdaConfiguration>,
+        ) -> Self {
+            self.lambda_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Action`](crate::model::Action)
+        pub fn build(self) -> crate::model::Action {
+            crate::model::Action {
+                sns_configuration: self.sns_configuration,
+                lambda_configuration: self.lambda_configuration,
+            }
+        }
+    }
+}
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action)
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
+/// <p>Contains information about a Lambda configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LambdaConfiguration {
+    /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the Lambda function.</p>
+    pub lambda_arn: std::option::Option<std::string::String>,
+}
+impl LambdaConfiguration {
+    /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for LambdaConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LambdaConfiguration");
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("lambda_arn", &self.lambda_arn);
+        formatter.finish()
+    }
+}
+/// See [`LambdaConfiguration`](crate::model::LambdaConfiguration)
+pub mod lambda_configuration {
+
+    /// A builder for [`LambdaConfiguration`](crate::model::LambdaConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) lambda_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The ARN of the Lambda function.</p>
+        pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lambda_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the Lambda function.</p>
+        pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lambda_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::model::LambdaConfiguration)
+        pub fn build(self) -> crate::model::LambdaConfiguration {
+            crate::model::LambdaConfiguration {
+                role_arn: self.role_arn,
+                lambda_arn: self.lambda_arn,
+            }
+        }
+    }
+}
+impl LambdaConfiguration {
+    /// Creates a new builder-style object to manufacture [`LambdaConfiguration`](crate::model::LambdaConfiguration)
+    pub fn builder() -> crate::model::lambda_configuration::Builder {
+        crate::model::lambda_configuration::Builder::default()
+    }
+}
+
+/// <p>Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SnsConfiguration {
+    /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the target SNS topic.</p>
+    pub sns_topic_arn: std::option::Option<std::string::String>,
+    /// <p>The format of the SNS topic.</p>
+    /// <ul>
+    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
+    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
+    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+    /// </ul>
+    pub sns_format: std::option::Option<crate::model::SnsFormat>,
+}
+impl SnsConfiguration {
+    /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The ARN of the target SNS topic.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The format of the SNS topic.</p>
+    /// <ul>
+    /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
+    /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
+    /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+    /// </ul>
+    pub fn sns_format(&self) -> std::option::Option<&crate::model::SnsFormat> {
+        self.sns_format.as_ref()
+    }
+}
+impl std::fmt::Debug for SnsConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnsConfiguration");
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("sns_topic_arn", &self.sns_topic_arn);
+        formatter.field("sns_format", &self.sns_format);
+        formatter.finish()
+    }
+}
+/// See [`SnsConfiguration`](crate::model::SnsConfiguration)
+pub mod sns_configuration {
+
+    /// A builder for [`SnsConfiguration`](crate::model::SnsConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
+        pub(crate) sns_format: std::option::Option<crate::model::SnsFormat>,
+    }
+    impl Builder {
+        /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The ARN of the target SNS topic.</p>
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sns_topic_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the target SNS topic.</p>
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sns_topic_arn = input;
+            self
+        }
+        /// <p>The format of the SNS topic.</p>
+        /// <ul>
+        /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
+        /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
+        /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+        /// </ul>
+        pub fn sns_format(mut self, input: crate::model::SnsFormat) -> Self {
+            self.sns_format = Some(input);
+            self
+        }
+        /// <p>The format of the SNS topic.</p>
+        /// <ul>
+        /// <li> <p> <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the default.</p> </li>
+        /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
+        /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
+        /// </ul>
+        pub fn set_sns_format(
+            mut self,
+            input: std::option::Option<crate::model::SnsFormat>,
+        ) -> Self {
+            self.sns_format = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnsConfiguration`](crate::model::SnsConfiguration)
+        pub fn build(self) -> crate::model::SnsConfiguration {
+            crate::model::SnsConfiguration {
+                role_arn: self.role_arn,
+                sns_topic_arn: self.sns_topic_arn,
+                sns_format: self.sns_format,
+            }
+        }
+    }
+}
+impl SnsConfiguration {
+    /// Creates a new builder-style object to manufacture [`SnsConfiguration`](crate::model::SnsConfiguration)
+    pub fn builder() -> crate::model::sns_configuration::Builder {
+        crate::model::sns_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SnsFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    Json,
+    #[allow(missing_docs)] // documentation missing in model
+    LongText,
+    #[allow(missing_docs)] // documentation missing in model
+    ShortText,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SnsFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "JSON" => SnsFormat::Json,
+            "LONG_TEXT" => SnsFormat::LongText,
+            "SHORT_TEXT" => SnsFormat::ShortText,
+            other => SnsFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SnsFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SnsFormat::from(s))
+    }
+}
+impl SnsFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SnsFormat::Json => "JSON",
+            SnsFormat::LongText => "LONG_TEXT",
+            SnsFormat::ShortText => "SHORT_TEXT",
+            SnsFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["JSON", "LONG_TEXT", "SHORT_TEXT"]
+    }
+}
+impl AsRef<str> for SnsFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5963,6 +6502,8 @@ pub struct Alert {
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the alert was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
+    pub alert_filters: std::option::Option<crate::model::AlertFilters>,
 }
 impl Alert {
     /// <p>Action that will be triggered when there is an alert.</p>
@@ -6005,6 +6546,10 @@ impl Alert {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
+    pub fn alert_filters(&self) -> std::option::Option<&crate::model::AlertFilters> {
+        self.alert_filters.as_ref()
+    }
 }
 impl std::fmt::Debug for Alert {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6022,6 +6567,7 @@ impl std::fmt::Debug for Alert {
         formatter.field("alert_status", &self.alert_status);
         formatter.field("last_modification_time", &self.last_modification_time);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("alert_filters", &self.alert_filters);
         formatter.finish()
     }
 }
@@ -6042,6 +6588,7 @@ pub mod alert {
         pub(crate) alert_status: std::option::Option<crate::model::AlertStatus>,
         pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) alert_filters: std::option::Option<crate::model::AlertFilters>,
     }
     impl Builder {
         /// <p>Action that will be triggered when there is an alert.</p>
@@ -6162,6 +6709,19 @@ pub mod alert {
             self.creation_time = input;
             self
         }
+        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
+        pub fn alert_filters(mut self, input: crate::model::AlertFilters) -> Self {
+            self.alert_filters = Some(input);
+            self
+        }
+        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
+        pub fn set_alert_filters(
+            mut self,
+            input: std::option::Option<crate::model::AlertFilters>,
+        ) -> Self {
+            self.alert_filters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Alert`](crate::model::Alert)
         pub fn build(self) -> crate::model::Alert {
             crate::model::Alert {
@@ -6175,6 +6735,7 @@ pub mod alert {
                 alert_status: self.alert_status,
                 last_modification_time: self.last_modification_time,
                 creation_time: self.creation_time,
+                alert_filters: self.alert_filters,
             }
         }
     }
@@ -6183,317 +6744,5 @@ impl Alert {
     /// Creates a new builder-style object to manufacture [`Alert`](crate::model::Alert)
     pub fn builder() -> crate::model::alert::Builder {
         crate::model::alert::Builder::default()
-    }
-}
-
-/// <p>A configuration that specifies the action to perform when anomalies are detected.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Action {
-    /// <p>A configuration for an Amazon SNS channel.</p>
-    pub sns_configuration: std::option::Option<crate::model::SnsConfiguration>,
-    /// <p>A configuration for an AWS Lambda channel.</p>
-    pub lambda_configuration: std::option::Option<crate::model::LambdaConfiguration>,
-}
-impl Action {
-    /// <p>A configuration for an Amazon SNS channel.</p>
-    pub fn sns_configuration(&self) -> std::option::Option<&crate::model::SnsConfiguration> {
-        self.sns_configuration.as_ref()
-    }
-    /// <p>A configuration for an AWS Lambda channel.</p>
-    pub fn lambda_configuration(&self) -> std::option::Option<&crate::model::LambdaConfiguration> {
-        self.lambda_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Action {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Action");
-        formatter.field("sns_configuration", &self.sns_configuration);
-        formatter.field("lambda_configuration", &self.lambda_configuration);
-        formatter.finish()
-    }
-}
-/// See [`Action`](crate::model::Action)
-pub mod action {
-
-    /// A builder for [`Action`](crate::model::Action)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) sns_configuration: std::option::Option<crate::model::SnsConfiguration>,
-        pub(crate) lambda_configuration: std::option::Option<crate::model::LambdaConfiguration>,
-    }
-    impl Builder {
-        /// <p>A configuration for an Amazon SNS channel.</p>
-        pub fn sns_configuration(mut self, input: crate::model::SnsConfiguration) -> Self {
-            self.sns_configuration = Some(input);
-            self
-        }
-        /// <p>A configuration for an Amazon SNS channel.</p>
-        pub fn set_sns_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SnsConfiguration>,
-        ) -> Self {
-            self.sns_configuration = input;
-            self
-        }
-        /// <p>A configuration for an AWS Lambda channel.</p>
-        pub fn lambda_configuration(mut self, input: crate::model::LambdaConfiguration) -> Self {
-            self.lambda_configuration = Some(input);
-            self
-        }
-        /// <p>A configuration for an AWS Lambda channel.</p>
-        pub fn set_lambda_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LambdaConfiguration>,
-        ) -> Self {
-            self.lambda_configuration = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Action`](crate::model::Action)
-        pub fn build(self) -> crate::model::Action {
-            crate::model::Action {
-                sns_configuration: self.sns_configuration,
-                lambda_configuration: self.lambda_configuration,
-            }
-        }
-    }
-}
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action)
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
-    }
-}
-
-/// <p>Contains information about a Lambda configuration.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LambdaConfiguration {
-    /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Lambda function.</p>
-    pub lambda_arn: std::option::Option<std::string::String>,
-}
-impl LambdaConfiguration {
-    /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
-        self.role_arn.as_deref()
-    }
-    /// <p>The ARN of the Lambda function.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
-        self.lambda_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("lambda_arn", &self.lambda_arn);
-        formatter.finish()
-    }
-}
-/// See [`LambdaConfiguration`](crate::model::LambdaConfiguration)
-pub mod lambda_configuration {
-
-    /// A builder for [`LambdaConfiguration`](crate::model::LambdaConfiguration)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) lambda_arn: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
-        }
-        /// <p>The ARN of the Lambda function.</p>
-        pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.lambda_arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the Lambda function.</p>
-        pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lambda_arn = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::model::LambdaConfiguration)
-        pub fn build(self) -> crate::model::LambdaConfiguration {
-            crate::model::LambdaConfiguration {
-                role_arn: self.role_arn,
-                lambda_arn: self.lambda_arn,
-            }
-        }
-    }
-}
-impl LambdaConfiguration {
-    /// Creates a new builder-style object to manufacture [`LambdaConfiguration`](crate::model::LambdaConfiguration)
-    pub fn builder() -> crate::model::lambda_configuration::Builder {
-        crate::model::lambda_configuration::Builder::default()
-    }
-}
-
-/// <p>Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SnsConfiguration {
-    /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the target SNS topic.</p>
-    pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The format of the SNS topic.</p>
-    pub sns_format: std::option::Option<crate::model::SnsFormat>,
-}
-impl SnsConfiguration {
-    /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
-        self.role_arn.as_deref()
-    }
-    /// <p>The ARN of the target SNS topic.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
-        self.sns_topic_arn.as_deref()
-    }
-    /// <p>The format of the SNS topic.</p>
-    pub fn sns_format(&self) -> std::option::Option<&crate::model::SnsFormat> {
-        self.sns_format.as_ref()
-    }
-}
-impl std::fmt::Debug for SnsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SnsConfiguration");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("sns_topic_arn", &self.sns_topic_arn);
-        formatter.field("sns_format", &self.sns_format);
-        formatter.finish()
-    }
-}
-/// See [`SnsConfiguration`](crate::model::SnsConfiguration)
-pub mod sns_configuration {
-
-    /// A builder for [`SnsConfiguration`](crate::model::SnsConfiguration)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
-        pub(crate) sns_format: std::option::Option<crate::model::SnsFormat>,
-    }
-    impl Builder {
-        /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
-        }
-        /// <p>The ARN of the target SNS topic.</p>
-        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.sns_topic_arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN of the target SNS topic.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
-        }
-        /// <p>The format of the SNS topic.</p>
-        pub fn sns_format(mut self, input: crate::model::SnsFormat) -> Self {
-            self.sns_format = Some(input);
-            self
-        }
-        /// <p>The format of the SNS topic.</p>
-        pub fn set_sns_format(
-            mut self,
-            input: std::option::Option<crate::model::SnsFormat>,
-        ) -> Self {
-            self.sns_format = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`SnsConfiguration`](crate::model::SnsConfiguration)
-        pub fn build(self) -> crate::model::SnsConfiguration {
-            crate::model::SnsConfiguration {
-                role_arn: self.role_arn,
-                sns_topic_arn: self.sns_topic_arn,
-                sns_format: self.sns_format,
-            }
-        }
-    }
-}
-impl SnsConfiguration {
-    /// Creates a new builder-style object to manufacture [`SnsConfiguration`](crate::model::SnsConfiguration)
-    pub fn builder() -> crate::model::sns_configuration::Builder {
-        crate::model::sns_configuration::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum SnsFormat {
-    #[allow(missing_docs)] // documentation missing in model
-    Json,
-    #[allow(missing_docs)] // documentation missing in model
-    LongText,
-    #[allow(missing_docs)] // documentation missing in model
-    ShortText,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for SnsFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "JSON" => SnsFormat::Json,
-            "LONG_TEXT" => SnsFormat::LongText,
-            "SHORT_TEXT" => SnsFormat::ShortText,
-            other => SnsFormat::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for SnsFormat {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnsFormat::from(s))
-    }
-}
-impl SnsFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SnsFormat::Json => "JSON",
-            SnsFormat::LongText => "LONG_TEXT",
-            SnsFormat::ShortText => "SHORT_TEXT",
-            SnsFormat::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["JSON", "LONG_TEXT", "SHORT_TEXT"]
-    }
-}
-impl AsRef<str> for SnsFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }

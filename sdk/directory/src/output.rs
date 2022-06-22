@@ -129,6 +129,61 @@ impl UpdateTrustOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSettingsOutput {
+    /// <p>The identifier of the directory.</p>
+    pub directory_id: std::option::Option<std::string::String>,
+}
+impl UpdateSettingsOutput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateSettingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSettingsOutput");
+        formatter.field("directory_id", &self.directory_id);
+        formatter.finish()
+    }
+}
+/// See [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput)
+pub mod update_settings_output {
+
+    /// A builder for [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) directory_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the directory.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the directory.</p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput)
+        pub fn build(self) -> crate::output::UpdateSettingsOutput {
+            crate::output::UpdateSettingsOutput {
+                directory_id: self.directory_id,
+            }
+        }
+    }
+}
+impl UpdateSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput)
+    pub fn builder() -> crate::output::update_settings_output::Builder {
+        crate::output::update_settings_output::Builder::default()
+    }
+}
+
 /// <p>Contains the results of the <code>UpdateRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1738,6 +1793,112 @@ impl DescribeSharedDirectoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSharedDirectoriesOutput`](crate::output::DescribeSharedDirectoriesOutput)
     pub fn builder() -> crate::output::describe_shared_directories_output::Builder {
         crate::output::describe_shared_directories_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSettingsOutput {
+    /// <p>The identifier of the directory.</p>
+    pub directory_id: std::option::Option<std::string::String>,
+    /// <p>The list of <code>SettingEntry</code> objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+    pub setting_entries: std::option::Option<std::vec::Vec<crate::model::SettingEntry>>,
+    /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSettings</code> to retrieve the next set of items. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSettingsOutput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The list of <code>SettingEntry</code> objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+    pub fn setting_entries(&self) -> std::option::Option<&[crate::model::SettingEntry]> {
+        self.setting_entries.as_deref()
+    }
+    /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSettings</code> to retrieve the next set of items. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeSettingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSettingsOutput");
+        formatter.field("directory_id", &self.directory_id);
+        formatter.field("setting_entries", &self.setting_entries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeSettingsOutput`](crate::output::DescribeSettingsOutput)
+pub mod describe_settings_output {
+
+    /// A builder for [`DescribeSettingsOutput`](crate::output::DescribeSettingsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) directory_id: std::option::Option<std::string::String>,
+        pub(crate) setting_entries: std::option::Option<std::vec::Vec<crate::model::SettingEntry>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the directory.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.directory_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the directory.</p>
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_id = input;
+            self
+        }
+        /// Appends an item to `setting_entries`.
+        ///
+        /// To override the contents of this collection use [`set_setting_entries`](Self::set_setting_entries).
+        ///
+        /// <p>The list of <code>SettingEntry</code> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+        pub fn setting_entries(mut self, input: crate::model::SettingEntry) -> Self {
+            let mut v = self.setting_entries.unwrap_or_default();
+            v.push(input);
+            self.setting_entries = Some(v);
+            self
+        }
+        /// <p>The list of <code>SettingEntry</code> objects that were retrieved.</p>
+        /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+        pub fn set_setting_entries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SettingEntry>>,
+        ) -> Self {
+            self.setting_entries = input;
+            self
+        }
+        /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSettings</code> to retrieve the next set of items. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSettings</code> to retrieve the next set of items. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSettingsOutput`](crate::output::DescribeSettingsOutput)
+        pub fn build(self) -> crate::output::DescribeSettingsOutput {
+            crate::output::DescribeSettingsOutput {
+                directory_id: self.directory_id,
+                setting_entries: self.setting_entries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSettingsOutput`](crate::output::DescribeSettingsOutput)
+    pub fn builder() -> crate::output::describe_settings_output::Builder {
+        crate::output::describe_settings_output::Builder::default()
     }
 }
 

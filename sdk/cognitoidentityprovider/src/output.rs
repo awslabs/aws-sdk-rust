@@ -3186,7 +3186,7 @@ impl GetCsvHeaderOutput {
     }
 }
 
-/// <p>Represents the response from the server regarding the request to reset a password.</p>
+/// <p>The response from Amazon Cognito to a request to reset a password.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForgotPasswordOutput {

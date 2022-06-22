@@ -5882,6 +5882,8 @@ pub struct RedactChannelMessageError {
 pub enum RedactChannelMessageErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>The service encountered an unexpected error.</p>
@@ -5899,6 +5901,7 @@ impl std::fmt::Display for RedactChannelMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             RedactChannelMessageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            RedactChannelMessageErrorKind::ConflictException(_inner) => _inner.fmt(f),
             RedactChannelMessageErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             RedactChannelMessageErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
             RedactChannelMessageErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
@@ -5965,6 +5968,13 @@ impl RedactChannelMessageError {
             RedactChannelMessageErrorKind::BadRequestException(_)
         )
     }
+    /// Returns `true` if the error kind is `RedactChannelMessageErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RedactChannelMessageErrorKind::ConflictException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RedactChannelMessageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
@@ -6005,12 +6015,155 @@ impl std::error::Error for RedactChannelMessageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             RedactChannelMessageErrorKind::BadRequestException(_inner) => Some(_inner),
+            RedactChannelMessageErrorKind::ConflictException(_inner) => Some(_inner),
             RedactChannelMessageErrorKind::ForbiddenException(_inner) => Some(_inner),
             RedactChannelMessageErrorKind::ServiceFailureException(_inner) => Some(_inner),
             RedactChannelMessageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             RedactChannelMessageErrorKind::ThrottledClientException(_inner) => Some(_inner),
             RedactChannelMessageErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
             RedactChannelMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `SearchChannels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchChannelsError {
+    /// Kind of error that occurred.
+    pub kind: SearchChannelsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchChannels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchChannelsErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The client exceeded its request rate limit.</p>
+    ThrottledClientException(crate::error::ThrottledClientException),
+    /// <p>The client is not currently authorized to make the request.</p>
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchChannelsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchChannelsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            SearchChannelsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            SearchChannelsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            SearchChannelsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            SearchChannelsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            SearchChannelsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
+            SearchChannelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchChannelsError {
+    fn code(&self) -> Option<&str> {
+        SearchChannelsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchChannelsError {
+    /// Creates a new `SearchChannelsError`.
+    pub fn new(kind: SearchChannelsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchChannelsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchChannelsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchChannelsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchChannelsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchChannelsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, SearchChannelsErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `SearchChannelsErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, SearchChannelsErrorKind::ForbiddenException(_))
+    }
+    /// Returns `true` if the error kind is `SearchChannelsErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchChannelsErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchChannelsErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchChannelsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchChannelsErrorKind::ThrottledClientException`.
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchChannelsErrorKind::ThrottledClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchChannelsErrorKind::UnauthorizedClientException`.
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchChannelsErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for SearchChannelsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchChannelsErrorKind::BadRequestException(_inner) => Some(_inner),
+            SearchChannelsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            SearchChannelsErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            SearchChannelsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            SearchChannelsErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            SearchChannelsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            SearchChannelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

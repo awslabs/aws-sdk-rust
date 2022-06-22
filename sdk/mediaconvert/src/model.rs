@@ -50638,6 +50638,8 @@ impl AsRef<str> for AncillaryConvert608To708 {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioSelector {
+    /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
+    pub audio_duration_correction: std::option::Option<crate::model::AudioDurationCorrection>,
     /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
     pub custom_language_code: std::option::Option<std::string::String>,
     /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
@@ -50662,6 +50664,12 @@ pub struct AudioSelector {
     pub tracks: std::option::Option<std::vec::Vec<i32>>,
 }
 impl AudioSelector {
+    /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
+    pub fn audio_duration_correction(
+        &self,
+    ) -> std::option::Option<&crate::model::AudioDurationCorrection> {
+        self.audio_duration_correction.as_ref()
+    }
     /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
     pub fn custom_language_code(&self) -> std::option::Option<&str> {
         self.custom_language_code.as_deref()
@@ -50712,6 +50720,7 @@ impl AudioSelector {
 impl std::fmt::Debug for AudioSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioSelector");
+        formatter.field("audio_duration_correction", &self.audio_duration_correction);
         formatter.field("custom_language_code", &self.custom_language_code);
         formatter.field("default_selection", &self.default_selection);
         formatter.field("external_audio_file_input", &self.external_audio_file_input);
@@ -50736,6 +50745,8 @@ pub mod audio_selector {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) audio_duration_correction:
+            std::option::Option<crate::model::AudioDurationCorrection>,
         pub(crate) custom_language_code: std::option::Option<std::string::String>,
         pub(crate) default_selection: std::option::Option<crate::model::AudioDefaultSelection>,
         pub(crate) external_audio_file_input: std::option::Option<std::string::String>,
@@ -50750,6 +50761,22 @@ pub mod audio_selector {
         pub(crate) tracks: std::option::Option<std::vec::Vec<i32>>,
     }
     impl Builder {
+        /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
+        pub fn audio_duration_correction(
+            mut self,
+            input: crate::model::AudioDurationCorrection,
+        ) -> Self {
+            self.audio_duration_correction = Some(input);
+            self
+        }
+        /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
+        pub fn set_audio_duration_correction(
+            mut self,
+            input: std::option::Option<crate::model::AudioDurationCorrection>,
+        ) -> Self {
+            self.audio_duration_correction = input;
+            self
+        }
         /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
         pub fn custom_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_language_code = Some(input.into());
@@ -50899,6 +50926,7 @@ pub mod audio_selector {
         /// Consumes the builder and constructs a [`AudioSelector`](crate::model::AudioSelector)
         pub fn build(self) -> crate::model::AudioSelector {
             crate::model::AudioSelector {
+                audio_duration_correction: self.audio_duration_correction,
                 custom_language_code: self.custom_language_code,
                 default_selection: self.default_selection,
                 external_audio_file_input: self.external_audio_file_input,
@@ -51136,6 +51164,69 @@ impl AudioDefaultSelection {
     }
 }
 impl AsRef<str> for AudioDefaultSelection {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AudioDurationCorrection {
+    #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Frame,
+    #[allow(missing_docs)] // documentation missing in model
+    Track,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AudioDurationCorrection {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTO" => AudioDurationCorrection::Auto,
+            "DISABLED" => AudioDurationCorrection::Disabled,
+            "FRAME" => AudioDurationCorrection::Frame,
+            "TRACK" => AudioDurationCorrection::Track,
+            other => AudioDurationCorrection::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AudioDurationCorrection {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AudioDurationCorrection::from(s))
+    }
+}
+impl AudioDurationCorrection {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AudioDurationCorrection::Auto => "AUTO",
+            AudioDurationCorrection::Disabled => "DISABLED",
+            AudioDurationCorrection::Frame => "FRAME",
+            AudioDurationCorrection::Track => "TRACK",
+            AudioDurationCorrection::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "DISABLED", "FRAME", "TRACK"]
+    }
+}
+impl AsRef<str> for AudioDurationCorrection {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -53575,7 +53666,7 @@ pub struct Input {
     pub timecode_source: std::option::Option<crate::model::InputTimecodeSource>,
     /// Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start (SPECIFIEDSTART). For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
     pub timecode_start: std::option::Option<std::string::String>,
-    /// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+    /// When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
     pub video_generator: std::option::Option<crate::model::InputVideoGenerator>,
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub video_selector: std::option::Option<crate::model::VideoSelector>,
@@ -53675,7 +53766,7 @@ impl Input {
     pub fn timecode_start(&self) -> std::option::Option<&str> {
         self.timecode_start.as_deref()
     }
-    /// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+    /// When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
     pub fn video_generator(&self) -> std::option::Option<&crate::model::InputVideoGenerator> {
         self.video_generator.as_ref()
     }
@@ -54042,12 +54133,12 @@ pub mod input {
             self.timecode_start = input;
             self
         }
-        /// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+        /// When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
         pub fn video_generator(mut self, input: crate::model::InputVideoGenerator) -> Self {
             self.video_generator = Some(input);
             self
         }
-        /// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+        /// When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
         pub fn set_video_generator(
             mut self,
             input: std::option::Option<crate::model::InputVideoGenerator>,
@@ -54104,7 +54195,7 @@ impl Input {
     }
 }
 
-/// Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. When you include Video generator, MediaConvert creates a video input with black frames and without an audio track. You can specify a value for Video generator, or you can specify an Input file, but you cannot specify both.
+/// When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputVideoGenerator {

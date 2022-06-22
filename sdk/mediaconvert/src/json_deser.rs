@@ -11352,6 +11352,19 @@ where
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "audioDurationCorrection" => {
+                                builder = builder.set_audio_duration_correction(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::AudioDurationCorrection::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "customLanguageCode" => {
                                 builder = builder.set_custom_language_code(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(

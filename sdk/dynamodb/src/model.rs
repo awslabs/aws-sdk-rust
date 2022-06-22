@@ -1907,7 +1907,7 @@ pub struct TableDescription {
     /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
     /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul> </li>
-    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
     /// <li> <p> <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
@@ -1937,7 +1937,7 @@ pub struct TableDescription {
     /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
     /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul> </li>
-    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases. </p> </li>
     /// </ul>
@@ -2056,7 +2056,7 @@ impl TableDescription {
     /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
     /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul> </li>
-    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
     /// <li> <p> <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
@@ -2089,7 +2089,7 @@ impl TableDescription {
     /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
     /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul> </li>
-    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases. </p> </li>
     /// </ul>
@@ -2416,7 +2416,7 @@ pub mod table_description {
         /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
         /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
         /// </ul> </li>
-        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
         /// </ul> </li>
         /// <li> <p> <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
         /// <li> <p> <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
@@ -2443,7 +2443,7 @@ pub mod table_description {
         /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
         /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
         /// </ul> </li>
-        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
         /// </ul> </li>
         /// <li> <p> <code>IndexSizeBytes</code> - Represents the total size of the index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
         /// <li> <p> <code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p> </li>
@@ -2482,7 +2482,7 @@ pub mod table_description {
         /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
         /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
         /// </ul> </li>
-        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
         /// </ul> </li>
         /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases. </p> </li>
         /// </ul>
@@ -2518,7 +2518,7 @@ pub mod table_description {
         /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
         /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
         /// </ul> </li>
-        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
         /// </ul> </li>
         /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases. </p> </li>
         /// </ul>
@@ -4432,7 +4432,7 @@ pub struct Projection {
     /// </ul>
     pub projection_type: std::option::Option<crate::model::ProjectionType>,
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
-    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     pub non_key_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Projection {
@@ -4446,7 +4446,7 @@ impl Projection {
         self.projection_type.as_ref()
     }
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
-    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     pub fn non_key_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.non_key_attributes.as_deref()
     }
@@ -4498,7 +4498,7 @@ pub mod projection {
         /// To override the contents of this collection use [`set_non_key_attributes`](Self::set_non_key_attributes).
         ///
         /// <p>Represents the non-key attribute names which will be projected into the index.</p>
-        /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
         pub fn non_key_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.non_key_attributes.unwrap_or_default();
             v.push(input.into());
@@ -4506,7 +4506,7 @@ pub mod projection {
             self
         }
         /// <p>Represents the non-key attribute names which will be projected into the index.</p>
-        /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
         pub fn set_non_key_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5266,7 +5266,9 @@ impl AsRef<str> for ScalarAttributeType {
 /// <li> <p>A new replica to be added to an existing regional table or global table. This request invokes the <code>CreateTableReplica</code> action in the destination Region.</p> </li>
 /// <li> <p>New parameters for an existing replica. This request invokes the <code>UpdateTable</code> action in the destination Region.</p> </li>
 /// <li> <p>An existing replica to be deleted. The request invokes the <code>DeleteTableReplica</code> action in the destination Region, deleting the replica and all if its items in the destination Region.</p> </li>
-/// </ul>
+/// </ul> <note>
+/// <p>When you manually remove a table or global table replica, you do not automatically remove any associated scalable targets, scaling policies, or CloudWatch alarms.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationGroupUpdate {
@@ -6571,7 +6573,7 @@ pub enum AttributeValue {
     /// <p> <code>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</code> </p>
     Bs(std::vec::Vec<aws_smithy_types::Blob>),
     /// <p>An attribute of type List. For example:</p>
-    /// <p> <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+    /// <p> <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
     L(std::vec::Vec<crate::model::AttributeValue>),
     /// <p>An attribute of type Map. For example:</p>
     /// <p> <code>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</code> </p>
@@ -7736,7 +7738,7 @@ pub struct AttributeValueUpdate {
     /// <ul>
     /// <li> <p> <code>PUT</code> - DynamoDB creates a new item with the specified primary key, and then adds the attribute. </p> </li>
     /// <li> <p> <code>DELETE</code> - Nothing happens; there is no attribute to delete.</p> </li>
-    /// <li> <p> <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are number and number set; no other data types can be specified.</p> </li>
+    /// <li> <p> <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the attribute value. The only data types allowed are number, number set, string set or binary set.</p> </li>
     /// </ul>
     pub action: std::option::Option<crate::model::AttributeAction>,
 }
@@ -7765,7 +7767,7 @@ impl AttributeValueUpdate {
     /// <ul>
     /// <li> <p> <code>PUT</code> - DynamoDB creates a new item with the specified primary key, and then adds the attribute. </p> </li>
     /// <li> <p> <code>DELETE</code> - Nothing happens; there is no attribute to delete.</p> </li>
-    /// <li> <p> <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are number and number set; no other data types can be specified.</p> </li>
+    /// <li> <p> <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the attribute value. The only data types allowed are number, number set, string set or binary set.</p> </li>
     /// </ul>
     pub fn action(&self) -> std::option::Option<&crate::model::AttributeAction> {
         self.action.as_ref()
@@ -7825,7 +7827,7 @@ pub mod attribute_value_update {
         /// <ul>
         /// <li> <p> <code>PUT</code> - DynamoDB creates a new item with the specified primary key, and then adds the attribute. </p> </li>
         /// <li> <p> <code>DELETE</code> - Nothing happens; there is no attribute to delete.</p> </li>
-        /// <li> <p> <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are number and number set; no other data types can be specified.</p> </li>
+        /// <li> <p> <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the attribute value. The only data types allowed are number, number set, string set or binary set.</p> </li>
         /// </ul>
         pub fn action(mut self, input: crate::model::AttributeAction) -> Self {
             self.action = Some(input);
@@ -7849,7 +7851,7 @@ pub mod attribute_value_update {
         /// <ul>
         /// <li> <p> <code>PUT</code> - DynamoDB creates a new item with the specified primary key, and then adds the attribute. </p> </li>
         /// <li> <p> <code>DELETE</code> - Nothing happens; there is no attribute to delete.</p> </li>
-        /// <li> <p> <code>ADD</code> - DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are number and number set; no other data types can be specified.</p> </li>
+        /// <li> <p> <code>ADD</code> - DynamoDB creates a new item with the supplied primary key and number (or set) for the attribute value. The only data types allowed are number, number set, string set or binary set.</p> </li>
         /// </ul>
         pub fn set_action(
             mut self,
@@ -14812,7 +14814,7 @@ pub struct BackupDetails {
     pub backup_arn: std::option::Option<std::string::String>,
     /// <p>Name of the requested backup.</p>
     pub backup_name: std::option::Option<std::string::String>,
-    /// <p>Size of the backup in bytes.</p>
+    /// <p>Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub backup_size_bytes: std::option::Option<i64>,
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED. </p>
     pub backup_status: std::option::Option<crate::model::BackupStatus>,
@@ -14837,7 +14839,7 @@ impl BackupDetails {
     pub fn backup_name(&self) -> std::option::Option<&str> {
         self.backup_name.as_deref()
     }
-    /// <p>Size of the backup in bytes.</p>
+    /// <p>Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub fn backup_size_bytes(&self) -> std::option::Option<i64> {
         self.backup_size_bytes
     }
@@ -14912,12 +14914,12 @@ pub mod backup_details {
             self.backup_name = input;
             self
         }
-        /// <p>Size of the backup in bytes.</p>
+        /// <p>Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
         pub fn backup_size_bytes(mut self, input: i64) -> Self {
             self.backup_size_bytes = Some(input);
             self
         }
-        /// <p>Size of the backup in bytes.</p>
+        /// <p>Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
         pub fn set_backup_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.backup_size_bytes = input;
             self

@@ -3772,7 +3772,7 @@ pub struct BrokerNodeGroupInfo {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
     /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
     pub broker_az_distribution: std::option::Option<crate::model::BrokerAzDistribution>,
-    /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
+    /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
     pub client_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
     pub instance_type: std::option::Option<std::string::String>,
@@ -3791,7 +3791,7 @@ impl BrokerNodeGroupInfo {
     ) -> std::option::Option<&crate::model::BrokerAzDistribution> {
         self.broker_az_distribution.as_ref()
     }
-    /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
+    /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
     pub fn client_subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.client_subnets.as_deref()
     }
@@ -3858,14 +3858,14 @@ pub mod broker_node_group_info {
         ///
         /// To override the contents of this collection use [`set_client_subnets`](Self::set_client_subnets).
         ///
-        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
+        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
         pub fn client_subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.client_subnets.unwrap_or_default();
             v.push(input.into());
             self.client_subnets = Some(v);
             self
         }
-        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
+        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
         pub fn set_client_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

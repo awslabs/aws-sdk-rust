@@ -176,6 +176,17 @@ impl Client {
     pub fn get_catalog_item(&self) -> fluent_builders::GetCatalogItem {
         fluent_builders::GetCatalogItem::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetConnection`](crate::client::fluent_builders::GetConnection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::GetConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::GetConnection::set_connection_id): <p> The ID of the connection you request. </p>
+    /// - On success, responds with [`GetConnectionOutput`](crate::output::GetConnectionOutput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::output::GetConnectionOutput::connection_id): <p> The ID of the connection you receive. </p>
+    ///   - [`connection_details(Option<ConnectionDetails>)`](crate::output::GetConnectionOutput::connection_details): <p> Information about a connection. </p>
+    /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::error::GetConnectionError)
+    pub fn get_connection(&self) -> fluent_builders::GetConnection {
+        fluent_builders::GetConnection::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetOrder`](crate::client::fluent_builders::GetOrder) operation.
     ///
     /// - The fluent builder is configurable:
@@ -321,6 +332,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StartConnection`](crate::client::fluent_builders::StartConnection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`device_serial_number(impl Into<String>)`](crate::client::fluent_builders::StartConnection::device_serial_number) / [`set_device_serial_number(Option<String>)`](crate::client::fluent_builders::StartConnection::set_device_serial_number): <p> The serial number of the dongle. </p>
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::StartConnection::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::StartConnection::set_asset_id): <p> The ID of the Outpost server. </p>
+    ///   - [`client_public_key(impl Into<String>)`](crate::client::fluent_builders::StartConnection::client_public_key) / [`set_client_public_key(Option<String>)`](crate::client::fluent_builders::StartConnection::set_client_public_key): <p> The public key of the client. </p>
+    ///   - [`network_interface_device_index(i32)`](crate::client::fluent_builders::StartConnection::network_interface_device_index) / [`set_network_interface_device_index(i32)`](crate::client::fluent_builders::StartConnection::set_network_interface_device_index): <p> The device index of the network interface on the Outpost server. </p>
+    /// - On success, responds with [`StartConnectionOutput`](crate::output::StartConnectionOutput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::output::StartConnectionOutput::connection_id): <p> The ID of the connection. </p>
+    ///   - [`underlay_ip_address(Option<String>)`](crate::output::StartConnectionOutput::underlay_ip_address): <p> The underlay IP address. </p>
+    /// - On failure, responds with [`SdkError<StartConnectionError>`](crate::error::StartConnectionError)
+    pub fn start_connection(&self) -> fluent_builders::StartConnection {
+        fluent_builders::StartConnection::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -1012,6 +1037,66 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_catalog_item_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetConnection`.
+    ///
+    /// <note>
+    /// <p> Amazon Web Services uses this action to install Outpost servers.</p>
+    /// </note>
+    /// <p> Gets information about a specified connection. </p>
+    /// <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetConnection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_connection_input::Builder,
+    }
+    impl GetConnection {
+        /// Creates a new `GetConnection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetConnectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetConnectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The ID of the connection you request. </p>
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
+            self
+        }
+        /// <p> The ID of the connection you request. </p>
+        pub fn set_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connection_id(input);
             self
         }
     }
@@ -1970,6 +2055,102 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartConnection`.
+    ///
+    /// <note>
+    /// <p> Amazon Web Services uses this action to install Outpost servers.</p>
+    /// </note>
+    /// <p> Starts the connection required for Outpost server installation. </p>
+    /// <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartConnection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_connection_input::Builder,
+    }
+    impl StartConnection {
+        /// Creates a new `StartConnection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartConnectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartConnectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The serial number of the dongle. </p>
+        pub fn device_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_serial_number(input.into());
+            self
+        }
+        /// <p> The serial number of the dongle. </p>
+        pub fn set_device_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_device_serial_number(input);
+            self
+        }
+        /// <p> The ID of the Outpost server. </p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
+            self
+        }
+        /// <p> The ID of the Outpost server. </p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_asset_id(input);
+            self
+        }
+        /// <p> The public key of the client. </p>
+        pub fn client_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_public_key(input.into());
+            self
+        }
+        /// <p> The public key of the client. </p>
+        pub fn set_client_public_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_public_key(input);
+            self
+        }
+        /// <p> The device index of the network interface on the Outpost server. </p>
+        pub fn network_interface_device_index(mut self, input: i32) -> Self {
+            self.inner = self.inner.network_interface_device_index(input);
+            self
+        }
+        /// <p> The device index of the network interface on the Outpost server. </p>
+        pub fn set_network_interface_device_index(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_network_interface_device_index(input);
             self
         }
     }

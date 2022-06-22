@@ -7271,7 +7271,7 @@ pub struct MySqlSettings {
     /// <p>Example: <code>eventsPollInterval=5;</code> </p>
     /// <p>In the example, DMS checks for changes in the binary logs every five seconds.</p>
     pub events_poll_interval: std::option::Option<i32>,
-    /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases.</p>
+    /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code> </p>
     pub target_db_type: std::option::Option<crate::model::TargetDbType>,
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
@@ -7319,7 +7319,7 @@ impl MySqlSettings {
     pub fn events_poll_interval(&self) -> std::option::Option<i32> {
         self.events_poll_interval
     }
-    /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases.</p>
+    /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code> </p>
     pub fn target_db_type(&self) -> std::option::Option<&crate::model::TargetDbType> {
         self.target_db_type.as_ref()
@@ -7471,13 +7471,13 @@ pub mod my_sql_settings {
             self.events_poll_interval = input;
             self
         }
-        /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases.</p>
+        /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
         /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code> </p>
         pub fn target_db_type(mut self, input: crate::model::TargetDbType) -> Self {
             self.target_db_type = Some(input);
             self
         }
-        /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases.</p>
+        /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
         /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code> </p>
         pub fn set_target_db_type(
             mut self,
@@ -14314,6 +14314,1888 @@ impl ReleaseStatusValues {
     }
 }
 impl AsRef<str> for ReleaseStatusValues {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SchemaResponse {
+    /// <p>The number of lines of code in a schema in a Fleet Advisor collector inventory.</p>
+    pub code_line_count: std::option::Option<i64>,
+    /// <p>The size level of the code in a schema in a Fleet Advisor collector inventory.</p>
+    pub code_size: std::option::Option<i64>,
+    /// <p>The complexity level of the code in a schema in a Fleet Advisor collector inventory.</p>
+    pub complexity: std::option::Option<std::string::String>,
+    /// <p>The database server for a schema in a Fleet Advisor collector inventory.</p>
+    pub server: std::option::Option<crate::model::ServerShortInfoResponse>,
+    /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
+    pub database_instance: std::option::Option<crate::model::DatabaseShortInfoResponse>,
+    /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+    pub schema_id: std::option::Option<std::string::String>,
+    /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+    pub schema_name: std::option::Option<std::string::String>,
+    /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
+    pub original_schema: std::option::Option<crate::model::SchemaShortInfoResponse>,
+    /// <p>The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.</p>
+    pub similarity: std::option::Option<f64>,
+}
+impl SchemaResponse {
+    /// <p>The number of lines of code in a schema in a Fleet Advisor collector inventory.</p>
+    pub fn code_line_count(&self) -> std::option::Option<i64> {
+        self.code_line_count
+    }
+    /// <p>The size level of the code in a schema in a Fleet Advisor collector inventory.</p>
+    pub fn code_size(&self) -> std::option::Option<i64> {
+        self.code_size
+    }
+    /// <p>The complexity level of the code in a schema in a Fleet Advisor collector inventory.</p>
+    pub fn complexity(&self) -> std::option::Option<&str> {
+        self.complexity.as_deref()
+    }
+    /// <p>The database server for a schema in a Fleet Advisor collector inventory.</p>
+    pub fn server(&self) -> std::option::Option<&crate::model::ServerShortInfoResponse> {
+        self.server.as_ref()
+    }
+    /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
+    pub fn database_instance(
+        &self,
+    ) -> std::option::Option<&crate::model::DatabaseShortInfoResponse> {
+        self.database_instance.as_ref()
+    }
+    /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn schema_id(&self) -> std::option::Option<&str> {
+        self.schema_id.as_deref()
+    }
+    /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
+    pub fn original_schema(&self) -> std::option::Option<&crate::model::SchemaShortInfoResponse> {
+        self.original_schema.as_ref()
+    }
+    /// <p>The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.</p>
+    pub fn similarity(&self) -> std::option::Option<f64> {
+        self.similarity
+    }
+}
+impl std::fmt::Debug for SchemaResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SchemaResponse");
+        formatter.field("code_line_count", &self.code_line_count);
+        formatter.field("code_size", &self.code_size);
+        formatter.field("complexity", &self.complexity);
+        formatter.field("server", &self.server);
+        formatter.field("database_instance", &self.database_instance);
+        formatter.field("schema_id", &self.schema_id);
+        formatter.field("schema_name", &self.schema_name);
+        formatter.field("original_schema", &self.original_schema);
+        formatter.field("similarity", &self.similarity);
+        formatter.finish()
+    }
+}
+/// See [`SchemaResponse`](crate::model::SchemaResponse)
+pub mod schema_response {
+
+    /// A builder for [`SchemaResponse`](crate::model::SchemaResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code_line_count: std::option::Option<i64>,
+        pub(crate) code_size: std::option::Option<i64>,
+        pub(crate) complexity: std::option::Option<std::string::String>,
+        pub(crate) server: std::option::Option<crate::model::ServerShortInfoResponse>,
+        pub(crate) database_instance: std::option::Option<crate::model::DatabaseShortInfoResponse>,
+        pub(crate) schema_id: std::option::Option<std::string::String>,
+        pub(crate) schema_name: std::option::Option<std::string::String>,
+        pub(crate) original_schema: std::option::Option<crate::model::SchemaShortInfoResponse>,
+        pub(crate) similarity: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The number of lines of code in a schema in a Fleet Advisor collector inventory.</p>
+        pub fn code_line_count(mut self, input: i64) -> Self {
+            self.code_line_count = Some(input);
+            self
+        }
+        /// <p>The number of lines of code in a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_code_line_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.code_line_count = input;
+            self
+        }
+        /// <p>The size level of the code in a schema in a Fleet Advisor collector inventory.</p>
+        pub fn code_size(mut self, input: i64) -> Self {
+            self.code_size = Some(input);
+            self
+        }
+        /// <p>The size level of the code in a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.code_size = input;
+            self
+        }
+        /// <p>The complexity level of the code in a schema in a Fleet Advisor collector inventory.</p>
+        pub fn complexity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.complexity = Some(input.into());
+            self
+        }
+        /// <p>The complexity level of the code in a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_complexity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.complexity = input;
+            self
+        }
+        /// <p>The database server for a schema in a Fleet Advisor collector inventory.</p>
+        pub fn server(mut self, input: crate::model::ServerShortInfoResponse) -> Self {
+            self.server = Some(input);
+            self
+        }
+        /// <p>The database server for a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_server(
+            mut self,
+            input: std::option::Option<crate::model::ServerShortInfoResponse>,
+        ) -> Self {
+            self.server = input;
+            self
+        }
+        /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
+        pub fn database_instance(mut self, input: crate::model::DatabaseShortInfoResponse) -> Self {
+            self.database_instance = Some(input);
+            self
+        }
+        /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_database_instance(
+            mut self,
+            input: std::option::Option<crate::model::DatabaseShortInfoResponse>,
+        ) -> Self {
+            self.database_instance = input;
+            self
+        }
+        /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+        pub fn schema_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_schema_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_id = input;
+            self
+        }
+        /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_name = input;
+            self
+        }
+        /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
+        pub fn original_schema(mut self, input: crate::model::SchemaShortInfoResponse) -> Self {
+            self.original_schema = Some(input);
+            self
+        }
+        /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_original_schema(
+            mut self,
+            input: std::option::Option<crate::model::SchemaShortInfoResponse>,
+        ) -> Self {
+            self.original_schema = input;
+            self
+        }
+        /// <p>The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.</p>
+        pub fn similarity(mut self, input: f64) -> Self {
+            self.similarity = Some(input);
+            self
+        }
+        /// <p>The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.</p>
+        pub fn set_similarity(mut self, input: std::option::Option<f64>) -> Self {
+            self.similarity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SchemaResponse`](crate::model::SchemaResponse)
+        pub fn build(self) -> crate::model::SchemaResponse {
+            crate::model::SchemaResponse {
+                code_line_count: self.code_line_count,
+                code_size: self.code_size,
+                complexity: self.complexity,
+                server: self.server,
+                database_instance: self.database_instance,
+                schema_id: self.schema_id,
+                schema_name: self.schema_name,
+                original_schema: self.original_schema,
+                similarity: self.similarity,
+            }
+        }
+    }
+}
+impl SchemaResponse {
+    /// Creates a new builder-style object to manufacture [`SchemaResponse`](crate::model::SchemaResponse)
+    pub fn builder() -> crate::model::schema_response::Builder {
+        crate::model::schema_response::Builder::default()
+    }
+}
+
+/// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SchemaShortInfoResponse {
+    /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+    pub schema_id: std::option::Option<std::string::String>,
+    /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+    pub schema_name: std::option::Option<std::string::String>,
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub database_id: std::option::Option<std::string::String>,
+    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    pub database_ip_address: std::option::Option<std::string::String>,
+}
+impl SchemaShortInfoResponse {
+    /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn schema_id(&self) -> std::option::Option<&str> {
+        self.schema_id.as_deref()
+    }
+    /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub fn database_id(&self) -> std::option::Option<&str> {
+        self.database_id.as_deref()
+    }
+    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    pub fn database_ip_address(&self) -> std::option::Option<&str> {
+        self.database_ip_address.as_deref()
+    }
+}
+impl std::fmt::Debug for SchemaShortInfoResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SchemaShortInfoResponse");
+        formatter.field("schema_id", &self.schema_id);
+        formatter.field("schema_name", &self.schema_name);
+        formatter.field("database_id", &self.database_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("database_ip_address", &self.database_ip_address);
+        formatter.finish()
+    }
+}
+/// See [`SchemaShortInfoResponse`](crate::model::SchemaShortInfoResponse)
+pub mod schema_short_info_response {
+
+    /// A builder for [`SchemaShortInfoResponse`](crate::model::SchemaShortInfoResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) schema_id: std::option::Option<std::string::String>,
+        pub(crate) schema_name: std::option::Option<std::string::String>,
+        pub(crate) database_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) database_ip_address: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+        pub fn schema_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_schema_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_id = input;
+            self
+        }
+        /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+        pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_name = input;
+            self
+        }
+        /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+        pub fn database_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+        pub fn set_database_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_id = input;
+            self
+        }
+        /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+        pub fn database_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_ip_address = Some(input.into());
+            self
+        }
+        /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+        pub fn set_database_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_ip_address = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SchemaShortInfoResponse`](crate::model::SchemaShortInfoResponse)
+        pub fn build(self) -> crate::model::SchemaShortInfoResponse {
+            crate::model::SchemaShortInfoResponse {
+                schema_id: self.schema_id,
+                schema_name: self.schema_name,
+                database_id: self.database_id,
+                database_name: self.database_name,
+                database_ip_address: self.database_ip_address,
+            }
+        }
+    }
+}
+impl SchemaShortInfoResponse {
+    /// Creates a new builder-style object to manufacture [`SchemaShortInfoResponse`](crate::model::SchemaShortInfoResponse)
+    pub fn builder() -> crate::model::schema_short_info_response::Builder {
+        crate::model::schema_short_info_response::Builder::default()
+    }
+}
+
+/// <p>Describes a database in a Fleet Advisor collector inventory.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DatabaseShortInfoResponse {
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub database_id: std::option::Option<std::string::String>,
+    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    pub database_ip_address: std::option::Option<std::string::String>,
+    /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
+    pub database_engine: std::option::Option<std::string::String>,
+}
+impl DatabaseShortInfoResponse {
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub fn database_id(&self) -> std::option::Option<&str> {
+        self.database_id.as_deref()
+    }
+    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    pub fn database_ip_address(&self) -> std::option::Option<&str> {
+        self.database_ip_address.as_deref()
+    }
+    /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
+    pub fn database_engine(&self) -> std::option::Option<&str> {
+        self.database_engine.as_deref()
+    }
+}
+impl std::fmt::Debug for DatabaseShortInfoResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DatabaseShortInfoResponse");
+        formatter.field("database_id", &self.database_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("database_ip_address", &self.database_ip_address);
+        formatter.field("database_engine", &self.database_engine);
+        formatter.finish()
+    }
+}
+/// See [`DatabaseShortInfoResponse`](crate::model::DatabaseShortInfoResponse)
+pub mod database_short_info_response {
+
+    /// A builder for [`DatabaseShortInfoResponse`](crate::model::DatabaseShortInfoResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) database_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) database_ip_address: std::option::Option<std::string::String>,
+        pub(crate) database_engine: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+        pub fn database_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+        pub fn set_database_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_id = input;
+            self
+        }
+        /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+        pub fn database_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_ip_address = Some(input.into());
+            self
+        }
+        /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+        pub fn set_database_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_ip_address = input;
+            self
+        }
+        /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
+        pub fn database_engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_engine = Some(input.into());
+            self
+        }
+        /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
+        pub fn set_database_engine(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_engine = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DatabaseShortInfoResponse`](crate::model::DatabaseShortInfoResponse)
+        pub fn build(self) -> crate::model::DatabaseShortInfoResponse {
+            crate::model::DatabaseShortInfoResponse {
+                database_id: self.database_id,
+                database_name: self.database_name,
+                database_ip_address: self.database_ip_address,
+                database_engine: self.database_engine,
+            }
+        }
+    }
+}
+impl DatabaseShortInfoResponse {
+    /// Creates a new builder-style object to manufacture [`DatabaseShortInfoResponse`](crate::model::DatabaseShortInfoResponse)
+    pub fn builder() -> crate::model::database_short_info_response::Builder {
+        crate::model::database_short_info_response::Builder::default()
+    }
+}
+
+/// <p>Describes a server in a Fleet Advisor collector inventory.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServerShortInfoResponse {
+    /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
+    pub ip_address: std::option::Option<std::string::String>,
+    /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
+    pub server_name: std::option::Option<std::string::String>,
+}
+impl ServerShortInfoResponse {
+    /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
+    pub fn server_name(&self) -> std::option::Option<&str> {
+        self.server_name.as_deref()
+    }
+}
+impl std::fmt::Debug for ServerShortInfoResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServerShortInfoResponse");
+        formatter.field("server_id", &self.server_id);
+        formatter.field("ip_address", &self.ip_address);
+        formatter.field("server_name", &self.server_name);
+        formatter.finish()
+    }
+}
+/// See [`ServerShortInfoResponse`](crate::model::ServerShortInfoResponse)
+pub mod server_short_info_response {
+
+    /// A builder for [`ServerShortInfoResponse`](crate::model::ServerShortInfoResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) ip_address: std::option::Option<std::string::String>,
+        pub(crate) server_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
+            self
+        }
+        /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
+            self
+        }
+        /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_name = Some(input.into());
+            self
+        }
+        /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
+        pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerShortInfoResponse`](crate::model::ServerShortInfoResponse)
+        pub fn build(self) -> crate::model::ServerShortInfoResponse {
+            crate::model::ServerShortInfoResponse {
+                server_id: self.server_id,
+                ip_address: self.ip_address,
+                server_name: self.server_name,
+            }
+        }
+    }
+}
+impl ServerShortInfoResponse {
+    /// Creates a new builder-style object to manufacture [`ServerShortInfoResponse`](crate::model::ServerShortInfoResponse)
+    pub fn builder() -> crate::model::server_short_info_response::Builder {
+        crate::model::server_short_info_response::Builder::default()
+    }
+}
+
+/// <p>Describes a schema object in a Fleet Advisor collector inventory.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FleetAdvisorSchemaObjectResponse {
+    /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
+    pub schema_id: std::option::Option<std::string::String>,
+    /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>function</code> </p> </li>
+    /// <li> <p> <code>trigger</code> </p> </li>
+    /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+    /// <li> <p> <code>QUEUE</code> </p> </li>
+    /// </ul>
+    pub object_type: std::option::Option<std::string::String>,
+    /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
+    pub number_of_objects: std::option::Option<i64>,
+    /// <p>The number of lines of code in a schema object in a Fleet Advisor collector inventory.</p>
+    pub code_line_count: std::option::Option<i64>,
+    /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
+    pub code_size: std::option::Option<i64>,
+}
+impl FleetAdvisorSchemaObjectResponse {
+    /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
+    pub fn schema_id(&self) -> std::option::Option<&str> {
+        self.schema_id.as_deref()
+    }
+    /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>function</code> </p> </li>
+    /// <li> <p> <code>trigger</code> </p> </li>
+    /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+    /// <li> <p> <code>QUEUE</code> </p> </li>
+    /// </ul>
+    pub fn object_type(&self) -> std::option::Option<&str> {
+        self.object_type.as_deref()
+    }
+    /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
+    pub fn number_of_objects(&self) -> std::option::Option<i64> {
+        self.number_of_objects
+    }
+    /// <p>The number of lines of code in a schema object in a Fleet Advisor collector inventory.</p>
+    pub fn code_line_count(&self) -> std::option::Option<i64> {
+        self.code_line_count
+    }
+    /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
+    pub fn code_size(&self) -> std::option::Option<i64> {
+        self.code_size
+    }
+}
+impl std::fmt::Debug for FleetAdvisorSchemaObjectResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FleetAdvisorSchemaObjectResponse");
+        formatter.field("schema_id", &self.schema_id);
+        formatter.field("object_type", &self.object_type);
+        formatter.field("number_of_objects", &self.number_of_objects);
+        formatter.field("code_line_count", &self.code_line_count);
+        formatter.field("code_size", &self.code_size);
+        formatter.finish()
+    }
+}
+/// See [`FleetAdvisorSchemaObjectResponse`](crate::model::FleetAdvisorSchemaObjectResponse)
+pub mod fleet_advisor_schema_object_response {
+
+    /// A builder for [`FleetAdvisorSchemaObjectResponse`](crate::model::FleetAdvisorSchemaObjectResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) schema_id: std::option::Option<std::string::String>,
+        pub(crate) object_type: std::option::Option<std::string::String>,
+        pub(crate) number_of_objects: std::option::Option<i64>,
+        pub(crate) code_line_count: std::option::Option<i64>,
+        pub(crate) code_size: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
+        pub fn schema_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
+        pub fn set_schema_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_id = input;
+            self
+        }
+        /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
+        /// <ul>
+        /// <li> <p> <code>function</code> </p> </li>
+        /// <li> <p> <code>trigger</code> </p> </li>
+        /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+        /// <li> <p> <code>QUEUE</code> </p> </li>
+        /// </ul>
+        pub fn object_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object_type = Some(input.into());
+            self
+        }
+        /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
+        /// <ul>
+        /// <li> <p> <code>function</code> </p> </li>
+        /// <li> <p> <code>trigger</code> </p> </li>
+        /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+        /// <li> <p> <code>QUEUE</code> </p> </li>
+        /// </ul>
+        pub fn set_object_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_type = input;
+            self
+        }
+        /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
+        pub fn number_of_objects(mut self, input: i64) -> Self {
+            self.number_of_objects = Some(input);
+            self
+        }
+        /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
+        pub fn set_number_of_objects(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_objects = input;
+            self
+        }
+        /// <p>The number of lines of code in a schema object in a Fleet Advisor collector inventory.</p>
+        pub fn code_line_count(mut self, input: i64) -> Self {
+            self.code_line_count = Some(input);
+            self
+        }
+        /// <p>The number of lines of code in a schema object in a Fleet Advisor collector inventory.</p>
+        pub fn set_code_line_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.code_line_count = input;
+            self
+        }
+        /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
+        pub fn code_size(mut self, input: i64) -> Self {
+            self.code_size = Some(input);
+            self
+        }
+        /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
+        pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.code_size = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FleetAdvisorSchemaObjectResponse`](crate::model::FleetAdvisorSchemaObjectResponse)
+        pub fn build(self) -> crate::model::FleetAdvisorSchemaObjectResponse {
+            crate::model::FleetAdvisorSchemaObjectResponse {
+                schema_id: self.schema_id,
+                object_type: self.object_type,
+                number_of_objects: self.number_of_objects,
+                code_line_count: self.code_line_count,
+                code_size: self.code_size,
+            }
+        }
+    }
+}
+impl FleetAdvisorSchemaObjectResponse {
+    /// Creates a new builder-style object to manufacture [`FleetAdvisorSchemaObjectResponse`](crate::model::FleetAdvisorSchemaObjectResponse)
+    pub fn builder() -> crate::model::fleet_advisor_schema_object_response::Builder {
+        crate::model::fleet_advisor_schema_object_response::Builder::default()
+    }
+}
+
+/// <p>Describes a large-scale assessment (LSA) analysis run by a Fleet Advisor collector.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FleetAdvisorLsaAnalysisResponse {
+    /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
+    pub lsa_analysis_id: std::option::Option<std::string::String>,
+    /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl FleetAdvisorLsaAnalysisResponse {
+    /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
+    pub fn lsa_analysis_id(&self) -> std::option::Option<&str> {
+        self.lsa_analysis_id.as_deref()
+    }
+    /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
+impl std::fmt::Debug for FleetAdvisorLsaAnalysisResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FleetAdvisorLsaAnalysisResponse");
+        formatter.field("lsa_analysis_id", &self.lsa_analysis_id);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`FleetAdvisorLsaAnalysisResponse`](crate::model::FleetAdvisorLsaAnalysisResponse)
+pub mod fleet_advisor_lsa_analysis_response {
+
+    /// A builder for [`FleetAdvisorLsaAnalysisResponse`](crate::model::FleetAdvisorLsaAnalysisResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lsa_analysis_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
+        pub fn lsa_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lsa_analysis_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
+        pub fn set_lsa_analysis_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lsa_analysis_id = input;
+            self
+        }
+        /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FleetAdvisorLsaAnalysisResponse`](crate::model::FleetAdvisorLsaAnalysisResponse)
+        pub fn build(self) -> crate::model::FleetAdvisorLsaAnalysisResponse {
+            crate::model::FleetAdvisorLsaAnalysisResponse {
+                lsa_analysis_id: self.lsa_analysis_id,
+                status: self.status,
+            }
+        }
+    }
+}
+impl FleetAdvisorLsaAnalysisResponse {
+    /// Creates a new builder-style object to manufacture [`FleetAdvisorLsaAnalysisResponse`](crate::model::FleetAdvisorLsaAnalysisResponse)
+    pub fn builder() -> crate::model::fleet_advisor_lsa_analysis_response::Builder {
+        crate::model::fleet_advisor_lsa_analysis_response::Builder::default()
+    }
+}
+
+/// <p>Describes a database in a Fleet Advisor collector inventory.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DatabaseResponse {
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub database_id: std::option::Option<std::string::String>,
+    /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
+    pub ip_address: std::option::Option<std::string::String>,
+    /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
+    pub number_of_schemas: std::option::Option<i64>,
+    /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
+    pub server: std::option::Option<crate::model::ServerShortInfoResponse>,
+    /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
+    pub software_details:
+        std::option::Option<crate::model::DatabaseInstanceSoftwareDetailsResponse>,
+    /// <p>A list of collectors associated with the database.</p>
+    pub collectors: std::option::Option<std::vec::Vec<crate::model::CollectorShortInfoResponse>>,
+}
+impl DatabaseResponse {
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub fn database_id(&self) -> std::option::Option<&str> {
+        self.database_id.as_deref()
+    }
+    /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
+    pub fn number_of_schemas(&self) -> std::option::Option<i64> {
+        self.number_of_schemas
+    }
+    /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
+    pub fn server(&self) -> std::option::Option<&crate::model::ServerShortInfoResponse> {
+        self.server.as_ref()
+    }
+    /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
+    pub fn software_details(
+        &self,
+    ) -> std::option::Option<&crate::model::DatabaseInstanceSoftwareDetailsResponse> {
+        self.software_details.as_ref()
+    }
+    /// <p>A list of collectors associated with the database.</p>
+    pub fn collectors(&self) -> std::option::Option<&[crate::model::CollectorShortInfoResponse]> {
+        self.collectors.as_deref()
+    }
+}
+impl std::fmt::Debug for DatabaseResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DatabaseResponse");
+        formatter.field("database_id", &self.database_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("ip_address", &self.ip_address);
+        formatter.field("number_of_schemas", &self.number_of_schemas);
+        formatter.field("server", &self.server);
+        formatter.field("software_details", &self.software_details);
+        formatter.field("collectors", &self.collectors);
+        formatter.finish()
+    }
+}
+/// See [`DatabaseResponse`](crate::model::DatabaseResponse)
+pub mod database_response {
+
+    /// A builder for [`DatabaseResponse`](crate::model::DatabaseResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) database_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) ip_address: std::option::Option<std::string::String>,
+        pub(crate) number_of_schemas: std::option::Option<i64>,
+        pub(crate) server: std::option::Option<crate::model::ServerShortInfoResponse>,
+        pub(crate) software_details:
+            std::option::Option<crate::model::DatabaseInstanceSoftwareDetailsResponse>,
+        pub(crate) collectors:
+            std::option::Option<std::vec::Vec<crate::model::CollectorShortInfoResponse>>,
+    }
+    impl Builder {
+        /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+        pub fn database_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+        pub fn set_database_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_id = input;
+            self
+        }
+        /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
+            self
+        }
+        /// <p>The IP address of a database in a Fleet Advisor collector inventory. </p>
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
+            self
+        }
+        /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
+        pub fn number_of_schemas(mut self, input: i64) -> Self {
+            self.number_of_schemas = Some(input);
+            self
+        }
+        /// <p>The number of schemas in a Fleet Advisor collector inventory database. </p>
+        pub fn set_number_of_schemas(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_schemas = input;
+            self
+        }
+        /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
+        pub fn server(mut self, input: crate::model::ServerShortInfoResponse) -> Self {
+            self.server = Some(input);
+            self
+        }
+        /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
+        pub fn set_server(
+            mut self,
+            input: std::option::Option<crate::model::ServerShortInfoResponse>,
+        ) -> Self {
+            self.server = input;
+            self
+        }
+        /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
+        pub fn software_details(
+            mut self,
+            input: crate::model::DatabaseInstanceSoftwareDetailsResponse,
+        ) -> Self {
+            self.software_details = Some(input);
+            self
+        }
+        /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
+        pub fn set_software_details(
+            mut self,
+            input: std::option::Option<crate::model::DatabaseInstanceSoftwareDetailsResponse>,
+        ) -> Self {
+            self.software_details = input;
+            self
+        }
+        /// Appends an item to `collectors`.
+        ///
+        /// To override the contents of this collection use [`set_collectors`](Self::set_collectors).
+        ///
+        /// <p>A list of collectors associated with the database.</p>
+        pub fn collectors(mut self, input: crate::model::CollectorShortInfoResponse) -> Self {
+            let mut v = self.collectors.unwrap_or_default();
+            v.push(input);
+            self.collectors = Some(v);
+            self
+        }
+        /// <p>A list of collectors associated with the database.</p>
+        pub fn set_collectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CollectorShortInfoResponse>>,
+        ) -> Self {
+            self.collectors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DatabaseResponse`](crate::model::DatabaseResponse)
+        pub fn build(self) -> crate::model::DatabaseResponse {
+            crate::model::DatabaseResponse {
+                database_id: self.database_id,
+                database_name: self.database_name,
+                ip_address: self.ip_address,
+                number_of_schemas: self.number_of_schemas,
+                server: self.server,
+                software_details: self.software_details,
+                collectors: self.collectors,
+            }
+        }
+    }
+}
+impl DatabaseResponse {
+    /// Creates a new builder-style object to manufacture [`DatabaseResponse`](crate::model::DatabaseResponse)
+    pub fn builder() -> crate::model::database_response::Builder {
+        crate::model::database_response::Builder::default()
+    }
+}
+
+/// <p>Briefly describes a Fleet Advisor collector.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CollectorShortInfoResponse {
+    /// <p>The reference ID of the Fleet Advisor collector.</p>
+    pub collector_referenced_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Fleet Advisor collector.</p>
+    pub collector_name: std::option::Option<std::string::String>,
+}
+impl CollectorShortInfoResponse {
+    /// <p>The reference ID of the Fleet Advisor collector.</p>
+    pub fn collector_referenced_id(&self) -> std::option::Option<&str> {
+        self.collector_referenced_id.as_deref()
+    }
+    /// <p>The name of the Fleet Advisor collector.</p>
+    pub fn collector_name(&self) -> std::option::Option<&str> {
+        self.collector_name.as_deref()
+    }
+}
+impl std::fmt::Debug for CollectorShortInfoResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CollectorShortInfoResponse");
+        formatter.field("collector_referenced_id", &self.collector_referenced_id);
+        formatter.field("collector_name", &self.collector_name);
+        formatter.finish()
+    }
+}
+/// See [`CollectorShortInfoResponse`](crate::model::CollectorShortInfoResponse)
+pub mod collector_short_info_response {
+
+    /// A builder for [`CollectorShortInfoResponse`](crate::model::CollectorShortInfoResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collector_referenced_id: std::option::Option<std::string::String>,
+        pub(crate) collector_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The reference ID of the Fleet Advisor collector.</p>
+        pub fn collector_referenced_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collector_referenced_id = Some(input.into());
+            self
+        }
+        /// <p>The reference ID of the Fleet Advisor collector.</p>
+        pub fn set_collector_referenced_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collector_referenced_id = input;
+            self
+        }
+        /// <p>The name of the Fleet Advisor collector.</p>
+        pub fn collector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collector_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Fleet Advisor collector.</p>
+        pub fn set_collector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collector_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CollectorShortInfoResponse`](crate::model::CollectorShortInfoResponse)
+        pub fn build(self) -> crate::model::CollectorShortInfoResponse {
+            crate::model::CollectorShortInfoResponse {
+                collector_referenced_id: self.collector_referenced_id,
+                collector_name: self.collector_name,
+            }
+        }
+    }
+}
+impl CollectorShortInfoResponse {
+    /// Creates a new builder-style object to manufacture [`CollectorShortInfoResponse`](crate::model::CollectorShortInfoResponse)
+    pub fn builder() -> crate::model::collector_short_info_response::Builder {
+        crate::model::collector_short_info_response::Builder::default()
+    }
+}
+
+/// <p>Describes an inventory database instance for a Fleet Advisor collector.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DatabaseInstanceSoftwareDetailsResponse {
+    /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
+    pub engine: std::option::Option<std::string::String>,
+    /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
+    pub engine_version: std::option::Option<std::string::String>,
+    /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
+    pub engine_edition: std::option::Option<std::string::String>,
+    /// <p>The service pack level of the database.</p>
+    pub service_pack: std::option::Option<std::string::String>,
+    /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
+    pub support_level: std::option::Option<std::string::String>,
+    /// <p>The operating system architecture of the database.</p>
+    pub os_architecture: std::option::Option<i32>,
+    /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
+    pub tooltip: std::option::Option<std::string::String>,
+}
+impl DatabaseInstanceSoftwareDetailsResponse {
+    /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
+    pub fn engine_edition(&self) -> std::option::Option<&str> {
+        self.engine_edition.as_deref()
+    }
+    /// <p>The service pack level of the database.</p>
+    pub fn service_pack(&self) -> std::option::Option<&str> {
+        self.service_pack.as_deref()
+    }
+    /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
+    pub fn support_level(&self) -> std::option::Option<&str> {
+        self.support_level.as_deref()
+    }
+    /// <p>The operating system architecture of the database.</p>
+    pub fn os_architecture(&self) -> std::option::Option<i32> {
+        self.os_architecture
+    }
+    /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
+    pub fn tooltip(&self) -> std::option::Option<&str> {
+        self.tooltip.as_deref()
+    }
+}
+impl std::fmt::Debug for DatabaseInstanceSoftwareDetailsResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DatabaseInstanceSoftwareDetailsResponse");
+        formatter.field("engine", &self.engine);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("engine_edition", &self.engine_edition);
+        formatter.field("service_pack", &self.service_pack);
+        formatter.field("support_level", &self.support_level);
+        formatter.field("os_architecture", &self.os_architecture);
+        formatter.field("tooltip", &self.tooltip);
+        formatter.finish()
+    }
+}
+/// See [`DatabaseInstanceSoftwareDetailsResponse`](crate::model::DatabaseInstanceSoftwareDetailsResponse)
+pub mod database_instance_software_details_response {
+
+    /// A builder for [`DatabaseInstanceSoftwareDetailsResponse`](crate::model::DatabaseInstanceSoftwareDetailsResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) engine: std::option::Option<std::string::String>,
+        pub(crate) engine_version: std::option::Option<std::string::String>,
+        pub(crate) engine_edition: std::option::Option<std::string::String>,
+        pub(crate) service_pack: std::option::Option<std::string::String>,
+        pub(crate) support_level: std::option::Option<std::string::String>,
+        pub(crate) os_architecture: std::option::Option<i32>,
+        pub(crate) tooltip: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
+            self
+        }
+        /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
+            self
+        }
+        /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
+            self
+        }
+        /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
+            self
+        }
+        /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
+        pub fn engine_edition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_edition = Some(input.into());
+            self
+        }
+        /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
+        pub fn set_engine_edition(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_edition = input;
+            self
+        }
+        /// <p>The service pack level of the database.</p>
+        pub fn service_pack(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_pack = Some(input.into());
+            self
+        }
+        /// <p>The service pack level of the database.</p>
+        pub fn set_service_pack(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_pack = input;
+            self
+        }
+        /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
+        pub fn support_level(mut self, input: impl Into<std::string::String>) -> Self {
+            self.support_level = Some(input.into());
+            self
+        }
+        /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
+        pub fn set_support_level(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.support_level = input;
+            self
+        }
+        /// <p>The operating system architecture of the database.</p>
+        pub fn os_architecture(mut self, input: i32) -> Self {
+            self.os_architecture = Some(input);
+            self
+        }
+        /// <p>The operating system architecture of the database.</p>
+        pub fn set_os_architecture(mut self, input: std::option::Option<i32>) -> Self {
+            self.os_architecture = input;
+            self
+        }
+        /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
+        pub fn tooltip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tooltip = Some(input.into());
+            self
+        }
+        /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
+        pub fn set_tooltip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tooltip = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DatabaseInstanceSoftwareDetailsResponse`](crate::model::DatabaseInstanceSoftwareDetailsResponse)
+        pub fn build(self) -> crate::model::DatabaseInstanceSoftwareDetailsResponse {
+            crate::model::DatabaseInstanceSoftwareDetailsResponse {
+                engine: self.engine,
+                engine_version: self.engine_version,
+                engine_edition: self.engine_edition,
+                service_pack: self.service_pack,
+                support_level: self.support_level,
+                os_architecture: self.os_architecture,
+                tooltip: self.tooltip,
+            }
+        }
+    }
+}
+impl DatabaseInstanceSoftwareDetailsResponse {
+    /// Creates a new builder-style object to manufacture [`DatabaseInstanceSoftwareDetailsResponse`](crate::model::DatabaseInstanceSoftwareDetailsResponse)
+    pub fn builder() -> crate::model::database_instance_software_details_response::Builder {
+        crate::model::database_instance_software_details_response::Builder::default()
+    }
+}
+
+/// <p>Describes a Fleet Advisor collector.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CollectorResponse {
+    /// <p>The reference ID of the Fleet Advisor collector.</p>
+    pub collector_referenced_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Fleet Advisor collector .</p>
+    pub collector_name: std::option::Option<std::string::String>,
+    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+    pub collector_version: std::option::Option<std::string::String>,
+    /// <p>Whether the collector version is up to date.</p>
+    pub version_status: std::option::Option<crate::model::VersionStatus>,
+    /// <p>A summary description of the Fleet Advisor collector.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+    pub s3_bucket_name: std::option::Option<std::string::String>,
+    /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    pub service_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>Describes the last Fleet Advisor collector health check.</p>
+    pub collector_health_check: std::option::Option<crate::model::CollectorHealthCheck>,
+    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub last_data_received: std::option::Option<std::string::String>,
+    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub registered_date: std::option::Option<std::string::String>,
+    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub created_date: std::option::Option<std::string::String>,
+    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub modified_date: std::option::Option<std::string::String>,
+    /// <p>Describes a Fleet Advisor collector inventory.</p>
+    pub inventory_data: std::option::Option<crate::model::InventoryData>,
+}
+impl CollectorResponse {
+    /// <p>The reference ID of the Fleet Advisor collector.</p>
+    pub fn collector_referenced_id(&self) -> std::option::Option<&str> {
+        self.collector_referenced_id.as_deref()
+    }
+    /// <p>The name of the Fleet Advisor collector .</p>
+    pub fn collector_name(&self) -> std::option::Option<&str> {
+        self.collector_name.as_deref()
+    }
+    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+    pub fn collector_version(&self) -> std::option::Option<&str> {
+        self.collector_version.as_deref()
+    }
+    /// <p>Whether the collector version is up to date.</p>
+    pub fn version_status(&self) -> std::option::Option<&crate::model::VersionStatus> {
+        self.version_status.as_ref()
+    }
+    /// <p>A summary description of the Fleet Advisor collector.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+        self.service_access_role_arn.as_deref()
+    }
+    /// <p>Describes the last Fleet Advisor collector health check.</p>
+    pub fn collector_health_check(
+        &self,
+    ) -> std::option::Option<&crate::model::CollectorHealthCheck> {
+        self.collector_health_check.as_ref()
+    }
+    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub fn last_data_received(&self) -> std::option::Option<&str> {
+        self.last_data_received.as_deref()
+    }
+    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub fn registered_date(&self) -> std::option::Option<&str> {
+        self.registered_date.as_deref()
+    }
+    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub fn created_date(&self) -> std::option::Option<&str> {
+        self.created_date.as_deref()
+    }
+    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    pub fn modified_date(&self) -> std::option::Option<&str> {
+        self.modified_date.as_deref()
+    }
+    /// <p>Describes a Fleet Advisor collector inventory.</p>
+    pub fn inventory_data(&self) -> std::option::Option<&crate::model::InventoryData> {
+        self.inventory_data.as_ref()
+    }
+}
+impl std::fmt::Debug for CollectorResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CollectorResponse");
+        formatter.field("collector_referenced_id", &self.collector_referenced_id);
+        formatter.field("collector_name", &self.collector_name);
+        formatter.field("collector_version", &self.collector_version);
+        formatter.field("version_status", &self.version_status);
+        formatter.field("description", &self.description);
+        formatter.field("s3_bucket_name", &self.s3_bucket_name);
+        formatter.field("service_access_role_arn", &self.service_access_role_arn);
+        formatter.field("collector_health_check", &self.collector_health_check);
+        formatter.field("last_data_received", &self.last_data_received);
+        formatter.field("registered_date", &self.registered_date);
+        formatter.field("created_date", &self.created_date);
+        formatter.field("modified_date", &self.modified_date);
+        formatter.field("inventory_data", &self.inventory_data);
+        formatter.finish()
+    }
+}
+/// See [`CollectorResponse`](crate::model::CollectorResponse)
+pub mod collector_response {
+
+    /// A builder for [`CollectorResponse`](crate::model::CollectorResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collector_referenced_id: std::option::Option<std::string::String>,
+        pub(crate) collector_name: std::option::Option<std::string::String>,
+        pub(crate) collector_version: std::option::Option<std::string::String>,
+        pub(crate) version_status: std::option::Option<crate::model::VersionStatus>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
+        pub(crate) service_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) collector_health_check: std::option::Option<crate::model::CollectorHealthCheck>,
+        pub(crate) last_data_received: std::option::Option<std::string::String>,
+        pub(crate) registered_date: std::option::Option<std::string::String>,
+        pub(crate) created_date: std::option::Option<std::string::String>,
+        pub(crate) modified_date: std::option::Option<std::string::String>,
+        pub(crate) inventory_data: std::option::Option<crate::model::InventoryData>,
+    }
+    impl Builder {
+        /// <p>The reference ID of the Fleet Advisor collector.</p>
+        pub fn collector_referenced_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collector_referenced_id = Some(input.into());
+            self
+        }
+        /// <p>The reference ID of the Fleet Advisor collector.</p>
+        pub fn set_collector_referenced_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collector_referenced_id = input;
+            self
+        }
+        /// <p>The name of the Fleet Advisor collector .</p>
+        pub fn collector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collector_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Fleet Advisor collector .</p>
+        pub fn set_collector_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collector_name = input;
+            self
+        }
+        /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+        pub fn collector_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collector_version = Some(input.into());
+            self
+        }
+        /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+        pub fn set_collector_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collector_version = input;
+            self
+        }
+        /// <p>Whether the collector version is up to date.</p>
+        pub fn version_status(mut self, input: crate::model::VersionStatus) -> Self {
+            self.version_status = Some(input);
+            self
+        }
+        /// <p>Whether the collector version is up to date.</p>
+        pub fn set_version_status(
+            mut self,
+            input: std::option::Option<crate::model::VersionStatus>,
+        ) -> Self {
+            self.version_status = input;
+            self
+        }
+        /// <p>A summary description of the Fleet Advisor collector.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A summary description of the Fleet Advisor collector.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
+            self
+        }
+        /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+        pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
+        pub fn set_service_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_access_role_arn = input;
+            self
+        }
+        /// <p>Describes the last Fleet Advisor collector health check.</p>
+        pub fn collector_health_check(mut self, input: crate::model::CollectorHealthCheck) -> Self {
+            self.collector_health_check = Some(input);
+            self
+        }
+        /// <p>Describes the last Fleet Advisor collector health check.</p>
+        pub fn set_collector_health_check(
+            mut self,
+            input: std::option::Option<crate::model::CollectorHealthCheck>,
+        ) -> Self {
+            self.collector_health_check = input;
+            self
+        }
+        /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+        pub fn last_data_received(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_data_received = Some(input.into());
+            self
+        }
+        /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+        pub fn set_last_data_received(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_data_received = input;
+            self
+        }
+        /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+        pub fn registered_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registered_date = Some(input.into());
+            self
+        }
+        /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+        pub fn set_registered_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.registered_date = input;
+            self
+        }
+        /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+        pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_date = Some(input.into());
+            self
+        }
+        /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+        pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_date = input;
+            self
+        }
+        /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+        pub fn modified_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.modified_date = Some(input.into());
+            self
+        }
+        /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+        pub fn set_modified_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.modified_date = input;
+            self
+        }
+        /// <p>Describes a Fleet Advisor collector inventory.</p>
+        pub fn inventory_data(mut self, input: crate::model::InventoryData) -> Self {
+            self.inventory_data = Some(input);
+            self
+        }
+        /// <p>Describes a Fleet Advisor collector inventory.</p>
+        pub fn set_inventory_data(
+            mut self,
+            input: std::option::Option<crate::model::InventoryData>,
+        ) -> Self {
+            self.inventory_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CollectorResponse`](crate::model::CollectorResponse)
+        pub fn build(self) -> crate::model::CollectorResponse {
+            crate::model::CollectorResponse {
+                collector_referenced_id: self.collector_referenced_id,
+                collector_name: self.collector_name,
+                collector_version: self.collector_version,
+                version_status: self.version_status,
+                description: self.description,
+                s3_bucket_name: self.s3_bucket_name,
+                service_access_role_arn: self.service_access_role_arn,
+                collector_health_check: self.collector_health_check,
+                last_data_received: self.last_data_received,
+                registered_date: self.registered_date,
+                created_date: self.created_date,
+                modified_date: self.modified_date,
+                inventory_data: self.inventory_data,
+            }
+        }
+    }
+}
+impl CollectorResponse {
+    /// Creates a new builder-style object to manufacture [`CollectorResponse`](crate::model::CollectorResponse)
+    pub fn builder() -> crate::model::collector_response::Builder {
+        crate::model::collector_response::Builder::default()
+    }
+}
+
+/// <p>Describes a Fleet Advisor collector inventory.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InventoryData {
+    /// <p>The number of databases in the Fleet Advisor collector inventory.</p>
+    pub number_of_databases: std::option::Option<i32>,
+    /// <p>The number of schemas in the Fleet Advisor collector inventory.</p>
+    pub number_of_schemas: std::option::Option<i32>,
+}
+impl InventoryData {
+    /// <p>The number of databases in the Fleet Advisor collector inventory.</p>
+    pub fn number_of_databases(&self) -> std::option::Option<i32> {
+        self.number_of_databases
+    }
+    /// <p>The number of schemas in the Fleet Advisor collector inventory.</p>
+    pub fn number_of_schemas(&self) -> std::option::Option<i32> {
+        self.number_of_schemas
+    }
+}
+impl std::fmt::Debug for InventoryData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InventoryData");
+        formatter.field("number_of_databases", &self.number_of_databases);
+        formatter.field("number_of_schemas", &self.number_of_schemas);
+        formatter.finish()
+    }
+}
+/// See [`InventoryData`](crate::model::InventoryData)
+pub mod inventory_data {
+
+    /// A builder for [`InventoryData`](crate::model::InventoryData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) number_of_databases: std::option::Option<i32>,
+        pub(crate) number_of_schemas: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of databases in the Fleet Advisor collector inventory.</p>
+        pub fn number_of_databases(mut self, input: i32) -> Self {
+            self.number_of_databases = Some(input);
+            self
+        }
+        /// <p>The number of databases in the Fleet Advisor collector inventory.</p>
+        pub fn set_number_of_databases(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_databases = input;
+            self
+        }
+        /// <p>The number of schemas in the Fleet Advisor collector inventory.</p>
+        pub fn number_of_schemas(mut self, input: i32) -> Self {
+            self.number_of_schemas = Some(input);
+            self
+        }
+        /// <p>The number of schemas in the Fleet Advisor collector inventory.</p>
+        pub fn set_number_of_schemas(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_schemas = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InventoryData`](crate::model::InventoryData)
+        pub fn build(self) -> crate::model::InventoryData {
+            crate::model::InventoryData {
+                number_of_databases: self.number_of_databases,
+                number_of_schemas: self.number_of_schemas,
+            }
+        }
+    }
+}
+impl InventoryData {
+    /// Creates a new builder-style object to manufacture [`InventoryData`](crate::model::InventoryData)
+    pub fn builder() -> crate::model::inventory_data::Builder {
+        crate::model::inventory_data::Builder::default()
+    }
+}
+
+/// <p>Describes the last Fleet Advisor collector health check.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CollectorHealthCheck {
+    /// <p>The status of the Fleet Advisor collector.</p>
+    pub collector_status: std::option::Option<crate::model::CollectorStatus>,
+    /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
+    pub local_collector_s3_access: std::option::Option<bool>,
+    /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
+    pub web_collector_s3_access: std::option::Option<bool>,
+    /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
+    pub web_collector_granted_role_based_access: std::option::Option<bool>,
+}
+impl CollectorHealthCheck {
+    /// <p>The status of the Fleet Advisor collector.</p>
+    pub fn collector_status(&self) -> std::option::Option<&crate::model::CollectorStatus> {
+        self.collector_status.as_ref()
+    }
+    /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
+    pub fn local_collector_s3_access(&self) -> std::option::Option<bool> {
+        self.local_collector_s3_access
+    }
+    /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
+    pub fn web_collector_s3_access(&self) -> std::option::Option<bool> {
+        self.web_collector_s3_access
+    }
+    /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
+    pub fn web_collector_granted_role_based_access(&self) -> std::option::Option<bool> {
+        self.web_collector_granted_role_based_access
+    }
+}
+impl std::fmt::Debug for CollectorHealthCheck {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CollectorHealthCheck");
+        formatter.field("collector_status", &self.collector_status);
+        formatter.field("local_collector_s3_access", &self.local_collector_s3_access);
+        formatter.field("web_collector_s3_access", &self.web_collector_s3_access);
+        formatter.field(
+            "web_collector_granted_role_based_access",
+            &self.web_collector_granted_role_based_access,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CollectorHealthCheck`](crate::model::CollectorHealthCheck)
+pub mod collector_health_check {
+
+    /// A builder for [`CollectorHealthCheck`](crate::model::CollectorHealthCheck)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collector_status: std::option::Option<crate::model::CollectorStatus>,
+        pub(crate) local_collector_s3_access: std::option::Option<bool>,
+        pub(crate) web_collector_s3_access: std::option::Option<bool>,
+        pub(crate) web_collector_granted_role_based_access: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The status of the Fleet Advisor collector.</p>
+        pub fn collector_status(mut self, input: crate::model::CollectorStatus) -> Self {
+            self.collector_status = Some(input);
+            self
+        }
+        /// <p>The status of the Fleet Advisor collector.</p>
+        pub fn set_collector_status(
+            mut self,
+            input: std::option::Option<crate::model::CollectorStatus>,
+        ) -> Self {
+            self.collector_status = input;
+            self
+        }
+        /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
+        pub fn local_collector_s3_access(mut self, input: bool) -> Self {
+            self.local_collector_s3_access = Some(input);
+            self
+        }
+        /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
+        pub fn set_local_collector_s3_access(mut self, input: std::option::Option<bool>) -> Self {
+            self.local_collector_s3_access = input;
+            self
+        }
+        /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
+        pub fn web_collector_s3_access(mut self, input: bool) -> Self {
+            self.web_collector_s3_access = Some(input);
+            self
+        }
+        /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
+        pub fn set_web_collector_s3_access(mut self, input: std::option::Option<bool>) -> Self {
+            self.web_collector_s3_access = input;
+            self
+        }
+        /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
+        pub fn web_collector_granted_role_based_access(mut self, input: bool) -> Self {
+            self.web_collector_granted_role_based_access = Some(input);
+            self
+        }
+        /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
+        pub fn set_web_collector_granted_role_based_access(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.web_collector_granted_role_based_access = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CollectorHealthCheck`](crate::model::CollectorHealthCheck)
+        pub fn build(self) -> crate::model::CollectorHealthCheck {
+            crate::model::CollectorHealthCheck {
+                collector_status: self.collector_status,
+                local_collector_s3_access: self.local_collector_s3_access,
+                web_collector_s3_access: self.web_collector_s3_access,
+                web_collector_granted_role_based_access: self
+                    .web_collector_granted_role_based_access,
+            }
+        }
+    }
+}
+impl CollectorHealthCheck {
+    /// Creates a new builder-style object to manufacture [`CollectorHealthCheck`](crate::model::CollectorHealthCheck)
+    pub fn builder() -> crate::model::collector_health_check::Builder {
+        crate::model::collector_health_check::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CollectorStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Unregistered,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CollectorStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => CollectorStatus::Active,
+            "UNREGISTERED" => CollectorStatus::Unregistered,
+            other => CollectorStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CollectorStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CollectorStatus::from(s))
+    }
+}
+impl CollectorStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CollectorStatus::Active => "ACTIVE",
+            CollectorStatus::Unregistered => "UNREGISTERED",
+            CollectorStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "UNREGISTERED"]
+    }
+}
+impl AsRef<str> for CollectorStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VersionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Outdated,
+    #[allow(missing_docs)] // documentation missing in model
+    Unsupported,
+    #[allow(missing_docs)] // documentation missing in model
+    UpToDate,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VersionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "OUTDATED" => VersionStatus::Outdated,
+            "UNSUPPORTED" => VersionStatus::Unsupported,
+            "UP_TO_DATE" => VersionStatus::UpToDate,
+            other => VersionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VersionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VersionStatus::from(s))
+    }
+}
+impl VersionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VersionStatus::Outdated => "OUTDATED",
+            VersionStatus::Unsupported => "UNSUPPORTED",
+            VersionStatus::UpToDate => "UP_TO_DATE",
+            VersionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["OUTDATED", "UNSUPPORTED", "UP_TO_DATE"]
+    }
+}
+impl AsRef<str> for VersionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

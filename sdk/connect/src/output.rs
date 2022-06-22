@@ -219,6 +219,297 @@ impl UpdateUserHierarchyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateTaskTemplateOutput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the task template resource.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the task template.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the task template.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    pub contact_flow_id: std::option::Option<std::string::String>,
+    /// <p>Constraints that are applicable to the fields listed.</p>
+    pub constraints: std::option::Option<crate::model::TaskTemplateConstraints>,
+    /// <p>The default values for fields when a task is created by referencing this template.</p>
+    pub defaults: std::option::Option<crate::model::TaskTemplateDefaults>,
+    /// <p>Fields that are part of the template.</p>
+    pub fields: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    pub status: std::option::Option<crate::model::TaskTemplateStatus>,
+    /// <p>The timestamp when the task template was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the task template was created.</p>
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl UpdateTaskTemplateOutput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The identifier of the task template resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the task template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the task template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+    /// <p>Constraints that are applicable to the fields listed.</p>
+    pub fn constraints(&self) -> std::option::Option<&crate::model::TaskTemplateConstraints> {
+        self.constraints.as_ref()
+    }
+    /// <p>The default values for fields when a task is created by referencing this template.</p>
+    pub fn defaults(&self) -> std::option::Option<&crate::model::TaskTemplateDefaults> {
+        self.defaults.as_ref()
+    }
+    /// <p>Fields that are part of the template.</p>
+    pub fn fields(&self) -> std::option::Option<&[crate::model::TaskTemplateField]> {
+        self.fields.as_deref()
+    }
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskTemplateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp when the task template was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The timestamp when the task template was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateTaskTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateTaskTemplateOutput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("contact_flow_id", &self.contact_flow_id);
+        formatter.field("constraints", &self.constraints);
+        formatter.field("defaults", &self.defaults);
+        formatter.field("fields", &self.fields);
+        formatter.field("status", &self.status);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("created_time", &self.created_time);
+        formatter.finish()
+    }
+}
+/// See [`UpdateTaskTemplateOutput`](crate::output::UpdateTaskTemplateOutput)
+pub mod update_task_template_output {
+
+    /// A builder for [`UpdateTaskTemplateOutput`](crate::output::UpdateTaskTemplateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) contact_flow_id: std::option::Option<std::string::String>,
+        pub(crate) constraints: std::option::Option<crate::model::TaskTemplateConstraints>,
+        pub(crate) defaults: std::option::Option<crate::model::TaskTemplateDefaults>,
+        pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
+        pub(crate) status: std::option::Option<crate::model::TaskTemplateStatus>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The identifier of the task template resource.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the task template resource.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the task template.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the task template.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the task template.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the task template.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_flow_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+        pub fn set_contact_flow_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_flow_id = input;
+            self
+        }
+        /// <p>Constraints that are applicable to the fields listed.</p>
+        pub fn constraints(mut self, input: crate::model::TaskTemplateConstraints) -> Self {
+            self.constraints = Some(input);
+            self
+        }
+        /// <p>Constraints that are applicable to the fields listed.</p>
+        pub fn set_constraints(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateConstraints>,
+        ) -> Self {
+            self.constraints = input;
+            self
+        }
+        /// <p>The default values for fields when a task is created by referencing this template.</p>
+        pub fn defaults(mut self, input: crate::model::TaskTemplateDefaults) -> Self {
+            self.defaults = Some(input);
+            self
+        }
+        /// <p>The default values for fields when a task is created by referencing this template.</p>
+        pub fn set_defaults(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateDefaults>,
+        ) -> Self {
+            self.defaults = input;
+            self
+        }
+        /// Appends an item to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>Fields that are part of the template.</p>
+        pub fn fields(mut self, input: crate::model::TaskTemplateField) -> Self {
+            let mut v = self.fields.unwrap_or_default();
+            v.push(input);
+            self.fields = Some(v);
+            self
+        }
+        /// <p>Fields that are part of the template.</p>
+        pub fn set_fields(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
+        ) -> Self {
+            self.fields = input;
+            self
+        }
+        /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+        pub fn status(mut self, input: crate::model::TaskTemplateStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The timestamp when the task template was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp when the task template was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The timestamp when the task template was created.</p>
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_time = Some(input);
+            self
+        }
+        /// <p>The timestamp when the task template was created.</p>
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateTaskTemplateOutput`](crate::output::UpdateTaskTemplateOutput)
+        pub fn build(self) -> crate::output::UpdateTaskTemplateOutput {
+            crate::output::UpdateTaskTemplateOutput {
+                instance_id: self.instance_id,
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+                description: self.description,
+                contact_flow_id: self.contact_flow_id,
+                constraints: self.constraints,
+                defaults: self.defaults,
+                fields: self.fields,
+                status: self.status,
+                last_modified_time: self.last_modified_time,
+                created_time: self.created_time,
+            }
+        }
+    }
+}
+impl UpdateTaskTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTaskTemplateOutput`](crate::output::UpdateTaskTemplateOutput)
+    pub fn builder() -> crate::output::update_task_template_output::Builder {
+        crate::output::update_task_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecurityProfileOutput {}
 impl std::fmt::Debug for UpdateSecurityProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1069,6 +1360,80 @@ impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TransferContactOutput {
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    pub contact_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
+    pub contact_arn: std::option::Option<std::string::String>,
+}
+impl TransferContactOutput {
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for TransferContactOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TransferContactOutput");
+        formatter.field("contact_id", &self.contact_id);
+        formatter.field("contact_arn", &self.contact_arn);
+        formatter.finish()
+    }
+}
+/// See [`TransferContactOutput`](crate::output::TransferContactOutput)
+pub mod transfer_contact_output {
+
+    /// A builder for [`TransferContactOutput`](crate::output::TransferContactOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) contact_id: std::option::Option<std::string::String>,
+        pub(crate) contact_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the contact.</p>
+        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the contact.</p>
+        pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TransferContactOutput`](crate::output::TransferContactOutput)
+        pub fn build(self) -> crate::output::TransferContactOutput {
+            crate::output::TransferContactOutput {
+                contact_id: self.contact_id,
+                contact_arn: self.contact_arn,
+            }
+        }
+    }
+}
+impl TransferContactOutput {
+    /// Creates a new builder-style object to manufacture [`TransferContactOutput`](crate::output::TransferContactOutput)
+    pub fn builder() -> crate::output::transfer_contact_output::Builder {
+        crate::output::transfer_contact_output::Builder::default()
     }
 }
 
@@ -2150,6 +2515,98 @@ impl ListUseCasesOutput {
     /// Creates a new builder-style object to manufacture [`ListUseCasesOutput`](crate::output::ListUseCasesOutput)
     pub fn builder() -> crate::output::list_use_cases_output::Builder {
         crate::output::list_use_cases_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTaskTemplatesOutput {
+    /// <p>Provides details about a list of task templates belonging to an instance.</p>
+    pub task_templates: std::option::Option<std::vec::Vec<crate::model::TaskTemplateMetadata>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+    /// <p>This is always returned as a null in the response.</p>
+    /// </important>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTaskTemplatesOutput {
+    /// <p>Provides details about a list of task templates belonging to an instance.</p>
+    pub fn task_templates(&self) -> std::option::Option<&[crate::model::TaskTemplateMetadata]> {
+        self.task_templates.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+    /// <p>This is always returned as a null in the response.</p>
+    /// </important>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTaskTemplatesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTaskTemplatesOutput");
+        formatter.field("task_templates", &self.task_templates);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListTaskTemplatesOutput`](crate::output::ListTaskTemplatesOutput)
+pub mod list_task_templates_output {
+
+    /// A builder for [`ListTaskTemplatesOutput`](crate::output::ListTaskTemplatesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) task_templates:
+            std::option::Option<std::vec::Vec<crate::model::TaskTemplateMetadata>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `task_templates`.
+        ///
+        /// To override the contents of this collection use [`set_task_templates`](Self::set_task_templates).
+        ///
+        /// <p>Provides details about a list of task templates belonging to an instance.</p>
+        pub fn task_templates(mut self, input: crate::model::TaskTemplateMetadata) -> Self {
+            let mut v = self.task_templates.unwrap_or_default();
+            v.push(input);
+            self.task_templates = Some(v);
+            self
+        }
+        /// <p>Provides details about a list of task templates belonging to an instance.</p>
+        pub fn set_task_templates(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TaskTemplateMetadata>>,
+        ) -> Self {
+            self.task_templates = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+        /// <p>This is always returned as a null in the response.</p>
+        /// </important>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+        /// <p>This is always returned as a null in the response.</p>
+        /// </important>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTaskTemplatesOutput`](crate::output::ListTaskTemplatesOutput)
+        pub fn build(self) -> crate::output::ListTaskTemplatesOutput {
+            crate::output::ListTaskTemplatesOutput {
+                task_templates: self.task_templates,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListTaskTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTaskTemplatesOutput`](crate::output::ListTaskTemplatesOutput)
+    pub fn builder() -> crate::output::list_task_templates_output::Builder {
+        crate::output::list_task_templates_output::Builder::default()
     }
 }
 
@@ -4440,6 +4897,337 @@ impl ListAgentStatusesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTaskTemplateOutput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the task template.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the task template.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the task template.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    pub contact_flow_id: std::option::Option<std::string::String>,
+    /// <p>Constraints that are applicable to the fields listed.</p>
+    pub constraints: std::option::Option<crate::model::TaskTemplateConstraints>,
+    /// <p>The default values for fields when a task is created by referencing this template.</p>
+    pub defaults: std::option::Option<crate::model::TaskTemplateDefaults>,
+    /// <p>Fields that are part of the template.</p>
+    pub fields: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    pub status: std::option::Option<crate::model::TaskTemplateStatus>,
+    /// <p>The timestamp when the task template was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the task template was created.</p>
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetTaskTemplateOutput {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>A unique identifier for the task template.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the task template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the task template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+        self.contact_flow_id.as_deref()
+    }
+    /// <p>Constraints that are applicable to the fields listed.</p>
+    pub fn constraints(&self) -> std::option::Option<&crate::model::TaskTemplateConstraints> {
+        self.constraints.as_ref()
+    }
+    /// <p>The default values for fields when a task is created by referencing this template.</p>
+    pub fn defaults(&self) -> std::option::Option<&crate::model::TaskTemplateDefaults> {
+        self.defaults.as_ref()
+    }
+    /// <p>Fields that are part of the template.</p>
+    pub fn fields(&self) -> std::option::Option<&[crate::model::TaskTemplateField]> {
+        self.fields.as_deref()
+    }
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskTemplateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp when the task template was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The timestamp when the task template was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for GetTaskTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTaskTemplateOutput");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("contact_flow_id", &self.contact_flow_id);
+        formatter.field("constraints", &self.constraints);
+        formatter.field("defaults", &self.defaults);
+        formatter.field("fields", &self.fields);
+        formatter.field("status", &self.status);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("created_time", &self.created_time);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`GetTaskTemplateOutput`](crate::output::GetTaskTemplateOutput)
+pub mod get_task_template_output {
+
+    /// A builder for [`GetTaskTemplateOutput`](crate::output::GetTaskTemplateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) contact_flow_id: std::option::Option<std::string::String>,
+        pub(crate) constraints: std::option::Option<crate::model::TaskTemplateConstraints>,
+        pub(crate) defaults: std::option::Option<crate::model::TaskTemplateDefaults>,
+        pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
+        pub(crate) status: std::option::Option<crate::model::TaskTemplateStatus>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>A unique identifier for the task template.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the task template.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN).</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN).</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the task template.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the task template.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the task template.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the task template.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_flow_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+        pub fn set_contact_flow_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_flow_id = input;
+            self
+        }
+        /// <p>Constraints that are applicable to the fields listed.</p>
+        pub fn constraints(mut self, input: crate::model::TaskTemplateConstraints) -> Self {
+            self.constraints = Some(input);
+            self
+        }
+        /// <p>Constraints that are applicable to the fields listed.</p>
+        pub fn set_constraints(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateConstraints>,
+        ) -> Self {
+            self.constraints = input;
+            self
+        }
+        /// <p>The default values for fields when a task is created by referencing this template.</p>
+        pub fn defaults(mut self, input: crate::model::TaskTemplateDefaults) -> Self {
+            self.defaults = Some(input);
+            self
+        }
+        /// <p>The default values for fields when a task is created by referencing this template.</p>
+        pub fn set_defaults(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateDefaults>,
+        ) -> Self {
+            self.defaults = input;
+            self
+        }
+        /// Appends an item to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>Fields that are part of the template.</p>
+        pub fn fields(mut self, input: crate::model::TaskTemplateField) -> Self {
+            let mut v = self.fields.unwrap_or_default();
+            v.push(input);
+            self.fields = Some(v);
+            self
+        }
+        /// <p>Fields that are part of the template.</p>
+        pub fn set_fields(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TaskTemplateField>>,
+        ) -> Self {
+            self.fields = input;
+            self
+        }
+        /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+        pub fn status(mut self, input: crate::model::TaskTemplateStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The timestamp when the task template was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp when the task template was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The timestamp when the task template was created.</p>
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_time = Some(input);
+            self
+        }
+        /// <p>The timestamp when the task template was created.</p>
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTaskTemplateOutput`](crate::output::GetTaskTemplateOutput)
+        pub fn build(self) -> crate::output::GetTaskTemplateOutput {
+            crate::output::GetTaskTemplateOutput {
+                instance_id: self.instance_id,
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+                description: self.description,
+                contact_flow_id: self.contact_flow_id,
+                constraints: self.constraints,
+                defaults: self.defaults,
+                fields: self.fields,
+                status: self.status,
+                last_modified_time: self.last_modified_time,
+                created_time: self.created_time,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl GetTaskTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetTaskTemplateOutput`](crate::output::GetTaskTemplateOutput)
+    pub fn builder() -> crate::output::get_task_template_output::Builder {
+        crate::output::get_task_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
@@ -4584,6 +5372,89 @@ impl GetFederationTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput)
     pub fn builder() -> crate::output::get_federation_token_output::Builder {
         crate::output::get_federation_token_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCurrentUserDataOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of the user data that is returned.</p>
+    pub user_data_list: std::option::Option<std::vec::Vec<crate::model::UserData>>,
+}
+impl GetCurrentUserDataOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of the user data that is returned.</p>
+    pub fn user_data_list(&self) -> std::option::Option<&[crate::model::UserData]> {
+        self.user_data_list.as_deref()
+    }
+}
+impl std::fmt::Debug for GetCurrentUserDataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCurrentUserDataOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("user_data_list", &self.user_data_list);
+        formatter.finish()
+    }
+}
+/// See [`GetCurrentUserDataOutput`](crate::output::GetCurrentUserDataOutput)
+pub mod get_current_user_data_output {
+
+    /// A builder for [`GetCurrentUserDataOutput`](crate::output::GetCurrentUserDataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) user_data_list: std::option::Option<std::vec::Vec<crate::model::UserData>>,
+    }
+    impl Builder {
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `user_data_list`.
+        ///
+        /// To override the contents of this collection use [`set_user_data_list`](Self::set_user_data_list).
+        ///
+        /// <p>A list of the user data that is returned.</p>
+        pub fn user_data_list(mut self, input: crate::model::UserData) -> Self {
+            let mut v = self.user_data_list.unwrap_or_default();
+            v.push(input);
+            self.user_data_list = Some(v);
+            self
+        }
+        /// <p>A list of the user data that is returned.</p>
+        pub fn set_user_data_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UserData>>,
+        ) -> Self {
+            self.user_data_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCurrentUserDataOutput`](crate::output::GetCurrentUserDataOutput)
+        pub fn build(self) -> crate::output::GetCurrentUserDataOutput {
+            crate::output::GetCurrentUserDataOutput {
+                next_token: self.next_token,
+                user_data_list: self.user_data_list,
+            }
+        }
+    }
+}
+impl GetCurrentUserDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetCurrentUserDataOutput`](crate::output::GetCurrentUserDataOutput)
+    pub fn builder() -> crate::output::get_current_user_data_output::Builder {
+        crate::output::get_current_user_data_output::Builder::default()
     }
 }
 
@@ -6229,6 +7100,37 @@ impl DeleteUseCaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteTaskTemplateOutput {}
+impl std::fmt::Debug for DeleteTaskTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteTaskTemplateOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteTaskTemplateOutput`](crate::output::DeleteTaskTemplateOutput)
+pub mod delete_task_template_output {
+
+    /// A builder for [`DeleteTaskTemplateOutput`](crate::output::DeleteTaskTemplateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteTaskTemplateOutput`](crate::output::DeleteTaskTemplateOutput)
+        pub fn build(self) -> crate::output::DeleteTaskTemplateOutput {
+            crate::output::DeleteTaskTemplateOutput {}
+        }
+    }
+}
+impl DeleteTaskTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTaskTemplateOutput`](crate::output::DeleteTaskTemplateOutput)
+    pub fn builder() -> crate::output::delete_task_template_output::Builder {
+        crate::output::delete_task_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecurityProfileOutput {}
 impl std::fmt::Debug for DeleteSecurityProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6770,6 +7672,80 @@ impl CreateUseCaseOutput {
     /// Creates a new builder-style object to manufacture [`CreateUseCaseOutput`](crate::output::CreateUseCaseOutput)
     pub fn builder() -> crate::output::create_use_case_output::Builder {
         crate::output::create_use_case_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateTaskTemplateOutput {
+    /// <p>The identifier of the task template resource.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl CreateTaskTemplateOutput {
+    /// <p>The identifier of the task template resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateTaskTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateTaskTemplateOutput");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateTaskTemplateOutput`](crate::output::CreateTaskTemplateOutput)
+pub mod create_task_template_output {
+
+    /// A builder for [`CreateTaskTemplateOutput`](crate::output::CreateTaskTemplateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the task template resource.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the task template resource.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateTaskTemplateOutput`](crate::output::CreateTaskTemplateOutput)
+        pub fn build(self) -> crate::output::CreateTaskTemplateOutput {
+            crate::output::CreateTaskTemplateOutput {
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl CreateTaskTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTaskTemplateOutput`](crate::output::CreateTaskTemplateOutput)
+    pub fn builder() -> crate::output::create_task_template_output::Builder {
+        crate::output::create_task_template_output::Builder::default()
     }
 }
 

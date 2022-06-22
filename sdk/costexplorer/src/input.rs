@@ -29,13 +29,13 @@ pub mod create_anomaly_monitor_input {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.</p>
+        /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using IAM policies.</p>
         /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
         /// <ul>
         /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
         /// <li> <p>The maximum length of a key is 128 characters</p> </li>
         /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
         /// <li> <p>Keys and values are case sensitive</p> </li>
         /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
         /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -46,13 +46,13 @@ pub mod create_anomaly_monitor_input {
             self.resource_tags = Some(v);
             self
         }
-        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.</p>
+        /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using IAM policies.</p>
         /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
         /// <ul>
         /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
         /// <li> <p>The maximum length of a key is 128 characters</p> </li>
         /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
         /// <li> <p>Keys and values are case sensitive</p> </li>
         /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
         /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -218,13 +218,13 @@ pub mod create_anomaly_subscription_input {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
+        /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
         /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
         /// <ul>
         /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
         /// <li> <p>The maximum length of a key is 128 characters</p> </li>
         /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
         /// <li> <p>Keys and values are case sensitive</p> </li>
         /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
         /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -235,13 +235,13 @@ pub mod create_anomaly_subscription_input {
             self.resource_tags = Some(v);
             self
         }
-        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
+        /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
         /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
         /// <ul>
         /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
         /// <li> <p>The maximum length of a key is 128 characters</p> </li>
         /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
         /// <li> <p>Keys and values are case sensitive</p> </li>
         /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
         /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -477,13 +477,13 @@ pub mod create_cost_category_definition_input {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
+        /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
         /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
         /// <ul>
         /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
         /// <li> <p>The maximum length of a key is 128 characters</p> </li>
         /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
         /// <li> <p>Keys and values are case sensitive</p> </li>
         /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
         /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -494,13 +494,13 @@ pub mod create_cost_category_definition_input {
             self.resource_tags = Some(v);
             self
         }
-        /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
+        /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
         /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
         /// <ul>
         /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
         /// <li> <p>The maximum length of a key is 128 characters</p> </li>
         /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
         /// <li> <p>Keys and values are case sensitive</p> </li>
         /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
         /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -945,12 +945,12 @@ pub mod delete_cost_category_definition_input {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The unique identifier for your Cost Category. </p>
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cost_category_arn = Some(input.into());
             self
         }
-        /// <p> The unique identifier for your Cost Category. </p>
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1093,12 +1093,12 @@ pub mod describe_cost_category_definition_input {
         pub(crate) effective_on: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The unique identifier for your Cost Category. </p>
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cost_category_arn = Some(input.into());
             self
         }
-        /// <p> The unique identifier for your Cost Category. </p>
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1106,12 +1106,12 @@ pub mod describe_cost_category_definition_input {
             self.cost_category_arn = input;
             self
         }
-        /// <p> The date when the Cost Category was effective. </p>
+        /// <p>The date when the Cost Category was effective. </p>
         pub fn effective_on(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_on = Some(input.into());
             self
         }
-        /// <p> The date when the Cost Category was effective. </p>
+        /// <p>The date when the Cost Category was effective. </p>
         pub fn set_effective_on(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.effective_on = input;
             self
@@ -2138,7 +2138,7 @@ pub mod get_cost_and_usage_with_resources_input {
         ///
         /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
         /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
-        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
         /// </note>
         /// <p> <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2149,7 +2149,7 @@ pub mod get_cost_and_usage_with_resources_input {
         }
         /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
         /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
-        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
         /// </note>
         /// <p> <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
         pub fn set_metrics(
@@ -2337,13 +2337,13 @@ pub mod get_cost_categories_input {
     }
     impl Builder {
         /// <p>The value that you want to search the filter values for.</p>
-        /// <p>If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
+        /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
         pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.search_string = Some(input.into());
             self
         }
         /// <p>The value that you want to search the filter values for.</p>
-        /// <p>If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
+        /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
         pub fn set_search_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2409,8 +2409,8 @@ pub mod get_cost_categories_input {
         ///
         /// To override the contents of this collection use [`set_sort_by`](Self::set_sort_by).
         ///
-        /// <p>The value by which you want to sort the data.</p>
-        /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+        /// <p>The value that you sort the data by.</p>
+        /// <p>The key represents the cost and usage metrics. The following values are supported:</p>
         /// <ul>
         /// <li> <p> <code>BlendedCost</code> </p> </li>
         /// <li> <p> <code>UnblendedCost</code> </p> </li>
@@ -2420,16 +2420,16 @@ pub mod get_cost_categories_input {
         /// <li> <p> <code>UsageQuantity</code> </p> </li>
         /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+        /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+        /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             let mut v = self.sort_by.unwrap_or_default();
             v.push(input);
             self.sort_by = Some(v);
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
-        /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+        /// <p>The value that you sort the data by.</p>
+        /// <p>The key represents the cost and usage metrics. The following values are supported:</p>
         /// <ul>
         /// <li> <p> <code>BlendedCost</code> </p> </li>
         /// <li> <p> <code>UnblendedCost</code> </p> </li>
@@ -2439,8 +2439,8 @@ pub mod get_cost_categories_input {
         /// <li> <p> <code>UsageQuantity</code> </p> </li>
         /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+        /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+        /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
@@ -2448,26 +2448,26 @@ pub mod get_cost_categories_input {
             self.sort_by = input;
             self
         }
-        /// <p>This field is only used when <code>SortBy</code> is provided in the request.</p>
-        /// <p>The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
-        /// <p>For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.</p>
+        /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
+        /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
+        /// <p>For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>This field is only used when <code>SortBy</code> is provided in the request.</p>
-        /// <p>The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
-        /// <p>For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.</p>
+        /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
+        /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
+        /// <p>For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
+        /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
+        /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2929,19 +2929,19 @@ pub mod get_dimension_values_input {
         /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
         /// <ul>
         /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-        /// <li> <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that is an acting reseller for Amazon Web Services services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions built on Amazon Web Services by third-party software providers.</p> </li>
+        /// <li> <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p> </li>
         /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
         /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
         /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
         /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-        /// <li> <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (<code>C4</code>, <code>C5</code>, <code>C6g</code>, <code>C7g</code> etc.), <code>Memory Optimization</code> (<code>R4</code>, <code>R5n</code>, <code>R5b</code>, <code>R6g</code> etc).</p> </li>
-        /// <li> <p>INVOICING_ENTITY - The name of the entity issuing the Amazon Web Services invoice.</p> </li>
+        /// <li> <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li>
+        /// <li> <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p> </li>
         /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
         /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
         /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
         /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
         /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
         /// <li> <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p> </li>
         /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p> </li>
         /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p> </li>
@@ -2950,7 +2950,7 @@ pub mod get_dimension_values_input {
         /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
         /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
         /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+        /// <li> <p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p> </li>
         /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
         /// </ul>
         /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
@@ -2969,7 +2969,7 @@ pub mod get_dimension_values_input {
         /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
         /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
-        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+        /// <li> <p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p> </li>
         /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
         /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
         /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
@@ -2983,19 +2983,19 @@ pub mod get_dimension_values_input {
         /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
         /// <ul>
         /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-        /// <li> <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that is an acting reseller for Amazon Web Services services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions built on Amazon Web Services by third-party software providers.</p> </li>
+        /// <li> <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p> </li>
         /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
         /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
         /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
         /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-        /// <li> <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (<code>C4</code>, <code>C5</code>, <code>C6g</code>, <code>C7g</code> etc.), <code>Memory Optimization</code> (<code>R4</code>, <code>R5n</code>, <code>R5b</code>, <code>R6g</code> etc).</p> </li>
-        /// <li> <p>INVOICING_ENTITY - The name of the entity issuing the Amazon Web Services invoice.</p> </li>
+        /// <li> <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li>
+        /// <li> <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p> </li>
         /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
         /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
         /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
         /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
         /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
         /// <li> <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p> </li>
         /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p> </li>
         /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p> </li>
@@ -3004,7 +3004,7 @@ pub mod get_dimension_values_input {
         /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
         /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
         /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+        /// <li> <p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p> </li>
         /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
         /// </ul>
         /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
@@ -3023,7 +3023,7 @@ pub mod get_dimension_values_input {
         /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
         /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
-        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+        /// <li> <p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p> </li>
         /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
         /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
         /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
@@ -3065,7 +3065,7 @@ pub mod get_dimension_values_input {
         ///
         /// To override the contents of this collection use [`set_sort_by`](Self::set_sort_by).
         ///
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
         /// <li> <p> <code>BlendedCost</code> </p> </li>
@@ -3076,15 +3076,15 @@ pub mod get_dimension_values_input {
         /// <li> <p> <code>UsageQuantity</code> </p> </li>
         /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+        /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             let mut v = self.sort_by.unwrap_or_default();
             v.push(input);
             self.sort_by = Some(v);
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
         /// <li> <p> <code>BlendedCost</code> </p> </li>
@@ -3095,8 +3095,8 @@ pub mod get_dimension_values_input {
         /// <li> <p> <code>UsageQuantity</code> </p> </li>
         /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+        /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
@@ -3104,13 +3104,13 @@ pub mod get_dimension_values_input {
             self.sort_by = input;
             self
         }
-        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
+        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
         /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
+        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
         /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
@@ -3631,12 +3631,12 @@ pub mod get_reservation_purchase_recommendation_input {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID that is associated with the recommendation. </p>
+        /// <p>The account ID that's associated with the recommendation. </p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID that is associated with the recommendation. </p>
+        /// <p>The account ID that's associated with the recommendation. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3919,12 +3919,12 @@ pub mod get_reservation_utilization_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+        /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
             self.time_period = Some(input);
             self
         }
-        /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+        /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -4004,7 +4004,7 @@ pub mod get_reservation_utilization_input {
             self.filter = input;
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -4025,12 +4025,12 @@ pub mod get_reservation_utilization_input {
         /// <li> <p> <code>RealizedSavings</code> </p> </li>
         /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -4051,7 +4051,7 @@ pub mod get_reservation_utilization_input {
         /// <li> <p> <code>RealizedSavings</code> </p> </li>
         /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortDefinition>,
@@ -4257,7 +4257,7 @@ pub mod get_rightsizing_recommendation_input {
             self.filter = input;
             self
         }
-        /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+        /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
         pub fn configuration(
             mut self,
             input: crate::model::RightsizingRecommendationConfiguration,
@@ -4265,7 +4265,7 @@ pub mod get_rightsizing_recommendation_input {
             self.configuration = Some(input);
             self
         }
-        /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+        /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
@@ -4563,7 +4563,7 @@ pub mod get_savings_plans_coverage_input {
             self.max_results = input;
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li>
@@ -4574,12 +4574,12 @@ pub mod get_savings_plans_coverage_input {
         /// <li> <p> <code>Region</code> </p> </li>
         /// <li> <p> <code>Service</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li>
@@ -4590,7 +4590,7 @@ pub mod get_savings_plans_coverage_input {
         /// <li> <p> <code>Region</code> </p> </li>
         /// <li> <p> <code>Service</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortDefinition>,
@@ -4748,7 +4748,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
         pub(crate) filter: std::option::Option<crate::model::Expression>,
     }
     impl Builder {
-        /// <p>The Savings Plans recommendation type requested.</p>
+        /// <p>The Savings Plans recommendation type that's requested.</p>
         pub fn savings_plans_type(
             mut self,
             input: crate::model::SupportedSavingsPlansType,
@@ -4756,7 +4756,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.savings_plans_type = Some(input);
             self
         }
-        /// <p>The Savings Plans recommendation type requested.</p>
+        /// <p>The Savings Plans recommendation type that's requested.</p>
         pub fn set_savings_plans_type(
             mut self,
             input: std::option::Option<crate::model::SupportedSavingsPlansType>,
@@ -4764,12 +4764,12 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.savings_plans_type = input;
             self
         }
-        /// <p>The savings plan recommendation term used to generate these recommendations.</p>
+        /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
         pub fn term_in_years(mut self, input: crate::model::TermInYears) -> Self {
             self.term_in_years = Some(input);
             self
         }
-        /// <p>The savings plan recommendation term used to generate these recommendations.</p>
+        /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
         pub fn set_term_in_years(
             mut self,
             input: std::option::Option<crate::model::TermInYears>,
@@ -4777,12 +4777,12 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.term_in_years = input;
             self
         }
-        /// <p>The payment option used to generate these recommendations.</p>
+        /// <p>The payment option that's used to generate these recommendations.</p>
         pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
             self.payment_option = Some(input);
             self
         }
-        /// <p>The payment option used to generate these recommendations.</p>
+        /// <p>The payment option that's used to generate these recommendations.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::PaymentOption>,
@@ -4826,7 +4826,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.page_size = input;
             self
         }
-        /// <p>The lookback period used to generate the recommendation.</p>
+        /// <p>The lookback period that's used to generate the recommendation.</p>
         pub fn lookback_period_in_days(
             mut self,
             input: crate::model::LookbackPeriodInDays,
@@ -4834,7 +4834,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.lookback_period_in_days = Some(input);
             self
         }
-        /// <p>The lookback period used to generate the recommendation.</p>
+        /// <p>The lookback period that's used to generate the recommendation.</p>
         pub fn set_lookback_period_in_days(
             mut self,
             input: std::option::Option<crate::model::LookbackPeriodInDays>,
@@ -4842,14 +4842,14 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.lookback_period_in_days = input;
             self
         }
-        /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.</p>
-        /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.</p>
+        /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
+        /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.</p>
-        /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.</p>
+        /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
+        /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -5054,7 +5054,7 @@ pub mod get_savings_plans_utilization_input {
             self.filter = input;
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -5063,12 +5063,12 @@ pub mod get_savings_plans_utilization_input {
         /// <li> <p> <code>UnusedCommitment</code> </p> </li>
         /// <li> <p> <code>NetSavings</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -5077,7 +5077,7 @@ pub mod get_savings_plans_utilization_input {
         /// <li> <p> <code>UnusedCommitment</code> </p> </li>
         /// <li> <p> <code>NetSavings</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortDefinition>,
@@ -5305,7 +5305,7 @@ pub mod get_savings_plans_utilization_details_input {
             self.max_results = input;
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -5316,12 +5316,12 @@ pub mod get_savings_plans_utilization_details_input {
         /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li>
         /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -5332,7 +5332,7 @@ pub mod get_savings_plans_utilization_details_input {
         /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li>
         /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortDefinition>,
@@ -5553,7 +5553,7 @@ pub mod get_tags_input {
         ///
         /// To override the contents of this collection use [`set_sort_by`](Self::set_sort_by).
         ///
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
         /// <li> <p> <code>BlendedCost</code> </p> </li>
@@ -5564,15 +5564,15 @@ pub mod get_tags_input {
         /// <li> <p> <code>UsageQuantity</code> </p> </li>
         /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+        /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             let mut v = self.sort_by.unwrap_or_default();
             v.push(input);
             self.sort_by = Some(v);
             self
         }
-        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The value that you want to sort the data by.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
         /// <li> <p> <code>BlendedCost</code> </p> </li>
@@ -5583,8 +5583,8 @@ pub mod get_tags_input {
         /// <li> <p> <code>UsageQuantity</code> </p> </li>
         /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
-        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+        /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+        /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
@@ -5592,14 +5592,14 @@ pub mod get_tags_input {
             self.sort_by = input;
             self
         }
-        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
-        /// <p>For <code>GetTags</code>, MaxResults has an upper limit of 1000.</p>
+        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
+        /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
-        /// <p>For <code>GetTags</code>, MaxResults has an upper limit of 1000.</p>
+        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
+        /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5756,12 +5756,12 @@ pub mod get_usage_forecast_input {
         pub(crate) prediction_interval_level: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
+        /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
             self.time_period = Some(input);
             self
         }
-        /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
+        /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -5864,12 +5864,12 @@ pub mod get_usage_forecast_input {
             self.filter = input;
             self
         }
-        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+        /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
         pub fn prediction_interval_level(mut self, input: i32) -> Self {
             self.prediction_interval_level = Some(input);
             self
         }
-        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+        /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
         pub fn set_prediction_interval_level(mut self, input: std::option::Option<i32>) -> Self {
             self.prediction_interval_level = input;
             self
@@ -6001,6 +6001,214 @@ impl GetUsageForecastInput {
     }
 }
 
+/// See [`ListCostAllocationTagsInput`](crate::input::ListCostAllocationTagsInput)
+pub mod list_cost_allocation_tags_input {
+
+    /// A builder for [`ListCostAllocationTagsInput`](crate::input::ListCostAllocationTagsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::CostAllocationTagStatus>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) r#type: std::option::Option<crate::model::CostAllocationTagType>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+        pub fn status(mut self, input: crate::model::CostAllocationTagStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CostAllocationTagStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tag_keys.unwrap_or_default();
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
+        }
+        /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
+        }
+        /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+        pub fn r#type(mut self, input: crate::model::CostAllocationTagType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::CostAllocationTagType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCostAllocationTagsInput`](crate::input::ListCostAllocationTagsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListCostAllocationTagsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListCostAllocationTagsInput {
+                status: self.status,
+                tag_keys: self.tag_keys,
+                r#type: self.r#type,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListCostAllocationTagsInputOperationOutputAlias = crate::operation::ListCostAllocationTags;
+#[doc(hidden)]
+pub type ListCostAllocationTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListCostAllocationTagsInput {
+    /// Consumes the builder and constructs an Operation<[`ListCostAllocationTags`](crate::operation::ListCostAllocationTags)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCostAllocationTags,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCostAllocationTagsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCostAllocationTagsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSInsightsIndexService.ListCostAllocationTags",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_cost_allocation_tags(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCostAllocationTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCostAllocationTags",
+            "costexplorer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsInput`](crate::input::ListCostAllocationTagsInput)
+    pub fn builder() -> crate::input::list_cost_allocation_tags_input::Builder {
+        crate::input::list_cost_allocation_tags_input::Builder::default()
+    }
+}
+
 /// See [`ListCostCategoryDefinitionsInput`](crate::input::ListCostCategoryDefinitionsInput)
 pub mod list_cost_category_definitions_input {
 
@@ -6013,32 +6221,32 @@ pub mod list_cost_category_definitions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> The date when the Cost Category was effective. </p>
+        /// <p>The date when the Cost Category was effective. </p>
         pub fn effective_on(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_on = Some(input.into());
             self
         }
-        /// <p> The date when the Cost Category was effective. </p>
+        /// <p>The date when the Cost Category was effective. </p>
         pub fn set_effective_on(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.effective_on = input;
             self
         }
-        /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The number of entries a paginated response contains. </p>
+        /// <p>The number of entries a paginated response contains. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p> The number of entries a paginated response contains. </p>
+        /// <p>The number of entries a paginated response contains. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6504,7 +6712,7 @@ pub mod tag_resource_input {
         /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
         /// <li> <p>The maximum length of a key is 128 characters</p> </li>
         /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
         /// <li> <p>Keys and values are case sensitive</p> </li>
         /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
         /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -6521,7 +6729,7 @@ pub mod tag_resource_input {
         /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
         /// <li> <p>The maximum length of a key is 128 characters</p> </li>
         /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-        /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+        /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
         /// <li> <p>Keys and values are case sensitive</p> </li>
         /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
         /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -6668,12 +6876,12 @@ pub mod untag_resource_input {
         pub(crate) resource_tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6682,14 +6890,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_resource_tag_keys`](Self::set_resource_tag_keys).
         ///
-        /// <p> A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
+        /// <p>A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
         pub fn resource_tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_tag_keys.unwrap_or_default();
             v.push(input.into());
             self.resource_tag_keys = Some(v);
             self
         }
-        /// <p> A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
+        /// <p>A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
         pub fn set_resource_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7211,6 +7419,163 @@ impl UpdateAnomalySubscriptionInput {
     }
 }
 
+/// See [`UpdateCostAllocationTagsStatusInput`](crate::input::UpdateCostAllocationTagsStatusInput)
+pub mod update_cost_allocation_tags_status_input {
+
+    /// A builder for [`UpdateCostAllocationTagsStatusInput`](crate::input::UpdateCostAllocationTagsStatusInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cost_allocation_tags_status:
+            std::option::Option<std::vec::Vec<crate::model::CostAllocationTagStatusEntry>>,
+    }
+    impl Builder {
+        /// Appends an item to `cost_allocation_tags_status`.
+        ///
+        /// To override the contents of this collection use [`set_cost_allocation_tags_status`](Self::set_cost_allocation_tags_status).
+        ///
+        /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+        pub fn cost_allocation_tags_status(
+            mut self,
+            input: crate::model::CostAllocationTagStatusEntry,
+        ) -> Self {
+            let mut v = self.cost_allocation_tags_status.unwrap_or_default();
+            v.push(input);
+            self.cost_allocation_tags_status = Some(v);
+            self
+        }
+        /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+        pub fn set_cost_allocation_tags_status(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CostAllocationTagStatusEntry>>,
+        ) -> Self {
+            self.cost_allocation_tags_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusInput`](crate::input::UpdateCostAllocationTagsStatusInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateCostAllocationTagsStatusInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateCostAllocationTagsStatusInput {
+                cost_allocation_tags_status: self.cost_allocation_tags_status,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateCostAllocationTagsStatusInputOperationOutputAlias =
+    crate::operation::UpdateCostAllocationTagsStatus;
+#[doc(hidden)]
+pub type UpdateCostAllocationTagsStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateCostAllocationTagsStatusInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateCostAllocationTagsStatus`](crate::operation::UpdateCostAllocationTagsStatus)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateCostAllocationTagsStatus,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateCostAllocationTagsStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateCostAllocationTagsStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSInsightsIndexService.UpdateCostAllocationTagsStatus",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_cost_allocation_tags_status(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateCostAllocationTagsStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateCostAllocationTagsStatus",
+            "costexplorer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusInput`](crate::input::UpdateCostAllocationTagsStatusInput)
+    pub fn builder() -> crate::input::update_cost_allocation_tags_status_input::Builder {
+        crate::input::update_cost_allocation_tags_status_input::Builder::default()
+    }
+}
+
 /// See [`UpdateCostCategoryDefinitionInput`](crate::input::UpdateCostCategoryDefinitionInput)
 pub mod update_cost_category_definition_input {
 
@@ -7489,6 +7854,33 @@ impl std::fmt::Debug for UpdateCostCategoryDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateCostAllocationTagsStatusInput {
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    pub cost_allocation_tags_status:
+        std::option::Option<std::vec::Vec<crate::model::CostAllocationTagStatusEntry>>,
+}
+impl UpdateCostAllocationTagsStatusInput {
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    pub fn cost_allocation_tags_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::CostAllocationTagStatusEntry]> {
+        self.cost_allocation_tags_status.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateCostAllocationTagsStatusInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateCostAllocationTagsStatusInput");
+        formatter.field(
+            "cost_allocation_tags_status",
+            &self.cost_allocation_tags_status,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalySubscriptionInput {
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
     pub subscription_arn: std::option::Option<std::string::String>,
@@ -7574,17 +7966,17 @@ impl std::fmt::Debug for UpdateAnomalyMonitorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p> The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p> A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
+    /// <p>A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
     pub resource_tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p> The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p> A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that does not exist, it is ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
+    /// <p>A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
     pub fn resource_tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_tag_keys.as_deref()
     }
@@ -7610,7 +8002,7 @@ pub struct TagResourceInput {
     /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
     /// <li> <p>The maximum length of a key is 128 characters</p> </li>
     /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
     /// <li> <p>Keys and values are case sensitive</p> </li>
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -7628,7 +8020,7 @@ impl TagResourceInput {
     /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
     /// <li> <p>The maximum length of a key is 128 characters</p> </li>
     /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
     /// <li> <p>Keys and values are case sensitive</p> </li>
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -7699,23 +8091,23 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCostCategoryDefinitionsInput {
-    /// <p> The date when the Cost Category was effective. </p>
+    /// <p>The date when the Cost Category was effective. </p>
     pub effective_on: std::option::Option<std::string::String>,
-    /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The number of entries a paginated response contains. </p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListCostCategoryDefinitionsInput {
-    /// <p> The date when the Cost Category was effective. </p>
+    /// <p>The date when the Cost Category was effective. </p>
     pub fn effective_on(&self) -> std::option::Option<&str> {
         self.effective_on.as_deref()
     }
-    /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The number of entries a paginated response contains. </p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7733,8 +8125,57 @@ impl std::fmt::Debug for ListCostCategoryDefinitionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCostAllocationTagsInput {
+    /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    pub status: std::option::Option<crate::model::CostAllocationTagStatus>,
+    /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    pub r#type: std::option::Option<crate::model::CostAllocationTagType>,
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListCostAllocationTagsInput {
+    /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CostAllocationTagStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CostAllocationTagType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListCostAllocationTagsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCostAllocationTagsInput");
+        formatter.field("status", &self.status);
+        formatter.field("tag_keys", &self.tag_keys);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageForecastInput {
-    /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
+    /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>Which metric Cost Explorer uses to create your forecast.</p>
     /// <p>Valid values for a <code>GetUsageForecast</code> call are the following:</p>
@@ -7773,11 +8214,11 @@ pub struct GetUsageForecastInput {
     /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
     /// </ul>
     pub filter: std::option::Option<crate::model::Expression>,
-    /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+    /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub prediction_interval_level: std::option::Option<i32>,
 }
 impl GetUsageForecastInput {
-    /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
+    /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
     pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
         self.time_period.as_ref()
     }
@@ -7824,7 +8265,7 @@ impl GetUsageForecastInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
-    /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+    /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub fn prediction_interval_level(&self) -> std::option::Option<i32> {
         self.prediction_interval_level
     }
@@ -7862,7 +8303,7 @@ pub struct GetTagsInput {
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub filter: std::option::Option<crate::model::Expression>,
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
     /// <ul>
     /// <li> <p> <code>BlendedCost</code> </p> </li>
@@ -7873,11 +8314,11 @@ pub struct GetTagsInput {
     /// <li> <p> <code>UsageQuantity</code> </p> </li>
     /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-    /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
     pub sort_by: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
-    /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
-    /// <p>For <code>GetTags</code>, MaxResults has an upper limit of 1000.</p>
+    /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
+    /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
@@ -7908,7 +8349,7 @@ impl GetTagsInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
     /// <ul>
     /// <li> <p> <code>BlendedCost</code> </p> </li>
@@ -7919,13 +8360,13 @@ impl GetTagsInput {
     /// <li> <p> <code>UsageQuantity</code> </p> </li>
     /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-    /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
     pub fn sort_by(&self) -> std::option::Option<&[crate::model::SortDefinition]> {
         self.sort_by.as_deref()
     }
-    /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
-    /// <p>For <code>GetTags</code>, MaxResults has an upper limit of 1000.</p>
+    /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
+    /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -7970,7 +8411,7 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -7981,7 +8422,7 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li>
     /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
 }
 impl GetSavingsPlansUtilizationDetailsInput {
@@ -8013,7 +8454,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -8024,7 +8465,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
     /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li>
     /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::SortDefinition> {
         self.sort_by.as_ref()
     }
@@ -8062,7 +8503,7 @@ pub struct GetSavingsPlansUtilizationInput {
     /// </ul>
     /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub filter: std::option::Option<crate::model::Expression>,
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -8071,7 +8512,7 @@ pub struct GetSavingsPlansUtilizationInput {
     /// <li> <p> <code>UnusedCommitment</code> </p> </li>
     /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
 }
 impl GetSavingsPlansUtilizationInput {
@@ -8097,7 +8538,7 @@ impl GetSavingsPlansUtilizationInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -8106,7 +8547,7 @@ impl GetSavingsPlansUtilizationInput {
     /// <li> <p> <code>UnusedCommitment</code> </p> </li>
     /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::SortDefinition> {
         self.sort_by.as_ref()
     }
@@ -8126,11 +8567,11 @@ impl std::fmt::Debug for GetSavingsPlansUtilizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansPurchaseRecommendationInput {
-    /// <p>The Savings Plans recommendation type requested.</p>
+    /// <p>The Savings Plans recommendation type that's requested.</p>
     pub savings_plans_type: std::option::Option<crate::model::SupportedSavingsPlansType>,
-    /// <p>The savings plan recommendation term used to generate these recommendations.</p>
+    /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
     pub term_in_years: std::option::Option<crate::model::TermInYears>,
-    /// <p>The payment option used to generate these recommendations.</p>
+    /// <p>The payment option that's used to generate these recommendations.</p>
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
     pub account_scope: std::option::Option<crate::model::AccountScope>,
@@ -8138,24 +8579,24 @@ pub struct GetSavingsPlansPurchaseRecommendationInput {
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub page_size: i32,
-    /// <p>The lookback period used to generate the recommendation.</p>
+    /// <p>The lookback period that's used to generate the recommendation.</p>
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
-    /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.</p>
-    /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.</p>
+    /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
+    /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.</p>
     pub filter: std::option::Option<crate::model::Expression>,
 }
 impl GetSavingsPlansPurchaseRecommendationInput {
-    /// <p>The Savings Plans recommendation type requested.</p>
+    /// <p>The Savings Plans recommendation type that's requested.</p>
     pub fn savings_plans_type(
         &self,
     ) -> std::option::Option<&crate::model::SupportedSavingsPlansType> {
         self.savings_plans_type.as_ref()
     }
-    /// <p>The savings plan recommendation term used to generate these recommendations.</p>
+    /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
     pub fn term_in_years(&self) -> std::option::Option<&crate::model::TermInYears> {
         self.term_in_years.as_ref()
     }
-    /// <p>The payment option used to generate these recommendations.</p>
+    /// <p>The payment option that's used to generate these recommendations.</p>
     pub fn payment_option(&self) -> std::option::Option<&crate::model::PaymentOption> {
         self.payment_option.as_ref()
     }
@@ -8171,14 +8612,14 @@ impl GetSavingsPlansPurchaseRecommendationInput {
     pub fn page_size(&self) -> i32 {
         self.page_size
     }
-    /// <p>The lookback period used to generate the recommendation.</p>
+    /// <p>The lookback period that's used to generate the recommendation.</p>
     pub fn lookback_period_in_days(
         &self,
     ) -> std::option::Option<&crate::model::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
-    /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.</p>
-    /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.</p>
+    /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>
+    /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code> and <code>OR</code> operators are not supported.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
@@ -8225,7 +8666,7 @@ pub struct GetSavingsPlansCoverageInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li>
@@ -8236,7 +8677,7 @@ pub struct GetSavingsPlansCoverageInput {
     /// <li> <p> <code>Region</code> </p> </li>
     /// <li> <p> <code>Service</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
 }
 impl GetSavingsPlansCoverageInput {
@@ -8277,7 +8718,7 @@ impl GetSavingsPlansCoverageInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li>
@@ -8288,7 +8729,7 @@ impl GetSavingsPlansCoverageInput {
     /// <li> <p> <code>Region</code> </p> </li>
     /// <li> <p> <code>Service</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::SortDefinition> {
         self.sort_by.as_ref()
     }
@@ -8323,7 +8764,7 @@ pub struct GetRightsizingRecommendationInput {
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub filter: std::option::Option<crate::model::Expression>,
-    /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+    /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
     pub configuration: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
     /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
     pub service: std::option::Option<std::string::String>,
@@ -8346,7 +8787,7 @@ impl GetRightsizingRecommendationInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
-    /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+    /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
     pub fn configuration(
         &self,
     ) -> std::option::Option<&crate::model::RightsizingRecommendationConfiguration> {
@@ -8381,7 +8822,7 @@ impl std::fmt::Debug for GetRightsizingRecommendationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationUtilizationInput {
-    /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+    /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -8404,7 +8845,7 @@ pub struct GetReservationUtilizationInput {
     /// </ul>
     /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     pub filter: std::option::Option<crate::model::Expression>,
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -8425,7 +8866,7 @@ pub struct GetReservationUtilizationInput {
     /// <li> <p> <code>RealizedSavings</code> </p> </li>
     /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8433,7 +8874,7 @@ pub struct GetReservationUtilizationInput {
     pub max_results: std::option::Option<i32>,
 }
 impl GetReservationUtilizationInput {
-    /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+    /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
     pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
         self.time_period.as_ref()
     }
@@ -8464,7 +8905,7 @@ impl GetReservationUtilizationInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
@@ -8485,7 +8926,7 @@ impl GetReservationUtilizationInput {
     /// <li> <p> <code>RealizedSavings</code> </p> </li>
     /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::SortDefinition> {
         self.sort_by.as_ref()
     }
@@ -8516,7 +8957,7 @@ impl std::fmt::Debug for GetReservationUtilizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationPurchaseRecommendationInput {
-    /// <p>The account ID that is associated with the recommendation. </p>
+    /// <p>The account ID that's associated with the recommendation. </p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The specific service that you want recommendations for.</p>
     pub service: std::option::Option<std::string::String>,
@@ -8547,7 +8988,7 @@ pub struct GetReservationPurchaseRecommendationInput {
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetReservationPurchaseRecommendationInput {
-    /// <p>The account ID that is associated with the recommendation. </p>
+    /// <p>The account ID that's associated with the recommendation. </p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -8796,19 +9237,19 @@ pub struct GetDimensionValuesInput {
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
     /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-    /// <li> <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that is an acting reseller for Amazon Web Services services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions built on Amazon Web Services by third-party software providers.</p> </li>
+    /// <li> <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p> </li>
     /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
     /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
     /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
     /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-    /// <li> <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (<code>C4</code>, <code>C5</code>, <code>C6g</code>, <code>C7g</code> etc.), <code>Memory Optimization</code> (<code>R4</code>, <code>R5n</code>, <code>R5b</code>, <code>R6g</code> etc).</p> </li>
-    /// <li> <p>INVOICING_ENTITY - The name of the entity issuing the Amazon Web Services invoice.</p> </li>
+    /// <li> <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li>
+    /// <li> <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p> </li>
     /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
     /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
     /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
     /// <li> <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p> </li>
     /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p> </li>
@@ -8817,7 +9258,7 @@ pub struct GetDimensionValuesInput {
     /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
     /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
     /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-    /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+    /// <li> <p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p> </li>
     /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
     /// </ul>
     /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
@@ -8836,7 +9277,7 @@ pub struct GetDimensionValuesInput {
     /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
     /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
-    /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+    /// <li> <p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p> </li>
     /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
     /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
@@ -8854,7 +9295,7 @@ pub struct GetDimensionValuesInput {
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub filter: std::option::Option<crate::model::Expression>,
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
     /// <ul>
     /// <li> <p> <code>BlendedCost</code> </p> </li>
@@ -8865,10 +9306,10 @@ pub struct GetDimensionValuesInput {
     /// <li> <p> <code>UsageQuantity</code> </p> </li>
     /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-    /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+    /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
     pub sort_by: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
-    /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
+    /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -8891,19 +9332,19 @@ impl GetDimensionValuesInput {
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
     /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-    /// <li> <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that is an acting reseller for Amazon Web Services services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions built on Amazon Web Services by third-party software providers.</p> </li>
+    /// <li> <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p> </li>
     /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
     /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
     /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
     /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-    /// <li> <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (<code>C4</code>, <code>C5</code>, <code>C6g</code>, <code>C7g</code> etc.), <code>Memory Optimization</code> (<code>R4</code>, <code>R5n</code>, <code>R5b</code>, <code>R6g</code> etc).</p> </li>
-    /// <li> <p>INVOICING_ENTITY - The name of the entity issuing the Amazon Web Services invoice.</p> </li>
+    /// <li> <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p> </li>
+    /// <li> <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p> </li>
     /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
     /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
     /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
     /// <li> <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p> </li>
     /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p> </li>
@@ -8912,7 +9353,7 @@ impl GetDimensionValuesInput {
     /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
     /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
     /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-    /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+    /// <li> <p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p> </li>
     /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
     /// </ul>
     /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
@@ -8931,7 +9372,7 @@ impl GetDimensionValuesInput {
     /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
     /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
-    /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+    /// <li> <p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p> </li>
     /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
     /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
@@ -8953,7 +9394,7 @@ impl GetDimensionValuesInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
-    /// <p>The value by which you want to sort the data.</p>
+    /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
     /// <ul>
     /// <li> <p> <code>BlendedCost</code> </p> </li>
@@ -8964,12 +9405,12 @@ impl GetDimensionValuesInput {
     /// <li> <p> <code>UsageQuantity</code> </p> </li>
     /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-    /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+    /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+    /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
     pub fn sort_by(&self) -> std::option::Option<&[crate::model::SortDefinition]> {
         self.sort_by.as_deref()
     }
-    /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
+    /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
@@ -9116,7 +9557,7 @@ impl std::fmt::Debug for GetCostForecastInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostCategoriesInput {
     /// <p>The value that you want to search the filter values for.</p>
-    /// <p>If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
+    /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
     pub search_string: std::option::Option<std::string::String>,
     /// <p>The time period of the request. </p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
@@ -9133,8 +9574,8 @@ pub struct GetCostCategoriesInput {
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub filter: std::option::Option<crate::model::Expression>,
-    /// <p>The value by which you want to sort the data.</p>
-    /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+    /// <p>The value that you sort the data by.</p>
+    /// <p>The key represents the cost and usage metrics. The following values are supported:</p>
     /// <ul>
     /// <li> <p> <code>BlendedCost</code> </p> </li>
     /// <li> <p> <code>UnblendedCost</code> </p> </li>
@@ -9144,19 +9585,19 @@ pub struct GetCostCategoriesInput {
     /// <li> <p> <code>UsageQuantity</code> </p> </li>
     /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-    /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+    /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
     pub sort_by: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
-    /// <p>This field is only used when <code>SortBy</code> is provided in the request.</p>
-    /// <p>The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
-    /// <p>For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.</p>
+    /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
+    /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
+    /// <p>For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.</p>
     pub max_results: i32,
-    /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
+    /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetCostCategoriesInput {
     /// <p>The value that you want to search the filter values for.</p>
-    /// <p>If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
+    /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
     pub fn search_string(&self) -> std::option::Option<&str> {
         self.search_string.as_deref()
     }
@@ -9181,8 +9622,8 @@ impl GetCostCategoriesInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
-    /// <p>The value by which you want to sort the data.</p>
-    /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+    /// <p>The value that you sort the data by.</p>
+    /// <p>The key represents the cost and usage metrics. The following values are supported:</p>
     /// <ul>
     /// <li> <p> <code>BlendedCost</code> </p> </li>
     /// <li> <p> <code>UnblendedCost</code> </p> </li>
@@ -9192,18 +9633,18 @@ impl GetCostCategoriesInput {
     /// <li> <p> <code>UsageQuantity</code> </p> </li>
     /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
     /// </ul>
-    /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-    /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+    /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
     pub fn sort_by(&self) -> std::option::Option<&[crate::model::SortDefinition]> {
         self.sort_by.as_deref()
     }
-    /// <p>This field is only used when <code>SortBy</code> is provided in the request.</p>
-    /// <p>The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
-    /// <p>For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.</p>
+    /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
+    /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
+    /// <p>For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
+    /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -9237,7 +9678,7 @@ pub struct GetCostAndUsageWithResourcesInput {
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
-    /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+    /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
     /// </note>
     /// <p> <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9264,7 +9705,7 @@ impl GetCostAndUsageWithResourcesInput {
     }
     /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
-    /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+    /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
     /// </note>
     /// <p> <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
     pub fn metrics(&self) -> std::option::Option<&[std::string::String]> {
@@ -9501,17 +9942,17 @@ impl std::fmt::Debug for GetAnomaliesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCostCategoryDefinitionInput {
-    /// <p> The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p> The date when the Cost Category was effective. </p>
+    /// <p>The date when the Cost Category was effective. </p>
     pub effective_on: std::option::Option<std::string::String>,
 }
 impl DescribeCostCategoryDefinitionInput {
-    /// <p> The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p> The date when the Cost Category was effective. </p>
+    /// <p>The date when the Cost Category was effective. </p>
     pub fn effective_on(&self) -> std::option::Option<&str> {
         self.effective_on.as_deref()
     }
@@ -9529,11 +9970,11 @@ impl std::fmt::Debug for DescribeCostCategoryDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCostCategoryDefinitionInput {
-    /// <p> The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub cost_category_arn: std::option::Option<std::string::String>,
 }
 impl DeleteCostCategoryDefinitionInput {
-    /// <p> The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
@@ -9603,13 +10044,13 @@ pub struct CreateCostCategoryDefinitionInput {
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
     pub split_charge_rules:
         std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
-    /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
     /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
     /// <li> <p>The maximum length of a key is 128 characters</p> </li>
     /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
     /// <li> <p>Keys and values are case sensitive</p> </li>
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -9639,13 +10080,13 @@ impl CreateCostCategoryDefinitionInput {
     ) -> std::option::Option<&[crate::model::CostCategorySplitChargeRule]> {
         self.split_charge_rules.as_deref()
     }
-    /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
     /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
     /// <li> <p>The maximum length of a key is 128 characters</p> </li>
     /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
     /// <li> <p>Keys and values are case sensitive</p> </li>
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -9673,13 +10114,13 @@ impl std::fmt::Debug for CreateCostCategoryDefinitionInput {
 pub struct CreateAnomalySubscriptionInput {
     /// <p>The cost anomaly subscription object that you want to create. </p>
     pub anomaly_subscription: std::option::Option<crate::model::AnomalySubscription>,
-    /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
     /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
     /// <li> <p>The maximum length of a key is 128 characters</p> </li>
     /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
     /// <li> <p>Keys and values are case sensitive</p> </li>
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -9691,13 +10132,13 @@ impl CreateAnomalySubscriptionInput {
     pub fn anomaly_subscription(&self) -> std::option::Option<&crate::model::AnomalySubscription> {
         self.anomaly_subscription.as_ref()
     }
-    /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
     /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
     /// <li> <p>The maximum length of a key is 128 characters</p> </li>
     /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
     /// <li> <p>Keys and values are case sensitive</p> </li>
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -9721,13 +10162,13 @@ impl std::fmt::Debug for CreateAnomalySubscriptionInput {
 pub struct CreateAnomalyMonitorInput {
     /// <p>The cost anomaly detection monitor object that you want to create.</p>
     pub anomaly_monitor: std::option::Option<crate::model::AnomalyMonitor>,
-    /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.</p>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
     /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
     /// <li> <p>The maximum length of a key is 128 characters</p> </li>
     /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
     /// <li> <p>Keys and values are case sensitive</p> </li>
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
@@ -9739,13 +10180,13 @@ impl CreateAnomalyMonitorInput {
     pub fn anomaly_monitor(&self) -> std::option::Option<&crate::model::AnomalyMonitor> {
         self.anomaly_monitor.as_ref()
     }
-    /// <p> An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your monitor using IAM policies.</p>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
     /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
     /// <li> <p>The maximum length of a key is 128 characters</p> </li>
     /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces, <code>_.:/=+-</code> </p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
     /// <li> <p>Keys and values are case sensitive</p> </li>
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>

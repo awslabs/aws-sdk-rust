@@ -147,6 +147,16 @@ impl Client {
     ) -> fluent_builders::DisassociateGatewayFromServer {
         fluent_builders::DisassociateGatewayFromServer::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetGateway`](crate::client::fluent_builders::GetGateway) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::GetGateway::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::GetGateway::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    /// - On success, responds with [`GetGatewayOutput`](crate::output::GetGatewayOutput) with field(s):
+    ///   - [`gateway(Option<GatewayDetails>)`](crate::output::GetGatewayOutput::gateway): <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
+    /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::error::GetGatewayError)
+    pub fn get_gateway(&self) -> fluent_builders::GetGateway {
+        fluent_builders::GetGateway::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ImportHypervisorConfiguration`](crate::client::fluent_builders::ImportHypervisorConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -274,6 +284,16 @@ impl Client {
     pub fn update_gateway_information(&self) -> fluent_builders::UpdateGatewayInformation {
         fluent_builders::UpdateGatewayInformation::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateGatewaySoftwareNow`](crate::client::fluent_builders::UpdateGatewaySoftwareNow) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewaySoftwareNow::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::UpdateGatewaySoftwareNow::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+    /// - On success, responds with [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateGatewaySoftwareNowOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateGatewaySoftwareNowError>`](crate::error::UpdateGatewaySoftwareNowError)
+    pub fn update_gateway_software_now(&self) -> fluent_builders::UpdateGatewaySoftwareNow {
+        fluent_builders::UpdateGatewaySoftwareNow::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateHypervisor`](crate::client::fluent_builders::UpdateHypervisor) operation.
     ///
     /// - The fluent builder is configurable:
@@ -281,6 +301,7 @@ impl Client {
     ///   - [`host(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::host) / [`set_host(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_host): <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_username): <p>The updated username for the hypervisor.</p>
     ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_password): <p>The updated password for the hypervisor.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_name): <p>The updated name for the hypervisor</p>
     /// - On success, responds with [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput) with field(s):
     ///   - [`hypervisor_arn(Option<String>)`](crate::output::UpdateHypervisorOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateHypervisorError>`](crate::error::UpdateHypervisorError)
@@ -614,6 +635,59 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_gateway_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetGateway`.
+    ///
+    /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetGateway {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_gateway_input::Builder,
+    }
+    impl GetGateway {
+        /// Creates a new `GetGateway`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetGatewayOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetGatewayError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gateway_arn(input);
             self
@@ -1373,6 +1447,61 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateGatewaySoftwareNow`.
+    ///
+    /// <p>Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.</p> <note>
+    /// <p>When you make this request, you get a <code>200 OK</code> success response immediately. However, it might take some time for the update to complete.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateGatewaySoftwareNow {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_gateway_software_now_input::Builder,
+    }
+    impl UpdateGatewaySoftwareNow {
+        /// Creates a new `UpdateGatewaySoftwareNow`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateGatewaySoftwareNowOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateGatewaySoftwareNowError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_gateway_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateHypervisor`.
     ///
     /// <p>Updates a hypervisor metadata, including its host, username, and password. Specify which hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your request.</p>
@@ -1456,6 +1585,16 @@ pub mod fluent_builders {
         /// <p>The updated password for the hypervisor.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_password(input);
+            self
+        }
+        /// <p>The updated name for the hypervisor</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The updated name for the hypervisor</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }

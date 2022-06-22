@@ -1589,6 +1589,8 @@ pub struct Member {
     pub invited_at: std::option::Option<std::string::String>,
     /// <p>The last-updated timestamp of the member.</p>
     pub updated_at: std::option::Option<std::string::String>,
+    /// <p>The administrator account ID.</p>
+    pub administrator_id: std::option::Option<std::string::String>,
 }
 impl Member {
     /// <p>The ID of the member account.</p>
@@ -1619,6 +1621,10 @@ impl Member {
     pub fn updated_at(&self) -> std::option::Option<&str> {
         self.updated_at.as_deref()
     }
+    /// <p>The administrator account ID.</p>
+    pub fn administrator_id(&self) -> std::option::Option<&str> {
+        self.administrator_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Member {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1630,6 +1636,7 @@ impl std::fmt::Debug for Member {
         formatter.field("relationship_status", &self.relationship_status);
         formatter.field("invited_at", &self.invited_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("administrator_id", &self.administrator_id);
         formatter.finish()
     }
 }
@@ -1647,6 +1654,7 @@ pub mod member {
         pub(crate) relationship_status: std::option::Option<std::string::String>,
         pub(crate) invited_at: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<std::string::String>,
+        pub(crate) administrator_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the member account.</p>
@@ -1722,6 +1730,19 @@ pub mod member {
             self.updated_at = input;
             self
         }
+        /// <p>The administrator account ID.</p>
+        pub fn administrator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.administrator_id = Some(input.into());
+            self
+        }
+        /// <p>The administrator account ID.</p>
+        pub fn set_administrator_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.administrator_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Member`](crate::model::Member)
         pub fn build(self) -> crate::model::Member {
             crate::model::Member {
@@ -1732,6 +1753,7 @@ pub mod member {
                 relationship_status: self.relationship_status,
                 invited_at: self.invited_at,
                 updated_at: self.updated_at,
+                administrator_id: self.administrator_id,
             }
         }
     }
@@ -2865,6 +2887,342 @@ impl ThreatIntelSetFormat {
 impl AsRef<str> for ThreatIntelSetFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Provides details of the GuardDuty member account that uses a free trial service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccountFreeTrialInfo {
+    /// <p>The account identifier of the GuardDuty member account.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>Describes the data source enabled for the GuardDuty member account.</p>
+    pub data_sources: std::option::Option<crate::model::DataSourcesFreeTrial>,
+}
+impl AccountFreeTrialInfo {
+    /// <p>The account identifier of the GuardDuty member account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Describes the data source enabled for the GuardDuty member account.</p>
+    pub fn data_sources(&self) -> std::option::Option<&crate::model::DataSourcesFreeTrial> {
+        self.data_sources.as_ref()
+    }
+}
+impl std::fmt::Debug for AccountFreeTrialInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccountFreeTrialInfo");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("data_sources", &self.data_sources);
+        formatter.finish()
+    }
+}
+/// See [`AccountFreeTrialInfo`](crate::model::AccountFreeTrialInfo)
+pub mod account_free_trial_info {
+
+    /// A builder for [`AccountFreeTrialInfo`](crate::model::AccountFreeTrialInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) data_sources: std::option::Option<crate::model::DataSourcesFreeTrial>,
+    }
+    impl Builder {
+        /// <p>The account identifier of the GuardDuty member account.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The account identifier of the GuardDuty member account.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>Describes the data source enabled for the GuardDuty member account.</p>
+        pub fn data_sources(mut self, input: crate::model::DataSourcesFreeTrial) -> Self {
+            self.data_sources = Some(input);
+            self
+        }
+        /// <p>Describes the data source enabled for the GuardDuty member account.</p>
+        pub fn set_data_sources(
+            mut self,
+            input: std::option::Option<crate::model::DataSourcesFreeTrial>,
+        ) -> Self {
+            self.data_sources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccountFreeTrialInfo`](crate::model::AccountFreeTrialInfo)
+        pub fn build(self) -> crate::model::AccountFreeTrialInfo {
+            crate::model::AccountFreeTrialInfo {
+                account_id: self.account_id,
+                data_sources: self.data_sources,
+            }
+        }
+    }
+}
+impl AccountFreeTrialInfo {
+    /// Creates a new builder-style object to manufacture [`AccountFreeTrialInfo`](crate::model::AccountFreeTrialInfo)
+    pub fn builder() -> crate::model::account_free_trial_info::Builder {
+        crate::model::account_free_trial_info::Builder::default()
+    }
+}
+
+/// <p>Contains information about which data sources are enabled for the GuardDuty member account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourcesFreeTrial {
+    /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
+    pub cloud_trail: std::option::Option<crate::model::DataSourceFreeTrial>,
+    /// <p>Describes whether any DNS logs are enabled as data sources.</p>
+    pub dns_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
+    /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
+    pub flow_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
+    /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
+    pub s3_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
+    /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+    pub kubernetes: std::option::Option<crate::model::KubernetesDataSourceFreeTrial>,
+}
+impl DataSourcesFreeTrial {
+    /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
+    pub fn cloud_trail(&self) -> std::option::Option<&crate::model::DataSourceFreeTrial> {
+        self.cloud_trail.as_ref()
+    }
+    /// <p>Describes whether any DNS logs are enabled as data sources.</p>
+    pub fn dns_logs(&self) -> std::option::Option<&crate::model::DataSourceFreeTrial> {
+        self.dns_logs.as_ref()
+    }
+    /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
+    pub fn flow_logs(&self) -> std::option::Option<&crate::model::DataSourceFreeTrial> {
+        self.flow_logs.as_ref()
+    }
+    /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
+    pub fn s3_logs(&self) -> std::option::Option<&crate::model::DataSourceFreeTrial> {
+        self.s3_logs.as_ref()
+    }
+    /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+    pub fn kubernetes(&self) -> std::option::Option<&crate::model::KubernetesDataSourceFreeTrial> {
+        self.kubernetes.as_ref()
+    }
+}
+impl std::fmt::Debug for DataSourcesFreeTrial {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourcesFreeTrial");
+        formatter.field("cloud_trail", &self.cloud_trail);
+        formatter.field("dns_logs", &self.dns_logs);
+        formatter.field("flow_logs", &self.flow_logs);
+        formatter.field("s3_logs", &self.s3_logs);
+        formatter.field("kubernetes", &self.kubernetes);
+        formatter.finish()
+    }
+}
+/// See [`DataSourcesFreeTrial`](crate::model::DataSourcesFreeTrial)
+pub mod data_sources_free_trial {
+
+    /// A builder for [`DataSourcesFreeTrial`](crate::model::DataSourcesFreeTrial)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cloud_trail: std::option::Option<crate::model::DataSourceFreeTrial>,
+        pub(crate) dns_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
+        pub(crate) flow_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
+        pub(crate) s3_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
+        pub(crate) kubernetes: std::option::Option<crate::model::KubernetesDataSourceFreeTrial>,
+    }
+    impl Builder {
+        /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
+        pub fn cloud_trail(mut self, input: crate::model::DataSourceFreeTrial) -> Self {
+            self.cloud_trail = Some(input);
+            self
+        }
+        /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
+        pub fn set_cloud_trail(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceFreeTrial>,
+        ) -> Self {
+            self.cloud_trail = input;
+            self
+        }
+        /// <p>Describes whether any DNS logs are enabled as data sources.</p>
+        pub fn dns_logs(mut self, input: crate::model::DataSourceFreeTrial) -> Self {
+            self.dns_logs = Some(input);
+            self
+        }
+        /// <p>Describes whether any DNS logs are enabled as data sources.</p>
+        pub fn set_dns_logs(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceFreeTrial>,
+        ) -> Self {
+            self.dns_logs = input;
+            self
+        }
+        /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
+        pub fn flow_logs(mut self, input: crate::model::DataSourceFreeTrial) -> Self {
+            self.flow_logs = Some(input);
+            self
+        }
+        /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
+        pub fn set_flow_logs(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceFreeTrial>,
+        ) -> Self {
+            self.flow_logs = input;
+            self
+        }
+        /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
+        pub fn s3_logs(mut self, input: crate::model::DataSourceFreeTrial) -> Self {
+            self.s3_logs = Some(input);
+            self
+        }
+        /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
+        pub fn set_s3_logs(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceFreeTrial>,
+        ) -> Self {
+            self.s3_logs = input;
+            self
+        }
+        /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+        pub fn kubernetes(mut self, input: crate::model::KubernetesDataSourceFreeTrial) -> Self {
+            self.kubernetes = Some(input);
+            self
+        }
+        /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+        pub fn set_kubernetes(
+            mut self,
+            input: std::option::Option<crate::model::KubernetesDataSourceFreeTrial>,
+        ) -> Self {
+            self.kubernetes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourcesFreeTrial`](crate::model::DataSourcesFreeTrial)
+        pub fn build(self) -> crate::model::DataSourcesFreeTrial {
+            crate::model::DataSourcesFreeTrial {
+                cloud_trail: self.cloud_trail,
+                dns_logs: self.dns_logs,
+                flow_logs: self.flow_logs,
+                s3_logs: self.s3_logs,
+                kubernetes: self.kubernetes,
+            }
+        }
+    }
+}
+impl DataSourcesFreeTrial {
+    /// Creates a new builder-style object to manufacture [`DataSourcesFreeTrial`](crate::model::DataSourcesFreeTrial)
+    pub fn builder() -> crate::model::data_sources_free_trial::Builder {
+        crate::model::data_sources_free_trial::Builder::default()
+    }
+}
+
+/// <p>Provides details about the Kubernetes resources when it is enabled as a data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KubernetesDataSourceFreeTrial {
+    /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
+    pub audit_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
+}
+impl KubernetesDataSourceFreeTrial {
+    /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
+    pub fn audit_logs(&self) -> std::option::Option<&crate::model::DataSourceFreeTrial> {
+        self.audit_logs.as_ref()
+    }
+}
+impl std::fmt::Debug for KubernetesDataSourceFreeTrial {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KubernetesDataSourceFreeTrial");
+        formatter.field("audit_logs", &self.audit_logs);
+        formatter.finish()
+    }
+}
+/// See [`KubernetesDataSourceFreeTrial`](crate::model::KubernetesDataSourceFreeTrial)
+pub mod kubernetes_data_source_free_trial {
+
+    /// A builder for [`KubernetesDataSourceFreeTrial`](crate::model::KubernetesDataSourceFreeTrial)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) audit_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
+    }
+    impl Builder {
+        /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
+        pub fn audit_logs(mut self, input: crate::model::DataSourceFreeTrial) -> Self {
+            self.audit_logs = Some(input);
+            self
+        }
+        /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
+        pub fn set_audit_logs(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceFreeTrial>,
+        ) -> Self {
+            self.audit_logs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`KubernetesDataSourceFreeTrial`](crate::model::KubernetesDataSourceFreeTrial)
+        pub fn build(self) -> crate::model::KubernetesDataSourceFreeTrial {
+            crate::model::KubernetesDataSourceFreeTrial {
+                audit_logs: self.audit_logs,
+            }
+        }
+    }
+}
+impl KubernetesDataSourceFreeTrial {
+    /// Creates a new builder-style object to manufacture [`KubernetesDataSourceFreeTrial`](crate::model::KubernetesDataSourceFreeTrial)
+    pub fn builder() -> crate::model::kubernetes_data_source_free_trial::Builder {
+        crate::model::kubernetes_data_source_free_trial::Builder::default()
+    }
+}
+
+/// <p>Contains information about which data sources are enabled for the GuardDuty member account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceFreeTrial {
+    /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+    pub free_trial_days_remaining: i32,
+}
+impl DataSourceFreeTrial {
+    /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+    pub fn free_trial_days_remaining(&self) -> i32 {
+        self.free_trial_days_remaining
+    }
+}
+impl std::fmt::Debug for DataSourceFreeTrial {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceFreeTrial");
+        formatter.field("free_trial_days_remaining", &self.free_trial_days_remaining);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial)
+pub mod data_source_free_trial {
+
+    /// A builder for [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) free_trial_days_remaining: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+        pub fn free_trial_days_remaining(mut self, input: i32) -> Self {
+            self.free_trial_days_remaining = Some(input);
+            self
+        }
+        /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+        pub fn set_free_trial_days_remaining(mut self, input: std::option::Option<i32>) -> Self {
+            self.free_trial_days_remaining = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial)
+        pub fn build(self) -> crate::model::DataSourceFreeTrial {
+            crate::model::DataSourceFreeTrial {
+                free_trial_days_remaining: self.free_trial_days_remaining.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DataSourceFreeTrial {
+    /// Creates a new builder-style object to manufacture [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial)
+    pub fn builder() -> crate::model::data_source_free_trial::Builder {
+        crate::model::data_source_free_trial::Builder::default()
     }
 }
 
@@ -4247,6 +4605,8 @@ pub struct Service {
     pub service_name: std::option::Option<std::string::String>,
     /// <p>Feedback that was submitted about the finding.</p>
     pub user_feedback: std::option::Option<std::string::String>,
+    /// <p>Contains additional information about the generated finding.</p>
+    pub additional_info: std::option::Option<crate::model::ServiceAdditionalInfo>,
 }
 impl Service {
     /// <p>Information about the activity that is described in a finding.</p>
@@ -4289,6 +4649,10 @@ impl Service {
     pub fn user_feedback(&self) -> std::option::Option<&str> {
         self.user_feedback.as_deref()
     }
+    /// <p>Contains additional information about the generated finding.</p>
+    pub fn additional_info(&self) -> std::option::Option<&crate::model::ServiceAdditionalInfo> {
+        self.additional_info.as_ref()
+    }
 }
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4303,6 +4667,7 @@ impl std::fmt::Debug for Service {
         formatter.field("resource_role", &self.resource_role);
         formatter.field("service_name", &self.service_name);
         formatter.field("user_feedback", &self.user_feedback);
+        formatter.field("additional_info", &self.additional_info);
         formatter.finish()
     }
 }
@@ -4323,6 +4688,7 @@ pub mod service {
         pub(crate) resource_role: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) user_feedback: std::option::Option<std::string::String>,
+        pub(crate) additional_info: std::option::Option<crate::model::ServiceAdditionalInfo>,
     }
     impl Builder {
         /// <p>Information about the activity that is described in a finding.</p>
@@ -4437,6 +4803,19 @@ pub mod service {
             self.user_feedback = input;
             self
         }
+        /// <p>Contains additional information about the generated finding.</p>
+        pub fn additional_info(mut self, input: crate::model::ServiceAdditionalInfo) -> Self {
+            self.additional_info = Some(input);
+            self
+        }
+        /// <p>Contains additional information about the generated finding.</p>
+        pub fn set_additional_info(
+            mut self,
+            input: std::option::Option<crate::model::ServiceAdditionalInfo>,
+        ) -> Self {
+            self.additional_info = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Service`](crate::model::Service)
         pub fn build(self) -> crate::model::Service {
             crate::model::Service {
@@ -4450,6 +4829,7 @@ pub mod service {
                 resource_role: self.resource_role,
                 service_name: self.service_name,
                 user_feedback: self.user_feedback,
+                additional_info: self.additional_info,
             }
         }
     }
@@ -4458,6 +4838,80 @@ impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service)
     pub fn builder() -> crate::model::service::Builder {
         crate::model::service::Builder::default()
+    }
+}
+
+/// <p>Additional information about the generated finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceAdditionalInfo {
+    /// <p>This field specifies the value of the additional information.</p>
+    pub value: std::option::Option<std::string::String>,
+    /// <p>Describes the type of the additional information.</p>
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl ServiceAdditionalInfo {
+    /// <p>This field specifies the value of the additional information.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Describes the type of the additional information.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
+impl std::fmt::Debug for ServiceAdditionalInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceAdditionalInfo");
+        formatter.field("value", &self.value);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`ServiceAdditionalInfo`](crate::model::ServiceAdditionalInfo)
+pub mod service_additional_info {
+
+    /// A builder for [`ServiceAdditionalInfo`](crate::model::ServiceAdditionalInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>This field specifies the value of the additional information.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>This field specifies the value of the additional information.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>Describes the type of the additional information.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>Describes the type of the additional information.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceAdditionalInfo`](crate::model::ServiceAdditionalInfo)
+        pub fn build(self) -> crate::model::ServiceAdditionalInfo {
+            crate::model::ServiceAdditionalInfo {
+                value: self.value,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl ServiceAdditionalInfo {
+    /// Creates a new builder-style object to manufacture [`ServiceAdditionalInfo`](crate::model::ServiceAdditionalInfo)
+    pub fn builder() -> crate::model::service_additional_info::Builder {
+        crate::model::service_additional_info::Builder::default()
     }
 }
 
@@ -6019,17 +6473,31 @@ impl RemotePortDetails {
 pub struct DnsRequestAction {
     /// <p>The domain information for the API request.</p>
     pub domain: std::option::Option<std::string::String>,
+    /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
+    pub protocol: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the targeted port is blocked.</p>
+    pub blocked: bool,
 }
 impl DnsRequestAction {
     /// <p>The domain information for the API request.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
+    /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
+    pub fn protocol(&self) -> std::option::Option<&str> {
+        self.protocol.as_deref()
+    }
+    /// <p>Indicates whether the targeted port is blocked.</p>
+    pub fn blocked(&self) -> bool {
+        self.blocked
+    }
 }
 impl std::fmt::Debug for DnsRequestAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DnsRequestAction");
         formatter.field("domain", &self.domain);
+        formatter.field("protocol", &self.protocol);
+        formatter.field("blocked", &self.blocked);
         formatter.finish()
     }
 }
@@ -6041,6 +6509,8 @@ pub mod dns_request_action {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) protocol: std::option::Option<std::string::String>,
+        pub(crate) blocked: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The domain information for the API request.</p>
@@ -6053,10 +6523,32 @@ pub mod dns_request_action {
             self.domain = input;
             self
         }
+        /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
+        pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.protocol = Some(input.into());
+            self
+        }
+        /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
+        pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocol = input;
+            self
+        }
+        /// <p>Indicates whether the targeted port is blocked.</p>
+        pub fn blocked(mut self, input: bool) -> Self {
+            self.blocked = Some(input);
+            self
+        }
+        /// <p>Indicates whether the targeted port is blocked.</p>
+        pub fn set_blocked(mut self, input: std::option::Option<bool>) -> Self {
+            self.blocked = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DnsRequestAction`](crate::model::DnsRequestAction)
         pub fn build(self) -> crate::model::DnsRequestAction {
             crate::model::DnsRequestAction {
                 domain: self.domain,
+                protocol: self.protocol,
+                blocked: self.blocked.unwrap_or_default(),
             }
         }
     }
@@ -6088,6 +6580,9 @@ pub struct AwsApiCallAction {
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The details of the Amazon Web Services account that made the API call. This field appears if the call was made from outside your account.</p>
     pub remote_account_details: std::option::Option<crate::model::RemoteAccountDetails>,
+    /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
+    pub affected_resources:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AwsApiCallAction {
     /// <p>The Amazon Web Services API name.</p>
@@ -6124,6 +6619,13 @@ impl AwsApiCallAction {
     ) -> std::option::Option<&crate::model::RemoteAccountDetails> {
         self.remote_account_details.as_ref()
     }
+    /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
+    pub fn affected_resources(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.affected_resources.as_ref()
+    }
 }
 impl std::fmt::Debug for AwsApiCallAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6136,6 +6638,7 @@ impl std::fmt::Debug for AwsApiCallAction {
         formatter.field("remote_ip_details", &self.remote_ip_details);
         formatter.field("service_name", &self.service_name);
         formatter.field("remote_account_details", &self.remote_account_details);
+        formatter.field("affected_resources", &self.affected_resources);
         formatter.finish()
     }
 }
@@ -6154,6 +6657,9 @@ pub mod aws_api_call_action {
         pub(crate) remote_ip_details: std::option::Option<crate::model::RemoteIpDetails>,
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) remote_account_details: std::option::Option<crate::model::RemoteAccountDetails>,
+        pub(crate) affected_resources: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The Amazon Web Services API name.</p>
@@ -6245,6 +6751,31 @@ pub mod aws_api_call_action {
             self.remote_account_details = input;
             self
         }
+        /// Adds a key-value pair to `affected_resources`.
+        ///
+        /// To override the contents of this collection use [`set_affected_resources`](Self::set_affected_resources).
+        ///
+        /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
+        pub fn affected_resources(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.affected_resources.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.affected_resources = Some(hash_map);
+            self
+        }
+        /// <p>The details of the Amazon Web Services account that made the API call. This field identifies the resources that were affected by this API call.</p>
+        pub fn set_affected_resources(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.affected_resources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AwsApiCallAction`](crate::model::AwsApiCallAction)
         pub fn build(self) -> crate::model::AwsApiCallAction {
             crate::model::AwsApiCallAction {
@@ -6256,6 +6787,7 @@ pub mod aws_api_call_action {
                 remote_ip_details: self.remote_ip_details,
                 service_name: self.service_name,
                 remote_account_details: self.remote_account_details,
+                affected_resources: self.affected_resources,
             }
         }
     }
@@ -9651,6 +10183,124 @@ impl DetectorStatus {
 impl AsRef<str> for DetectorStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Contains information about the administrator account and invitation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Administrator {
+    /// <p>The ID of the account used as the administrator account.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The value that is used to validate the administrator account to the member account.</p>
+    pub invitation_id: std::option::Option<std::string::String>,
+    /// <p>The status of the relationship between the administrator and member accounts.</p>
+    pub relationship_status: std::option::Option<std::string::String>,
+    /// <p>The timestamp when the invitation was sent.</p>
+    pub invited_at: std::option::Option<std::string::String>,
+}
+impl Administrator {
+    /// <p>The ID of the account used as the administrator account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The value that is used to validate the administrator account to the member account.</p>
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
+        self.invitation_id.as_deref()
+    }
+    /// <p>The status of the relationship between the administrator and member accounts.</p>
+    pub fn relationship_status(&self) -> std::option::Option<&str> {
+        self.relationship_status.as_deref()
+    }
+    /// <p>The timestamp when the invitation was sent.</p>
+    pub fn invited_at(&self) -> std::option::Option<&str> {
+        self.invited_at.as_deref()
+    }
+}
+impl std::fmt::Debug for Administrator {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Administrator");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("invitation_id", &self.invitation_id);
+        formatter.field("relationship_status", &self.relationship_status);
+        formatter.field("invited_at", &self.invited_at);
+        formatter.finish()
+    }
+}
+/// See [`Administrator`](crate::model::Administrator)
+pub mod administrator {
+
+    /// A builder for [`Administrator`](crate::model::Administrator)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) invitation_id: std::option::Option<std::string::String>,
+        pub(crate) relationship_status: std::option::Option<std::string::String>,
+        pub(crate) invited_at: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the account used as the administrator account.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the account used as the administrator account.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The value that is used to validate the administrator account to the member account.</p>
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invitation_id = Some(input.into());
+            self
+        }
+        /// <p>The value that is used to validate the administrator account to the member account.</p>
+        pub fn set_invitation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invitation_id = input;
+            self
+        }
+        /// <p>The status of the relationship between the administrator and member accounts.</p>
+        pub fn relationship_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.relationship_status = Some(input.into());
+            self
+        }
+        /// <p>The status of the relationship between the administrator and member accounts.</p>
+        pub fn set_relationship_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.relationship_status = input;
+            self
+        }
+        /// <p>The timestamp when the invitation was sent.</p>
+        pub fn invited_at(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invited_at = Some(input.into());
+            self
+        }
+        /// <p>The timestamp when the invitation was sent.</p>
+        pub fn set_invited_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.invited_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Administrator`](crate::model::Administrator)
+        pub fn build(self) -> crate::model::Administrator {
+            crate::model::Administrator {
+                account_id: self.account_id,
+                invitation_id: self.invitation_id,
+                relationship_status: self.relationship_status,
+                invited_at: self.invited_at,
+            }
+        }
+    }
+}
+impl Administrator {
+    /// Creates a new builder-style object to manufacture [`Administrator`](crate::model::Administrator)
+    pub fn builder() -> crate::model::administrator::Builder {
+        crate::model::administrator::Builder::default()
     }
 }
 

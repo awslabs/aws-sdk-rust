@@ -103,6 +103,16 @@ impl Client {
     ) -> fluent_builders::AcceptEnvironmentAccountConnection {
         fluent_builders::AcceptEnvironmentAccountConnection::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CancelComponentDeployment`](crate::client::fluent_builders::CancelComponentDeployment) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`component_name(impl Into<String>)`](crate::client::fluent_builders::CancelComponentDeployment::component_name) / [`set_component_name(Option<String>)`](crate::client::fluent_builders::CancelComponentDeployment::set_component_name): <p>The name of the component with the deployment to cancel.</p>
+    /// - On success, responds with [`CancelComponentDeploymentOutput`](crate::output::CancelComponentDeploymentOutput) with field(s):
+    ///   - [`component(Option<Component>)`](crate::output::CancelComponentDeploymentOutput::component): <p>The detailed data of the component with the deployment that is being canceled.</p>
+    /// - On failure, responds with [`SdkError<CancelComponentDeploymentError>`](crate::error::CancelComponentDeploymentError)
+    pub fn cancel_component_deployment(&self) -> fluent_builders::CancelComponentDeployment {
+        fluent_builders::CancelComponentDeployment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CancelEnvironmentDeployment`](crate::client::fluent_builders::CancelEnvironmentDeployment) operation.
     ///
     /// - The fluent builder is configurable:
@@ -138,6 +148,24 @@ impl Client {
     ) -> fluent_builders::CancelServicePipelineDeployment {
         fluent_builders::CancelServicePipelineDeployment::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateComponent`](crate::client::fluent_builders::CreateComponent) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_name): <p>The customer-provided name of the component.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_description): <p>An optional customer-provided description of the component.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_service_name): <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    ///   - [`service_instance_name(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_service_instance_name): <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_environment_name): <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
+    ///   - [`template_file(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::template_file) / [`set_template_file(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_template_file): <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>   <p>Components support a single IaC file, even if you use Terraform as your template language.</p>  </note>
+    ///   - [`manifest(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::manifest) / [`set_manifest(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_manifest): <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+    ///   - [`service_spec(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::service_spec) / [`set_service_spec(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_service_spec): <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateComponent::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateComponent::set_tags): <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// - On success, responds with [`CreateComponentOutput`](crate::output::CreateComponentOutput) with field(s):
+    ///   - [`component(Option<Component>)`](crate::output::CreateComponentOutput::component): <p>The detailed data of the created component.</p>
+    /// - On failure, responds with [`SdkError<CreateComponentError>`](crate::error::CreateComponentError)
+    pub fn create_component(&self) -> fluent_builders::CreateComponent {
+        fluent_builders::CreateComponent::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
     ///
     /// - The fluent builder is configurable:
@@ -151,6 +179,7 @@ impl Client {
     ///   - [`environment_account_connection_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::environment_account_connection_id) / [`set_environment_account_connection_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_environment_account_connection_id): <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>  <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
     ///   - [`provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::CreateEnvironment::provisioning_repository) / [`set_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::CreateEnvironment::set_provisioning_repository): <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>  <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
+    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>  <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::output::CreateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
@@ -165,6 +194,7 @@ impl Client {
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
     ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_environment_name): <p>The name of the Proton environment that's created in the associated management account.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_tags): <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentAccountConnection::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>  <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
     /// - On success, responds with [`CreateEnvironmentAccountConnectionOutput`](crate::output::CreateEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::CreateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentAccountConnectionError>`](crate::error::CreateEnvironmentAccountConnectionError)
@@ -261,8 +291,9 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_description): <p>A description of the new version of a service template.</p>
     ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_major_version): <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>  <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     ///   - [`source(TemplateVersionSourceInput)`](crate::client::fluent_builders::CreateServiceTemplateVersion::source) / [`set_source(Option<TemplateVersionSourceInput>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_source): <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
-    ///   - [`compatible_environment_templates(Vec<CompatibleEnvironmentTemplateInput>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::compatible_environment_templates) / [`set_compatible_environment_templates(Option<Vec<CompatibleEnvironmentTemplateInput>>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_compatible_environment_templates): <p>An array of compatible environment template objects for the new version of a service template.</p>
+    ///   - [`compatible_environment_templates(Vec<CompatibleEnvironmentTemplateInput>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::compatible_environment_templates) / [`set_compatible_environment_templates(Option<Vec<CompatibleEnvironmentTemplateInput>>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_compatible_environment_templates): <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_tags): <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>  <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    ///   - [`supported_component_sources(Vec<ServiceTemplateSupportedComponentSourceType>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::supported_component_sources) / [`set_supported_component_sources(Option<Vec<ServiceTemplateSupportedComponentSourceType>>)`](crate::client::fluent_builders::CreateServiceTemplateVersion::set_supported_component_sources): <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
     /// - On success, responds with [`CreateServiceTemplateVersionOutput`](crate::output::CreateServiceTemplateVersionOutput) with field(s):
     ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::CreateServiceTemplateVersionOutput::service_template_version): <p>The service template version summary of detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateServiceTemplateVersionError>`](crate::error::CreateServiceTemplateVersionError)
@@ -284,12 +315,22 @@ impl Client {
     pub fn create_template_sync_config(&self) -> fluent_builders::CreateTemplateSyncConfig {
         fluent_builders::CreateTemplateSyncConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteComponent`](crate::client::fluent_builders::DeleteComponent) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteComponent::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteComponent::set_name): <p>The name of the component to delete.</p>
+    /// - On success, responds with [`DeleteComponentOutput`](crate::output::DeleteComponentOutput) with field(s):
+    ///   - [`component(Option<Component>)`](crate::output::DeleteComponentOutput::component): <p>The detailed data of the component being deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::error::DeleteComponentError)
+    pub fn delete_component(&self) -> fluent_builders::DeleteComponent {
+        fluent_builders::DeleteComponent::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteEnvironment::set_name): <p>The name of the environment to delete.</p>
     /// - On success, responds with [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput) with field(s):
-    ///   - [`environment(Option<Environment>)`](crate::output::DeleteEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::DeleteEnvironmentOutput::environment): <p>The detailed data of the environment being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
     pub fn delete_environment(&self) -> fluent_builders::DeleteEnvironment {
         fluent_builders::DeleteEnvironment::new(self.handle.clone())
@@ -299,7 +340,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironmentAccountConnection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteEnvironmentAccountConnection::set_id): <p>The ID of the environment account connection to delete.</p>
     /// - On success, responds with [`DeleteEnvironmentAccountConnectionOutput`](crate::output::DeleteEnvironmentAccountConnectionOutput) with field(s):
-    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::DeleteEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
+    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::DeleteEnvironmentAccountConnectionOutput::environment_account_connection): <p>The detailed data of the environment account connection being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentAccountConnectionError>`](crate::error::DeleteEnvironmentAccountConnectionError)
     pub fn delete_environment_account_connection(
         &self,
@@ -311,7 +352,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironmentTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteEnvironmentTemplate::set_name): <p>The name of the environment template to delete.</p>
     /// - On success, responds with [`DeleteEnvironmentTemplateOutput`](crate::output::DeleteEnvironmentTemplateOutput) with field(s):
-    ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::output::DeleteEnvironmentTemplateOutput::environment_template): <p>The environment template detail data that's returned by Proton.</p>
+    ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::output::DeleteEnvironmentTemplateOutput::environment_template): <p>The detailed data of the environment template being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentTemplateError>`](crate::error::DeleteEnvironmentTemplateError)
     pub fn delete_environment_template(&self) -> fluent_builders::DeleteEnvironmentTemplate {
         fluent_builders::DeleteEnvironmentTemplate::new(self.handle.clone())
@@ -323,7 +364,7 @@ impl Client {
     ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironmentTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::DeleteEnvironmentTemplateVersion::set_major_version): <p>The environment template major version to delete.</p>
     ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironmentTemplateVersion::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::DeleteEnvironmentTemplateVersion::set_minor_version): <p>The environment template minor version to delete.</p>
     /// - On success, responds with [`DeleteEnvironmentTemplateVersionOutput`](crate::output::DeleteEnvironmentTemplateVersionOutput) with field(s):
-    ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::output::DeleteEnvironmentTemplateVersionOutput::environment_template_version): <p>The environment template version detail data that's returned by Proton.</p>
+    ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::output::DeleteEnvironmentTemplateVersionOutput::environment_template_version): <p>The detailed data of the environment template version being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentTemplateVersionError>`](crate::error::DeleteEnvironmentTemplateVersionError)
     pub fn delete_environment_template_version(
         &self,
@@ -346,7 +387,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteService::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteService::set_name): <p>The name of the service to delete.</p>
     /// - On success, responds with [`DeleteServiceOutput`](crate::output::DeleteServiceOutput) with field(s):
-    ///   - [`service(Option<Service>)`](crate::output::DeleteServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
+    ///   - [`service(Option<Service>)`](crate::output::DeleteServiceOutput::service): <p>The detailed data of the service being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::error::DeleteServiceError)
     pub fn delete_service(&self) -> fluent_builders::DeleteService {
         fluent_builders::DeleteService::new(self.handle.clone())
@@ -356,7 +397,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteServiceTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteServiceTemplate::set_name): <p>The name of the service template to delete.</p>
     /// - On success, responds with [`DeleteServiceTemplateOutput`](crate::output::DeleteServiceTemplateOutput) with field(s):
-    ///   - [`service_template(Option<ServiceTemplate>)`](crate::output::DeleteServiceTemplateOutput::service_template): <p>The service template detail data that's returned by Proton.</p>
+    ///   - [`service_template(Option<ServiceTemplate>)`](crate::output::DeleteServiceTemplateOutput::service_template): <p>The detailed data of the service template being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceTemplateError>`](crate::error::DeleteServiceTemplateError)
     pub fn delete_service_template(&self) -> fluent_builders::DeleteServiceTemplate {
         fluent_builders::DeleteServiceTemplate::new(self.handle.clone())
@@ -368,7 +409,7 @@ impl Client {
     ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::DeleteServiceTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::DeleteServiceTemplateVersion::set_major_version): <p>The service template major version to delete.</p>
     ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::DeleteServiceTemplateVersion::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::DeleteServiceTemplateVersion::set_minor_version): <p>The service template minor version to delete.</p>
     /// - On success, responds with [`DeleteServiceTemplateVersionOutput`](crate::output::DeleteServiceTemplateVersionOutput) with field(s):
-    ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::DeleteServiceTemplateVersionOutput::service_template_version): <p>The service template version detail data that's returned by Proton.</p>
+    ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::DeleteServiceTemplateVersionOutput::service_template_version): <p>The detailed data of the service template version being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceTemplateVersionError>`](crate::error::DeleteServiceTemplateVersionError)
     pub fn delete_service_template_version(&self) -> fluent_builders::DeleteServiceTemplateVersion {
         fluent_builders::DeleteServiceTemplateVersion::new(self.handle.clone())
@@ -394,12 +435,22 @@ impl Client {
     pub fn get_account_settings(&self) -> fluent_builders::GetAccountSettings {
         fluent_builders::GetAccountSettings::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`GetComponent`](crate::client::fluent_builders::GetComponent) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetComponent::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetComponent::set_name): <p>The name of the component that you want to get the detailed data for.</p>
+    /// - On success, responds with [`GetComponentOutput`](crate::output::GetComponentOutput) with field(s):
+    ///   - [`component(Option<Component>)`](crate::output::GetComponentOutput::component): <p>The detailed data of the requested component.</p>
+    /// - On failure, responds with [`SdkError<GetComponentError>`](crate::error::GetComponentError)
+    pub fn get_component(&self) -> fluent_builders::GetComponent {
+        fluent_builders::GetComponent::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetEnvironment::set_name): <p>The name of the environment that you want to get the detail data for.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetEnvironment::set_name): <p>The name of the environment that you want to get the detailed data for.</p>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput) with field(s):
-    ///   - [`environment(Option<Environment>)`](crate::output::GetEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::GetEnvironmentOutput::environment): <p>The detailed data of the requested environment.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::error::GetEnvironmentError)
     pub fn get_environment(&self) -> fluent_builders::GetEnvironment {
         fluent_builders::GetEnvironment::new(self.handle.clone())
@@ -407,9 +458,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetEnvironmentAccountConnection`](crate::client::fluent_builders::GetEnvironmentAccountConnection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentAccountConnection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetEnvironmentAccountConnection::set_id): <p>The ID of the environment account connection.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentAccountConnection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetEnvironmentAccountConnection::set_id): <p>The ID of the environment account connection that you want to get the detailed data for.</p>
     /// - On success, responds with [`GetEnvironmentAccountConnectionOutput`](crate::output::GetEnvironmentAccountConnectionOutput) with field(s):
-    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::GetEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
+    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::GetEnvironmentAccountConnectionOutput::environment_account_connection): <p>The detailed data of the requested environment account connection.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentAccountConnectionError>`](crate::error::GetEnvironmentAccountConnectionError)
     pub fn get_environment_account_connection(
         &self,
@@ -419,9 +470,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetEnvironmentTemplate`](crate::client::fluent_builders::GetEnvironmentTemplate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplate::set_name): <p>The name of the environment template that you want to get the detail data for.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplate::set_name): <p>The name of the environment template that you want to get the detailed data for.</p>
     /// - On success, responds with [`GetEnvironmentTemplateOutput`](crate::output::GetEnvironmentTemplateOutput) with field(s):
-    ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::output::GetEnvironmentTemplateOutput::environment_template): <p>The environment template detail data that's returned by Proton.</p>
+    ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::output::GetEnvironmentTemplateOutput::environment_template): <p>The detailed data of the requested environment template.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentTemplateError>`](crate::error::GetEnvironmentTemplateError)
     pub fn get_environment_template(&self) -> fluent_builders::GetEnvironmentTemplate {
         fluent_builders::GetEnvironmentTemplate::new(self.handle.clone())
@@ -429,11 +480,11 @@ impl Client {
     /// Constructs a fluent builder for the [`GetEnvironmentTemplateVersion`](crate::client::fluent_builders::GetEnvironmentTemplateVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_template_name): <p>The name of the environment template.</p>
-    ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_major_version): <p>To view environment template major version detail data, include <code>major Version</code>.</p>
-    ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_minor_version): <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_template_name): <p>The name of the environment template a version of which you want to get detailed data for..</p>
+    ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_major_version): <p>To get environment template major version detail data, include <code>major Version</code>.</p>
+    ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::GetEnvironmentTemplateVersion::set_minor_version): <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
     /// - On success, responds with [`GetEnvironmentTemplateVersionOutput`](crate::output::GetEnvironmentTemplateVersionOutput) with field(s):
-    ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::output::GetEnvironmentTemplateVersionOutput::environment_template_version): <p>The environment template version detail data that's returned by Proton.</p>
+    ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::output::GetEnvironmentTemplateVersionOutput::environment_template_version): <p>The detailed data of the requested environment template version.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentTemplateVersionError>`](crate::error::GetEnvironmentTemplateVersionError)
     pub fn get_environment_template_version(
         &self,
@@ -467,9 +518,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetService`](crate::client::fluent_builders::GetService) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetService::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetService::set_name): <p>The name of the service that you want to get the detail data for.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetService::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetService::set_name): <p>The name of the service that you want to get the detailed data for.</p>
     /// - On success, responds with [`GetServiceOutput`](crate::output::GetServiceOutput) with field(s):
-    ///   - [`service(Option<Service>)`](crate::output::GetServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
+    ///   - [`service(Option<Service>)`](crate::output::GetServiceOutput::service): <p>The detailed data of the requested service.</p>
     /// - On failure, responds with [`SdkError<GetServiceError>`](crate::error::GetServiceError)
     pub fn get_service(&self) -> fluent_builders::GetService {
         fluent_builders::GetService::new(self.handle.clone())
@@ -477,10 +528,10 @@ impl Client {
     /// Constructs a fluent builder for the [`GetServiceInstance`](crate::client::fluent_builders::GetServiceInstance) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetServiceInstance::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetServiceInstance::set_name): <p>The name of a service instance that you want to get the detail data for.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetServiceInstance::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetServiceInstance::set_name): <p>The name of a service instance that you want to get the detailed data for.</p>
     ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::GetServiceInstance::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::GetServiceInstance::set_service_name): <p>The name of the service that the service instance belongs to.</p>
     /// - On success, responds with [`GetServiceInstanceOutput`](crate::output::GetServiceInstanceOutput) with field(s):
-    ///   - [`service_instance(Option<ServiceInstance>)`](crate::output::GetServiceInstanceOutput::service_instance): <p>The service instance detail data that's returned by Proton.</p>
+    ///   - [`service_instance(Option<ServiceInstance>)`](crate::output::GetServiceInstanceOutput::service_instance): <p>The detailed data of the requested service instance.</p>
     /// - On failure, responds with [`SdkError<GetServiceInstanceError>`](crate::error::GetServiceInstanceError)
     pub fn get_service_instance(&self) -> fluent_builders::GetServiceInstance {
         fluent_builders::GetServiceInstance::new(self.handle.clone())
@@ -488,9 +539,9 @@ impl Client {
     /// Constructs a fluent builder for the [`GetServiceTemplate`](crate::client::fluent_builders::GetServiceTemplate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetServiceTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetServiceTemplate::set_name): <p>The name of the service template that you want to get detail data for.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetServiceTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetServiceTemplate::set_name): <p>The name of the service template that you want to get detailed data for.</p>
     /// - On success, responds with [`GetServiceTemplateOutput`](crate::output::GetServiceTemplateOutput) with field(s):
-    ///   - [`service_template(Option<ServiceTemplate>)`](crate::output::GetServiceTemplateOutput::service_template): <p>The service template detail data that's returned by Proton.</p>
+    ///   - [`service_template(Option<ServiceTemplate>)`](crate::output::GetServiceTemplateOutput::service_template): <p>The detailed data of the requested service template.</p>
     /// - On failure, responds with [`SdkError<GetServiceTemplateError>`](crate::error::GetServiceTemplateError)
     pub fn get_service_template(&self) -> fluent_builders::GetServiceTemplate {
         fluent_builders::GetServiceTemplate::new(self.handle.clone())
@@ -498,11 +549,11 @@ impl Client {
     /// Constructs a fluent builder for the [`GetServiceTemplateVersion`](crate::client::fluent_builders::GetServiceTemplateVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::set_template_name): <p>The name of the service template.</p>
-    ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::set_major_version): <p>To view service template major version detail data, include <code>major Version</code>.</p>
-    ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::set_minor_version): <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::set_template_name): <p>The name of the service template a version of which you want to get detailed data for.</p>
+    ///   - [`major_version(impl Into<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::major_version) / [`set_major_version(Option<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::set_major_version): <p>To get service template major version detail data, include <code>major Version</code>.</p>
+    ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::GetServiceTemplateVersion::set_minor_version): <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
     /// - On success, responds with [`GetServiceTemplateVersionOutput`](crate::output::GetServiceTemplateVersionOutput) with field(s):
-    ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::GetServiceTemplateVersionOutput::service_template_version): <p>The service template version detail data that's returned by Proton.</p>
+    ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::GetServiceTemplateVersionOutput::service_template_version): <p>The detailed data of the requested service template version.</p>
     /// - On failure, responds with [`SdkError<GetServiceTemplateVersionError>`](crate::error::GetServiceTemplateVersionError)
     pub fn get_service_template_version(&self) -> fluent_builders::GetServiceTemplateVersion {
         fluent_builders::GetServiceTemplateVersion::new(self.handle.clone())
@@ -531,6 +582,50 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetTemplateSyncStatusError>`](crate::error::GetTemplateSyncStatusError)
     pub fn get_template_sync_status(&self) -> fluent_builders::GetTemplateSyncStatus {
         fluent_builders::GetTemplateSyncStatus::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListComponentOutputs`](crate::client::fluent_builders::ListComponentOutputs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListComponentOutputs::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`component_name(impl Into<String>)`](crate::client::fluent_builders::ListComponentOutputs::component_name) / [`set_component_name(Option<String>)`](crate::client::fluent_builders::ListComponentOutputs::set_component_name): <p>The name of the component whose outputs you want.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListComponentOutputs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListComponentOutputs::set_next_token): <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    /// - On success, responds with [`ListComponentOutputsOutput`](crate::output::ListComponentOutputsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListComponentOutputsOutput::next_token): <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::ListComponentOutputsOutput::outputs): <p>An array of component Infrastructure as Code (IaC) outputs.</p>
+    /// - On failure, responds with [`SdkError<ListComponentOutputsError>`](crate::error::ListComponentOutputsError)
+    pub fn list_component_outputs(&self) -> fluent_builders::ListComponentOutputs {
+        fluent_builders::ListComponentOutputs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListComponentProvisionedResources`](crate::client::fluent_builders::ListComponentProvisionedResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListComponentProvisionedResources::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`component_name(impl Into<String>)`](crate::client::fluent_builders::ListComponentProvisionedResources::component_name) / [`set_component_name(Option<String>)`](crate::client::fluent_builders::ListComponentProvisionedResources::set_component_name): <p>The name of the component whose provisioned resources you want.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListComponentProvisionedResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListComponentProvisionedResources::set_next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    /// - On success, responds with [`ListComponentProvisionedResourcesOutput`](crate::output::ListComponentProvisionedResourcesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListComponentProvisionedResourcesOutput::next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
+    ///   - [`provisioned_resources(Option<Vec<ProvisionedResource>>)`](crate::output::ListComponentProvisionedResourcesOutput::provisioned_resources): <p>An array of provisioned resources for a component.</p>
+    /// - On failure, responds with [`SdkError<ListComponentProvisionedResourcesError>`](crate::error::ListComponentProvisionedResourcesError)
+    pub fn list_component_provisioned_resources(
+        &self,
+    ) -> fluent_builders::ListComponentProvisionedResources {
+        fluent_builders::ListComponentProvisionedResources::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListComponents`](crate::client::fluent_builders::ListComponents) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListComponents::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListComponents::set_next_token): <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::ListComponents::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::ListComponents::set_environment_name): <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListComponents::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListComponents::set_service_name): <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
+    ///   - [`service_instance_name(impl Into<String>)`](crate::client::fluent_builders::ListComponents::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::client::fluent_builders::ListComponents::set_service_instance_name): <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListComponents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListComponents::set_max_results): <p>The maximum number of components to list.</p>
+    /// - On success, responds with [`ListComponentsOutput`](crate::output::ListComponentsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListComponentsOutput::next_token): <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
+    ///   - [`components(Option<Vec<ComponentSummary>>)`](crate::output::ListComponentsOutput::components): <p>An array of components with summary data.</p>
+    /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::error::ListComponentsError)
+    pub fn list_components(&self) -> fluent_builders::ListComponents {
+        fluent_builders::ListComponents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEnvironmentAccountConnections`](crate::client::fluent_builders::ListEnvironmentAccountConnections) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentAccountConnections::into_paginator).
@@ -656,12 +751,12 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServiceInstanceOutputs::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_instance_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::set_service_instance_name): <p>The service instance name.</p>
-    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::set_service_name): <p>The service name.</p>
+    ///   - [`service_instance_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::set_service_instance_name): <p>The name of the service instance whose outputs you want.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::set_service_name): <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceOutputs::set_next_token): <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     /// - On success, responds with [`ListServiceInstanceOutputsOutput`](crate::output::ListServiceInstanceOutputsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListServiceInstanceOutputsOutput::next_token): <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
-    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::ListServiceInstanceOutputsOutput::outputs): <p>An array of service instance infrastructure as code outputs.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::ListServiceInstanceOutputsOutput::outputs): <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
     /// - On failure, responds with [`SdkError<ListServiceInstanceOutputsError>`](crate::error::ListServiceInstanceOutputsError)
     pub fn list_service_instance_outputs(&self) -> fluent_builders::ListServiceInstanceOutputs {
         fluent_builders::ListServiceInstanceOutputs::new(self.handle.clone())
@@ -670,8 +765,8 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::set_service_name): <p>The service name.</p>
-    ///   - [`service_instance_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::set_service_instance_name): <p>The service instance name.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::set_service_name): <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    ///   - [`service_instance_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::set_service_instance_name): <p>The name of the service instance whose provisioned resources you want.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::set_next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     /// - On success, responds with [`ListServiceInstanceProvisionedResourcesOutput`](crate::output::ListServiceInstanceProvisionedResourcesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListServiceInstanceProvisionedResourcesOutput::next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
@@ -691,7 +786,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListServiceInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListServiceInstances::set_max_results): <p>The maximum number of service instances to list.</p>
     /// - On success, responds with [`ListServiceInstancesOutput`](crate::output::ListServiceInstancesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListServiceInstancesOutput::next_token): <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
-    ///   - [`service_instances(Option<Vec<ServiceInstanceSummary>>)`](crate::output::ListServiceInstancesOutput::service_instances): <p>An array of service instances with summaries of detail data.</p>
+    ///   - [`service_instances(Option<Vec<ServiceInstanceSummary>>)`](crate::output::ListServiceInstancesOutput::service_instances): <p>An array of service instances with summary data.</p>
     /// - On failure, responds with [`SdkError<ListServiceInstancesError>`](crate::error::ListServiceInstancesError)
     pub fn list_service_instances(&self) -> fluent_builders::ListServiceInstances {
         fluent_builders::ListServiceInstances::new(self.handle.clone())
@@ -700,11 +795,11 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServicePipelineOutputs::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServicePipelineOutputs::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServicePipelineOutputs::set_service_name): <p>The service name.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServicePipelineOutputs::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServicePipelineOutputs::set_service_name): <p>The name of the service whose pipeline's outputs you want.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServicePipelineOutputs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServicePipelineOutputs::set_next_token): <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     /// - On success, responds with [`ListServicePipelineOutputsOutput`](crate::output::ListServicePipelineOutputsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListServicePipelineOutputsOutput::next_token): <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
-    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::ListServicePipelineOutputsOutput::outputs): <p>An array of outputs.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::ListServicePipelineOutputsOutput::outputs): <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
     /// - On failure, responds with [`SdkError<ListServicePipelineOutputsError>`](crate::error::ListServicePipelineOutputsError)
     pub fn list_service_pipeline_outputs(&self) -> fluent_builders::ListServicePipelineOutputs {
         fluent_builders::ListServicePipelineOutputs::new(self.handle.clone())
@@ -713,7 +808,7 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServicePipelineProvisionedResources::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServicePipelineProvisionedResources::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServicePipelineProvisionedResources::set_service_name): <p>The service name.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServicePipelineProvisionedResources::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServicePipelineProvisionedResources::set_service_name): <p>The name of the service whose pipeline's provisioned resources you want.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServicePipelineProvisionedResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServicePipelineProvisionedResources::set_next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     /// - On success, responds with [`ListServicePipelineProvisionedResourcesOutput`](crate::output::ListServicePipelineProvisionedResourcesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListServicePipelineProvisionedResourcesOutput::next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
@@ -840,6 +935,22 @@ impl Client {
     pub fn update_account_settings(&self) -> fluent_builders::UpdateAccountSettings {
         fluent_builders::UpdateAccountSettings::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`UpdateComponent`](crate::client::fluent_builders::UpdateComponent) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_name): <p>The name of the component to update.</p>
+    ///   - [`deployment_type(ComponentDeploymentUpdateType)`](crate::client::fluent_builders::UpdateComponent::deployment_type) / [`set_deployment_type(Option<ComponentDeploymentUpdateType>)`](crate::client::fluent_builders::UpdateComponent::set_deployment_type): <p>The deployment type. It defines the mode for updating a component, as follows:</p>  <dl>   <dt></dt>   <dd>    <p> <code>NONE</code> </p>    <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>   </dd>   <dt></dt>   <dd>    <p> <code>CURRENT_VERSION</code> </p>    <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>   </dd>  </dl>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_description): <p>An optional customer-provided description of the component.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_service_name): <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+    ///   - [`service_instance_name(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_service_instance_name): <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+    ///   - [`service_spec(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::service_spec) / [`set_service_spec(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_service_spec): <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
+    ///   - [`template_file(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::template_file) / [`set_template_file(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_template_file): <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>   <p>Components support a single IaC file, even if you use Terraform as your template language.</p>  </note>
+    /// - On success, responds with [`UpdateComponentOutput`](crate::output::UpdateComponentOutput) with field(s):
+    ///   - [`component(Option<Component>)`](crate::output::UpdateComponentOutput::component): <p>The detailed data of the updated component.</p>
+    /// - On failure, responds with [`SdkError<UpdateComponentError>`](crate::error::UpdateComponentError)
+    pub fn update_component(&self) -> fluent_builders::UpdateComponent {
+        fluent_builders::UpdateComponent::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) operation.
     ///
     /// - The fluent builder is configurable:
@@ -852,6 +963,7 @@ impl Client {
     ///   - [`deployment_type(DeploymentUpdateType)`](crate::client::fluent_builders::UpdateEnvironment::deployment_type) / [`set_deployment_type(Option<DeploymentUpdateType>)`](crate::client::fluent_builders::UpdateEnvironment::set_deployment_type): <p>There are four modes for updating an environment. The <code>deploymentType</code> field defines the mode.</p>  <dl>   <dt></dt>   <dd>    <p> <code>NONE</code> </p>    <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>   </dd>   <dt></dt>   <dd>    <p> <code>CURRENT_VERSION</code> </p>    <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MINOR_VERSION</code> </p>    <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MAJOR_VERSION</code> </p>    <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>   </dd>  </dl>
     ///   - [`environment_account_connection_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::environment_account_connection_id) / [`set_environment_account_connection_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_environment_account_connection_id): <p>The ID of the environment account connection.</p>  <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
     ///   - [`provisioning_repository(RepositoryBranchInput)`](crate::client::fluent_builders::UpdateEnvironment::provisioning_repository) / [`set_provisioning_repository(Option<RepositoryBranchInput>)`](crate::client::fluent_builders::UpdateEnvironment::set_provisioning_repository): <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
+    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>  <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::output::UpdateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
@@ -863,6 +975,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_id): <p>The ID of the environment account connection to update.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
+    ///   - [`component_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::component_role_arn) / [`set_component_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection::set_component_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>  <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
     /// - On success, responds with [`UpdateEnvironmentAccountConnectionOutput`](crate::output::UpdateEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::UpdateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentAccountConnectionError>`](crate::error::UpdateEnvironmentAccountConnectionError)
@@ -916,7 +1029,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceInstance::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateServiceInstance::set_name): <p>The name of the service instance to update.</p>
     ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceInstance::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::UpdateServiceInstance::set_service_name): <p>The name of the service that the service instance belongs to.</p>
-    ///   - [`deployment_type(DeploymentUpdateType)`](crate::client::fluent_builders::UpdateServiceInstance::deployment_type) / [`set_deployment_type(Option<DeploymentUpdateType>)`](crate::client::fluent_builders::UpdateServiceInstance::set_deployment_type): <p>The deployment type.</p>  <p>There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p>  <dl>   <dt></dt>   <dd>    <p> <code>NONE</code> </p>    <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>   </dd>   <dt></dt>   <dd>    <p> <code>CURRENT_VERSION</code> </p>    <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MINOR_VERSION</code> </p>    <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MAJOR_VERSION</code> </p>    <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>   </dd>  </dl>
+    ///   - [`deployment_type(DeploymentUpdateType)`](crate::client::fluent_builders::UpdateServiceInstance::deployment_type) / [`set_deployment_type(Option<DeploymentUpdateType>)`](crate::client::fluent_builders::UpdateServiceInstance::set_deployment_type): <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>  <dl>   <dt></dt>   <dd>    <p> <code>NONE</code> </p>    <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>   </dd>   <dt></dt>   <dd>    <p> <code>CURRENT_VERSION</code> </p>    <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MINOR_VERSION</code> </p>    <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MAJOR_VERSION</code> </p>    <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>   </dd>  </dl>
     ///   - [`spec(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceInstance::spec) / [`set_spec(Option<String>)`](crate::client::fluent_builders::UpdateServiceInstance::set_spec): <p>The formatted specification that defines the service instance update.</p>
     ///   - [`template_major_version(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceInstance::template_major_version) / [`set_template_major_version(Option<String>)`](crate::client::fluent_builders::UpdateServiceInstance::set_template_major_version): <p>The major version of the service template to update.</p>
     ///   - [`template_minor_version(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceInstance::template_minor_version) / [`set_template_minor_version(Option<String>)`](crate::client::fluent_builders::UpdateServiceInstance::set_template_minor_version): <p>The minor version of the service template to update.</p>
@@ -960,7 +1073,8 @@ impl Client {
     ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_minor_version): <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_description): <p>A description of a service template version to update.</p>
     ///   - [`status(TemplateVersionStatus)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::status) / [`set_status(Option<TemplateVersionStatus>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_status): <p>The status of the service template minor version to update.</p>
-    ///   - [`compatible_environment_templates(Vec<CompatibleEnvironmentTemplateInput>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::compatible_environment_templates) / [`set_compatible_environment_templates(Option<Vec<CompatibleEnvironmentTemplateInput>>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_compatible_environment_templates): <p>An array of compatible environment names for a service template major or minor version to update.</p>
+    ///   - [`compatible_environment_templates(Vec<CompatibleEnvironmentTemplateInput>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::compatible_environment_templates) / [`set_compatible_environment_templates(Option<Vec<CompatibleEnvironmentTemplateInput>>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_compatible_environment_templates): <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
+    ///   - [`supported_component_sources(Vec<ServiceTemplateSupportedComponentSourceType>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::supported_component_sources) / [`set_supported_component_sources(Option<Vec<ServiceTemplateSupportedComponentSourceType>>)`](crate::client::fluent_builders::UpdateServiceTemplateVersion::set_supported_component_sources): <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>   <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>  </note>  <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
     /// - On success, responds with [`UpdateServiceTemplateVersionOutput`](crate::output::UpdateServiceTemplateVersionOutput) with field(s):
     ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::UpdateServiceTemplateVersionOutput::service_template_version): <p>The service template version detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceTemplateVersionError>`](crate::error::UpdateServiceTemplateVersionError)
@@ -1043,6 +1157,63 @@ pub mod fluent_builders {
         /// <p>The ID of the environment account connection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CancelComponentDeployment`.
+    ///
+    /// <p>Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code> deployment status).</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CancelComponentDeployment {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::cancel_component_deployment_input::Builder,
+    }
+    impl CancelComponentDeployment {
+        /// Creates a new `CancelComponentDeployment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelComponentDeploymentOutput,
+            aws_smithy_http::result::SdkError<crate::error::CancelComponentDeploymentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the component with the deployment to cancel.</p>
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
+            self
+        }
+        /// <p>The name of the component with the deployment to cancel.</p>
+        pub fn set_component_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_component_name(input);
             self
         }
     }
@@ -1239,6 +1410,162 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateComponent`.
+    ///
+    /// <p>Create an Proton component. A component is an infrastructure extension for a service instance.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateComponent {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_component_input::Builder,
+    }
+    impl CreateComponent {
+        /// Creates a new `CreateComponent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateComponentOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateComponentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The customer-provided name of the component.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The customer-provided name of the component.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>An optional customer-provided description of the component.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>An optional customer-provided description of the component.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_name(input);
+            self
+        }
+        /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_instance_name(input.into());
+            self
+        }
+        /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+        pub fn set_service_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_service_instance_name(input);
+            self
+        }
+        /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+        /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+        /// </note>
+        pub fn template_file(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_file(input.into());
+            self
+        }
+        /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+        /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+        /// </note>
+        pub fn set_template_file(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_file(input);
+            self
+        }
+        /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+        pub fn manifest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.manifest(input.into());
+            self
+        }
+        /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+        pub fn set_manifest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_manifest(input);
+            self
+        }
+        /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
+        pub fn service_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_spec(input.into());
+            self
+        }
+        /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
+        pub fn set_service_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_spec(input);
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
+        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
+        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateEnvironment`.
     ///
     /// <p>Deploy a new environment. An Proton environment is created from an environment template that defines infrastructure and resources that can be shared across services.</p>
@@ -1426,6 +1753,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_repository(input);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_component_role_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateEnvironmentAccountConnection`.
     ///
@@ -1535,6 +1879,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_component_role_arn(input);
             self
         }
     }
@@ -2288,7 +2649,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
         ///
-        /// <p>An array of compatible environment template objects for the new version of a service template.</p>
+        /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
         pub fn compatible_environment_templates(
             mut self,
             input: crate::model::CompatibleEnvironmentTemplateInput,
@@ -2296,7 +2657,7 @@ pub mod fluent_builders {
             self.inner = self.inner.compatible_environment_templates(input);
             self
         }
-        /// <p>An array of compatible environment template objects for the new version of a service template.</p>
+        /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
         pub fn set_compatible_environment_templates(
             mut self,
             input: std::option::Option<
@@ -2323,6 +2684,30 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// Appends an item to `supportedComponentSources`.
+        ///
+        /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
+        ///
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn supported_component_sources(
+            mut self,
+            input: crate::model::ServiceTemplateSupportedComponentSourceType,
+        ) -> Self {
+            self.inner = self.inner.supported_component_sources(input);
+            self
+        }
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_supported_component_sources(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_supported_component_sources(input);
             self
         }
     }
@@ -2438,6 +2823,60 @@ pub mod fluent_builders {
         /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteComponent`.
+    ///
+    /// <p>Delete an Proton component resource.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteComponent {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_component_input::Builder,
+    }
+    impl DeleteComponent {
+        /// Creates a new `DeleteComponent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteComponentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteComponentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the component to delete.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the component to delete.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -2755,7 +3194,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteService`.
     ///
-    /// <p>Delete a service.</p>
+    /// <p>Delete a service, with its instances and pipeline.</p> <note>
+    /// <p>You can't delete a service if it has any service instances that have components attached to them.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService {
         handle: std::sync::Arc<super::Handle>,
@@ -3054,9 +3496,63 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
     }
+    /// Fluent builder constructing a request to `GetComponent`.
+    ///
+    /// <p>Get detailed data for a component.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetComponent {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_component_input::Builder,
+    }
+    impl GetComponent {
+        /// Creates a new `GetComponent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetComponentOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetComponentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the component that you want to get the detailed data for.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the component that you want to get the detailed data for.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetEnvironment`.
     ///
-    /// <p>Get detail data for an environment.</p>
+    /// <p>Get detailed data for an environment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironment {
         handle: std::sync::Arc<super::Handle>,
@@ -3096,12 +3592,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the environment that you want to get the detail data for.</p>
+        /// <p>The name of the environment that you want to get the detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the environment that you want to get the detail data for.</p>
+        /// <p>The name of the environment that you want to get the detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -3109,7 +3605,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEnvironmentAccountConnection`.
     ///
-    /// <p>In an environment account, view the detail data for an environment account connection.</p>
+    /// <p>In an environment account, get the detailed data for an environment account connection.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentAccountConnection {
@@ -3150,12 +3646,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the environment account connection.</p>
+        /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The ID of the environment account connection.</p>
+        /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -3163,7 +3659,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEnvironmentTemplate`.
     ///
-    /// <p>Get detail data for an environment template.</p>
+    /// <p>Get detailed data for an environment template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -3203,12 +3699,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the environment template that you want to get the detail data for.</p>
+        /// <p>The name of the environment template that you want to get the detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the environment template that you want to get the detail data for.</p>
+        /// <p>The name of the environment template that you want to get the detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -3216,7 +3712,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEnvironmentTemplateVersion`.
     ///
-    /// <p>View detail data for a major or minor version of an environment template.</p>
+    /// <p>Get detailed data for a major or minor version of an environment template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentTemplateVersion {
         handle: std::sync::Arc<super::Handle>,
@@ -3256,12 +3752,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the environment template.</p>
+        /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the environment template.</p>
+        /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3269,12 +3765,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
+        /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.major_version(input.into());
             self
         }
-        /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
+        /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3282,12 +3778,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_major_version(input);
             self
         }
-        /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
+        /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
         pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.minor_version(input.into());
             self
         }
-        /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
+        /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
         pub fn set_minor_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3456,7 +3952,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetService`.
     ///
-    /// <p>Get detail data for a service.</p>
+    /// <p>Get detailed data for a service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetService {
         handle: std::sync::Arc<super::Handle>,
@@ -3496,12 +3992,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the service that you want to get the detail data for.</p>
+        /// <p>The name of the service that you want to get the detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the service that you want to get the detail data for.</p>
+        /// <p>The name of the service that you want to get the detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -3509,7 +4005,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceInstance`.
     ///
-    /// <p>Get detail data for a service instance. A service instance is an instantiation of service template and it runs in a specific environment.</p>
+    /// <p>Get detailed data for a service instance. A service instance is an instantiation of service template and it runs in a specific environment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -3549,12 +4045,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a service instance that you want to get the detail data for.</p>
+        /// <p>The name of a service instance that you want to get the detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of a service instance that you want to get the detail data for.</p>
+        /// <p>The name of a service instance that you want to get the detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -3572,7 +4068,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceTemplate`.
     ///
-    /// <p>Get detail data for a service template.</p>
+    /// <p>Get detailed data for a service template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceTemplate {
         handle: std::sync::Arc<super::Handle>,
@@ -3612,12 +4108,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the service template that you want to get detail data for.</p>
+        /// <p>The name of the service template that you want to get detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the service template that you want to get detail data for.</p>
+        /// <p>The name of the service template that you want to get detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -3625,7 +4121,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceTemplateVersion`.
     ///
-    /// <p>View detail data for a major or minor version of a service template.</p>
+    /// <p>Get detailed data for a major or minor version of a service template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceTemplateVersion {
         handle: std::sync::Arc<super::Handle>,
@@ -3665,12 +4161,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the service template.</p>
+        /// <p>The name of the service template a version of which you want to get detailed data for.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the service template.</p>
+        /// <p>The name of the service template a version of which you want to get detailed data for.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3678,12 +4174,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
+        /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.major_version(input.into());
             self
         }
-        /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
+        /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3691,12 +4187,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_major_version(input);
             self
         }
-        /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
+        /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
         pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.minor_version(input.into());
             self
         }
-        /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
+        /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
         pub fn set_minor_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3853,6 +4349,263 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_template_version(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListComponentOutputs`.
+    ///
+    /// <p>Get a list of component Infrastructure as Code (IaC) outputs.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListComponentOutputs {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_component_outputs_input::Builder,
+    }
+    impl ListComponentOutputs {
+        /// Creates a new `ListComponentOutputs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListComponentOutputsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListComponentOutputsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListComponentOutputsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListComponentOutputsPaginator {
+            crate::paginator::ListComponentOutputsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the component whose outputs you want.</p>
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
+            self
+        }
+        /// <p>The name of the component whose outputs you want.</p>
+        pub fn set_component_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_component_name(input);
+            self
+        }
+        /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListComponentProvisionedResources`.
+    ///
+    /// <p>List provisioned resources for a component with details.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListComponentProvisionedResources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_component_provisioned_resources_input::Builder,
+    }
+    impl ListComponentProvisionedResources {
+        /// Creates a new `ListComponentProvisionedResources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListComponentProvisionedResourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListComponentProvisionedResourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListComponentProvisionedResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListComponentProvisionedResourcesPaginator {
+            crate::paginator::ListComponentProvisionedResourcesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The name of the component whose provisioned resources you want.</p>
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
+            self
+        }
+        /// <p>The name of the component whose provisioned resources you want.</p>
+        pub fn set_component_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_component_name(input);
+            self
+        }
+        /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListComponents`.
+    ///
+    /// <p>List components with summary data. You can filter the result list by environment, service, or a single service instance.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListComponents {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_components_input::Builder,
+    }
+    impl ListComponents {
+        /// Creates a new `ListComponents`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListComponentsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListComponentsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListComponentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListComponentsPaginator {
+            crate::paginator::ListComponentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
+            self
+        }
+        /// <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_environment_name(input);
+            self
+        }
+        /// <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
+            self
+        }
+        /// <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_name(input);
+            self
+        }
+        /// <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_instance_name(input.into());
+            self
+        }
+        /// <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
+        pub fn set_service_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_service_instance_name(input);
+            self
+        }
+        /// <p>The maximum number of components to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of components to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -4553,7 +5306,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListServiceInstanceOutputs`.
     ///
-    /// <p>View a list service instance infrastructure as code outputs with detail data.</p>
+    /// <p>Get a list service of instance Infrastructure as Code (IaC) outputs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceInstanceOutputs {
         handle: std::sync::Arc<super::Handle>,
@@ -4599,12 +5352,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListServiceInstanceOutputsPaginator {
             crate::paginator::ListServiceInstanceOutputsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The service instance name.</p>
+        /// <p>The name of the service instance whose outputs you want.</p>
         pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_instance_name(input.into());
             self
         }
-        /// <p>The service instance name.</p>
+        /// <p>The name of the service instance whose outputs you want.</p>
         pub fn set_service_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4612,12 +5365,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_instance_name(input);
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(input.into());
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
@@ -4688,22 +5441,22 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(input.into());
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
         }
-        /// <p>The service instance name.</p>
+        /// <p>The name of the service instance whose provisioned resources you want.</p>
         pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_instance_name(input.into());
             self
         }
-        /// <p>The service instance name.</p>
+        /// <p>The name of the service instance whose provisioned resources you want.</p>
         pub fn set_service_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4724,7 +5477,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListServiceInstances`.
     ///
-    /// <p>List service instances with summaries of detail data.</p>
+    /// <p>List service instances with summary data.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceInstances {
         handle: std::sync::Arc<super::Handle>,
@@ -4803,7 +5556,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListServicePipelineOutputs`.
     ///
-    /// <p>View a list service pipeline infrastructure as code outputs with detail.</p>
+    /// <p>Get a list of service pipeline Infrastructure as Code (IaC) outputs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServicePipelineOutputs {
         handle: std::sync::Arc<super::Handle>,
@@ -4849,12 +5602,12 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListServicePipelineOutputsPaginator {
             crate::paginator::ListServicePipelineOutputsPaginator::new(self.handle, self.inner)
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service whose pipeline's outputs you want.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(input.into());
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service whose pipeline's outputs you want.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
@@ -4925,12 +5678,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(input.into());
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
@@ -5644,6 +6397,163 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateComponent`.
+    ///
+    /// <p>Update a component.</p>
+    /// <p>There are a few modes for updating a component. The <code>deploymentType</code> field defines the mode.</p> <note>
+    /// <p>You can't update a component while its deployment status, or the deployment status of a service instance attached to it, is <code>IN_PROGRESS</code>.</p>
+    /// </note>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateComponent {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_component_input::Builder,
+    }
+    impl UpdateComponent {
+        /// Creates a new `UpdateComponent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateComponentOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateComponentError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the component to update.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the component to update.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
+        /// <dl>
+        /// <dt></dt>
+        /// <dd>
+        /// <p> <code>NONE</code> </p>
+        /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
+        /// </dd>
+        /// <dt></dt>
+        /// <dd>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
+        /// </dd>
+        /// </dl>
+        pub fn deployment_type(
+            mut self,
+            input: crate::model::ComponentDeploymentUpdateType,
+        ) -> Self {
+            self.inner = self.inner.deployment_type(input);
+            self
+        }
+        /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
+        /// <dl>
+        /// <dt></dt>
+        /// <dd>
+        /// <p> <code>NONE</code> </p>
+        /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
+        /// </dd>
+        /// <dt></dt>
+        /// <dd>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_deployment_type(
+            mut self,
+            input: std::option::Option<crate::model::ComponentDeploymentUpdateType>,
+        ) -> Self {
+            self.inner = self.inner.set_deployment_type(input);
+            self
+        }
+        /// <p>An optional customer-provided description of the component.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>An optional customer-provided description of the component.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_name(input);
+            self
+        }
+        /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_instance_name(input.into());
+            self
+        }
+        /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+        pub fn set_service_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_service_instance_name(input);
+            self
+        }
+        /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
+        pub fn service_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_spec(input.into());
+            self
+        }
+        /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
+        pub fn set_service_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_spec(input);
+            self
+        }
+        /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+        /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+        /// </note>
+        pub fn template_file(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_file(input.into());
+            self
+        }
+        /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+        /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+        /// </note>
+        pub fn set_template_file(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_file(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateEnvironment`.
     ///
     /// <p>Update an environment.</p>
@@ -5876,6 +6786,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_repository(input);
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_component_role_arn(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateEnvironmentAccountConnection`.
     ///
@@ -5940,6 +6867,23 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_component_role_arn(input);
             self
         }
     }
@@ -6127,7 +7071,10 @@ pub mod fluent_builders {
     /// <p>Existing service instances and the service pipeline <i>can't</i> be edited using this API. They can only be deleted.</p>
     /// </note>
     /// <p>Use the <code>description</code> parameter to modify the description.</p>
-    /// <p>Edit the <code>spec</code> parameter to add or delete instances.</p>
+    /// <p>Edit the <code>spec</code> parameter to add or delete instances.</p> <note>
+    /// <p>You can't delete a service instance (remove it from the spec) if it has an attached component.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateService {
         handle: std::sync::Arc<super::Handle>,
@@ -6201,29 +7148,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServiceInstance`.
     ///
     /// <p>Update a service instance.</p>
-    /// <p>There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p>
-    /// <dl>
-    /// <dt></dt>
-    /// <dd>
-    /// <p> <code>NONE</code> </p>
-    /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
-    /// </dd>
-    /// <dt></dt>
-    /// <dd>
-    /// <p> <code>CURRENT_VERSION</code> </p>
-    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
-    /// </dd>
-    /// <dt></dt>
-    /// <dd>
-    /// <p> <code>MINOR_VERSION</code> </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
-    /// </dd>
-    /// <dt></dt>
-    /// <dd>
-    /// <p> <code>MAJOR_VERSION</code> </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that's higher than the major version in use and a minor version.</p>
-    /// </dd>
-    /// </dl>
+    /// <p>There are a few modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p> <note>
+    /// <p>You can't update a service instance while its deployment status, or the deployment status of a component attached to it, is <code>IN_PROGRESS</code>.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceInstance {
         handle: std::sync::Arc<super::Handle>,
@@ -6283,8 +7211,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_name(input);
             self
         }
-        /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p>
+        /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
         /// <dl>
         /// <dt></dt>
         /// <dd>
@@ -6294,7 +7221,7 @@ pub mod fluent_builders {
         /// <dt></dt>
         /// <dd>
         /// <p> <code>CURRENT_VERSION</code> </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>
         /// </dd>
         /// <dt></dt>
         /// <dd>
@@ -6311,8 +7238,7 @@ pub mod fluent_builders {
             self.inner = self.inner.deployment_type(input);
             self
         }
-        /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p>
+        /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
         /// <dl>
         /// <dt></dt>
         /// <dd>
@@ -6322,7 +7248,7 @@ pub mod fluent_builders {
         /// <dt></dt>
         /// <dd>
         /// <p> <code>CURRENT_VERSION</code> </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>
         /// </dd>
         /// <dt></dt>
         /// <dd>
@@ -6731,7 +7657,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
         ///
-        /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
+        /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
         pub fn compatible_environment_templates(
             mut self,
             input: crate::model::CompatibleEnvironmentTemplateInput,
@@ -6739,7 +7665,7 @@ pub mod fluent_builders {
             self.inner = self.inner.compatible_environment_templates(input);
             self
         }
-        /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
+        /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
         pub fn set_compatible_environment_templates(
             mut self,
             input: std::option::Option<
@@ -6747,6 +7673,34 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_compatible_environment_templates(input);
+            self
+        }
+        /// Appends an item to `supportedComponentSources`.
+        ///
+        /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
+        ///
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+        /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+        /// </note>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn supported_component_sources(
+            mut self,
+            input: crate::model::ServiceTemplateSupportedComponentSourceType,
+        ) -> Self {
+            self.inner = self.inner.supported_component_sources(input);
+            self
+        }
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+        /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+        /// </note>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_supported_component_sources(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_supported_component_sources(input);
             self
         }
     }

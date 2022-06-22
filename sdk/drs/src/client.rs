@@ -91,6 +91,17 @@ impl Client {
     }
 }
 impl Client {
+    /// Constructs a fluent builder for the [`CreateExtendedSourceServer`](crate::client::fluent_builders::CreateExtendedSourceServer) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExtendedSourceServer::source_server_arn) / [`set_source_server_arn(Option<String>)`](crate::client::fluent_builders::CreateExtendedSourceServer::set_source_server_arn): <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateExtendedSourceServer::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateExtendedSourceServer::set_tags): <p>A list of tags associated with the extended source server.</p>
+    /// - On success, responds with [`CreateExtendedSourceServerOutput`](crate::output::CreateExtendedSourceServerOutput) with field(s):
+    ///   - [`source_server(Option<SourceServer>)`](crate::output::CreateExtendedSourceServerOutput::source_server): <p>Created extended source server.</p>
+    /// - On failure, responds with [`SdkError<CreateExtendedSourceServerError>`](crate::error::CreateExtendedSourceServerError)
+    pub fn create_extended_source_server(&self) -> fluent_builders::CreateExtendedSourceServer {
+        fluent_builders::CreateExtendedSourceServer::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateReplicationConfigurationTemplate`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate) operation.
     ///
     /// - The fluent builder is configurable:
@@ -284,6 +295,7 @@ impl Client {
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::DisconnectSourceServerOutput::data_replication_info): <p>The Data Replication Info of the Source Server.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::DisconnectSourceServerOutput::life_cycle): <p>The lifecycle information of this Source Server.</p>
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::DisconnectSourceServerOutput::source_properties): <p>The source properties of the Source Server.</p>
+    ///   - [`staging_area(Option<StagingArea>)`](crate::output::DisconnectSourceServerOutput::staging_area): <p>The staging area of the source server.</p>
     /// - On failure, responds with [`SdkError<DisconnectSourceServerError>`](crate::error::DisconnectSourceServerError)
     pub fn disconnect_source_server(&self) -> fluent_builders::DisconnectSourceServer {
         fluent_builders::DisconnectSourceServer::new(self.handle.clone())
@@ -355,6 +367,33 @@ impl Client {
     pub fn initialize_service(&self) -> fluent_builders::InitializeService {
         fluent_builders::InitializeService::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListExtensibleSourceServers`](crate::client::fluent_builders::ListExtensibleSourceServers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExtensibleSourceServers::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`staging_account_id(impl Into<String>)`](crate::client::fluent_builders::ListExtensibleSourceServers::staging_account_id) / [`set_staging_account_id(Option<String>)`](crate::client::fluent_builders::ListExtensibleSourceServers::set_staging_account_id): <p>The Id of the staging Account to retrieve extensible source servers from.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExtensibleSourceServers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListExtensibleSourceServers::set_max_results): <p>The maximum number of extensible source servers to retrieve.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExtensibleSourceServers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExtensibleSourceServers::set_next_token): <p>The token of the next extensible source server to retrieve.</p>
+    /// - On success, responds with [`ListExtensibleSourceServersOutput`](crate::output::ListExtensibleSourceServersOutput) with field(s):
+    ///   - [`items(Option<Vec<StagingSourceServer>>)`](crate::output::ListExtensibleSourceServersOutput::items): <p>A list of source servers on a staging Account that are extensible.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListExtensibleSourceServersOutput::next_token): <p>The token of the next extensible source server to retrieve.</p>
+    /// - On failure, responds with [`SdkError<ListExtensibleSourceServersError>`](crate::error::ListExtensibleSourceServersError)
+    pub fn list_extensible_source_servers(&self) -> fluent_builders::ListExtensibleSourceServers {
+        fluent_builders::ListExtensibleSourceServers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListStagingAccounts`](crate::client::fluent_builders::ListStagingAccounts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStagingAccounts::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStagingAccounts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStagingAccounts::set_max_results): <p>The maximum number of staging Accounts to retrieve.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStagingAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStagingAccounts::set_next_token): <p>The token of the next staging Account to retrieve.</p>
+    /// - On success, responds with [`ListStagingAccountsOutput`](crate::output::ListStagingAccountsOutput) with field(s):
+    ///   - [`accounts(Option<Vec<Account>>)`](crate::output::ListStagingAccountsOutput::accounts): <p>An array of staging AWS Accounts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListStagingAccountsOutput::next_token): <p>The token of the next staging Account to retrieve.</p>
+    /// - On failure, responds with [`SdkError<ListStagingAccountsError>`](crate::error::ListStagingAccountsError)
+    pub fn list_staging_accounts(&self) -> fluent_builders::ListStagingAccounts {
+        fluent_builders::ListStagingAccounts::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
     /// - The fluent builder is configurable:
@@ -378,6 +417,7 @@ impl Client {
     ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::RetryDataReplicationOutput::data_replication_info): <p>The Data Replication Info of the Source Server.</p>
     ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::RetryDataReplicationOutput::life_cycle): <p>The lifecycle information of this Source Server.</p>
     ///   - [`source_properties(Option<SourceProperties>)`](crate::output::RetryDataReplicationOutput::source_properties): <p>The source properties of the Source Server.</p>
+    ///   - [`staging_area(Option<StagingArea>)`](crate::output::RetryDataReplicationOutput::staging_area): <p>The staging area of the source server.</p>
     /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::error::RetryDataReplicationError)
     pub fn retry_data_replication(&self) -> fluent_builders::RetryDataReplication {
         fluent_builders::RetryDataReplication::new(self.handle.clone())
@@ -576,6 +616,85 @@ pub mod fluent_builders {
     //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
+    /// Fluent builder constructing a request to `CreateExtendedSourceServer`.
+    ///
+    /// <p>Create an extended source server in the target Account based on the source server in staging account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateExtendedSourceServer {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_extended_source_server_input::Builder,
+    }
+    impl CreateExtendedSourceServer {
+        /// Creates a new `CreateExtendedSourceServer`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateExtendedSourceServerOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateExtendedSourceServerError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
+        pub fn source_server_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_arn(input.into());
+            self
+        }
+        /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
+        pub fn set_source_server_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_server_arn(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags associated with the extended source server.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>A list of tags associated with the extended source server.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateReplicationConfigurationTemplate`.
     ///
     /// <p>Creates a new ReplicationConfigurationTemplate.</p>
@@ -1936,6 +2055,157 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+    }
+    /// Fluent builder constructing a request to `ListExtensibleSourceServers`.
+    ///
+    /// <p>Returns a list of source servers on a staging account that are extensible, which means that: a. The source server is not already extended into this Account. b. The source server on the Account we’re reading from is not an extension of another source server. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListExtensibleSourceServers {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_extensible_source_servers_input::Builder,
+    }
+    impl ListExtensibleSourceServers {
+        /// Creates a new `ListExtensibleSourceServers`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListExtensibleSourceServersOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListExtensibleSourceServersError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExtensibleSourceServersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExtensibleSourceServersPaginator {
+            crate::paginator::ListExtensibleSourceServersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
+        pub fn staging_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_account_id(input.into());
+            self
+        }
+        /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
+        pub fn set_staging_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_staging_account_id(input);
+            self
+        }
+        /// <p>The maximum number of extensible source servers to retrieve.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of extensible source servers to retrieve.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token of the next extensible source server to retrieve.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token of the next extensible source server to retrieve.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListStagingAccounts`.
+    ///
+    /// <p>Returns an array of staging accounts for existing extended source servers.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListStagingAccounts {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_staging_accounts_input::Builder,
+    }
+    impl ListStagingAccounts {
+        /// Creates a new `ListStagingAccounts`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListStagingAccountsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListStagingAccountsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStagingAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStagingAccountsPaginator {
+            crate::paginator::ListStagingAccountsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of staging Accounts to retrieve.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of staging Accounts to retrieve.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token of the next staging Account to retrieve.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token of the next staging Account to retrieve.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
         }
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.

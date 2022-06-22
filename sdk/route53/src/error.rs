@@ -165,7 +165,7 @@ pub enum AssociateVPCWithHostedZoneErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>The VPC ID that you specified either isn't a valid ID or the current account is not authorized to access this VPC.</p>
     InvalidVpcId(crate::error::InvalidVpcId),
-    /// <p>This operation can't be completed either because the current account has reached the limit on reusable delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that you can associate with a private hosted zone. To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+    /// <p>This operation can't be completed because the current account has reached the limit on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     LimitsExceeded(crate::error::LimitsExceeded),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
@@ -312,6 +312,152 @@ impl std::error::Error for AssociateVPCWithHostedZoneError {
             AssociateVPCWithHostedZoneErrorKind::PriorRequestNotComplete(_inner) => Some(_inner),
             AssociateVPCWithHostedZoneErrorKind::PublicZoneVpcAssociation(_inner) => Some(_inner),
             AssociateVPCWithHostedZoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ChangeCidrCollection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ChangeCidrCollectionError {
+    /// Kind of error that occurred.
+    pub kind: ChangeCidrCollectionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ChangeCidrCollection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ChangeCidrCollectionErrorKind {
+    /// <p>This CIDR block is already in use.</p>
+    CidrBlockInUseException(crate::error::CidrBlockInUseException),
+    /// <p>The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code> operation.</p>
+    CidrCollectionVersionMismatchException(crate::error::CidrCollectionVersionMismatchException),
+    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
+    ConcurrentModification(crate::error::ConcurrentModification),
+    /// <p>The input is not valid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>This operation can't be completed because the current account has reached the limit on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+    LimitsExceeded(crate::error::LimitsExceeded),
+    /// <p>The CIDR collection you specified, doesn't exist.</p>
+    NoSuchCidrCollectionException(crate::error::NoSuchCidrCollectionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ChangeCidrCollectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ChangeCidrCollectionErrorKind::CidrBlockInUseException(_inner) => _inner.fmt(f),
+            ChangeCidrCollectionErrorKind::CidrCollectionVersionMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
+            ChangeCidrCollectionErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
+            ChangeCidrCollectionErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            ChangeCidrCollectionErrorKind::LimitsExceeded(_inner) => _inner.fmt(f),
+            ChangeCidrCollectionErrorKind::NoSuchCidrCollectionException(_inner) => _inner.fmt(f),
+            ChangeCidrCollectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ChangeCidrCollectionError {
+    fn code(&self) -> Option<&str> {
+        ChangeCidrCollectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ChangeCidrCollectionError {
+    /// Creates a new `ChangeCidrCollectionError`.
+    pub fn new(kind: ChangeCidrCollectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ChangeCidrCollectionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ChangeCidrCollectionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ChangeCidrCollectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ChangeCidrCollectionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ChangeCidrCollectionErrorKind::CidrBlockInUseException`.
+    pub fn is_cidr_block_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeCidrCollectionErrorKind::CidrBlockInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ChangeCidrCollectionErrorKind::CidrCollectionVersionMismatchException`.
+    pub fn is_cidr_collection_version_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeCidrCollectionErrorKind::CidrCollectionVersionMismatchException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ChangeCidrCollectionErrorKind::ConcurrentModification`.
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeCidrCollectionErrorKind::ConcurrentModification(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ChangeCidrCollectionErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ChangeCidrCollectionErrorKind::InvalidInput(_))
+    }
+    /// Returns `true` if the error kind is `ChangeCidrCollectionErrorKind::LimitsExceeded`.
+    pub fn is_limits_exceeded(&self) -> bool {
+        matches!(&self.kind, ChangeCidrCollectionErrorKind::LimitsExceeded(_))
+    }
+    /// Returns `true` if the error kind is `ChangeCidrCollectionErrorKind::NoSuchCidrCollectionException`.
+    pub fn is_no_such_cidr_collection_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangeCidrCollectionErrorKind::NoSuchCidrCollectionException(_)
+        )
+    }
+}
+impl std::error::Error for ChangeCidrCollectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ChangeCidrCollectionErrorKind::CidrBlockInUseException(_inner) => Some(_inner),
+            ChangeCidrCollectionErrorKind::CidrCollectionVersionMismatchException(_inner) => {
+                Some(_inner)
+            }
+            ChangeCidrCollectionErrorKind::ConcurrentModification(_inner) => Some(_inner),
+            ChangeCidrCollectionErrorKind::InvalidInput(_inner) => Some(_inner),
+            ChangeCidrCollectionErrorKind::LimitsExceeded(_inner) => Some(_inner),
+            ChangeCidrCollectionErrorKind::NoSuchCidrCollectionException(_inner) => Some(_inner),
+            ChangeCidrCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -583,6 +729,130 @@ impl std::error::Error for ChangeTagsForResourceError {
             ChangeTagsForResourceErrorKind::PriorRequestNotComplete(_inner) => Some(_inner),
             ChangeTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ChangeTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateCidrCollection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateCidrCollectionError {
+    /// Kind of error that occurred.
+    pub kind: CreateCidrCollectionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateCidrCollection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateCidrCollectionErrorKind {
+    /// <p>A CIDR collection with this name and a different caller reference already exists in this account.</p>
+    CidrCollectionAlreadyExistsException(crate::error::CidrCollectionAlreadyExistsException),
+    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
+    ConcurrentModification(crate::error::ConcurrentModification),
+    /// <p>The input is not valid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>This operation can't be completed because the current account has reached the limit on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+    LimitsExceeded(crate::error::LimitsExceeded),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateCidrCollectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateCidrCollectionErrorKind::CidrCollectionAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateCidrCollectionErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
+            CreateCidrCollectionErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            CreateCidrCollectionErrorKind::LimitsExceeded(_inner) => _inner.fmt(f),
+            CreateCidrCollectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateCidrCollectionError {
+    fn code(&self) -> Option<&str> {
+        CreateCidrCollectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateCidrCollectionError {
+    /// Creates a new `CreateCidrCollectionError`.
+    pub fn new(kind: CreateCidrCollectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateCidrCollectionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateCidrCollectionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateCidrCollectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateCidrCollectionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateCidrCollectionErrorKind::CidrCollectionAlreadyExistsException`.
+    pub fn is_cidr_collection_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCidrCollectionErrorKind::CidrCollectionAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCidrCollectionErrorKind::ConcurrentModification`.
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCidrCollectionErrorKind::ConcurrentModification(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCidrCollectionErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, CreateCidrCollectionErrorKind::InvalidInput(_))
+    }
+    /// Returns `true` if the error kind is `CreateCidrCollectionErrorKind::LimitsExceeded`.
+    pub fn is_limits_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateCidrCollectionErrorKind::LimitsExceeded(_))
+    }
+}
+impl std::error::Error for CreateCidrCollectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateCidrCollectionErrorKind::CidrCollectionAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            CreateCidrCollectionErrorKind::ConcurrentModification(_inner) => Some(_inner),
+            CreateCidrCollectionErrorKind::InvalidInput(_inner) => Some(_inner),
+            CreateCidrCollectionErrorKind::LimitsExceeded(_inner) => Some(_inner),
+            CreateCidrCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1258,7 +1528,7 @@ pub enum CreateReusableDelegationSetErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// <p>This operation can't be completed either because the current account has reached the limit on reusable delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that you can associate with a private hosted zone. To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+    /// <p>This operation can't be completed because the current account has reached the limit on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     LimitsExceeded(crate::error::LimitsExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2129,6 +2399,129 @@ impl std::error::Error for DeactivateKeySigningKeyError {
             DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::NoSuchKeySigningKey(_inner) => Some(_inner),
             DeactivateKeySigningKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteCidrCollection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteCidrCollectionError {
+    /// Kind of error that occurred.
+    pub kind: DeleteCidrCollectionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteCidrCollection` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteCidrCollectionErrorKind {
+    /// <p>This CIDR collection is in use, and isn't empty.</p>
+    CidrCollectionInUseException(crate::error::CidrCollectionInUseException),
+    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
+    ConcurrentModification(crate::error::ConcurrentModification),
+    /// <p>The input is not valid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>The CIDR collection you specified, doesn't exist.</p>
+    NoSuchCidrCollectionException(crate::error::NoSuchCidrCollectionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteCidrCollectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteCidrCollectionErrorKind::CidrCollectionInUseException(_inner) => _inner.fmt(f),
+            DeleteCidrCollectionErrorKind::ConcurrentModification(_inner) => _inner.fmt(f),
+            DeleteCidrCollectionErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            DeleteCidrCollectionErrorKind::NoSuchCidrCollectionException(_inner) => _inner.fmt(f),
+            DeleteCidrCollectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteCidrCollectionError {
+    fn code(&self) -> Option<&str> {
+        DeleteCidrCollectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteCidrCollectionError {
+    /// Creates a new `DeleteCidrCollectionError`.
+    pub fn new(kind: DeleteCidrCollectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteCidrCollectionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteCidrCollectionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteCidrCollectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteCidrCollectionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteCidrCollectionErrorKind::CidrCollectionInUseException`.
+    pub fn is_cidr_collection_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCidrCollectionErrorKind::CidrCollectionInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCidrCollectionErrorKind::ConcurrentModification`.
+    pub fn is_concurrent_modification(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCidrCollectionErrorKind::ConcurrentModification(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCidrCollectionErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, DeleteCidrCollectionErrorKind::InvalidInput(_))
+    }
+    /// Returns `true` if the error kind is `DeleteCidrCollectionErrorKind::NoSuchCidrCollectionException`.
+    pub fn is_no_such_cidr_collection_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCidrCollectionErrorKind::NoSuchCidrCollectionException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteCidrCollectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteCidrCollectionErrorKind::CidrCollectionInUseException(_inner) => Some(_inner),
+            DeleteCidrCollectionErrorKind::ConcurrentModification(_inner) => Some(_inner),
+            DeleteCidrCollectionErrorKind::InvalidInput(_inner) => Some(_inner),
+            DeleteCidrCollectionErrorKind::NoSuchCidrCollectionException(_inner) => Some(_inner),
+            DeleteCidrCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5407,6 +5800,309 @@ impl std::error::Error for GetTrafficPolicyInstanceCountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetTrafficPolicyInstanceCountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListCidrBlocks` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListCidrBlocksError {
+    /// Kind of error that occurred.
+    pub kind: ListCidrBlocksErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListCidrBlocks` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListCidrBlocksErrorKind {
+    /// <p>The input is not valid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>The CIDR collection you specified, doesn't exist.</p>
+    NoSuchCidrCollectionException(crate::error::NoSuchCidrCollectionException),
+    /// <p>The CIDR collection location doesn't match any locations in your account.</p>
+    NoSuchCidrLocationException(crate::error::NoSuchCidrLocationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListCidrBlocksError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListCidrBlocksErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            ListCidrBlocksErrorKind::NoSuchCidrCollectionException(_inner) => _inner.fmt(f),
+            ListCidrBlocksErrorKind::NoSuchCidrLocationException(_inner) => _inner.fmt(f),
+            ListCidrBlocksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListCidrBlocksError {
+    fn code(&self) -> Option<&str> {
+        ListCidrBlocksError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListCidrBlocksError {
+    /// Creates a new `ListCidrBlocksError`.
+    pub fn new(kind: ListCidrBlocksErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListCidrBlocksError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListCidrBlocksErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListCidrBlocksError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListCidrBlocksErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListCidrBlocksErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListCidrBlocksErrorKind::InvalidInput(_))
+    }
+    /// Returns `true` if the error kind is `ListCidrBlocksErrorKind::NoSuchCidrCollectionException`.
+    pub fn is_no_such_cidr_collection_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCidrBlocksErrorKind::NoSuchCidrCollectionException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCidrBlocksErrorKind::NoSuchCidrLocationException`.
+    pub fn is_no_such_cidr_location_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCidrBlocksErrorKind::NoSuchCidrLocationException(_)
+        )
+    }
+}
+impl std::error::Error for ListCidrBlocksError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListCidrBlocksErrorKind::InvalidInput(_inner) => Some(_inner),
+            ListCidrBlocksErrorKind::NoSuchCidrCollectionException(_inner) => Some(_inner),
+            ListCidrBlocksErrorKind::NoSuchCidrLocationException(_inner) => Some(_inner),
+            ListCidrBlocksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListCidrCollections` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListCidrCollectionsError {
+    /// Kind of error that occurred.
+    pub kind: ListCidrCollectionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListCidrCollections` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListCidrCollectionsErrorKind {
+    /// <p>The input is not valid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListCidrCollectionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListCidrCollectionsErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            ListCidrCollectionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListCidrCollectionsError {
+    fn code(&self) -> Option<&str> {
+        ListCidrCollectionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListCidrCollectionsError {
+    /// Creates a new `ListCidrCollectionsError`.
+    pub fn new(kind: ListCidrCollectionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListCidrCollectionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListCidrCollectionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListCidrCollectionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListCidrCollectionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListCidrCollectionsErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListCidrCollectionsErrorKind::InvalidInput(_))
+    }
+}
+impl std::error::Error for ListCidrCollectionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListCidrCollectionsErrorKind::InvalidInput(_inner) => Some(_inner),
+            ListCidrCollectionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListCidrLocations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListCidrLocationsError {
+    /// Kind of error that occurred.
+    pub kind: ListCidrLocationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListCidrLocations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListCidrLocationsErrorKind {
+    /// <p>The input is not valid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>The CIDR collection you specified, doesn't exist.</p>
+    NoSuchCidrCollectionException(crate::error::NoSuchCidrCollectionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListCidrLocationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListCidrLocationsErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            ListCidrLocationsErrorKind::NoSuchCidrCollectionException(_inner) => _inner.fmt(f),
+            ListCidrLocationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListCidrLocationsError {
+    fn code(&self) -> Option<&str> {
+        ListCidrLocationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListCidrLocationsError {
+    /// Creates a new `ListCidrLocationsError`.
+    pub fn new(kind: ListCidrLocationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListCidrLocationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListCidrLocationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListCidrLocationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListCidrLocationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListCidrLocationsErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListCidrLocationsErrorKind::InvalidInput(_))
+    }
+    /// Returns `true` if the error kind is `ListCidrLocationsErrorKind::NoSuchCidrCollectionException`.
+    pub fn is_no_such_cidr_collection_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCidrLocationsErrorKind::NoSuchCidrCollectionException(_)
+        )
+    }
+}
+impl std::error::Error for ListCidrLocationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListCidrLocationsErrorKind::InvalidInput(_inner) => Some(_inner),
+            ListCidrLocationsErrorKind::NoSuchCidrCollectionException(_inner) => Some(_inner),
+            ListCidrLocationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8721,6 +9417,136 @@ impl IncompatibleVersion {
     }
 }
 
+/// <p>The CIDR collection you specified, doesn't exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NoSuchCidrCollectionException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for NoSuchCidrCollectionException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NoSuchCidrCollectionException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl NoSuchCidrCollectionException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchCidrCollectionException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchCidrCollectionException")?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchCidrCollectionException {}
+/// See [`NoSuchCidrCollectionException`](crate::error::NoSuchCidrCollectionException)
+pub mod no_such_cidr_collection_exception {
+
+    /// A builder for [`NoSuchCidrCollectionException`](crate::error::NoSuchCidrCollectionException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NoSuchCidrCollectionException`](crate::error::NoSuchCidrCollectionException)
+        pub fn build(self) -> crate::error::NoSuchCidrCollectionException {
+            crate::error::NoSuchCidrCollectionException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl NoSuchCidrCollectionException {
+    /// Creates a new builder-style object to manufacture [`NoSuchCidrCollectionException`](crate::error::NoSuchCidrCollectionException)
+    pub fn builder() -> crate::error::no_such_cidr_collection_exception::Builder {
+        crate::error::no_such_cidr_collection_exception::Builder::default()
+    }
+}
+
+/// <p>The CIDR collection location doesn't match any locations in your account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NoSuchCidrLocationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for NoSuchCidrLocationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NoSuchCidrLocationException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl NoSuchCidrLocationException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchCidrLocationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchCidrLocationException")?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchCidrLocationException {}
+/// See [`NoSuchCidrLocationException`](crate::error::NoSuchCidrLocationException)
+pub mod no_such_cidr_location_exception {
+
+    /// A builder for [`NoSuchCidrLocationException`](crate::error::NoSuchCidrLocationException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NoSuchCidrLocationException`](crate::error::NoSuchCidrLocationException)
+        pub fn build(self) -> crate::error::NoSuchCidrLocationException {
+            crate::error::NoSuchCidrLocationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl NoSuchCidrLocationException {
+    /// Creates a new builder-style object to manufacture [`NoSuchCidrLocationException`](crate::error::NoSuchCidrLocationException)
+    pub fn builder() -> crate::error::no_such_cidr_location_exception::Builder {
+        crate::error::no_such_cidr_location_exception::Builder::default()
+    }
+}
+
 /// <p>There is no DNS query logging configuration with the specified ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8744,8 +9570,8 @@ impl NoSuchQueryLoggingConfig {
 impl std::fmt::Display for NoSuchQueryLoggingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchQueryLoggingConfig")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -8809,8 +9635,8 @@ impl HostedZoneNotPrivate {
 impl std::fmt::Display for HostedZoneNotPrivate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HostedZoneNotPrivate")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -8874,8 +9700,8 @@ impl NoSuchGeoLocation {
 impl std::fmt::Display for NoSuchGeoLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchGeoLocation")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -8939,8 +9765,8 @@ impl InvalidArgument {
 impl std::fmt::Display for InvalidArgument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArgument")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -9004,8 +9830,8 @@ impl NoSuchChange {
 impl std::fmt::Display for NoSuchChange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchChange")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -9069,8 +9895,8 @@ impl KeySigningKeyWithActiveStatusNotFound {
 impl std::fmt::Display for KeySigningKeyWithActiveStatusNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KeySigningKeyWithActiveStatusNotFound")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -9134,8 +9960,8 @@ impl InvalidKmsArn {
 impl std::fmt::Display for InvalidKmsArn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidKmsArn [InvalidKMSArn]")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -9199,8 +10025,8 @@ impl InvalidKeySigningKeyStatus {
 impl std::fmt::Display for InvalidKeySigningKeyStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidKeySigningKeyStatus")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -9264,8 +10090,8 @@ impl HostedZonePartiallyDelegated {
 impl std::fmt::Display for HostedZonePartiallyDelegated {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HostedZonePartiallyDelegated")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -9329,8 +10155,8 @@ impl DnssecNotFound {
 impl std::fmt::Display for DnssecNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DnssecNotFound [DNSSECNotFound]")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -9394,8 +10220,8 @@ impl VpcAssociationNotFound {
 impl std::fmt::Display for VpcAssociationNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "VpcAssociationNotFound [VPCAssociationNotFound]")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -9459,8 +10285,8 @@ impl LastVpcAssociation {
 impl std::fmt::Display for LastVpcAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LastVpcAssociation [LastVPCAssociation]")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -9524,8 +10350,8 @@ impl InvalidVpcId {
 impl std::fmt::Display for InvalidVpcId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidVpcId [InvalidVPCId]")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -9592,8 +10418,8 @@ impl std::fmt::Display for KeySigningKeyInParentDsRecord {
             f,
             "KeySigningKeyInParentDsRecord [KeySigningKeyInParentDSRecord]"
         )?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -9660,8 +10486,8 @@ impl std::fmt::Display for VpcAssociationAuthorizationNotFound {
             f,
             "VpcAssociationAuthorizationNotFound [VPCAssociationAuthorizationNotFound]"
         )?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -9725,8 +10551,8 @@ impl TrafficPolicyInUse {
 impl std::fmt::Display for TrafficPolicyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrafficPolicyInUse")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -9790,8 +10616,8 @@ impl DelegationSetInUse {
 impl std::fmt::Display for DelegationSetInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DelegationSetInUse")?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
         }
         Ok(())
     }
@@ -9855,8 +10681,8 @@ impl NoSuchKeySigningKey {
 impl std::fmt::Display for NoSuchKeySigningKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchKeySigningKey")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
@@ -9920,8 +10746,8 @@ impl InvalidSigningStatus {
 impl std::fmt::Display for InvalidSigningStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSigningStatus")?;
-        if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+        if let Some(inner_36) = &self.message {
+            write!(f, ": {}", inner_36)?;
         }
         Ok(())
     }
@@ -9985,8 +10811,8 @@ impl HostedZoneNotEmpty {
 impl std::fmt::Display for HostedZoneNotEmpty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HostedZoneNotEmpty")?;
-        if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+        if let Some(inner_37) = &self.message {
+            write!(f, ": {}", inner_37)?;
         }
         Ok(())
     }
@@ -10050,8 +10876,8 @@ impl HealthCheckInUse {
 impl std::fmt::Display for HealthCheckInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HealthCheckInUse")?;
-        if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+        if let Some(inner_38) = &self.message {
+            write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
@@ -10092,6 +10918,71 @@ impl HealthCheckInUse {
     }
 }
 
+/// <p>This CIDR collection is in use, and isn't empty.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CidrCollectionInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CidrCollectionInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CidrCollectionInUseException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl CidrCollectionInUseException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CidrCollectionInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CidrCollectionInUseException")?;
+        if let Some(inner_39) = &self.message {
+            write!(f, ": {}", inner_39)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CidrCollectionInUseException {}
+/// See [`CidrCollectionInUseException`](crate::error::CidrCollectionInUseException)
+pub mod cidr_collection_in_use_exception {
+
+    /// A builder for [`CidrCollectionInUseException`](crate::error::CidrCollectionInUseException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CidrCollectionInUseException`](crate::error::CidrCollectionInUseException)
+        pub fn build(self) -> crate::error::CidrCollectionInUseException {
+            crate::error::CidrCollectionInUseException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl CidrCollectionInUseException {
+    /// Creates a new builder-style object to manufacture [`CidrCollectionInUseException`](crate::error::CidrCollectionInUseException)
+    pub fn builder() -> crate::error::cidr_collection_in_use_exception::Builder {
+        crate::error::cidr_collection_in_use_exception::Builder::default()
+    }
+}
+
 /// <p>The key-signing key (KSK) that you specified can't be deactivated because it's the only KSK for a currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10115,8 +11006,8 @@ impl KeySigningKeyInUse {
 impl std::fmt::Display for KeySigningKeyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KeySigningKeyInUse")?;
-        if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+        if let Some(inner_40) = &self.message {
+            write!(f, ": {}", inner_40)?;
         }
         Ok(())
     }
@@ -10183,8 +11074,8 @@ impl std::fmt::Display for TooManyVpcAssociationAuthorizations {
             f,
             "TooManyVpcAssociationAuthorizations [TooManyVPCAssociationAuthorizations]"
         )?;
-        if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }
@@ -10249,8 +11140,8 @@ impl TooManyTrafficPolicyVersionsForCurrentPolicy {
 impl std::fmt::Display for TooManyTrafficPolicyVersionsForCurrentPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTrafficPolicyVersionsForCurrentPolicy")?;
-        if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+        if let Some(inner_42) = &self.message {
+            write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
@@ -10314,8 +11205,8 @@ impl InvalidTrafficPolicyDocument {
 impl std::fmt::Display for InvalidTrafficPolicyDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTrafficPolicyDocument")?;
-        if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+        if let Some(inner_43) = &self.message {
+            write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
@@ -10379,8 +11270,8 @@ impl TrafficPolicyInstanceAlreadyExists {
 impl std::fmt::Display for TrafficPolicyInstanceAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrafficPolicyInstanceAlreadyExists")?;
-        if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -10447,8 +11338,8 @@ impl TooManyTrafficPolicyInstances {
 impl std::fmt::Display for TooManyTrafficPolicyInstances {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTrafficPolicyInstances")?;
-        if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
@@ -10512,8 +11403,8 @@ impl TrafficPolicyAlreadyExists {
 impl std::fmt::Display for TrafficPolicyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrafficPolicyAlreadyExists")?;
-        if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+        if let Some(inner_46) = &self.message {
+            write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
@@ -10580,8 +11471,8 @@ impl TooManyTrafficPolicies {
 impl std::fmt::Display for TooManyTrafficPolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTrafficPolicies")?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+        if let Some(inner_47) = &self.message {
+            write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
@@ -10622,7 +11513,7 @@ impl TooManyTrafficPolicies {
     }
 }
 
-/// <p>This operation can't be completed either because the current account has reached the limit on reusable delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that you can associate with a private hosted zone. To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+/// <p>This operation can't be completed because the current account has reached the limit on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitsExceeded {
@@ -10645,8 +11536,8 @@ impl LimitsExceeded {
 impl std::fmt::Display for LimitsExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitsExceeded")?;
-        if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+        if let Some(inner_48) = &self.message {
+            write!(f, ": {}", inner_48)?;
         }
         Ok(())
     }
@@ -10710,8 +11601,8 @@ impl HostedZoneNotFound {
 impl std::fmt::Display for HostedZoneNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HostedZoneNotFound")?;
-        if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+        if let Some(inner_49) = &self.message {
+            write!(f, ": {}", inner_49)?;
         }
         Ok(())
     }
@@ -10775,8 +11666,8 @@ impl DelegationSetNotAvailable {
 impl std::fmt::Display for DelegationSetNotAvailable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DelegationSetNotAvailable")?;
-        if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+        if let Some(inner_50) = &self.message {
+            write!(f, ": {}", inner_50)?;
         }
         Ok(())
     }
@@ -10840,8 +11731,8 @@ impl DelegationSetAlreadyReusable {
 impl std::fmt::Display for DelegationSetAlreadyReusable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DelegationSetAlreadyReusable")?;
-        if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+        if let Some(inner_51) = &self.message {
+            write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
@@ -10905,8 +11796,8 @@ impl DelegationSetAlreadyCreated {
 impl std::fmt::Display for DelegationSetAlreadyCreated {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DelegationSetAlreadyCreated")?;
-        if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+        if let Some(inner_52) = &self.message {
+            write!(f, ": {}", inner_52)?;
         }
         Ok(())
     }
@@ -10970,8 +11861,8 @@ impl QueryLoggingConfigAlreadyExists {
 impl std::fmt::Display for QueryLoggingConfigAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QueryLoggingConfigAlreadyExists")?;
-        if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+        if let Some(inner_53) = &self.message {
+            write!(f, ": {}", inner_53)?;
         }
         Ok(())
     }
@@ -11035,8 +11926,8 @@ impl NoSuchCloudWatchLogsLogGroup {
 impl std::fmt::Display for NoSuchCloudWatchLogsLogGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchCloudWatchLogsLogGroup")?;
-        if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+        if let Some(inner_54) = &self.message {
+            write!(f, ": {}", inner_54)?;
         }
         Ok(())
     }
@@ -11106,8 +11997,8 @@ impl InsufficientCloudWatchLogsResourcePolicy {
 impl std::fmt::Display for InsufficientCloudWatchLogsResourcePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientCloudWatchLogsResourcePolicy")?;
-        if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+        if let Some(inner_55) = &self.message {
+            write!(f, ": {}", inner_55)?;
         }
         Ok(())
     }
@@ -11171,8 +12062,8 @@ impl TooManyKeySigningKeys {
 impl std::fmt::Display for TooManyKeySigningKeys {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyKeySigningKeys")?;
-        if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+        if let Some(inner_56) = &self.message {
+            write!(f, ": {}", inner_56)?;
         }
         Ok(())
     }
@@ -11236,8 +12127,8 @@ impl KeySigningKeyAlreadyExists {
 impl std::fmt::Display for KeySigningKeyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KeySigningKeyAlreadyExists")?;
-        if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+        if let Some(inner_57) = &self.message {
+            write!(f, ": {}", inner_57)?;
         }
         Ok(())
     }
@@ -11301,8 +12192,8 @@ impl InvalidKeySigningKeyName {
 impl std::fmt::Display for InvalidKeySigningKeyName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidKeySigningKeyName")?;
-        if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+        if let Some(inner_58) = &self.message {
+            write!(f, ": {}", inner_58)?;
         }
         Ok(())
     }
@@ -11370,8 +12261,8 @@ impl TooManyHostedZones {
 impl std::fmt::Display for TooManyHostedZones {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHostedZones")?;
-        if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+        if let Some(inner_59) = &self.message {
+            write!(f, ": {}", inner_59)?;
         }
         Ok(())
     }
@@ -11435,8 +12326,8 @@ impl HostedZoneAlreadyExists {
 impl std::fmt::Display for HostedZoneAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HostedZoneAlreadyExists")?;
-        if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+        if let Some(inner_60) = &self.message {
+            write!(f, ": {}", inner_60)?;
         }
         Ok(())
     }
@@ -11505,8 +12396,8 @@ impl ConflictingDomainExists {
 impl std::fmt::Display for ConflictingDomainExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictingDomainExists")?;
-        if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+        if let Some(inner_61) = &self.message {
+            write!(f, ": {}", inner_61)?;
         }
         Ok(())
     }
@@ -11573,8 +12464,8 @@ impl TooManyHealthChecks {
 impl std::fmt::Display for TooManyHealthChecks {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHealthChecks")?;
-        if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+        if let Some(inner_62) = &self.message {
+            write!(f, ": {}", inner_62)?;
         }
         Ok(())
     }
@@ -11642,8 +12533,8 @@ impl HealthCheckAlreadyExists {
 impl std::fmt::Display for HealthCheckAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HealthCheckAlreadyExists")?;
-        if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+        if let Some(inner_63) = &self.message {
+            write!(f, ": {}", inner_63)?;
         }
         Ok(())
     }
@@ -11684,6 +12575,71 @@ impl HealthCheckAlreadyExists {
     }
 }
 
+/// <p>A CIDR collection with this name and a different caller reference already exists in this account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CidrCollectionAlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CidrCollectionAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CidrCollectionAlreadyExistsException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl CidrCollectionAlreadyExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CidrCollectionAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CidrCollectionAlreadyExistsException")?;
+        if let Some(inner_64) = &self.message {
+            write!(f, ": {}", inner_64)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CidrCollectionAlreadyExistsException {}
+/// See [`CidrCollectionAlreadyExistsException`](crate::error::CidrCollectionAlreadyExistsException)
+pub mod cidr_collection_already_exists_exception {
+
+    /// A builder for [`CidrCollectionAlreadyExistsException`](crate::error::CidrCollectionAlreadyExistsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CidrCollectionAlreadyExistsException`](crate::error::CidrCollectionAlreadyExistsException)
+        pub fn build(self) -> crate::error::CidrCollectionAlreadyExistsException {
+            crate::error::CidrCollectionAlreadyExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl CidrCollectionAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`CidrCollectionAlreadyExistsException`](crate::error::CidrCollectionAlreadyExistsException)
+    pub fn builder() -> crate::error::cidr_collection_already_exists_exception::Builder {
+        crate::error::cidr_collection_already_exists_exception::Builder::default()
+    }
+}
+
 /// <p>This exception contains a list of messages that might contain one or more error messages. Each error message indicates one error in the change batch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11716,8 +12672,8 @@ impl InvalidChangeBatch {
 impl std::fmt::Display for InvalidChangeBatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidChangeBatch")?;
-        if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+        if let Some(inner_65) = &self.message {
+            write!(f, ": {}", inner_65)?;
         }
         Ok(())
     }
@@ -11779,6 +12735,136 @@ impl InvalidChangeBatch {
     }
 }
 
+/// <p>The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code> operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CidrCollectionVersionMismatchException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CidrCollectionVersionMismatchException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CidrCollectionVersionMismatchException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl CidrCollectionVersionMismatchException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CidrCollectionVersionMismatchException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CidrCollectionVersionMismatchException")?;
+        if let Some(inner_66) = &self.message {
+            write!(f, ": {}", inner_66)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CidrCollectionVersionMismatchException {}
+/// See [`CidrCollectionVersionMismatchException`](crate::error::CidrCollectionVersionMismatchException)
+pub mod cidr_collection_version_mismatch_exception {
+
+    /// A builder for [`CidrCollectionVersionMismatchException`](crate::error::CidrCollectionVersionMismatchException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CidrCollectionVersionMismatchException`](crate::error::CidrCollectionVersionMismatchException)
+        pub fn build(self) -> crate::error::CidrCollectionVersionMismatchException {
+            crate::error::CidrCollectionVersionMismatchException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl CidrCollectionVersionMismatchException {
+    /// Creates a new builder-style object to manufacture [`CidrCollectionVersionMismatchException`](crate::error::CidrCollectionVersionMismatchException)
+    pub fn builder() -> crate::error::cidr_collection_version_mismatch_exception::Builder {
+        crate::error::cidr_collection_version_mismatch_exception::Builder::default()
+    }
+}
+
+/// <p>This CIDR block is already in use.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CidrBlockInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CidrBlockInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CidrBlockInUseException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl CidrBlockInUseException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CidrBlockInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CidrBlockInUseException")?;
+        if let Some(inner_67) = &self.message {
+            write!(f, ": {}", inner_67)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CidrBlockInUseException {}
+/// See [`CidrBlockInUseException`](crate::error::CidrBlockInUseException)
+pub mod cidr_block_in_use_exception {
+
+    /// A builder for [`CidrBlockInUseException`](crate::error::CidrBlockInUseException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CidrBlockInUseException`](crate::error::CidrBlockInUseException)
+        pub fn build(self) -> crate::error::CidrBlockInUseException {
+            crate::error::CidrBlockInUseException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl CidrBlockInUseException {
+    /// Creates a new builder-style object to manufacture [`CidrBlockInUseException`](crate::error::CidrBlockInUseException)
+    pub fn builder() -> crate::error::cidr_block_in_use_exception::Builder {
+        crate::error::cidr_block_in_use_exception::Builder::default()
+    }
+}
+
 /// <p>You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a VPC with a public hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11802,8 +12888,8 @@ impl PublicZoneVpcAssociation {
 impl std::fmt::Display for PublicZoneVpcAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PublicZoneVpcAssociation [PublicZoneVPCAssociation]")?;
-        if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+        if let Some(inner_68) = &self.message {
+            write!(f, ": {}", inner_68)?;
         }
         Ok(())
     }
@@ -11867,8 +12953,8 @@ impl NotAuthorizedException {
 impl std::fmt::Display for NotAuthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotAuthorizedException")?;
-        if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+        if let Some(inner_69) = &self.message {
+            write!(f, ": {}", inner_69)?;
         }
         Ok(())
     }

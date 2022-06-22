@@ -556,6 +556,984 @@ impl HierarchyLevelUpdate {
     }
 }
 
+/// <p>Contains information about why a property is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PropertyValidationExceptionProperty {
+    /// <p>The full property path.</p>
+    pub property_path: std::option::Option<std::string::String>,
+    /// <p>Why the property is not valid.</p>
+    pub reason: std::option::Option<crate::model::PropertyValidationExceptionReason>,
+    /// <p>A message describing why the property is not valid.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl PropertyValidationExceptionProperty {
+    /// <p>The full property path.</p>
+    pub fn property_path(&self) -> std::option::Option<&str> {
+        self.property_path.as_deref()
+    }
+    /// <p>Why the property is not valid.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::PropertyValidationExceptionReason> {
+        self.reason.as_ref()
+    }
+    /// <p>A message describing why the property is not valid.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for PropertyValidationExceptionProperty {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PropertyValidationExceptionProperty");
+        formatter.field("property_path", &self.property_path);
+        formatter.field("reason", &self.reason);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`PropertyValidationExceptionProperty`](crate::model::PropertyValidationExceptionProperty)
+pub mod property_validation_exception_property {
+
+    /// A builder for [`PropertyValidationExceptionProperty`](crate::model::PropertyValidationExceptionProperty)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) property_path: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<crate::model::PropertyValidationExceptionReason>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The full property path.</p>
+        pub fn property_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_path = Some(input.into());
+            self
+        }
+        /// <p>The full property path.</p>
+        pub fn set_property_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.property_path = input;
+            self
+        }
+        /// <p>Why the property is not valid.</p>
+        pub fn reason(mut self, input: crate::model::PropertyValidationExceptionReason) -> Self {
+            self.reason = Some(input);
+            self
+        }
+        /// <p>Why the property is not valid.</p>
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::PropertyValidationExceptionReason>,
+        ) -> Self {
+            self.reason = input;
+            self
+        }
+        /// <p>A message describing why the property is not valid.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing why the property is not valid.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PropertyValidationExceptionProperty`](crate::model::PropertyValidationExceptionProperty)
+        pub fn build(self) -> crate::model::PropertyValidationExceptionProperty {
+            crate::model::PropertyValidationExceptionProperty {
+                property_path: self.property_path,
+                reason: self.reason,
+                message: self.message,
+            }
+        }
+    }
+}
+impl PropertyValidationExceptionProperty {
+    /// Creates a new builder-style object to manufacture [`PropertyValidationExceptionProperty`](crate::model::PropertyValidationExceptionProperty)
+    pub fn builder() -> crate::model::property_validation_exception_property::Builder {
+        crate::model::property_validation_exception_property::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PropertyValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidFormat,
+    #[allow(missing_docs)] // documentation missing in model
+    NotSupported,
+    #[allow(missing_docs)] // documentation missing in model
+    ReferencedResourceNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    RequiredPropertyMissing,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNameAlreadyExists,
+    #[allow(missing_docs)] // documentation missing in model
+    UniqueConstraintViolated,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PropertyValidationExceptionReason {
+    fn from(s: &str) -> Self {
+        match s {
+            "INVALID_FORMAT" => PropertyValidationExceptionReason::InvalidFormat,
+            "NOT_SUPPORTED" => PropertyValidationExceptionReason::NotSupported,
+            "REFERENCED_RESOURCE_NOT_FOUND" => {
+                PropertyValidationExceptionReason::ReferencedResourceNotFound
+            }
+            "REQUIRED_PROPERTY_MISSING" => {
+                PropertyValidationExceptionReason::RequiredPropertyMissing
+            }
+            "RESOURCE_NAME_ALREADY_EXISTS" => {
+                PropertyValidationExceptionReason::ResourceNameAlreadyExists
+            }
+            "UNIQUE_CONSTRAINT_VIOLATED" => {
+                PropertyValidationExceptionReason::UniqueConstraintViolated
+            }
+            other => PropertyValidationExceptionReason::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PropertyValidationExceptionReason {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PropertyValidationExceptionReason::from(s))
+    }
+}
+impl PropertyValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PropertyValidationExceptionReason::InvalidFormat => "INVALID_FORMAT",
+            PropertyValidationExceptionReason::NotSupported => "NOT_SUPPORTED",
+            PropertyValidationExceptionReason::ReferencedResourceNotFound => {
+                "REFERENCED_RESOURCE_NOT_FOUND"
+            }
+            PropertyValidationExceptionReason::RequiredPropertyMissing => {
+                "REQUIRED_PROPERTY_MISSING"
+            }
+            PropertyValidationExceptionReason::ResourceNameAlreadyExists => {
+                "RESOURCE_NAME_ALREADY_EXISTS"
+            }
+            PropertyValidationExceptionReason::UniqueConstraintViolated => {
+                "UNIQUE_CONSTRAINT_VIOLATED"
+            }
+            PropertyValidationExceptionReason::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "INVALID_FORMAT",
+            "NOT_SUPPORTED",
+            "REFERENCED_RESOURCE_NOT_FOUND",
+            "REQUIRED_PROPERTY_MISSING",
+            "RESOURCE_NAME_ALREADY_EXISTS",
+            "UNIQUE_CONSTRAINT_VIOLATED",
+        ]
+    }
+}
+impl AsRef<str> for PropertyValidationExceptionReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TaskTemplateStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TaskTemplateStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => TaskTemplateStatus::Active,
+            "INACTIVE" => TaskTemplateStatus::Inactive,
+            other => TaskTemplateStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TaskTemplateStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TaskTemplateStatus::from(s))
+    }
+}
+impl TaskTemplateStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TaskTemplateStatus::Active => "ACTIVE",
+            TaskTemplateStatus::Inactive => "INACTIVE",
+            TaskTemplateStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "INACTIVE"]
+    }
+}
+impl AsRef<str> for TaskTemplateStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes a single task template field.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TaskTemplateField {
+    /// <p>The unique identifier for the field.</p>
+    pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+    /// <p>The description of the field.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Indicates the type of field.</p>
+    pub r#type: std::option::Option<crate::model::TaskTemplateFieldType>,
+    /// <p>A list of options for a single select field.</p>
+    pub single_select_options: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl TaskTemplateField {
+    /// <p>The unique identifier for the field.</p>
+    pub fn id(&self) -> std::option::Option<&crate::model::TaskTemplateFieldIdentifier> {
+        self.id.as_ref()
+    }
+    /// <p>The description of the field.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates the type of field.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TaskTemplateFieldType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A list of options for a single select field.</p>
+    pub fn single_select_options(&self) -> std::option::Option<&[std::string::String]> {
+        self.single_select_options.as_deref()
+    }
+}
+impl std::fmt::Debug for TaskTemplateField {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TaskTemplateField");
+        formatter.field("id", &self.id);
+        formatter.field("description", &self.description);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("single_select_options", &self.single_select_options);
+        formatter.finish()
+    }
+}
+/// See [`TaskTemplateField`](crate::model::TaskTemplateField)
+pub mod task_template_field {
+
+    /// A builder for [`TaskTemplateField`](crate::model::TaskTemplateField)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::TaskTemplateFieldType>,
+        pub(crate) single_select_options: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the field.</p>
+        pub fn id(mut self, input: crate::model::TaskTemplateFieldIdentifier) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p>The unique identifier for the field.</p>
+        pub fn set_id(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+        ) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The description of the field.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the field.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Indicates the type of field.</p>
+        pub fn r#type(mut self, input: crate::model::TaskTemplateFieldType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Indicates the type of field.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateFieldType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Appends an item to `single_select_options`.
+        ///
+        /// To override the contents of this collection use [`set_single_select_options`](Self::set_single_select_options).
+        ///
+        /// <p>A list of options for a single select field.</p>
+        pub fn single_select_options(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.single_select_options.unwrap_or_default();
+            v.push(input.into());
+            self.single_select_options = Some(v);
+            self
+        }
+        /// <p>A list of options for a single select field.</p>
+        pub fn set_single_select_options(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.single_select_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TaskTemplateField`](crate::model::TaskTemplateField)
+        pub fn build(self) -> crate::model::TaskTemplateField {
+            crate::model::TaskTemplateField {
+                id: self.id,
+                description: self.description,
+                r#type: self.r#type,
+                single_select_options: self.single_select_options,
+            }
+        }
+    }
+}
+impl TaskTemplateField {
+    /// Creates a new builder-style object to manufacture [`TaskTemplateField`](crate::model::TaskTemplateField)
+    pub fn builder() -> crate::model::task_template_field::Builder {
+        crate::model::task_template_field::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TaskTemplateFieldType {
+    #[allow(missing_docs)] // documentation missing in model
+    Boolean,
+    #[allow(missing_docs)] // documentation missing in model
+    DateTime,
+    #[allow(missing_docs)] // documentation missing in model
+    Description,
+    #[allow(missing_docs)] // documentation missing in model
+    Email,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
+    #[allow(missing_docs)] // documentation missing in model
+    Number,
+    #[allow(missing_docs)] // documentation missing in model
+    QuickConnect,
+    #[allow(missing_docs)] // documentation missing in model
+    ScheduledTime,
+    #[allow(missing_docs)] // documentation missing in model
+    SingleSelect,
+    #[allow(missing_docs)] // documentation missing in model
+    Text,
+    #[allow(missing_docs)] // documentation missing in model
+    TextArea,
+    #[allow(missing_docs)] // documentation missing in model
+    Url,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TaskTemplateFieldType {
+    fn from(s: &str) -> Self {
+        match s {
+            "BOOLEAN" => TaskTemplateFieldType::Boolean,
+            "DATE_TIME" => TaskTemplateFieldType::DateTime,
+            "DESCRIPTION" => TaskTemplateFieldType::Description,
+            "EMAIL" => TaskTemplateFieldType::Email,
+            "NAME" => TaskTemplateFieldType::Name,
+            "NUMBER" => TaskTemplateFieldType::Number,
+            "QUICK_CONNECT" => TaskTemplateFieldType::QuickConnect,
+            "SCHEDULED_TIME" => TaskTemplateFieldType::ScheduledTime,
+            "SINGLE_SELECT" => TaskTemplateFieldType::SingleSelect,
+            "TEXT" => TaskTemplateFieldType::Text,
+            "TEXT_AREA" => TaskTemplateFieldType::TextArea,
+            "URL" => TaskTemplateFieldType::Url,
+            other => TaskTemplateFieldType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TaskTemplateFieldType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TaskTemplateFieldType::from(s))
+    }
+}
+impl TaskTemplateFieldType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TaskTemplateFieldType::Boolean => "BOOLEAN",
+            TaskTemplateFieldType::DateTime => "DATE_TIME",
+            TaskTemplateFieldType::Description => "DESCRIPTION",
+            TaskTemplateFieldType::Email => "EMAIL",
+            TaskTemplateFieldType::Name => "NAME",
+            TaskTemplateFieldType::Number => "NUMBER",
+            TaskTemplateFieldType::QuickConnect => "QUICK_CONNECT",
+            TaskTemplateFieldType::ScheduledTime => "SCHEDULED_TIME",
+            TaskTemplateFieldType::SingleSelect => "SINGLE_SELECT",
+            TaskTemplateFieldType::Text => "TEXT",
+            TaskTemplateFieldType::TextArea => "TEXT_AREA",
+            TaskTemplateFieldType::Url => "URL",
+            TaskTemplateFieldType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BOOLEAN",
+            "DATE_TIME",
+            "DESCRIPTION",
+            "EMAIL",
+            "NAME",
+            "NUMBER",
+            "QUICK_CONNECT",
+            "SCHEDULED_TIME",
+            "SINGLE_SELECT",
+            "TEXT",
+            "TEXT_AREA",
+            "URL",
+        ]
+    }
+}
+impl AsRef<str> for TaskTemplateFieldType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The identifier of the task template field.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TaskTemplateFieldIdentifier {
+    /// <p>The name of the task template field.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl TaskTemplateFieldIdentifier {
+    /// <p>The name of the task template field.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for TaskTemplateFieldIdentifier {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TaskTemplateFieldIdentifier");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`TaskTemplateFieldIdentifier`](crate::model::TaskTemplateFieldIdentifier)
+pub mod task_template_field_identifier {
+
+    /// A builder for [`TaskTemplateFieldIdentifier`](crate::model::TaskTemplateFieldIdentifier)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the task template field.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the task template field.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TaskTemplateFieldIdentifier`](crate::model::TaskTemplateFieldIdentifier)
+        pub fn build(self) -> crate::model::TaskTemplateFieldIdentifier {
+            crate::model::TaskTemplateFieldIdentifier { name: self.name }
+        }
+    }
+}
+impl TaskTemplateFieldIdentifier {
+    /// Creates a new builder-style object to manufacture [`TaskTemplateFieldIdentifier`](crate::model::TaskTemplateFieldIdentifier)
+    pub fn builder() -> crate::model::task_template_field_identifier::Builder {
+        crate::model::task_template_field_identifier::Builder::default()
+    }
+}
+
+/// <p>Describes default values for fields on a template.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TaskTemplateDefaults {
+    /// <p>Default value for the field.</p>
+    pub default_field_values:
+        std::option::Option<std::vec::Vec<crate::model::TaskTemplateDefaultFieldValue>>,
+}
+impl TaskTemplateDefaults {
+    /// <p>Default value for the field.</p>
+    pub fn default_field_values(
+        &self,
+    ) -> std::option::Option<&[crate::model::TaskTemplateDefaultFieldValue]> {
+        self.default_field_values.as_deref()
+    }
+}
+impl std::fmt::Debug for TaskTemplateDefaults {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TaskTemplateDefaults");
+        formatter.field("default_field_values", &self.default_field_values);
+        formatter.finish()
+    }
+}
+/// See [`TaskTemplateDefaults`](crate::model::TaskTemplateDefaults)
+pub mod task_template_defaults {
+
+    /// A builder for [`TaskTemplateDefaults`](crate::model::TaskTemplateDefaults)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) default_field_values:
+            std::option::Option<std::vec::Vec<crate::model::TaskTemplateDefaultFieldValue>>,
+    }
+    impl Builder {
+        /// Appends an item to `default_field_values`.
+        ///
+        /// To override the contents of this collection use [`set_default_field_values`](Self::set_default_field_values).
+        ///
+        /// <p>Default value for the field.</p>
+        pub fn default_field_values(
+            mut self,
+            input: crate::model::TaskTemplateDefaultFieldValue,
+        ) -> Self {
+            let mut v = self.default_field_values.unwrap_or_default();
+            v.push(input);
+            self.default_field_values = Some(v);
+            self
+        }
+        /// <p>Default value for the field.</p>
+        pub fn set_default_field_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TaskTemplateDefaultFieldValue>>,
+        ) -> Self {
+            self.default_field_values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TaskTemplateDefaults`](crate::model::TaskTemplateDefaults)
+        pub fn build(self) -> crate::model::TaskTemplateDefaults {
+            crate::model::TaskTemplateDefaults {
+                default_field_values: self.default_field_values,
+            }
+        }
+    }
+}
+impl TaskTemplateDefaults {
+    /// Creates a new builder-style object to manufacture [`TaskTemplateDefaults`](crate::model::TaskTemplateDefaults)
+    pub fn builder() -> crate::model::task_template_defaults::Builder {
+        crate::model::task_template_defaults::Builder::default()
+    }
+}
+
+/// <p>Describes a default field and its corresponding value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TaskTemplateDefaultFieldValue {
+    /// <p>Identifier of a field. </p>
+    pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+    /// <p>Default value for the field.</p>
+    pub default_value: std::option::Option<std::string::String>,
+}
+impl TaskTemplateDefaultFieldValue {
+    /// <p>Identifier of a field. </p>
+    pub fn id(&self) -> std::option::Option<&crate::model::TaskTemplateFieldIdentifier> {
+        self.id.as_ref()
+    }
+    /// <p>Default value for the field.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+}
+impl std::fmt::Debug for TaskTemplateDefaultFieldValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TaskTemplateDefaultFieldValue");
+        formatter.field("id", &self.id);
+        formatter.field("default_value", &self.default_value);
+        formatter.finish()
+    }
+}
+/// See [`TaskTemplateDefaultFieldValue`](crate::model::TaskTemplateDefaultFieldValue)
+pub mod task_template_default_field_value {
+
+    /// A builder for [`TaskTemplateDefaultFieldValue`](crate::model::TaskTemplateDefaultFieldValue)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+        pub(crate) default_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifier of a field. </p>
+        pub fn id(mut self, input: crate::model::TaskTemplateFieldIdentifier) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p>Identifier of a field. </p>
+        pub fn set_id(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+        ) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>Default value for the field.</p>
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_value = Some(input.into());
+            self
+        }
+        /// <p>Default value for the field.</p>
+        pub fn set_default_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TaskTemplateDefaultFieldValue`](crate::model::TaskTemplateDefaultFieldValue)
+        pub fn build(self) -> crate::model::TaskTemplateDefaultFieldValue {
+            crate::model::TaskTemplateDefaultFieldValue {
+                id: self.id,
+                default_value: self.default_value,
+            }
+        }
+    }
+}
+impl TaskTemplateDefaultFieldValue {
+    /// Creates a new builder-style object to manufacture [`TaskTemplateDefaultFieldValue`](crate::model::TaskTemplateDefaultFieldValue)
+    pub fn builder() -> crate::model::task_template_default_field_value::Builder {
+        crate::model::task_template_default_field_value::Builder::default()
+    }
+}
+
+/// <p>Describes constraints that apply to the template fields.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TaskTemplateConstraints {
+    /// <p>Lists the fields that are required to be filled by agents.</p>
+    pub required_fields: std::option::Option<std::vec::Vec<crate::model::RequiredFieldInfo>>,
+    /// <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
+    pub read_only_fields: std::option::Option<std::vec::Vec<crate::model::ReadOnlyFieldInfo>>,
+    /// <p>Lists the fields that are invisible to agents.</p>
+    pub invisible_fields: std::option::Option<std::vec::Vec<crate::model::InvisibleFieldInfo>>,
+}
+impl TaskTemplateConstraints {
+    /// <p>Lists the fields that are required to be filled by agents.</p>
+    pub fn required_fields(&self) -> std::option::Option<&[crate::model::RequiredFieldInfo]> {
+        self.required_fields.as_deref()
+    }
+    /// <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
+    pub fn read_only_fields(&self) -> std::option::Option<&[crate::model::ReadOnlyFieldInfo]> {
+        self.read_only_fields.as_deref()
+    }
+    /// <p>Lists the fields that are invisible to agents.</p>
+    pub fn invisible_fields(&self) -> std::option::Option<&[crate::model::InvisibleFieldInfo]> {
+        self.invisible_fields.as_deref()
+    }
+}
+impl std::fmt::Debug for TaskTemplateConstraints {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TaskTemplateConstraints");
+        formatter.field("required_fields", &self.required_fields);
+        formatter.field("read_only_fields", &self.read_only_fields);
+        formatter.field("invisible_fields", &self.invisible_fields);
+        formatter.finish()
+    }
+}
+/// See [`TaskTemplateConstraints`](crate::model::TaskTemplateConstraints)
+pub mod task_template_constraints {
+
+    /// A builder for [`TaskTemplateConstraints`](crate::model::TaskTemplateConstraints)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) required_fields:
+            std::option::Option<std::vec::Vec<crate::model::RequiredFieldInfo>>,
+        pub(crate) read_only_fields:
+            std::option::Option<std::vec::Vec<crate::model::ReadOnlyFieldInfo>>,
+        pub(crate) invisible_fields:
+            std::option::Option<std::vec::Vec<crate::model::InvisibleFieldInfo>>,
+    }
+    impl Builder {
+        /// Appends an item to `required_fields`.
+        ///
+        /// To override the contents of this collection use [`set_required_fields`](Self::set_required_fields).
+        ///
+        /// <p>Lists the fields that are required to be filled by agents.</p>
+        pub fn required_fields(mut self, input: crate::model::RequiredFieldInfo) -> Self {
+            let mut v = self.required_fields.unwrap_or_default();
+            v.push(input);
+            self.required_fields = Some(v);
+            self
+        }
+        /// <p>Lists the fields that are required to be filled by agents.</p>
+        pub fn set_required_fields(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RequiredFieldInfo>>,
+        ) -> Self {
+            self.required_fields = input;
+            self
+        }
+        /// Appends an item to `read_only_fields`.
+        ///
+        /// To override the contents of this collection use [`set_read_only_fields`](Self::set_read_only_fields).
+        ///
+        /// <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
+        pub fn read_only_fields(mut self, input: crate::model::ReadOnlyFieldInfo) -> Self {
+            let mut v = self.read_only_fields.unwrap_or_default();
+            v.push(input);
+            self.read_only_fields = Some(v);
+            self
+        }
+        /// <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
+        pub fn set_read_only_fields(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReadOnlyFieldInfo>>,
+        ) -> Self {
+            self.read_only_fields = input;
+            self
+        }
+        /// Appends an item to `invisible_fields`.
+        ///
+        /// To override the contents of this collection use [`set_invisible_fields`](Self::set_invisible_fields).
+        ///
+        /// <p>Lists the fields that are invisible to agents.</p>
+        pub fn invisible_fields(mut self, input: crate::model::InvisibleFieldInfo) -> Self {
+            let mut v = self.invisible_fields.unwrap_or_default();
+            v.push(input);
+            self.invisible_fields = Some(v);
+            self
+        }
+        /// <p>Lists the fields that are invisible to agents.</p>
+        pub fn set_invisible_fields(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InvisibleFieldInfo>>,
+        ) -> Self {
+            self.invisible_fields = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TaskTemplateConstraints`](crate::model::TaskTemplateConstraints)
+        pub fn build(self) -> crate::model::TaskTemplateConstraints {
+            crate::model::TaskTemplateConstraints {
+                required_fields: self.required_fields,
+                read_only_fields: self.read_only_fields,
+                invisible_fields: self.invisible_fields,
+            }
+        }
+    }
+}
+impl TaskTemplateConstraints {
+    /// Creates a new builder-style object to manufacture [`TaskTemplateConstraints`](crate::model::TaskTemplateConstraints)
+    pub fn builder() -> crate::model::task_template_constraints::Builder {
+        crate::model::task_template_constraints::Builder::default()
+    }
+}
+
+/// <p>A field that is invisible to an agent.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvisibleFieldInfo {
+    /// <p>Identifier of the invisible field.</p>
+    pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+}
+impl InvisibleFieldInfo {
+    /// <p>Identifier of the invisible field.</p>
+    pub fn id(&self) -> std::option::Option<&crate::model::TaskTemplateFieldIdentifier> {
+        self.id.as_ref()
+    }
+}
+impl std::fmt::Debug for InvisibleFieldInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvisibleFieldInfo");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`InvisibleFieldInfo`](crate::model::InvisibleFieldInfo)
+pub mod invisible_field_info {
+
+    /// A builder for [`InvisibleFieldInfo`](crate::model::InvisibleFieldInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+    }
+    impl Builder {
+        /// <p>Identifier of the invisible field.</p>
+        pub fn id(mut self, input: crate::model::TaskTemplateFieldIdentifier) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p>Identifier of the invisible field.</p>
+        pub fn set_id(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+        ) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvisibleFieldInfo`](crate::model::InvisibleFieldInfo)
+        pub fn build(self) -> crate::model::InvisibleFieldInfo {
+            crate::model::InvisibleFieldInfo { id: self.id }
+        }
+    }
+}
+impl InvisibleFieldInfo {
+    /// Creates a new builder-style object to manufacture [`InvisibleFieldInfo`](crate::model::InvisibleFieldInfo)
+    pub fn builder() -> crate::model::invisible_field_info::Builder {
+        crate::model::invisible_field_info::Builder::default()
+    }
+}
+
+/// <p>Indicates a field that is read-only to an agent.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReadOnlyFieldInfo {
+    /// <p>Identifier of the read-only field.</p>
+    pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+}
+impl ReadOnlyFieldInfo {
+    /// <p>Identifier of the read-only field.</p>
+    pub fn id(&self) -> std::option::Option<&crate::model::TaskTemplateFieldIdentifier> {
+        self.id.as_ref()
+    }
+}
+impl std::fmt::Debug for ReadOnlyFieldInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReadOnlyFieldInfo");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`ReadOnlyFieldInfo`](crate::model::ReadOnlyFieldInfo)
+pub mod read_only_field_info {
+
+    /// A builder for [`ReadOnlyFieldInfo`](crate::model::ReadOnlyFieldInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+    }
+    impl Builder {
+        /// <p>Identifier of the read-only field.</p>
+        pub fn id(mut self, input: crate::model::TaskTemplateFieldIdentifier) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p>Identifier of the read-only field.</p>
+        pub fn set_id(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+        ) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReadOnlyFieldInfo`](crate::model::ReadOnlyFieldInfo)
+        pub fn build(self) -> crate::model::ReadOnlyFieldInfo {
+            crate::model::ReadOnlyFieldInfo { id: self.id }
+        }
+    }
+}
+impl ReadOnlyFieldInfo {
+    /// Creates a new builder-style object to manufacture [`ReadOnlyFieldInfo`](crate::model::ReadOnlyFieldInfo)
+    pub fn builder() -> crate::model::read_only_field_info::Builder {
+        crate::model::read_only_field_info::Builder::default()
+    }
+}
+
+/// <p>Information about a required field.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RequiredFieldInfo {
+    /// <p>The unique identifier for the field.</p>
+    pub id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+}
+impl RequiredFieldInfo {
+    /// <p>The unique identifier for the field.</p>
+    pub fn id(&self) -> std::option::Option<&crate::model::TaskTemplateFieldIdentifier> {
+        self.id.as_ref()
+    }
+}
+impl std::fmt::Debug for RequiredFieldInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RequiredFieldInfo");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`RequiredFieldInfo`](crate::model::RequiredFieldInfo)
+pub mod required_field_info {
+
+    /// A builder for [`RequiredFieldInfo`](crate::model::RequiredFieldInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the field.</p>
+        pub fn id(mut self, input: crate::model::TaskTemplateFieldIdentifier) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p>The unique identifier for the field.</p>
+        pub fn set_id(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateFieldIdentifier>,
+        ) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RequiredFieldInfo`](crate::model::RequiredFieldInfo)
+        pub fn build(self) -> crate::model::RequiredFieldInfo {
+            crate::model::RequiredFieldInfo { id: self.id }
+        }
+    }
+}
+impl RequiredFieldInfo {
+    /// Creates a new builder-style object to manufacture [`RequiredFieldInfo`](crate::model::RequiredFieldInfo)
+    pub fn builder() -> crate::model::required_field_info::Builder {
+        crate::model::required_field_info::Builder::default()
+    }
+}
+
 /// <p>Contains information about the queue and channel for which priority and delay can be set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2234,6 +3212,8 @@ pub enum InstanceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     EarlyMedia,
     #[allow(missing_docs)] // documentation missing in model
+    HighVolumeOutbound,
+    #[allow(missing_docs)] // documentation missing in model
     InboundCalls,
     #[allow(missing_docs)] // documentation missing in model
     MultiPartyConference,
@@ -2251,6 +3231,7 @@ impl std::convert::From<&str> for InstanceAttributeType {
             "CONTACTFLOW_LOGS" => InstanceAttributeType::ContactflowLogs,
             "CONTACT_LENS" => InstanceAttributeType::ContactLens,
             "EARLY_MEDIA" => InstanceAttributeType::EarlyMedia,
+            "HIGH_VOLUME_OUTBOUND" => InstanceAttributeType::HighVolumeOutbound,
             "INBOUND_CALLS" => InstanceAttributeType::InboundCalls,
             "MULTI_PARTY_CONFERENCE" => InstanceAttributeType::MultiPartyConference,
             "OUTBOUND_CALLS" => InstanceAttributeType::OutboundCalls,
@@ -2274,6 +3255,7 @@ impl InstanceAttributeType {
             InstanceAttributeType::ContactflowLogs => "CONTACTFLOW_LOGS",
             InstanceAttributeType::ContactLens => "CONTACT_LENS",
             InstanceAttributeType::EarlyMedia => "EARLY_MEDIA",
+            InstanceAttributeType::HighVolumeOutbound => "HIGH_VOLUME_OUTBOUND",
             InstanceAttributeType::InboundCalls => "INBOUND_CALLS",
             InstanceAttributeType::MultiPartyConference => "MULTI_PARTY_CONFERENCE",
             InstanceAttributeType::OutboundCalls => "OUTBOUND_CALLS",
@@ -2288,6 +3270,7 @@ impl InstanceAttributeType {
             "CONTACTFLOW_LOGS",
             "CONTACT_LENS",
             "EARLY_MEDIA",
+            "HIGH_VOLUME_OUTBOUND",
             "INBOUND_CALLS",
             "MULTI_PARTY_CONFERENCE",
             "OUTBOUND_CALLS",
@@ -2725,13 +3708,13 @@ impl AsRef<str> for ContactFlowState {
     }
 }
 
-/// <p>A link that an agent selects to complete a given task. You can have up to 4,096 UTF-8 bytes across all references for a contact.</p>
+/// <p>Well-formed data on a contact, used by agents to complete a contact request. You can have up to 4,096 UTF-8 bytes across all references for a contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Reference {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
     pub value: std::option::Option<std::string::String>,
-    /// <p>The type of the reference. Only <code>URL</code> type can be added or updated on a contact.</p>
+    /// <p>The type of the reference.</p>
     pub r#type: std::option::Option<crate::model::ReferenceType>,
 }
 impl Reference {
@@ -2739,7 +3722,7 @@ impl Reference {
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The type of the reference. Only <code>URL</code> type can be added or updated on a contact.</p>
+    /// <p>The type of the reference.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ReferenceType> {
         self.r#type.as_ref()
     }
@@ -2773,12 +3756,12 @@ pub mod reference {
             self.value = input;
             self
         }
-        /// <p>The type of the reference. Only <code>URL</code> type can be added or updated on a contact.</p>
+        /// <p>The type of the reference.</p>
         pub fn r#type(mut self, input: crate::model::ReferenceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the reference. Only <code>URL</code> type can be added or updated on a contact.</p>
+        /// <p>The type of the reference.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ReferenceType>) -> Self {
             self.r#type = input;
             self
@@ -2814,6 +3797,14 @@ pub enum ReferenceType {
     #[allow(missing_docs)] // documentation missing in model
     Attachment,
     #[allow(missing_docs)] // documentation missing in model
+    Date,
+    #[allow(missing_docs)] // documentation missing in model
+    Email,
+    #[allow(missing_docs)] // documentation missing in model
+    Number,
+    #[allow(missing_docs)] // documentation missing in model
+    String,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2822,6 +3813,10 @@ impl std::convert::From<&str> for ReferenceType {
     fn from(s: &str) -> Self {
         match s {
             "ATTACHMENT" => ReferenceType::Attachment,
+            "DATE" => ReferenceType::Date,
+            "EMAIL" => ReferenceType::Email,
+            "NUMBER" => ReferenceType::Number,
+            "STRING" => ReferenceType::String,
             "URL" => ReferenceType::Url,
             other => ReferenceType::Unknown(other.to_owned()),
         }
@@ -2839,13 +3834,17 @@ impl ReferenceType {
     pub fn as_str(&self) -> &str {
         match self {
             ReferenceType::Attachment => "ATTACHMENT",
+            ReferenceType::Date => "DATE",
+            ReferenceType::Email => "EMAIL",
+            ReferenceType::Number => "NUMBER",
+            ReferenceType::String => "STRING",
             ReferenceType::Url => "URL",
             ReferenceType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ATTACHMENT", "URL"]
+        &["ATTACHMENT", "DATE", "EMAIL", "NUMBER", "STRING", "URL"]
     }
 }
 impl AsRef<str> for ReferenceType {
@@ -6302,6 +7301,184 @@ impl AsRef<str> for UseCaseType {
     }
 }
 
+/// <p>Contains summary information about the task template.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TaskTemplateMetadata {
+    /// <p>A unique identifier for the task template.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the task template.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the task template.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the task template.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    pub status: std::option::Option<crate::model::TaskTemplateStatus>,
+    /// <p>The timestamp when the task template was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the task template was created.</p>
+    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl TaskTemplateMetadata {
+    /// <p>A unique identifier for the task template.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the task template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the task template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskTemplateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp when the task template was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The timestamp when the task template was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+}
+impl std::fmt::Debug for TaskTemplateMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TaskTemplateMetadata");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("status", &self.status);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("created_time", &self.created_time);
+        formatter.finish()
+    }
+}
+/// See [`TaskTemplateMetadata`](crate::model::TaskTemplateMetadata)
+pub mod task_template_metadata {
+
+    /// A builder for [`TaskTemplateMetadata`](crate::model::TaskTemplateMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::TaskTemplateStatus>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the task template.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the task template.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the task template.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the task template.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the task template.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the task template.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the task template.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the task template.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+        pub fn status(mut self, input: crate::model::TaskTemplateStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TaskTemplateStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The timestamp when the task template was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp when the task template was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The timestamp when the task template was created.</p>
+        pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_time = Some(input);
+            self
+        }
+        /// <p>The timestamp when the task template was created.</p>
+        pub fn set_created_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TaskTemplateMetadata`](crate::model::TaskTemplateMetadata)
+        pub fn build(self) -> crate::model::TaskTemplateMetadata {
+            crate::model::TaskTemplateMetadata {
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+                description: self.description,
+                status: self.status,
+                last_modified_time: self.last_modified_time,
+                created_time: self.created_time,
+            }
+        }
+    }
+}
+impl TaskTemplateMetadata {
+    /// Creates a new builder-style object to manufacture [`TaskTemplateMetadata`](crate::model::TaskTemplateMetadata)
+    pub fn builder() -> crate::model::task_template_metadata::Builder {
+        crate::model::task_template_metadata::Builder::default()
+    }
+}
+
 /// <p>Contains information about a security profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8478,9 +9655,17 @@ impl DefaultVocabulary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ReferenceSummary {
-    /// <p>Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
+    /// <p>Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
     Attachment(crate::model::AttachmentReference),
-    /// <p>Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.</p>
+    /// <p>Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.</p>
+    Date(crate::model::DateReference),
+    /// <p>Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.</p>
+    Email(crate::model::EmailReference),
+    /// <p>Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.</p>
+    Number(crate::model::NumberReference),
+    /// <p>Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.</p>
+    String(crate::model::StringReference),
+    /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null.</p>
     Url(crate::model::UrlReference),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -8506,6 +9691,58 @@ impl ReferenceSummary {
     pub fn is_attachment(&self) -> bool {
         self.as_attachment().is_ok()
     }
+    /// Tries to convert the enum instance into [`Date`](crate::model::ReferenceSummary::Date), extracting the inner [`DateReference`](crate::model::DateReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_date(&self) -> std::result::Result<&crate::model::DateReference, &Self> {
+        if let ReferenceSummary::Date(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Date`](crate::model::ReferenceSummary::Date).
+    pub fn is_date(&self) -> bool {
+        self.as_date().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Email`](crate::model::ReferenceSummary::Email), extracting the inner [`EmailReference`](crate::model::EmailReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email(&self) -> std::result::Result<&crate::model::EmailReference, &Self> {
+        if let ReferenceSummary::Email(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Email`](crate::model::ReferenceSummary::Email).
+    pub fn is_email(&self) -> bool {
+        self.as_email().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Number`](crate::model::ReferenceSummary::Number), extracting the inner [`NumberReference`](crate::model::NumberReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_number(&self) -> std::result::Result<&crate::model::NumberReference, &Self> {
+        if let ReferenceSummary::Number(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`Number`](crate::model::ReferenceSummary::Number).
+    pub fn is_number(&self) -> bool {
+        self.as_number().is_ok()
+    }
+    /// Tries to convert the enum instance into [`String`](crate::model::ReferenceSummary::String), extracting the inner [`StringReference`](crate::model::StringReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_string(&self) -> std::result::Result<&crate::model::StringReference, &Self> {
+        if let ReferenceSummary::String(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`String`](crate::model::ReferenceSummary::String).
+    pub fn is_string(&self) -> bool {
+        self.as_string().is_ok()
+    }
     /// Tries to convert the enum instance into [`Url`](crate::model::ReferenceSummary::Url), extracting the inner [`UrlReference`](crate::model::UrlReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> std::result::Result<&crate::model::UrlReference, &Self> {
@@ -8525,15 +9762,311 @@ impl ReferenceSummary {
     }
 }
 
-/// <p>Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
+/// <p>Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EmailReference {
+    /// <p>Identifier of the email reference.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A valid email address.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl EmailReference {
+    /// <p>Identifier of the email reference.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A valid email address.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for EmailReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EmailReference");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`EmailReference`](crate::model::EmailReference)
+pub mod email_reference {
+
+    /// A builder for [`EmailReference`](crate::model::EmailReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifier of the email reference.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Identifier of the email reference.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A valid email address.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>A valid email address.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EmailReference`](crate::model::EmailReference)
+        pub fn build(self) -> crate::model::EmailReference {
+            crate::model::EmailReference {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl EmailReference {
+    /// Creates a new builder-style object to manufacture [`EmailReference`](crate::model::EmailReference)
+    pub fn builder() -> crate::model::email_reference::Builder {
+        crate::model::email_reference::Builder::default()
+    }
+}
+
+/// <p>Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DateReference {
+    /// <p>Identifier of the date reference.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A valid date.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl DateReference {
+    /// <p>Identifier of the date reference.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A valid date.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for DateReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DateReference");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`DateReference`](crate::model::DateReference)
+pub mod date_reference {
+
+    /// A builder for [`DateReference`](crate::model::DateReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifier of the date reference.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Identifier of the date reference.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A valid date.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>A valid date.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DateReference`](crate::model::DateReference)
+        pub fn build(self) -> crate::model::DateReference {
+            crate::model::DateReference {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl DateReference {
+    /// Creates a new builder-style object to manufacture [`DateReference`](crate::model::DateReference)
+    pub fn builder() -> crate::model::date_reference::Builder {
+        crate::model::date_reference::Builder::default()
+    }
+}
+
+/// <p>Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NumberReference {
+    /// <p>Identifier of the number reference.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A valid number.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl NumberReference {
+    /// <p>Identifier of the number reference.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A valid number.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for NumberReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NumberReference");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`NumberReference`](crate::model::NumberReference)
+pub mod number_reference {
+
+    /// A builder for [`NumberReference`](crate::model::NumberReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifier of the number reference.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Identifier of the number reference.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A valid number.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>A valid number.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NumberReference`](crate::model::NumberReference)
+        pub fn build(self) -> crate::model::NumberReference {
+            crate::model::NumberReference {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl NumberReference {
+    /// Creates a new builder-style object to manufacture [`NumberReference`](crate::model::NumberReference)
+    pub fn builder() -> crate::model::number_reference::Builder {
+        crate::model::number_reference::Builder::default()
+    }
+}
+
+/// <p>Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StringReference {
+    /// <p>Identifier of the string reference.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A valid string.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl StringReference {
+    /// <p>Identifier of the string reference.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A valid string.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for StringReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StringReference");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`StringReference`](crate::model::StringReference)
+pub mod string_reference {
+
+    /// A builder for [`StringReference`](crate::model::StringReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Identifier of the string reference.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Identifier of the string reference.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A valid string.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>A valid string.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StringReference`](crate::model::StringReference)
+        pub fn build(self) -> crate::model::StringReference {
+            crate::model::StringReference {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl StringReference {
+    /// Creates a new builder-style object to manufacture [`StringReference`](crate::model::StringReference)
+    pub fn builder() -> crate::model::string_reference::Builder {
+        crate::model::string_reference::Builder::default()
+    }
+}
+
+/// <p>Information about a reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentReference {
     /// <p>Identifier of the attachment reference.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Contains the location path of the attachment reference.</p>
+    /// <p>The location path of the attachment reference.</p>
     pub value: std::option::Option<std::string::String>,
-    /// <p>Status of an attachment reference type.</p>
+    /// <p>Status of the attachment reference type.</p>
     pub status: std::option::Option<crate::model::ReferenceStatus>,
 }
 impl AttachmentReference {
@@ -8541,11 +10074,11 @@ impl AttachmentReference {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Contains the location path of the attachment reference.</p>
+    /// <p>The location path of the attachment reference.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>Status of an attachment reference type.</p>
+    /// <p>Status of the attachment reference type.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ReferenceStatus> {
         self.status.as_ref()
     }
@@ -8581,22 +10114,22 @@ pub mod attachment_reference {
             self.name = input;
             self
         }
-        /// <p>Contains the location path of the attachment reference.</p>
+        /// <p>The location path of the attachment reference.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>Contains the location path of the attachment reference.</p>
+        /// <p>The location path of the attachment reference.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
         }
-        /// <p>Status of an attachment reference type.</p>
+        /// <p>Status of the attachment reference type.</p>
         pub fn status(mut self, input: crate::model::ReferenceStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Status of an attachment reference type.</p>
+        /// <p>Status of the attachment reference type.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReferenceStatus>,
@@ -10585,6 +12118,1210 @@ impl Credentials {
     /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials)
     pub fn builder() -> crate::model::credentials::Builder {
         crate::model::credentials::Builder::default()
+    }
+}
+
+/// <p>Data for a user.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserData {
+    /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
+    pub user: std::option::Option<crate::model::UserReference>,
+    /// <p>Information about the routing profile that is assigned to the user.</p>
+    pub routing_profile: std::option::Option<crate::model::RoutingProfileReference>,
+    /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
+    pub hierarchy_path: std::option::Option<crate::model::HierarchyPathReference>,
+    /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
+    pub status: std::option::Option<crate::model::AgentStatusReference>,
+    /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots. </p>
+    pub available_slots_by_channel:
+        std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
+    /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the RoutingProfile assigned to the agent. </p>
+    pub max_slots_by_channel:
+        std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
+    /// <p> A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots. </p>
+    pub active_slots_by_channel:
+        std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
+    /// <p>A list of contact reference information.</p>
+    pub contacts: std::option::Option<std::vec::Vec<crate::model::AgentContactReference>>,
+}
+impl UserData {
+    /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
+    pub fn user(&self) -> std::option::Option<&crate::model::UserReference> {
+        self.user.as_ref()
+    }
+    /// <p>Information about the routing profile that is assigned to the user.</p>
+    pub fn routing_profile(&self) -> std::option::Option<&crate::model::RoutingProfileReference> {
+        self.routing_profile.as_ref()
+    }
+    /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
+    pub fn hierarchy_path(&self) -> std::option::Option<&crate::model::HierarchyPathReference> {
+        self.hierarchy_path.as_ref()
+    }
+    /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AgentStatusReference> {
+        self.status.as_ref()
+    }
+    /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots. </p>
+    pub fn available_slots_by_channel(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::Channel, i32>> {
+        self.available_slots_by_channel.as_ref()
+    }
+    /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the RoutingProfile assigned to the agent. </p>
+    pub fn max_slots_by_channel(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::Channel, i32>> {
+        self.max_slots_by_channel.as_ref()
+    }
+    /// <p> A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots. </p>
+    pub fn active_slots_by_channel(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::Channel, i32>> {
+        self.active_slots_by_channel.as_ref()
+    }
+    /// <p>A list of contact reference information.</p>
+    pub fn contacts(&self) -> std::option::Option<&[crate::model::AgentContactReference]> {
+        self.contacts.as_deref()
+    }
+}
+impl std::fmt::Debug for UserData {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserData");
+        formatter.field("user", &self.user);
+        formatter.field("routing_profile", &self.routing_profile);
+        formatter.field("hierarchy_path", &self.hierarchy_path);
+        formatter.field("status", &self.status);
+        formatter.field(
+            "available_slots_by_channel",
+            &self.available_slots_by_channel,
+        );
+        formatter.field("max_slots_by_channel", &self.max_slots_by_channel);
+        formatter.field("active_slots_by_channel", &self.active_slots_by_channel);
+        formatter.field("contacts", &self.contacts);
+        formatter.finish()
+    }
+}
+/// See [`UserData`](crate::model::UserData)
+pub mod user_data {
+
+    /// A builder for [`UserData`](crate::model::UserData)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user: std::option::Option<crate::model::UserReference>,
+        pub(crate) routing_profile: std::option::Option<crate::model::RoutingProfileReference>,
+        pub(crate) hierarchy_path: std::option::Option<crate::model::HierarchyPathReference>,
+        pub(crate) status: std::option::Option<crate::model::AgentStatusReference>,
+        pub(crate) available_slots_by_channel:
+            std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
+        pub(crate) max_slots_by_channel:
+            std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
+        pub(crate) active_slots_by_channel:
+            std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
+        pub(crate) contacts:
+            std::option::Option<std::vec::Vec<crate::model::AgentContactReference>>,
+    }
+    impl Builder {
+        /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
+        pub fn user(mut self, input: crate::model::UserReference) -> Self {
+            self.user = Some(input);
+            self
+        }
+        /// <p>Information about the user for the data that is returned. It contains resourceId and ARN of the user. </p>
+        pub fn set_user(mut self, input: std::option::Option<crate::model::UserReference>) -> Self {
+            self.user = input;
+            self
+        }
+        /// <p>Information about the routing profile that is assigned to the user.</p>
+        pub fn routing_profile(mut self, input: crate::model::RoutingProfileReference) -> Self {
+            self.routing_profile = Some(input);
+            self
+        }
+        /// <p>Information about the routing profile that is assigned to the user.</p>
+        pub fn set_routing_profile(
+            mut self,
+            input: std::option::Option<crate::model::RoutingProfileReference>,
+        ) -> Self {
+            self.routing_profile = input;
+            self
+        }
+        /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
+        pub fn hierarchy_path(mut self, input: crate::model::HierarchyPathReference) -> Self {
+            self.hierarchy_path = Some(input);
+            self
+        }
+        /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
+        pub fn set_hierarchy_path(
+            mut self,
+            input: std::option::Option<crate::model::HierarchyPathReference>,
+        ) -> Self {
+            self.hierarchy_path = input;
+            self
+        }
+        /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
+        pub fn status(mut self, input: crate::model::AgentStatusReference) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AgentStatusReference>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Adds a key-value pair to `available_slots_by_channel`.
+        ///
+        /// To override the contents of this collection use [`set_available_slots_by_channel`](Self::set_available_slots_by_channel).
+        ///
+        /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots. </p>
+        pub fn available_slots_by_channel(mut self, k: crate::model::Channel, v: i32) -> Self {
+            let mut hash_map = self.available_slots_by_channel.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.available_slots_by_channel = Some(hash_map);
+            self
+        }
+        /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots. </p>
+        pub fn set_available_slots_by_channel(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
+        ) -> Self {
+            self.available_slots_by_channel = input;
+            self
+        }
+        /// Adds a key-value pair to `max_slots_by_channel`.
+        ///
+        /// To override the contents of this collection use [`set_max_slots_by_channel`](Self::set_max_slots_by_channel).
+        ///
+        /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the RoutingProfile assigned to the agent. </p>
+        pub fn max_slots_by_channel(mut self, k: crate::model::Channel, v: i32) -> Self {
+            let mut hash_map = self.max_slots_by_channel.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.max_slots_by_channel = Some(hash_map);
+            self
+        }
+        /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the RoutingProfile assigned to the agent. </p>
+        pub fn set_max_slots_by_channel(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
+        ) -> Self {
+            self.max_slots_by_channel = input;
+            self
+        }
+        /// Adds a key-value pair to `active_slots_by_channel`.
+        ///
+        /// To override the contents of this collection use [`set_active_slots_by_channel`](Self::set_active_slots_by_channel).
+        ///
+        /// <p> A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots. </p>
+        pub fn active_slots_by_channel(mut self, k: crate::model::Channel, v: i32) -> Self {
+            let mut hash_map = self.active_slots_by_channel.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.active_slots_by_channel = Some(hash_map);
+            self
+        }
+        /// <p> A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots. </p>
+        pub fn set_active_slots_by_channel(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<crate::model::Channel, i32>>,
+        ) -> Self {
+            self.active_slots_by_channel = input;
+            self
+        }
+        /// Appends an item to `contacts`.
+        ///
+        /// To override the contents of this collection use [`set_contacts`](Self::set_contacts).
+        ///
+        /// <p>A list of contact reference information.</p>
+        pub fn contacts(mut self, input: crate::model::AgentContactReference) -> Self {
+            let mut v = self.contacts.unwrap_or_default();
+            v.push(input);
+            self.contacts = Some(v);
+            self
+        }
+        /// <p>A list of contact reference information.</p>
+        pub fn set_contacts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AgentContactReference>>,
+        ) -> Self {
+            self.contacts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserData`](crate::model::UserData)
+        pub fn build(self) -> crate::model::UserData {
+            crate::model::UserData {
+                user: self.user,
+                routing_profile: self.routing_profile,
+                hierarchy_path: self.hierarchy_path,
+                status: self.status,
+                available_slots_by_channel: self.available_slots_by_channel,
+                max_slots_by_channel: self.max_slots_by_channel,
+                active_slots_by_channel: self.active_slots_by_channel,
+                contacts: self.contacts,
+            }
+        }
+    }
+}
+impl UserData {
+    /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData)
+    pub fn builder() -> crate::model::user_data::Builder {
+        crate::model::user_data::Builder::default()
+    }
+}
+
+/// <p>Information about the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Contact.html">contact</a> associated to the user.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AgentContactReference {
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    pub contact_id: std::option::Option<std::string::String>,
+    /// <p>The channel of the contact.</p>
+    pub channel: std::option::Option<crate::model::Channel>,
+    /// <p>How the contact was initiated.</p>
+    pub initiation_method: std::option::Option<crate::model::ContactInitiationMethod>,
+    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+    pub agent_contact_state: std::option::Option<crate::model::ContactState>,
+    /// <p>The epoch timestamp when the contact state started.</p>
+    pub state_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time at which the contact was connected to an agent.</p>
+    pub connected_to_agent_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Contains information about a queue resource for which metrics are returned.</p>
+    pub queue: std::option::Option<crate::model::QueueReference>,
+}
+impl AgentContactReference {
+    /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The channel of the contact.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
+    /// <p>How the contact was initiated.</p>
+    pub fn initiation_method(&self) -> std::option::Option<&crate::model::ContactInitiationMethod> {
+        self.initiation_method.as_ref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+    pub fn agent_contact_state(&self) -> std::option::Option<&crate::model::ContactState> {
+        self.agent_contact_state.as_ref()
+    }
+    /// <p>The epoch timestamp when the contact state started.</p>
+    pub fn state_start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.state_start_timestamp.as_ref()
+    }
+    /// <p>The time at which the contact was connected to an agent.</p>
+    pub fn connected_to_agent_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.connected_to_agent_timestamp.as_ref()
+    }
+    /// <p>Contains information about a queue resource for which metrics are returned.</p>
+    pub fn queue(&self) -> std::option::Option<&crate::model::QueueReference> {
+        self.queue.as_ref()
+    }
+}
+impl std::fmt::Debug for AgentContactReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentContactReference");
+        formatter.field("contact_id", &self.contact_id);
+        formatter.field("channel", &self.channel);
+        formatter.field("initiation_method", &self.initiation_method);
+        formatter.field("agent_contact_state", &self.agent_contact_state);
+        formatter.field("state_start_timestamp", &self.state_start_timestamp);
+        formatter.field(
+            "connected_to_agent_timestamp",
+            &self.connected_to_agent_timestamp,
+        );
+        formatter.field("queue", &self.queue);
+        formatter.finish()
+    }
+}
+/// See [`AgentContactReference`](crate::model::AgentContactReference)
+pub mod agent_contact_reference {
+
+    /// A builder for [`AgentContactReference`](crate::model::AgentContactReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) contact_id: std::option::Option<std::string::String>,
+        pub(crate) channel: std::option::Option<crate::model::Channel>,
+        pub(crate) initiation_method: std::option::Option<crate::model::ContactInitiationMethod>,
+        pub(crate) agent_contact_state: std::option::Option<crate::model::ContactState>,
+        pub(crate) state_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) connected_to_agent_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) queue: std::option::Option<crate::model::QueueReference>,
+    }
+    impl Builder {
+        /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+        pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_id = input;
+            self
+        }
+        /// <p>The channel of the contact.</p>
+        pub fn channel(mut self, input: crate::model::Channel) -> Self {
+            self.channel = Some(input);
+            self
+        }
+        /// <p>The channel of the contact.</p>
+        pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
+            self.channel = input;
+            self
+        }
+        /// <p>How the contact was initiated.</p>
+        pub fn initiation_method(mut self, input: crate::model::ContactInitiationMethod) -> Self {
+            self.initiation_method = Some(input);
+            self
+        }
+        /// <p>How the contact was initiated.</p>
+        pub fn set_initiation_method(
+            mut self,
+            input: std::option::Option<crate::model::ContactInitiationMethod>,
+        ) -> Self {
+            self.initiation_method = input;
+            self
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+        pub fn agent_contact_state(mut self, input: crate::model::ContactState) -> Self {
+            self.agent_contact_state = Some(input);
+            self
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+        pub fn set_agent_contact_state(
+            mut self,
+            input: std::option::Option<crate::model::ContactState>,
+        ) -> Self {
+            self.agent_contact_state = input;
+            self
+        }
+        /// <p>The epoch timestamp when the contact state started.</p>
+        pub fn state_start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.state_start_timestamp = Some(input);
+            self
+        }
+        /// <p>The epoch timestamp when the contact state started.</p>
+        pub fn set_state_start_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.state_start_timestamp = input;
+            self
+        }
+        /// <p>The time at which the contact was connected to an agent.</p>
+        pub fn connected_to_agent_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.connected_to_agent_timestamp = Some(input);
+            self
+        }
+        /// <p>The time at which the contact was connected to an agent.</p>
+        pub fn set_connected_to_agent_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.connected_to_agent_timestamp = input;
+            self
+        }
+        /// <p>Contains information about a queue resource for which metrics are returned.</p>
+        pub fn queue(mut self, input: crate::model::QueueReference) -> Self {
+            self.queue = Some(input);
+            self
+        }
+        /// <p>Contains information about a queue resource for which metrics are returned.</p>
+        pub fn set_queue(
+            mut self,
+            input: std::option::Option<crate::model::QueueReference>,
+        ) -> Self {
+            self.queue = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AgentContactReference`](crate::model::AgentContactReference)
+        pub fn build(self) -> crate::model::AgentContactReference {
+            crate::model::AgentContactReference {
+                contact_id: self.contact_id,
+                channel: self.channel,
+                initiation_method: self.initiation_method,
+                agent_contact_state: self.agent_contact_state,
+                state_start_timestamp: self.state_start_timestamp,
+                connected_to_agent_timestamp: self.connected_to_agent_timestamp,
+                queue: self.queue,
+            }
+        }
+    }
+}
+impl AgentContactReference {
+    /// Creates a new builder-style object to manufacture [`AgentContactReference`](crate::model::AgentContactReference)
+    pub fn builder() -> crate::model::agent_contact_reference::Builder {
+        crate::model::agent_contact_reference::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ContactState {
+    #[allow(missing_docs)] // documentation missing in model
+    Connected,
+    #[allow(missing_docs)] // documentation missing in model
+    ConnectedOnhold,
+    #[allow(missing_docs)] // documentation missing in model
+    Connecting,
+    #[allow(missing_docs)] // documentation missing in model
+    Ended,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Incoming,
+    #[allow(missing_docs)] // documentation missing in model
+    Missed,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Rejected,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ContactState {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONNECTED" => ContactState::Connected,
+            "CONNECTED_ONHOLD" => ContactState::ConnectedOnhold,
+            "CONNECTING" => ContactState::Connecting,
+            "ENDED" => ContactState::Ended,
+            "ERROR" => ContactState::Error,
+            "INCOMING" => ContactState::Incoming,
+            "MISSED" => ContactState::Missed,
+            "PENDING" => ContactState::Pending,
+            "REJECTED" => ContactState::Rejected,
+            other => ContactState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ContactState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContactState::from(s))
+    }
+}
+impl ContactState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContactState::Connected => "CONNECTED",
+            ContactState::ConnectedOnhold => "CONNECTED_ONHOLD",
+            ContactState::Connecting => "CONNECTING",
+            ContactState::Ended => "ENDED",
+            ContactState::Error => "ERROR",
+            ContactState::Incoming => "INCOMING",
+            ContactState::Missed => "MISSED",
+            ContactState::Pending => "PENDING",
+            ContactState::Rejected => "REJECTED",
+            ContactState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CONNECTED",
+            "CONNECTED_ONHOLD",
+            "CONNECTING",
+            "ENDED",
+            "ERROR",
+            "INCOMING",
+            "MISSED",
+            "PENDING",
+            "REJECTED",
+        ]
+    }
+}
+impl AsRef<str> for ContactState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ContactInitiationMethod {
+    #[allow(missing_docs)] // documentation missing in model
+    Api,
+    #[allow(missing_docs)] // documentation missing in model
+    Callback,
+    #[allow(missing_docs)] // documentation missing in model
+    Inbound,
+    #[allow(missing_docs)] // documentation missing in model
+    Outbound,
+    #[allow(missing_docs)] // documentation missing in model
+    QueueTransfer,
+    #[allow(missing_docs)] // documentation missing in model
+    Transfer,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ContactInitiationMethod {
+    fn from(s: &str) -> Self {
+        match s {
+            "API" => ContactInitiationMethod::Api,
+            "CALLBACK" => ContactInitiationMethod::Callback,
+            "INBOUND" => ContactInitiationMethod::Inbound,
+            "OUTBOUND" => ContactInitiationMethod::Outbound,
+            "QUEUE_TRANSFER" => ContactInitiationMethod::QueueTransfer,
+            "TRANSFER" => ContactInitiationMethod::Transfer,
+            other => ContactInitiationMethod::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ContactInitiationMethod {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContactInitiationMethod::from(s))
+    }
+}
+impl ContactInitiationMethod {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContactInitiationMethod::Api => "API",
+            ContactInitiationMethod::Callback => "CALLBACK",
+            ContactInitiationMethod::Inbound => "INBOUND",
+            ContactInitiationMethod::Outbound => "OUTBOUND",
+            ContactInitiationMethod::QueueTransfer => "QUEUE_TRANSFER",
+            ContactInitiationMethod::Transfer => "TRANSFER",
+            ContactInitiationMethod::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "API",
+            "CALLBACK",
+            "INBOUND",
+            "OUTBOUND",
+            "QUEUE_TRANSFER",
+            "TRANSFER",
+        ]
+    }
+}
+impl AsRef<str> for ContactInitiationMethod {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about the agent's status.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AgentStatusReference {
+    /// <p>The start timestamp of the agent's status.</p>
+    pub status_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
+    pub status_arn: std::option::Option<std::string::String>,
+}
+impl AgentStatusReference {
+    /// <p>The start timestamp of the agent's status.</p>
+    pub fn status_start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.status_start_timestamp.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
+    pub fn status_arn(&self) -> std::option::Option<&str> {
+        self.status_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for AgentStatusReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentStatusReference");
+        formatter.field("status_start_timestamp", &self.status_start_timestamp);
+        formatter.field("status_arn", &self.status_arn);
+        formatter.finish()
+    }
+}
+/// See [`AgentStatusReference`](crate::model::AgentStatusReference)
+pub mod agent_status_reference {
+
+    /// A builder for [`AgentStatusReference`](crate::model::AgentStatusReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) status_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The start timestamp of the agent's status.</p>
+        pub fn status_start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.status_start_timestamp = Some(input);
+            self
+        }
+        /// <p>The start timestamp of the agent's status.</p>
+        pub fn set_status_start_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.status_start_timestamp = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
+        pub fn status_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
+        pub fn set_status_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AgentStatusReference`](crate::model::AgentStatusReference)
+        pub fn build(self) -> crate::model::AgentStatusReference {
+            crate::model::AgentStatusReference {
+                status_start_timestamp: self.status_start_timestamp,
+                status_arn: self.status_arn,
+            }
+        }
+    }
+}
+impl AgentStatusReference {
+    /// Creates a new builder-style object to manufacture [`AgentStatusReference`](crate::model::AgentStatusReference)
+    pub fn builder() -> crate::model::agent_status_reference::Builder {
+        crate::model::agent_status_reference::Builder::default()
+    }
+}
+
+/// <p>Information about the levels in the hierarchy group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HierarchyPathReference {
+    /// <p>Information about level one.</p>
+    pub level_one: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+    /// <p>Information about level two.</p>
+    pub level_two: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+    /// <p>Information about level three.</p>
+    pub level_three: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+    /// <p>Information about level four.</p>
+    pub level_four: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+    /// <p>Information about level five.</p>
+    pub level_five: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+}
+impl HierarchyPathReference {
+    /// <p>Information about level one.</p>
+    pub fn level_one(&self) -> std::option::Option<&crate::model::HierarchyGroupSummaryReference> {
+        self.level_one.as_ref()
+    }
+    /// <p>Information about level two.</p>
+    pub fn level_two(&self) -> std::option::Option<&crate::model::HierarchyGroupSummaryReference> {
+        self.level_two.as_ref()
+    }
+    /// <p>Information about level three.</p>
+    pub fn level_three(
+        &self,
+    ) -> std::option::Option<&crate::model::HierarchyGroupSummaryReference> {
+        self.level_three.as_ref()
+    }
+    /// <p>Information about level four.</p>
+    pub fn level_four(&self) -> std::option::Option<&crate::model::HierarchyGroupSummaryReference> {
+        self.level_four.as_ref()
+    }
+    /// <p>Information about level five.</p>
+    pub fn level_five(&self) -> std::option::Option<&crate::model::HierarchyGroupSummaryReference> {
+        self.level_five.as_ref()
+    }
+}
+impl std::fmt::Debug for HierarchyPathReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HierarchyPathReference");
+        formatter.field("level_one", &self.level_one);
+        formatter.field("level_two", &self.level_two);
+        formatter.field("level_three", &self.level_three);
+        formatter.field("level_four", &self.level_four);
+        formatter.field("level_five", &self.level_five);
+        formatter.finish()
+    }
+}
+/// See [`HierarchyPathReference`](crate::model::HierarchyPathReference)
+pub mod hierarchy_path_reference {
+
+    /// A builder for [`HierarchyPathReference`](crate::model::HierarchyPathReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) level_one: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+        pub(crate) level_two: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+        pub(crate) level_three: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+        pub(crate) level_four: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+        pub(crate) level_five: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+    }
+    impl Builder {
+        /// <p>Information about level one.</p>
+        pub fn level_one(mut self, input: crate::model::HierarchyGroupSummaryReference) -> Self {
+            self.level_one = Some(input);
+            self
+        }
+        /// <p>Information about level one.</p>
+        pub fn set_level_one(
+            mut self,
+            input: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+        ) -> Self {
+            self.level_one = input;
+            self
+        }
+        /// <p>Information about level two.</p>
+        pub fn level_two(mut self, input: crate::model::HierarchyGroupSummaryReference) -> Self {
+            self.level_two = Some(input);
+            self
+        }
+        /// <p>Information about level two.</p>
+        pub fn set_level_two(
+            mut self,
+            input: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+        ) -> Self {
+            self.level_two = input;
+            self
+        }
+        /// <p>Information about level three.</p>
+        pub fn level_three(mut self, input: crate::model::HierarchyGroupSummaryReference) -> Self {
+            self.level_three = Some(input);
+            self
+        }
+        /// <p>Information about level three.</p>
+        pub fn set_level_three(
+            mut self,
+            input: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+        ) -> Self {
+            self.level_three = input;
+            self
+        }
+        /// <p>Information about level four.</p>
+        pub fn level_four(mut self, input: crate::model::HierarchyGroupSummaryReference) -> Self {
+            self.level_four = Some(input);
+            self
+        }
+        /// <p>Information about level four.</p>
+        pub fn set_level_four(
+            mut self,
+            input: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+        ) -> Self {
+            self.level_four = input;
+            self
+        }
+        /// <p>Information about level five.</p>
+        pub fn level_five(mut self, input: crate::model::HierarchyGroupSummaryReference) -> Self {
+            self.level_five = Some(input);
+            self
+        }
+        /// <p>Information about level five.</p>
+        pub fn set_level_five(
+            mut self,
+            input: std::option::Option<crate::model::HierarchyGroupSummaryReference>,
+        ) -> Self {
+            self.level_five = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HierarchyPathReference`](crate::model::HierarchyPathReference)
+        pub fn build(self) -> crate::model::HierarchyPathReference {
+            crate::model::HierarchyPathReference {
+                level_one: self.level_one,
+                level_two: self.level_two,
+                level_three: self.level_three,
+                level_four: self.level_four,
+                level_five: self.level_five,
+            }
+        }
+    }
+}
+impl HierarchyPathReference {
+    /// Creates a new builder-style object to manufacture [`HierarchyPathReference`](crate::model::HierarchyPathReference)
+    pub fn builder() -> crate::model::hierarchy_path_reference::Builder {
+        crate::model::hierarchy_path_reference::Builder::default()
+    }
+}
+
+/// <p>Information about the hierarchy group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HierarchyGroupSummaryReference {
+    /// <p>The unique identifier for the hierarchy group.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the hierarchy group. </p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl HierarchyGroupSummaryReference {
+    /// <p>The unique identifier for the hierarchy group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the hierarchy group. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+impl std::fmt::Debug for HierarchyGroupSummaryReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HierarchyGroupSummaryReference");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+/// See [`HierarchyGroupSummaryReference`](crate::model::HierarchyGroupSummaryReference)
+pub mod hierarchy_group_summary_reference {
+
+    /// A builder for [`HierarchyGroupSummaryReference`](crate::model::HierarchyGroupSummaryReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the hierarchy group.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the hierarchy group.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the hierarchy group. </p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the hierarchy group. </p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HierarchyGroupSummaryReference`](crate::model::HierarchyGroupSummaryReference)
+        pub fn build(self) -> crate::model::HierarchyGroupSummaryReference {
+            crate::model::HierarchyGroupSummaryReference {
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl HierarchyGroupSummaryReference {
+    /// Creates a new builder-style object to manufacture [`HierarchyGroupSummaryReference`](crate::model::HierarchyGroupSummaryReference)
+    pub fn builder() -> crate::model::hierarchy_group_summary_reference::Builder {
+        crate::model::hierarchy_group_summary_reference::Builder::default()
+    }
+}
+
+/// <p>Information about the routing profile assigned to the user.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RoutingProfileReference {
+    /// <p>The identifier of the routing profile.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl RoutingProfileReference {
+    /// <p>The identifier of the routing profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+impl std::fmt::Debug for RoutingProfileReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutingProfileReference");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+/// See [`RoutingProfileReference`](crate::model::RoutingProfileReference)
+pub mod routing_profile_reference {
+
+    /// A builder for [`RoutingProfileReference`](crate::model::RoutingProfileReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the routing profile.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the routing profile.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RoutingProfileReference`](crate::model::RoutingProfileReference)
+        pub fn build(self) -> crate::model::RoutingProfileReference {
+            crate::model::RoutingProfileReference {
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl RoutingProfileReference {
+    /// Creates a new builder-style object to manufacture [`RoutingProfileReference`](crate::model::RoutingProfileReference)
+    pub fn builder() -> crate::model::routing_profile_reference::Builder {
+        crate::model::routing_profile_reference::Builder::default()
+    }
+}
+
+/// <p>Information about the user.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserReference {
+    /// <p>The unique identifier for the user.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the user.</p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl UserReference {
+    /// <p>The unique identifier for the user.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the user.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+impl std::fmt::Debug for UserReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserReference");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+/// See [`UserReference`](crate::model::UserReference)
+pub mod user_reference {
+
+    /// A builder for [`UserReference`](crate::model::UserReference)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the user.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the user.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the user.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the user.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserReference`](crate::model::UserReference)
+        pub fn build(self) -> crate::model::UserReference {
+            crate::model::UserReference {
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl UserReference {
+    /// Creates a new builder-style object to manufacture [`UserReference`](crate::model::UserReference)
+    pub fn builder() -> crate::model::user_reference::Builder {
+        crate::model::user_reference::Builder::default()
+    }
+}
+
+/// <p>A filter for the user data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserDataFilters {
+    /// <p>Contains information about a queue resource for which metrics are returned.</p>
+    pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
+    pub contact_filter: std::option::Option<crate::model::ContactFilter>,
+}
+impl UserDataFilters {
+    /// <p>Contains information about a queue resource for which metrics are returned.</p>
+    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+        self.queues.as_deref()
+    }
+    /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
+    pub fn contact_filter(&self) -> std::option::Option<&crate::model::ContactFilter> {
+        self.contact_filter.as_ref()
+    }
+}
+impl std::fmt::Debug for UserDataFilters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserDataFilters");
+        formatter.field("queues", &self.queues);
+        formatter.field("contact_filter", &self.contact_filter);
+        formatter.finish()
+    }
+}
+/// See [`UserDataFilters`](crate::model::UserDataFilters)
+pub mod user_data_filters {
+
+    /// A builder for [`UserDataFilters`](crate::model::UserDataFilters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) contact_filter: std::option::Option<crate::model::ContactFilter>,
+    }
+    impl Builder {
+        /// Appends an item to `queues`.
+        ///
+        /// To override the contents of this collection use [`set_queues`](Self::set_queues).
+        ///
+        /// <p>Contains information about a queue resource for which metrics are returned.</p>
+        pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.queues.unwrap_or_default();
+            v.push(input.into());
+            self.queues = Some(v);
+            self
+        }
+        /// <p>Contains information about a queue resource for which metrics are returned.</p>
+        pub fn set_queues(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.queues = input;
+            self
+        }
+        /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
+        pub fn contact_filter(mut self, input: crate::model::ContactFilter) -> Self {
+            self.contact_filter = Some(input);
+            self
+        }
+        /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
+        pub fn set_contact_filter(
+            mut self,
+            input: std::option::Option<crate::model::ContactFilter>,
+        ) -> Self {
+            self.contact_filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserDataFilters`](crate::model::UserDataFilters)
+        pub fn build(self) -> crate::model::UserDataFilters {
+            crate::model::UserDataFilters {
+                queues: self.queues,
+                contact_filter: self.contact_filter,
+            }
+        }
+    }
+}
+impl UserDataFilters {
+    /// Creates a new builder-style object to manufacture [`UserDataFilters`](crate::model::UserDataFilters)
+    pub fn builder() -> crate::model::user_data_filters::Builder {
+        crate::model::user_data_filters::Builder::default()
+    }
+}
+
+/// <p>Filters user data based on the contact information that is associated to the users. It contains a list of <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContactFilter {
+    /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
+    pub contact_states: std::option::Option<std::vec::Vec<crate::model::ContactState>>,
+}
+impl ContactFilter {
+    /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
+    pub fn contact_states(&self) -> std::option::Option<&[crate::model::ContactState]> {
+        self.contact_states.as_deref()
+    }
+}
+impl std::fmt::Debug for ContactFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ContactFilter");
+        formatter.field("contact_states", &self.contact_states);
+        formatter.finish()
+    }
+}
+/// See [`ContactFilter`](crate::model::ContactFilter)
+pub mod contact_filter {
+
+    /// A builder for [`ContactFilter`](crate::model::ContactFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) contact_states: std::option::Option<std::vec::Vec<crate::model::ContactState>>,
+    }
+    impl Builder {
+        /// Appends an item to `contact_states`.
+        ///
+        /// To override the contents of this collection use [`set_contact_states`](Self::set_contact_states).
+        ///
+        /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
+        pub fn contact_states(mut self, input: crate::model::ContactState) -> Self {
+            let mut v = self.contact_states.unwrap_or_default();
+            v.push(input);
+            self.contact_states = Some(v);
+            self
+        }
+        /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
+        pub fn set_contact_states(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ContactState>>,
+        ) -> Self {
+            self.contact_states = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContactFilter`](crate::model::ContactFilter)
+        pub fn build(self) -> crate::model::ContactFilter {
+            crate::model::ContactFilter {
+                contact_states: self.contact_states,
+            }
+        }
+    }
+}
+impl ContactFilter {
+    /// Creates a new builder-style object to manufacture [`ContactFilter`](crate::model::ContactFilter)
+    pub fn builder() -> crate::model::contact_filter::Builder {
+        crate::model::contact_filter::Builder::default()
     }
 }
 
@@ -14689,84 +17426,6 @@ impl QueueInfo {
     /// Creates a new builder-style object to manufacture [`QueueInfo`](crate::model::QueueInfo)
     pub fn builder() -> crate::model::queue_info::Builder {
         crate::model::queue_info::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ContactInitiationMethod {
-    #[allow(missing_docs)] // documentation missing in model
-    Api,
-    #[allow(missing_docs)] // documentation missing in model
-    Callback,
-    #[allow(missing_docs)] // documentation missing in model
-    Inbound,
-    #[allow(missing_docs)] // documentation missing in model
-    Outbound,
-    #[allow(missing_docs)] // documentation missing in model
-    QueueTransfer,
-    #[allow(missing_docs)] // documentation missing in model
-    Transfer,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ContactInitiationMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "API" => ContactInitiationMethod::Api,
-            "CALLBACK" => ContactInitiationMethod::Callback,
-            "INBOUND" => ContactInitiationMethod::Inbound,
-            "OUTBOUND" => ContactInitiationMethod::Outbound,
-            "QUEUE_TRANSFER" => ContactInitiationMethod::QueueTransfer,
-            "TRANSFER" => ContactInitiationMethod::Transfer,
-            other => ContactInitiationMethod::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ContactInitiationMethod {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContactInitiationMethod::from(s))
-    }
-}
-impl ContactInitiationMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ContactInitiationMethod::Api => "API",
-            ContactInitiationMethod::Callback => "CALLBACK",
-            ContactInitiationMethod::Inbound => "INBOUND",
-            ContactInitiationMethod::Outbound => "OUTBOUND",
-            ContactInitiationMethod::QueueTransfer => "QUEUE_TRANSFER",
-            ContactInitiationMethod::Transfer => "TRANSFER",
-            ContactInitiationMethod::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "API",
-            "CALLBACK",
-            "INBOUND",
-            "OUTBOUND",
-            "QUEUE_TRANSFER",
-            "TRANSFER",
-        ]
-    }
-}
-impl AsRef<str> for ContactInitiationMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 

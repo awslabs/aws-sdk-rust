@@ -228,6 +228,7 @@ impl Client {
     ///   - [`asset_model_id(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_asset_model_id): <p>The ID of the asset model from which to create the asset.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAsset::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAsset::set_tags): <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`asset_description(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::asset_description) / [`set_asset_description(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_asset_description): <p>A description for the asset.</p>
     /// - On success, responds with [`CreateAssetOutput`](crate::output::CreateAssetOutput) with field(s):
     ///   - [`asset_id(Option<String>)`](crate::output::CreateAssetOutput::asset_id): <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
     ///   - [`asset_arn(Option<String>)`](crate::output::CreateAssetOutput::asset_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
@@ -441,6 +442,7 @@ impl Client {
     ///   - [`asset_creation_date(Option<DateTime>)`](crate::output::DescribeAssetOutput::asset_creation_date): <p>The date the asset was created, in Unix epoch time.</p>
     ///   - [`asset_last_update_date(Option<DateTime>)`](crate::output::DescribeAssetOutput::asset_last_update_date): <p>The date the asset was last updated, in Unix epoch time.</p>
     ///   - [`asset_status(Option<AssetStatus>)`](crate::output::DescribeAssetOutput::asset_status): <p>The current status of the asset, which contains a state and any error message.</p>
+    ///   - [`asset_description(Option<String>)`](crate::output::DescribeAssetOutput::asset_description): <p>A description for the asset.</p>
     /// - On failure, responds with [`SdkError<DescribeAssetError>`](crate::error::DescribeAssetError)
     pub fn describe_asset(&self) -> fluent_builders::DescribeAsset {
         fluent_builders::DescribeAsset::new(self.handle.clone())
@@ -597,7 +599,7 @@ impl Client {
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeStorageConfiguration::send) it.
 
     /// - On success, responds with [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput) with field(s):
-    ///   - [`storage_type(Option<StorageType>)`](crate::output::DescribeStorageConfigurationOutput::storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
+    ///   - [`storage_type(Option<StorageType>)`](crate::output::DescribeStorageConfigurationOutput::storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
     ///   - [`multi_layer_storage(Option<MultiLayerStorage>)`](crate::output::DescribeStorageConfigurationOutput::multi_layer_storage): <p>Contains information about the storage destination.</p>
     ///   - [`disassociated_data_storage(Option<DisassociatedDataStorageState>)`](crate::output::DescribeStorageConfigurationOutput::disassociated_data_storage): <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>  <ul>   <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>     <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>    </important> </li>   <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::DescribeStorageConfigurationOutput::retention_period): <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
@@ -935,12 +937,12 @@ impl Client {
     /// Constructs a fluent builder for the [`PutStorageConfiguration`](crate::client::fluent_builders::PutStorageConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`storage_type(StorageType)`](crate::client::fluent_builders::PutStorageConfiguration::storage_type) / [`set_storage_type(Option<StorageType>)`](crate::client::fluent_builders::PutStorageConfiguration::set_storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
+    ///   - [`storage_type(StorageType)`](crate::client::fluent_builders::PutStorageConfiguration::storage_type) / [`set_storage_type(Option<StorageType>)`](crate::client::fluent_builders::PutStorageConfiguration::set_storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
     ///   - [`multi_layer_storage(MultiLayerStorage)`](crate::client::fluent_builders::PutStorageConfiguration::multi_layer_storage) / [`set_multi_layer_storage(Option<MultiLayerStorage>)`](crate::client::fluent_builders::PutStorageConfiguration::set_multi_layer_storage): <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
     ///   - [`disassociated_data_storage(DisassociatedDataStorageState)`](crate::client::fluent_builders::PutStorageConfiguration::disassociated_data_storage) / [`set_disassociated_data_storage(Option<DisassociatedDataStorageState>)`](crate::client::fluent_builders::PutStorageConfiguration::set_disassociated_data_storage): <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>  <ul>   <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>     <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>    </important> </li>   <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ///   - [`retention_period(RetentionPeriod)`](crate::client::fluent_builders::PutStorageConfiguration::retention_period) / [`set_retention_period(Option<RetentionPeriod>)`](crate::client::fluent_builders::PutStorageConfiguration::set_retention_period): <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     /// - On success, responds with [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput) with field(s):
-    ///   - [`storage_type(Option<StorageType>)`](crate::output::PutStorageConfigurationOutput::storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
+    ///   - [`storage_type(Option<StorageType>)`](crate::output::PutStorageConfigurationOutput::storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
     ///   - [`multi_layer_storage(Option<MultiLayerStorage>)`](crate::output::PutStorageConfigurationOutput::multi_layer_storage): <p>Contains information about the storage destination.</p>
     ///   - [`disassociated_data_storage(Option<DisassociatedDataStorageState>)`](crate::output::PutStorageConfigurationOutput::disassociated_data_storage): <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>  <ul>   <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>     <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>    </important> </li>   <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::PutStorageConfigurationOutput::retention_period): <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
@@ -991,6 +993,7 @@ impl Client {
     ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_id): <p>The ID of the asset to update.</p>
     ///   - [`asset_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_name) / [`set_asset_name(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_name): <p>A unique, friendly name for the asset.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`asset_description(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_description) / [`set_asset_description(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_description): <p>A description for the asset.</p>
     /// - On success, responds with [`UpdateAssetOutput`](crate::output::UpdateAssetOutput) with field(s):
     ///   - [`asset_status(Option<AssetStatus>)`](crate::output::UpdateAssetOutput::asset_status): <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<UpdateAssetError>`](crate::error::UpdateAssetError)
@@ -1998,6 +2001,19 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A description for the asset.</p>
+        pub fn asset_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_description(input.into());
+            self
+        }
+        /// <p>A description for the asset.</p>
+        pub fn set_asset_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_asset_description(input);
             self
         }
     }
@@ -6013,7 +6029,7 @@ pub mod fluent_builders {
         /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.inner = self.inner.storage_type(input);
@@ -6022,7 +6038,7 @@ pub mod fluent_builders {
         /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_storage_type(
             mut self,
@@ -6409,6 +6425,19 @@ pub mod fluent_builders {
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>A description for the asset.</p>
+        pub fn asset_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_description(input.into());
+            self
+        }
+        /// <p>A description for the asset.</p>
+        pub fn set_asset_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_asset_description(input);
             self
         }
     }

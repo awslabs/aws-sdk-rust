@@ -3,6 +3,14 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>This CIDR block is already in use.</p>
+    CidrBlockInUseException(crate::error::CidrBlockInUseException),
+    /// <p>A CIDR collection with this name and a different caller reference already exists in this account.</p>
+    CidrCollectionAlreadyExistsException(crate::error::CidrCollectionAlreadyExistsException),
+    /// <p>This CIDR collection is in use, and isn't empty.</p>
+    CidrCollectionInUseException(crate::error::CidrCollectionInUseException),
+    /// <p>The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code> operation.</p>
+    CidrCollectionVersionMismatchException(crate::error::CidrCollectionVersionMismatchException),
     /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
     ConcurrentModification(crate::error::ConcurrentModification),
     /// <p>The cause of this error depends on the operation that you're performing:</p>
@@ -90,10 +98,14 @@ pub enum Error {
     KeySigningKeyWithActiveStatusNotFound(crate::error::KeySigningKeyWithActiveStatusNotFound),
     /// <p>The VPC that you're trying to disassociate from the private hosted zone is the last VPC that is associated with the hosted zone. Amazon Route 53 doesn't support disassociating the last VPC from a hosted zone.</p>
     LastVpcAssociation(crate::error::LastVpcAssociation),
-    /// <p>This operation can't be completed either because the current account has reached the limit on reusable delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that you can associate with a private hosted zone. To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+    /// <p>This operation can't be completed because the current account has reached the limit on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     LimitsExceeded(crate::error::LimitsExceeded),
     /// <p>A change with the specified change ID does not exist.</p>
     NoSuchChange(crate::error::NoSuchChange),
+    /// <p>The CIDR collection you specified, doesn't exist.</p>
+    NoSuchCidrCollectionException(crate::error::NoSuchCidrCollectionException),
+    /// <p>The CIDR collection location doesn't match any locations in your account.</p>
+    NoSuchCidrLocationException(crate::error::NoSuchCidrLocationException),
     /// <p>There is no CloudWatch Logs log group with the specified ARN.</p>
     NoSuchCloudWatchLogsLogGroup(crate::error::NoSuchCloudWatchLogsLogGroup),
     /// <p>A reusable delegation set with the specified ID does not exist.</p>
@@ -168,6 +180,10 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::CidrBlockInUseException(inner) => inner.fmt(f),
+            Error::CidrCollectionAlreadyExistsException(inner) => inner.fmt(f),
+            Error::CidrCollectionInUseException(inner) => inner.fmt(f),
+            Error::CidrCollectionVersionMismatchException(inner) => inner.fmt(f),
             Error::ConcurrentModification(inner) => inner.fmt(f),
             Error::ConflictingDomainExists(inner) => inner.fmt(f),
             Error::ConflictingTypes(inner) => inner.fmt(f),
@@ -205,6 +221,8 @@ impl std::fmt::Display for Error {
             Error::LastVpcAssociation(inner) => inner.fmt(f),
             Error::LimitsExceeded(inner) => inner.fmt(f),
             Error::NoSuchChange(inner) => inner.fmt(f),
+            Error::NoSuchCidrCollectionException(inner) => inner.fmt(f),
+            Error::NoSuchCidrLocationException(inner) => inner.fmt(f),
             Error::NoSuchCloudWatchLogsLogGroup(inner) => inner.fmt(f),
             Error::NoSuchDelegationSet(inner) => inner.fmt(f),
             Error::NoSuchGeoLocation(inner) => inner.fmt(f),
@@ -313,6 +331,28 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ChangeCidrCollectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ChangeCidrCollectionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ChangeCidrCollectionErrorKind::CidrBlockInUseException(inner) => Error::CidrBlockInUseException(inner),
+                crate::error::ChangeCidrCollectionErrorKind::CidrCollectionVersionMismatchException(inner) => Error::CidrCollectionVersionMismatchException(inner),
+                crate::error::ChangeCidrCollectionErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
+                crate::error::ChangeCidrCollectionErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
+                crate::error::ChangeCidrCollectionErrorKind::LimitsExceeded(inner) => Error::LimitsExceeded(inner),
+                crate::error::ChangeCidrCollectionErrorKind::NoSuchCidrCollectionException(inner) => Error::NoSuchCidrCollectionException(inner),
+                crate::error::ChangeCidrCollectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ChangeResourceRecordSetsError, R>>
     for Error
 where
@@ -375,6 +415,26 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCidrCollectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateCidrCollectionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateCidrCollectionErrorKind::CidrCollectionAlreadyExistsException(inner) => Error::CidrCollectionAlreadyExistsException(inner),
+                crate::error::CreateCidrCollectionErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
+                crate::error::CreateCidrCollectionErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
+                crate::error::CreateCidrCollectionErrorKind::LimitsExceeded(inner) => Error::LimitsExceeded(inner),
+                crate::error::CreateCidrCollectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -669,6 +729,36 @@ where
                     Error::NoSuchKeySigningKey(inner)
                 }
                 crate::error::DeactivateKeySigningKeyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCidrCollectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteCidrCollectionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteCidrCollectionErrorKind::CidrCollectionInUseException(
+                    inner,
+                ) => Error::CidrCollectionInUseException(inner),
+                crate::error::DeleteCidrCollectionErrorKind::ConcurrentModification(inner) => {
+                    Error::ConcurrentModification(inner)
+                }
+                crate::error::DeleteCidrCollectionErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
+                }
+                crate::error::DeleteCidrCollectionErrorKind::NoSuchCidrCollectionException(
+                    inner,
+                ) => Error::NoSuchCidrCollectionException(inner),
+                crate::error::DeleteCidrCollectionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1383,6 +1473,71 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetTrafficPolicyInstanceCountErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCidrBlocksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListCidrBlocksError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListCidrBlocksErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
+                }
+                crate::error::ListCidrBlocksErrorKind::NoSuchCidrCollectionException(inner) => {
+                    Error::NoSuchCidrCollectionException(inner)
+                }
+                crate::error::ListCidrBlocksErrorKind::NoSuchCidrLocationException(inner) => {
+                    Error::NoSuchCidrLocationException(inner)
+                }
+                crate::error::ListCidrBlocksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCidrCollectionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListCidrCollectionsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListCidrCollectionsErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
+                }
+                crate::error::ListCidrCollectionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCidrLocationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListCidrLocationsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListCidrLocationsErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
+                }
+                crate::error::ListCidrLocationsErrorKind::NoSuchCidrCollectionException(inner) => {
+                    Error::NoSuchCidrCollectionException(inner)
+                }
+                crate::error::ListCidrLocationsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

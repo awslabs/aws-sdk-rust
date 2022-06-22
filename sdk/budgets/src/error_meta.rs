@@ -21,6 +21,8 @@ pub enum Error {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
+    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -36,6 +38,7 @@ impl std::fmt::Display for Error {
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::ResourceLockedException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -61,6 +64,9 @@ where
                 }
                 crate::error::CreateBudgetErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
+                }
+                crate::error::CreateBudgetErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::CreateBudgetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -94,6 +100,9 @@ where
                 }
                 crate::error::CreateBudgetActionErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
+                }
+                crate::error::CreateBudgetActionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::CreateBudgetActionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -130,6 +139,9 @@ where
                 crate::error::CreateNotificationErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::CreateNotificationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::CreateNotificationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -165,6 +177,9 @@ where
                 crate::error::CreateSubscriberErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::CreateSubscriberErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::CreateSubscriberErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -191,6 +206,9 @@ where
                 }
                 crate::error::DeleteBudgetErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
+                }
+                crate::error::DeleteBudgetErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteBudgetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -222,6 +240,9 @@ where
                 crate::error::DeleteBudgetActionErrorKind::ResourceLockedException(inner) => {
                     Error::ResourceLockedException(inner)
                 }
+                crate::error::DeleteBudgetActionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::DeleteBudgetActionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -250,6 +271,9 @@ where
                 }
                 crate::error::DeleteNotificationErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
+                }
+                crate::error::DeleteNotificationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteNotificationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -280,6 +304,9 @@ where
                 crate::error::DeleteSubscriberErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::DeleteSubscriberErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::DeleteSubscriberErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -306,6 +333,9 @@ where
                 }
                 crate::error::DescribeBudgetErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
+                }
+                crate::error::DescribeBudgetErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeBudgetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -334,6 +364,9 @@ where
                 }
                 crate::error::DescribeBudgetActionErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
+                }
+                crate::error::DescribeBudgetActionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeBudgetActionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -368,6 +401,9 @@ where
                 crate::error::DescribeBudgetActionHistoriesErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::DescribeBudgetActionHistoriesErrorKind::ThrottlingException(
+                    inner,
+                ) => Error::ThrottlingException(inner),
                 crate::error::DescribeBudgetActionHistoriesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -394,6 +430,7 @@ where
                 crate::error::DescribeBudgetActionsForAccountErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DescribeBudgetActionsForAccountErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeBudgetActionsForAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -419,6 +456,7 @@ where
                 crate::error::DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DescribeBudgetActionsForBudgetErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeBudgetActionsForBudgetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -449,6 +487,7 @@ where
                 crate::error::DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeBudgetNotificationsForAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -475,6 +514,7 @@ where
                 crate::error::DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeBudgetPerformanceHistoryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -506,6 +546,9 @@ where
                 crate::error::DescribeBudgetsErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::DescribeBudgetsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::DescribeBudgetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -532,6 +575,7 @@ where
                 crate::error::DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeNotificationsForBudgetErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DescribeNotificationsForBudgetErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::DescribeNotificationsForBudgetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeNotificationsForBudgetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -559,6 +603,7 @@ where
                 crate::error::DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeSubscribersForNotificationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DescribeSubscribersForNotificationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::DescribeSubscribersForNotificationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeSubscribersForNotificationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -589,6 +634,9 @@ where
                 crate::error::ExecuteBudgetActionErrorKind::ResourceLockedException(inner) => {
                     Error::ResourceLockedException(inner)
                 }
+                crate::error::ExecuteBudgetActionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::ExecuteBudgetActionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -615,6 +663,9 @@ where
                 }
                 crate::error::UpdateBudgetErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
+                }
+                crate::error::UpdateBudgetErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateBudgetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -645,6 +696,9 @@ where
                 }
                 crate::error::UpdateBudgetActionErrorKind::ResourceLockedException(inner) => {
                     Error::ResourceLockedException(inner)
+                }
+                crate::error::UpdateBudgetActionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateBudgetActionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -678,6 +732,9 @@ where
                 crate::error::UpdateNotificationErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
+                crate::error::UpdateNotificationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
                 crate::error::UpdateNotificationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -709,6 +766,9 @@ where
                 }
                 crate::error::UpdateSubscriberErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
+                }
+                crate::error::UpdateSubscriberErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateSubscriberErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

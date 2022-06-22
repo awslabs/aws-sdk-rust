@@ -153,6 +153,7 @@ impl Client {
     ///   - [`use_geolocation_for_time_zone(bool)`](crate::client::fluent_builders::CreateDatasetImportJob::use_geolocation_for_time_zone) / [`set_use_geolocation_for_time_zone(bool)`](crate::client::fluent_builders::CreateDatasetImportJob::set_use_geolocation_for_time_zone): <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
     ///   - [`geolocation_format(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::geolocation_format) / [`set_geolocation_format(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_geolocation_format): <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>  <ul>   <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>   <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>  </ul>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDatasetImportJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_tags): <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    ///   - [`format(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::format) / [`set_format(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_format): <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
     /// - On success, responds with [`CreateDatasetImportJobOutput`](crate::output::CreateDatasetImportJobOutput) with field(s):
     ///   - [`dataset_import_job_arn(Option<String>)`](crate::output::CreateDatasetImportJobOutput::dataset_import_job_arn): <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetImportJobError>`](crate::error::CreateDatasetImportJobError)
@@ -184,6 +185,7 @@ impl Client {
     ///   - [`explainability_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExplainabilityExport::explainability_arn) / [`set_explainability_arn(Option<String>)`](crate::client::fluent_builders::CreateExplainabilityExport::set_explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
     ///   - [`destination(DataDestination)`](crate::client::fluent_builders::CreateExplainabilityExport::destination) / [`set_destination(Option<DataDestination>)`](crate::client::fluent_builders::CreateExplainabilityExport::set_destination): <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateExplainabilityExport::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateExplainabilityExport::set_tags): <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>   <li> <p>Maximum number of tags per resource: 50.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>   <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>  </ul>
+    ///   - [`format(impl Into<String>)`](crate::client::fluent_builders::CreateExplainabilityExport::format) / [`set_format(Option<String>)`](crate::client::fluent_builders::CreateExplainabilityExport::set_format): <p>The format of the exported data, CSV or PARQUET.</p>
     /// - On success, responds with [`CreateExplainabilityExportOutput`](crate::output::CreateExplainabilityExportOutput) with field(s):
     ///   - [`explainability_export_arn(Option<String>)`](crate::output::CreateExplainabilityExportOutput::explainability_export_arn): <p>The Amazon Resource Name (ARN) of the export.</p>
     /// - On failure, responds with [`SdkError<CreateExplainabilityExportError>`](crate::error::CreateExplainabilityExportError)
@@ -197,6 +199,7 @@ impl Client {
     ///   - [`predictor_arn(impl Into<String>)`](crate::client::fluent_builders::CreateForecast::predictor_arn) / [`set_predictor_arn(Option<String>)`](crate::client::fluent_builders::CreateForecast::set_predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
     ///   - [`forecast_types(Vec<String>)`](crate::client::fluent_builders::CreateForecast::forecast_types) / [`set_forecast_types(Option<Vec<String>>)`](crate::client::fluent_builders::CreateForecast::set_forecast_types): <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>  <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateForecast::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateForecast::set_tags): <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    ///   - [`time_series_selector(TimeSeriesSelector)`](crate::client::fluent_builders::CreateForecast::time_series_selector) / [`set_time_series_selector(Option<TimeSeriesSelector>)`](crate::client::fluent_builders::CreateForecast::set_time_series_selector): <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>  <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>  <ul>   <li> <p> <code>DataSource</code> </p> </li>   <li> <p> <code>Format</code> </p> </li>   <li> <p> <code>Schema</code> </p> </li>  </ul>
     /// - On success, responds with [`CreateForecastOutput`](crate::output::CreateForecastOutput) with field(s):
     ///   - [`forecast_arn(Option<String>)`](crate::output::CreateForecastOutput::forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast.</p>
     /// - On failure, responds with [`SdkError<CreateForecastError>`](crate::error::CreateForecastError)
@@ -210,6 +213,7 @@ impl Client {
     ///   - [`forecast_arn(impl Into<String>)`](crate::client::fluent_builders::CreateForecastExportJob::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::client::fluent_builders::CreateForecastExportJob::set_forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
     ///   - [`destination(DataDestination)`](crate::client::fluent_builders::CreateForecastExportJob::destination) / [`set_destination(Option<DataDestination>)`](crate::client::fluent_builders::CreateForecastExportJob::set_destination): <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>  <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateForecastExportJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateForecastExportJob::set_tags): <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    ///   - [`format(impl Into<String>)`](crate::client::fluent_builders::CreateForecastExportJob::format) / [`set_format(Option<String>)`](crate::client::fluent_builders::CreateForecastExportJob::set_format): <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     /// - On success, responds with [`CreateForecastExportJobOutput`](crate::output::CreateForecastExportJobOutput) with field(s):
     ///   - [`forecast_export_job_arn(Option<String>)`](crate::output::CreateForecastExportJobOutput::forecast_export_job_arn): <p>The Amazon Resource Name (ARN) of the export job.</p>
     /// - On failure, responds with [`SdkError<CreateForecastExportJobError>`](crate::error::CreateForecastExportJobError)
@@ -259,6 +263,7 @@ impl Client {
     ///   - [`predictor_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePredictorBacktestExportJob::predictor_arn) / [`set_predictor_arn(Option<String>)`](crate::client::fluent_builders::CreatePredictorBacktestExportJob::set_predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
     ///   - [`destination(DataDestination)`](crate::client::fluent_builders::CreatePredictorBacktestExportJob::destination) / [`set_destination(Option<DataDestination>)`](crate::client::fluent_builders::CreatePredictorBacktestExportJob::set_destination): <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePredictorBacktestExportJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePredictorBacktestExportJob::set_tags): <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>   <li> <p>Maximum number of tags per resource: 50.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>   <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>  </ul>
+    ///   - [`format(impl Into<String>)`](crate::client::fluent_builders::CreatePredictorBacktestExportJob::format) / [`set_format(Option<String>)`](crate::client::fluent_builders::CreatePredictorBacktestExportJob::set_format): <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     /// - On success, responds with [`CreatePredictorBacktestExportJobOutput`](crate::output::CreatePredictorBacktestExportJobOutput) with field(s):
     ///   - [`predictor_backtest_export_job_arn(Option<String>)`](crate::output::CreatePredictorBacktestExportJobOutput::predictor_backtest_export_job_arn): <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
     /// - On failure, responds with [`SdkError<CreatePredictorBacktestExportJobError>`](crate::error::CreatePredictorBacktestExportJobError)
@@ -462,6 +467,7 @@ impl Client {
     ///   - [`message(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::message): <p>If an error occurred, an informational message about the error.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeDatasetImportJobOutput::creation_time): <p>When the dataset import job was created.</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeDatasetImportJobOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`format(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::format): <p>The format of the imported data, CSV or PARQUET.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetImportJobError>`](crate::error::DescribeDatasetImportJobError)
     pub fn describe_dataset_import_job(&self) -> fluent_builders::DescribeDatasetImportJob {
         fluent_builders::DescribeDatasetImportJob::new(self.handle.clone())
@@ -496,12 +502,13 @@ impl Client {
     /// - On success, responds with [`DescribeExplainabilityExportOutput`](crate::output::DescribeExplainabilityExportOutput) with field(s):
     ///   - [`explainability_export_arn(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::explainability_export_arn): <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     ///   - [`explainability_export_name(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::explainability_export_name): <p>The name of the Explainability export.</p>
-    ///   - [`explainability_arn(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    ///   - [`explainability_arn(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     ///   - [`destination(Option<DataDestination>)`](crate::output::DescribeExplainabilityExportOutput::destination): <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     ///   - [`message(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::message): <p>Information about any errors that occurred during the export.</p>
     ///   - [`status(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::status): <p>The status of the Explainability export. States include: </p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeExplainabilityExportOutput::creation_time): <p>When the Explainability export was created.</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeExplainabilityExportOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`format(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::format): <p>The format of the exported data, CSV or PARQUET.</p>
     /// - On failure, responds with [`SdkError<DescribeExplainabilityExportError>`](crate::error::DescribeExplainabilityExportError)
     pub fn describe_explainability_export(&self) -> fluent_builders::DescribeExplainabilityExport {
         fluent_builders::DescribeExplainabilityExport::new(self.handle.clone())
@@ -521,6 +528,7 @@ impl Client {
     ///   - [`message(Option<String>)`](crate::output::DescribeForecastOutput::message): <p>If an error occurred, an informational message about the error.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeForecastOutput::creation_time): <p>When the forecast creation task was created.</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeForecastOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`time_series_selector(Option<TimeSeriesSelector>)`](crate::output::DescribeForecastOutput::time_series_selector): <p>The time series to include in the forecast.</p>
     /// - On failure, responds with [`SdkError<DescribeForecastError>`](crate::error::DescribeForecastError)
     pub fn describe_forecast(&self) -> fluent_builders::DescribeForecast {
         fluent_builders::DescribeForecast::new(self.handle.clone())
@@ -538,6 +546,7 @@ impl Client {
     ///   - [`status(Option<String>)`](crate::output::DescribeForecastExportJobOutput::status): <p>The status of the forecast export job. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul> <note>   <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>  </note>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeForecastExportJobOutput::creation_time): <p>When the forecast export job was created.</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeForecastExportJobOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`format(Option<String>)`](crate::output::DescribeForecastExportJobOutput::format): <p>The format of the exported data, CSV or PARQUET.</p>
     /// - On failure, responds with [`SdkError<DescribeForecastExportJobError>`](crate::error::DescribeForecastExportJobError)
     pub fn describe_forecast_export_job(&self) -> fluent_builders::DescribeForecastExportJob {
         fluent_builders::DescribeForecastExportJob::new(self.handle.clone())
@@ -608,6 +617,7 @@ impl Client {
     ///   - [`status(Option<String>)`](crate::output::DescribePredictorBacktestExportJobOutput::status): <p>The status of the predictor backtest export job. States include: </p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribePredictorBacktestExportJobOutput::creation_time): <p>When the predictor backtest export job was created.</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribePredictorBacktestExportJobOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`format(Option<String>)`](crate::output::DescribePredictorBacktestExportJobOutput::format): <p>The format of the exported data, CSV or PARQUET.</p>
     /// - On failure, responds with [`SdkError<DescribePredictorBacktestExportJobError>`](crate::error::DescribePredictorBacktestExportJobError)
     pub fn describe_predictor_backtest_export_job(
         &self,
@@ -1418,8 +1428,8 @@ pub mod fluent_builders {
     ///
     /// <p>Imports your training data to an Amazon Forecast dataset. You provide the location of your training data in an Amazon Simple Storage Service (Amazon S3) bucket and the Amazon Resource Name (ARN) of the dataset that you want to import the data to.</p>
     /// <p>You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a> object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in an internal AWS system. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set up permissions</a>.</p>
-    /// <p>The training data must be in CSV format. The delimiter must be a comma (,).</p>
-    /// <p>You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the limit of 10,000 files.</p>
+    /// <p>The training data must be in CSV or Parquet format. The delimiter must be a comma (,).</p>
+    /// <p>You can specify the path to a specific file, the S3 bucket, or to a folder in the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the limit of 10,000 files.</p>
     /// <p>Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training a predictor or generating a forecast. Make sure that your most recent dataset import contains all of the data you want to model off of, and not just the new data collected since the previous import.</p>
     /// <p>To get a list of all your dataset import jobs, filtered by specified criteria, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1603,6 +1613,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.format(input.into());
+            self
+        }
+        /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_format(input);
             self
         }
     }
@@ -1945,6 +1965,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.format(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_format(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateForecast`.
     ///
@@ -1956,6 +1986,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <code>howitworks-forecast</code>.</p> <note>
     /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast. Use the <code>DescribeForecast</code> operation to get the status.</p>
     /// </note>
+    /// <p>By default, a forecast includes predictions for every item (<code>item_id</code>) in the dataset group that was used to train the predictor. However, you can use the <code>TimeSeriesSelector</code> object to generate a forecast on a subset of time series. Forecast creation is skipped for any time series that you specify that are not in the input dataset. The forecast export file will not contain these time series or their forecasted values.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateForecast {
         handle: std::sync::Arc<super::Handle>,
@@ -2075,6 +2106,31 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
+        /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+        /// <ul>
+        /// <li> <p> <code>DataSource</code> </p> </li>
+        /// <li> <p> <code>Format</code> </p> </li>
+        /// <li> <p> <code>Schema</code> </p> </li>
+        /// </ul>
+        pub fn time_series_selector(mut self, input: crate::model::TimeSeriesSelector) -> Self {
+            self.inner = self.inner.time_series_selector(input);
+            self
+        }
+        /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
+        /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+        /// <ul>
+        /// <li> <p> <code>DataSource</code> </p> </li>
+        /// <li> <p> <code>Format</code> </p> </li>
+        /// <li> <p> <code>Schema</code> </p> </li>
+        /// </ul>
+        pub fn set_time_series_selector(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesSelector>,
+        ) -> Self {
+            self.inner = self.inner.set_time_series_selector(input);
             self
         }
     }
@@ -2209,6 +2265,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.format(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_format(input);
             self
         }
     }
@@ -2637,7 +2703,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePredictorBacktestExportJob`.
     ///
-    /// <p>Exports backtest forecasts and accuracy metrics generated by the <code>CreateAutoPredictor</code> or <code>CreatePredictor</code> operations. Two folders containing CSV files are exported to your specified S3 bucket.</p>
+    /// <p>Exports backtest forecasts and accuracy metrics generated by the <code>CreateAutoPredictor</code> or <code>CreatePredictor</code> operations. Two folders containing CSV or Parquet files are exported to your specified S3 bucket.</p>
     /// <p> The export file names will match the following conventions:</p>
     /// <p> <code>
     /// <exportjobname>
@@ -2769,6 +2835,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.format(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_format(input);
             self
         }
     }

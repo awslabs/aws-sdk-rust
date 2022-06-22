@@ -142,6 +142,9 @@ impl Client {
     ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_client_request_token): <p>The client token for the request. An <code>Idempotency</code> token.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>The tags for the creation request.</p>
     ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_channel_id): <p>The ID of the channel in the request.</p>
+    ///   - [`member_arns(Vec<String>)`](crate::client::fluent_builders::CreateChannel::member_arns) / [`set_member_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateChannel::set_member_arns): <p>The ARNs of the channel members in the request.</p>
+    ///   - [`moderator_arns(Vec<String>)`](crate::client::fluent_builders::CreateChannel::moderator_arns) / [`set_moderator_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateChannel::set_moderator_arns): <p>The ARNs of the channel moderators in the request.</p>
     /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
@@ -474,7 +477,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_next_token): <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
     ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput) with field(s):
-    ///   - [`channel_memberships(Option<Vec<ChannelMembershipForAppInstanceUserSummary>>)`](crate::output::ListChannelMembershipsForAppInstanceUserOutput::channel_memberships): <p>The token passed by previous API calls until all requested users are returned.</p>
+    ///   - [`channel_memberships(Option<Vec<ChannelMembershipForAppInstanceUserSummary>>)`](crate::output::ListChannelMembershipsForAppInstanceUserOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelMembershipsForAppInstanceUserOutput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
     /// - On failure, responds with [`SdkError<ListChannelMembershipsForAppInstanceUserError>`](crate::error::ListChannelMembershipsForAppInstanceUserError)
     pub fn list_channel_memberships_for_app_instance_user(
@@ -605,6 +608,21 @@ impl Client {
     /// - On failure, responds with [`SdkError<RedactChannelMessageError>`](crate::error::RedactChannelMessageError)
     pub fn redact_channel_message(&self) -> fluent_builders::RedactChannelMessage {
         fluent_builders::RedactChannelMessage::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`SearchChannels`](crate::client::fluent_builders::SearchChannels) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchChannels::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::SearchChannels::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::SearchChannels::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    ///   - [`fields(Vec<SearchField>)`](crate::client::fluent_builders::SearchChannels::fields) / [`set_fields(Option<Vec<SearchField>>)`](crate::client::fluent_builders::SearchChannels::set_fields): <p>A list of the <code>Field</code> objects in the channel being searched.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchChannels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchChannels::set_max_results): <p>The maximum number of channels that you want returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchChannels::set_next_token): <p>The token returned from previous API requests until the number of channels is reached.</p>
+    /// - On success, responds with [`SearchChannelsOutput`](crate::output::SearchChannelsOutput) with field(s):
+    ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::output::SearchChannelsOutput::channels): <p>A list of the channels in the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchChannelsOutput::next_token): <p>The token returned from previous API responses until the number of channels is reached.</p>
+    /// - On failure, responds with [`SdkError<SearchChannelsError>`](crate::error::SearchChannelsError)
+    pub fn search_channels(&self) -> fluent_builders::SearchChannels {
+        fluent_builders::SearchChannels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SendChannelMessage`](crate::client::fluent_builders::SendChannelMessage) operation.
     ///
@@ -1111,6 +1129,50 @@ pub mod fluent_builders {
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
         pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_chime_bearer(input);
+            self
+        }
+        /// <p>The ID of the channel in the request.</p>
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input.into());
+            self
+        }
+        /// <p>The ID of the channel in the request.</p>
+        pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_id(input);
+            self
+        }
+        /// Appends an item to `MemberArns`.
+        ///
+        /// To override the contents of this collection use [`set_member_arns`](Self::set_member_arns).
+        ///
+        /// <p>The ARNs of the channel members in the request.</p>
+        pub fn member_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arns(input.into());
+            self
+        }
+        /// <p>The ARNs of the channel members in the request.</p>
+        pub fn set_member_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_member_arns(input);
+            self
+        }
+        /// Appends an item to `ModeratorArns`.
+        ///
+        /// To override the contents of this collection use [`set_moderator_arns`](Self::set_moderator_arns).
+        ///
+        /// <p>The ARNs of the channel moderators in the request.</p>
+        pub fn moderator_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.moderator_arns(input.into());
+            self
+        }
+        /// <p>The ARNs of the channel moderators in the request.</p>
+        pub fn set_moderator_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_moderator_arns(input);
             self
         }
     }
@@ -3920,6 +3982,102 @@ pub mod fluent_builders {
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
         pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_chime_bearer(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SearchChannels`.
+    ///
+    /// <p>Allows an <code>AppInstanceUser</code> to search the channels that they belong to. The <code>AppInstanceUser</code> can search by membership or external ID. An <code>AppInstanceAdmin</code> can search across all channels within the <code>AppInstance</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchChannels {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::search_channels_input::Builder,
+    }
+    impl SearchChannels {
+        /// Creates a new `SearchChannels`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchChannelsOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchChannelsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchChannelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchChannelsPaginator {
+            crate::paginator::SearchChannelsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
+            self
+        }
+        /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+        pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_chime_bearer(input);
+            self
+        }
+        /// Appends an item to `Fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
+        pub fn fields(mut self, input: crate::model::SearchField) -> Self {
+            self.inner = self.inner.fields(input);
+            self
+        }
+        /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
+        pub fn set_fields(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SearchField>>,
+        ) -> Self {
+            self.inner = self.inner.set_fields(input);
+            self
+        }
+        /// <p>The maximum number of channels that you want returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of channels that you want returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token returned from previous API requests until the number of channels is reached.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token returned from previous API requests until the number of channels is reached.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }

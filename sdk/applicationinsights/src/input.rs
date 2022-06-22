@@ -15,6 +15,7 @@ pub mod create_application_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) auto_config_enabled: std::option::Option<bool>,
         pub(crate) auto_create: std::option::Option<bool>,
+        pub(crate) grouping_type: std::option::Option<crate::model::GroupingType>,
     }
     impl Builder {
         /// <p>The name of the resource group.</p>
@@ -82,24 +83,37 @@ pub mod create_application_input {
             self.tags = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
         pub fn auto_config_enabled(mut self, input: bool) -> Self {
             self.auto_config_enabled = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
         pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_config_enabled = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
         pub fn auto_create(mut self, input: bool) -> Self {
             self.auto_create = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
         pub fn set_auto_create(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_create = input;
+            self
+        }
+        /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+        pub fn grouping_type(mut self, input: crate::model::GroupingType) -> Self {
+            self.grouping_type = Some(input);
+            self
+        }
+        /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+        pub fn set_grouping_type(
+            mut self,
+            input: std::option::Option<crate::model::GroupingType>,
+        ) -> Self {
+            self.grouping_type = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::input::CreateApplicationInput)
@@ -117,6 +131,7 @@ pub mod create_application_input {
                 tags: self.tags,
                 auto_config_enabled: self.auto_config_enabled,
                 auto_create: self.auto_create,
+                grouping_type: self.grouping_type,
             })
         }
     }
@@ -1597,12 +1612,12 @@ pub mod describe_component_configuration_recommendation_input {
             self.component_name = input;
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component.</p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
             self.tier = Some(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.tier = input;
             self
@@ -3313,12 +3328,12 @@ pub mod list_problems_input {
             self.next_token = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The name of the component. </p>
         pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_name = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> The name of the component. </p>
         pub fn set_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4000,12 +4015,12 @@ pub mod update_application_input {
             self.remove_sns_topic = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Turns auto-configuration on or off. </p>
         pub fn auto_config_enabled(mut self, input: bool) -> Self {
             self.auto_config_enabled = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Turns auto-configuration on or off. </p>
         pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_config_enabled = input;
             self
@@ -4386,12 +4401,12 @@ pub mod update_component_configuration_input {
             self.monitor = input;
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component.</p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
             self.tier = Some(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.tier = input;
             self
@@ -4409,12 +4424,12 @@ pub mod update_component_configuration_input {
             self.component_configuration = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Automatically configures the component by applying the recommended configurations. </p>
         pub fn auto_config_enabled(mut self, input: bool) -> Self {
             self.auto_config_enabled = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p> Automatically configures the component by applying the recommended configurations. </p>
         pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_config_enabled = input;
             self
@@ -4804,11 +4819,11 @@ pub struct UpdateComponentConfigurationInput {
     pub component_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the application component is monitored.</p>
     pub monitor: std::option::Option<bool>,
-    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+    /// <p>The tier of the application component.</p>
     pub tier: std::option::Option<crate::model::Tier>,
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
     pub component_configuration: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub auto_config_enabled: std::option::Option<bool>,
 }
 impl UpdateComponentConfigurationInput {
@@ -4824,7 +4839,7 @@ impl UpdateComponentConfigurationInput {
     pub fn monitor(&self) -> std::option::Option<bool> {
         self.monitor
     }
-    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+    /// <p>The tier of the application component.</p>
     pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
         self.tier.as_ref()
     }
@@ -4832,7 +4847,7 @@ impl UpdateComponentConfigurationInput {
     pub fn component_configuration(&self) -> std::option::Option<&str> {
         self.component_configuration.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Automatically configures the component by applying the recommended configurations. </p>
     pub fn auto_config_enabled(&self) -> std::option::Option<bool> {
         self.auto_config_enabled
     }
@@ -4906,7 +4921,7 @@ pub struct UpdateApplicationInput {
     pub ops_item_sns_topic_arn: std::option::Option<std::string::String>,
     /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub remove_sns_topic: std::option::Option<bool>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Turns auto-configuration on or off. </p>
     pub auto_config_enabled: std::option::Option<bool>,
 }
 impl UpdateApplicationInput {
@@ -4930,7 +4945,7 @@ impl UpdateApplicationInput {
     pub fn remove_sns_topic(&self) -> std::option::Option<bool> {
         self.remove_sns_topic
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Turns auto-configuration on or off. </p>
     pub fn auto_config_enabled(&self) -> std::option::Option<bool> {
         self.auto_config_enabled
     }
@@ -5041,7 +5056,7 @@ pub struct ListProblemsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The name of the component. </p>
     pub component_name: std::option::Option<std::string::String>,
 }
 impl ListProblemsInput {
@@ -5065,7 +5080,7 @@ impl ListProblemsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> The name of the component. </p>
     pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
@@ -5385,7 +5400,7 @@ pub struct DescribeComponentConfigurationRecommendationInput {
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
     pub component_name: std::option::Option<std::string::String>,
-    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+    /// <p>The tier of the application component.</p>
     pub tier: std::option::Option<crate::model::Tier>,
 }
 impl DescribeComponentConfigurationRecommendationInput {
@@ -5397,7 +5412,7 @@ impl DescribeComponentConfigurationRecommendationInput {
     pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
-    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+    /// <p>The tier of the application component.</p>
     pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
         self.tier.as_ref()
     }
@@ -5671,10 +5686,12 @@ pub struct CreateApplicationInput {
     pub ops_item_sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
     pub auto_config_enabled: std::option::Option<bool>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
     pub auto_create: std::option::Option<bool>,
+    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+    pub grouping_type: std::option::Option<crate::model::GroupingType>,
 }
 impl CreateApplicationInput {
     /// <p>The name of the resource group.</p>
@@ -5697,13 +5714,17 @@ impl CreateApplicationInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Indicates whether Application Insights automatically configures unmonitored resources in the resource group. </p>
     pub fn auto_config_enabled(&self) -> std::option::Option<bool> {
         self.auto_config_enabled
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Configures all of the resources in the resource group by applying the recommended configurations. </p>
     pub fn auto_create(&self) -> std::option::Option<bool> {
         self.auto_create
+    }
+    /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+    pub fn grouping_type(&self) -> std::option::Option<&crate::model::GroupingType> {
+        self.grouping_type.as_ref()
     }
 }
 impl std::fmt::Debug for CreateApplicationInput {
@@ -5716,6 +5737,7 @@ impl std::fmt::Debug for CreateApplicationInput {
         formatter.field("tags", &self.tags);
         formatter.field("auto_config_enabled", &self.auto_config_enabled);
         formatter.field("auto_create", &self.auto_create);
+        formatter.field("grouping_type", &self.grouping_type);
         formatter.finish()
     }
 }

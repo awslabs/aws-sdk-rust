@@ -362,6 +362,204 @@ impl AssociateVpcWithHostedZoneInput {
     }
 }
 
+/// See [`ChangeCidrCollectionInput`](crate::input::ChangeCidrCollectionInput)
+pub mod change_cidr_collection_input {
+
+    /// A builder for [`ChangeCidrCollectionInput`](crate::input::ChangeCidrCollectionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) collection_version: std::option::Option<i64>,
+        pub(crate) changes: std::option::Option<std::vec::Vec<crate::model::CidrCollectionChange>>,
+    }
+    impl Builder {
+        /// <p>The UUID of the CIDR collection to update.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The UUID of the CIDR collection to update.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
+        /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>
+        /// <ul>
+        /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
+        /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
+        /// </ul>
+        pub fn collection_version(mut self, input: i64) -> Self {
+            self.collection_version = Some(input);
+            self
+        }
+        /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
+        /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>
+        /// <ul>
+        /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
+        /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
+        /// </ul>
+        pub fn set_collection_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.collection_version = input;
+            self
+        }
+        /// Appends an item to `changes`.
+        ///
+        /// To override the contents of this collection use [`set_changes`](Self::set_changes).
+        ///
+        /// <p> Information about changes to a CIDR collection.</p>
+        pub fn changes(mut self, input: crate::model::CidrCollectionChange) -> Self {
+            let mut v = self.changes.unwrap_or_default();
+            v.push(input);
+            self.changes = Some(v);
+            self
+        }
+        /// <p> Information about changes to a CIDR collection.</p>
+        pub fn set_changes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CidrCollectionChange>>,
+        ) -> Self {
+            self.changes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChangeCidrCollectionInput`](crate::input::ChangeCidrCollectionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ChangeCidrCollectionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ChangeCidrCollectionInput {
+                id: self.id,
+                collection_version: self.collection_version,
+                changes: self.changes,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ChangeCidrCollectionInputOperationOutputAlias = crate::operation::ChangeCidrCollection;
+#[doc(hidden)]
+pub type ChangeCidrCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ChangeCidrCollectionInput {
+    /// Consumes the builder and constructs an Operation<[`ChangeCidrCollection`](crate::operation::ChangeCidrCollection)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ChangeCidrCollection,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ChangeCidrCollectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_4 = &_input.id;
+                let input_4 = input_4.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let id = aws_smithy_http::label::fmt_string(input_4, false);
+                if id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/2013-04-01/cidrcollection/{Id}", Id = id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ChangeCidrCollectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/xml",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_change_cidr_collection(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ChangeCidrCollection::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ChangeCidrCollection",
+            "route53",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionInput`](crate::input::ChangeCidrCollectionInput)
+    pub fn builder() -> crate::input::change_cidr_collection_input::Builder {
+        crate::input::change_cidr_collection_input::Builder::default()
+    }
+}
+
 /// See [`ChangeResourceRecordSetsInput`](crate::input::ChangeResourceRecordSetsInput)
 pub mod change_resource_record_sets_input {
 
@@ -439,14 +637,14 @@ impl ChangeResourceRecordSetsInput {
                 _input: &crate::input::ChangeResourceRecordSetsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_4 = &_input.hosted_zone_id;
-                let input_4 = input_4.as_ref().ok_or(
+                let input_5 = &_input.hosted_zone_id;
+                let input_5 = input_5.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_5, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
@@ -665,28 +863,28 @@ impl ChangeTagsForResourceInput {
                 _input: &crate::input::ChangeTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_5 = &_input.resource_type;
-                let input_5 = input_5.as_ref().ok_or(
+                let input_6 = &_input.resource_type;
+                let input_6 = input_6.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_type = aws_smithy_http::label::fmt_string(input_5, false);
+                let resource_type = aws_smithy_http::label::fmt_string(input_6, false);
                 if resource_type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_type",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_6 = &_input.resource_id;
-                let input_6 = input_6.as_ref().ok_or(
+                let input_7 = &_input.resource_id;
+                let input_7 = input_7.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_7, false);
                 if resource_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
@@ -779,6 +977,161 @@ impl ChangeTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ChangeTagsForResourceInput`](crate::input::ChangeTagsForResourceInput)
     pub fn builder() -> crate::input::change_tags_for_resource_input::Builder {
         crate::input::change_tags_for_resource_input::Builder::default()
+    }
+}
+
+/// See [`CreateCidrCollectionInput`](crate::input::CreateCidrCollectionInput)
+pub mod create_cidr_collection_input {
+
+    /// A builder for [`CreateCidrCollectionInput`](crate::input::CreateCidrCollectionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) caller_reference: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_reference = Some(input.into());
+            self
+        }
+        /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+        pub fn set_caller_reference(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.caller_reference = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateCidrCollectionInput`](crate::input::CreateCidrCollectionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateCidrCollectionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateCidrCollectionInput {
+                name: self.name,
+                caller_reference: self.caller_reference,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateCidrCollectionInputOperationOutputAlias = crate::operation::CreateCidrCollection;
+#[doc(hidden)]
+pub type CreateCidrCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateCidrCollectionInput {
+    /// Consumes the builder and constructs an Operation<[`CreateCidrCollection`](crate::operation::CreateCidrCollection)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateCidrCollection,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateCidrCollectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/2013-04-01/cidrcollection").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateCidrCollectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/xml",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_cidr_collection(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateCidrCollection::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateCidrCollection",
+            "route53",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateCidrCollectionInput`](crate::input::CreateCidrCollectionInput)
+    pub fn builder() -> crate::input::create_cidr_collection_input::Builder {
+        crate::input::create_cidr_collection_input::Builder::default()
     }
 }
 
@@ -964,14 +1317,14 @@ pub mod create_hosted_zone_input {
         pub(crate) delegation_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
-        /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+        /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+        /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
-        /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+        /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+        /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1026,12 +1379,12 @@ pub mod create_hosted_zone_input {
             self.hosted_zone_config = input;
             self
         }
-        /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
+        /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
         pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.delegation_set_id = Some(input.into());
             self
         }
-        /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
+        /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
         pub fn set_delegation_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2192,14 +2545,14 @@ impl CreateTrafficPolicyVersionInput {
                 _input: &crate::input::CreateTrafficPolicyVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_7 = &_input.id;
-                let input_7 = input_7.as_ref().ok_or(
+                let input_8 = &_input.id;
+                let input_8 = input_8.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_7, false);
+                let id = aws_smithy_http::label::fmt_string(input_8, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -2362,14 +2715,14 @@ impl CreateVpcAssociationAuthorizationInput {
                 _input: &crate::input::CreateVpcAssociationAuthorizationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_8 = &_input.hosted_zone_id;
-                let input_8 = input_8.as_ref().ok_or(
+                let input_9 = &_input.hosted_zone_id;
+                let input_9 = input_9.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_9, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
@@ -2535,28 +2888,28 @@ impl DeactivateKeySigningKeyInput {
                 _input: &crate::input::DeactivateKeySigningKeyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_9 = &_input.hosted_zone_id;
-                let input_9 = input_9.as_ref().ok_or(
+                let input_10 = &_input.hosted_zone_id;
+                let input_10 = input_10.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_10, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_10 = &_input.name;
-                let input_10 = input_10.as_ref().ok_or(
+                let input_11 = &_input.name;
+                let input_11 = input_11.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_10, false);
+                let name = aws_smithy_http::label::fmt_string(input_11, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -2636,6 +2989,143 @@ impl DeactivateKeySigningKeyInput {
     }
 }
 
+/// See [`DeleteCidrCollectionInput`](crate::input::DeleteCidrCollectionInput)
+pub mod delete_cidr_collection_input {
+
+    /// A builder for [`DeleteCidrCollectionInput`](crate::input::DeleteCidrCollectionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The UUID of the collection to delete.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The UUID of the collection to delete.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCidrCollectionInput`](crate::input::DeleteCidrCollectionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteCidrCollectionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteCidrCollectionInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteCidrCollectionInputOperationOutputAlias = crate::operation::DeleteCidrCollection;
+#[doc(hidden)]
+pub type DeleteCidrCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteCidrCollectionInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteCidrCollection`](crate::operation::DeleteCidrCollection)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteCidrCollection,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteCidrCollectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_12 = &_input.id;
+                let input_12 = input_12.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let id = aws_smithy_http::label::fmt_string(input_12, false);
+                if id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/2013-04-01/cidrcollection/{Id}", Id = id)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteCidrCollectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("DELETE").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteCidrCollection::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteCidrCollection",
+            "route53",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionInput`](crate::input::DeleteCidrCollectionInput)
+    pub fn builder() -> crate::input::delete_cidr_collection_input::Builder {
+        crate::input::delete_cidr_collection_input::Builder::default()
+    }
+}
+
 /// See [`DeleteHealthCheckInput`](crate::input::DeleteHealthCheckInput)
 pub mod delete_health_check_input {
 
@@ -2696,14 +3186,14 @@ impl DeleteHealthCheckInput {
                 _input: &crate::input::DeleteHealthCheckInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_11 = &_input.health_check_id;
-                let input_11 = input_11.as_ref().ok_or(
+                let input_13 = &_input.health_check_id;
+                let input_13 = input_13.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let health_check_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let health_check_id = aws_smithy_http::label::fmt_string(input_13, false);
                 if health_check_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
@@ -2838,14 +3328,14 @@ impl DeleteHostedZoneInput {
                 _input: &crate::input::DeleteHostedZoneInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_12 = &_input.id;
-                let input_12 = input_12.as_ref().ok_or(
+                let input_14 = &_input.id;
+                let input_14 = input_14.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_12, false);
+                let id = aws_smithy_http::label::fmt_string(input_14, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -2993,28 +3483,28 @@ impl DeleteKeySigningKeyInput {
                 _input: &crate::input::DeleteKeySigningKeyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_13 = &_input.hosted_zone_id;
-                let input_13 = input_13.as_ref().ok_or(
+                let input_15 = &_input.hosted_zone_id;
+                let input_15 = input_15.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_15, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_14 = &_input.name;
-                let input_14 = input_14.as_ref().ok_or(
+                let input_16 = &_input.name;
+                let input_16 = input_16.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_14, false);
+                let name = aws_smithy_http::label::fmt_string(input_16, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -3150,14 +3640,14 @@ impl DeleteQueryLoggingConfigInput {
                 _input: &crate::input::DeleteQueryLoggingConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_15 = &_input.id;
-                let input_15 = input_15.as_ref().ok_or(
+                let input_17 = &_input.id;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_15, false);
+                let id = aws_smithy_http::label::fmt_string(input_17, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -3289,14 +3779,14 @@ impl DeleteReusableDelegationSetInput {
                 _input: &crate::input::DeleteReusableDelegationSetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.id;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_18 = &_input.id;
+                let input_18 = input_18.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_16, false);
+                let id = aws_smithy_http::label::fmt_string(input_18, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -3440,28 +3930,28 @@ impl DeleteTrafficPolicyInput {
                 _input: &crate::input::DeleteTrafficPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_17 = &_input.id;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_19 = &_input.id;
+                let input_19 = input_19.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_17, false);
+                let id = aws_smithy_http::label::fmt_string(input_19, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_18 = &_input.version;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_20 = &_input.version;
+                let input_20 = input_20.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let mut version_encoder = aws_smithy_types::primitive::Encoder::from(*input_18);
+                let mut version_encoder = aws_smithy_types::primitive::Encoder::from(*input_20);
                 let version = version_encoder.encode();
                 if version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -3602,14 +4092,14 @@ impl DeleteTrafficPolicyInstanceInput {
                 _input: &crate::input::DeleteTrafficPolicyInstanceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_19 = &_input.id;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_21 = &_input.id;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_19, false);
+                let id = aws_smithy_http::label::fmt_string(input_21, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -3759,14 +4249,14 @@ impl DeleteVpcAssociationAuthorizationInput {
                 _input: &crate::input::DeleteVpcAssociationAuthorizationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_20 = &_input.hosted_zone_id;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_22 = &_input.hosted_zone_id;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_22, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
@@ -3920,14 +4410,14 @@ impl DisableHostedZoneDnssecInput {
                 _input: &crate::input::DisableHostedZoneDnssecInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.hosted_zone_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_23 = &_input.hosted_zone_id;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
@@ -4093,14 +4583,14 @@ impl DisassociateVpcFromHostedZoneInput {
                 _input: &crate::input::DisassociateVpcFromHostedZoneInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.hosted_zone_id;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_24 = &_input.hosted_zone_id;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_24, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
@@ -4253,14 +4743,14 @@ impl EnableHostedZoneDnssecInput {
                 _input: &crate::input::EnableHostedZoneDnssecInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.hosted_zone_id;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_25 = &_input.hosted_zone_id;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_25, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
@@ -4413,14 +4903,14 @@ impl GetAccountLimitInput {
                 _input: &crate::input::GetAccountLimitInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_24 = &_input.r#type;
-                let input_24 = input_24.as_ref().ok_or(
+                let input_26 = &_input.r#type;
+                let input_26 = input_26.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "r#type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let r#type = aws_smithy_http::label::fmt_string(input_24, false);
+                let r#type = aws_smithy_http::label::fmt_string(input_26, false);
                 if r#type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "r#type",
@@ -4549,14 +5039,14 @@ impl GetChangeInput {
                 _input: &crate::input::GetChangeInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_25 = &_input.id;
-                let input_25 = input_25.as_ref().ok_or(
+                let input_27 = &_input.id;
+                let input_27 = input_27.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_25, false);
+                let id = aws_smithy_http::label::fmt_string(input_27, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -4798,14 +5288,14 @@ impl GetDnssecInput {
                 _input: &crate::input::GetDnssecInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_26 = &_input.hosted_zone_id;
-                let input_26 = input_26.as_ref().ok_or(
+                let input_28 = &_input.hosted_zone_id;
+                let input_28 = input_28.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_28, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
@@ -4995,22 +5485,22 @@ impl GetGeoLocationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_27) = &_input.continent_code {
+                if let Some(inner_29) = &_input.continent_code {
                     query.push_kv(
                         "continentcode",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
+                        &aws_smithy_http::query::fmt_string(&inner_29),
                     );
                 }
-                if let Some(inner_28) = &_input.country_code {
+                if let Some(inner_30) = &_input.country_code {
                     query.push_kv(
                         "countrycode",
-                        &aws_smithy_http::query::fmt_string(&inner_28),
+                        &aws_smithy_http::query::fmt_string(&inner_30),
                     );
                 }
-                if let Some(inner_29) = &_input.subdivision_code {
+                if let Some(inner_31) = &_input.subdivision_code {
                     query.push_kv(
                         "subdivisioncode",
-                        &aws_smithy_http::query::fmt_string(&inner_29),
+                        &aws_smithy_http::query::fmt_string(&inner_31),
                     );
                 }
                 Ok(())
@@ -5140,14 +5630,14 @@ impl GetHealthCheckInput {
                 _input: &crate::input::GetHealthCheckInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_30 = &_input.health_check_id;
-                let input_30 = input_30.as_ref().ok_or(
+                let input_32 = &_input.health_check_id;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let health_check_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let health_check_id = aws_smithy_http::label::fmt_string(input_32, false);
                 if health_check_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
@@ -5402,14 +5892,14 @@ impl GetHealthCheckLastFailureReasonInput {
                 _input: &crate::input::GetHealthCheckLastFailureReasonInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.health_check_id;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_33 = &_input.health_check_id;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let health_check_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let health_check_id = aws_smithy_http::label::fmt_string(input_33, false);
                 if health_check_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
@@ -5552,14 +6042,14 @@ impl GetHealthCheckStatusInput {
                 _input: &crate::input::GetHealthCheckStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_32 = &_input.health_check_id;
-                let input_32 = input_32.as_ref().ok_or(
+                let input_34 = &_input.health_check_id;
+                let input_34 = input_34.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let health_check_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let health_check_id = aws_smithy_http::label::fmt_string(input_34, false);
                 if health_check_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
@@ -5694,14 +6184,14 @@ impl GetHostedZoneInput {
                 _input: &crate::input::GetHostedZoneInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_33 = &_input.id;
-                let input_33 = input_33.as_ref().ok_or(
+                let input_35 = &_input.id;
+                let input_35 = input_35.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_33, false);
+                let id = aws_smithy_http::label::fmt_string(input_35, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -5970,28 +6460,28 @@ impl GetHostedZoneLimitInput {
                 _input: &crate::input::GetHostedZoneLimitInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_34 = &_input.hosted_zone_id;
-                let input_34 = input_34.as_ref().ok_or(
+                let input_36 = &_input.hosted_zone_id;
+                let input_36 = input_36.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_36, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_35 = &_input.r#type;
-                let input_35 = input_35.as_ref().ok_or(
+                let input_37 = &_input.r#type;
+                let input_37 = input_37.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "r#type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let r#type = aws_smithy_http::label::fmt_string(input_35, false);
+                let r#type = aws_smithy_http::label::fmt_string(input_37, false);
                 if r#type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "r#type",
@@ -6126,14 +6616,14 @@ impl GetQueryLoggingConfigInput {
                 _input: &crate::input::GetQueryLoggingConfigInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.id;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_38 = &_input.id;
+                let input_38 = input_38.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_36, false);
+                let id = aws_smithy_http::label::fmt_string(input_38, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -6265,14 +6755,14 @@ impl GetReusableDelegationSetInput {
                 _input: &crate::input::GetReusableDelegationSetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_37 = &_input.id;
-                let input_37 = input_37.as_ref().ok_or(
+                let input_39 = &_input.id;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_37, false);
+                let id = aws_smithy_http::label::fmt_string(input_39, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -6425,28 +6915,28 @@ impl GetReusableDelegationSetLimitInput {
                 _input: &crate::input::GetReusableDelegationSetLimitInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.delegation_set_id;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_40 = &_input.delegation_set_id;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "delegation_set_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let delegation_set_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let delegation_set_id = aws_smithy_http::label::fmt_string(input_40, false);
                 if delegation_set_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "delegation_set_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_39 = &_input.r#type;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_41 = &_input.r#type;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "r#type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let r#type = aws_smithy_http::label::fmt_string(input_39, false);
+                let r#type = aws_smithy_http::label::fmt_string(input_41, false);
                 if r#type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "r#type",
@@ -6595,28 +7085,28 @@ impl GetTrafficPolicyInput {
                 _input: &crate::input::GetTrafficPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.id;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_42 = &_input.id;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_40, false);
+                let id = aws_smithy_http::label::fmt_string(input_42, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_41 = &_input.version;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_43 = &_input.version;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let mut version_encoder = aws_smithy_types::primitive::Encoder::from(*input_41);
+                let mut version_encoder = aws_smithy_types::primitive::Encoder::from(*input_43);
                 let version = version_encoder.encode();
                 if version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -6753,14 +7243,14 @@ impl GetTrafficPolicyInstanceInput {
                 _input: &crate::input::GetTrafficPolicyInstanceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_42 = &_input.id;
-                let input_42 = input_42.as_ref().ok_or(
+                let input_44 = &_input.id;
+                let input_44 = input_44.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_42, false);
+                let id = aws_smithy_http::label::fmt_string(input_44, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -6948,6 +7438,555 @@ impl GetTrafficPolicyInstanceCountInput {
     }
 }
 
+/// See [`ListCidrBlocksInput`](crate::input::ListCidrBlocksInput)
+pub mod list_cidr_blocks_input {
+
+    /// A builder for [`ListCidrBlocksInput`](crate::input::ListCidrBlocksInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collection_id: std::option::Option<std::string::String>,
+        pub(crate) location_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The UUID of the CIDR collection.</p>
+        pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collection_id = Some(input.into());
+            self
+        }
+        /// <p>The UUID of the CIDR collection.</p>
+        pub fn set_collection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collection_id = input;
+            self
+        }
+        /// <p>The name of the CIDR collection location.</p>
+        pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the CIDR collection location.</p>
+        pub fn set_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.location_name = input;
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Maximum number of results you want returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Maximum number of results you want returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCidrBlocksInput`](crate::input::ListCidrBlocksInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListCidrBlocksInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListCidrBlocksInput {
+                collection_id: self.collection_id,
+                location_name: self.location_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListCidrBlocksInputOperationOutputAlias = crate::operation::ListCidrBlocks;
+#[doc(hidden)]
+pub type ListCidrBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListCidrBlocksInput {
+    /// Consumes the builder and constructs an Operation<[`ListCidrBlocks`](crate::operation::ListCidrBlocks)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCidrBlocks,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCidrBlocksInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_45 = &_input.collection_id;
+                let input_45 = input_45.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "collection_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let collection_id = aws_smithy_http::label::fmt_string(input_45, false);
+                if collection_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "collection_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/2013-04-01/cidrcollection/{CollectionId}/cidrblocks",
+                    CollectionId = collection_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListCidrBlocksInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_46) = &_input.location_name {
+                    query.push_kv("location", &aws_smithy_http::query::fmt_string(&inner_46));
+                }
+                if let Some(inner_47) = &_input.next_token {
+                    query.push_kv("nexttoken", &aws_smithy_http::query::fmt_string(&inner_47));
+                }
+                if let Some(inner_48) = &_input.max_results {
+                    query.push_kv(
+                        "maxresults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCidrBlocksInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCidrBlocks::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCidrBlocks",
+            "route53",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCidrBlocksInput`](crate::input::ListCidrBlocksInput)
+    pub fn builder() -> crate::input::list_cidr_blocks_input::Builder {
+        crate::input::list_cidr_blocks_input::Builder::default()
+    }
+}
+
+/// See [`ListCidrCollectionsInput`](crate::input::ListCidrCollectionsInput)
+pub mod list_cidr_collections_input {
+
+    /// A builder for [`ListCidrCollectionsInput`](crate::input::ListCidrCollectionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of CIDR collections to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of CIDR collections to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCidrCollectionsInput`](crate::input::ListCidrCollectionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListCidrCollectionsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListCidrCollectionsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListCidrCollectionsInputOperationOutputAlias = crate::operation::ListCidrCollections;
+#[doc(hidden)]
+pub type ListCidrCollectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListCidrCollectionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListCidrCollections`](crate::operation::ListCidrCollections)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCidrCollections,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCidrCollectionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/2013-04-01/cidrcollection").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListCidrCollectionsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_49) = &_input.next_token {
+                    query.push_kv("nexttoken", &aws_smithy_http::query::fmt_string(&inner_49));
+                }
+                if let Some(inner_50) = &_input.max_results {
+                    query.push_kv(
+                        "maxresults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_50).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCidrCollectionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCidrCollections::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCidrCollections",
+            "route53",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCidrCollectionsInput`](crate::input::ListCidrCollectionsInput)
+    pub fn builder() -> crate::input::list_cidr_collections_input::Builder {
+        crate::input::list_cidr_collections_input::Builder::default()
+    }
+}
+
+/// See [`ListCidrLocationsInput`](crate::input::ListCidrLocationsInput)
+pub mod list_cidr_locations_input {
+
+    /// A builder for [`ListCidrLocationsInput`](crate::input::ListCidrLocationsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collection_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The CIDR collection ID.</p>
+        pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collection_id = Some(input.into());
+            self
+        }
+        /// <p>The CIDR collection ID.</p>
+        pub fn set_collection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collection_id = input;
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCidrLocationsInput`](crate::input::ListCidrLocationsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListCidrLocationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListCidrLocationsInput {
+                collection_id: self.collection_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListCidrLocationsInputOperationOutputAlias = crate::operation::ListCidrLocations;
+#[doc(hidden)]
+pub type ListCidrLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListCidrLocationsInput {
+    /// Consumes the builder and constructs an Operation<[`ListCidrLocations`](crate::operation::ListCidrLocations)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCidrLocations,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCidrLocationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_51 = &_input.collection_id;
+                let input_51 = input_51.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "collection_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let collection_id = aws_smithy_http::label::fmt_string(input_51, false);
+                if collection_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "collection_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/2013-04-01/cidrcollection/{CollectionId}",
+                    CollectionId = collection_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListCidrLocationsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_52) = &_input.next_token {
+                    query.push_kv("nexttoken", &aws_smithy_http::query::fmt_string(&inner_52));
+                }
+                if let Some(inner_53) = &_input.max_results {
+                    query.push_kv(
+                        "maxresults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_53).encode(),
+                    );
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCidrLocationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCidrLocations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCidrLocations",
+            "route53",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCidrLocationsInput`](crate::input::ListCidrLocationsInput)
+    pub fn builder() -> crate::input::list_cidr_locations_input::Builder {
+        crate::input::list_cidr_locations_input::Builder::default()
+    }
+}
+
 /// See [`ListGeoLocationsInput`](crate::input::ListGeoLocationsInput)
 pub mod list_geo_locations_input {
 
@@ -7062,28 +8101,28 @@ impl ListGeoLocationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_43) = &_input.start_continent_code {
+                if let Some(inner_54) = &_input.start_continent_code {
                     query.push_kv(
                         "startcontinentcode",
-                        &aws_smithy_http::query::fmt_string(&inner_43),
+                        &aws_smithy_http::query::fmt_string(&inner_54),
                     );
                 }
-                if let Some(inner_44) = &_input.start_country_code {
+                if let Some(inner_55) = &_input.start_country_code {
                     query.push_kv(
                         "startcountrycode",
-                        &aws_smithy_http::query::fmt_string(&inner_44),
+                        &aws_smithy_http::query::fmt_string(&inner_55),
                     );
                 }
-                if let Some(inner_45) = &_input.start_subdivision_code {
+                if let Some(inner_56) = &_input.start_subdivision_code {
                     query.push_kv(
                         "startsubdivisioncode",
-                        &aws_smithy_http::query::fmt_string(&inner_45),
+                        &aws_smithy_http::query::fmt_string(&inner_56),
                     );
                 }
-                if let Some(inner_46) = &_input.max_items {
+                if let Some(inner_57) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_46).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_57).encode(),
                     );
                 }
                 Ok(())
@@ -7234,13 +8273,13 @@ impl ListHealthChecksInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_47) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_47));
+                if let Some(inner_58) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_58));
                 }
-                if let Some(inner_48) = &_input.max_items {
+                if let Some(inner_59) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
                     );
                 }
                 Ok(())
@@ -7406,19 +8445,19 @@ impl ListHostedZonesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_49) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_49));
+                if let Some(inner_60) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_60));
                 }
-                if let Some(inner_50) = &_input.max_items {
+                if let Some(inner_61) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_50).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
                     );
                 }
-                if let Some(inner_51) = &_input.delegation_set_id {
+                if let Some(inner_62) = &_input.delegation_set_id {
                     query.push_kv(
                         "delegationsetid",
-                        &aws_smithy_http::query::fmt_string(&inner_51),
+                        &aws_smithy_http::query::fmt_string(&inner_62),
                     );
                 }
                 Ok(())
@@ -7582,19 +8621,19 @@ impl ListHostedZonesByNameInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_52) = &_input.dns_name {
-                    query.push_kv("dnsname", &aws_smithy_http::query::fmt_string(&inner_52));
+                if let Some(inner_63) = &_input.dns_name {
+                    query.push_kv("dnsname", &aws_smithy_http::query::fmt_string(&inner_63));
                 }
-                if let Some(inner_53) = &_input.hosted_zone_id {
+                if let Some(inner_64) = &_input.hosted_zone_id {
                     query.push_kv(
                         "hostedzoneid",
-                        &aws_smithy_http::query::fmt_string(&inner_53),
+                        &aws_smithy_http::query::fmt_string(&inner_64),
                     );
                 }
-                if let Some(inner_54) = &_input.max_items {
+                if let Some(inner_65) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_65).encode(),
                     );
                 }
                 Ok(())
@@ -7772,20 +8811,20 @@ impl ListHostedZonesByVpcInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_55) = &_input.vpc_id {
-                    query.push_kv("vpcid", &aws_smithy_http::query::fmt_string(&inner_55));
+                if let Some(inner_66) = &_input.vpc_id {
+                    query.push_kv("vpcid", &aws_smithy_http::query::fmt_string(&inner_66));
                 }
-                if let Some(inner_56) = &_input.vpc_region {
-                    query.push_kv("vpcregion", &aws_smithy_http::query::fmt_string(&inner_56));
+                if let Some(inner_67) = &_input.vpc_region {
+                    query.push_kv("vpcregion", &aws_smithy_http::query::fmt_string(&inner_67));
                 }
-                if let Some(inner_57) = &_input.max_items {
+                if let Some(inner_68) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_57).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_68).encode(),
                     );
                 }
-                if let Some(inner_58) = &_input.next_token {
-                    query.push_kv("nexttoken", &aws_smithy_http::query::fmt_string(&inner_58));
+                if let Some(inner_69) = &_input.next_token {
+                    query.push_kv("nexttoken", &aws_smithy_http::query::fmt_string(&inner_69));
                 }
                 Ok(())
             }
@@ -7956,19 +8995,19 @@ impl ListQueryLoggingConfigsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_59) = &_input.hosted_zone_id {
+                if let Some(inner_70) = &_input.hosted_zone_id {
                     query.push_kv(
                         "hostedzoneid",
-                        &aws_smithy_http::query::fmt_string(&inner_59),
+                        &aws_smithy_http::query::fmt_string(&inner_70),
                     );
                 }
-                if let Some(inner_60) = &_input.next_token {
-                    query.push_kv("nexttoken", &aws_smithy_http::query::fmt_string(&inner_60));
+                if let Some(inner_71) = &_input.next_token {
+                    query.push_kv("nexttoken", &aws_smithy_http::query::fmt_string(&inner_71));
                 }
-                if let Some(inner_61) = &_input.max_results {
+                if let Some(inner_72) = &_input.max_results {
                     query.push_kv(
                         "maxresults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
                     );
                 }
                 Ok(())
@@ -8182,14 +9221,14 @@ impl ListResourceRecordSetsInput {
                 _input: &crate::input::ListResourceRecordSetsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_62 = &_input.hosted_zone_id;
-                let input_62 = input_62.as_ref().ok_or(
+                let input_73 = &_input.hosted_zone_id;
+                let input_73 = input_73.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_62, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_73, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
@@ -8209,19 +9248,19 @@ impl ListResourceRecordSetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_63) = &_input.start_record_name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_63));
+                if let Some(inner_74) = &_input.start_record_name {
+                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_74));
                 }
-                if let Some(inner_64) = &_input.start_record_type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_64));
+                if let Some(inner_75) = &_input.start_record_type {
+                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_75));
                 }
-                if let Some(inner_65) = &_input.start_record_identifier {
-                    query.push_kv("identifier", &aws_smithy_http::query::fmt_string(&inner_65));
+                if let Some(inner_76) = &_input.start_record_identifier {
+                    query.push_kv("identifier", &aws_smithy_http::query::fmt_string(&inner_76));
                 }
-                if let Some(inner_66) = &_input.max_items {
+                if let Some(inner_77) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_77).encode(),
                     );
                 }
                 Ok(())
@@ -8373,13 +9412,13 @@ impl ListReusableDelegationSetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_67) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_67));
+                if let Some(inner_78) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_78));
                 }
-                if let Some(inner_68) = &_input.max_items {
+                if let Some(inner_79) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_68).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
                     );
                 }
                 Ok(())
@@ -8529,28 +9568,28 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_69 = &_input.resource_type;
-                let input_69 = input_69.as_ref().ok_or(
+                let input_80 = &_input.resource_type;
+                let input_80 = input_80.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_type = aws_smithy_http::label::fmt_string(input_69, false);
+                let resource_type = aws_smithy_http::label::fmt_string(input_80, false);
                 if resource_type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_type",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_70 = &_input.resource_id;
-                let input_70 = input_70.as_ref().ok_or(
+                let input_81 = &_input.resource_id;
+                let input_81 = input_81.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_70, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_81, false);
                 if resource_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
@@ -8719,14 +9758,14 @@ impl ListTagsForResourcesInput {
                 _input: &crate::input::ListTagsForResourcesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_71 = &_input.resource_type;
-                let input_71 = input_71.as_ref().ok_or(
+                let input_82 = &_input.resource_type;
+                let input_82 = input_82.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_type",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_type = aws_smithy_http::label::fmt_string(input_71, false);
+                let resource_type = aws_smithy_http::label::fmt_string(input_82, false);
                 if resource_type.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_type",
@@ -8903,16 +9942,16 @@ impl ListTrafficPoliciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_72) = &_input.traffic_policy_id_marker {
+                if let Some(inner_83) = &_input.traffic_policy_id_marker {
                     query.push_kv(
                         "trafficpolicyid",
-                        &aws_smithy_http::query::fmt_string(&inner_72),
+                        &aws_smithy_http::query::fmt_string(&inner_83),
                     );
                 }
-                if let Some(inner_73) = &_input.max_items {
+                if let Some(inner_84) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_84).encode(),
                     );
                 }
                 Ok(())
@@ -9103,28 +10142,28 @@ impl ListTrafficPolicyInstancesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_74) = &_input.hosted_zone_id_marker {
+                if let Some(inner_85) = &_input.hosted_zone_id_marker {
                     query.push_kv(
                         "hostedzoneid",
-                        &aws_smithy_http::query::fmt_string(&inner_74),
+                        &aws_smithy_http::query::fmt_string(&inner_85),
                     );
                 }
-                if let Some(inner_75) = &_input.traffic_policy_instance_name_marker {
+                if let Some(inner_86) = &_input.traffic_policy_instance_name_marker {
                     query.push_kv(
                         "trafficpolicyinstancename",
-                        &aws_smithy_http::query::fmt_string(&inner_75),
+                        &aws_smithy_http::query::fmt_string(&inner_86),
                     );
                 }
-                if let Some(inner_76) = &_input.traffic_policy_instance_type_marker {
+                if let Some(inner_87) = &_input.traffic_policy_instance_type_marker {
                     query.push_kv(
                         "trafficpolicyinstancetype",
-                        &aws_smithy_http::query::fmt_string(&inner_76),
+                        &aws_smithy_http::query::fmt_string(&inner_87),
                     );
                 }
-                if let Some(inner_77) = &_input.max_items {
+                if let Some(inner_88) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_77).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_88).encode(),
                     );
                 }
                 Ok(())
@@ -9314,25 +10353,25 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_78) = &_input.hosted_zone_id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_78));
+                if let Some(inner_89) = &_input.hosted_zone_id {
+                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_89));
                 }
-                if let Some(inner_79) = &_input.traffic_policy_instance_name_marker {
+                if let Some(inner_90) = &_input.traffic_policy_instance_name_marker {
                     query.push_kv(
                         "trafficpolicyinstancename",
-                        &aws_smithy_http::query::fmt_string(&inner_79),
+                        &aws_smithy_http::query::fmt_string(&inner_90),
                     );
                 }
-                if let Some(inner_80) = &_input.traffic_policy_instance_type_marker {
+                if let Some(inner_91) = &_input.traffic_policy_instance_type_marker {
                     query.push_kv(
                         "trafficpolicyinstancetype",
-                        &aws_smithy_http::query::fmt_string(&inner_80),
+                        &aws_smithy_http::query::fmt_string(&inner_91),
                     );
                 }
-                if let Some(inner_81) = &_input.max_items {
+                if let Some(inner_92) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_92).encode(),
                     );
                 }
                 Ok(())
@@ -9557,37 +10596,37 @@ impl ListTrafficPolicyInstancesByPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_82) = &_input.traffic_policy_id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_82));
+                if let Some(inner_93) = &_input.traffic_policy_id {
+                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_93));
                 }
-                if let Some(inner_83) = &_input.traffic_policy_version {
+                if let Some(inner_94) = &_input.traffic_policy_version {
                     query.push_kv(
                         "version",
-                        aws_smithy_types::primitive::Encoder::from(*inner_83).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_94).encode(),
                     );
                 }
-                if let Some(inner_84) = &_input.hosted_zone_id_marker {
+                if let Some(inner_95) = &_input.hosted_zone_id_marker {
                     query.push_kv(
                         "hostedzoneid",
-                        &aws_smithy_http::query::fmt_string(&inner_84),
+                        &aws_smithy_http::query::fmt_string(&inner_95),
                     );
                 }
-                if let Some(inner_85) = &_input.traffic_policy_instance_name_marker {
+                if let Some(inner_96) = &_input.traffic_policy_instance_name_marker {
                     query.push_kv(
                         "trafficpolicyinstancename",
-                        &aws_smithy_http::query::fmt_string(&inner_85),
+                        &aws_smithy_http::query::fmt_string(&inner_96),
                     );
                 }
-                if let Some(inner_86) = &_input.traffic_policy_instance_type_marker {
+                if let Some(inner_97) = &_input.traffic_policy_instance_type_marker {
                     query.push_kv(
                         "trafficpolicyinstancetype",
-                        &aws_smithy_http::query::fmt_string(&inner_86),
+                        &aws_smithy_http::query::fmt_string(&inner_97),
                     );
                 }
-                if let Some(inner_87) = &_input.max_items {
+                if let Some(inner_98) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
                     );
                 }
                 Ok(())
@@ -9747,14 +10786,14 @@ impl ListTrafficPolicyVersionsInput {
                 _input: &crate::input::ListTrafficPolicyVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_88 = &_input.id;
-                let input_88 = input_88.as_ref().ok_or(
+                let input_99 = &_input.id;
+                let input_99 = input_99.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_88, false);
+                let id = aws_smithy_http::label::fmt_string(input_99, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -9770,16 +10809,16 @@ impl ListTrafficPolicyVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_89) = &_input.traffic_policy_version_marker {
+                if let Some(inner_100) = &_input.traffic_policy_version_marker {
                     query.push_kv(
                         "trafficpolicyversion",
-                        &aws_smithy_http::query::fmt_string(&inner_89),
+                        &aws_smithy_http::query::fmt_string(&inner_100),
                     );
                 }
-                if let Some(inner_90) = &_input.max_items {
+                if let Some(inner_101) = &_input.max_items {
                     query.push_kv(
                         "maxitems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_90).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_101).encode(),
                     );
                 }
                 Ok(())
@@ -9936,14 +10975,14 @@ impl ListVpcAssociationAuthorizationsInput {
                 _input: &crate::input::ListVpcAssociationAuthorizationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_91 = &_input.hosted_zone_id;
-                let input_91 = input_91.as_ref().ok_or(
+                let input_102 = &_input.hosted_zone_id;
+                let input_102 = input_102.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_91, false);
+                let hosted_zone_id = aws_smithy_http::label::fmt_string(input_102, false);
                 if hosted_zone_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "hosted_zone_id",
@@ -9963,13 +11002,13 @@ impl ListVpcAssociationAuthorizationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_92) = &_input.next_token {
-                    query.push_kv("nexttoken", &aws_smithy_http::query::fmt_string(&inner_92));
+                if let Some(inner_103) = &_input.next_token {
+                    query.push_kv("nexttoken", &aws_smithy_http::query::fmt_string(&inner_103));
                 }
-                if let Some(inner_93) = &_input.max_results {
+                if let Some(inner_104) = &_input.max_results {
                     query.push_kv(
                         "maxresults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_93).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
                     );
                 }
                 Ok(())
@@ -10183,31 +11222,40 @@ impl TestDnsAnswerInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_94) = &_input.hosted_zone_id {
+                if let Some(inner_105) = &_input.hosted_zone_id {
                     query.push_kv(
                         "hostedzoneid",
-                        &aws_smithy_http::query::fmt_string(&inner_94),
+                        &aws_smithy_http::query::fmt_string(&inner_105),
                     );
                 }
-                if let Some(inner_95) = &_input.record_name {
-                    query.push_kv("recordname", &aws_smithy_http::query::fmt_string(&inner_95));
+                if let Some(inner_106) = &_input.record_name {
+                    query.push_kv(
+                        "recordname",
+                        &aws_smithy_http::query::fmt_string(&inner_106),
+                    );
                 }
-                if let Some(inner_96) = &_input.record_type {
-                    query.push_kv("recordtype", &aws_smithy_http::query::fmt_string(&inner_96));
+                if let Some(inner_107) = &_input.record_type {
+                    query.push_kv(
+                        "recordtype",
+                        &aws_smithy_http::query::fmt_string(&inner_107),
+                    );
                 }
-                if let Some(inner_97) = &_input.resolver_ip {
-                    query.push_kv("resolverip", &aws_smithy_http::query::fmt_string(&inner_97));
+                if let Some(inner_108) = &_input.resolver_ip {
+                    query.push_kv(
+                        "resolverip",
+                        &aws_smithy_http::query::fmt_string(&inner_108),
+                    );
                 }
-                if let Some(inner_98) = &_input.edns0_client_subnet_ip {
+                if let Some(inner_109) = &_input.edns0_client_subnet_ip {
                     query.push_kv(
                         "edns0clientsubnetip",
-                        &aws_smithy_http::query::fmt_string(&inner_98),
+                        &aws_smithy_http::query::fmt_string(&inner_109),
                     );
                 }
-                if let Some(inner_99) = &_input.edns0_client_subnet_mask {
+                if let Some(inner_110) = &_input.edns0_client_subnet_mask {
                     query.push_kv(
                         "edns0clientsubnetmask",
-                        &aws_smithy_http::query::fmt_string(&inner_99),
+                        &aws_smithy_http::query::fmt_string(&inner_110),
                     );
                 }
                 Ok(())
@@ -10723,14 +11771,14 @@ impl UpdateHealthCheckInput {
                 _input: &crate::input::UpdateHealthCheckInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_100 = &_input.health_check_id;
-                let input_100 = input_100.as_ref().ok_or(
+                let input_111 = &_input.health_check_id;
+                let input_111 = input_111.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let health_check_id = aws_smithy_http::label::fmt_string(input_100, false);
+                let health_check_id = aws_smithy_http::label::fmt_string(input_111, false);
                 if health_check_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "health_check_id",
@@ -10894,14 +11942,14 @@ impl UpdateHostedZoneCommentInput {
                 _input: &crate::input::UpdateHostedZoneCommentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_101 = &_input.id;
-                let input_101 = input_101.as_ref().ok_or(
+                let input_112 = &_input.id;
+                let input_112 = input_112.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_101, false);
+                let id = aws_smithy_http::label::fmt_string(input_112, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -11074,28 +12122,28 @@ impl UpdateTrafficPolicyCommentInput {
                 _input: &crate::input::UpdateTrafficPolicyCommentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_102 = &_input.id;
-                let input_102 = input_102.as_ref().ok_or(
+                let input_113 = &_input.id;
+                let input_113 = input_113.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_102, false);
+                let id = aws_smithy_http::label::fmt_string(input_113, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_103 = &_input.version;
-                let input_103 = input_103.as_ref().ok_or(
+                let input_114 = &_input.version;
+                let input_114 = input_114.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "version",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let mut version_encoder = aws_smithy_types::primitive::Encoder::from(*input_103);
+                let mut version_encoder = aws_smithy_types::primitive::Encoder::from(*input_114);
                 let version = version_encoder.encode();
                 if version.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -11286,14 +12334,14 @@ impl UpdateTrafficPolicyInstanceInput {
                 _input: &crate::input::UpdateTrafficPolicyInstanceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_104 = &_input.id;
-                let input_104 = input_104.as_ref().ok_or(
+                let input_115 = &_input.id;
+                let input_115 = input_115.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_104, false);
+                let id = aws_smithy_http::label::fmt_string(input_115, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -12551,6 +13599,115 @@ impl std::fmt::Debug for ListGeoLocationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCidrLocationsInput {
+    /// <p>The CIDR collection ID.</p>
+    pub collection_id: std::option::Option<std::string::String>,
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListCidrLocationsInput {
+    /// <p>The CIDR collection ID.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListCidrLocationsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCidrLocationsInput");
+        formatter.field("collection_id", &self.collection_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCidrCollectionsInput {
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of CIDR collections to return in the response.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListCidrCollectionsInput {
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of CIDR collections to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListCidrCollectionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCidrCollectionsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCidrBlocksInput {
+    /// <p>The UUID of the CIDR collection.</p>
+    pub collection_id: std::option::Option<std::string::String>,
+    /// <p>The name of the CIDR collection location.</p>
+    pub location_name: std::option::Option<std::string::String>,
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Maximum number of results you want returned.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListCidrBlocksInput {
+    /// <p>The UUID of the CIDR collection.</p>
+    pub fn collection_id(&self) -> std::option::Option<&str> {
+        self.collection_id.as_deref()
+    }
+    /// <p>The name of the CIDR collection location.</p>
+    pub fn location_name(&self) -> std::option::Option<&str> {
+        self.location_name.as_deref()
+    }
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListCidrBlocksInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCidrBlocksInput");
+        formatter.field("collection_id", &self.collection_id);
+        formatter.field("location_name", &self.location_name);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
 /// <p>Request to get the number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13245,6 +14402,27 @@ impl std::fmt::Debug for DeleteHealthCheckInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCidrCollectionInput {
+    /// <p>The UUID of the collection to delete.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl DeleteCidrCollectionInput {
+    /// <p>The UUID of the collection to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteCidrCollectionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCidrCollectionInput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
     pub hosted_zone_id: std::option::Option<std::string::String>,
@@ -13610,8 +14788,8 @@ impl std::fmt::Debug for CreateKeySigningKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHostedZoneInput {
-    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
-    /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+    /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>
     /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p>
@@ -13626,12 +14804,12 @@ pub struct CreateHostedZoneInput {
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub hosted_zone_config: std::option::Option<crate::model::HostedZoneConfig>,
-    /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
+    /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
     pub delegation_set_id: std::option::Option<std::string::String>,
 }
 impl CreateHostedZoneInput {
-    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
-    /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+    /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -13654,7 +14832,7 @@ impl CreateHostedZoneInput {
     pub fn hosted_zone_config(&self) -> std::option::Option<&crate::model::HostedZoneConfig> {
         self.hosted_zone_config.as_ref()
     }
-    /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
+    /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
     pub fn delegation_set_id(&self) -> std::option::Option<&str> {
         self.delegation_set_id.as_deref()
     }
@@ -13707,6 +14885,34 @@ impl std::fmt::Debug for CreateHealthCheckInput {
         let mut formatter = f.debug_struct("CreateHealthCheckInput");
         formatter.field("caller_reference", &self.caller_reference);
         formatter.field("health_check_config", &self.health_check_config);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateCidrCollectionInput {
+    /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+    pub caller_reference: std::option::Option<std::string::String>,
+}
+impl CreateCidrCollectionInput {
+    /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+    pub fn caller_reference(&self) -> std::option::Option<&str> {
+        self.caller_reference.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateCidrCollectionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateCidrCollectionInput");
+        formatter.field("name", &self.name);
+        formatter.field("caller_reference", &self.caller_reference);
         formatter.finish()
     }
 }
@@ -13787,6 +14993,51 @@ impl std::fmt::Debug for ChangeResourceRecordSetsInput {
         let mut formatter = f.debug_struct("ChangeResourceRecordSetsInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("change_batch", &self.change_batch);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChangeCidrCollectionInput {
+    /// <p>The UUID of the CIDR collection to update.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
+    /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>
+    /// <ul>
+    /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
+    /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
+    /// </ul>
+    pub collection_version: std::option::Option<i64>,
+    /// <p> Information about changes to a CIDR collection.</p>
+    pub changes: std::option::Option<std::vec::Vec<crate::model::CidrCollectionChange>>,
+}
+impl ChangeCidrCollectionInput {
+    /// <p>The UUID of the CIDR collection to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
+    /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>
+    /// <ul>
+    /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
+    /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
+    /// </ul>
+    pub fn collection_version(&self) -> std::option::Option<i64> {
+        self.collection_version
+    }
+    /// <p> Information about changes to a CIDR collection.</p>
+    pub fn changes(&self) -> std::option::Option<&[crate::model::CidrCollectionChange]> {
+        self.changes.as_deref()
+    }
+}
+impl std::fmt::Debug for ChangeCidrCollectionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChangeCidrCollectionInput");
+        formatter.field("id", &self.id);
+        formatter.field("collection_version", &self.collection_version);
+        formatter.field("changes", &self.changes);
         formatter.finish()
     }
 }

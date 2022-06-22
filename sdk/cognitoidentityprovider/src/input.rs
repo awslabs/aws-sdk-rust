@@ -2368,12 +2368,12 @@ pub mod admin_initiate_auth_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn context_data(mut self, input: crate::model::ContextDataType) -> Self {
             self.context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn set_context_data(
             mut self,
             input: std::option::Option<crate::model::ContextDataType>,
@@ -3747,12 +3747,12 @@ pub mod admin_respond_to_auth_challenge_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn context_data(mut self, input: crate::model::ContextDataType) -> Self {
             self.context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn set_context_data(
             mut self,
             input: std::option::Option<crate::model::ContextDataType>,
@@ -5866,12 +5866,12 @@ pub mod confirm_forgot_password_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -6140,12 +6140,12 @@ pub mod confirm_sign_up_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -7461,7 +7461,7 @@ pub mod create_user_pool_input {
             self.mfa_configuration = input;
             self
         }
-        /// <p></p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
         pub fn user_attribute_update_settings(
             mut self,
             input: crate::model::UserAttributeUpdateSettingsType,
@@ -7469,7 +7469,7 @@ pub mod create_user_pool_input {
             self.user_attribute_update_settings = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
         pub fn set_user_attribute_update_settings(
             mut self,
             input: std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
@@ -7800,6 +7800,7 @@ pub mod create_user_pool_client_input {
         pub(crate) prevent_user_existence_errors:
             std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
         pub(crate) enable_token_revocation: std::option::Option<bool>,
+        pub(crate) enable_propagate_additional_user_context_data: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
@@ -8226,6 +8227,19 @@ pub mod create_user_pool_client_input {
             self.enable_token_revocation = input;
             self
         }
+        /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
+        pub fn enable_propagate_additional_user_context_data(mut self, input: bool) -> Self {
+            self.enable_propagate_additional_user_context_data = Some(input);
+            self
+        }
+        /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
+        pub fn set_enable_propagate_additional_user_context_data(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_propagate_additional_user_context_data = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateUserPoolClientInput`](crate::input::CreateUserPoolClientInput)
         pub fn build(
             self,
@@ -8256,6 +8270,8 @@ pub mod create_user_pool_client_input {
                 analytics_configuration: self.analytics_configuration,
                 prevent_user_existence_errors: self.prevent_user_existence_errors,
                 enable_token_revocation: self.enable_token_revocation,
+                enable_propagate_additional_user_context_data: self
+                    .enable_propagate_additional_user_context_data,
             })
         }
     }
@@ -11060,12 +11076,12 @@ pub mod forgot_password_input {
             self.secret_hash = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -12996,12 +13012,12 @@ pub mod initiate_auth_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -14913,12 +14929,12 @@ pub mod resend_confirmation_code_input {
             self.secret_hash = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -15246,12 +15262,12 @@ pub mod respond_to_auth_challenge_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -16664,12 +16680,12 @@ pub mod sign_up_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+        /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -18867,7 +18883,7 @@ pub mod update_user_pool_input {
             self.sms_authentication_message = input;
             self
         }
-        /// <p></p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
         pub fn user_attribute_update_settings(
             mut self,
             input: crate::model::UserAttributeUpdateSettingsType,
@@ -18875,7 +18891,7 @@ pub mod update_user_pool_input {
             self.user_attribute_update_settings = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
         pub fn set_user_attribute_update_settings(
             mut self,
             input: std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
@@ -19190,6 +19206,7 @@ pub mod update_user_pool_client_input {
         pub(crate) prevent_user_existence_errors:
             std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
         pub(crate) enable_token_revocation: std::option::Option<bool>,
+        pub(crate) enable_propagate_additional_user_context_data: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The user pool ID for the user pool where you want to update the user pool client.</p>
@@ -19606,6 +19623,19 @@ pub mod update_user_pool_client_input {
             self.enable_token_revocation = input;
             self
         }
+        /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
+        pub fn enable_propagate_additional_user_context_data(mut self, input: bool) -> Self {
+            self.enable_propagate_additional_user_context_data = Some(input);
+            self
+        }
+        /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
+        pub fn set_enable_propagate_additional_user_context_data(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_propagate_additional_user_context_data = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateUserPoolClientInput`](crate::input::UpdateUserPoolClientInput)
         pub fn build(
             self,
@@ -19636,6 +19666,8 @@ pub mod update_user_pool_client_input {
                 analytics_configuration: self.analytics_configuration,
                 prevent_user_existence_errors: self.prevent_user_existence_errors,
                 enable_token_revocation: self.enable_token_revocation,
+                enable_propagate_additional_user_context_data: self
+                    .enable_propagate_additional_user_context_data,
             })
         }
     }
@@ -20500,6 +20532,8 @@ pub struct UpdateUserPoolClientInput {
         std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
     /// <p>Activates or deactivates token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     pub enable_token_revocation: std::option::Option<bool>,
+    /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
+    pub enable_propagate_additional_user_context_data: std::option::Option<bool>,
 }
 impl UpdateUserPoolClientInput {
     /// <p>The user pool ID for the user pool where you want to update the user pool client.</p>
@@ -20649,6 +20683,10 @@ impl UpdateUserPoolClientInput {
     pub fn enable_token_revocation(&self) -> std::option::Option<bool> {
         self.enable_token_revocation
     }
+    /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
+    pub fn enable_propagate_additional_user_context_data(&self) -> std::option::Option<bool> {
+        self.enable_propagate_additional_user_context_data
+    }
 }
 impl std::fmt::Debug for UpdateUserPoolClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20682,6 +20720,10 @@ impl std::fmt::Debug for UpdateUserPoolClientInput {
             &self.prevent_user_existence_errors,
         );
         formatter.field("enable_token_revocation", &self.enable_token_revocation);
+        formatter.field(
+            "enable_propagate_additional_user_context_data",
+            &self.enable_propagate_additional_user_context_data,
+        );
         formatter.finish()
     }
 }
@@ -20710,7 +20752,7 @@ pub struct UpdateUserPoolInput {
         std::option::Option<crate::model::VerificationMessageTemplateType>,
     /// <p>The contents of the SMS authentication message.</p>
     pub sms_authentication_message: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
     pub user_attribute_update_settings:
         std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
     /// <p>Possible values include:</p>
@@ -20777,7 +20819,7 @@ impl UpdateUserPoolInput {
     pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
         self.sms_authentication_message.as_deref()
     }
-    /// <p></p>
+    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
     pub fn user_attribute_update_settings(
         &self,
     ) -> std::option::Option<&crate::model::UserAttributeUpdateSettingsType> {
@@ -21302,7 +21344,7 @@ pub struct SignUpInput {
     pub validation_data: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the SignUp API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post confirmation</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your SignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -21347,7 +21389,7 @@ impl SignUpInput {
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
@@ -21688,7 +21730,7 @@ pub struct RespondToAuthChallengeInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>post authentication</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -21743,7 +21785,7 @@ impl RespondToAuthChallengeInput {
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
@@ -21786,7 +21828,7 @@ pub struct ResendConfirmationCodeInput {
     pub client_id: std::option::Option<std::string::String>,
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub secret_hash: std::option::Option<std::string::String>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
     /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
     pub username: std::option::Option<std::string::String>,
@@ -21814,7 +21856,7 @@ impl ResendConfirmationCodeInput {
     pub fn secret_hash(&self) -> std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
@@ -22312,7 +22354,7 @@ pub struct InitiateAuthInput {
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
 }
 impl InitiateAuthInput {
@@ -22384,7 +22426,7 @@ impl InitiateAuthInput {
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
@@ -22684,7 +22726,7 @@ pub struct ForgotPasswordInput {
     pub client_id: std::option::Option<std::string::String>,
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub secret_hash: std::option::Option<std::string::String>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
     /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
     pub username: std::option::Option<std::string::String>,
@@ -22712,7 +22754,7 @@ impl ForgotPasswordInput {
     pub fn secret_hash(&self) -> std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
@@ -23327,6 +23369,8 @@ pub struct CreateUserPoolClientInput {
     /// <p>Activates or deactivates token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     /// <p>If you don't include this parameter, token revocation is automatically activated for the new user pool client.</p>
     pub enable_token_revocation: std::option::Option<bool>,
+    /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
+    pub enable_propagate_additional_user_context_data: std::option::Option<bool>,
 }
 impl CreateUserPoolClientInput {
     /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
@@ -23481,6 +23525,10 @@ impl CreateUserPoolClientInput {
     pub fn enable_token_revocation(&self) -> std::option::Option<bool> {
         self.enable_token_revocation
     }
+    /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
+    pub fn enable_propagate_additional_user_context_data(&self) -> std::option::Option<bool> {
+        self.enable_propagate_additional_user_context_data
+    }
 }
 impl std::fmt::Debug for CreateUserPoolClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23514,6 +23562,10 @@ impl std::fmt::Debug for CreateUserPoolClientInput {
             &self.prevent_user_existence_errors,
         );
         formatter.field("enable_token_revocation", &self.enable_token_revocation);
+        formatter.field(
+            "enable_propagate_additional_user_context_data",
+            &self.enable_propagate_additional_user_context_data,
+        );
         formatter.finish()
     }
 }
@@ -23554,7 +23606,7 @@ pub struct CreateUserPoolInput {
     pub sms_authentication_message: std::option::Option<std::string::String>,
     /// <p>Specifies MFA configuration details.</p>
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
-    /// <p></p>
+    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
     pub user_attribute_update_settings:
         std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
     /// <p>The device configuration.</p>
@@ -23637,7 +23689,7 @@ impl CreateUserPoolInput {
     pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
-    /// <p></p>
+    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
     pub fn user_attribute_update_settings(
         &self,
     ) -> std::option::Option<&crate::model::UserAttributeUpdateSettingsType> {
@@ -24041,7 +24093,7 @@ pub struct ConfirmSignUpInput {
     pub force_alias_creation: bool,
     /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -24081,7 +24133,7 @@ impl ConfirmSignUpInput {
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
@@ -24133,7 +24185,7 @@ pub struct ConfirmForgotPasswordInput {
     pub password: std::option::Option<std::string::String>,
     /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -24173,7 +24225,7 @@ impl ConfirmForgotPasswordInput {
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
@@ -24658,7 +24710,7 @@ pub struct AdminRespondToAuthChallengeInput {
     pub session: std::option::Option<std::string::String>,
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub context_data: std::option::Option<crate::model::ContextDataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that you have assigned to the following triggers: </p>
@@ -24724,7 +24776,7 @@ impl AdminRespondToAuthChallengeInput {
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn context_data(&self) -> std::option::Option<&crate::model::ContextDataType> {
         self.context_data.as_ref()
     }
@@ -25103,7 +25155,7 @@ pub struct AdminInitiateAuthInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub context_data: std::option::Option<crate::model::ContextDataType>,
 }
 impl AdminInitiateAuthInput {
@@ -25180,7 +25232,7 @@ impl AdminInitiateAuthInput {
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn context_data(&self) -> std::option::Option<&crate::model::ContextDataType> {
         self.context_data.as_ref()
     }

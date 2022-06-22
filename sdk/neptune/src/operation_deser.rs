@@ -800,6 +800,24 @@ pub fn parse_create_db_cluster_error(
                 tmp
             }),
         },
+        "GlobalClusterNotFoundFault" => crate::error::CreateDBClusterError {
+            meta: generic,
+            kind: crate::error::CreateDBClusterErrorKind::GlobalClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::global_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InsufficientStorageClusterCapacity" => crate::error::CreateDBClusterError {
             meta: generic,
             kind: crate::error::CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault(
@@ -864,6 +882,24 @@ pub fn parse_create_db_cluster_error(
                         crate::error::invalid_db_subnet_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_subnet_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidGlobalClusterStateFault" => crate::error::CreateDBClusterError {
+            meta: generic,
+            kind: crate::error::CreateDBClusterErrorKind::InvalidGlobalClusterStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_global_cluster_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2078,6 +2114,117 @@ pub fn parse_create_event_subscription_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_global_cluster_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateGlobalClusterOutput,
+    crate::error::CreateGlobalClusterError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateGlobalClusterError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DBClusterNotFoundFault" => crate::error::CreateGlobalClusterError {
+            meta: generic,
+            kind: crate::error::CreateGlobalClusterErrorKind::DbClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "GlobalClusterAlreadyExistsFault" => crate::error::CreateGlobalClusterError {
+            meta: generic,
+            kind: crate::error::CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::global_cluster_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_global_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "GlobalClusterQuotaExceededFault" => crate::error::CreateGlobalClusterError {
+            meta: generic,
+            kind: crate::error::CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::global_cluster_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_global_cluster_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidDBClusterStateFault" => crate::error::CreateGlobalClusterError {
+            meta: generic,
+            kind: crate::error::CreateGlobalClusterErrorKind::InvalidDbClusterStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_db_cluster_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateGlobalClusterError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_global_cluster_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateGlobalClusterOutput,
+    crate::error::CreateGlobalClusterError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_global_cluster_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_global_cluster(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDbClusterOutput, crate::error::DeleteDBClusterError> {
@@ -2816,6 +2963,82 @@ pub fn parse_delete_event_subscription_response(
             output,
         )
         .map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_global_cluster_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteGlobalClusterOutput,
+    crate::error::DeleteGlobalClusterError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteGlobalClusterError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "GlobalClusterNotFoundFault" => crate::error::DeleteGlobalClusterError {
+            meta: generic,
+            kind: crate::error::DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::global_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidGlobalClusterStateFault" => crate::error::DeleteGlobalClusterError {
+            meta: generic,
+            kind: crate::error::DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_global_cluster_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteGlobalClusterError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_global_cluster_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteGlobalClusterOutput,
+    crate::error::DeleteGlobalClusterError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_global_cluster_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_global_cluster(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
         output.build()
     })
 }
@@ -3637,6 +3860,68 @@ pub fn parse_describe_event_subscriptions_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_global_clusters_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeGlobalClustersOutput,
+    crate::error::DescribeGlobalClustersError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeGlobalClustersError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeGlobalClustersError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "GlobalClusterNotFoundFault" => crate::error::DescribeGlobalClustersError {
+            meta: generic,
+            kind: crate::error::DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::global_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalClustersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeGlobalClustersError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_global_clusters_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeGlobalClustersOutput,
+    crate::error::DescribeGlobalClustersError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_global_clusters_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_global_clusters(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeGlobalClustersError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_orderable_db_instance_options_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3880,6 +4165,117 @@ pub fn parse_failover_db_cluster_response(
             output,
         )
         .map_err(crate::error::FailoverDBClusterError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_failover_global_cluster_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::FailoverGlobalClusterOutput,
+    crate::error::FailoverGlobalClusterError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::FailoverGlobalClusterError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DBClusterNotFoundFault" => crate::error::FailoverGlobalClusterError {
+            meta: generic,
+            kind: crate::error::FailoverGlobalClusterErrorKind::DbClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "GlobalClusterNotFoundFault" => crate::error::FailoverGlobalClusterError {
+            meta: generic,
+            kind: crate::error::FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::global_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidDBClusterStateFault" => crate::error::FailoverGlobalClusterError {
+            meta: generic,
+            kind: crate::error::FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_db_cluster_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidGlobalClusterStateFault" => crate::error::FailoverGlobalClusterError {
+            meta: generic,
+            kind: crate::error::FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_global_cluster_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::FailoverGlobalClusterError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_failover_global_cluster_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::FailoverGlobalClusterOutput,
+    crate::error::FailoverGlobalClusterError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::failover_global_cluster_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_failover_global_cluster(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
         output.build()
     })
 }
@@ -5192,6 +5588,82 @@ pub fn parse_modify_event_subscription_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_global_cluster_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyGlobalClusterOutput,
+    crate::error::ModifyGlobalClusterError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ModifyGlobalClusterError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "GlobalClusterNotFoundFault" => crate::error::ModifyGlobalClusterError {
+            meta: generic,
+            kind: crate::error::ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::global_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidGlobalClusterStateFault" => crate::error::ModifyGlobalClusterError {
+            meta: generic,
+            kind: crate::error::ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_global_cluster_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ModifyGlobalClusterError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_global_cluster_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyGlobalClusterOutput,
+    crate::error::ModifyGlobalClusterError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_global_cluster_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_global_cluster(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_promote_read_replica_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5337,6 +5809,103 @@ pub fn parse_reboot_db_instance_response(
             output,
         )
         .map_err(crate::error::RebootDBInstanceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_remove_from_global_cluster_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RemoveFromGlobalClusterOutput,
+    crate::error::RemoveFromGlobalClusterError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::RemoveFromGlobalClusterError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DBClusterNotFoundFault" => crate::error::RemoveFromGlobalClusterError {
+            meta: generic,
+            kind: crate::error::RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "GlobalClusterNotFoundFault" => crate::error::RemoveFromGlobalClusterError {
+            meta: generic,
+            kind: crate::error::RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::global_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidGlobalClusterStateFault" => crate::error::RemoveFromGlobalClusterError {
+            meta: generic,
+            kind: crate::error::RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_global_cluster_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RemoveFromGlobalClusterError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_remove_from_global_cluster_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RemoveFromGlobalClusterOutput,
+    crate::error::RemoveFromGlobalClusterError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::remove_from_global_cluster_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_remove_from_global_cluster(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
         output.build()
     })
 }

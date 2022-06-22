@@ -178,6 +178,162 @@ impl std::error::Error for AcceptEnvironmentAccountConnectionError {
     }
 }
 
+/// Error type for the `CancelComponentDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CancelComponentDeploymentError {
+    /// Kind of error that occurred.
+    pub kind: CancelComponentDeploymentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CancelComponentDeployment` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CancelComponentDeploymentErrorKind {
+    /// <p>There <i>isn't</i> sufficient access for performing this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request <i>couldn't</i> be made due to a conflicting operation or resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request failed to register with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource <i>wasn't</i> found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input is invalid or an out-of-range value was supplied for the input parameter.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CancelComponentDeploymentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CancelComponentDeploymentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CancelComponentDeploymentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CancelComponentDeploymentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CancelComponentDeploymentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CancelComponentDeploymentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CancelComponentDeploymentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CancelComponentDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CancelComponentDeploymentError {
+    fn code(&self) -> Option<&str> {
+        CancelComponentDeploymentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            CancelComponentDeploymentErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CancelComponentDeploymentErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl CancelComponentDeploymentError {
+    /// Creates a new `CancelComponentDeploymentError`.
+    pub fn new(kind: CancelComponentDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CancelComponentDeploymentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CancelComponentDeploymentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CancelComponentDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CancelComponentDeploymentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CancelComponentDeploymentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelComponentDeploymentErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelComponentDeploymentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelComponentDeploymentErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelComponentDeploymentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelComponentDeploymentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelComponentDeploymentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelComponentDeploymentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelComponentDeploymentErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelComponentDeploymentErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelComponentDeploymentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelComponentDeploymentErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CancelComponentDeploymentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CancelComponentDeploymentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CancelComponentDeploymentErrorKind::ConflictException(_inner) => Some(_inner),
+            CancelComponentDeploymentErrorKind::InternalServerException(_inner) => Some(_inner),
+            CancelComponentDeploymentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CancelComponentDeploymentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CancelComponentDeploymentErrorKind::ValidationException(_inner) => Some(_inner),
+            CancelComponentDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CancelEnvironmentDeployment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -670,6 +826,164 @@ impl std::error::Error for CancelServicePipelineDeploymentError {
             CancelServicePipelineDeploymentErrorKind::ThrottlingException(_inner) => Some(_inner),
             CancelServicePipelineDeploymentErrorKind::ValidationException(_inner) => Some(_inner),
             CancelServicePipelineDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateComponent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateComponentError {
+    /// Kind of error that occurred.
+    pub kind: CreateComponentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateComponent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateComponentErrorKind {
+    /// <p>There <i>isn't</i> sufficient access for performing this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request <i>couldn't</i> be made due to a conflicting operation or resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request failed to register with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource <i>wasn't</i> found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input is invalid or an out-of-range value was supplied for the input parameter.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateComponentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateComponentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateComponentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateComponentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateComponentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateComponentErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateComponentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateComponentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateComponentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateComponentError {
+    fn code(&self) -> Option<&str> {
+        CreateComponentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            CreateComponentErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CreateComponentErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl CreateComponentError {
+    /// Creates a new `CreateComponentError`.
+    pub fn new(kind: CreateComponentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateComponentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateComponentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateComponentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateComponentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateComponentErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateComponentErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateComponentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateComponentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateComponentErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateComponentErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateComponentErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateComponentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateComponentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateComponentErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateComponentErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateComponentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateComponentErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateComponentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateComponentErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2158,6 +2472,153 @@ impl std::error::Error for CreateTemplateSyncConfigError {
             CreateTemplateSyncConfigErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateTemplateSyncConfigErrorKind::ValidationException(_inner) => Some(_inner),
             CreateTemplateSyncConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteComponent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteComponentError {
+    /// Kind of error that occurred.
+    pub kind: DeleteComponentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteComponent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteComponentErrorKind {
+    /// <p>There <i>isn't</i> sufficient access for performing this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request <i>couldn't</i> be made due to a conflicting operation or resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request failed to register with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource <i>wasn't</i> found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input is invalid or an out-of-range value was supplied for the input parameter.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteComponentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteComponentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteComponentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteComponentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteComponentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteComponentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteComponentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteComponentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteComponentError {
+    fn code(&self) -> Option<&str> {
+        DeleteComponentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            DeleteComponentErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DeleteComponentErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl DeleteComponentError {
+    /// Creates a new `DeleteComponentError`.
+    pub fn new(kind: DeleteComponentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteComponentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteComponentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteComponentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteComponentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteComponentErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteComponentErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteComponentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteComponentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteComponentErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteComponentErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteComponentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteComponentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteComponentErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteComponentErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteComponentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteComponentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteComponentErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3731,6 +4192,140 @@ impl std::error::Error for GetAccountSettingsError {
             GetAccountSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetAccountSettingsErrorKind::ValidationException(_inner) => Some(_inner),
             GetAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetComponent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetComponentError {
+    /// Kind of error that occurred.
+    pub kind: GetComponentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetComponent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetComponentErrorKind {
+    /// <p>There <i>isn't</i> sufficient access for performing this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request failed to register with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource <i>wasn't</i> found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input is invalid or an out-of-range value was supplied for the input parameter.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetComponentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetComponentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetComponentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetComponentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetComponentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetComponentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetComponentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetComponentError {
+    fn code(&self) -> Option<&str> {
+        GetComponentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            GetComponentErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetComponentErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
+    }
+}
+impl GetComponentError {
+    /// Creates a new `GetComponentError`.
+    pub fn new(kind: GetComponentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetComponentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetComponentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetComponentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetComponentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetComponentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetComponentErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetComponentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComponentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetComponentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetComponentErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetComponentErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetComponentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetComponentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetComponentErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetComponentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetComponentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetComponentErrorKind::ValidationException(_inner) => Some(_inner),
+            GetComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5464,6 +6059,443 @@ impl std::error::Error for GetTemplateSyncStatusError {
             GetTemplateSyncStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetTemplateSyncStatusErrorKind::ValidationException(_inner) => Some(_inner),
             GetTemplateSyncStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListComponentOutputs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListComponentOutputsError {
+    /// Kind of error that occurred.
+    pub kind: ListComponentOutputsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListComponentOutputs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListComponentOutputsErrorKind {
+    /// <p>There <i>isn't</i> sufficient access for performing this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request failed to register with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource <i>wasn't</i> found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input is invalid or an out-of-range value was supplied for the input parameter.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListComponentOutputsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListComponentOutputsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListComponentOutputsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListComponentOutputsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListComponentOutputsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListComponentOutputsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListComponentOutputsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListComponentOutputsError {
+    fn code(&self) -> Option<&str> {
+        ListComponentOutputsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            ListComponentOutputsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListComponentOutputsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl ListComponentOutputsError {
+    /// Creates a new `ListComponentOutputsError`.
+    pub fn new(kind: ListComponentOutputsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListComponentOutputsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListComponentOutputsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListComponentOutputsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListComponentOutputsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListComponentOutputsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentOutputsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentOutputsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentOutputsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentOutputsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentOutputsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentOutputsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentOutputsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentOutputsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentOutputsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListComponentOutputsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListComponentOutputsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListComponentOutputsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListComponentOutputsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListComponentOutputsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListComponentOutputsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListComponentOutputsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListComponentProvisionedResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListComponentProvisionedResourcesError {
+    /// Kind of error that occurred.
+    pub kind: ListComponentProvisionedResourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListComponentProvisionedResources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListComponentProvisionedResourcesErrorKind {
+    /// <p>There <i>isn't</i> sufficient access for performing this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request failed to register with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource <i>wasn't</i> found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input is invalid or an out-of-range value was supplied for the input parameter.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListComponentProvisionedResourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListComponentProvisionedResourcesErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListComponentProvisionedResourcesErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListComponentProvisionedResourcesErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListComponentProvisionedResourcesErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListComponentProvisionedResourcesErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListComponentProvisionedResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListComponentProvisionedResourcesError {
+    fn code(&self) -> Option<&str> {
+        ListComponentProvisionedResourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            ListComponentProvisionedResourcesErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListComponentProvisionedResourcesErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl ListComponentProvisionedResourcesError {
+    /// Creates a new `ListComponentProvisionedResourcesError`.
+    pub fn new(
+        kind: ListComponentProvisionedResourcesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListComponentProvisionedResourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListComponentProvisionedResourcesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListComponentProvisionedResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListComponentProvisionedResourcesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListComponentProvisionedResourcesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentProvisionedResourcesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentProvisionedResourcesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentProvisionedResourcesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentProvisionedResourcesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentProvisionedResourcesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentProvisionedResourcesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentProvisionedResourcesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentProvisionedResourcesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentProvisionedResourcesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListComponentProvisionedResourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListComponentProvisionedResourcesErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            ListComponentProvisionedResourcesErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ListComponentProvisionedResourcesErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListComponentProvisionedResourcesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListComponentProvisionedResourcesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListComponentProvisionedResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListComponents` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListComponentsError {
+    /// Kind of error that occurred.
+    pub kind: ListComponentsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListComponents` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListComponentsErrorKind {
+    /// <p>There <i>isn't</i> sufficient access for performing this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request failed to register with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input is invalid or an out-of-range value was supplied for the input parameter.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListComponentsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListComponentsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListComponentsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListComponentsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListComponentsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListComponentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListComponentsError {
+    fn code(&self) -> Option<&str> {
+        ListComponentsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            ListComponentsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListComponentsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl ListComponentsError {
+    /// Creates a new `ListComponentsError`.
+    pub fn new(kind: ListComponentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListComponentsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListComponentsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListComponentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListComponentsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListComponentsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListComponentsErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListComponentsErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListComponentsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListComponentsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListComponentsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListComponentsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListComponentsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListComponentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8780,6 +9812,164 @@ impl std::error::Error for UpdateAccountSettingsError {
             UpdateAccountSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateAccountSettingsErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateComponent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateComponentError {
+    /// Kind of error that occurred.
+    pub kind: UpdateComponentErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateComponent` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateComponentErrorKind {
+    /// <p>There <i>isn't</i> sufficient access for performing this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request <i>couldn't</i> be made due to a conflicting operation or resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request failed to register with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource <i>wasn't</i> found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the <i>Proton Administrator Guide</i>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input is invalid or an out-of-range value was supplied for the input parameter.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateComponentError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateComponentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateComponentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateComponentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateComponentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateComponentErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            UpdateComponentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateComponentErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateComponentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateComponentError {
+    fn code(&self) -> Option<&str> {
+        UpdateComponentError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UpdateComponentErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateComponentErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl UpdateComponentError {
+    /// Creates a new `UpdateComponentError`.
+    pub fn new(kind: UpdateComponentErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateComponentError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateComponentErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateComponentError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateComponentErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateComponentErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateComponentErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateComponentErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateComponentErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateComponentErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateComponentErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UpdateComponentErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UpdateComponentError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateComponentErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateComponentErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateComponentErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateComponentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateComponentErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            UpdateComponentErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateComponentErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

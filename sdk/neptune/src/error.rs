@@ -882,6 +882,8 @@ pub enum CreateDBClusterErrorKind {
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
     /// <p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// <p>There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
     /// <p>The DB cluster is not in a valid state.</p>
@@ -890,6 +892,8 @@ pub enum CreateDBClusterErrorKind {
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The DB subnet group cannot be deleted because it is in use.</p>
     InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>DB subnet group does not cover all Availability Zones after it is created because users' change.</p>
@@ -911,12 +915,14 @@ impl std::fmt::Display for CreateDBClusterError {
             CreateDBClusterErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault(_inner) => {
                 _inner.fmt(f)
             }
             CreateDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
@@ -1024,6 +1030,13 @@ impl CreateDBClusterError {
             CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::GlobalClusterNotFoundFault`.
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault`.
     pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
         matches!(
@@ -1050,6 +1063,13 @@ impl CreateDBClusterError {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InvalidGlobalClusterStateFault`.
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::InvalidGlobalClusterStateFault(_)
         )
     }
     /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InvalidSubnet`.
@@ -1088,12 +1108,14 @@ impl std::error::Error for CreateDBClusterError {
             CreateDBClusterErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => Some(_inner),
             CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault(_inner) => {
                 Some(_inner)
             }
             CreateDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::InvalidSubnet(_inner) => Some(_inner),
             CreateDBClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
@@ -2218,6 +2240,132 @@ impl std::error::Error for CreateEventSubscriptionError {
     }
 }
 
+/// Error type for the `CreateGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateGlobalClusterError {
+    /// Kind of error that occurred.
+    pub kind: CreateGlobalClusterErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateGlobalClusterErrorKind {
+    /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique name) to create a new global database cluster.</p>
+    GlobalClusterAlreadyExistsFault(crate::error::GlobalClusterAlreadyExistsFault),
+    /// <p>The number of global database clusters for this account is already at the maximum allowed.</p>
+    GlobalClusterQuotaExceededFault(crate::error::GlobalClusterQuotaExceededFault),
+    /// <p>The DB cluster is not in a valid state.</p>
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateGlobalClusterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
+            CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault(_inner) => _inner.fmt(f),
+            CreateGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            CreateGlobalClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateGlobalClusterError {
+    fn code(&self) -> Option<&str> {
+        CreateGlobalClusterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateGlobalClusterError {
+    /// Creates a new `CreateGlobalClusterError`.
+    pub fn new(kind: CreateGlobalClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateGlobalClusterError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateGlobalClusterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateGlobalClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateGlobalClusterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateGlobalClusterErrorKind::DbClusterNotFoundFault`.
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalClusterErrorKind::DbClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault`.
+    pub fn is_global_cluster_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault`.
+    pub fn is_global_cluster_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateGlobalClusterErrorKind::InvalidDbClusterStateFault`.
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalClusterErrorKind::InvalidDbClusterStateFault(_)
+        )
+    }
+}
+impl std::error::Error for CreateGlobalClusterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault(_inner) => Some(_inner),
+            CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault(_inner) => Some(_inner),
+            CreateGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            CreateGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3169,6 +3317,110 @@ impl std::error::Error for DeleteEventSubscriptionError {
             }
             DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault(_inner) => Some(_inner),
             DeleteEventSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteGlobalClusterError {
+    /// Kind of error that occurred.
+    pub kind: DeleteGlobalClusterErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteGlobalClusterErrorKind {
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteGlobalClusterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
+            DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
+            DeleteGlobalClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteGlobalClusterError {
+    fn code(&self) -> Option<&str> {
+        DeleteGlobalClusterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteGlobalClusterError {
+    /// Creates a new `DeleteGlobalClusterError`.
+    pub fn new(kind: DeleteGlobalClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteGlobalClusterError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteGlobalClusterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteGlobalClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteGlobalClusterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_)
+        )
+    }
+}
+impl std::error::Error for DeleteGlobalClusterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
+            DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
+            DeleteGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4642,6 +4894,99 @@ impl std::error::Error for DescribeEventSubscriptionsError {
     }
 }
 
+/// Error type for the `DescribeGlobalClusters` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeGlobalClustersError {
+    /// Kind of error that occurred.
+    pub kind: DescribeGlobalClustersErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeGlobalClusters` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeGlobalClustersErrorKind {
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeGlobalClustersError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeGlobalClustersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeGlobalClustersError {
+    fn code(&self) -> Option<&str> {
+        DescribeGlobalClustersError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeGlobalClustersError {
+    /// Creates a new `DescribeGlobalClustersError`.
+    pub fn new(kind: DescribeGlobalClustersErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeGlobalClustersError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeGlobalClustersErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeGlobalClustersError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeGlobalClustersErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault`.
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeGlobalClustersError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
+            DescribeGlobalClustersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeOrderableDBInstanceOptions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5055,6 +5400,132 @@ impl std::error::Error for FailoverDBClusterError {
             FailoverDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             FailoverDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             FailoverDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `FailoverGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct FailoverGlobalClusterError {
+    /// Kind of error that occurred.
+    pub kind: FailoverGlobalClusterErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `FailoverGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum FailoverGlobalClusterErrorKind {
+    /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
+    /// <p>The DB cluster is not in a valid state.</p>
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for FailoverGlobalClusterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            FailoverGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
+            FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
+            FailoverGlobalClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for FailoverGlobalClusterError {
+    fn code(&self) -> Option<&str> {
+        FailoverGlobalClusterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl FailoverGlobalClusterError {
+    /// Creates a new `FailoverGlobalClusterError`.
+    pub fn new(kind: FailoverGlobalClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `FailoverGlobalClusterError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: FailoverGlobalClusterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `FailoverGlobalClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: FailoverGlobalClusterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `FailoverGlobalClusterErrorKind::DbClusterNotFoundFault`.
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverGlobalClusterErrorKind::DbClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault`.
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_)
+        )
+    }
+}
+impl std::error::Error for FailoverGlobalClusterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            FailoverGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
+            FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
+            FailoverGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6427,6 +6898,110 @@ impl std::error::Error for ModifyEventSubscriptionError {
     }
 }
 
+/// Error type for the `ModifyGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ModifyGlobalClusterError {
+    /// Kind of error that occurred.
+    pub kind: ModifyGlobalClusterErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ModifyGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ModifyGlobalClusterErrorKind {
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ModifyGlobalClusterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
+            ModifyGlobalClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ModifyGlobalClusterError {
+    fn code(&self) -> Option<&str> {
+        ModifyGlobalClusterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ModifyGlobalClusterError {
+    /// Creates a new `ModifyGlobalClusterError`.
+    pub fn new(kind: ModifyGlobalClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ModifyGlobalClusterError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ModifyGlobalClusterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ModifyGlobalClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ModifyGlobalClusterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_)
+        )
+    }
+}
+impl std::error::Error for ModifyGlobalClusterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
+            ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
+            ModifyGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `PromoteReadReplicaDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6635,6 +7210,125 @@ impl std::error::Error for RebootDBInstanceError {
             RebootDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             RebootDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             RebootDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `RemoveFromGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RemoveFromGlobalClusterError {
+    /// Kind of error that occurred.
+    pub kind: RemoveFromGlobalClusterErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `RemoveFromGlobalCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RemoveFromGlobalClusterErrorKind {
+    /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+    GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+    InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RemoveFromGlobalClusterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => {
+                _inner.fmt(f)
+            }
+            RemoveFromGlobalClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RemoveFromGlobalClusterError {
+    fn code(&self) -> Option<&str> {
+        RemoveFromGlobalClusterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RemoveFromGlobalClusterError {
+    /// Creates a new `RemoveFromGlobalClusterError`.
+    pub fn new(kind: RemoveFromGlobalClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RemoveFromGlobalClusterError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RemoveFromGlobalClusterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RemoveFromGlobalClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RemoveFromGlobalClusterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault`.
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_)
+        )
+    }
+}
+impl std::error::Error for RemoveFromGlobalClusterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
+            RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => {
+                Some(_inner)
+            }
+            RemoveFromGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -9728,6 +10422,136 @@ impl DbClusterRoleNotFoundFault {
     }
 }
 
+/// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidGlobalClusterStateFault {
+    /// <p>A message describing the details of the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidGlobalClusterStateFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidGlobalClusterStateFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidGlobalClusterStateFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidGlobalClusterStateFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidGlobalClusterStateFault")?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidGlobalClusterStateFault {}
+/// See [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault)
+pub mod invalid_global_cluster_state_fault {
+
+    /// A builder for [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the details of the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the details of the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault)
+        pub fn build(self) -> crate::error::InvalidGlobalClusterStateFault {
+            crate::error::InvalidGlobalClusterStateFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidGlobalClusterStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault)
+    pub fn builder() -> crate::error::invalid_global_cluster_state_fault::Builder {
+        crate::error::invalid_global_cluster_state_fault::Builder::default()
+    }
+}
+
+/// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GlobalClusterNotFoundFault {
+    /// <p>A message describing the details of the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GlobalClusterNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GlobalClusterNotFoundFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl GlobalClusterNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for GlobalClusterNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "GlobalClusterNotFoundFault")?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for GlobalClusterNotFoundFault {}
+/// See [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault)
+pub mod global_cluster_not_found_fault {
+
+    /// A builder for [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the details of the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the details of the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault)
+        pub fn build(self) -> crate::error::GlobalClusterNotFoundFault {
+            crate::error::GlobalClusterNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl GlobalClusterNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault)
+    pub fn builder() -> crate::error::global_cluster_not_found_fault::Builder {
+        crate::error::global_cluster_not_found_fault::Builder::default()
+    }
+}
+
 /// <p>The designated subscription category could not be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9751,8 +10575,8 @@ impl SubscriptionCategoryNotFoundFault {
 impl std::fmt::Display for SubscriptionCategoryNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionCategoryNotFoundFault")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -9816,8 +10640,8 @@ impl SnsTopicArnNotFoundFault {
 impl std::fmt::Display for SnsTopicArnNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsTopicArnNotFoundFault [SNSTopicArnNotFoundFault]")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -9881,8 +10705,8 @@ impl SnsNoAuthorizationFault {
 impl std::fmt::Display for SnsNoAuthorizationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsNoAuthorizationFault [SNSNoAuthorizationFault]")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -9946,8 +10770,8 @@ impl SnsInvalidTopicFault {
 impl std::fmt::Display for SnsInvalidTopicFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsInvalidTopicFault [SNSInvalidTopicFault]")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -10011,8 +10835,8 @@ impl EventSubscriptionQuotaExceededFault {
 impl std::fmt::Display for EventSubscriptionQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventSubscriptionQuotaExceededFault")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -10076,8 +10900,8 @@ impl SubnetAlreadyInUse {
 impl std::fmt::Display for SubnetAlreadyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetAlreadyInUse")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -10141,8 +10965,8 @@ impl DbSubnetQuotaExceededFault {
 impl std::fmt::Display for DbSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbSubnetQuotaExceededFault [DBSubnetQuotaExceededFault]")?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
         }
         Ok(())
     }
@@ -10209,8 +11033,8 @@ impl std::fmt::Display for DbSubnetGroupDoesNotCoverEnoughAZs {
             f,
             "DbSubnetGroupDoesNotCoverEnoughAZs [DBSubnetGroupDoesNotCoverEnoughAZs]"
         )?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
@@ -10274,8 +11098,8 @@ impl StorageTypeNotSupportedFault {
 impl std::fmt::Display for StorageTypeNotSupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StorageTypeNotSupportedFault")?;
-        if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+        if let Some(inner_36) = &self.message {
+            write!(f, ": {}", inner_36)?;
         }
         Ok(())
     }
@@ -10342,8 +11166,8 @@ impl std::fmt::Display for ProvisionedIopsNotAvailableInAzFault {
             f,
             "ProvisionedIopsNotAvailableInAzFault [ProvisionedIopsNotAvailableInAZFault]"
         )?;
-        if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+        if let Some(inner_37) = &self.message {
+            write!(f, ": {}", inner_37)?;
         }
         Ok(())
     }
@@ -10410,8 +11234,8 @@ impl std::fmt::Display for InvalidDbSecurityGroupStateFault {
             f,
             "InvalidDbSecurityGroupStateFault [InvalidDBSecurityGroupStateFault]"
         )?;
-        if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+        if let Some(inner_38) = &self.message {
+            write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
@@ -10478,8 +11302,8 @@ impl std::fmt::Display for InsufficientDbInstanceCapacityFault {
             f,
             "InsufficientDbInstanceCapacityFault [InsufficientDBInstanceCapacityFault]"
         )?;
-        if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+        if let Some(inner_39) = &self.message {
+            write!(f, ": {}", inner_39)?;
         }
         Ok(())
     }
@@ -10543,8 +11367,8 @@ impl DomainNotFoundFault {
 impl std::fmt::Display for DomainNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DomainNotFoundFault")?;
-        if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+        if let Some(inner_40) = &self.message {
+            write!(f, ": {}", inner_40)?;
         }
         Ok(())
     }
@@ -10611,8 +11435,8 @@ impl std::fmt::Display for DbUpgradeDependencyFailureFault {
             f,
             "DbUpgradeDependencyFailureFault [DBUpgradeDependencyFailureFault]"
         )?;
-        if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }
@@ -10679,8 +11503,8 @@ impl std::fmt::Display for DbSecurityGroupNotFoundFault {
             f,
             "DbSecurityGroupNotFoundFault [DBSecurityGroupNotFoundFault]"
         )?;
-        if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+        if let Some(inner_42) = &self.message {
+            write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
@@ -10747,8 +11571,8 @@ impl std::fmt::Display for DbInstanceAlreadyExistsFault {
             f,
             "DbInstanceAlreadyExistsFault [DBInstanceAlreadyExistsFault]"
         )?;
-        if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+        if let Some(inner_43) = &self.message {
+            write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
@@ -10812,8 +11636,8 @@ impl CertificateNotFoundFault {
 impl std::fmt::Display for CertificateNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateNotFoundFault")?;
-        if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -10878,8 +11702,8 @@ impl AuthorizationNotFoundFault {
 impl std::fmt::Display for AuthorizationNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationNotFoundFault")?;
-        if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
@@ -10943,8 +11767,8 @@ impl SharedSnapshotQuotaExceededFault {
 impl std::fmt::Display for SharedSnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SharedSnapshotQuotaExceededFault")?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+        if let Some(inner_46) = &self.message {
+            write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
@@ -11011,8 +11835,8 @@ impl std::fmt::Display for InvalidDbClusterEndpointStateFault {
             f,
             "InvalidDbClusterEndpointStateFault [InvalidDBClusterEndpointStateFault]"
         )?;
-        if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+        if let Some(inner_47) = &self.message {
+            write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
@@ -11079,8 +11903,8 @@ impl std::fmt::Display for DbClusterEndpointNotFoundFault {
             f,
             "DbClusterEndpointNotFoundFault [DBClusterEndpointNotFoundFault]"
         )?;
-        if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+        if let Some(inner_48) = &self.message {
+            write!(f, ": {}", inner_48)?;
         }
         Ok(())
     }
@@ -11147,8 +11971,8 @@ impl std::fmt::Display for InvalidDbSubnetGroupStateFault {
             f,
             "InvalidDbSubnetGroupStateFault [InvalidDBSubnetGroupStateFault]"
         )?;
-        if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+        if let Some(inner_49) = &self.message {
+            write!(f, ": {}", inner_49)?;
         }
         Ok(())
     }
@@ -11212,8 +12036,8 @@ impl ResourceNotFoundFault {
 impl std::fmt::Display for ResourceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundFault")?;
-        if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+        if let Some(inner_50) = &self.message {
+            write!(f, ": {}", inner_50)?;
         }
         Ok(())
     }
@@ -11277,8 +12101,8 @@ impl InvalidEventSubscriptionStateFault {
 impl std::fmt::Display for InvalidEventSubscriptionStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventSubscriptionStateFault")?;
-        if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+        if let Some(inner_51) = &self.message {
+            write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
@@ -11342,8 +12166,8 @@ impl InvalidDbSubnetStateFault {
 impl std::fmt::Display for InvalidDbSubnetStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbSubnetStateFault [InvalidDBSubnetStateFault]")?;
-        if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+        if let Some(inner_52) = &self.message {
+            write!(f, ": {}", inner_52)?;
         }
         Ok(())
     }
@@ -11407,8 +12231,8 @@ impl SnapshotQuotaExceededFault {
 impl std::fmt::Display for SnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotQuotaExceededFault")?;
-        if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+        if let Some(inner_53) = &self.message {
+            write!(f, ": {}", inner_53)?;
         }
         Ok(())
     }
@@ -11475,8 +12299,8 @@ impl std::fmt::Display for DbSnapshotAlreadyExistsFault {
             f,
             "DbSnapshotAlreadyExistsFault [DBSnapshotAlreadyExistsFault]"
         )?;
-        if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+        if let Some(inner_54) = &self.message {
+            write!(f, ": {}", inner_54)?;
         }
         Ok(())
     }
@@ -11543,8 +12367,8 @@ impl std::fmt::Display for DbClusterSnapshotAlreadyExistsFault {
             f,
             "DbClusterSnapshotAlreadyExistsFault [DBClusterSnapshotAlreadyExistsFault]"
         )?;
-        if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+        if let Some(inner_55) = &self.message {
+            write!(f, ": {}", inner_55)?;
         }
         Ok(())
     }
@@ -11585,6 +12409,136 @@ impl DbClusterSnapshotAlreadyExistsFault {
     }
 }
 
+/// <p>The number of global database clusters for this account is already at the maximum allowed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GlobalClusterQuotaExceededFault {
+    /// <p>A message describing the details of the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GlobalClusterQuotaExceededFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GlobalClusterQuotaExceededFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl GlobalClusterQuotaExceededFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for GlobalClusterQuotaExceededFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "GlobalClusterQuotaExceededFault")?;
+        if let Some(inner_56) = &self.message {
+            write!(f, ": {}", inner_56)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for GlobalClusterQuotaExceededFault {}
+/// See [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault)
+pub mod global_cluster_quota_exceeded_fault {
+
+    /// A builder for [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the details of the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the details of the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault)
+        pub fn build(self) -> crate::error::GlobalClusterQuotaExceededFault {
+            crate::error::GlobalClusterQuotaExceededFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl GlobalClusterQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault)
+    pub fn builder() -> crate::error::global_cluster_quota_exceeded_fault::Builder {
+        crate::error::global_cluster_quota_exceeded_fault::Builder::default()
+    }
+}
+
+/// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique name) to create a new global database cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GlobalClusterAlreadyExistsFault {
+    /// <p>A message describing the details of the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GlobalClusterAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GlobalClusterAlreadyExistsFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl GlobalClusterAlreadyExistsFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for GlobalClusterAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "GlobalClusterAlreadyExistsFault")?;
+        if let Some(inner_57) = &self.message {
+            write!(f, ": {}", inner_57)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for GlobalClusterAlreadyExistsFault {}
+/// See [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault)
+pub mod global_cluster_already_exists_fault {
+
+    /// A builder for [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the details of the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the details of the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault)
+        pub fn build(self) -> crate::error::GlobalClusterAlreadyExistsFault {
+            crate::error::GlobalClusterAlreadyExistsFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl GlobalClusterAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault)
+    pub fn builder() -> crate::error::global_cluster_already_exists_fault::Builder {
+        crate::error::global_cluster_already_exists_fault::Builder::default()
+    }
+}
+
 /// <p>This subscription already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11608,8 +12562,8 @@ impl SubscriptionAlreadyExistFault {
 impl std::fmt::Display for SubscriptionAlreadyExistFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionAlreadyExistFault")?;
-        if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+        if let Some(inner_58) = &self.message {
+            write!(f, ": {}", inner_58)?;
         }
         Ok(())
     }
@@ -11676,8 +12630,8 @@ impl std::fmt::Display for DbSubnetGroupQuotaExceededFault {
             f,
             "DbSubnetGroupQuotaExceededFault [DBSubnetGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+        if let Some(inner_59) = &self.message {
+            write!(f, ": {}", inner_59)?;
         }
         Ok(())
     }
@@ -11744,8 +12698,8 @@ impl std::fmt::Display for DbSubnetGroupAlreadyExistsFault {
             f,
             "DbSubnetGroupAlreadyExistsFault [DBSubnetGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+        if let Some(inner_60) = &self.message {
+            write!(f, ": {}", inner_60)?;
         }
         Ok(())
     }
@@ -11812,8 +12766,8 @@ impl std::fmt::Display for DbParameterGroupQuotaExceededFault {
             f,
             "DbParameterGroupQuotaExceededFault [DBParameterGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+        if let Some(inner_61) = &self.message {
+            write!(f, ": {}", inner_61)?;
         }
         Ok(())
     }
@@ -11880,8 +12834,8 @@ impl std::fmt::Display for DbParameterGroupAlreadyExistsFault {
             f,
             "DbParameterGroupAlreadyExistsFault [DBParameterGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+        if let Some(inner_62) = &self.message {
+            write!(f, ": {}", inner_62)?;
         }
         Ok(())
     }
@@ -11945,8 +12899,8 @@ impl InstanceQuotaExceededFault {
 impl std::fmt::Display for InstanceQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceQuotaExceededFault")?;
-        if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+        if let Some(inner_63) = &self.message {
+            write!(f, ": {}", inner_63)?;
         }
         Ok(())
     }
@@ -12013,8 +12967,8 @@ impl std::fmt::Display for DbClusterEndpointQuotaExceededFault {
             f,
             "DbClusterEndpointQuotaExceededFault [DBClusterEndpointQuotaExceededFault]"
         )?;
-        if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+        if let Some(inner_64) = &self.message {
+            write!(f, ": {}", inner_64)?;
         }
         Ok(())
     }
@@ -12081,8 +13035,8 @@ impl std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
             f,
             "DbClusterEndpointAlreadyExistsFault [DBClusterEndpointAlreadyExistsFault]"
         )?;
-        if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+        if let Some(inner_65) = &self.message {
+            write!(f, ": {}", inner_65)?;
         }
         Ok(())
     }
@@ -12149,8 +13103,8 @@ impl std::fmt::Display for DbClusterRoleQuotaExceededFault {
             f,
             "DbClusterRoleQuotaExceededFault [DBClusterRoleQuotaExceededFault]"
         )?;
-        if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+        if let Some(inner_66) = &self.message {
+            write!(f, ": {}", inner_66)?;
         }
         Ok(())
     }
@@ -12217,8 +13171,8 @@ impl std::fmt::Display for DbClusterRoleAlreadyExistsFault {
             f,
             "DbClusterRoleAlreadyExistsFault [DBClusterRoleAlreadyExistsFault]"
         )?;
-        if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+        if let Some(inner_67) = &self.message {
+            write!(f, ": {}", inner_67)?;
         }
         Ok(())
     }

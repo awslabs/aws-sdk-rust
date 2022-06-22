@@ -114,6 +114,18 @@ impl Client {
     pub fn associate_vpc_with_hosted_zone(&self) -> fluent_builders::AssociateVPCWithHostedZone {
         fluent_builders::AssociateVPCWithHostedZone::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ChangeCidrCollection`](crate::client::fluent_builders::ChangeCidrCollection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ChangeCidrCollection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ChangeCidrCollection::set_id): <p>The UUID of the CIDR collection to update.</p>
+    ///   - [`collection_version(i64)`](crate::client::fluent_builders::ChangeCidrCollection::collection_version) / [`set_collection_version(Option<i64>)`](crate::client::fluent_builders::ChangeCidrCollection::set_collection_version): <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>  <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>  <ul>   <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>   <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>  </ul>
+    ///   - [`changes(Vec<CidrCollectionChange>)`](crate::client::fluent_builders::ChangeCidrCollection::changes) / [`set_changes(Option<Vec<CidrCollectionChange>>)`](crate::client::fluent_builders::ChangeCidrCollection::set_changes): <p> Information about changes to a CIDR collection.</p>
+    /// - On success, responds with [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::ChangeCidrCollectionOutput::id): <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
+    /// - On failure, responds with [`SdkError<ChangeCidrCollectionError>`](crate::error::ChangeCidrCollectionError)
+    pub fn change_cidr_collection(&self) -> fluent_builders::ChangeCidrCollection {
+        fluent_builders::ChangeCidrCollection::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ChangeResourceRecordSets`](crate::client::fluent_builders::ChangeResourceRecordSets) operation.
     ///
     /// - The fluent builder is configurable:
@@ -138,6 +150,18 @@ impl Client {
     pub fn change_tags_for_resource(&self) -> fluent_builders::ChangeTagsForResource {
         fluent_builders::ChangeTagsForResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateCidrCollection`](crate::client::fluent_builders::CreateCidrCollection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCidrCollection::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCidrCollection::set_name): <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+    ///   - [`caller_reference(impl Into<String>)`](crate::client::fluent_builders::CreateCidrCollection::caller_reference) / [`set_caller_reference(Option<String>)`](crate::client::fluent_builders::CreateCidrCollection::set_caller_reference): <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+    /// - On success, responds with [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput) with field(s):
+    ///   - [`collection(Option<CidrCollection>)`](crate::output::CreateCidrCollectionOutput::collection): <p>A complex type that contains information about the CIDR collection.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateCidrCollectionOutput::location): <p>A unique URL that represents the location for the CIDR collection.</p>
+    /// - On failure, responds with [`SdkError<CreateCidrCollectionError>`](crate::error::CreateCidrCollectionError)
+    pub fn create_cidr_collection(&self) -> fluent_builders::CreateCidrCollection {
+        fluent_builders::CreateCidrCollection::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateHealthCheck`](crate::client::fluent_builders::CreateHealthCheck) operation.
     ///
     /// - The fluent builder is configurable:
@@ -153,11 +177,11 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateHostedZone`](crate::client::fluent_builders::CreateHostedZone) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateHostedZone::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateHostedZone::set_name): <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>  <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateHostedZone::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateHostedZone::set_name): <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>  <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
     ///   - [`vpc(Vpc)`](crate::client::fluent_builders::CreateHostedZone::vpc) / [`set_vpc(Option<Vpc>)`](crate::client::fluent_builders::CreateHostedZone::set_vpc): <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>  <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p>  <p>To associate additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
     ///   - [`caller_reference(impl Into<String>)`](crate::client::fluent_builders::CreateHostedZone::caller_reference) / [`set_caller_reference(Option<String>)`](crate::client::fluent_builders::CreateHostedZone::set_caller_reference): <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
     ///   - [`hosted_zone_config(HostedZoneConfig)`](crate::client::fluent_builders::CreateHostedZone::hosted_zone_config) / [`set_hosted_zone_config(Option<HostedZoneConfig>)`](crate::client::fluent_builders::CreateHostedZone::set_hosted_zone_config): <p>(Optional) A complex type that contains the following optional values:</p>  <ul>   <li> <p>For public and private hosted zones, an optional comment</p> </li>   <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>  </ul>  <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
-    ///   - [`delegation_set_id(impl Into<String>)`](crate::client::fluent_builders::CreateHostedZone::delegation_set_id) / [`set_delegation_set_id(Option<String>)`](crate::client::fluent_builders::CreateHostedZone::set_delegation_set_id): <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
+    ///   - [`delegation_set_id(impl Into<String>)`](crate::client::fluent_builders::CreateHostedZone::delegation_set_id) / [`set_delegation_set_id(Option<String>)`](crate::client::fluent_builders::CreateHostedZone::set_delegation_set_id): <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
     /// - On success, responds with [`CreateHostedZoneOutput`](crate::output::CreateHostedZoneOutput) with field(s):
     ///   - [`hosted_zone(Option<HostedZone>)`](crate::output::CreateHostedZoneOutput::hosted_zone): <p>A complex type that contains general information about the hosted zone.</p>
     ///   - [`change_info(Option<ChangeInfo>)`](crate::output::CreateHostedZoneOutput::change_info): <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
@@ -273,6 +297,16 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeactivateKeySigningKeyError>`](crate::error::DeactivateKeySigningKeyError)
     pub fn deactivate_key_signing_key(&self) -> fluent_builders::DeactivateKeySigningKey {
         fluent_builders::DeactivateKeySigningKey::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteCidrCollection`](crate::client::fluent_builders::DeleteCidrCollection) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteCidrCollection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteCidrCollection::set_id): <p>The UUID of the collection to delete.</p>
+    /// - On success, responds with [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCidrCollectionError>`](crate::error::DeleteCidrCollectionError)
+    pub fn delete_cidr_collection(&self) -> fluent_builders::DeleteCidrCollection {
+        fluent_builders::DeleteCidrCollection::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteHealthCheck`](crate::client::fluent_builders::DeleteHealthCheck) operation.
     ///
@@ -589,6 +623,48 @@ impl Client {
         &self,
     ) -> fluent_builders::GetTrafficPolicyInstanceCount {
         fluent_builders::GetTrafficPolicyInstanceCount::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListCidrBlocks`](crate::client::fluent_builders::ListCidrBlocks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCidrBlocks::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`collection_id(impl Into<String>)`](crate::client::fluent_builders::ListCidrBlocks::collection_id) / [`set_collection_id(Option<String>)`](crate::client::fluent_builders::ListCidrBlocks::set_collection_id): <p>The UUID of the CIDR collection.</p>
+    ///   - [`location_name(impl Into<String>)`](crate::client::fluent_builders::ListCidrBlocks::location_name) / [`set_location_name(Option<String>)`](crate::client::fluent_builders::ListCidrBlocks::set_location_name): <p>The name of the CIDR collection location.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCidrBlocks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCidrBlocks::set_next_token): <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCidrBlocks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCidrBlocks::set_max_results): <p>Maximum number of results you want returned.</p>
+    /// - On success, responds with [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListCidrBlocksOutput::next_token): <p>An opaque pagination token to indicate where the service is to begin enumerating results. </p>  <p>If no value is provided, the listing of results starts from the beginning.</p>
+    ///   - [`cidr_blocks(Option<Vec<CidrBlockSummary>>)`](crate::output::ListCidrBlocksOutput::cidr_blocks): <p>A complex type that contains information about the CIDR blocks.</p>
+    /// - On failure, responds with [`SdkError<ListCidrBlocksError>`](crate::error::ListCidrBlocksError)
+    pub fn list_cidr_blocks(&self) -> fluent_builders::ListCidrBlocks {
+        fluent_builders::ListCidrBlocks::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListCidrCollections`](crate::client::fluent_builders::ListCidrCollections) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCidrCollections::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCidrCollections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCidrCollections::set_next_token): <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>  <p>If no value is provided, the listing of results starts from the beginning.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCidrCollections::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCidrCollections::set_max_results): <p>The maximum number of CIDR collections to return in the response.</p>
+    /// - On success, responds with [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListCidrCollectionsOutput::next_token): <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>  <p>If no value is provided, the listing of results starts from the beginning.</p>
+    ///   - [`cidr_collections(Option<Vec<CollectionSummary>>)`](crate::output::ListCidrCollectionsOutput::cidr_collections): <p>A complex type with information about the CIDR collection.</p>
+    /// - On failure, responds with [`SdkError<ListCidrCollectionsError>`](crate::error::ListCidrCollectionsError)
+    pub fn list_cidr_collections(&self) -> fluent_builders::ListCidrCollections {
+        fluent_builders::ListCidrCollections::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListCidrLocations`](crate::client::fluent_builders::ListCidrLocations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCidrLocations::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`collection_id(impl Into<String>)`](crate::client::fluent_builders::ListCidrLocations::collection_id) / [`set_collection_id(Option<String>)`](crate::client::fluent_builders::ListCidrLocations::set_collection_id): <p>The CIDR collection ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCidrLocations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCidrLocations::set_next_token): <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>  <p>If no value is provided, the listing of results starts from the beginning.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCidrLocations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCidrLocations::set_max_results): <p>The maximum number of CIDR collection locations to return in the response.</p>
+    /// - On success, responds with [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListCidrLocationsOutput::next_token): <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>  <p>If no value is provided, the listing of results starts from the beginning.</p>
+    ///   - [`cidr_locations(Option<Vec<LocationSummary>>)`](crate::output::ListCidrLocationsOutput::cidr_locations): <p>A complex type that contains information about the list of CIDR locations.</p>
+    /// - On failure, responds with [`SdkError<ListCidrLocationsError>`](crate::error::ListCidrLocationsError)
+    pub fn list_cidr_locations(&self) -> fluent_builders::ListCidrLocations {
+        fluent_builders::ListCidrLocations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListGeoLocations`](crate::client::fluent_builders::ListGeoLocations) operation.
     ///
@@ -1095,6 +1171,105 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ChangeCidrCollection`.
+    ///
+    /// <p>Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative IP information mapping blocks to one or multiple locations.</p>
+    /// <p>A change request can update multiple locations in a collection at a time, which is helpful if you want to move one or more CIDR blocks from one location to another in one transaction, without downtime. </p>
+    /// <p> <b>Limits</b> </p>
+    /// <p>The max number of CIDR blocks included in the request is 1000. As a result, big updates require multiple API calls.</p>
+    /// <p> <b> PUT and DELETE_IF_EXISTS</b> </p>
+    /// <p>Use <code>ChangeCidrCollection</code> to perform the following actions:</p>
+    /// <ul>
+    /// <li> <p> <code>PUT</code>: Create a CIDR block within the specified collection.</p> </li>
+    /// <li> <p> <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ChangeCidrCollection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::change_cidr_collection_input::Builder,
+    }
+    impl ChangeCidrCollection {
+        /// Creates a new `ChangeCidrCollection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ChangeCidrCollectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::ChangeCidrCollectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The UUID of the CIDR collection to update.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The UUID of the CIDR collection to update.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
+        /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>
+        /// <ul>
+        /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
+        /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
+        /// </ul>
+        pub fn collection_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.collection_version(input);
+            self
+        }
+        /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
+        /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update: </p>
+        /// <ul>
+        /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
+        /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
+        /// </ul>
+        pub fn set_collection_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_collection_version(input);
+            self
+        }
+        /// Appends an item to `Changes`.
+        ///
+        /// To override the contents of this collection use [`set_changes`](Self::set_changes).
+        ///
+        /// <p> Information about changes to a CIDR collection.</p>
+        pub fn changes(mut self, input: crate::model::CidrCollectionChange) -> Self {
+            self.inner = self.inner.changes(input);
+            self
+        }
+        /// <p> Information about changes to a CIDR collection.</p>
+        pub fn set_changes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CidrCollectionChange>>,
+        ) -> Self {
+            self.inner = self.inner.set_changes(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ChangeResourceRecordSets`.
     ///
     /// <p>Creates, changes, or deletes a resource record set, which contains authoritative DNS information for a specified domain name or subdomain name. For example, you can use <code>ChangeResourceRecordSets</code> to create a resource record set that routes traffic for test.example.com to a web server that has an IP address of 192.0.2.44.</p>
@@ -1299,6 +1474,72 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateCidrCollection`.
+    ///
+    /// <p>Creates a CIDR collection in the current Amazon Web Services account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateCidrCollection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_cidr_collection_input::Builder,
+    }
+    impl CreateCidrCollection {
+        /// Creates a new `CreateCidrCollection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateCidrCollectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateCidrCollectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_reference(input.into());
+            self
+        }
+        /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+        pub fn set_caller_reference(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_caller_reference(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateHealthCheck`.
     ///
     /// <p>Creates a new health check.</p>
@@ -1395,14 +1636,14 @@ pub mod fluent_builders {
     /// <p>Creates a new public or private hosted zone. You create records in a public hosted zone to define how you want to route traffic on the internet for a domain, such as example.com, and its subdomains (apex.example.com, acme.example.com). You create records in a private hosted zone to define how you want to route traffic for a domain and its subdomains within one or more Amazon Virtual Private Clouds (Amazon VPCs). </p> <important>
     /// <p>You can't convert a public hosted zone to a private hosted zone or vice versa. Instead, you must create a new hosted zone with the same name and create new resource record sets.</p>
     /// </important>
-    /// <p>For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+    /// <p>For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
     /// <p>Note the following:</p>
     /// <ul>
     /// <li> <p>You can't create a hosted zone for a top-level domain (TLD) such as .com.</p> </li>
-    /// <li> <p>For public hosted zones, Route 53 automatically creates a default SOA record and four NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you want to use the same name servers for multiple public hosted zones, you can optionally associate a reusable delegation set with the hosted zone. See the <code>DelegationSetId</code> element.</p> </li>
-    /// <li> <p>If your domain is registered with a registrar other than Route 53, you must update the name servers with your registrar to make Route 53 the DNS service for the domain. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>. </p> </li>
+    /// <li> <p>For public hosted zones, Route 53 automatically creates a default SOA record and four NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route&nbsp;53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you want to use the same name servers for multiple public hosted zones, you can optionally associate a reusable delegation set with the hosted zone. See the <code>DelegationSetId</code> element.</p> </li>
+    /// <li> <p>If your domain is registered with a registrar other than Route&nbsp;53, you must update the name servers with your registrar to make Route 53 the DNS service for the domain. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating DNS Service for an Existing Domain to Amazon Route&nbsp;53</a> in the <i>Amazon Route 53 Developer Guide</i>. </p> </li>
     /// </ul>
-    /// <p>When you submit a <code>CreateHostedZone</code> request, the initial status of the hosted zone is <code>PENDING</code>. For public hosted zones, this means that the NS and SOA records are not yet available on all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to <code>INSYNC</code>.</p>
+    /// <p>When you submit a <code>CreateHostedZone</code> request, the initial status of the hosted zone is <code>PENDING</code>. For public hosted zones, this means that the NS and SOA records are not yet available on all Route&nbsp;53 DNS servers. When the NS and SOA records are available, the status of the zone changes to <code>INSYNC</code>.</p>
     /// <p>The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code> permission.</p> <note>
     /// <p>When creating private hosted zones, the Amazon VPC must belong to the same partition where the hosted zone is created. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p>
     /// <p>The following are the supported partitions:</p>
@@ -1452,14 +1693,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
-        /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+        /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+        /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
-        /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+        /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+        /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1514,12 +1755,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hosted_zone_config(input);
             self
         }
-        /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
+        /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
         pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.delegation_set_id(input.into());
             self
         }
-        /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
+        /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
         pub fn set_delegation_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2316,6 +2557,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteCidrCollection`.
+    ///
+    /// <p>Deletes a CIDR collection in the current Amazon Web Services account. The collection must be empty before it can be deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteCidrCollection {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_cidr_collection_input::Builder,
+    }
+    impl DeleteCidrCollection {
+        /// Creates a new `DeleteCidrCollection`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteCidrCollectionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteCidrCollectionError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The UUID of the collection to delete.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>The UUID of the collection to delete.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteHealthCheck`.
     ///
     /// <p>Deletes a health check.</p> <important>
@@ -2378,12 +2672,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteHostedZone`.
     ///
     /// <p>Deletes a hosted zone.</p>
-    /// <p>If the hosted zone was created by another service, such as Cloud Map, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53 Developer Guide</i> for information about how to delete it. (The process is the same for public and private hosted zones that were created by another service.)</p>
+    /// <p>If the hosted zone was created by another service, such as Cloud Map, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route&nbsp;53 Developer Guide</i> for information about how to delete it. (The process is the same for public and private hosted zones that were created by another service.)</p>
     /// <p>If you want to keep your domain registration but you want to stop routing internet traffic to your website or web application, we recommend that you delete resource record sets in the hosted zone instead of deleting the hosted zone.</p> <important>
     /// <p>If you delete a hosted zone, you can't undelete it. You must create a new hosted zone and update the name servers for your domain registration, which can require up to 48 hours to take effect. (If you delegated responsibility for a subdomain to a hosted zone and you delete the child hosted zone, you must update the name servers in the parent hosted zone.) In addition, if you delete a hosted zone, someone could hijack the domain and route traffic to their own resources using your domain name.</p>
     /// </important>
-    /// <p>If you want to avoid the monthly charge for the hosted zone, you can transfer DNS service for the domain to a free DNS service. When you transfer DNS service, you have to update the name servers for the domain registration. If the domain is registered with Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a> for information about how to replace Route 53 name servers with name servers for the new DNS service. If the domain is registered with another registrar, use the method provided by the registrar to update name servers for the domain registration. For more information, perform an internet search on "free DNS service."</p>
-    /// <p>You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets. If the hosted zone contains other resource record sets, you must delete them before you can delete the hosted zone. If you try to delete a hosted zone that contains other resource record sets, the request fails, and Route 53 returns a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.</p>
+    /// <p>If you want to avoid the monthly charge for the hosted zone, you can transfer DNS service for the domain to a free DNS service. When you transfer DNS service, you have to update the name servers for the domain registration. If the domain is registered with Route&nbsp;53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a> for information about how to replace Route&nbsp;53 name servers with name servers for the new DNS service. If the domain is registered with another registrar, use the method provided by the registrar to update name servers for the domain registration. For more information, perform an internet search on "free DNS service."</p>
+    /// <p>You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets. If the hosted zone contains other resource record sets, you must delete them before you can delete the hosted zone. If you try to delete a hosted zone that contains other resource record sets, the request fails, and Route&nbsp;53 returns a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.</p>
     /// <p>To verify that the hosted zone has been deleted, do one of the following:</p>
     /// <ul>
     /// <li> <p>Use the <code>GetHostedZone</code> action to request information about the hosted zone.</p> </li>
@@ -4085,6 +4379,256 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+    }
+    /// Fluent builder constructing a request to `ListCidrBlocks`.
+    ///
+    /// <p>Returns a paginated list of location objects and their CIDR blocks.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCidrBlocks {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_cidr_blocks_input::Builder,
+    }
+    impl ListCidrBlocks {
+        /// Creates a new `ListCidrBlocks`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCidrBlocksOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCidrBlocksError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCidrBlocksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCidrBlocksPaginator {
+            crate::paginator::ListCidrBlocksPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The UUID of the CIDR collection.</p>
+        pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(input.into());
+            self
+        }
+        /// <p>The UUID of the CIDR collection.</p>
+        pub fn set_collection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_collection_id(input);
+            self
+        }
+        /// <p>The name of the CIDR collection location.</p>
+        pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_name(input.into());
+            self
+        }
+        /// <p>The name of the CIDR collection location.</p>
+        pub fn set_location_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_location_name(input);
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Maximum number of results you want returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Maximum number of results you want returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListCidrCollections`.
+    ///
+    /// <p>Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata only).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCidrCollections {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_cidr_collections_input::Builder,
+    }
+    impl ListCidrCollections {
+        /// Creates a new `ListCidrCollections`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCidrCollectionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCidrCollectionsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCidrCollectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCidrCollectionsPaginator {
+            crate::paginator::ListCidrCollectionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of CIDR collections to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of CIDR collections to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListCidrLocations`.
+    ///
+    /// <p>Returns a paginated list of CIDR locations for the given collection (metadata only, does not include CIDR blocks).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCidrLocations {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_cidr_locations_input::Builder,
+    }
+    impl ListCidrLocations {
+        /// Creates a new `ListCidrLocations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCidrLocationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCidrLocationsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCidrLocationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCidrLocationsPaginator {
+            crate::paginator::ListCidrLocationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The CIDR collection ID.</p>
+        pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(input.into());
+            self
+        }
+        /// <p>The CIDR collection ID.</p>
+        pub fn set_collection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_collection_id(input);
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
         }
     }
     /// Fluent builder constructing a request to `ListGeoLocations`.

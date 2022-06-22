@@ -20,11 +20,11 @@ pub enum BatchCreateAttendeeErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -180,6 +180,183 @@ impl std::error::Error for BatchCreateAttendeeError {
     }
 }
 
+/// Error type for the `BatchUpdateAttendeeCapabilitiesExcept` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchUpdateAttendeeCapabilitiesExceptError {
+    /// Kind of error that occurred.
+    pub kind: BatchUpdateAttendeeCapabilitiesExceptErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchUpdateAttendeeCapabilitiesExcept` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchUpdateAttendeeCapabilitiesExceptErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Multiple instances of the same request have been made simultaneously.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The user isn't authorized to request a resource.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchUpdateAttendeeCapabilitiesExceptError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::ConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::ForbiddenException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::NotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::UnauthorizedException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchUpdateAttendeeCapabilitiesExceptError {
+    fn code(&self) -> Option<&str> {
+        BatchUpdateAttendeeCapabilitiesExceptError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchUpdateAttendeeCapabilitiesExceptError {
+    /// Creates a new `BatchUpdateAttendeeCapabilitiesExceptError`.
+    pub fn new(
+        kind: BatchUpdateAttendeeCapabilitiesExceptErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchUpdateAttendeeCapabilitiesExceptError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchUpdateAttendeeCapabilitiesExceptError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for BatchUpdateAttendeeCapabilitiesExceptError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::BadRequestException(_inner) => {
+                Some(_inner)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::ConflictException(_inner) => {
+                Some(_inner)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::ForbiddenException(_inner) => {
+                Some(_inner)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::NotFoundException(_inner) => {
+                Some(_inner)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::UnauthorizedException(_inner) => {
+                Some(_inner)
+            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `CreateAttendee` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -201,11 +378,11 @@ pub enum CreateAttendeeErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -368,11 +545,11 @@ pub enum CreateMeetingErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>The request exceeds the resource limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -515,11 +692,11 @@ pub enum CreateMeetingWithAttendeesErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>The request exceeds the resource limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -678,11 +855,11 @@ pub enum DeleteAttendeeErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -825,11 +1002,11 @@ pub enum DeleteMeetingErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -969,11 +1146,11 @@ pub enum GetAttendeeErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1110,11 +1287,11 @@ pub enum GetMeetingErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1251,11 +1428,11 @@ pub enum ListAttendeesErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1397,11 +1574,11 @@ pub enum StartMeetingTranscriptionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1582,11 +1759,11 @@ pub enum StopMeetingTranscriptionErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service encountered an unexpected error.</p>
+    /// <p>The service is currently unavailable.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    /// <p>The number of requests exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1735,108 +1912,155 @@ impl std::error::Error for StopMeetingTranscriptionError {
     }
 }
 
-/// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
+/// Error type for the `UpdateAttendeeCapabilities` operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnprocessableEntityException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    /// <p>The request id associated with the call responsible for the exception.</p>
-    pub request_id: std::option::Option<std::string::String>,
+#[derive(std::fmt::Debug)]
+pub struct UpdateAttendeeCapabilitiesError {
+    /// Kind of error that occurred.
+    pub kind: UpdateAttendeeCapabilitiesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
 }
-impl UnprocessableEntityException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
-        self.code.as_deref()
-    }
-    /// <p>The request id associated with the call responsible for the exception.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
-        self.request_id.as_deref()
-    }
+/// Types of errors that can occur for the `UpdateAttendeeCapabilities` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateAttendeeCapabilitiesErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Multiple instances of the same request have been made simultaneously.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The user isn't authorized to request a resource.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
-impl std::fmt::Debug for UnprocessableEntityException {
+impl std::fmt::Display for UpdateAttendeeCapabilitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessableEntityException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
-impl UnprocessableEntityException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnprocessableEntityException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnprocessableEntityException")?;
-        if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnprocessableEntityException {}
-/// See [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
-pub mod unprocessable_entity_exception {
-
-    /// A builder for [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) request_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>The request id associated with the call responsible for the exception.</p>
-        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(input.into());
-            self
-        }
-        /// <p>The request id associated with the call responsible for the exception.</p>
-        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
-        pub fn build(self) -> crate::error::UnprocessableEntityException {
-            crate::error::UnprocessableEntityException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
+        match &self.kind {
+            UpdateAttendeeCapabilitiesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateAttendeeCapabilitiesErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateAttendeeCapabilitiesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateAttendeeCapabilitiesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateAttendeeCapabilitiesErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
             }
+            UpdateAttendeeCapabilitiesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            UpdateAttendeeCapabilitiesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
-impl UnprocessableEntityException {
-    /// Creates a new builder-style object to manufacture [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
-    pub fn builder() -> crate::error::unprocessable_entity_exception::Builder {
-        crate::error::unprocessable_entity_exception::Builder::default()
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateAttendeeCapabilitiesError {
+    fn code(&self) -> Option<&str> {
+        UpdateAttendeeCapabilitiesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateAttendeeCapabilitiesError {
+    /// Creates a new `UpdateAttendeeCapabilitiesError`.
+    pub fn new(kind: UpdateAttendeeCapabilitiesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateAttendeeCapabilitiesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateAttendeeCapabilitiesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateAttendeeCapabilitiesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateAttendeeCapabilitiesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateAttendeeCapabilitiesErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAttendeeCapabilitiesErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAttendeeCapabilitiesErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAttendeeCapabilitiesErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAttendeeCapabilitiesErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAttendeeCapabilitiesErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAttendeeCapabilitiesErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAttendeeCapabilitiesErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAttendeeCapabilitiesErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAttendeeCapabilitiesErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAttendeeCapabilitiesErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAttendeeCapabilitiesErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateAttendeeCapabilitiesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateAttendeeCapabilitiesErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateAttendeeCapabilitiesErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateAttendeeCapabilitiesErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateAttendeeCapabilitiesErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateAttendeeCapabilitiesErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            UpdateAttendeeCapabilitiesErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            UpdateAttendeeCapabilitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
     }
 }
 
@@ -1879,8 +2103,8 @@ impl UnauthorizedException {
 impl std::fmt::Display for UnauthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthorizedException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
@@ -1945,111 +2169,6 @@ impl UnauthorizedException {
     }
 }
 
-/// <p>The number of customer requests exceeds the request rate limit.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ThrottlingException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub request_id: std::option::Option<std::string::String>,
-}
-impl ThrottlingException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
-        self.code.as_deref()
-    }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn request_id(&self) -> std::option::Option<&str> {
-        self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
-impl ThrottlingException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ThrottlingException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ThrottlingException {}
-/// See [`ThrottlingException`](crate::error::ThrottlingException)
-pub mod throttling_exception {
-
-    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) request_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
-        pub fn build(self) -> crate::error::ThrottlingException {
-            crate::error::ThrottlingException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
-            }
-        }
-    }
-}
-impl ThrottlingException {
-    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
-    pub fn builder() -> crate::error::throttling_exception::Builder {
-        crate::error::throttling_exception::Builder::default()
-    }
-}
-
 /// <p>The service is currently unavailable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2096,8 +2215,8 @@ impl ServiceUnavailableException {
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -2177,111 +2296,6 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>The service encountered an unexpected error.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceFailureException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub request_id: std::option::Option<std::string::String>,
-}
-impl ServiceFailureException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
-        self.code.as_deref()
-    }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn request_id(&self) -> std::option::Option<&str> {
-        self.request_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceFailureException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("request_id", &self.request_id);
-        formatter.finish()
-    }
-}
-impl ServiceFailureException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceFailureException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceFailureException {}
-/// See [`ServiceFailureException`](crate::error::ServiceFailureException)
-pub mod service_failure_exception {
-
-    /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) request_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.request_id = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException)
-        pub fn build(self) -> crate::error::ServiceFailureException {
-            crate::error::ServiceFailureException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
-            }
-        }
-    }
-}
-impl ServiceFailureException {
-    /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException)
-    pub fn builder() -> crate::error::service_failure_exception::Builder {
-        crate::error::service_failure_exception::Builder::default()
-    }
-}
-
 /// <p>One or more of the resources in the request does not exist in the system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2290,7 +2304,7 @@ pub struct NotFoundException {
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>The request id associated with the call responsible for the exception.</p>
+    /// <p>The request ID associated with the call responsible for the exception.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
@@ -2298,7 +2312,7 @@ impl NotFoundException {
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>The request id associated with the call responsible for the exception.</p>
+    /// <p>The request ID associated with the call responsible for the exception.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -2321,8 +2335,8 @@ impl NotFoundException {
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -2360,12 +2374,12 @@ pub mod not_found_exception {
             self.message = input;
             self
         }
-        /// <p>The request id associated with the call responsible for the exception.</p>
+        /// <p>The request ID associated with the call responsible for the exception.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request id associated with the call responsible for the exception.</p>
+        /// <p>The request ID associated with the call responsible for the exception.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -2426,8 +2440,8 @@ impl ForbiddenException {
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -2492,6 +2506,111 @@ impl ForbiddenException {
     }
 }
 
+/// <p>Multiple instances of the same request have been made simultaneously.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConflictException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+impl ConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConflictException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException)
+pub mod conflict_exception {
+
+    /// A builder for [`ConflictException`](crate::error::ConflictException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
+                code: self.code,
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
+    }
+}
+
 /// <p>The input parameters don't match the service's restrictions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2531,8 +2650,8 @@ impl BadRequestException {
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -2597,6 +2716,321 @@ impl BadRequestException {
     }
 }
 
+/// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnprocessableEntityException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The request id associated with the call responsible for the exception.</p>
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl UnprocessableEntityException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The request id associated with the call responsible for the exception.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl std::fmt::Debug for UnprocessableEntityException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UnprocessableEntityException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+impl UnprocessableEntityException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnprocessableEntityException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnprocessableEntityException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnprocessableEntityException {}
+/// See [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+pub mod unprocessable_entity_exception {
+
+    /// A builder for [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The request id associated with the call responsible for the exception.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The request id associated with the call responsible for the exception.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+        pub fn build(self) -> crate::error::UnprocessableEntityException {
+            crate::error::UnprocessableEntityException {
+                code: self.code,
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl UnprocessableEntityException {
+    /// Creates a new builder-style object to manufacture [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+    pub fn builder() -> crate::error::unprocessable_entity_exception::Builder {
+        crate::error::unprocessable_entity_exception::Builder::default()
+    }
+}
+
+/// <p>The number of requests exceeds the limit.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThrottlingException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+impl ThrottlingException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottlingException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException)
+pub mod throttling_exception {
+
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
+                code: self.code,
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
+    }
+}
+
+/// <p>The service is currently unavailable.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceFailureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl ServiceFailureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ServiceFailureException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceFailureException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+impl ServiceFailureException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceFailureException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceFailureException")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceFailureException {}
+/// See [`ServiceFailureException`](crate::error::ServiceFailureException)
+pub mod service_failure_exception {
+
+    /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException)
+        pub fn build(self) -> crate::error::ServiceFailureException {
+            crate::error::ServiceFailureException {
+                code: self.code,
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl ServiceFailureException {
+    /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException)
+    pub fn builder() -> crate::error::service_failure_exception::Builder {
+        crate::error::service_failure_exception::Builder::default()
+    }
+}
+
 /// <p>The request exceeds the resource limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2636,8 +3070,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }

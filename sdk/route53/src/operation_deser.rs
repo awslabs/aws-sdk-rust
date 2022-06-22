@@ -345,6 +345,159 @@ pub fn parse_associate_vpc_with_hosted_zone_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_change_cidr_collection_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ChangeCidrCollectionOutput,
+    crate::error::ChangeCidrCollectionError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ChangeCidrCollectionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ChangeCidrCollectionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CidrBlockInUseException" => crate::error::ChangeCidrCollectionError {
+            meta: generic,
+            kind: crate::error::ChangeCidrCollectionErrorKind::CidrBlockInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cidr_block_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cidr_block_in_use_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "CidrCollectionVersionMismatchException" => crate::error::ChangeCidrCollectionError {
+            meta: generic,
+            kind:
+                crate::error::ChangeCidrCollectionErrorKind::CidrCollectionVersionMismatchException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::cidr_collection_version_mismatch_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_crate_error_cidr_collection_version_mismatch_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeCidrCollectionError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ConcurrentModification" => crate::error::ChangeCidrCollectionError {
+            meta: generic,
+            kind: crate::error::ChangeCidrCollectionErrorKind::ConcurrentModification({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInput" => crate::error::ChangeCidrCollectionError {
+            meta: generic,
+            kind: crate::error::ChangeCidrCollectionErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ChangeCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitsExceeded" => crate::error::ChangeCidrCollectionError {
+            meta: generic,
+            kind: crate::error::ChangeCidrCollectionErrorKind::LimitsExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limits_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_limits_exceeded_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ChangeCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchCidrCollectionException" => crate::error::ChangeCidrCollectionError {
+            meta: generic,
+            kind: crate::error::ChangeCidrCollectionErrorKind::NoSuchCidrCollectionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_cidr_collection_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_cidr_collection_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ChangeCidrCollectionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_change_cidr_collection_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ChangeCidrCollectionOutput,
+    crate::error::ChangeCidrCollectionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::change_cidr_collection_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_change_cidr_collection(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ChangeCidrCollectionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_resource_record_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -609,6 +762,127 @@ pub fn parse_change_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::change_tags_for_resource_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_cidr_collection_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateCidrCollectionOutput,
+    crate::error::CreateCidrCollectionError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateCidrCollectionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateCidrCollectionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CidrCollectionAlreadyExistsException" => crate::error::CreateCidrCollectionError {
+            meta: generic,
+            kind: crate::error::CreateCidrCollectionErrorKind::CidrCollectionAlreadyExistsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::cidr_collection_already_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_cidr_collection_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCidrCollectionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ConcurrentModification" => crate::error::CreateCidrCollectionError {
+            meta: generic,
+            kind: crate::error::CreateCidrCollectionErrorKind::ConcurrentModification({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInput" => crate::error::CreateCidrCollectionError {
+            meta: generic,
+            kind: crate::error::CreateCidrCollectionErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitsExceeded" => crate::error::CreateCidrCollectionError {
+            meta: generic,
+            kind: crate::error::CreateCidrCollectionErrorKind::LimitsExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limits_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_limits_exceeded_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateCidrCollectionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_cidr_collection_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateCidrCollectionOutput,
+    crate::error::CreateCidrCollectionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_cidr_collection_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_cidr_collection(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateCidrCollectionError::unhandled)?;
+        output = output.set_location(
+            crate::http_serde::deser_header_create_cidr_collection_create_cidr_collection_output_location(response.headers())
+                                    .map_err(|_|crate::error::CreateCidrCollectionError::unhandled("Failed to parse Location from header `Location"))?
+        );
         output.build()
     })
 }
@@ -2099,6 +2373,115 @@ pub fn parse_deactivate_key_signing_key_response(
             output,
         )
         .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_cidr_collection_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteCidrCollectionOutput,
+    crate::error::DeleteCidrCollectionError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteCidrCollectionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteCidrCollectionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CidrCollectionInUseException" => crate::error::DeleteCidrCollectionError {
+            meta: generic,
+            kind: crate::error::DeleteCidrCollectionErrorKind::CidrCollectionInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::cidr_collection_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cidr_collection_in_use_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConcurrentModification" => crate::error::DeleteCidrCollectionError {
+            meta: generic,
+            kind: crate::error::DeleteCidrCollectionErrorKind::ConcurrentModification({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInput" => crate::error::DeleteCidrCollectionError {
+            meta: generic,
+            kind: crate::error::DeleteCidrCollectionErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchCidrCollectionException" => crate::error::DeleteCidrCollectionError {
+            meta: generic,
+            kind: crate::error::DeleteCidrCollectionErrorKind::NoSuchCidrCollectionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_cidr_collection_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_cidr_collection_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCidrCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteCidrCollectionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_cidr_collection_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteCidrCollectionOutput,
+    crate::error::DeleteCidrCollectionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_cidr_collection_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }
@@ -4858,6 +5241,233 @@ pub fn parse_get_traffic_policy_instance_count_response(
                 output,
             )
             .map_err(crate::error::GetTrafficPolicyInstanceCountError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_cidr_blocks_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListCidrBlocksOutput, crate::error::ListCidrBlocksError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListCidrBlocksError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListCidrBlocksError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInput" => crate::error::ListCidrBlocksError {
+            meta: generic,
+            kind: crate::error::ListCidrBlocksErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListCidrBlocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchCidrCollectionException" => crate::error::ListCidrBlocksError {
+            meta: generic,
+            kind: crate::error::ListCidrBlocksErrorKind::NoSuchCidrCollectionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_cidr_collection_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_cidr_collection_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListCidrBlocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchCidrLocationException" => crate::error::ListCidrBlocksError {
+            meta: generic,
+            kind: crate::error::ListCidrBlocksErrorKind::NoSuchCidrLocationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_cidr_location_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_cidr_location_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListCidrBlocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListCidrBlocksError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_cidr_blocks_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListCidrBlocksOutput, crate::error::ListCidrBlocksError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_cidr_blocks_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_list_cidr_blocks(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListCidrBlocksError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_cidr_collections_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListCidrCollectionsOutput,
+    crate::error::ListCidrCollectionsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListCidrCollectionsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListCidrCollectionsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInput" => crate::error::ListCidrCollectionsError {
+            meta: generic,
+            kind: crate::error::ListCidrCollectionsErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListCidrCollectionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListCidrCollectionsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_cidr_collections_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListCidrCollectionsOutput,
+    crate::error::ListCidrCollectionsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_cidr_collections_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_list_cidr_collections(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListCidrCollectionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_cidr_locations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListCidrLocationsOutput, crate::error::ListCidrLocationsError>
+{
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListCidrLocationsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListCidrLocationsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInput" => crate::error::ListCidrLocationsError {
+            meta: generic,
+            kind: crate::error::ListCidrLocationsErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListCidrLocationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NoSuchCidrCollectionException" => crate::error::ListCidrLocationsError {
+            meta: generic,
+            kind: crate::error::ListCidrLocationsErrorKind::NoSuchCidrCollectionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::no_such_cidr_collection_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_cidr_collection_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListCidrLocationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListCidrLocationsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_cidr_locations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListCidrLocationsOutput, crate::error::ListCidrLocationsError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_cidr_locations_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_list_cidr_locations(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListCidrLocationsError::unhandled)?;
         output.build()
     })
 }

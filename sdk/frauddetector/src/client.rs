@@ -563,7 +563,7 @@ impl Client {
     ///   - [`event_type_name(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::event_type_name) / [`set_event_type_name(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_event_type_name): <p> The event type associated with the detector specified for the prediction. </p>
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_detector_id): <p> The detector ID. </p>
     ///   - [`detector_version_id(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::detector_version_id) / [`set_detector_version_id(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_detector_version_id): <p> The detector version ID. </p>
-    ///   - [`prediction_timestamp(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::prediction_timestamp) / [`set_prediction_timestamp(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_prediction_timestamp): <p> The timestamp that defines when the prediction was generated. </p>
+    ///   - [`prediction_timestamp(impl Into<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::prediction_timestamp) / [`set_prediction_timestamp(Option<String>)`](crate::client::fluent_builders::GetEventPredictionMetadata::set_prediction_timestamp): <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>  <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     /// - On success, responds with [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput) with field(s):
     ///   - [`event_id(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::event_id): <p> The event ID. </p>
     ///   - [`event_type_name(Option<String>)`](crate::output::GetEventPredictionMetadataOutput::event_type_name): <p> The event type associated with the detector specified for this prediction. </p>
@@ -2171,7 +2171,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBatchImportJob`.
     ///
-    /// <p>Deletes data that was batch imported to Amazon Fraud Detector. </p>
+    /// <p>Deletes the specified batch import job ID record. This action does not delete the data that was batch imported. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBatchImportJob {
         handle: std::sync::Arc<super::Handle>,
@@ -4015,12 +4015,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_version_id(input);
             self
         }
-        /// <p> The timestamp that defines when the prediction was generated. </p>
+        /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+        /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
         pub fn prediction_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.prediction_timestamp(input.into());
             self
         }
-        /// <p> The timestamp that defines when the prediction was generated. </p>
+        /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+        /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
         pub fn set_prediction_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6515,6 +6517,7 @@ pub mod fluent_builders {
     /// <p>Updates the status of a model version.</p>
     /// <p>You can perform the following status updates:</p>
     /// <ol>
+    /// <li> <p>Change the <code>TRAINING_IN_PROGRESS</code> status to <code>TRAINING_CANCELLED</code>.</p> </li>
     /// <li> <p>Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.</p> </li>
     /// <li> <p>Change <code>ACTIVE</code> to <code>INACTIVE</code>.</p> </li>
     /// </ol>

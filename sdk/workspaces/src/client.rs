@@ -567,11 +567,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`ec2_image_id(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::ec2_image_id) / [`set_ec2_image_id(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ec2_image_id): <p>The identifier of the EC2 image.</p>
-    ///   - [`ingestion_process(WorkspaceImageIngestionProcess)`](crate::client::fluent_builders::ImportWorkspaceImage::ingestion_process) / [`set_ingestion_process(Option<WorkspaceImageIngestionProcess>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ingestion_process): <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>  <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>   <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>  </note>
+    ///   - [`ingestion_process(WorkspaceImageIngestionProcess)`](crate::client::fluent_builders::ImportWorkspaceImage::ingestion_process) / [`set_ingestion_process(Option<WorkspaceImageIngestionProcess>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ingestion_process): <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>  <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
     ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_image_name): <p>The name of the WorkSpace image.</p>
     ///   - [`image_description(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::image_description) / [`set_image_description(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_image_description): <p>The description of the WorkSpace image.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportWorkspaceImage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_tags): <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    ///   - [`applications(Vec<Application>)`](crate::client::fluent_builders::ImportWorkspaceImage::applications) / [`set_applications(Option<Vec<Application>>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_applications): <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>   <ul>    <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>    <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>   </ul>  </note>
+    ///   - [`applications(Vec<Application>)`](crate::client::fluent_builders::ImportWorkspaceImage::applications) / [`set_applications(Option<Vec<Application>>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_applications): <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>   <p>Although this parameter is an array, only one item is allowed at this time.</p>  </note>
     /// - On success, responds with [`ImportWorkspaceImageOutput`](crate::output::ImportWorkspaceImageOutput) with field(s):
     ///   - [`image_id(Option<String>)`](crate::output::ImportWorkspaceImageOutput::image_id): <p>The identifier of the WorkSpace image.</p>
     /// - On failure, responds with [`SdkError<ImportWorkspaceImageError>`](crate::error::ImportWorkspaceImageError)
@@ -3758,9 +3758,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>
-        /// <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>
-        /// </note>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
         pub fn ingestion_process(
             mut self,
             input: crate::model::WorkspaceImageIngestionProcess,
@@ -3769,9 +3767,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
-        /// <p>For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics, or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p> <note>
-        /// <p>Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.</p>
-        /// </note>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
         pub fn set_ingestion_process(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
@@ -3824,20 +3820,14 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-        /// <ul>
-        /// <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>
-        /// <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>
-        /// </ul>
+        /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
         /// </note>
         pub fn applications(mut self, input: crate::model::Application) -> Self {
             self.inner = self.inner.applications(input);
             self
         }
         /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-        /// <ul>
-        /// <li> <p>Although this parameter is an array, only one item is allowed at this time</p> </li>
-        /// <li> <p>Microsoft Office 2016 application subscription through AWS is currently not supported for Graphics.g4dn Bring Your Own License (BYOL) images</p> </li>
-        /// </ul>
+        /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
         /// </note>
         pub fn set_applications(
             mut self,

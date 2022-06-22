@@ -96,7 +96,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_name): <p>The name of the domain.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_description): <p>A brief description of this domain.</p>
-    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::CreateDomain::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::CreateDomain::set_server_side_encryption_configuration): <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
+    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::CreateDomain::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::CreateDomain::set_server_side_encryption_configuration): <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_client_token): <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDomain::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomain::set_tags): <p>A list of tags you want added to the domain.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
@@ -202,7 +202,7 @@ impl Client {
     ///   - [`domain_id(Option<String>)`](crate::output::EvaluateSessionOutput::domain_id): <p>The identifier of the domain containing the session.</p>
     ///   - [`session_id(Option<String>)`](crate::output::EvaluateSessionOutput::session_id): <p>The service-generated identifier of the session.</p>
     ///   - [`session_name(Option<String>)`](crate::output::EvaluateSessionOutput::session_name): <p>The client-provided name of the session.</p>
-    ///   - [`streaming_status(Option<StreamingStatus>)`](crate::output::EvaluateSessionOutput::streaming_status): <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, once Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
+    ///   - [`streaming_status(Option<StreamingStatus>)`](crate::output::EvaluateSessionOutput::streaming_status): <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
     ///   - [`authentication_result(Option<AuthenticationResult>)`](crate::output::EvaluateSessionOutput::authentication_result): <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
     ///   - [`fraud_detection_result(Option<FraudDetectionResult>)`](crate::output::EvaluateSessionOutput::fraud_detection_result): <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
     /// - On failure, responds with [`SdkError<EvaluateSessionError>`](crate::error::EvaluateSessionError)
@@ -298,7 +298,7 @@ impl Client {
     ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_data_access_role_arn): <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
     ///   - [`registration_config(RegistrationConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::registration_config) / [`set_registration_config(Option<RegistrationConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_registration_config): <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_input_data_config): <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
-    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_output_data_config): <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_output_data_config): <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     /// - On success, responds with [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput) with field(s):
     ///   - [`job(Option<FraudsterRegistrationJob>)`](crate::output::StartFraudsterRegistrationJobOutput::job): <p>Details about the started fraudster registration job.</p>
     /// - On failure, responds with [`SdkError<StartFraudsterRegistrationJobError>`](crate::error::StartFraudsterRegistrationJobError)
@@ -314,9 +314,9 @@ impl Client {
     ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_job_name): <p>A name for your speaker enrollment job.</p>
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_domain_id): <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
     ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_data_access_role_arn): <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
-    ///   - [`enrollment_config(EnrollmentConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::enrollment_config) / [`set_enrollment_config(Option<EnrollmentConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_enrollment_config): <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+    ///   - [`enrollment_config(EnrollmentConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::enrollment_config) / [`set_enrollment_config(Option<EnrollmentConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_enrollment_config): <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
     ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_input_data_config): <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
-    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_output_data_config): <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_output_data_config): <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     /// - On success, responds with [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput) with field(s):
     ///   - [`job(Option<SpeakerEnrollmentJob>)`](crate::output::StartSpeakerEnrollmentJobOutput::job): <p>Details about the started speaker enrollment job.</p>
     /// - On failure, responds with [`SdkError<StartSpeakerEnrollmentJobError>`](crate::error::StartSpeakerEnrollmentJobError)
@@ -351,7 +351,7 @@ impl Client {
     ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_domain_id): <p>The identifier of the domain to be updated.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_name): <p>The name of the domain.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_description): <p>A brief description about this domain.</p>
-    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::UpdateDomain::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::UpdateDomain::set_server_side_encryption_configuration): <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::UpdateDomain::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::UpdateDomain::set_server_side_encryption_configuration): <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
     /// - On success, responds with [`UpdateDomainOutput`](crate::output::UpdateDomainOutput) with field(s):
     ///   - [`domain(Option<Domain>)`](crate::output::UpdateDomainOutput::domain): <p>Details about the updated domain</p>
     /// - On failure, responds with [`SdkError<UpdateDomainError>`](crate::error::UpdateDomainError)
@@ -428,7 +428,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
+        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -436,7 +436,7 @@ pub mod fluent_builders {
             self.inner = self.inner.server_side_encryption_configuration(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
+        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used. </p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -474,7 +474,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
-    /// <p>Deletes the specified domain from the Amazon Connect Voice ID system.</p>
+    /// <p>Deletes the specified domain from Voice ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain {
         handle: std::sync::Arc<super::Handle>,
@@ -527,7 +527,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFraudster`.
     ///
-    /// <p>Deletes the specified fraudster from the Amazon Connect Voice ID system.</p>
+    /// <p>Deletes the specified fraudster from Voice ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFraudster {
         handle: std::sync::Arc<super::Handle>,
@@ -590,7 +590,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSpeaker`.
     ///
-    /// <p>Deletes the specified speaker from the Amazon Connect Voice ID system.</p>
+    /// <p>Deletes the specified speaker from Voice ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSpeaker {
         handle: std::sync::Arc<super::Handle>,
@@ -1409,7 +1409,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `OptOutSpeaker`.
     ///
-    /// <p>Opts out a speaker from Voice ID system. A speaker can be opted out regardless of whether or not they already exist in the system. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in the system.</p>
+    /// <p>Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether or not they already exist in Voice ID. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in Voice ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OptOutSpeaker {
         handle: std::sync::Arc<super::Handle>,
@@ -1581,12 +1581,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -1680,12 +1680,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_access_role_arn(input);
             self
         }
-        /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+        /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
         pub fn enrollment_config(mut self, input: crate::model::EnrollmentConfig) -> Self {
             self.inner = self.inner.enrollment_config(input);
             self
         }
-        /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+        /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
         pub fn set_enrollment_config(
             mut self,
             input: std::option::Option<crate::model::EnrollmentConfig>,
@@ -1706,12 +1706,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -1722,7 +1722,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Tags an Amazon Connect Voice ID resource with the provided list of tags.</p>
+    /// <p>Tags a Voice ID resource with the provided list of tags.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -1932,7 +1932,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -1940,7 +1940,7 @@ pub mod fluent_builders {
             self.inner = self.inner.server_side_encryption_configuration(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,

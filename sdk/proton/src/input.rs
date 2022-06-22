@@ -143,6 +143,155 @@ impl AcceptEnvironmentAccountConnectionInput {
     }
 }
 
+/// See [`CancelComponentDeploymentInput`](crate::input::CancelComponentDeploymentInput)
+pub mod cancel_component_deployment_input {
+
+    /// A builder for [`CancelComponentDeploymentInput`](crate::input::CancelComponentDeploymentInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) component_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the component with the deployment to cancel.</p>
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the component with the deployment to cancel.</p>
+        pub fn set_component_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelComponentDeploymentInput`](crate::input::CancelComponentDeploymentInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CancelComponentDeploymentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CancelComponentDeploymentInput {
+                component_name: self.component_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CancelComponentDeploymentInputOperationOutputAlias =
+    crate::operation::CancelComponentDeployment;
+#[doc(hidden)]
+pub type CancelComponentDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CancelComponentDeploymentInput {
+    /// Consumes the builder and constructs an Operation<[`CancelComponentDeployment`](crate::operation::CancelComponentDeployment)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelComponentDeployment,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CancelComponentDeploymentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelComponentDeploymentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AwsProton20200720.CancelComponentDeployment",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_component_deployment(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelComponentDeployment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelComponentDeployment",
+            "proton",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CancelComponentDeploymentInput`](crate::input::CancelComponentDeploymentInput)
+    pub fn builder() -> crate::input::cancel_component_deployment_input::Builder {
+        crate::input::cancel_component_deployment_input::Builder::default()
+    }
+}
+
 /// See [`CancelEnvironmentDeploymentInput`](crate::input::CancelEnvironmentDeploymentInput)
 pub mod cancel_environment_deployment_input {
 
@@ -592,6 +741,269 @@ impl CancelServicePipelineDeploymentInput {
     }
 }
 
+/// See [`CreateComponentInput`](crate::input::CreateComponentInput)
+pub mod create_component_input {
+
+    /// A builder for [`CreateComponentInput`](crate::input::CreateComponentInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) service_name: std::option::Option<std::string::String>,
+        pub(crate) service_instance_name: std::option::Option<std::string::String>,
+        pub(crate) environment_name: std::option::Option<std::string::String>,
+        pub(crate) template_file: std::option::Option<std::string::String>,
+        pub(crate) manifest: std::option::Option<std::string::String>,
+        pub(crate) service_spec: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The customer-provided name of the component.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The customer-provided name of the component.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>An optional customer-provided description of the component.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>An optional customer-provided description of the component.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
+            self
+        }
+        /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_instance_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+        pub fn set_service_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_instance_name = input;
+            self
+        }
+        /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.environment_name = input;
+            self
+        }
+        /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+        /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+        /// </note>
+        pub fn template_file(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_file = Some(input.into());
+            self
+        }
+        /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+        /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+        /// </note>
+        pub fn set_template_file(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_file = input;
+            self
+        }
+        /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+        pub fn manifest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.manifest = Some(input.into());
+            self
+        }
+        /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+        pub fn set_manifest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manifest = input;
+            self
+        }
+        /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
+        pub fn service_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_spec = Some(input.into());
+            self
+        }
+        /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
+        pub fn set_service_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_spec = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
+        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
+        /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateComponentInput`](crate::input::CreateComponentInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateComponentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateComponentInput {
+                name: self.name,
+                description: self.description,
+                service_name: self.service_name,
+                service_instance_name: self.service_instance_name,
+                environment_name: self.environment_name,
+                template_file: self.template_file,
+                manifest: self.manifest,
+                service_spec: self.service_spec,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateComponentInputOperationOutputAlias = crate::operation::CreateComponent;
+#[doc(hidden)]
+pub type CreateComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateComponentInput {
+    /// Consumes the builder and constructs an Operation<[`CreateComponent`](crate::operation::CreateComponent)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateComponent,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateComponentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateComponentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AwsProton20200720.CreateComponent",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_component(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateComponent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateComponent",
+            "proton",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateComponentInput`](crate::input::CreateComponentInput)
+    pub fn builder() -> crate::input::create_component_input::Builder {
+        crate::input::create_component_input::Builder::default()
+    }
+}
+
 /// See [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput)
 pub mod create_environment_input {
 
@@ -610,6 +1022,7 @@ pub mod create_environment_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provisioning_repository:
             std::option::Option<crate::model::RepositoryBranchInput>,
+        pub(crate) component_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the environment.</p>
@@ -753,6 +1166,23 @@ pub mod create_environment_input {
             self.provisioning_repository = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput)
         pub fn build(
             self,
@@ -771,6 +1201,7 @@ pub mod create_environment_input {
                 environment_account_connection_id: self.environment_account_connection_id,
                 tags: self.tags,
                 provisioning_repository: self.provisioning_repository,
+                component_role_arn: self.component_role_arn,
             })
         }
     }
@@ -897,6 +1328,7 @@ pub mod create_environment_account_connection_input {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) component_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
@@ -966,6 +1398,23 @@ pub mod create_environment_account_connection_input {
             self.tags = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEnvironmentAccountConnectionInput`](crate::input::CreateEnvironmentAccountConnectionInput)
         pub fn build(
             self,
@@ -979,6 +1428,7 @@ pub mod create_environment_account_connection_input {
                 role_arn: self.role_arn,
                 environment_name: self.environment_name,
                 tags: self.tags,
+                component_role_arn: self.component_role_arn,
             })
         }
     }
@@ -2274,6 +2724,9 @@ pub mod create_service_template_version_input {
         pub(crate) compatible_environment_templates:
             std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplateInput>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) supported_component_sources: std::option::Option<
+            std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+        >,
     }
     impl Builder {
         /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
@@ -2341,7 +2794,7 @@ pub mod create_service_template_version_input {
         ///
         /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
         ///
-        /// <p>An array of compatible environment template objects for the new version of a service template.</p>
+        /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
         pub fn compatible_environment_templates(
             mut self,
             input: crate::model::CompatibleEnvironmentTemplateInput,
@@ -2351,7 +2804,7 @@ pub mod create_service_template_version_input {
             self.compatible_environment_templates = Some(v);
             self
         }
-        /// <p>An array of compatible environment template objects for the new version of a service template.</p>
+        /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
         pub fn set_compatible_environment_templates(
             mut self,
             input: std::option::Option<
@@ -2382,6 +2835,32 @@ pub mod create_service_template_version_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `supported_component_sources`.
+        ///
+        /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
+        ///
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn supported_component_sources(
+            mut self,
+            input: crate::model::ServiceTemplateSupportedComponentSourceType,
+        ) -> Self {
+            let mut v = self.supported_component_sources.unwrap_or_default();
+            v.push(input);
+            self.supported_component_sources = Some(v);
+            self
+        }
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_supported_component_sources(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+            >,
+        ) -> Self {
+            self.supported_component_sources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateServiceTemplateVersionInput`](crate::input::CreateServiceTemplateVersionInput)
         pub fn build(
             self,
@@ -2397,6 +2876,7 @@ pub mod create_service_template_version_input {
                 source: self.source,
                 compatible_environment_templates: self.compatible_environment_templates,
                 tags: self.tags,
+                supported_component_sources: self.supported_component_sources,
             })
         }
     }
@@ -2730,6 +3210,147 @@ impl CreateTemplateSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateTemplateSyncConfigInput`](crate::input::CreateTemplateSyncConfigInput)
     pub fn builder() -> crate::input::create_template_sync_config_input::Builder {
         crate::input::create_template_sync_config_input::Builder::default()
+    }
+}
+
+/// See [`DeleteComponentInput`](crate::input::DeleteComponentInput)
+pub mod delete_component_input {
+
+    /// A builder for [`DeleteComponentInput`](crate::input::DeleteComponentInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the component to delete.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the component to delete.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteComponentInput`](crate::input::DeleteComponentInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteComponentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteComponentInput { name: self.name })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteComponentInputOperationOutputAlias = crate::operation::DeleteComponent;
+#[doc(hidden)]
+pub type DeleteComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteComponentInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteComponent`](crate::operation::DeleteComponent)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteComponent,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteComponentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteComponentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AwsProton20200720.DeleteComponent",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_component(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteComponent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteComponent",
+            "proton",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteComponentInput`](crate::input::DeleteComponentInput)
+    pub fn builder() -> crate::input::delete_component_input::Builder {
+        crate::input::delete_component_input::Builder::default()
     }
 }
 
@@ -4242,6 +4863,147 @@ impl GetAccountSettingsInput {
     }
 }
 
+/// See [`GetComponentInput`](crate::input::GetComponentInput)
+pub mod get_component_input {
+
+    /// A builder for [`GetComponentInput`](crate::input::GetComponentInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the component that you want to get the detailed data for.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the component that you want to get the detailed data for.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetComponentInput`](crate::input::GetComponentInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetComponentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetComponentInput { name: self.name })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetComponentInputOperationOutputAlias = crate::operation::GetComponent;
+#[doc(hidden)]
+pub type GetComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetComponentInput {
+    /// Consumes the builder and constructs an Operation<[`GetComponent`](crate::operation::GetComponent)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetComponent,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetComponentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetComponentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AwsProton20200720.GetComponent",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_component(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetComponent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetComponent",
+            "proton",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetComponentInput`](crate::input::GetComponentInput)
+    pub fn builder() -> crate::input::get_component_input::Builder {
+        crate::input::get_component_input::Builder::default()
+    }
+}
+
 /// See [`GetEnvironmentInput`](crate::input::GetEnvironmentInput)
 pub mod get_environment_input {
 
@@ -4252,12 +5014,12 @@ pub mod get_environment_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the environment that you want to get the detail data for.</p>
+        /// <p>The name of the environment that you want to get the detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the environment that you want to get the detail data for.</p>
+        /// <p>The name of the environment that you want to get the detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4393,12 +5155,12 @@ pub mod get_environment_account_connection_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the environment account connection.</p>
+        /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The ID of the environment account connection.</p>
+        /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4535,12 +5297,12 @@ pub mod get_environment_template_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the environment template that you want to get the detail data for.</p>
+        /// <p>The name of the environment template that you want to get the detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the environment template that you want to get the detail data for.</p>
+        /// <p>The name of the environment template that you want to get the detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4680,12 +5442,12 @@ pub mod get_environment_template_version_input {
         pub(crate) minor_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the environment template.</p>
+        /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the environment template.</p>
+        /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4693,12 +5455,12 @@ pub mod get_environment_template_version_input {
             self.template_name = input;
             self
         }
-        /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
+        /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
-        /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
+        /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4706,12 +5468,12 @@ pub mod get_environment_template_version_input {
             self.major_version = input;
             self
         }
-        /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
+        /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
         pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.minor_version = Some(input.into());
             self
         }
-        /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
+        /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
         pub fn set_minor_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5201,12 +5963,12 @@ pub mod get_service_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the service that you want to get the detail data for.</p>
+        /// <p>The name of the service that you want to get the detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the service that you want to get the detail data for.</p>
+        /// <p>The name of the service that you want to get the detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5343,12 +6105,12 @@ pub mod get_service_instance_input {
         pub(crate) service_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a service instance that you want to get the detail data for.</p>
+        /// <p>The name of a service instance that you want to get the detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of a service instance that you want to get the detail data for.</p>
+        /// <p>The name of a service instance that you want to get the detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5497,12 +6259,12 @@ pub mod get_service_template_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the service template that you want to get detail data for.</p>
+        /// <p>The name of the service template that you want to get detailed data for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the service template that you want to get detail data for.</p>
+        /// <p>The name of the service template that you want to get detailed data for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5640,12 +6402,12 @@ pub mod get_service_template_version_input {
         pub(crate) minor_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the service template.</p>
+        /// <p>The name of the service template a version of which you want to get detailed data for.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the service template.</p>
+        /// <p>The name of the service template a version of which you want to get detailed data for.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5653,12 +6415,12 @@ pub mod get_service_template_version_input {
             self.template_name = input;
             self
         }
-        /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
+        /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
-        /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
+        /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5666,12 +6428,12 @@ pub mod get_service_template_version_input {
             self.major_version = input;
             self
         }
-        /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
+        /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
         pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.minor_version = Some(input.into());
             self
         }
-        /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
+        /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
         pub fn set_minor_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6145,6 +6907,522 @@ impl GetTemplateSyncStatusInput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSyncStatusInput`](crate::input::GetTemplateSyncStatusInput)
     pub fn builder() -> crate::input::get_template_sync_status_input::Builder {
         crate::input::get_template_sync_status_input::Builder::default()
+    }
+}
+
+/// See [`ListComponentOutputsInput`](crate::input::ListComponentOutputsInput)
+pub mod list_component_outputs_input {
+
+    /// A builder for [`ListComponentOutputsInput`](crate::input::ListComponentOutputsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) component_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the component whose outputs you want.</p>
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the component whose outputs you want.</p>
+        pub fn set_component_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_name = input;
+            self
+        }
+        /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListComponentOutputsInput`](crate::input::ListComponentOutputsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListComponentOutputsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListComponentOutputsInput {
+                component_name: self.component_name,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListComponentOutputsInputOperationOutputAlias = crate::operation::ListComponentOutputs;
+#[doc(hidden)]
+pub type ListComponentOutputsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListComponentOutputsInput {
+    /// Consumes the builder and constructs an Operation<[`ListComponentOutputs`](crate::operation::ListComponentOutputs)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListComponentOutputs,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListComponentOutputsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListComponentOutputsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AwsProton20200720.ListComponentOutputs",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_component_outputs(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListComponentOutputs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListComponentOutputs",
+            "proton",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListComponentOutputsInput`](crate::input::ListComponentOutputsInput)
+    pub fn builder() -> crate::input::list_component_outputs_input::Builder {
+        crate::input::list_component_outputs_input::Builder::default()
+    }
+}
+
+/// See [`ListComponentProvisionedResourcesInput`](crate::input::ListComponentProvisionedResourcesInput)
+pub mod list_component_provisioned_resources_input {
+
+    /// A builder for [`ListComponentProvisionedResourcesInput`](crate::input::ListComponentProvisionedResourcesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) component_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the component whose provisioned resources you want.</p>
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the component whose provisioned resources you want.</p>
+        pub fn set_component_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_name = input;
+            self
+        }
+        /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListComponentProvisionedResourcesInput`](crate::input::ListComponentProvisionedResourcesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListComponentProvisionedResourcesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListComponentProvisionedResourcesInput {
+                component_name: self.component_name,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListComponentProvisionedResourcesInputOperationOutputAlias =
+    crate::operation::ListComponentProvisionedResources;
+#[doc(hidden)]
+pub type ListComponentProvisionedResourcesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListComponentProvisionedResourcesInput {
+    /// Consumes the builder and constructs an Operation<[`ListComponentProvisionedResources`](crate::operation::ListComponentProvisionedResources)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListComponentProvisionedResources,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListComponentProvisionedResourcesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListComponentProvisionedResourcesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AwsProton20200720.ListComponentProvisionedResources",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_component_provisioned_resources(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListComponentProvisionedResources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListComponentProvisionedResources",
+            "proton",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListComponentProvisionedResourcesInput`](crate::input::ListComponentProvisionedResourcesInput)
+    pub fn builder() -> crate::input::list_component_provisioned_resources_input::Builder {
+        crate::input::list_component_provisioned_resources_input::Builder::default()
+    }
+}
+
+/// See [`ListComponentsInput`](crate::input::ListComponentsInput)
+pub mod list_components_input {
+
+    /// A builder for [`ListComponentsInput`](crate::input::ListComponentsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) environment_name: std::option::Option<std::string::String>,
+        pub(crate) service_name: std::option::Option<std::string::String>,
+        pub(crate) service_instance_name: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.environment_name = input;
+            self
+        }
+        /// <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
+            self
+        }
+        /// <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_instance_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
+        pub fn set_service_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_instance_name = input;
+            self
+        }
+        /// <p>The maximum number of components to list.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of components to list.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListComponentsInput`](crate::input::ListComponentsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListComponentsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListComponentsInput {
+                next_token: self.next_token,
+                environment_name: self.environment_name,
+                service_name: self.service_name,
+                service_instance_name: self.service_instance_name,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListComponentsInputOperationOutputAlias = crate::operation::ListComponents;
+#[doc(hidden)]
+pub type ListComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListComponentsInput {
+    /// Consumes the builder and constructs an Operation<[`ListComponents`](crate::operation::ListComponents)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListComponents,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListComponentsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListComponentsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AwsProton20200720.ListComponents",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_components(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListComponents::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListComponents",
+            "proton",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListComponentsInput`](crate::input::ListComponentsInput)
+    pub fn builder() -> crate::input::list_components_input::Builder {
+        crate::input::list_components_input::Builder::default()
     }
 }
 
@@ -7562,12 +8840,12 @@ pub mod list_service_instance_outputs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The service instance name.</p>
+        /// <p>The name of the service instance whose outputs you want.</p>
         pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_instance_name = Some(input.into());
             self
         }
-        /// <p>The service instance name.</p>
+        /// <p>The name of the service instance whose outputs you want.</p>
         pub fn set_service_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7575,12 +8853,12 @@ pub mod list_service_instance_outputs_input {
             self.service_instance_name = input;
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -7732,22 +9010,22 @@ pub mod list_service_instance_provisioned_resources_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The service name.</p>
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
         }
-        /// <p>The service instance name.</p>
+        /// <p>The name of the service instance whose provisioned resources you want.</p>
         pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_instance_name = Some(input.into());
             self
         }
-        /// <p>The service instance name.</p>
+        /// <p>The name of the service instance whose provisioned resources you want.</p>
         pub fn set_service_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8071,12 +9349,12 @@ pub mod list_service_pipeline_outputs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The service name.</p>
+        /// <p>The name of the service whose pipeline's outputs you want.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service whose pipeline's outputs you want.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -8226,12 +9504,12 @@ pub mod list_service_pipeline_provisioned_resources_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The service name.</p>
+        /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
             self
         }
-        /// <p>The service name.</p>
+        /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -9886,6 +11164,262 @@ impl UpdateAccountSettingsInput {
     }
 }
 
+/// See [`UpdateComponentInput`](crate::input::UpdateComponentInput)
+pub mod update_component_input {
+
+    /// A builder for [`UpdateComponentInput`](crate::input::UpdateComponentInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) deployment_type:
+            std::option::Option<crate::model::ComponentDeploymentUpdateType>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) service_name: std::option::Option<std::string::String>,
+        pub(crate) service_instance_name: std::option::Option<std::string::String>,
+        pub(crate) service_spec: std::option::Option<std::string::String>,
+        pub(crate) template_file: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the component to update.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the component to update.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
+        /// <dl>
+        /// <dt></dt>
+        /// <dd>
+        /// <p> <code>NONE</code> </p>
+        /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
+        /// </dd>
+        /// <dt></dt>
+        /// <dd>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
+        /// </dd>
+        /// </dl>
+        pub fn deployment_type(
+            mut self,
+            input: crate::model::ComponentDeploymentUpdateType,
+        ) -> Self {
+            self.deployment_type = Some(input);
+            self
+        }
+        /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
+        /// <dl>
+        /// <dt></dt>
+        /// <dd>
+        /// <p> <code>NONE</code> </p>
+        /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
+        /// </dd>
+        /// <dt></dt>
+        /// <dd>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
+        /// </dd>
+        /// </dl>
+        pub fn set_deployment_type(
+            mut self,
+            input: std::option::Option<crate::model::ComponentDeploymentUpdateType>,
+        ) -> Self {
+            self.deployment_type = input;
+            self
+        }
+        /// <p>An optional customer-provided description of the component.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>An optional customer-provided description of the component.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
+            self
+        }
+        /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_instance_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+        pub fn set_service_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_instance_name = input;
+            self
+        }
+        /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
+        pub fn service_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_spec = Some(input.into());
+            self
+        }
+        /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
+        pub fn set_service_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_spec = input;
+            self
+        }
+        /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+        /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+        /// </note>
+        pub fn template_file(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_file = Some(input.into());
+            self
+        }
+        /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+        /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+        /// </note>
+        pub fn set_template_file(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_file = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateComponentInput`](crate::input::UpdateComponentInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateComponentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateComponentInput {
+                name: self.name,
+                deployment_type: self.deployment_type,
+                description: self.description,
+                service_name: self.service_name,
+                service_instance_name: self.service_instance_name,
+                service_spec: self.service_spec,
+                template_file: self.template_file,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateComponentInputOperationOutputAlias = crate::operation::UpdateComponent;
+#[doc(hidden)]
+pub type UpdateComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateComponentInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateComponent`](crate::operation::UpdateComponent)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateComponent,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateComponentInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateComponentInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AwsProton20200720.UpdateComponent",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_component(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateComponent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateComponent",
+            "proton",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateComponentInput`](crate::input::UpdateComponentInput)
+    pub fn builder() -> crate::input::update_component_input::Builder {
+        crate::input::update_component_input::Builder::default()
+    }
+}
+
 /// See [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput)
 pub mod update_environment_input {
 
@@ -9903,6 +11437,7 @@ pub mod update_environment_input {
         pub(crate) environment_account_connection_id: std::option::Option<std::string::String>,
         pub(crate) provisioning_repository:
             std::option::Option<crate::model::RepositoryBranchInput>,
+        pub(crate) component_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the environment to update.</p>
@@ -10065,6 +11600,23 @@ pub mod update_environment_input {
             self.provisioning_repository = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput)
         pub fn build(
             self,
@@ -10082,6 +11634,7 @@ pub mod update_environment_input {
                 deployment_type: self.deployment_type,
                 environment_account_connection_id: self.environment_account_connection_id,
                 provisioning_repository: self.provisioning_repository,
+                component_role_arn: self.component_role_arn,
             })
         }
     }
@@ -10205,6 +11758,7 @@ pub mod update_environment_account_connection_input {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) component_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the environment account connection to update.</p>
@@ -10227,6 +11781,23 @@ pub mod update_environment_account_connection_input {
             self.role_arn = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEnvironmentAccountConnectionInput`](crate::input::UpdateEnvironmentAccountConnectionInput)
         pub fn build(
             self,
@@ -10237,6 +11808,7 @@ pub mod update_environment_account_connection_input {
             Ok(crate::input::UpdateEnvironmentAccountConnectionInput {
                 id: self.id,
                 role_arn: self.role_arn,
+                component_role_arn: self.component_role_arn,
             })
         }
     }
@@ -10928,8 +12500,7 @@ pub mod update_service_instance_input {
             self.service_name = input;
             self
         }
-        /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p>
+        /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
         /// <dl>
         /// <dt></dt>
         /// <dd>
@@ -10939,7 +12510,7 @@ pub mod update_service_instance_input {
         /// <dt></dt>
         /// <dd>
         /// <p> <code>CURRENT_VERSION</code> </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>
         /// </dd>
         /// <dt></dt>
         /// <dd>
@@ -10956,8 +12527,7 @@ pub mod update_service_instance_input {
             self.deployment_type = Some(input);
             self
         }
-        /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p>
+        /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
         /// <dl>
         /// <dt></dt>
         /// <dd>
@@ -10967,7 +12537,7 @@ pub mod update_service_instance_input {
         /// <dt></dt>
         /// <dd>
         /// <p> <code>CURRENT_VERSION</code> </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>
         /// </dd>
         /// <dt></dt>
         /// <dd>
@@ -11584,6 +13154,9 @@ pub mod update_service_template_version_input {
         pub(crate) status: std::option::Option<crate::model::TemplateVersionStatus>,
         pub(crate) compatible_environment_templates:
             std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplateInput>>,
+        pub(crate) supported_component_sources: std::option::Option<
+            std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+        >,
     }
     impl Builder {
         /// <p>The name of the service template.</p>
@@ -11652,7 +13225,7 @@ pub mod update_service_template_version_input {
         ///
         /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
         ///
-        /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
+        /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
         pub fn compatible_environment_templates(
             mut self,
             input: crate::model::CompatibleEnvironmentTemplateInput,
@@ -11662,7 +13235,7 @@ pub mod update_service_template_version_input {
             self.compatible_environment_templates = Some(v);
             self
         }
-        /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
+        /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
         pub fn set_compatible_environment_templates(
             mut self,
             input: std::option::Option<
@@ -11670,6 +13243,36 @@ pub mod update_service_template_version_input {
             >,
         ) -> Self {
             self.compatible_environment_templates = input;
+            self
+        }
+        /// Appends an item to `supported_component_sources`.
+        ///
+        /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
+        ///
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+        /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+        /// </note>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn supported_component_sources(
+            mut self,
+            input: crate::model::ServiceTemplateSupportedComponentSourceType,
+        ) -> Self {
+            let mut v = self.supported_component_sources.unwrap_or_default();
+            v.push(input);
+            self.supported_component_sources = Some(v);
+            self
+        }
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+        /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+        /// </note>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_supported_component_sources(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+            >,
+        ) -> Self {
+            self.supported_component_sources = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateServiceTemplateVersionInput`](crate::input::UpdateServiceTemplateVersionInput)
@@ -11686,6 +13289,7 @@ pub mod update_service_template_version_input {
                 description: self.description,
                 status: self.status,
                 compatible_environment_templates: self.compatible_environment_templates,
+                supported_component_sources: self.supported_component_sources,
             })
         }
     }
@@ -12246,12 +13850,17 @@ pub struct CreateServiceTemplateVersionInput {
     pub major_version: std::option::Option<std::string::String>,
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
     pub source: std::option::Option<crate::model::TemplateVersionSourceInput>,
-    /// <p>An array of compatible environment template objects for the new version of a service template.</p>
+    /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     pub compatible_environment_templates:
         std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplateInput>>,
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub supported_component_sources: std::option::Option<
+        std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+    >,
 }
 impl CreateServiceTemplateVersionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
@@ -12275,7 +13884,7 @@ impl CreateServiceTemplateVersionInput {
     pub fn source(&self) -> std::option::Option<&crate::model::TemplateVersionSourceInput> {
         self.source.as_ref()
     }
-    /// <p>An array of compatible environment template objects for the new version of a service template.</p>
+    /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     pub fn compatible_environment_templates(
         &self,
     ) -> std::option::Option<&[crate::model::CompatibleEnvironmentTemplateInput]> {
@@ -12285,6 +13894,13 @@ impl CreateServiceTemplateVersionInput {
     /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn supported_component_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceTemplateSupportedComponentSourceType]> {
+        self.supported_component_sources.as_deref()
     }
 }
 impl std::fmt::Debug for CreateServiceTemplateVersionInput {
@@ -12300,6 +13916,10 @@ impl std::fmt::Debug for CreateServiceTemplateVersionInput {
             &self.compatible_environment_templates,
         );
         formatter.field("tags", &self.tags);
+        formatter.field(
+            "supported_component_sources",
+            &self.supported_component_sources,
+        );
         formatter.finish()
     }
 }
@@ -12353,9 +13973,16 @@ pub struct UpdateServiceTemplateVersionInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the service template minor version to update.</p>
     pub status: std::option::Option<crate::model::TemplateVersionStatus>,
-    /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
+    /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     pub compatible_environment_templates:
         std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplateInput>>,
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+    /// </note>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub supported_component_sources: std::option::Option<
+        std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+    >,
 }
 impl UpdateServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
@@ -12378,11 +14005,20 @@ impl UpdateServiceTemplateVersionInput {
     pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
         self.status.as_ref()
     }
-    /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
+    /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     pub fn compatible_environment_templates(
         &self,
     ) -> std::option::Option<&[crate::model::CompatibleEnvironmentTemplateInput]> {
         self.compatible_environment_templates.as_deref()
+    }
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+    /// </note>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn supported_component_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceTemplateSupportedComponentSourceType]> {
+        self.supported_component_sources.as_deref()
     }
 }
 impl std::fmt::Debug for UpdateServiceTemplateVersionInput {
@@ -12397,6 +14033,10 @@ impl std::fmt::Debug for UpdateServiceTemplateVersionInput {
             "compatible_environment_templates",
             &self.compatible_environment_templates,
         );
+        formatter.field(
+            "supported_component_sources",
+            &self.supported_component_sources,
+        );
         formatter.finish()
     }
 }
@@ -12405,23 +14045,23 @@ impl std::fmt::Debug for UpdateServiceTemplateVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceTemplateVersionInput {
-    /// <p>The name of the service template.</p>
+    /// <p>The name of the service template a version of which you want to get detailed data for.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
+    /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
-    /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
+    /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
     pub minor_version: std::option::Option<std::string::String>,
 }
 impl GetServiceTemplateVersionInput {
-    /// <p>The name of the service template.</p>
+    /// <p>The name of the service template a version of which you want to get detailed data for.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
+    /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
-    /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
+    /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
     pub fn minor_version(&self) -> std::option::Option<&str> {
         self.minor_version.as_deref()
     }
@@ -12582,11 +14222,11 @@ impl std::fmt::Debug for UpdateServiceTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceTemplateInput {
-    /// <p>The name of the service template that you want to get detail data for.</p>
+    /// <p>The name of the service template that you want to get detailed data for.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetServiceTemplateInput {
-    /// <p>The name of the service template that you want to get detail data for.</p>
+    /// <p>The name of the service template that you want to get detailed data for.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -12773,11 +14413,11 @@ impl std::fmt::Debug for UpdateServiceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceInput {
-    /// <p>The name of the service that you want to get the detail data for.</p>
+    /// <p>The name of the service that you want to get the detailed data for.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetServiceInput {
-    /// <p>The name of the service that you want to get the detail data for.</p>
+    /// <p>The name of the service that you want to get the detailed data for.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -12889,13 +14529,13 @@ impl std::fmt::Debug for UpdateServicePipelineInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicePipelineProvisionedResourcesInput {
-    /// <p>The service name.</p>
+    /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicePipelineProvisionedResourcesInput {
-    /// <p>The service name.</p>
+    /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
@@ -12917,13 +14557,13 @@ impl std::fmt::Debug for ListServicePipelineProvisionedResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicePipelineOutputsInput {
-    /// <p>The service name.</p>
+    /// <p>The name of the service whose pipeline's outputs you want.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicePipelineOutputsInput {
-    /// <p>The service name.</p>
+    /// <p>The name of the service whose pipeline's outputs you want.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
@@ -12984,8 +14624,7 @@ pub struct UpdateServiceInstanceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the service that the service instance belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p>
+    /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
     /// <dl>
     /// <dt></dt>
     /// <dd>
@@ -12995,7 +14634,7 @@ pub struct UpdateServiceInstanceInput {
     /// <dt></dt>
     /// <dd>
     /// <p> <code>CURRENT_VERSION</code> </p>
-    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
@@ -13025,8 +14664,7 @@ impl UpdateServiceInstanceInput {
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.</p>
+    /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
     /// <dl>
     /// <dt></dt>
     /// <dd>
@@ -13036,7 +14674,7 @@ impl UpdateServiceInstanceInput {
     /// <dt></dt>
     /// <dd>
     /// <p> <code>CURRENT_VERSION</code> </p>
-    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include major or minor version parameters when you use this deployment type.</p>
     /// </dd>
     /// <dt></dt>
     /// <dd>
@@ -13082,13 +14720,13 @@ impl std::fmt::Debug for UpdateServiceInstanceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceInstanceInput {
-    /// <p>The name of a service instance that you want to get the detail data for.</p>
+    /// <p>The name of a service instance that you want to get the detailed data for.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the service that the service instance belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
 }
 impl GetServiceInstanceInput {
-    /// <p>The name of a service instance that you want to get the detail data for.</p>
+    /// <p>The name of a service instance that you want to get the detailed data for.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -13110,19 +14748,19 @@ impl std::fmt::Debug for GetServiceInstanceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstanceProvisionedResourcesInput {
-    /// <p>The service name.</p>
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>The service instance name.</p>
+    /// <p>The name of the service instance whose provisioned resources you want.</p>
     pub service_instance_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServiceInstanceProvisionedResourcesInput {
-    /// <p>The service name.</p>
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>The service instance name.</p>
+    /// <p>The name of the service instance whose provisioned resources you want.</p>
     pub fn service_instance_name(&self) -> std::option::Option<&str> {
         self.service_instance_name.as_deref()
     }
@@ -13145,19 +14783,19 @@ impl std::fmt::Debug for ListServiceInstanceProvisionedResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstanceOutputsInput {
-    /// <p>The service instance name.</p>
+    /// <p>The name of the service instance whose outputs you want.</p>
     pub service_instance_name: std::option::Option<std::string::String>,
-    /// <p>The service name.</p>
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServiceInstanceOutputsInput {
-    /// <p>The service instance name.</p>
+    /// <p>The name of the service instance whose outputs you want.</p>
     pub fn service_instance_name(&self) -> std::option::Option<&str> {
         self.service_instance_name.as_deref()
     }
-    /// <p>The service name.</p>
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
@@ -13503,23 +15141,23 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentTemplateVersionInput {
-    /// <p>The name of the environment template.</p>
+    /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
+    /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
-    /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
+    /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
     pub minor_version: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentTemplateVersionInput {
-    /// <p>The name of the environment template.</p>
+    /// <p>The name of the environment template a version of which you want to get detailed data for..</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
+    /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
-    /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
+    /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
     pub fn minor_version(&self) -> std::option::Option<&str> {
         self.minor_version.as_deref()
     }
@@ -13680,11 +15318,11 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentTemplateInput {
-    /// <p>The name of the environment template that you want to get the detail data for.</p>
+    /// <p>The name of the environment template that you want to get the detailed data for.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentTemplateInput {
-    /// <p>The name of the environment template that you want to get the detail data for.</p>
+    /// <p>The name of the environment template that you want to get the detailed data for.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -13763,6 +15401,10 @@ pub struct CreateEnvironmentInput {
     /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
     /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
@@ -13811,6 +15453,12 @@ impl CreateEnvironmentInput {
     ) -> std::option::Option<&crate::model::RepositoryBranchInput> {
         self.provisioning_repository.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+        self.component_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13828,6 +15476,7 @@ impl std::fmt::Debug for CreateEnvironmentInput {
         );
         formatter.field("tags", &self.tags);
         formatter.field("provisioning_repository", &self.provisioning_repository);
+        formatter.field("component_role_arn", &self.component_role_arn);
         formatter.finish()
     }
 }
@@ -13898,6 +15547,10 @@ pub struct UpdateEnvironmentInput {
     pub environment_account_connection_id: std::option::Option<std::string::String>,
     /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The name of the environment to update.</p>
@@ -13961,6 +15614,12 @@ impl UpdateEnvironmentInput {
     ) -> std::option::Option<&crate::model::RepositoryBranchInput> {
         self.provisioning_repository.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+        self.component_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13977,6 +15636,7 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
             &self.environment_account_connection_id,
         );
         formatter.field("provisioning_repository", &self.provisioning_repository);
+        formatter.field("component_role_arn", &self.component_role_arn);
         formatter.finish()
     }
 }
@@ -13985,11 +15645,11 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentInput {
-    /// <p>The name of the environment that you want to get the detail data for.</p>
+    /// <p>The name of the environment that you want to get the detailed data for.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentInput {
-    /// <p>The name of the environment that you want to get the detail data for.</p>
+    /// <p>The name of the environment that you want to get the detailed data for.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -14170,6 +15830,10 @@ pub struct CreateEnvironmentAccountConnectionInput {
     /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentAccountConnectionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
@@ -14193,6 +15857,12 @@ impl CreateEnvironmentAccountConnectionInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+        self.component_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentAccountConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14202,6 +15872,7 @@ impl std::fmt::Debug for CreateEnvironmentAccountConnectionInput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("environment_name", &self.environment_name);
         formatter.field("tags", &self.tags);
+        formatter.field("component_role_arn", &self.component_role_arn);
         formatter.finish()
     }
 }
@@ -14235,6 +15906,10 @@ pub struct UpdateEnvironmentAccountConnectionInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
     pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to update.</p>
@@ -14245,12 +15920,19 @@ impl UpdateEnvironmentAccountConnectionInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+        self.component_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateEnvironmentAccountConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentAccountConnectionInput");
         formatter.field("id", &self.id);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("component_role_arn", &self.component_role_arn);
         formatter.finish()
     }
 }
@@ -14259,11 +15941,11 @@ impl std::fmt::Debug for UpdateEnvironmentAccountConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEnvironmentAccountConnectionInput {
-    /// <p>The ID of the environment account connection.</p>
+    /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentAccountConnectionInput {
-    /// <p>The ID of the environment account connection.</p>
+    /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -14272,6 +15954,329 @@ impl std::fmt::Debug for GetEnvironmentAccountConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentAccountConnectionInput");
         formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListComponentsInput {
+    /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
+    pub environment_name: std::option::Option<std::string::String>,
+    /// <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
+    pub service_name: std::option::Option<std::string::String>,
+    /// <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
+    pub service_instance_name: std::option::Option<std::string::String>,
+    /// <p>The maximum number of components to list.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListComponentsInput {
+    /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p>
+    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+        self.service_instance_name.as_deref()
+    }
+    /// <p>The maximum number of components to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListComponentsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListComponentsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("environment_name", &self.environment_name);
+        formatter.field("service_name", &self.service_name);
+        formatter.field("service_instance_name", &self.service_instance_name);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateComponentInput {
+    /// <p>The customer-provided name of the component.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>An optional customer-provided description of the component.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    pub service_name: std::option::Option<std::string::String>,
+    /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    pub service_instance_name: std::option::Option<std::string::String>,
+    /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
+    pub environment_name: std::option::Option<std::string::String>,
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+    /// </note>
+    pub template_file: std::option::Option<std::string::String>,
+    /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+    pub manifest: std::option::Option<std::string::String>,
+    /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
+    pub service_spec: std::option::Option<std::string::String>,
+    /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
+    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateComponentInput {
+    /// <p>The customer-provided name of the component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional customer-provided description of the component.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
+    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+        self.service_instance_name.as_deref()
+    }
+    /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+    /// </note>
+    pub fn template_file(&self) -> std::option::Option<&str> {
+        self.template_file.as_deref()
+    }
+    /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
+    pub fn manifest(&self) -> std::option::Option<&str> {
+        self.manifest.as_deref()
+    }
+    /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
+    pub fn service_spec(&self) -> std::option::Option<&str> {
+        self.service_spec.as_deref()
+    }
+    /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
+    /// <p>For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateComponentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateComponentInput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_name", &self.service_name);
+        formatter.field("service_instance_name", &self.service_instance_name);
+        formatter.field("environment_name", &self.environment_name);
+        formatter.field("template_file", &"*** Sensitive Data Redacted ***");
+        formatter.field("manifest", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteComponentInput {
+    /// <p>The name of the component to delete.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl DeleteComponentInput {
+    /// <p>The name of the component to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteComponentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteComponentInput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateComponentInput {
+    /// <p>The name of the component to update.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
+    /// <dl>
+    /// <dt></dt>
+    /// <dd>
+    /// <p> <code>NONE</code> </p>
+    /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
+    /// </dd>
+    /// <dt></dt>
+    /// <dd>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
+    /// </dd>
+    /// </dl>
+    pub deployment_type: std::option::Option<crate::model::ComponentDeploymentUpdateType>,
+    /// <p>An optional customer-provided description of the component.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+    pub service_name: std::option::Option<std::string::String>,
+    /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+    pub service_instance_name: std::option::Option<std::string::String>,
+    /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
+    pub service_spec: std::option::Option<std::string::String>,
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+    /// </note>
+    pub template_file: std::option::Option<std::string::String>,
+}
+impl UpdateComponentInput {
+    /// <p>The name of the component to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
+    /// <dl>
+    /// <dt></dt>
+    /// <dd>
+    /// <p> <code>NONE</code> </p>
+    /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated. You can only specify <code>description</code> in this mode.</p>
+    /// </dd>
+    /// <dt></dt>
+    /// <dd>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
+    /// </dd>
+    /// </dl>
+    pub fn deployment_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ComponentDeploymentUpdateType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>An optional customer-provided description of the component.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
+    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+        self.service_instance_name.as_deref()
+    }
+    /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
+    pub fn service_spec(&self) -> std::option::Option<&str> {
+        self.service_spec.as_deref()
+    }
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
+    /// </note>
+    pub fn template_file(&self) -> std::option::Option<&str> {
+        self.template_file.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateComponentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateComponentInput");
+        formatter.field("name", &self.name);
+        formatter.field("deployment_type", &self.deployment_type);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_name", &self.service_name);
+        formatter.field("service_instance_name", &self.service_instance_name);
+        formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
+        formatter.field("template_file", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetComponentInput {
+    /// <p>The name of the component that you want to get the detailed data for.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl GetComponentInput {
+    /// <p>The name of the component that you want to get the detailed data for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for GetComponentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetComponentInput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListComponentProvisionedResourcesInput {
+    /// <p>The name of the component whose provisioned resources you want.</p>
+    pub component_name: std::option::Option<std::string::String>,
+    /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListComponentProvisionedResourcesInput {
+    /// <p>The name of the component whose provisioned resources you want.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListComponentProvisionedResourcesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListComponentProvisionedResourcesInput");
+        formatter.field("component_name", &self.component_name);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListComponentOutputsInput {
+    /// <p>The name of the component whose outputs you want.</p>
+    pub component_name: std::option::Option<std::string::String>,
+    /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListComponentOutputsInput {
+    /// <p>The name of the component whose outputs you want.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListComponentOutputsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListComponentOutputsInput");
+        formatter.field("component_name", &self.component_name);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -14645,6 +16650,27 @@ impl std::fmt::Debug for CancelEnvironmentDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelEnvironmentDeploymentInput");
         formatter.field("environment_name", &self.environment_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelComponentDeploymentInput {
+    /// <p>The name of the component with the deployment to cancel.</p>
+    pub component_name: std::option::Option<std::string::String>,
+}
+impl CancelComponentDeploymentInput {
+    /// <p>The name of the component with the deployment to cancel.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+}
+impl std::fmt::Debug for CancelComponentDeploymentInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelComponentDeploymentInput");
+        formatter.field("component_name", &self.component_name);
         formatter.finish()
     }
 }

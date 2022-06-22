@@ -59,6 +59,26 @@ pub(crate) fn reflens_structure_crate_output_describe_source_servers_output_next
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_extensible_source_servers_output_next_token(
+    input: &crate::output::ListExtensibleSourceServersOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_staging_accounts_output_next_token(
+    input: &crate::output::ListStagingAccountsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_describe_job_log_items_output_items(
     input: crate::output::DescribeJobLogItemsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::JobLog>> {
@@ -113,6 +133,26 @@ pub(crate) fn lens_structure_crate_output_describe_source_servers_output_items(
     input: crate::output::DescribeSourceServersOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::SourceServer>> {
     let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_extensible_source_servers_output_items(
+    input: crate::output::ListExtensibleSourceServersOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::StagingSourceServer>> {
+    let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_staging_accounts_output_accounts(
+    input: crate::output::ListStagingAccountsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::Account>> {
+    let input = match input.accounts {
         None => return None,
         Some(t) => t,
     };

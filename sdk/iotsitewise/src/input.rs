@@ -1707,6 +1707,7 @@ pub mod create_asset_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) asset_description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A unique, friendly name for the asset.</p>
@@ -1767,6 +1768,19 @@ pub mod create_asset_input {
             self.tags = input;
             self
         }
+        /// <p>A description for the asset.</p>
+        pub fn asset_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_description = Some(input.into());
+            self
+        }
+        /// <p>A description for the asset.</p>
+        pub fn set_asset_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.asset_description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAssetInput`](crate::input::CreateAssetInput)
         pub fn build(
             self,
@@ -1779,6 +1793,7 @@ pub mod create_asset_input {
                 asset_model_id: self.asset_model_id,
                 client_token: self.client_token,
                 tags: self.tags,
+                asset_description: self.asset_description,
             })
         }
     }
@@ -10509,7 +10524,7 @@ pub mod put_storage_configuration_input {
         /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.storage_type = Some(input);
@@ -10518,7 +10533,7 @@ pub mod put_storage_configuration_input {
         /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_storage_type(
             mut self,
@@ -11291,6 +11306,7 @@ pub mod update_asset_input {
         pub(crate) asset_id: std::option::Option<std::string::String>,
         pub(crate) asset_name: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) asset_description: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the asset to update.</p>
@@ -11323,6 +11339,19 @@ pub mod update_asset_input {
             self.client_token = input;
             self
         }
+        /// <p>A description for the asset.</p>
+        pub fn asset_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_description = Some(input.into());
+            self
+        }
+        /// <p>A description for the asset.</p>
+        pub fn set_asset_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.asset_description = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAssetInput`](crate::input::UpdateAssetInput)
         pub fn build(
             self,
@@ -11334,6 +11363,7 @@ pub mod update_asset_input {
                 asset_id: self.asset_id,
                 asset_name: self.asset_name,
                 client_token: self.client_token,
+                asset_description: self.asset_description,
             })
         }
     }
@@ -13419,6 +13449,8 @@ pub struct UpdateAssetInput {
     pub asset_name: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>A description for the asset.</p>
+    pub asset_description: std::option::Option<std::string::String>,
 }
 impl UpdateAssetInput {
     /// <p>The ID of the asset to update.</p>
@@ -13433,6 +13465,10 @@ impl UpdateAssetInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>A description for the asset.</p>
+    pub fn asset_description(&self) -> std::option::Option<&str> {
+        self.asset_description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13440,6 +13476,7 @@ impl std::fmt::Debug for UpdateAssetInput {
         formatter.field("asset_id", &self.asset_id);
         formatter.field("asset_name", &self.asset_name);
         formatter.field("client_token", &self.client_token);
+        formatter.field("asset_description", &self.asset_description);
         formatter.finish()
     }
 }
@@ -13560,7 +13597,7 @@ pub struct PutStorageConfigurationInput {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
@@ -13582,7 +13619,7 @@ impl PutStorageConfigurationInput {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
     pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
         self.storage_type.as_ref()
@@ -15463,6 +15500,8 @@ pub struct CreateAssetInput {
     /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A description for the asset.</p>
+    pub asset_description: std::option::Option<std::string::String>,
 }
 impl CreateAssetInput {
     /// <p>A unique, friendly name for the asset.</p>
@@ -15484,6 +15523,10 @@ impl CreateAssetInput {
     {
         self.tags.as_ref()
     }
+    /// <p>A description for the asset.</p>
+    pub fn asset_description(&self) -> std::option::Option<&str> {
+        self.asset_description.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15492,6 +15535,7 @@ impl std::fmt::Debug for CreateAssetInput {
         formatter.field("asset_model_id", &self.asset_model_id);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
+        formatter.field("asset_description", &self.asset_description);
         formatter.finish()
     }
 }

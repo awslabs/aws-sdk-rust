@@ -1079,338 +1079,6 @@ impl AsRef<str> for ChannelMessageType {
     }
 }
 
-/// <p>The channel membership preferences for an <code>AppInstanceUser</code>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChannelMembershipPreferences {
-    /// <p>The push notification configuration of a message.</p>
-    pub push_notifications: std::option::Option<crate::model::PushNotificationPreferences>,
-}
-impl ChannelMembershipPreferences {
-    /// <p>The push notification configuration of a message.</p>
-    pub fn push_notifications(
-        &self,
-    ) -> std::option::Option<&crate::model::PushNotificationPreferences> {
-        self.push_notifications.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelMembershipPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelMembershipPreferences");
-        formatter.field("push_notifications", &self.push_notifications);
-        formatter.finish()
-    }
-}
-/// See [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
-pub mod channel_membership_preferences {
-
-    /// A builder for [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) push_notifications:
-            std::option::Option<crate::model::PushNotificationPreferences>,
-    }
-    impl Builder {
-        /// <p>The push notification configuration of a message.</p>
-        pub fn push_notifications(
-            mut self,
-            input: crate::model::PushNotificationPreferences,
-        ) -> Self {
-            self.push_notifications = Some(input);
-            self
-        }
-        /// <p>The push notification configuration of a message.</p>
-        pub fn set_push_notifications(
-            mut self,
-            input: std::option::Option<crate::model::PushNotificationPreferences>,
-        ) -> Self {
-            self.push_notifications = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
-        pub fn build(self) -> crate::model::ChannelMembershipPreferences {
-            crate::model::ChannelMembershipPreferences {
-                push_notifications: self.push_notifications,
-            }
-        }
-    }
-}
-impl ChannelMembershipPreferences {
-    /// Creates a new builder-style object to manufacture [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
-    pub fn builder() -> crate::model::channel_membership_preferences::Builder {
-        crate::model::channel_membership_preferences::Builder::default()
-    }
-}
-
-/// <p>The channel membership preferences for push notification.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PushNotificationPreferences {
-    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
-    pub allow_notifications: std::option::Option<crate::model::AllowNotifications>,
-    /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
-    pub filter_rule: std::option::Option<std::string::String>,
-}
-impl PushNotificationPreferences {
-    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
-    pub fn allow_notifications(&self) -> std::option::Option<&crate::model::AllowNotifications> {
-        self.allow_notifications.as_ref()
-    }
-    /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
-    pub fn filter_rule(&self) -> std::option::Option<&str> {
-        self.filter_rule.as_deref()
-    }
-}
-impl std::fmt::Debug for PushNotificationPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PushNotificationPreferences");
-        formatter.field("allow_notifications", &self.allow_notifications);
-        formatter.field("filter_rule", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
-    }
-}
-/// See [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
-pub mod push_notification_preferences {
-
-    /// A builder for [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) allow_notifications: std::option::Option<crate::model::AllowNotifications>,
-        pub(crate) filter_rule: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
-        pub fn allow_notifications(mut self, input: crate::model::AllowNotifications) -> Self {
-            self.allow_notifications = Some(input);
-            self
-        }
-        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
-        pub fn set_allow_notifications(
-            mut self,
-            input: std::option::Option<crate::model::AllowNotifications>,
-        ) -> Self {
-            self.allow_notifications = input;
-            self
-        }
-        /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
-        pub fn filter_rule(mut self, input: impl Into<std::string::String>) -> Self {
-            self.filter_rule = Some(input.into());
-            self
-        }
-        /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
-        pub fn set_filter_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.filter_rule = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
-        pub fn build(self) -> crate::model::PushNotificationPreferences {
-            crate::model::PushNotificationPreferences {
-                allow_notifications: self.allow_notifications,
-                filter_rule: self.filter_rule,
-            }
-        }
-    }
-}
-impl PushNotificationPreferences {
-    /// Creates a new builder-style object to manufacture [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
-    pub fn builder() -> crate::model::push_notification_preferences::Builder {
-        crate::model::push_notification_preferences::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum AllowNotifications {
-    #[allow(missing_docs)] // documentation missing in model
-    All,
-    #[allow(missing_docs)] // documentation missing in model
-    Filtered,
-    #[allow(missing_docs)] // documentation missing in model
-    None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for AllowNotifications {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL" => AllowNotifications::All,
-            "FILTERED" => AllowNotifications::Filtered,
-            "NONE" => AllowNotifications::None,
-            other => AllowNotifications::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for AllowNotifications {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AllowNotifications::from(s))
-    }
-}
-impl AllowNotifications {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AllowNotifications::All => "ALL",
-            AllowNotifications::Filtered => "FILTERED",
-            AllowNotifications::None => "NONE",
-            AllowNotifications::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["ALL", "FILTERED", "NONE"]
-    }
-}
-impl AsRef<str> for AllowNotifications {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>The details of a user.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Identity {
-    /// <p>The ARN in an Identity.</p>
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The name in an Identity.</p>
-    pub name: std::option::Option<std::string::String>,
-}
-impl Identity {
-    /// <p>The ARN in an Identity.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
-        self.arn.as_deref()
-    }
-    /// <p>The name in an Identity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for Identity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Identity");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
-    }
-}
-/// See [`Identity`](crate::model::Identity)
-pub mod identity {
-
-    /// A builder for [`Identity`](crate::model::Identity)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The ARN in an Identity.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        /// <p>The ARN in an Identity.</p>
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The name in an Identity.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>The name in an Identity.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Identity`](crate::model::Identity)
-        pub fn build(self) -> crate::model::Identity {
-            crate::model::Identity {
-                arn: self.arn,
-                name: self.name,
-            }
-        }
-    }
-}
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity)
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
-    }
-}
-
-/// <p>Summary of the details of a moderated channel.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChannelModeratedByAppInstanceUserSummary {
-    /// <p>Summary of the details of a <code>Channel</code>.</p>
-    pub channel_summary: std::option::Option<crate::model::ChannelSummary>,
-}
-impl ChannelModeratedByAppInstanceUserSummary {
-    /// <p>Summary of the details of a <code>Channel</code>.</p>
-    pub fn channel_summary(&self) -> std::option::Option<&crate::model::ChannelSummary> {
-        self.channel_summary.as_ref()
-    }
-}
-impl std::fmt::Debug for ChannelModeratedByAppInstanceUserSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChannelModeratedByAppInstanceUserSummary");
-        formatter.field("channel_summary", &self.channel_summary);
-        formatter.finish()
-    }
-}
-/// See [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
-pub mod channel_moderated_by_app_instance_user_summary {
-
-    /// A builder for [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) channel_summary: std::option::Option<crate::model::ChannelSummary>,
-    }
-    impl Builder {
-        /// <p>Summary of the details of a <code>Channel</code>.</p>
-        pub fn channel_summary(mut self, input: crate::model::ChannelSummary) -> Self {
-            self.channel_summary = Some(input);
-            self
-        }
-        /// <p>Summary of the details of a <code>Channel</code>.</p>
-        pub fn set_channel_summary(
-            mut self,
-            input: std::option::Option<crate::model::ChannelSummary>,
-        ) -> Self {
-            self.channel_summary = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
-        pub fn build(self) -> crate::model::ChannelModeratedByAppInstanceUserSummary {
-            crate::model::ChannelModeratedByAppInstanceUserSummary {
-                channel_summary: self.channel_summary,
-            }
-        }
-    }
-}
-impl ChannelModeratedByAppInstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
-    pub fn builder() -> crate::model::channel_moderated_by_app_instance_user_summary::Builder {
-        crate::model::channel_moderated_by_app_instance_user_summary::Builder::default()
-    }
-}
-
 /// <p>Summary of the details of a <code>Channel</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1619,6 +1287,557 @@ impl ChannelPrivacy {
 impl AsRef<str> for ChannelPrivacy {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>A <code>Field</code> of the channel that you want to search.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchField {
+    /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
+    pub key: std::option::Option<crate::model::SearchFieldKey>,
+    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
+    /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
+    /// </note>
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
+    pub operator: std::option::Option<crate::model::SearchFieldOperator>,
+}
+impl SearchField {
+    /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
+    pub fn key(&self) -> std::option::Option<&crate::model::SearchFieldKey> {
+        self.key.as_ref()
+    }
+    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
+    /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
+    /// </note>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::SearchFieldOperator> {
+        self.operator.as_ref()
+    }
+}
+impl std::fmt::Debug for SearchField {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchField");
+        formatter.field("key", &self.key);
+        formatter.field("values", &self.values);
+        formatter.field("operator", &self.operator);
+        formatter.finish()
+    }
+}
+/// See [`SearchField`](crate::model::SearchField)
+pub mod search_field {
+
+    /// A builder for [`SearchField`](crate::model::SearchField)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<crate::model::SearchFieldKey>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) operator: std::option::Option<crate::model::SearchFieldOperator>,
+    }
+    impl Builder {
+        /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
+        pub fn key(mut self, input: crate::model::SearchFieldKey) -> Self {
+            self.key = Some(input);
+            self
+        }
+        /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
+        pub fn set_key(mut self, input: std::option::Option<crate::model::SearchFieldKey>) -> Self {
+            self.key = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
+        /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
+        /// </note>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
+        /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
+        /// </note>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
+        pub fn operator(mut self, input: crate::model::SearchFieldOperator) -> Self {
+            self.operator = Some(input);
+            self
+        }
+        /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
+        pub fn set_operator(
+            mut self,
+            input: std::option::Option<crate::model::SearchFieldOperator>,
+        ) -> Self {
+            self.operator = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchField`](crate::model::SearchField)
+        pub fn build(self) -> crate::model::SearchField {
+            crate::model::SearchField {
+                key: self.key,
+                values: self.values,
+                operator: self.operator,
+            }
+        }
+    }
+}
+impl SearchField {
+    /// Creates a new builder-style object to manufacture [`SearchField`](crate::model::SearchField)
+    pub fn builder() -> crate::model::search_field::Builder {
+        crate::model::search_field::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SearchFieldOperator {
+    #[allow(missing_docs)] // documentation missing in model
+    Equals,
+    #[allow(missing_docs)] // documentation missing in model
+    Includes,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SearchFieldOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "EQUALS" => SearchFieldOperator::Equals,
+            "INCLUDES" => SearchFieldOperator::Includes,
+            other => SearchFieldOperator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SearchFieldOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SearchFieldOperator::from(s))
+    }
+}
+impl SearchFieldOperator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SearchFieldOperator::Equals => "EQUALS",
+            SearchFieldOperator::Includes => "INCLUDES",
+            SearchFieldOperator::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EQUALS", "INCLUDES"]
+    }
+}
+impl AsRef<str> for SearchFieldOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SearchFieldKey {
+    #[allow(missing_docs)] // documentation missing in model
+    Members,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SearchFieldKey {
+    fn from(s: &str) -> Self {
+        match s {
+            "MEMBERS" => SearchFieldKey::Members,
+            other => SearchFieldKey::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SearchFieldKey {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SearchFieldKey::from(s))
+    }
+}
+impl SearchFieldKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SearchFieldKey::Members => "MEMBERS",
+            SearchFieldKey::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["MEMBERS"]
+    }
+}
+impl AsRef<str> for SearchFieldKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The channel membership preferences for an <code>AppInstanceUser</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChannelMembershipPreferences {
+    /// <p>The push notification configuration of a message.</p>
+    pub push_notifications: std::option::Option<crate::model::PushNotificationPreferences>,
+}
+impl ChannelMembershipPreferences {
+    /// <p>The push notification configuration of a message.</p>
+    pub fn push_notifications(
+        &self,
+    ) -> std::option::Option<&crate::model::PushNotificationPreferences> {
+        self.push_notifications.as_ref()
+    }
+}
+impl std::fmt::Debug for ChannelMembershipPreferences {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChannelMembershipPreferences");
+        formatter.field("push_notifications", &self.push_notifications);
+        formatter.finish()
+    }
+}
+/// See [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+pub mod channel_membership_preferences {
+
+    /// A builder for [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) push_notifications:
+            std::option::Option<crate::model::PushNotificationPreferences>,
+    }
+    impl Builder {
+        /// <p>The push notification configuration of a message.</p>
+        pub fn push_notifications(
+            mut self,
+            input: crate::model::PushNotificationPreferences,
+        ) -> Self {
+            self.push_notifications = Some(input);
+            self
+        }
+        /// <p>The push notification configuration of a message.</p>
+        pub fn set_push_notifications(
+            mut self,
+            input: std::option::Option<crate::model::PushNotificationPreferences>,
+        ) -> Self {
+            self.push_notifications = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+        pub fn build(self) -> crate::model::ChannelMembershipPreferences {
+            crate::model::ChannelMembershipPreferences {
+                push_notifications: self.push_notifications,
+            }
+        }
+    }
+}
+impl ChannelMembershipPreferences {
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+    pub fn builder() -> crate::model::channel_membership_preferences::Builder {
+        crate::model::channel_membership_preferences::Builder::default()
+    }
+}
+
+/// <p>The channel membership preferences for push notification.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PushNotificationPreferences {
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
+    pub allow_notifications: std::option::Option<crate::model::AllowNotifications>,
+    /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
+    pub filter_rule: std::option::Option<std::string::String>,
+}
+impl PushNotificationPreferences {
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
+    pub fn allow_notifications(&self) -> std::option::Option<&crate::model::AllowNotifications> {
+        self.allow_notifications.as_ref()
+    }
+    /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
+    pub fn filter_rule(&self) -> std::option::Option<&str> {
+        self.filter_rule.as_deref()
+    }
+}
+impl std::fmt::Debug for PushNotificationPreferences {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PushNotificationPreferences");
+        formatter.field("allow_notifications", &self.allow_notifications);
+        formatter.field("filter_rule", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+pub mod push_notification_preferences {
+
+    /// A builder for [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) allow_notifications: std::option::Option<crate::model::AllowNotifications>,
+        pub(crate) filter_rule: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
+        pub fn allow_notifications(mut self, input: crate::model::AllowNotifications) -> Self {
+            self.allow_notifications = Some(input);
+            self
+        }
+        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
+        pub fn set_allow_notifications(
+            mut self,
+            input: std::option::Option<crate::model::AllowNotifications>,
+        ) -> Self {
+            self.allow_notifications = input;
+            self
+        }
+        /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
+        pub fn filter_rule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.filter_rule = Some(input.into());
+            self
+        }
+        /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
+        pub fn set_filter_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter_rule = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+        pub fn build(self) -> crate::model::PushNotificationPreferences {
+            crate::model::PushNotificationPreferences {
+                allow_notifications: self.allow_notifications,
+                filter_rule: self.filter_rule,
+            }
+        }
+    }
+}
+impl PushNotificationPreferences {
+    /// Creates a new builder-style object to manufacture [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+    pub fn builder() -> crate::model::push_notification_preferences::Builder {
+        crate::model::push_notification_preferences::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AllowNotifications {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Filtered,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AllowNotifications {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => AllowNotifications::All,
+            "FILTERED" => AllowNotifications::Filtered,
+            "NONE" => AllowNotifications::None,
+            other => AllowNotifications::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AllowNotifications {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AllowNotifications::from(s))
+    }
+}
+impl AllowNotifications {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AllowNotifications::All => "ALL",
+            AllowNotifications::Filtered => "FILTERED",
+            AllowNotifications::None => "NONE",
+            AllowNotifications::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "FILTERED", "NONE"]
+    }
+}
+impl AsRef<str> for AllowNotifications {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The details of a user.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Identity {
+    /// <p>The ARN in an Identity.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name in an Identity.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl Identity {
+    /// <p>The ARN in an Identity.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name in an Identity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for Identity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Identity");
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`Identity`](crate::model::Identity)
+pub mod identity {
+
+    /// A builder for [`Identity`](crate::model::Identity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN in an Identity.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN in an Identity.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name in an Identity.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name in an Identity.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Identity`](crate::model::Identity)
+        pub fn build(self) -> crate::model::Identity {
+            crate::model::Identity {
+                arn: self.arn,
+                name: self.name,
+            }
+        }
+    }
+}
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity)
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
+    }
+}
+
+/// <p>Summary of the details of a moderated channel.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChannelModeratedByAppInstanceUserSummary {
+    /// <p>Summary of the details of a <code>Channel</code>.</p>
+    pub channel_summary: std::option::Option<crate::model::ChannelSummary>,
+}
+impl ChannelModeratedByAppInstanceUserSummary {
+    /// <p>Summary of the details of a <code>Channel</code>.</p>
+    pub fn channel_summary(&self) -> std::option::Option<&crate::model::ChannelSummary> {
+        self.channel_summary.as_ref()
+    }
+}
+impl std::fmt::Debug for ChannelModeratedByAppInstanceUserSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChannelModeratedByAppInstanceUserSummary");
+        formatter.field("channel_summary", &self.channel_summary);
+        formatter.finish()
+    }
+}
+/// See [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
+pub mod channel_moderated_by_app_instance_user_summary {
+
+    /// A builder for [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_summary: std::option::Option<crate::model::ChannelSummary>,
+    }
+    impl Builder {
+        /// <p>Summary of the details of a <code>Channel</code>.</p>
+        pub fn channel_summary(mut self, input: crate::model::ChannelSummary) -> Self {
+            self.channel_summary = Some(input);
+            self
+        }
+        /// <p>Summary of the details of a <code>Channel</code>.</p>
+        pub fn set_channel_summary(
+            mut self,
+            input: std::option::Option<crate::model::ChannelSummary>,
+        ) -> Self {
+            self.channel_summary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
+        pub fn build(self) -> crate::model::ChannelModeratedByAppInstanceUserSummary {
+            crate::model::ChannelModeratedByAppInstanceUserSummary {
+                channel_summary: self.channel_summary,
+            }
+        }
+    }
+}
+impl ChannelModeratedByAppInstanceUserSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
+    pub fn builder() -> crate::model::channel_moderated_by_app_instance_user_summary::Builder {
+        crate::model::channel_moderated_by_app_instance_user_summary::Builder::default()
     }
 }
 
@@ -2245,7 +2464,7 @@ impl ChannelMembershipForAppInstanceUserSummary {
 pub struct AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
-    /// <p>The time at which a message was last read.</p>
+    /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
     pub read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AppInstanceUserMembershipSummary {
@@ -2253,7 +2472,7 @@ impl AppInstanceUserMembershipSummary {
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
         self.r#type.as_ref()
     }
-    /// <p>The time at which a message was last read.</p>
+    /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
     pub fn read_marker_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.read_marker_timestamp.as_ref()
     }
@@ -2290,12 +2509,12 @@ pub mod app_instance_user_membership_summary {
             self.r#type = input;
             self
         }
-        /// <p>The time at which a message was last read.</p>
+        /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
         pub fn read_marker_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.read_marker_timestamp = Some(input);
             self
         }
-        /// <p>The time at which a message was last read.</p>
+        /// <p>The time at which an <code>AppInstanceUser</code> last marked a channel as read.</p>
         pub fn set_read_marker_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

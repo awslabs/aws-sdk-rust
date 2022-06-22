@@ -95,9 +95,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_domain): <p>The name of the domain that contains the repository.</p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_repository): <p> The name of the repository to which the external connection is added. </p>
-    ///   - [`external_connection(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::external_connection) / [`set_external_connection(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_external_connection): <p> The name of the external connection to add to the repository. The following values are supported: </p>  <ul>   <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>   <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>   <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>   <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>   <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>   <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>  </ul>
+    ///   - [`external_connection(impl Into<String>)`](crate::client::fluent_builders::AssociateExternalConnection::external_connection) / [`set_external_connection(Option<String>)`](crate::client::fluent_builders::AssociateExternalConnection::set_external_connection): <p> The name of the external connection to add to the repository. The following values are supported: </p>  <ul>   <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>   <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>   <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>   <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>   <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>   <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>   <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>  </ul>
     /// - On success, responds with [`AssociateExternalConnectionOutput`](crate::output::AssociateExternalConnectionOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::output::AssociateExternalConnectionOutput::repository): <p> Information about the connected repository after processing the request. </p>
     /// - On failure, responds with [`SdkError<AssociateExternalConnectionError>`](crate::error::AssociateExternalConnectionError)
@@ -108,10 +108,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_domain): <p> The name of the domain that contains the source and destination repositories. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`source_repository(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::source_repository) / [`set_source_repository(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_source_repository): <p> The name of the repository that contains the package versions to copy. </p>
     ///   - [`destination_repository(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::destination_repository) / [`set_destination_repository(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_destination_repository): <p> The name of the repository into which package versions are copied. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::CopyPackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::CopyPackageVersions::set_format): <p> The format of the package that is copied. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::CopyPackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::CopyPackageVersions::set_format): <p> The format of the package that is copied. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::CopyPackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::CopyPackageVersions::set_package): <p> The name of the package that is copied. </p>
     ///   - [`versions(Vec<String>)`](crate::client::fluent_builders::CopyPackageVersions::versions) / [`set_versions(Option<Vec<String>>)`](crate::client::fluent_builders::CopyPackageVersions::set_versions): <p> The versions of the package to copy. </p> <note>   <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>  </note>
@@ -128,8 +128,8 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain): <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
-    ///   - [`encryption_key(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::encryption_key) / [`set_encryption_key(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_encryption_key): <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>   <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>  </important>
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain): <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+    ///   - [`encryption_key(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::encryption_key) / [`set_encryption_key(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_encryption_key): <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>   <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>  </important>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDomain::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomain::set_tags): <p>One or more tag key-value pairs for the domain.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
     ///   - [`domain(Option<DomainDescription>)`](crate::output::CreateDomainOutput::domain): <p> Contains information about the created domain after processing the request. </p>
@@ -141,10 +141,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_domain): <p> The name of the domain that contains the created repository. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_repository): <p> The name of the repository to create. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_description): <p> A description of the created repository. </p>
-    ///   - [`upstreams(Vec<UpstreamRepository>)`](crate::client::fluent_builders::CreateRepository::upstreams) / [`set_upstreams(Option<Vec<UpstreamRepository>>)`](crate::client::fluent_builders::CreateRepository::set_upstreams): <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    ///   - [`upstreams(Vec<UpstreamRepository>)`](crate::client::fluent_builders::CreateRepository::upstreams) / [`set_upstreams(Option<Vec<UpstreamRepository>>)`](crate::client::fluent_builders::CreateRepository::set_upstreams): <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRepository::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRepository::set_tags): <p>One or more tag key-value pairs for the repository.</p>
     /// - On success, responds with [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::output::CreateRepositoryOutput::repository): <p> Information about the created repository after processing the request. </p>
@@ -156,7 +156,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DeleteDomain::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DeleteDomain::set_domain): <p> The name of the domain to delete. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteDomain::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeleteDomain::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteDomain::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeleteDomain::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     /// - On success, responds with [`DeleteDomainOutput`](crate::output::DeleteDomainOutput) with field(s):
     ///   - [`domain(Option<DomainDescription>)`](crate::output::DeleteDomainOutput::domain): <p> Contains information about the deleted domain after processing the request. </p>
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::error::DeleteDomainError)
@@ -167,7 +167,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy::set_domain): <p> The name of the domain associated with the resource policy to be deleted. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`policy_revision(impl Into<String>)`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy::policy_revision) / [`set_policy_revision(Option<String>)`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy::set_policy_revision): <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
     /// - On success, responds with [`DeleteDomainPermissionsPolicyOutput`](crate::output::DeleteDomainPermissionsPolicyOutput) with field(s):
     ///   - [`policy(Option<ResourcePolicy>)`](crate::output::DeleteDomainPermissionsPolicyOutput::policy): <p> Information about the deleted resource policy after processing the request. </p>
@@ -181,15 +181,15 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_domain): <p> The name of the domain that contains the package to delete. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_repository): <p> The name of the repository that contains the package versions to delete. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DeletePackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DeletePackageVersions::set_format): <p> The format of the package versions to delete. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DeletePackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DeletePackageVersions::set_format): <p> The format of the package versions to delete. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::DeletePackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::DeletePackageVersions::set_package): <p> The name of the package with the versions to delete. </p>
     ///   - [`versions(Vec<String>)`](crate::client::fluent_builders::DeletePackageVersions::versions) / [`set_versions(Option<Vec<String>>)`](crate::client::fluent_builders::DeletePackageVersions::set_versions): <p> An array of strings that specify the versions of the package to delete. </p>
-    ///   - [`expected_status(PackageVersionStatus)`](crate::client::fluent_builders::DeletePackageVersions::expected_status) / [`set_expected_status(Option<PackageVersionStatus>)`](crate::client::fluent_builders::DeletePackageVersions::set_expected_status): <p> The expected status of the package version to delete. Valid values are: </p>  <ul>   <li> <p> <code>Published</code> </p> </li>   <li> <p> <code>Unfinished</code> </p> </li>   <li> <p> <code>Unlisted</code> </p> </li>   <li> <p> <code>Archived</code> </p> </li>   <li> <p> <code>Disposed</code> </p> </li>  </ul>
+    ///   - [`expected_status(PackageVersionStatus)`](crate::client::fluent_builders::DeletePackageVersions::expected_status) / [`set_expected_status(Option<PackageVersionStatus>)`](crate::client::fluent_builders::DeletePackageVersions::set_expected_status): <p> The expected status of the package version to delete. </p>
     /// - On success, responds with [`DeletePackageVersionsOutput`](crate::output::DeletePackageVersionsOutput) with field(s):
-    ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::output::DeletePackageVersionsOutput::successful_versions): <p> A list of the package versions that were successfully deleted. </p>
+    ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::output::DeletePackageVersionsOutput::successful_versions): <p> A list of the package versions that were successfully deleted. The status of every successful version will be <code>Deleted</code>. </p>
     ///   - [`failed_versions(Option<HashMap<String, PackageVersionError>>)`](crate::output::DeletePackageVersionsOutput::failed_versions): <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the deleted package that failed. The possible error codes are: </p>  <ul>   <li> <p> <code>ALREADY_EXISTS</code> </p> </li>   <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>   <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>   <li> <p> <code>NOT_ALLOWED</code> </p> </li>   <li> <p> <code>NOT_FOUND</code> </p> </li>   <li> <p> <code>SKIPPED</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DeletePackageVersionsError>`](crate::error::DeletePackageVersionsError)
     pub fn delete_package_versions(&self) -> fluent_builders::DeletePackageVersions {
@@ -199,7 +199,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DeleteRepository::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DeleteRepository::set_domain): <p> The name of the domain that contains the repository to delete. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteRepository::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeleteRepository::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteRepository::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeleteRepository::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DeleteRepository::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DeleteRepository::set_repository): <p> The name of the repository to delete. </p>
     /// - On success, responds with [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::output::DeleteRepositoryOutput::repository): <p> Information about the deleted repository after processing the request. </p>
@@ -211,7 +211,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::set_domain): <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::set_repository): <p> The name of the repository that is associated with the resource policy to be deleted </p>
     ///   - [`policy_revision(impl Into<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::policy_revision) / [`set_policy_revision(Option<String>)`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy::set_policy_revision): <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
     /// - On success, responds with [`DeleteRepositoryPermissionsPolicyOutput`](crate::output::DeleteRepositoryPermissionsPolicyOutput) with field(s):
@@ -226,7 +226,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DescribeDomain::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DescribeDomain::set_domain): <p> A string that specifies the name of the requested domain. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeDomain::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DescribeDomain::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeDomain::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DescribeDomain::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     /// - On success, responds with [`DescribeDomainOutput`](crate::output::DescribeDomainOutput) with field(s):
     ///   - [`domain(Option<DomainDescription>)`](crate::output::DescribeDomainOutput::domain): <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::error::DescribeDomainError)
@@ -237,9 +237,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_domain): <p> The name of the domain that contains the repository that contains the package version. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_repository): <p> The name of the repository that contains the package version. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DescribePackageVersion::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DescribePackageVersion::set_format): <p> A format that specifies the type of the requested package version. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DescribePackageVersion::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DescribePackageVersion::set_format): <p> A format that specifies the type of the requested package version. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_package): <p> The name of the requested package version. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::DescribePackageVersion::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::DescribePackageVersion::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
@@ -253,7 +253,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DescribeRepository::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DescribeRepository::set_domain): <p> The name of the domain that contains the repository to describe. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeRepository::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DescribeRepository::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeRepository::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DescribeRepository::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DescribeRepository::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DescribeRepository::set_repository): <p> A string that specifies the name of the requested repository. </p>
     /// - On success, responds with [`DescribeRepositoryOutput`](crate::output::DescribeRepositoryOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::output::DescribeRepositoryOutput::repository): <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
@@ -265,7 +265,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::set_domain): <p>The name of the domain that contains the repository from which to remove the external repository. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::set_repository): <p>The name of the repository from which the external connection will be removed. </p>
     ///   - [`external_connection(impl Into<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::external_connection) / [`set_external_connection(Option<String>)`](crate::client::fluent_builders::DisassociateExternalConnection::set_external_connection): <p>The name of the external connection to be removed from the repository. </p>
     /// - On success, responds with [`DisassociateExternalConnectionOutput`](crate::output::DisassociateExternalConnectionOutput) with field(s):
@@ -280,14 +280,14 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_domain): <p> The name of the domain that contains the repository you want to dispose. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_repository): <p> The name of the repository that contains the package versions you want to dispose. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DisposePackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DisposePackageVersions::set_format): <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::DisposePackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::DisposePackageVersions::set_format): <p> A format that specifies the type of package versions you want to dispose. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::DisposePackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::DisposePackageVersions::set_package): <p> The name of the package with the versions you want to dispose. </p>
     ///   - [`versions(Vec<String>)`](crate::client::fluent_builders::DisposePackageVersions::versions) / [`set_versions(Option<Vec<String>>)`](crate::client::fluent_builders::DisposePackageVersions::set_versions): <p> The versions of the package you want to dispose. </p>
     ///   - [`version_revisions(HashMap<String, String>)`](crate::client::fluent_builders::DisposePackageVersions::version_revisions) / [`set_version_revisions(Option<HashMap<String, String>>)`](crate::client::fluent_builders::DisposePackageVersions::set_version_revisions): <p> The revisions of the package versions you want to dispose. </p>
-    ///   - [`expected_status(PackageVersionStatus)`](crate::client::fluent_builders::DisposePackageVersions::expected_status) / [`set_expected_status(Option<PackageVersionStatus>)`](crate::client::fluent_builders::DisposePackageVersions::set_expected_status): <p> The expected status of the package version to dispose. Valid values are: </p>  <ul>   <li> <p> <code>Published</code> </p> </li>   <li> <p> <code>Unfinished</code> </p> </li>   <li> <p> <code>Unlisted</code> </p> </li>   <li> <p> <code>Archived</code> </p> </li>   <li> <p> <code>Disposed</code> </p> </li>  </ul>
+    ///   - [`expected_status(PackageVersionStatus)`](crate::client::fluent_builders::DisposePackageVersions::expected_status) / [`set_expected_status(Option<PackageVersionStatus>)`](crate::client::fluent_builders::DisposePackageVersions::set_expected_status): <p> The expected status of the package version to dispose. </p>
     /// - On success, responds with [`DisposePackageVersionsOutput`](crate::output::DisposePackageVersionsOutput) with field(s):
     ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::output::DisposePackageVersionsOutput::successful_versions): <p> A list of the package versions that were successfully disposed. </p>
     ///   - [`failed_versions(Option<HashMap<String, PackageVersionError>>)`](crate::output::DisposePackageVersionsOutput::failed_versions): <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>  <ul>   <li> <p> <code>ALREADY_EXISTS</code> </p> </li>   <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>   <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>   <li> <p> <code>NOT_ALLOWED</code> </p> </li>   <li> <p> <code>NOT_FOUND</code> </p> </li>   <li> <p> <code>SKIPPED</code> </p> </li>  </ul>
@@ -299,7 +299,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetAuthorizationToken::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetAuthorizationToken::set_domain): <p> The name of the domain that is in scope for the generated authorization token. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetAuthorizationToken::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetAuthorizationToken::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetAuthorizationToken::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetAuthorizationToken::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`duration_seconds(i64)`](crate::client::fluent_builders::GetAuthorizationToken::duration_seconds) / [`set_duration_seconds(Option<i64>)`](crate::client::fluent_builders::GetAuthorizationToken::set_duration_seconds): <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
     /// - On success, responds with [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput) with field(s):
     ///   - [`authorization_token(Option<String>)`](crate::output::GetAuthorizationTokenOutput::authorization_token): <p> The returned authentication token. </p>
@@ -312,7 +312,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetDomainPermissionsPolicy::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetDomainPermissionsPolicy::set_domain): <p> The name of the domain to which the resource policy is attached. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetDomainPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetDomainPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetDomainPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetDomainPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     /// - On success, responds with [`GetDomainPermissionsPolicyOutput`](crate::output::GetDomainPermissionsPolicyOutput) with field(s):
     ///   - [`policy(Option<ResourcePolicy>)`](crate::output::GetDomainPermissionsPolicyOutput::policy): <p> The returned resource policy. </p>
     /// - On failure, responds with [`SdkError<GetDomainPermissionsPolicyError>`](crate::error::GetDomainPermissionsPolicyError)
@@ -323,9 +323,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_domain): <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_repository): <p> The repository that contains the package version with the requested asset. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetPackageVersionAsset::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_format): <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetPackageVersionAsset::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_format): <p> A format that specifies the type of the package version with the requested asset file. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_package): <p> The name of the package that contains the requested asset. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::GetPackageVersionAsset::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
@@ -344,14 +344,14 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_domain): <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_repository): <p> The repository that contains the package with the requested readme file. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetPackageVersionReadme::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_format): <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetPackageVersionReadme::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_format): <p> A format that specifies the type of the package version with the requested readme file. </p> <note>   <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>  </note>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_package): <p> The name of the package version that contains the requested readme file. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::GetPackageVersionReadme::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     /// - On success, responds with [`GetPackageVersionReadmeOutput`](crate::output::GetPackageVersionReadmeOutput) with field(s):
-    ///   - [`format(Option<PackageFormat>)`](crate::output::GetPackageVersionReadmeOutput::format): <p> The format of the package with the requested readme file. Valid format types are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(Option<PackageFormat>)`](crate::output::GetPackageVersionReadmeOutput::format): <p> The format of the package with the requested readme file. </p>
     ///   - [`namespace(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::package): <p> The name of the package that contains the returned readme file. </p>
     ///   - [`version(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::version): <p> The version of the package with the requested readme file. </p>
@@ -365,9 +365,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryEndpoint::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetRepositoryEndpoint::set_domain): <p> The name of the domain that contains the repository. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryEndpoint::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetRepositoryEndpoint::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryEndpoint::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetRepositoryEndpoint::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryEndpoint::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::GetRepositoryEndpoint::set_repository): <p> The name of the repository. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetRepositoryEndpoint::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetRepositoryEndpoint::set_format): <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::GetRepositoryEndpoint::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::GetRepositoryEndpoint::set_format): <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
     /// - On success, responds with [`GetRepositoryEndpointOutput`](crate::output::GetRepositoryEndpointOutput) with field(s):
     ///   - [`repository_endpoint(Option<String>)`](crate::output::GetRepositoryEndpointOutput::repository_endpoint): <p> A string that specifies the URL of the returned endpoint. </p>
     /// - On failure, responds with [`SdkError<GetRepositoryEndpointError>`](crate::error::GetRepositoryEndpointError)
@@ -378,7 +378,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy::set_domain): <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy::set_repository): <p> The name of the repository whose associated resource policy is to be retrieved. </p>
     /// - On success, responds with [`GetRepositoryPermissionsPolicyOutput`](crate::output::GetRepositoryPermissionsPolicyOutput) with field(s):
     ///   - [`policy(Option<ResourcePolicy>)`](crate::output::GetRepositoryPermissionsPolicyOutput::policy): <p> The returned resource policy. </p>
@@ -406,9 +406,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListPackages::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListPackages::set_domain): <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackages::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackages::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackages::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackages::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackages::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackages::set_repository): <p> The name of the repository from which packages are to be listed. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackages::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackages::set_format): <p> The format of the packages. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackages::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackages::set_format): <p> The format of the packages. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackages::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackages::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPackages::package_prefix) / [`set_package_prefix(Option<String>)`](crate::client::fluent_builders::ListPackages::set_package_prefix): <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPackages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPackages::set_max_results): <p> The maximum number of results to return per page. </p>
@@ -425,9 +425,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_domain): <p> The name of the domain that contains the repository associated with the package version assets. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_repository): <p> The name of the repository that contains the package that contains the returned package version assets. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersionAssets::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_format): <p> The format of the package that contains the returned package version assets. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersionAssets::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_format): <p> The format of the package that contains the returned package version assets. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_package): <p> The name of the package that contains the returned package version assets. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::ListPackageVersionAssets::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
@@ -449,15 +449,15 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_domain): <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_repository): <p> The name of the repository that contains the requested package version. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersionDependencies::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_format): <p> The format of the package with the requested dependencies. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersionDependencies::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_format): <p> The format of the package with the requested dependencies. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_package): <p> The name of the package versions' package. </p>
     ///   - [`package_version(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::package_version) / [`set_package_version(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPackageVersionDependencies::set_next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     /// - On success, responds with [`ListPackageVersionDependenciesOutput`](crate::output::ListPackageVersionDependenciesOutput) with field(s):
-    ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionDependenciesOutput::format): <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionDependenciesOutput::format): <p> A format that specifies the type of the package that contains the returned dependencies. </p>
     ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::package): <p> The name of the package that contains the returned package versions dependencies. </p>
     ///   - [`version(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::version): <p> The version of the package that is specified in the request. </p>
@@ -475,18 +475,18 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_domain): <p> The name of the domain that contains the repository that contains the returned package versions. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_repository): <p> The name of the repository that contains the package. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersions::set_format): <p> The format of the returned packages. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::ListPackageVersions::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::ListPackageVersions::set_format): <p> The format of the returned packages. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_package): <p> The name of the package for which you want to return a list of package versions. </p>
-    ///   - [`status(PackageVersionStatus)`](crate::client::fluent_builders::ListPackageVersions::status) / [`set_status(Option<PackageVersionStatus>)`](crate::client::fluent_builders::ListPackageVersions::set_status): <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>  <ul>   <li> <p> <code>Published</code> </p> </li>   <li> <p> <code>Unfinished</code> </p> </li>   <li> <p> <code>Unlisted</code> </p> </li>   <li> <p> <code>Archived</code> </p> </li>   <li> <p> <code>Disposed</code> </p> </li>  </ul>
+    ///   - [`status(PackageVersionStatus)`](crate::client::fluent_builders::ListPackageVersions::status) / [`set_status(Option<PackageVersionStatus>)`](crate::client::fluent_builders::ListPackageVersions::set_status): <p> A string that specifies the status of the package versions to include in the returned list. </p>
     ///   - [`sort_by(PackageVersionSortType)`](crate::client::fluent_builders::ListPackageVersions::sort_by) / [`set_sort_by(Option<PackageVersionSortType>)`](crate::client::fluent_builders::ListPackageVersions::set_sort_by): <p> How to sort the returned list of package versions. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPackageVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPackageVersions::set_max_results): <p> The maximum number of results to return per page. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPackageVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPackageVersions::set_next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     /// - On success, responds with [`ListPackageVersionsOutput`](crate::output::ListPackageVersionsOutput) with field(s):
     ///   - [`default_display_version(Option<String>)`](crate::output::ListPackageVersionsOutput::default_display_version): <p> The default package version to display. This depends on the package format: </p>  <ul>   <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>   <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>  </ul>
-    ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionsOutput::format): <p> A format of the package. Valid package format values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionsOutput::format): <p> A format of the package. </p>
     ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionsOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(Option<String>)`](crate::output::ListPackageVersionsOutput::package): <p> The name of the package. </p>
     ///   - [`versions(Option<Vec<PackageVersionSummary>>)`](crate::output::ListPackageVersionsOutput::versions): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
@@ -514,8 +514,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::set_domain): <p> The name of the domain that contains the returned list of repositories. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
-    ///   - [`administrator_account(impl Into<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::administrator_account) / [`set_administrator_account(Option<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::set_administrator_account): <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`administrator_account(impl Into<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::administrator_account) / [`set_administrator_account(Option<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::set_administrator_account): <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
     ///   - [`repository_prefix(impl Into<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::repository_prefix) / [`set_repository_prefix(Option<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::set_repository_prefix): <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRepositoriesInDomain::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRepositoriesInDomain::set_max_results): <p> The maximum number of results to return per page. </p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRepositoriesInDomain::set_next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
@@ -540,7 +540,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::set_domain): <p> The name of the domain on which to set the resource policy. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`policy_revision(impl Into<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::policy_revision) / [`set_policy_revision(Option<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::set_policy_revision): <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
     ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutDomainPermissionsPolicy::set_policy_document): <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
     /// - On success, responds with [`PutDomainPermissionsPolicyOutput`](crate::output::PutDomainPermissionsPolicyOutput) with field(s):
@@ -553,7 +553,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::set_domain): <p> The name of the domain containing the repository to set the resource policy on. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::set_repository): <p> The name of the repository to set the resource policy on. </p>
     ///   - [`policy_revision(impl Into<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::policy_revision) / [`set_policy_revision(Option<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::set_policy_revision): <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
     ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy::set_policy_document): <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
@@ -591,9 +591,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_domain): <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_repository): <p> The repository that contains the package versions with the status you want to update. </p>
-    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_format): <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`format(PackageFormat)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::format) / [`set_format(Option<PackageFormat>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_format): <p> A format that specifies the type of the package with the statuses to update. </p>
     ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
     ///   - [`package(impl Into<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::package) / [`set_package(Option<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_package): <p> The name of the package with the version statuses to update. </p>
     ///   - [`versions(Vec<String>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::versions) / [`set_versions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdatePackageVersionsStatus::set_versions): <p> An array of strings that specify the versions of the package with the statuses to update. </p>
@@ -611,10 +611,10 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::UpdateRepository::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::UpdateRepository::set_domain): <p> The name of the domain associated with the repository to update. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateRepository::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::UpdateRepository::set_domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateRepository::domain_owner) / [`set_domain_owner(Option<String>)`](crate::client::fluent_builders::UpdateRepository::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     ///   - [`repository(impl Into<String>)`](crate::client::fluent_builders::UpdateRepository::repository) / [`set_repository(Option<String>)`](crate::client::fluent_builders::UpdateRepository::set_repository): <p> The name of the repository to update. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRepository::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRepository::set_description): <p> An updated repository description. </p>
-    ///   - [`upstreams(Vec<UpstreamRepository>)`](crate::client::fluent_builders::UpdateRepository::upstreams) / [`set_upstreams(Option<Vec<UpstreamRepository>>)`](crate::client::fluent_builders::UpdateRepository::set_upstreams): <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    ///   - [`upstreams(Vec<UpstreamRepository>)`](crate::client::fluent_builders::UpdateRepository::upstreams) / [`set_upstreams(Option<Vec<UpstreamRepository>>)`](crate::client::fluent_builders::UpdateRepository::set_upstreams): <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
     /// - On success, responds with [`UpdateRepositoryOutput`](crate::output::UpdateRepositoryOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::output::UpdateRepositoryOutput::repository): <p> The updated repository. </p>
     /// - On failure, responds with [`SdkError<UpdateRepositoryError>`](crate::error::UpdateRepositoryError)
@@ -683,12 +683,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -706,6 +706,7 @@ pub mod fluent_builders {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -719,6 +720,7 @@ pub mod fluent_builders {
         /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
         /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li>
         /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
         /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
         /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
@@ -787,12 +789,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -823,22 +825,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_repository(input);
             self
         }
-        /// <p> The format of the package that is copied. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package that is copied. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the package that is copied. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package that is copied. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -947,7 +939,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
-    /// <p> Creates a domain. CodeArtifact <i>domains</i> make it easier to manage multiple repositories across an organization. You can use a domain to apply permissions across many repositories owned by different AWS accounts. An asset is stored only once in a domain, even if it's in multiple repositories. </p>
+    /// <p> Creates a domain. CodeArtifact <i>domains</i> make it easier to manage multiple repositories across an organization. You can use a domain to apply permissions across many repositories owned by different Amazon Web Services accounts. An asset is stored only once in a domain, even if it's in multiple repositories. </p>
     /// <p>Although you can have multiple domains, we recommend a single production domain that contains all published artifacts so that your development teams can find and share packages. You can use a second pre-production domain to test changes to the production domain configuration. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain {
@@ -988,25 +980,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+        /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+        /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
-        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
         /// </important>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.encryption_key(input.into());
             self
         }
-        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
-        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
         /// </important>
         pub fn set_encryption_key(
             mut self,
@@ -1085,12 +1077,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1119,12 +1111,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_upstreams`](Self::set_upstreams).
         ///
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
             self.inner = self.inner.upstreams(input);
             self
         }
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn set_upstreams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
@@ -1202,12 +1194,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1265,12 +1257,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1341,12 +1333,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1361,22 +1353,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The format of the package versions to delete. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> The format of the package versions to delete. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the package versions to delete. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> The format of the package versions to delete. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -1431,26 +1413,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_versions(input);
             self
         }
-        /// <p> The expected status of the package version to delete. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> The expected status of the package version to delete. </p>
         pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
             self.inner = self.inner.expected_status(input);
             self
         }
-        /// <p> The expected status of the package version to delete. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> The expected status of the package version to delete. </p>
         pub fn set_expected_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -1511,12 +1479,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1535,7 +1503,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRepositoryPermissionsPolicy`.
     ///
     /// <p> Deletes the resource policy that is set on a repository. After a resource policy is deleted, the permissions allowed and denied by the deleted policy are removed. The effect of deleting a resource policy might not be immediate. </p> <important>
-    /// <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted, AWS users, roles, and accounts lose permissions to perform the repository actions granted by the deleted policy. </p>
+    /// <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted, Amazon Web Services users, roles, and accounts lose permissions to perform the repository actions granted by the deleted policy. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRepositoryPermissionsPolicy {
@@ -1586,12 +1554,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1672,12 +1640,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1735,12 +1703,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1755,22 +1723,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> A format that specifies the type of the requested package version. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the requested package version. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> A format that specifies the type of the requested package version. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the requested package version. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -1874,12 +1832,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1947,12 +1905,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2035,12 +1993,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2055,22 +2013,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of package versions you want to dispose. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of package versions you want to dispose. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -2148,26 +2096,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_revisions(input);
             self
         }
-        /// <p> The expected status of the package version to dispose. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> The expected status of the package version to dispose. </p>
         pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
             self.inner = self.inner.expected_status(input);
             self
         }
-        /// <p> The expected status of the package version to dispose. Valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> The expected status of the package version to dispose. </p>
         pub fn set_expected_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -2178,7 +2112,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAuthorizationToken`.
     ///
-    /// <p> Generates a temporary authorization token for accessing repositories in the domain. This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS CodeArtifact authentication and tokens</a>. </p> <note>
+    /// <p> Generates a temporary authorization token for accessing repositories in the domain. This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact authentication and tokens</a>. </p> <note>
     /// <p>CodeArtifact authorization tokens are valid for a period of 12 hours when created with the <code>login</code> command. You can call <code>login</code> periodically to refresh the token. When you create an authorization token with the <code>GetAuthorizationToken</code> API, you can set a custom authorization period, up to a maximum of 12 hours, with the <code>durationSeconds</code> parameter.</p>
     /// <p>The authorization period begins after <code>login</code> or <code>GetAuthorizationToken</code> is called. If <code>login</code> or <code>GetAuthorizationToken</code> is called while assuming a role, the token lifetime is independent of the maximum session duration of the role. For example, if you call <code>sts assume-role</code> and specify a session duration of 15 minutes, then generate a CodeArtifact authorization token, the token will be valid for the full authorization period even though this is longer than the 15-minute session duration.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> for more information on controlling session duration. </p>
@@ -2232,12 +2166,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2256,7 +2190,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomainPermissionsPolicy`.
     ///
     /// <p> Returns the resource policy attached to the specified domain. </p> <note>
-    /// <p> The policy is a resource-based policy, not an identity-based policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies </a> in the <i>AWS Identity and Access Management User Guide</i>. </p>
+    /// <p> The policy is a resource-based policy, not an identity-based policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies </a> in the <i>IAM User Guide</i>. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainPermissionsPolicy {
@@ -2307,12 +2241,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2370,12 +2304,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2390,22 +2324,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package version with the requested asset file. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package version with the requested asset file. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -2482,8 +2406,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPackageVersionReadme`.
     ///
-    /// <p> Gets the readme file or descriptive text for a package version. For packages that do not contain a readme file, CodeArtifact extracts a description from a metadata file. For example, from the <code>
-    /// <description></description></code> element in the <code>pom.xml</code> file of a Maven package. </p>
+    /// <p> Gets the readme file or descriptive text for a package version. </p>
     /// <p> The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPackageVersionReadme {
@@ -2534,12 +2457,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2554,22 +2477,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+        /// </note>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package version with the requested readme file. </p> <note>
+        /// <p>Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for Maven packages.</p>
+        /// </note>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -2625,9 +2542,10 @@ pub mod fluent_builders {
     ///
     /// <p> Returns the endpoint of a repository for a specific package format. A repository has one endpoint for each package format: </p>
     /// <ul>
-    /// <li> <p> <code>npm</code> </p> </li>
-    /// <li> <p> <code>pypi</code> </p> </li>
     /// <li> <p> <code>maven</code> </p> </li>
+    /// <li> <p> <code>npm</code> </p> </li>
+    /// <li> <p> <code>nuget</code> </p> </li>
+    /// <li> <p> <code>pypi</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepositoryEndpoint {
@@ -2678,12 +2596,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2698,22 +2616,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -2774,12 +2682,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2797,7 +2705,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDomains`.
     ///
-    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a> objects for all domains owned by the AWS account that makes this call. Each returned <code>DomainSummary</code> object contains information about a domain. </p>
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a> objects for all domains owned by the Amazon Web Services account that makes this call. Each returned <code>DomainSummary</code> object contains information about a domain. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains {
         handle: std::sync::Arc<super::Handle>,
@@ -2922,12 +2830,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2942,22 +2850,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The format of the packages. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the packages. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the packages. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the packages. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3077,12 +2975,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -3097,22 +2995,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The format of the package that contains the returned package version assets. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package that contains the returned package version assets. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the package that contains the returned package version assets. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package that contains the returned package version assets. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3236,12 +3124,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -3256,22 +3144,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The format of the package with the requested dependencies. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package with the requested dependencies. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the package with the requested dependencies. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the package with the requested dependencies. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3391,12 +3269,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -3411,22 +3289,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The format of the returned packages. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the returned packages. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> The format of the returned packages. The valid package types are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// </ul>
+        /// <p> The format of the returned packages. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -3464,26 +3332,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package(input);
             self
         }
-        /// <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
         pub fn status(mut self, input: crate::model::PackageVersionStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>
-        /// <ul>
-        /// <li> <p> <code>Published</code> </p> </li>
-        /// <li> <p> <code>Unfinished</code> </p> </li>
-        /// <li> <p> <code>Unlisted</code> </p> </li>
-        /// <li> <p> <code>Archived</code> </p> </li>
-        /// <li> <p> <code>Disposed</code> </p> </li>
-        /// </ul>
+        /// <p> A string that specifies the status of the package versions to include in the returned list. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -3527,7 +3381,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRepositories`.
     ///
-    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified AWS account and that matches the input parameters. </p>
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified Amazon Web Services account and that matches the input parameters. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositories {
         handle: std::sync::Arc<super::Handle>,
@@ -3665,22 +3519,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
+        /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
         pub fn administrator_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.administrator_account(input.into());
             self
         }
-        /// <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
+        /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
         pub fn set_administrator_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3724,7 +3578,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeArtifact.</p>
+    /// <p>Gets information about Amazon Web Services tags for a specified Amazon Resource Name (ARN) in CodeArtifact.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3828,12 +3682,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -3918,12 +3772,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -3967,7 +3821,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds or updates tags for a resource in AWS CodeArtifact.</p>
+    /// <p>Adds or updates tags for a resource in CodeArtifact.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -4037,7 +3891,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes tags from a resource in AWS CodeArtifact.</p>
+    /// <p>Removes tags from a resource in CodeArtifact.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -4107,7 +3961,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePackageVersionsStatus`.
     ///
-    /// <p> Updates the status of one or more versions of a package. </p>
+    /// <p> Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>, you can update the status of package versions to <code>Archived</code>, <code>Published</code>, or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePackageVersionsStatus {
         handle: std::sync::Arc<super::Handle>,
@@ -4157,12 +4011,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -4177,22 +4031,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package with the statuses to update. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code> </p> </li>
-        /// <li> <p> <code>pypi</code> </p> </li>
-        /// <li> <p> <code>maven</code> </p> </li>
-        /// </ul>
+        /// <p> A format that specifies the type of the package with the statuses to update. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -4349,12 +4193,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -4383,12 +4227,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_upstreams`](Self::set_upstreams).
         ///
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
             self.inner = self.inner.upstreams(input);
             self
         }
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn set_upstreams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,

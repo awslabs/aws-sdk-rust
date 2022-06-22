@@ -318,6 +318,25 @@ pub fn parse_delete_fraudster_error(
                 tmp
             }),
         },
+        "ConflictException" => {
+            crate::error::DeleteFraudsterError {
+                meta: generic,
+                kind: crate::error::DeleteFraudsterErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFraudsterError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::DeleteFraudsterError {
             meta: generic,
             kind: crate::error::DeleteFraudsterErrorKind::InternalServerException({
@@ -1190,6 +1209,25 @@ pub fn parse_evaluate_session_error(
                 tmp
             }),
         },
+        "ConflictException" => {
+            crate::error::EvaluateSessionError {
+                meta: generic,
+                kind: crate::error::EvaluateSessionErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluateSessionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::EvaluateSessionError {
             meta: generic,
             kind: crate::error::EvaluateSessionErrorKind::InternalServerException({

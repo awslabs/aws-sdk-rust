@@ -3,7 +3,7 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-The Amazon Web Services Budgets API enables you to use Amazon Web Services Budgets to plan your service usage, service costs, and instance reservations. The API reference provides descriptions, syntax, and usage examples for each of the actions and data types for Amazon Web Services Budgets.
+Use the Amazon Web Services Budgets API to plan your service usage, service costs, and instance reservations. This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for the Amazon Web Services Budgets feature.
 
 Budgets provide you with a way to see the following information:
   - How close your plan is to your budgeted amount or to the free tier limits
@@ -35,8 +35,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.13.0"
-aws-sdk-budgets = "0.13.0"
+aws-config = "0.14.0"
+aws-sdk-budgets = "0.14.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -697,6 +697,443 @@ impl DescribeEventSubscriptionsPaginator {
     }
 }
 
+/// Paginator for [`DescribeFleetAdvisorCollectors`](crate::operation::DescribeFleetAdvisorCollectors)
+pub struct DescribeFleetAdvisorCollectorsPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::describe_fleet_advisor_collectors_input::Builder,
+}
+
+impl DescribeFleetAdvisorCollectorsPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::describe_fleet_advisor_collectors_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_records`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_records = Some(limit);
+        self
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::DescribeFleetAdvisorCollectorsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorCollectorsError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_collectors_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
+/// Paginator for [`DescribeFleetAdvisorDatabases`](crate::operation::DescribeFleetAdvisorDatabases)
+pub struct DescribeFleetAdvisorDatabasesPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::describe_fleet_advisor_databases_input::Builder,
+}
+
+impl DescribeFleetAdvisorDatabasesPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::describe_fleet_advisor_databases_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_records`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_records = Some(limit);
+        self
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::DescribeFleetAdvisorDatabasesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorDatabasesError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_databases_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
+/// Paginator for [`DescribeFleetAdvisorLsaAnalysis`](crate::operation::DescribeFleetAdvisorLsaAnalysis)
+pub struct DescribeFleetAdvisorLsaAnalysisPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::describe_fleet_advisor_lsa_analysis_input::Builder,
+}
+
+impl DescribeFleetAdvisorLsaAnalysisPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::describe_fleet_advisor_lsa_analysis_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_records`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_records = Some(limit);
+        self
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::DescribeFleetAdvisorLsaAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorLsaAnalysisError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_lsa_analysis_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
+/// Paginator for [`DescribeFleetAdvisorSchemaObjectSummary`](crate::operation::DescribeFleetAdvisorSchemaObjectSummary)
+pub struct DescribeFleetAdvisorSchemaObjectSummaryPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::describe_fleet_advisor_schema_object_summary_input::Builder,
+}
+
+impl DescribeFleetAdvisorSchemaObjectSummaryPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::describe_fleet_advisor_schema_object_summary_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_records`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_records = Some(limit);
+        self
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeFleetAdvisorSchemaObjectSummaryError,
+            >,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_schema_object_summary_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
+/// Paginator for [`DescribeFleetAdvisorSchemas`](crate::operation::DescribeFleetAdvisorSchemas)
+pub struct DescribeFleetAdvisorSchemasPaginator {
+    handle: std::sync::Arc<crate::client::Handle>,
+    builder: crate::input::describe_fleet_advisor_schemas_input::Builder,
+}
+
+impl DescribeFleetAdvisorSchemasPaginator {
+    /// Create a new paginator-wrapper
+    pub(crate) fn new(
+        handle: std::sync::Arc<crate::client::Handle>,
+        builder: crate::input::describe_fleet_advisor_schemas_input::Builder,
+    ) -> Self {
+        Self { handle, builder }
+    }
+
+    /// Set the page size
+    ///
+    /// _Note: this method will override any previously set value for `max_records`_
+    pub fn page_size(mut self, limit: i32) -> Self {
+        self.builder.max_records = Some(limit);
+        self
+    }
+
+    /// Create the pagination stream
+    ///
+    /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::output::DescribeFleetAdvisorSchemasOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeFleetAdvisorSchemasError>,
+        >,
+    > + Unpin {
+        // Move individual fields out of self for the borrow checker
+        let builder = self.builder;
+        let handle = self.handle;
+        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            Box::pin(async move {
+                // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
+                let mut input = match builder.build().map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                }) {
+                    Ok(input) => input,
+                    Err(e) => {
+                        let _ = tx.send(Err(e)).await;
+                        return;
+                    }
+                };
+                loop {
+                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
+                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                    }) {
+                        Ok(op) => op,
+                        Err(e) => {
+                            let _ = tx.send(Err(e)).await;
+                            return;
+                        }
+                    };
+                    let resp = handle.client.call(op).await;
+                    // If the input member is None or it was an error
+                    let done = match resp {
+                        Ok(ref resp) => {
+                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_schemas_output_next_token(resp);
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
+                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
+                                return;
+                            }
+                            input.next_token = new_token.cloned();
+                            is_empty
+                        }
+                        Err(_) => true,
+                    };
+                    if tx.send(resp).await.is_err() {
+                        // receiving end was dropped
+                        return;
+                    }
+                    if done {
+                        return;
+                    }
+                }
+            })
+        })
+    }
+}
+
 /// Paginator for [`DescribeOrderableReplicationInstances`](crate::operation::DescribeOrderableReplicationInstances)
 pub struct DescribeOrderableReplicationInstancesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,

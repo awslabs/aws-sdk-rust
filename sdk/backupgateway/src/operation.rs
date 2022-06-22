@@ -165,6 +165,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateGatewayFromS
     }
 }
 
+/// Operation shape for `GetGateway`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_gateway`](crate::client::Client::get_gateway).
+///
+/// See [`crate::client::fluent_builders::GetGateway`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetGateway {
+    _private: (),
+}
+impl GetGateway {
+    /// Creates a new builder-style object to manufacture [`GetGatewayInput`](crate::input::GetGatewayInput)
+    pub fn builder() -> crate::input::get_gateway_input::Builder {
+        crate::input::get_gateway_input::Builder::default()
+    }
+    /// Creates a new `GetGateway` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetGateway {
+    type Output =
+        std::result::Result<crate::output::GetGatewayOutput, crate::error::GetGatewayError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_gateway_error(response)
+        } else {
+            crate::operation_deser::parse_get_gateway_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ImportHypervisorConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -495,6 +527,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayInformation
             crate::operation_deser::parse_update_gateway_information_error(response)
         } else {
             crate::operation_deser::parse_update_gateway_information_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateGatewaySoftwareNow`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_gateway_software_now`](crate::client::Client::update_gateway_software_now).
+///
+/// See [`crate::client::fluent_builders::UpdateGatewaySoftwareNow`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateGatewaySoftwareNow {
+    _private: (),
+}
+impl UpdateGatewaySoftwareNow {
+    /// Creates a new builder-style object to manufacture [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput)
+    pub fn builder() -> crate::input::update_gateway_software_now_input::Builder {
+        crate::input::update_gateway_software_now_input::Builder::default()
+    }
+    /// Creates a new `UpdateGatewaySoftwareNow` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewaySoftwareNow {
+    type Output = std::result::Result<
+        crate::output::UpdateGatewaySoftwareNowOutput,
+        crate::error::UpdateGatewaySoftwareNowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_gateway_software_now_error(response)
+        } else {
+            crate::operation_deser::parse_update_gateway_software_now_response(response)
         }
     }
 }

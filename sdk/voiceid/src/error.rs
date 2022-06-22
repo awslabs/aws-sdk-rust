@@ -297,6 +297,8 @@ pub struct DeleteFraudsterError {
 pub enum DeleteFraudsterErrorKind {
     /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
@@ -312,6 +314,7 @@ impl std::fmt::Display for DeleteFraudsterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteFraudsterErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteFraudsterErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteFraudsterErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             DeleteFraudsterErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteFraudsterErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -377,6 +380,10 @@ impl DeleteFraudsterError {
             DeleteFraudsterErrorKind::AccessDeniedException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteFraudsterErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteFraudsterErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `DeleteFraudsterErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -404,6 +411,7 @@ impl std::error::Error for DeleteFraudsterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteFraudsterErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteFraudsterErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteFraudsterErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteFraudsterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFraudsterErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -1256,6 +1264,8 @@ pub struct EvaluateSessionError {
 pub enum EvaluateSessionErrorKind {
     /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
@@ -1271,6 +1281,7 @@ impl std::fmt::Display for EvaluateSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             EvaluateSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            EvaluateSessionErrorKind::ConflictException(_inner) => _inner.fmt(f),
             EvaluateSessionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             EvaluateSessionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             EvaluateSessionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -1336,6 +1347,10 @@ impl EvaluateSessionError {
             EvaluateSessionErrorKind::AccessDeniedException(_)
         )
     }
+    /// Returns `true` if the error kind is `EvaluateSessionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, EvaluateSessionErrorKind::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `EvaluateSessionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
@@ -1363,6 +1378,7 @@ impl std::error::Error for EvaluateSessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             EvaluateSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            EvaluateSessionErrorKind::ConflictException(_inner) => Some(_inner),
             EvaluateSessionErrorKind::InternalServerException(_inner) => Some(_inner),
             EvaluateSessionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             EvaluateSessionErrorKind::ThrottlingException(_inner) => Some(_inner),

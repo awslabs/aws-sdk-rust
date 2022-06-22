@@ -893,6 +893,189 @@ impl AsRef<str> for LaunchDisposition {
     }
 }
 
+/// <p>Staging information related to source server.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StagingArea {
+    /// <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This is a source server that is replicating in the current account. (b) EXTENDED - Source server is extended from a staging source server. In this case, the value of stagingSourceServerArn is pointing to the Arn of the source server in the staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing staging source server. In this case, errorMessage field will contain an error message that explains what happened.</p>
+    pub status: std::option::Option<crate::model::ExtensionStatus>,
+    /// <p>Account ID of the account to which source server belongs. If this source server is extended - shows Account ID of staging source server.</p>
+    pub staging_account_id: std::option::Option<std::string::String>,
+    /// <p>Arn of the staging source server if this source server is extended</p>
+    pub staging_source_server_arn: std::option::Option<std::string::String>,
+    /// <p>Shows an error message that occurred when DRS tried to access the staging source server. In this case StagingArea$status will have value EXTENSION_ERROR</p>
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl StagingArea {
+    /// <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This is a source server that is replicating in the current account. (b) EXTENDED - Source server is extended from a staging source server. In this case, the value of stagingSourceServerArn is pointing to the Arn of the source server in the staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing staging source server. In this case, errorMessage field will contain an error message that explains what happened.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExtensionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Account ID of the account to which source server belongs. If this source server is extended - shows Account ID of staging source server.</p>
+    pub fn staging_account_id(&self) -> std::option::Option<&str> {
+        self.staging_account_id.as_deref()
+    }
+    /// <p>Arn of the staging source server if this source server is extended</p>
+    pub fn staging_source_server_arn(&self) -> std::option::Option<&str> {
+        self.staging_source_server_arn.as_deref()
+    }
+    /// <p>Shows an error message that occurred when DRS tried to access the staging source server. In this case StagingArea$status will have value EXTENSION_ERROR</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+impl std::fmt::Debug for StagingArea {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StagingArea");
+        formatter.field("status", &self.status);
+        formatter.field("staging_account_id", &self.staging_account_id);
+        formatter.field("staging_source_server_arn", &self.staging_source_server_arn);
+        formatter.field("error_message", &self.error_message);
+        formatter.finish()
+    }
+}
+/// See [`StagingArea`](crate::model::StagingArea)
+pub mod staging_area {
+
+    /// A builder for [`StagingArea`](crate::model::StagingArea)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::ExtensionStatus>,
+        pub(crate) staging_account_id: std::option::Option<std::string::String>,
+        pub(crate) staging_source_server_arn: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This is a source server that is replicating in the current account. (b) EXTENDED - Source server is extended from a staging source server. In this case, the value of stagingSourceServerArn is pointing to the Arn of the source server in the staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing staging source server. In this case, errorMessage field will contain an error message that explains what happened.</p>
+        pub fn status(mut self, input: crate::model::ExtensionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Status of Source server extension. Possible values: (a) NOT_EXTENDED - This is a source server that is replicating in the current account. (b) EXTENDED - Source server is extended from a staging source server. In this case, the value of stagingSourceServerArn is pointing to the Arn of the source server in the staging account. (c) EXTENSION_ERROR - Some issue occurred when accessing staging source server. In this case, errorMessage field will contain an error message that explains what happened.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ExtensionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Account ID of the account to which source server belongs. If this source server is extended - shows Account ID of staging source server.</p>
+        pub fn staging_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.staging_account_id = Some(input.into());
+            self
+        }
+        /// <p>Account ID of the account to which source server belongs. If this source server is extended - shows Account ID of staging source server.</p>
+        pub fn set_staging_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.staging_account_id = input;
+            self
+        }
+        /// <p>Arn of the staging source server if this source server is extended</p>
+        pub fn staging_source_server_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.staging_source_server_arn = Some(input.into());
+            self
+        }
+        /// <p>Arn of the staging source server if this source server is extended</p>
+        pub fn set_staging_source_server_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.staging_source_server_arn = input;
+            self
+        }
+        /// <p>Shows an error message that occurred when DRS tried to access the staging source server. In this case StagingArea$status will have value EXTENSION_ERROR</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>Shows an error message that occurred when DRS tried to access the staging source server. In this case StagingArea$status will have value EXTENSION_ERROR</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StagingArea`](crate::model::StagingArea)
+        pub fn build(self) -> crate::model::StagingArea {
+            crate::model::StagingArea {
+                status: self.status,
+                staging_account_id: self.staging_account_id,
+                staging_source_server_arn: self.staging_source_server_arn,
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl StagingArea {
+    /// Creates a new builder-style object to manufacture [`StagingArea`](crate::model::StagingArea)
+    pub fn builder() -> crate::model::staging_area::Builder {
+        crate::model::staging_area::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExtensionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Extended,
+    #[allow(missing_docs)] // documentation missing in model
+    ExtensionError,
+    #[allow(missing_docs)] // documentation missing in model
+    NotExtended,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExtensionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXTENDED" => ExtensionStatus::Extended,
+            "EXTENSION_ERROR" => ExtensionStatus::ExtensionError,
+            "NOT_EXTENDED" => ExtensionStatus::NotExtended,
+            other => ExtensionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExtensionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExtensionStatus::from(s))
+    }
+}
+impl ExtensionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExtensionStatus::Extended => "EXTENDED",
+            ExtensionStatus::ExtensionError => "EXTENSION_ERROR",
+            ExtensionStatus::NotExtended => "NOT_EXTENDED",
+            ExtensionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EXTENDED", "EXTENSION_ERROR", "NOT_EXTENDED"]
+    }
+}
+impl AsRef<str> for ExtensionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Properties of the Source Server machine.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3795,6 +3978,8 @@ pub enum InitiatedBy {
     #[allow(missing_docs)] // documentation missing in model
     StartRecovery,
     #[allow(missing_docs)] // documentation missing in model
+    TargetAccount,
+    #[allow(missing_docs)] // documentation missing in model
     TerminateRecoveryInstances,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3806,6 +3991,7 @@ impl std::convert::From<&str> for InitiatedBy {
             "FAILBACK" => InitiatedBy::Failback,
             "START_DRILL" => InitiatedBy::StartDrill,
             "START_RECOVERY" => InitiatedBy::StartRecovery,
+            "TARGET_ACCOUNT" => InitiatedBy::TargetAccount,
             "TERMINATE_RECOVERY_INSTANCES" => InitiatedBy::TerminateRecoveryInstances,
             other => InitiatedBy::Unknown(other.to_owned()),
         }
@@ -3826,6 +4012,7 @@ impl InitiatedBy {
             InitiatedBy::Failback => "FAILBACK",
             InitiatedBy::StartDrill => "START_DRILL",
             InitiatedBy::StartRecovery => "START_RECOVERY",
+            InitiatedBy::TargetAccount => "TARGET_ACCOUNT",
             InitiatedBy::TerminateRecoveryInstances => "TERMINATE_RECOVERY_INSTANCES",
             InitiatedBy::Unknown(s) => s.as_ref(),
         }
@@ -3837,6 +4024,7 @@ impl InitiatedBy {
             "FAILBACK",
             "START_DRILL",
             "START_RECOVERY",
+            "TARGET_ACCOUNT",
             "TERMINATE_RECOVERY_INSTANCES",
         ]
     }
@@ -3860,6 +4048,8 @@ impl AsRef<str> for InitiatedBy {
 )]
 pub enum JobType {
     #[allow(missing_docs)] // documentation missing in model
+    CreateConvertedSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     Launch,
     #[allow(missing_docs)] // documentation missing in model
     Terminate,
@@ -3869,6 +4059,7 @@ pub enum JobType {
 impl std::convert::From<&str> for JobType {
     fn from(s: &str) -> Self {
         match s {
+            "CREATE_CONVERTED_SNAPSHOT" => JobType::CreateConvertedSnapshot,
             "LAUNCH" => JobType::Launch,
             "TERMINATE" => JobType::Terminate,
             other => JobType::Unknown(other.to_owned()),
@@ -3886,6 +4077,7 @@ impl JobType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            JobType::CreateConvertedSnapshot => "CREATE_CONVERTED_SNAPSHOT",
             JobType::Launch => "LAUNCH",
             JobType::Terminate => "TERMINATE",
             JobType::Unknown(s) => s.as_ref(),
@@ -3893,7 +4085,7 @@ impl JobType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["LAUNCH", "TERMINATE"]
+        &["CREATE_CONVERTED_SNAPSHOT", "LAUNCH", "TERMINATE"]
     }
 }
 impl AsRef<str> for JobType {
@@ -4003,6 +4195,8 @@ pub struct SourceServer {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>The source properties of the Source Server.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>The staging area of the source server.</p>
+    pub staging_area: std::option::Option<crate::model::StagingArea>,
 }
 impl SourceServer {
     /// <p>The ID of the Source Server.</p>
@@ -4040,6 +4234,10 @@ impl SourceServer {
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
+    /// <p>The staging area of the source server.</p>
+    pub fn staging_area(&self) -> std::option::Option<&crate::model::StagingArea> {
+        self.staging_area.as_ref()
+    }
 }
 impl std::fmt::Debug for SourceServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4052,6 +4250,7 @@ impl std::fmt::Debug for SourceServer {
         formatter.field("data_replication_info", &self.data_replication_info);
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
+        formatter.field("staging_area", &self.staging_area);
         formatter.finish()
     }
 }
@@ -4072,6 +4271,7 @@ pub mod source_server {
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) staging_area: std::option::Option<crate::model::StagingArea>,
     }
     impl Builder {
         /// <p>The ID of the Source Server.</p>
@@ -4187,6 +4387,19 @@ pub mod source_server {
             self.source_properties = input;
             self
         }
+        /// <p>The staging area of the source server.</p>
+        pub fn staging_area(mut self, input: crate::model::StagingArea) -> Self {
+            self.staging_area = Some(input);
+            self
+        }
+        /// <p>The staging area of the source server.</p>
+        pub fn set_staging_area(
+            mut self,
+            input: std::option::Option<crate::model::StagingArea>,
+        ) -> Self {
+            self.staging_area = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SourceServer`](crate::model::SourceServer)
         pub fn build(self) -> crate::model::SourceServer {
             crate::model::SourceServer {
@@ -4198,6 +4411,7 @@ pub mod source_server {
                 data_replication_info: self.data_replication_info,
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
+                staging_area: self.staging_area,
             }
         }
     }
@@ -4217,6 +4431,8 @@ pub struct DescribeSourceServersRequestFilters {
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
     pub hardware_id: std::option::Option<std::string::String>,
+    /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
+    pub staging_account_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeSourceServersRequestFilters {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
@@ -4227,12 +4443,17 @@ impl DescribeSourceServersRequestFilters {
     pub fn hardware_id(&self) -> std::option::Option<&str> {
         self.hardware_id.as_deref()
     }
+    /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
+    pub fn staging_account_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+        self.staging_account_i_ds.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSourceServersRequestFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSourceServersRequestFilters");
         formatter.field("source_server_i_ds", &self.source_server_i_ds);
         formatter.field("hardware_id", &self.hardware_id);
+        formatter.field("staging_account_i_ds", &self.staging_account_i_ds);
         formatter.finish()
     }
 }
@@ -4245,6 +4466,7 @@ pub mod describe_source_servers_request_filters {
     pub struct Builder {
         pub(crate) source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) hardware_id: std::option::Option<std::string::String>,
+        pub(crate) staging_account_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `source_server_i_ds`.
@@ -4276,11 +4498,31 @@ pub mod describe_source_servers_request_filters {
             self.hardware_id = input;
             self
         }
+        /// Appends an item to `staging_account_i_ds`.
+        ///
+        /// To override the contents of this collection use [`set_staging_account_i_ds`](Self::set_staging_account_i_ds).
+        ///
+        /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
+        pub fn staging_account_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.staging_account_i_ds.unwrap_or_default();
+            v.push(input.into());
+            self.staging_account_i_ds = Some(v);
+            self
+        }
+        /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
+        pub fn set_staging_account_i_ds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.staging_account_i_ds = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters)
         pub fn build(self) -> crate::model::DescribeSourceServersRequestFilters {
             crate::model::DescribeSourceServersRequestFilters {
                 source_server_i_ds: self.source_server_i_ds,
                 hardware_id: self.hardware_id,
+                staging_account_i_ds: self.staging_account_i_ds,
             }
         }
     }
@@ -7001,6 +7243,8 @@ pub struct JobLogEventData {
     pub target_instance_id: std::option::Option<std::string::String>,
     /// <p>A string representing a job error.</p>
     pub raw_error: std::option::Option<std::string::String>,
+    /// <p>Properties of a conversion job</p>
+    pub conversion_properties: std::option::Option<crate::model::ConversionProperties>,
 }
 impl JobLogEventData {
     /// <p>The ID of a Source Server.</p>
@@ -7019,6 +7263,12 @@ impl JobLogEventData {
     pub fn raw_error(&self) -> std::option::Option<&str> {
         self.raw_error.as_deref()
     }
+    /// <p>Properties of a conversion job</p>
+    pub fn conversion_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ConversionProperties> {
+        self.conversion_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for JobLogEventData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7027,6 +7277,7 @@ impl std::fmt::Debug for JobLogEventData {
         formatter.field("conversion_server_id", &self.conversion_server_id);
         formatter.field("target_instance_id", &self.target_instance_id);
         formatter.field("raw_error", &self.raw_error);
+        formatter.field("conversion_properties", &self.conversion_properties);
         formatter.finish()
     }
 }
@@ -7041,6 +7292,7 @@ pub mod job_log_event_data {
         pub(crate) conversion_server_id: std::option::Option<std::string::String>,
         pub(crate) target_instance_id: std::option::Option<std::string::String>,
         pub(crate) raw_error: std::option::Option<std::string::String>,
+        pub(crate) conversion_properties: std::option::Option<crate::model::ConversionProperties>,
     }
     impl Builder {
         /// <p>The ID of a Source Server.</p>
@@ -7092,6 +7344,19 @@ pub mod job_log_event_data {
             self.raw_error = input;
             self
         }
+        /// <p>Properties of a conversion job</p>
+        pub fn conversion_properties(mut self, input: crate::model::ConversionProperties) -> Self {
+            self.conversion_properties = Some(input);
+            self
+        }
+        /// <p>Properties of a conversion job</p>
+        pub fn set_conversion_properties(
+            mut self,
+            input: std::option::Option<crate::model::ConversionProperties>,
+        ) -> Self {
+            self.conversion_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobLogEventData`](crate::model::JobLogEventData)
         pub fn build(self) -> crate::model::JobLogEventData {
             crate::model::JobLogEventData {
@@ -7099,6 +7364,7 @@ pub mod job_log_event_data {
                 conversion_server_id: self.conversion_server_id,
                 target_instance_id: self.target_instance_id,
                 raw_error: self.raw_error,
+                conversion_properties: self.conversion_properties,
             }
         }
     }
@@ -7107,6 +7373,191 @@ impl JobLogEventData {
     /// Creates a new builder-style object to manufacture [`JobLogEventData`](crate::model::JobLogEventData)
     pub fn builder() -> crate::model::job_log_event_data::Builder {
         crate::model::job_log_event_data::Builder::default()
+    }
+}
+
+/// <p>Properties of a conversion job</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConversionProperties {
+    /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
+    pub volume_to_conversion_map: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    >,
+    /// <p>The root volume name of a conversion job</p>
+    pub root_volume_name: std::option::Option<std::string::String>,
+    /// <p>Whether the volume being converted uses UEFI or not</p>
+    pub force_uefi: std::option::Option<bool>,
+    /// <p>The timestamp of when the snapshot being converted was taken</p>
+    pub data_timestamp: std::option::Option<std::string::String>,
+    /// <p>A mapping between the volumes and their sizes</p>
+    pub volume_to_volume_size:
+        std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+}
+impl ConversionProperties {
+    /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
+    pub fn volume_to_conversion_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    > {
+        self.volume_to_conversion_map.as_ref()
+    }
+    /// <p>The root volume name of a conversion job</p>
+    pub fn root_volume_name(&self) -> std::option::Option<&str> {
+        self.root_volume_name.as_deref()
+    }
+    /// <p>Whether the volume being converted uses UEFI or not</p>
+    pub fn force_uefi(&self) -> std::option::Option<bool> {
+        self.force_uefi
+    }
+    /// <p>The timestamp of when the snapshot being converted was taken</p>
+    pub fn data_timestamp(&self) -> std::option::Option<&str> {
+        self.data_timestamp.as_deref()
+    }
+    /// <p>A mapping between the volumes and their sizes</p>
+    pub fn volume_to_volume_size(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
+        self.volume_to_volume_size.as_ref()
+    }
+}
+impl std::fmt::Debug for ConversionProperties {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConversionProperties");
+        formatter.field("volume_to_conversion_map", &self.volume_to_conversion_map);
+        formatter.field("root_volume_name", &self.root_volume_name);
+        formatter.field("force_uefi", &self.force_uefi);
+        formatter.field("data_timestamp", &self.data_timestamp);
+        formatter.field("volume_to_volume_size", &self.volume_to_volume_size);
+        formatter.finish()
+    }
+}
+/// See [`ConversionProperties`](crate::model::ConversionProperties)
+pub mod conversion_properties {
+
+    /// A builder for [`ConversionProperties`](crate::model::ConversionProperties)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) volume_to_conversion_map: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        >,
+        pub(crate) root_volume_name: std::option::Option<std::string::String>,
+        pub(crate) force_uefi: std::option::Option<bool>,
+        pub(crate) data_timestamp: std::option::Option<std::string::String>,
+        pub(crate) volume_to_volume_size:
+            std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `volume_to_conversion_map`.
+        ///
+        /// To override the contents of this collection use [`set_volume_to_conversion_map`](Self::set_volume_to_conversion_map).
+        ///
+        /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
+        pub fn volume_to_conversion_map(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.volume_to_conversion_map.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.volume_to_conversion_map = Some(hash_map);
+            self
+        }
+        /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
+        pub fn set_volume_to_conversion_map(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    std::collections::HashMap<std::string::String, std::string::String>,
+                >,
+            >,
+        ) -> Self {
+            self.volume_to_conversion_map = input;
+            self
+        }
+        /// <p>The root volume name of a conversion job</p>
+        pub fn root_volume_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.root_volume_name = Some(input.into());
+            self
+        }
+        /// <p>The root volume name of a conversion job</p>
+        pub fn set_root_volume_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.root_volume_name = input;
+            self
+        }
+        /// <p>Whether the volume being converted uses UEFI or not</p>
+        pub fn force_uefi(mut self, input: bool) -> Self {
+            self.force_uefi = Some(input);
+            self
+        }
+        /// <p>Whether the volume being converted uses UEFI or not</p>
+        pub fn set_force_uefi(mut self, input: std::option::Option<bool>) -> Self {
+            self.force_uefi = input;
+            self
+        }
+        /// <p>The timestamp of when the snapshot being converted was taken</p>
+        pub fn data_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_timestamp = Some(input.into());
+            self
+        }
+        /// <p>The timestamp of when the snapshot being converted was taken</p>
+        pub fn set_data_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_timestamp = input;
+            self
+        }
+        /// Adds a key-value pair to `volume_to_volume_size`.
+        ///
+        /// To override the contents of this collection use [`set_volume_to_volume_size`](Self::set_volume_to_volume_size).
+        ///
+        /// <p>A mapping between the volumes and their sizes</p>
+        pub fn volume_to_volume_size(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
+            let mut hash_map = self.volume_to_volume_size.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.volume_to_volume_size = Some(hash_map);
+            self
+        }
+        /// <p>A mapping between the volumes and their sizes</p>
+        pub fn set_volume_to_volume_size(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+        ) -> Self {
+            self.volume_to_volume_size = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConversionProperties`](crate::model::ConversionProperties)
+        pub fn build(self) -> crate::model::ConversionProperties {
+            crate::model::ConversionProperties {
+                volume_to_conversion_map: self.volume_to_conversion_map,
+                root_volume_name: self.root_volume_name,
+                force_uefi: self.force_uefi,
+                data_timestamp: self.data_timestamp,
+                volume_to_volume_size: self.volume_to_volume_size,
+            }
+        }
+    }
+}
+impl ConversionProperties {
+    /// Creates a new builder-style object to manufacture [`ConversionProperties`](crate::model::ConversionProperties)
+    pub fn builder() -> crate::model::conversion_properties::Builder {
+        crate::model::conversion_properties::Builder::default()
     }
 }
 
@@ -7342,5 +7793,174 @@ impl DescribeJobsRequestFilters {
     /// Creates a new builder-style object to manufacture [`DescribeJobsRequestFilters`](crate::model::DescribeJobsRequestFilters)
     pub fn builder() -> crate::model::describe_jobs_request_filters::Builder {
         crate::model::describe_jobs_request_filters::Builder::default()
+    }
+}
+
+/// <p>AWS account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Account {
+    /// <p>Account ID of AWS account.</p>
+    pub account_id: std::option::Option<std::string::String>,
+}
+impl Account {
+    /// <p>Account ID of AWS account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
+impl std::fmt::Debug for Account {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Account");
+        formatter.field("account_id", &self.account_id);
+        formatter.finish()
+    }
+}
+/// See [`Account`](crate::model::Account)
+pub mod account {
+
+    /// A builder for [`Account`](crate::model::Account)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Account ID of AWS account.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>Account ID of AWS account.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Account`](crate::model::Account)
+        pub fn build(self) -> crate::model::Account {
+            crate::model::Account {
+                account_id: self.account_id,
+            }
+        }
+    }
+}
+impl Account {
+    /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account)
+    pub fn builder() -> crate::model::account::Builder {
+        crate::model::account::Builder::default()
+    }
+}
+
+/// <p>Source server in staging account that extended source server connected to.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StagingSourceServer {
+    /// <p>Hostname of staging source server.</p>
+    pub hostname: std::option::Option<std::string::String>,
+    /// <p>The ARN of the source server.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>A list of tags associated with the staging source server.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StagingSourceServer {
+    /// <p>Hostname of staging source server.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The ARN of the source server.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A list of tags associated with the staging source server.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for StagingSourceServer {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StagingSourceServer");
+        formatter.field("hostname", &self.hostname);
+        formatter.field("arn", &self.arn);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`StagingSourceServer`](crate::model::StagingSourceServer)
+pub mod staging_source_server {
+
+    /// A builder for [`StagingSourceServer`](crate::model::StagingSourceServer)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hostname: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>Hostname of staging source server.</p>
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hostname = Some(input.into());
+            self
+        }
+        /// <p>Hostname of staging source server.</p>
+        pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hostname = input;
+            self
+        }
+        /// <p>The ARN of the source server.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the source server.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags associated with the staging source server.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>A list of tags associated with the staging source server.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StagingSourceServer`](crate::model::StagingSourceServer)
+        pub fn build(self) -> crate::model::StagingSourceServer {
+            crate::model::StagingSourceServer {
+                hostname: self.hostname,
+                arn: self.arn,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl StagingSourceServer {
+    /// Creates a new builder-style object to manufacture [`StagingSourceServer`](crate::model::StagingSourceServer)
+    pub fn builder() -> crate::model::staging_source_server::Builder {
+        crate::model::staging_source_server::Builder::default()
     }
 }

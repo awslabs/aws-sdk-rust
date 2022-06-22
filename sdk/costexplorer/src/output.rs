@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCostCategoryDefinitionOutput {
-    /// <p> The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p> The Cost Category's effective start date. </p>
+    /// <p>The Cost Category's effective start date. </p>
     pub effective_start: std::option::Option<std::string::String>,
 }
 impl UpdateCostCategoryDefinitionOutput {
-    /// <p> The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p> The Cost Category's effective start date. </p>
+    /// <p>The Cost Category's effective start date. </p>
     pub fn effective_start(&self) -> std::option::Option<&str> {
         self.effective_start.as_deref()
     }
@@ -37,12 +37,12 @@ pub mod update_cost_category_definition_output {
         pub(crate) effective_start: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The unique identifier for your Cost Category. </p>
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cost_category_arn = Some(input.into());
             self
         }
-        /// <p> The unique identifier for your Cost Category. </p>
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -50,12 +50,12 @@ pub mod update_cost_category_definition_output {
             self.cost_category_arn = input;
             self
         }
-        /// <p> The Cost Category's effective start date. </p>
+        /// <p>The Cost Category's effective start date. </p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_start = Some(input.into());
             self
         }
-        /// <p> The Cost Category's effective start date. </p>
+        /// <p>The Cost Category's effective start date. </p>
         pub fn set_effective_start(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -76,6 +76,76 @@ impl UpdateCostCategoryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput)
     pub fn builder() -> crate::output::update_cost_category_definition_output::Builder {
         crate::output::update_cost_category_definition_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateCostAllocationTagsStatusOutput {
+    /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
+    pub errors:
+        std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
+}
+impl UpdateCostAllocationTagsStatusOutput {
+    /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateCostAllocationTagsStatusError]> {
+        self.errors.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateCostAllocationTagsStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateCostAllocationTagsStatusOutput");
+        formatter.field("errors", &self.errors);
+        formatter.finish()
+    }
+}
+/// See [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput)
+pub mod update_cost_allocation_tags_status_output {
+
+    /// A builder for [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) errors:
+            std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
+    }
+    impl Builder {
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
+        pub fn errors(mut self, input: crate::model::UpdateCostAllocationTagsStatusError) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>,
+            >,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput)
+        pub fn build(self) -> crate::output::UpdateCostAllocationTagsStatusOutput {
+            crate::output::UpdateCostAllocationTagsStatusOutput {
+                errors: self.errors,
+            }
+        }
+    }
+}
+impl UpdateCostAllocationTagsStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput)
+    pub fn builder() -> crate::output::update_cost_allocation_tags_status_output::Builder {
+        crate::output::update_cost_allocation_tags_status_output::Builder::default()
     }
 }
 
@@ -313,11 +383,11 @@ impl ProvideAnomalyFeedbackOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>A list of tag key value pairs that are associated with the response. </p>
+    /// <p>A list of tag key value pairs that are associated with the resource. </p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>A list of tag key value pairs that are associated with the response. </p>
+    /// <p>A list of tag key value pairs that are associated with the resource. </p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
     }
@@ -343,14 +413,14 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>A list of tag key value pairs that are associated with the response. </p>
+        /// <p>A list of tag key value pairs that are associated with the resource. </p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
             v.push(input);
             self.resource_tags = Some(v);
             self
         }
-        /// <p>A list of tag key value pairs that are associated with the response. </p>
+        /// <p>A list of tag key value pairs that are associated with the resource. </p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -377,20 +447,20 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCostCategoryDefinitionsOutput {
-    /// <p> A reference to a Cost Category containing enough information to identify the Cost Category. </p>
+    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
     pub cost_category_references:
         std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
-    /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCostCategoryDefinitionsOutput {
-    /// <p> A reference to a Cost Category containing enough information to identify the Cost Category. </p>
+    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
     pub fn cost_category_references(
         &self,
     ) -> std::option::Option<&[crate::model::CostCategoryReference]> {
         self.cost_category_references.as_deref()
     }
-    /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -419,7 +489,7 @@ pub mod list_cost_category_definitions_output {
         ///
         /// To override the contents of this collection use [`set_cost_category_references`](Self::set_cost_category_references).
         ///
-        /// <p> A reference to a Cost Category containing enough information to identify the Cost Category. </p>
+        /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
         pub fn cost_category_references(
             mut self,
             input: crate::model::CostCategoryReference,
@@ -429,7 +499,7 @@ pub mod list_cost_category_definitions_output {
             self.cost_category_references = Some(v);
             self
         }
-        /// <p> A reference to a Cost Category containing enough information to identify the Cost Category. </p>
+        /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
         pub fn set_cost_category_references(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
@@ -437,12 +507,12 @@ pub mod list_cost_category_definitions_output {
             self.cost_category_references = input;
             self
         }
-        /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -460,6 +530,90 @@ impl ListCostCategoryDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput)
     pub fn builder() -> crate::output::list_cost_category_definitions_output::Builder {
         crate::output::list_cost_category_definitions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCostAllocationTagsOutput {
+    /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
+    pub cost_allocation_tags: std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCostAllocationTagsOutput {
+    /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
+    pub fn cost_allocation_tags(&self) -> std::option::Option<&[crate::model::CostAllocationTag]> {
+        self.cost_allocation_tags.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCostAllocationTagsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCostAllocationTagsOutput");
+        formatter.field("cost_allocation_tags", &self.cost_allocation_tags);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput)
+pub mod list_cost_allocation_tags_output {
+
+    /// A builder for [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cost_allocation_tags:
+            std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `cost_allocation_tags`.
+        ///
+        /// To override the contents of this collection use [`set_cost_allocation_tags`](Self::set_cost_allocation_tags).
+        ///
+        /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
+        pub fn cost_allocation_tags(mut self, input: crate::model::CostAllocationTag) -> Self {
+            let mut v = self.cost_allocation_tags.unwrap_or_default();
+            v.push(input);
+            self.cost_allocation_tags = Some(v);
+            self
+        }
+        /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
+        pub fn set_cost_allocation_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
+        ) -> Self {
+            self.cost_allocation_tags = input;
+            self
+        }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput)
+        pub fn build(self) -> crate::output::ListCostAllocationTagsOutput {
+            crate::output::ListCostAllocationTagsOutput {
+                cost_allocation_tags: self.cost_allocation_tags,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCostAllocationTagsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput)
+    pub fn builder() -> crate::output::list_cost_allocation_tags_output::Builder {
+        crate::output::list_cost_allocation_tags_output::Builder::default()
     }
 }
 
@@ -812,14 +966,14 @@ impl GetSavingsPlansUtilizationDetailsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansUtilizationOutput {
-    /// <p>The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.</p>
+    /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
     pub savings_plans_utilizations_by_time:
         std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
     pub total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
 }
 impl GetSavingsPlansUtilizationOutput {
-    /// <p>The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.</p>
+    /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
     pub fn savings_plans_utilizations_by_time(
         &self,
     ) -> std::option::Option<&[crate::model::SavingsPlansUtilizationByTime]> {
@@ -857,7 +1011,7 @@ pub mod get_savings_plans_utilization_output {
         ///
         /// To override the contents of this collection use [`set_savings_plans_utilizations_by_time`](Self::set_savings_plans_utilizations_by_time).
         ///
-        /// <p>The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.</p>
+        /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
         pub fn savings_plans_utilizations_by_time(
             mut self,
             input: crate::model::SavingsPlansUtilizationByTime,
@@ -867,7 +1021,7 @@ pub mod get_savings_plans_utilization_output {
             self.savings_plans_utilizations_by_time = Some(v);
             self
         }
-        /// <p>The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.</p>
+        /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
         pub fn set_savings_plans_utilizations_by_time(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
@@ -908,7 +1062,7 @@ impl GetSavingsPlansUtilizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansPurchaseRecommendationOutput {
-    /// <p>Information regarding this specific recommendation set.</p>
+    /// <p>Information that regards this specific recommendation set.</p>
     pub metadata: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationMetadata>,
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
     pub savings_plans_purchase_recommendation:
@@ -917,7 +1071,7 @@ pub struct GetSavingsPlansPurchaseRecommendationOutput {
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetSavingsPlansPurchaseRecommendationOutput {
-    /// <p>Information regarding this specific recommendation set.</p>
+    /// <p>Information that regards this specific recommendation set.</p>
     pub fn metadata(
         &self,
     ) -> std::option::Option<&crate::model::SavingsPlansPurchaseRecommendationMetadata> {
@@ -960,7 +1114,7 @@ pub mod get_savings_plans_purchase_recommendation_output {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information regarding this specific recommendation set.</p>
+        /// <p>Information that regards this specific recommendation set.</p>
         pub fn metadata(
             mut self,
             input: crate::model::SavingsPlansPurchaseRecommendationMetadata,
@@ -968,7 +1122,7 @@ pub mod get_savings_plans_purchase_recommendation_output {
             self.metadata = Some(input);
             self
         }
-        /// <p>Information regarding this specific recommendation set.</p>
+        /// <p>Information that regards this specific recommendation set.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationMetadata>,
@@ -1125,7 +1279,7 @@ pub struct GetRightsizingRecommendationOutput {
         std::option::Option<std::vec::Vec<crate::model::RightsizingRecommendation>>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+    /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
     pub configuration: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
 }
 impl GetRightsizingRecommendationOutput {
@@ -1149,7 +1303,7 @@ impl GetRightsizingRecommendationOutput {
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+    /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
     pub fn configuration(
         &self,
     ) -> std::option::Option<&crate::model::RightsizingRecommendationConfiguration> {
@@ -1247,7 +1401,7 @@ pub mod get_rightsizing_recommendation_output {
             self.next_page_token = input;
             self
         }
-        /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+        /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
         pub fn configuration(
             mut self,
             input: crate::model::RightsizingRecommendationConfiguration,
@@ -1255,7 +1409,7 @@ pub mod get_rightsizing_recommendation_output {
             self.configuration = Some(input);
             self
         }
-        /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
+        /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
@@ -1286,19 +1440,19 @@ impl GetRightsizingRecommendationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationUtilizationOutput {
-    /// <p>The amount of time that you used your RIs.</p>
+    /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
     pub utilizations_by_time: std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
-    /// <p>The total amount of time that you used your RIs.</p>
+    /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
     pub total: std::option::Option<crate::model::ReservationAggregates>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetReservationUtilizationOutput {
-    /// <p>The amount of time that you used your RIs.</p>
+    /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
     pub fn utilizations_by_time(&self) -> std::option::Option<&[crate::model::UtilizationByTime]> {
         self.utilizations_by_time.as_deref()
     }
-    /// <p>The total amount of time that you used your RIs.</p>
+    /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
     pub fn total(&self) -> std::option::Option<&crate::model::ReservationAggregates> {
         self.total.as_ref()
     }
@@ -1333,14 +1487,14 @@ pub mod get_reservation_utilization_output {
         ///
         /// To override the contents of this collection use [`set_utilizations_by_time`](Self::set_utilizations_by_time).
         ///
-        /// <p>The amount of time that you used your RIs.</p>
+        /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
         pub fn utilizations_by_time(mut self, input: crate::model::UtilizationByTime) -> Self {
             let mut v = self.utilizations_by_time.unwrap_or_default();
             v.push(input);
             self.utilizations_by_time = Some(v);
             self
         }
-        /// <p>The amount of time that you used your RIs.</p>
+        /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
         pub fn set_utilizations_by_time(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
@@ -1348,12 +1502,12 @@ pub mod get_reservation_utilization_output {
             self.utilizations_by_time = input;
             self
         }
-        /// <p>The total amount of time that you used your RIs.</p>
+        /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
         pub fn total(mut self, input: crate::model::ReservationAggregates) -> Self {
             self.total = Some(input);
             self
         }
-        /// <p>The total amount of time that you used your RIs.</p>
+        /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
         pub fn set_total(
             mut self,
             input: std::option::Option<crate::model::ReservationAggregates>,
@@ -1995,20 +2149,20 @@ impl GetCostForecastOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostCategoriesOutput {
-    /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The names of the Cost Categories.</p>
     pub cost_category_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Cost Category values.</p>
-    /// <p> <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
+    /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
     pub cost_category_values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The number of objects returned.</p>
+    /// <p>The number of objects that are returned.</p>
     pub return_size: std::option::Option<i32>,
     /// <p>The total number of objects.</p>
     pub total_size: std::option::Option<i32>,
 }
 impl GetCostCategoriesOutput {
-    /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -2017,11 +2171,11 @@ impl GetCostCategoriesOutput {
         self.cost_category_names.as_deref()
     }
     /// <p>The Cost Category values.</p>
-    /// <p> <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
+    /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
     pub fn cost_category_values(&self) -> std::option::Option<&[std::string::String]> {
         self.cost_category_values.as_deref()
     }
-    /// <p>The number of objects returned.</p>
+    /// <p>The number of objects that are returned.</p>
     pub fn return_size(&self) -> std::option::Option<i32> {
         self.return_size
     }
@@ -2055,12 +2209,12 @@ pub mod get_cost_categories_output {
         pub(crate) total_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2092,7 +2246,7 @@ pub mod get_cost_categories_output {
         /// To override the contents of this collection use [`set_cost_category_values`](Self::set_cost_category_values).
         ///
         /// <p>The Cost Category values.</p>
-        /// <p> <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
+        /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
         pub fn cost_category_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cost_category_values.unwrap_or_default();
             v.push(input.into());
@@ -2100,7 +2254,7 @@ pub mod get_cost_categories_output {
             self
         }
         /// <p>The Cost Category values.</p>
-        /// <p> <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
+        /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
         pub fn set_cost_category_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2108,12 +2262,12 @@ pub mod get_cost_categories_output {
             self.cost_category_values = input;
             self
         }
-        /// <p>The number of objects returned.</p>
+        /// <p>The number of objects that are returned.</p>
         pub fn return_size(mut self, input: i32) -> Self {
             self.return_size = Some(input);
             self
         }
-        /// <p>The number of objects returned.</p>
+        /// <p>The number of objects that are returned.</p>
         pub fn set_return_size(mut self, input: std::option::Option<i32>) -> Self {
             self.return_size = input;
             self
@@ -2155,7 +2309,7 @@ pub struct GetCostAndUsageWithResourcesOutput {
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
     pub group_definitions: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
-    /// <p>The time period that is covered by the results in the response.</p>
+    /// <p>The time period that's covered by the results in the response.</p>
     pub results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
     pub dimension_value_attributes:
@@ -2170,7 +2324,7 @@ impl GetCostAndUsageWithResourcesOutput {
     pub fn group_definitions(&self) -> std::option::Option<&[crate::model::GroupDefinition]> {
         self.group_definitions.as_deref()
     }
-    /// <p>The time period that is covered by the results in the response.</p>
+    /// <p>The time period that's covered by the results in the response.</p>
     pub fn results_by_time(&self) -> std::option::Option<&[crate::model::ResultByTime]> {
         self.results_by_time.as_deref()
     }
@@ -2245,14 +2399,14 @@ pub mod get_cost_and_usage_with_resources_output {
         ///
         /// To override the contents of this collection use [`set_results_by_time`](Self::set_results_by_time).
         ///
-        /// <p>The time period that is covered by the results in the response.</p>
+        /// <p>The time period that's covered by the results in the response.</p>
         pub fn results_by_time(mut self, input: crate::model::ResultByTime) -> Self {
             let mut v = self.results_by_time.unwrap_or_default();
             v.push(input);
             self.results_by_time = Some(v);
             self
         }
-        /// <p>The time period that is covered by the results in the response.</p>
+        /// <p>The time period that's covered by the results in the response.</p>
         pub fn set_results_by_time(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
@@ -2778,17 +2932,17 @@ impl DescribeCostCategoryDefinitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCostCategoryDefinitionOutput {
-    /// <p> The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p> The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category. </p>
+    /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
     pub effective_end: std::option::Option<std::string::String>,
 }
 impl DeleteCostCategoryDefinitionOutput {
-    /// <p> The unique identifier for your Cost Category. </p>
+    /// <p>The unique identifier for your Cost Category. </p>
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p> The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category. </p>
+    /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
     pub fn effective_end(&self) -> std::option::Option<&str> {
         self.effective_end.as_deref()
     }
@@ -2812,12 +2966,12 @@ pub mod delete_cost_category_definition_output {
         pub(crate) effective_end: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The unique identifier for your Cost Category. </p>
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cost_category_arn = Some(input.into());
             self
         }
-        /// <p> The unique identifier for your Cost Category. </p>
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2825,12 +2979,12 @@ pub mod delete_cost_category_definition_output {
             self.cost_category_arn = input;
             self
         }
-        /// <p> The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category. </p>
+        /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
         pub fn effective_end(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_end = Some(input.into());
             self
         }
-        /// <p> The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category. </p>
+        /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
         pub fn set_effective_end(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2920,17 +3074,17 @@ impl DeleteAnomalyMonitorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCostCategoryDefinitionOutput {
-    /// <p> The unique identifier for your newly created Cost Category. </p>
+    /// <p>The unique identifier for your newly created Cost Category. </p>
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p> The Cost Category's effective start date. </p>
+    /// <p>The Cost Category's effective start date. </p>
     pub effective_start: std::option::Option<std::string::String>,
 }
 impl CreateCostCategoryDefinitionOutput {
-    /// <p> The unique identifier for your newly created Cost Category. </p>
+    /// <p>The unique identifier for your newly created Cost Category. </p>
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p> The Cost Category's effective start date. </p>
+    /// <p>The Cost Category's effective start date. </p>
     pub fn effective_start(&self) -> std::option::Option<&str> {
         self.effective_start.as_deref()
     }
@@ -2954,12 +3108,12 @@ pub mod create_cost_category_definition_output {
         pub(crate) effective_start: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The unique identifier for your newly created Cost Category. </p>
+        /// <p>The unique identifier for your newly created Cost Category. </p>
         pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cost_category_arn = Some(input.into());
             self
         }
-        /// <p> The unique identifier for your newly created Cost Category. </p>
+        /// <p>The unique identifier for your newly created Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2967,12 +3121,12 @@ pub mod create_cost_category_definition_output {
             self.cost_category_arn = input;
             self
         }
-        /// <p> The Cost Category's effective start date. </p>
+        /// <p>The Cost Category's effective start date. </p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_start = Some(input.into());
             self
         }
-        /// <p> The Cost Category's effective start date. </p>
+        /// <p>The Cost Category's effective start date. </p>
         pub fn set_effective_start(
             mut self,
             input: std::option::Option<std::string::String>,

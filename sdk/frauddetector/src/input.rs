@@ -6345,12 +6345,14 @@ pub mod get_event_prediction_metadata_input {
             self.detector_version_id = input;
             self
         }
-        /// <p> The timestamp that defines when the prediction was generated. </p>
+        /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+        /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
         pub fn prediction_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
             self.prediction_timestamp = Some(input.into());
             self
         }
-        /// <p> The timestamp that defines when the prediction was generated. </p>
+        /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+        /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
         pub fn set_prediction_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13550,7 +13552,8 @@ pub struct GetEventPredictionMetadataInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p> The detector version ID. </p>
     pub detector_version_id: std::option::Option<std::string::String>,
-    /// <p> The timestamp that defines when the prediction was generated. </p>
+    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub prediction_timestamp: std::option::Option<std::string::String>,
 }
 impl GetEventPredictionMetadataInput {
@@ -13570,7 +13573,8 @@ impl GetEventPredictionMetadataInput {
     pub fn detector_version_id(&self) -> std::option::Option<&str> {
         self.detector_version_id.as_deref()
     }
-    /// <p> The timestamp that defines when the prediction was generated. </p>
+    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
     pub fn prediction_timestamp(&self) -> std::option::Option<&str> {
         self.prediction_timestamp.as_deref()
     }

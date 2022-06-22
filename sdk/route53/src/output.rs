@@ -2599,6 +2599,269 @@ impl ListGeoLocationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCidrLocationsOutput {
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A complex type that contains information about the list of CIDR locations.</p>
+    pub cidr_locations: std::option::Option<std::vec::Vec<crate::model::LocationSummary>>,
+}
+impl ListCidrLocationsOutput {
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A complex type that contains information about the list of CIDR locations.</p>
+    pub fn cidr_locations(&self) -> std::option::Option<&[crate::model::LocationSummary]> {
+        self.cidr_locations.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCidrLocationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCidrLocationsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("cidr_locations", &self.cidr_locations);
+        formatter.finish()
+    }
+}
+/// See [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput)
+pub mod list_cidr_locations_output {
+
+    /// A builder for [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) cidr_locations:
+            std::option::Option<std::vec::Vec<crate::model::LocationSummary>>,
+    }
+    impl Builder {
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `cidr_locations`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_locations`](Self::set_cidr_locations).
+        ///
+        /// <p>A complex type that contains information about the list of CIDR locations.</p>
+        pub fn cidr_locations(mut self, input: crate::model::LocationSummary) -> Self {
+            let mut v = self.cidr_locations.unwrap_or_default();
+            v.push(input);
+            self.cidr_locations = Some(v);
+            self
+        }
+        /// <p>A complex type that contains information about the list of CIDR locations.</p>
+        pub fn set_cidr_locations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LocationSummary>>,
+        ) -> Self {
+            self.cidr_locations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput)
+        pub fn build(self) -> crate::output::ListCidrLocationsOutput {
+            crate::output::ListCidrLocationsOutput {
+                next_token: self.next_token,
+                cidr_locations: self.cidr_locations,
+            }
+        }
+    }
+}
+impl ListCidrLocationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput)
+    pub fn builder() -> crate::output::list_cidr_locations_output::Builder {
+        crate::output::list_cidr_locations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCidrCollectionsOutput {
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A complex type with information about the CIDR collection.</p>
+    pub cidr_collections: std::option::Option<std::vec::Vec<crate::model::CollectionSummary>>,
+}
+impl ListCidrCollectionsOutput {
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A complex type with information about the CIDR collection.</p>
+    pub fn cidr_collections(&self) -> std::option::Option<&[crate::model::CollectionSummary]> {
+        self.cidr_collections.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCidrCollectionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCidrCollectionsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("cidr_collections", &self.cidr_collections);
+        formatter.finish()
+    }
+}
+/// See [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput)
+pub mod list_cidr_collections_output {
+
+    /// A builder for [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) cidr_collections:
+            std::option::Option<std::vec::Vec<crate::model::CollectionSummary>>,
+    }
+    impl Builder {
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `cidr_collections`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_collections`](Self::set_cidr_collections).
+        ///
+        /// <p>A complex type with information about the CIDR collection.</p>
+        pub fn cidr_collections(mut self, input: crate::model::CollectionSummary) -> Self {
+            let mut v = self.cidr_collections.unwrap_or_default();
+            v.push(input);
+            self.cidr_collections = Some(v);
+            self
+        }
+        /// <p>A complex type with information about the CIDR collection.</p>
+        pub fn set_cidr_collections(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CollectionSummary>>,
+        ) -> Self {
+            self.cidr_collections = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput)
+        pub fn build(self) -> crate::output::ListCidrCollectionsOutput {
+            crate::output::ListCidrCollectionsOutput {
+                next_token: self.next_token,
+                cidr_collections: self.cidr_collections,
+            }
+        }
+    }
+}
+impl ListCidrCollectionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput)
+    pub fn builder() -> crate::output::list_cidr_collections_output::Builder {
+        crate::output::list_cidr_collections_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCidrBlocksOutput {
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results. </p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A complex type that contains information about the CIDR blocks.</p>
+    pub cidr_blocks: std::option::Option<std::vec::Vec<crate::model::CidrBlockSummary>>,
+}
+impl ListCidrBlocksOutput {
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results. </p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A complex type that contains information about the CIDR blocks.</p>
+    pub fn cidr_blocks(&self) -> std::option::Option<&[crate::model::CidrBlockSummary]> {
+        self.cidr_blocks.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCidrBlocksOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCidrBlocksOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("cidr_blocks", &self.cidr_blocks);
+        formatter.finish()
+    }
+}
+/// See [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput)
+pub mod list_cidr_blocks_output {
+
+    /// A builder for [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) cidr_blocks: std::option::Option<std::vec::Vec<crate::model::CidrBlockSummary>>,
+    }
+    impl Builder {
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results. </p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An opaque pagination token to indicate where the service is to begin enumerating results. </p>
+        /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `cidr_blocks`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_blocks`](Self::set_cidr_blocks).
+        ///
+        /// <p>A complex type that contains information about the CIDR blocks.</p>
+        pub fn cidr_blocks(mut self, input: crate::model::CidrBlockSummary) -> Self {
+            let mut v = self.cidr_blocks.unwrap_or_default();
+            v.push(input);
+            self.cidr_blocks = Some(v);
+            self
+        }
+        /// <p>A complex type that contains information about the CIDR blocks.</p>
+        pub fn set_cidr_blocks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CidrBlockSummary>>,
+        ) -> Self {
+            self.cidr_blocks = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput)
+        pub fn build(self) -> crate::output::ListCidrBlocksOutput {
+            crate::output::ListCidrBlocksOutput {
+                next_token: self.next_token,
+                cidr_blocks: self.cidr_blocks,
+            }
+        }
+    }
+}
+impl ListCidrBlocksOutput {
+    /// Creates a new builder-style object to manufacture [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput)
+    pub fn builder() -> crate::output::list_cidr_blocks_output::Builder {
+        crate::output::list_cidr_blocks_output::Builder::default()
+    }
+}
+
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4290,6 +4553,37 @@ impl DeleteHealthCheckOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCidrCollectionOutput {}
+impl std::fmt::Debug for DeleteCidrCollectionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCidrCollectionOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput)
+pub mod delete_cidr_collection_output {
+
+    /// A builder for [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput)
+        pub fn build(self) -> crate::output::DeleteCidrCollectionOutput {
+            crate::output::DeleteCidrCollectionOutput {}
+        }
+    }
+}
+impl DeleteCidrCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput)
+    pub fn builder() -> crate::output::delete_cidr_collection_output::Builder {
+        crate::output::delete_cidr_collection_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
@@ -5129,6 +5423,83 @@ impl CreateHealthCheckOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateCidrCollectionOutput {
+    /// <p>A complex type that contains information about the CIDR collection.</p>
+    pub collection: std::option::Option<crate::model::CidrCollection>,
+    /// <p>A unique URL that represents the location for the CIDR collection.</p>
+    pub location: std::option::Option<std::string::String>,
+}
+impl CreateCidrCollectionOutput {
+    /// <p>A complex type that contains information about the CIDR collection.</p>
+    pub fn collection(&self) -> std::option::Option<&crate::model::CidrCollection> {
+        self.collection.as_ref()
+    }
+    /// <p>A unique URL that represents the location for the CIDR collection.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateCidrCollectionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateCidrCollectionOutput");
+        formatter.field("collection", &self.collection);
+        formatter.field("location", &self.location);
+        formatter.finish()
+    }
+}
+/// See [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput)
+pub mod create_cidr_collection_output {
+
+    /// A builder for [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collection: std::option::Option<crate::model::CidrCollection>,
+        pub(crate) location: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A complex type that contains information about the CIDR collection.</p>
+        pub fn collection(mut self, input: crate::model::CidrCollection) -> Self {
+            self.collection = Some(input);
+            self
+        }
+        /// <p>A complex type that contains information about the CIDR collection.</p>
+        pub fn set_collection(
+            mut self,
+            input: std::option::Option<crate::model::CidrCollection>,
+        ) -> Self {
+            self.collection = input;
+            self
+        }
+        /// <p>A unique URL that represents the location for the CIDR collection.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p>A unique URL that represents the location for the CIDR collection.</p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput)
+        pub fn build(self) -> crate::output::CreateCidrCollectionOutput {
+            crate::output::CreateCidrCollectionOutput {
+                collection: self.collection,
+                location: self.location,
+            }
+        }
+    }
+}
+impl CreateCidrCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput)
+    pub fn builder() -> crate::output::create_cidr_collection_output::Builder {
+        crate::output::create_cidr_collection_output::Builder::default()
+    }
+}
+
 /// <p>Empty response for the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5219,6 +5590,59 @@ impl ChangeResourceRecordSetsOutput {
     /// Creates a new builder-style object to manufacture [`ChangeResourceRecordSetsOutput`](crate::output::ChangeResourceRecordSetsOutput)
     pub fn builder() -> crate::output::change_resource_record_sets_output::Builder {
         crate::output::change_resource_record_sets_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChangeCidrCollectionOutput {
+    /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl ChangeCidrCollectionOutput {
+    /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
+impl std::fmt::Debug for ChangeCidrCollectionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChangeCidrCollectionOutput");
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput)
+pub mod change_cidr_collection_output {
+
+    /// A builder for [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput)
+        pub fn build(self) -> crate::output::ChangeCidrCollectionOutput {
+            crate::output::ChangeCidrCollectionOutput { id: self.id }
+        }
+    }
+}
+impl ChangeCidrCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput)
+    pub fn builder() -> crate::output::change_cidr_collection_output::Builder {
+        crate::output::change_cidr_collection_output::Builder::default()
     }
 }
 

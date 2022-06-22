@@ -871,6 +871,7 @@ pub mod create_dataset_import_job_input {
         pub(crate) use_geolocation_for_time_zone: std::option::Option<bool>,
         pub(crate) geolocation_format: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) format: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
@@ -1019,6 +1020,16 @@ pub mod create_dataset_import_job_input {
             self.tags = input;
             self
         }
+        /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDatasetImportJobInput`](crate::input::CreateDatasetImportJobInput)
         pub fn build(
             self,
@@ -1037,6 +1048,7 @@ pub mod create_dataset_import_job_input {
                     .unwrap_or_default(),
                 geolocation_format: self.geolocation_format,
                 tags: self.tags,
+                format: self.format,
             })
         }
     }
@@ -1449,6 +1461,7 @@ pub mod create_explainability_export_input {
         pub(crate) explainability_arn: std::option::Option<std::string::String>,
         pub(crate) destination: std::option::Option<crate::model::DataDestination>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) format: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A unique name for the Explainability export.</p>
@@ -1527,6 +1540,16 @@ pub mod create_explainability_export_input {
             self.tags = input;
             self
         }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateExplainabilityExportInput`](crate::input::CreateExplainabilityExportInput)
         pub fn build(
             self,
@@ -1539,6 +1562,7 @@ pub mod create_explainability_export_input {
                 explainability_arn: self.explainability_arn,
                 destination: self.destination,
                 tags: self.tags,
+                format: self.format,
             })
         }
     }
@@ -1667,6 +1691,7 @@ pub mod create_forecast_input {
         pub(crate) predictor_arn: std::option::Option<std::string::String>,
         pub(crate) forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) time_series_selector: std::option::Option<crate::model::TimeSeriesSelector>,
     }
     impl Builder {
         /// <p>A name for the forecast.</p>
@@ -1755,6 +1780,31 @@ pub mod create_forecast_input {
             self.tags = input;
             self
         }
+        /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
+        /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+        /// <ul>
+        /// <li> <p> <code>DataSource</code> </p> </li>
+        /// <li> <p> <code>Format</code> </p> </li>
+        /// <li> <p> <code>Schema</code> </p> </li>
+        /// </ul>
+        pub fn time_series_selector(mut self, input: crate::model::TimeSeriesSelector) -> Self {
+            self.time_series_selector = Some(input);
+            self
+        }
+        /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
+        /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+        /// <ul>
+        /// <li> <p> <code>DataSource</code> </p> </li>
+        /// <li> <p> <code>Format</code> </p> </li>
+        /// <li> <p> <code>Schema</code> </p> </li>
+        /// </ul>
+        pub fn set_time_series_selector(
+            mut self,
+            input: std::option::Option<crate::model::TimeSeriesSelector>,
+        ) -> Self {
+            self.time_series_selector = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateForecastInput`](crate::input::CreateForecastInput)
         pub fn build(
             self,
@@ -1767,6 +1817,7 @@ pub mod create_forecast_input {
                 predictor_arn: self.predictor_arn,
                 forecast_types: self.forecast_types,
                 tags: self.tags,
+                time_series_selector: self.time_series_selector,
             })
         }
     }
@@ -1892,6 +1943,7 @@ pub mod create_forecast_export_job_input {
         pub(crate) forecast_arn: std::option::Option<std::string::String>,
         pub(crate) destination: std::option::Option<crate::model::DataDestination>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) format: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name for the forecast export job.</p>
@@ -1971,6 +2023,16 @@ pub mod create_forecast_export_job_input {
             self.tags = input;
             self
         }
+        /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateForecastExportJobInput`](crate::input::CreateForecastExportJobInput)
         pub fn build(
             self,
@@ -1983,6 +2045,7 @@ pub mod create_forecast_export_job_input {
                 forecast_arn: self.forecast_arn,
                 destination: self.destination,
                 tags: self.tags,
+                format: self.format,
             })
         }
     }
@@ -2736,6 +2799,7 @@ pub mod create_predictor_backtest_export_job_input {
         pub(crate) predictor_arn: std::option::Option<std::string::String>,
         pub(crate) destination: std::option::Option<crate::model::DataDestination>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) format: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name for the backtest export job.</p>
@@ -2817,6 +2881,16 @@ pub mod create_predictor_backtest_export_job_input {
             self.tags = input;
             self
         }
+        /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.format = Some(input.into());
+            self
+        }
+        /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+        pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePredictorBacktestExportJobInput`](crate::input::CreatePredictorBacktestExportJobInput)
         pub fn build(
             self,
@@ -2829,6 +2903,7 @@ pub mod create_predictor_backtest_export_job_input {
                 predictor_arn: self.predictor_arn,
                 destination: self.destination,
                 tags: self.tags,
+                format: self.format,
             })
         }
     }
@@ -10503,6 +10578,8 @@ pub struct CreatePredictorBacktestExportJobInput {
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+    pub format: std::option::Option<std::string::String>,
 }
 impl CreatePredictorBacktestExportJobInput {
     /// <p>The name for the backtest export job.</p>
@@ -10530,6 +10607,10 @@ impl CreatePredictorBacktestExportJobInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePredictorBacktestExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10541,6 +10622,7 @@ impl std::fmt::Debug for CreatePredictorBacktestExportJobInput {
         formatter.field("predictor_arn", &self.predictor_arn);
         formatter.field("destination", &self.destination);
         formatter.field("tags", &self.tags);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }
@@ -10802,6 +10884,8 @@ pub struct CreateForecastExportJobInput {
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+    pub format: std::option::Option<std::string::String>,
 }
 impl CreateForecastExportJobInput {
     /// <p>The name for the forecast export job.</p>
@@ -10831,6 +10915,10 @@ impl CreateForecastExportJobInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateForecastExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10839,6 +10927,7 @@ impl std::fmt::Debug for CreateForecastExportJobInput {
         formatter.field("forecast_arn", &self.forecast_arn);
         formatter.field("destination", &self.destination);
         formatter.field("tags", &self.tags);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }
@@ -10866,6 +10955,14 @@ pub struct CreateForecastInput {
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
+    /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+    /// <ul>
+    /// <li> <p> <code>DataSource</code> </p> </li>
+    /// <li> <p> <code>Format</code> </p> </li>
+    /// <li> <p> <code>Schema</code> </p> </li>
+    /// </ul>
+    pub time_series_selector: std::option::Option<crate::model::TimeSeriesSelector>,
 }
 impl CreateForecastInput {
     /// <p>A name for the forecast.</p>
@@ -10895,6 +10992,16 @@ impl CreateForecastInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
+    /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+    /// <ul>
+    /// <li> <p> <code>DataSource</code> </p> </li>
+    /// <li> <p> <code>Format</code> </p> </li>
+    /// <li> <p> <code>Schema</code> </p> </li>
+    /// </ul>
+    pub fn time_series_selector(&self) -> std::option::Option<&crate::model::TimeSeriesSelector> {
+        self.time_series_selector.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateForecastInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10903,6 +11010,7 @@ impl std::fmt::Debug for CreateForecastInput {
         formatter.field("predictor_arn", &self.predictor_arn);
         formatter.field("forecast_types", &self.forecast_types);
         formatter.field("tags", &self.tags);
+        formatter.field("time_series_selector", &self.time_series_selector);
         formatter.finish()
     }
 }
@@ -10928,6 +11036,8 @@ pub struct CreateExplainabilityExportInput {
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub format: std::option::Option<std::string::String>,
 }
 impl CreateExplainabilityExportInput {
     /// <p>A unique name for the Explainability export.</p>
@@ -10955,6 +11065,10 @@ impl CreateExplainabilityExportInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateExplainabilityExportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10966,6 +11080,7 @@ impl std::fmt::Debug for CreateExplainabilityExportInput {
         formatter.field("explainability_arn", &self.explainability_arn);
         formatter.field("destination", &self.destination);
         formatter.field("tags", &self.tags);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }
@@ -11112,6 +11227,8 @@ pub struct CreateDatasetImportJobInput {
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
+    pub format: std::option::Option<std::string::String>,
 }
 impl CreateDatasetImportJobInput {
     /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
@@ -11167,6 +11284,10 @@ impl CreateDatasetImportJobInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11182,6 +11303,7 @@ impl std::fmt::Debug for CreateDatasetImportJobInput {
         );
         formatter.field("geolocation_format", &self.geolocation_format);
         formatter.field("tags", &self.tags);
+        formatter.field("format", &self.format);
         formatter.finish()
     }
 }

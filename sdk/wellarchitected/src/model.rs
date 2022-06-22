@@ -1364,7 +1364,9 @@ pub struct ShareInvitation {
     pub share_resource_type: std::option::Option<crate::model::ShareResourceType>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
@@ -1383,7 +1385,9 @@ impl ShareInvitation {
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
@@ -1454,13 +1458,17 @@ pub mod share_invitation {
             self.workload_id = input;
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
@@ -1609,7 +1617,9 @@ impl AsRef<str> for ShareInvitationAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensReview {
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
@@ -1633,7 +1643,9 @@ pub struct LensReview {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LensReview {
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
@@ -1716,13 +1728,17 @@ pub mod lens_review {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
@@ -2769,6 +2785,8 @@ pub struct Choice {
     pub helpful_resource: std::option::Option<crate::model::ChoiceContent>,
     /// <p>The choice level improvement plan.</p>
     pub improvement_plan: std::option::Option<crate::model::ChoiceContent>,
+    /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
+    pub additional_resources: std::option::Option<std::vec::Vec<crate::model::AdditionalResources>>,
 }
 impl Choice {
     /// <p>The ID of a choice.</p>
@@ -2791,6 +2809,12 @@ impl Choice {
     pub fn improvement_plan(&self) -> std::option::Option<&crate::model::ChoiceContent> {
         self.improvement_plan.as_ref()
     }
+    /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
+    pub fn additional_resources(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalResources]> {
+        self.additional_resources.as_deref()
+    }
 }
 impl std::fmt::Debug for Choice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2800,6 +2824,7 @@ impl std::fmt::Debug for Choice {
         formatter.field("description", &self.description);
         formatter.field("helpful_resource", &self.helpful_resource);
         formatter.field("improvement_plan", &self.improvement_plan);
+        formatter.field("additional_resources", &self.additional_resources);
         formatter.finish()
     }
 }
@@ -2815,6 +2840,8 @@ pub mod choice {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) helpful_resource: std::option::Option<crate::model::ChoiceContent>,
         pub(crate) improvement_plan: std::option::Option<crate::model::ChoiceContent>,
+        pub(crate) additional_resources:
+            std::option::Option<std::vec::Vec<crate::model::AdditionalResources>>,
     }
     impl Builder {
         /// <p>The ID of a choice.</p>
@@ -2873,6 +2900,25 @@ pub mod choice {
             self.improvement_plan = input;
             self
         }
+        /// Appends an item to `additional_resources`.
+        ///
+        /// To override the contents of this collection use [`set_additional_resources`](Self::set_additional_resources).
+        ///
+        /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
+        pub fn additional_resources(mut self, input: crate::model::AdditionalResources) -> Self {
+            let mut v = self.additional_resources.unwrap_or_default();
+            v.push(input);
+            self.additional_resources = Some(v);
+            self
+        }
+        /// <p>The additional resources for a choice. A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
+        pub fn set_additional_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdditionalResources>>,
+        ) -> Self {
+            self.additional_resources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Choice`](crate::model::Choice)
         pub fn build(self) -> crate::model::Choice {
             crate::model::Choice {
@@ -2881,6 +2927,7 @@ pub mod choice {
                 description: self.description,
                 helpful_resource: self.helpful_resource,
                 improvement_plan: self.improvement_plan,
+                additional_resources: self.additional_resources,
             }
         }
     }
@@ -2889,6 +2936,92 @@ impl Choice {
     /// Creates a new builder-style object to manufacture [`Choice`](crate::model::Choice)
     pub fn builder() -> crate::model::choice::Builder {
         crate::model::choice::Builder::default()
+    }
+}
+
+/// <p>The choice level additional resources.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AdditionalResources {
+    /// <p>Type of additional resource.</p>
+    pub r#type: std::option::Option<crate::model::AdditionalResourceType>,
+    /// <p>The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can be specified.</p>
+    pub content: std::option::Option<std::vec::Vec<crate::model::ChoiceContent>>,
+}
+impl AdditionalResources {
+    /// <p>Type of additional resource.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AdditionalResourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can be specified.</p>
+    pub fn content(&self) -> std::option::Option<&[crate::model::ChoiceContent]> {
+        self.content.as_deref()
+    }
+}
+impl std::fmt::Debug for AdditionalResources {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AdditionalResources");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("content", &self.content);
+        formatter.finish()
+    }
+}
+/// See [`AdditionalResources`](crate::model::AdditionalResources)
+pub mod additional_resources {
+
+    /// A builder for [`AdditionalResources`](crate::model::AdditionalResources)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::AdditionalResourceType>,
+        pub(crate) content: std::option::Option<std::vec::Vec<crate::model::ChoiceContent>>,
+    }
+    impl Builder {
+        /// <p>Type of additional resource.</p>
+        pub fn r#type(mut self, input: crate::model::AdditionalResourceType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Type of additional resource.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AdditionalResourceType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Appends an item to `content`.
+        ///
+        /// To override the contents of this collection use [`set_content`](Self::set_content).
+        ///
+        /// <p>The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can be specified.</p>
+        pub fn content(mut self, input: crate::model::ChoiceContent) -> Self {
+            let mut v = self.content.unwrap_or_default();
+            v.push(input);
+            self.content = Some(v);
+            self
+        }
+        /// <p>The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can be specified.</p>
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChoiceContent>>,
+        ) -> Self {
+            self.content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AdditionalResources`](crate::model::AdditionalResources)
+        pub fn build(self) -> crate::model::AdditionalResources {
+            crate::model::AdditionalResources {
+                r#type: self.r#type,
+                content: self.content,
+            }
+        }
+    }
+}
+impl AdditionalResources {
+    /// Creates a new builder-style object to manufacture [`AdditionalResources`](crate::model::AdditionalResources)
+    pub fn builder() -> crate::model::additional_resources::Builder {
+        crate::model::additional_resources::Builder::default()
     }
 }
 
@@ -2963,6 +3096,61 @@ impl ChoiceContent {
     /// Creates a new builder-style object to manufacture [`ChoiceContent`](crate::model::ChoiceContent)
     pub fn builder() -> crate::model::choice_content::Builder {
         crate::model::choice_content::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AdditionalResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    HelpfulResource,
+    #[allow(missing_docs)] // documentation missing in model
+    ImprovementPlan,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AdditionalResourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "HELPFUL_RESOURCE" => AdditionalResourceType::HelpfulResource,
+            "IMPROVEMENT_PLAN" => AdditionalResourceType::ImprovementPlan,
+            other => AdditionalResourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AdditionalResourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AdditionalResourceType::from(s))
+    }
+}
+impl AdditionalResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AdditionalResourceType::HelpfulResource => "HELPFUL_RESOURCE",
+            AdditionalResourceType::ImprovementPlan => "IMPROVEMENT_PLAN",
+            AdditionalResourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HELPFUL_RESOURCE", "IMPROVEMENT_PLAN"]
+    }
+}
+impl AsRef<str> for AdditionalResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3719,7 +3907,9 @@ pub struct LensUpgradeSummary {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
@@ -3739,7 +3929,9 @@ impl LensUpgradeSummary {
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
@@ -3809,13 +4001,17 @@ pub mod lens_upgrade_summary {
             self.workload_name = input;
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
@@ -4158,7 +4354,9 @@ impl LensShareSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensReviewSummary {
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
@@ -4175,7 +4373,9 @@ pub struct LensReviewSummary {
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
 }
 impl LensReviewSummary {
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
@@ -4237,13 +4437,17 @@ pub mod lens_review_summary {
             std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
     }
     impl Builder {
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
@@ -4625,7 +4829,9 @@ impl ChoiceImprovementPlan {
 pub struct LensSummary {
     /// <p>The ARN of the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
@@ -4650,7 +4856,9 @@ impl LensSummary {
     pub fn lens_arn(&self) -> std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
@@ -4733,13 +4941,17 @@ pub mod lens_summary {
             self.lens_arn = input;
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
@@ -5868,7 +6080,9 @@ impl AsRef<str> for DifferenceStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensReviewReport {
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
@@ -5878,7 +6092,9 @@ pub struct LensReviewReport {
     pub base64_string: std::option::Option<std::string::String>,
 }
 impl LensReviewReport {
-    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
@@ -5914,13 +6130,17 @@ pub mod lens_review_report {
         pub(crate) base64_string: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
-        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>The alias of the lens.</p>
+        /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
+        /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1:123456789012:lens/my-lens</code>. </p>
         /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
@@ -5984,6 +6204,9 @@ pub struct Lens {
     pub owner: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the share invitation.</p>
     pub share_invitation_id: std::option::Option<std::string::String>,
+    /// <p>The tags assigned to the lens.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Lens {
     /// <p>The ARN of a lens.</p>
@@ -6010,6 +6233,13 @@ impl Lens {
     pub fn share_invitation_id(&self) -> std::option::Option<&str> {
         self.share_invitation_id.as_deref()
     }
+    /// <p>The tags assigned to the lens.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Lens {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6020,6 +6250,7 @@ impl std::fmt::Debug for Lens {
         formatter.field("description", &self.description);
         formatter.field("owner", &self.owner);
         formatter.field("share_invitation_id", &self.share_invitation_id);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -6036,6 +6267,9 @@ pub mod lens {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) share_invitation_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The ARN of a lens.</p>
@@ -6101,6 +6335,31 @@ pub mod lens {
             self.share_invitation_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the lens.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags assigned to the lens.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Lens`](crate::model::Lens)
         pub fn build(self) -> crate::model::Lens {
             crate::model::Lens {
@@ -6110,6 +6369,7 @@ pub mod lens {
                 description: self.description,
                 owner: self.owner,
                 share_invitation_id: self.share_invitation_id,
+                tags: self.tags,
             }
         }
     }

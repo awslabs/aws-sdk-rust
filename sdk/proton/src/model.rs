@@ -276,7 +276,7 @@ impl AsRef<str> for TemplateType {
     }
 }
 
-/// <p>A summary of the service template version detail data.</p>
+/// <p>Summary data of an Proton service template version resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceTemplateVersionSummary {
@@ -594,7 +594,7 @@ impl AsRef<str> for TemplateVersionStatus {
     }
 }
 
-/// <p>The version of a service template detail data.</p>
+/// <p>Detailed data of an Proton service template version resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceTemplateVersion {
@@ -623,6 +623,11 @@ pub struct ServiceTemplateVersion {
         std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
     /// <p>The schema of the version of a service template.</p>
     pub schema: std::option::Option<std::string::String>,
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub supported_component_sources: std::option::Option<
+        std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+    >,
 }
 impl ServiceTemplateVersion {
     /// <p>The name of the version of a service template.</p>
@@ -675,6 +680,13 @@ impl ServiceTemplateVersion {
     pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn supported_component_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceTemplateSupportedComponentSourceType]> {
+        self.supported_component_sources.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceTemplateVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -694,6 +706,10 @@ impl std::fmt::Debug for ServiceTemplateVersion {
             &self.compatible_environment_templates,
         );
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "supported_component_sources",
+            &self.supported_component_sources,
+        );
         formatter.finish()
     }
 }
@@ -717,6 +733,9 @@ pub mod service_template_version {
         pub(crate) compatible_environment_templates:
             std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
         pub(crate) schema: std::option::Option<std::string::String>,
+        pub(crate) supported_component_sources: std::option::Option<
+            std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+        >,
     }
     impl Builder {
         /// <p>The name of the version of a service template.</p>
@@ -875,6 +894,32 @@ pub mod service_template_version {
             self.schema = input;
             self
         }
+        /// Appends an item to `supported_component_sources`.
+        ///
+        /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
+        ///
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn supported_component_sources(
+            mut self,
+            input: crate::model::ServiceTemplateSupportedComponentSourceType,
+        ) -> Self {
+            let mut v = self.supported_component_sources.unwrap_or_default();
+            v.push(input);
+            self.supported_component_sources = Some(v);
+            self
+        }
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_supported_component_sources(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
+            >,
+        ) -> Self {
+            self.supported_component_sources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion)
         pub fn build(self) -> crate::model::ServiceTemplateVersion {
             crate::model::ServiceTemplateVersion {
@@ -890,6 +935,7 @@ pub mod service_template_version {
                 last_modified_at: self.last_modified_at,
                 compatible_environment_templates: self.compatible_environment_templates,
                 schema: self.schema,
+                supported_component_sources: self.supported_component_sources,
             }
         }
     }
@@ -898,6 +944,57 @@ impl ServiceTemplateVersion {
     /// Creates a new builder-style object to manufacture [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion)
     pub fn builder() -> crate::model::service_template_version::Builder {
         crate::model::service_template_version::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ServiceTemplateSupportedComponentSourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    DirectlyDefined,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ServiceTemplateSupportedComponentSourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DIRECTLY_DEFINED" => ServiceTemplateSupportedComponentSourceType::DirectlyDefined,
+            other => ServiceTemplateSupportedComponentSourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ServiceTemplateSupportedComponentSourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ServiceTemplateSupportedComponentSourceType::from(s))
+    }
+}
+impl ServiceTemplateSupportedComponentSourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ServiceTemplateSupportedComponentSourceType::DirectlyDefined => "DIRECTLY_DEFINED",
+            ServiceTemplateSupportedComponentSourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DIRECTLY_DEFINED"]
+    }
+}
+impl AsRef<str> for ServiceTemplateSupportedComponentSourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1246,7 +1343,7 @@ impl S3ObjectSource {
     }
 }
 
-/// <p>The service template summary data.</p>
+/// <p>Summary data of an Proton service template resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceTemplateSummary {
@@ -1497,7 +1594,7 @@ impl AsRef<str> for Provisioning {
     }
 }
 
-/// <p>The service template detail data.</p>
+/// <p>Detailed data of an Proton service template resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceTemplate {
@@ -1719,7 +1816,7 @@ impl ServiceTemplate {
     }
 }
 
-/// <p>A summary of the service detail data.</p>
+/// <p>Summary data of an Proton service resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSummary {
@@ -2040,13 +2137,13 @@ impl AsRef<str> for ServiceStatus {
     }
 }
 
-/// <p>The service detail data.</p>
+/// <p>Detailed data of an Proton service resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
     /// <p>The name of the service.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A description of a service.</p>
+    /// <p>A description of the service.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -2076,7 +2173,7 @@ impl Service {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A description of a service.</p>
+    /// <p>A description of the service.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -2176,12 +2273,12 @@ pub mod service {
             self.name = input;
             self
         }
-        /// <p>A description of a service.</p>
+        /// <p>A description of the service.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of a service.</p>
+        /// <p>A description of the service.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2347,7 +2444,7 @@ impl Service {
     }
 }
 
-/// <p>The service pipeline detail data.</p>
+/// <p>Detailed data of an Proton service instance pipeline resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServicePipeline {
@@ -2992,7 +3089,7 @@ impl Output {
     }
 }
 
-/// <p>A summary of the service instance detail data.</p>
+/// <p>Summary data of an Proton service instance resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceInstanceSummary {
@@ -3292,7 +3389,7 @@ impl ServiceInstanceSummary {
     }
 }
 
-/// <p>The service instance detail data.</p>
+/// <p>Detailed data of an Proton service instance resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceInstance {
@@ -3318,7 +3415,7 @@ pub struct ServiceInstance {
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>The service instance deployment status.</p>
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
-    /// <p>A service instance deployment status message.</p>
+    /// <p>The message associated with the service instance deployment status.</p>
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The service spec that was used to create the service instance.</p>
     pub spec: std::option::Option<std::string::String>,
@@ -3368,7 +3465,7 @@ impl ServiceInstance {
     pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
-    /// <p>A service instance deployment status message.</p>
+    /// <p>The message associated with the service instance deployment status.</p>
     pub fn deployment_status_message(&self) -> std::option::Option<&str> {
         self.deployment_status_message.as_deref()
     }
@@ -3561,12 +3658,12 @@ pub mod service_instance {
             self.deployment_status = input;
             self
         }
-        /// <p>A service instance deployment status message.</p>
+        /// <p>The message associated with the service instance deployment status.</p>
         pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_status_message = Some(input.into());
             self
         }
-        /// <p>A service instance deployment status message.</p>
+        /// <p>The message associated with the service instance deployment status.</p>
         pub fn set_deployment_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3611,7 +3708,7 @@ impl ServiceInstance {
     }
 }
 
-/// <p>A summary of detail data for a registered repository.</p>
+/// <p>Summary data of a repository that has been registered with Proton.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositorySummary {
@@ -3707,7 +3804,7 @@ impl RepositorySummary {
     }
 }
 
-/// <p>Detail date for a repository that has been registered with Proton.</p>
+/// <p>Detailed data of a repository that has been registered with Proton.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Repository {
@@ -4788,7 +4885,7 @@ impl EnvironmentTemplate {
     }
 }
 
-/// <p>A summary of the environment detail data.</p>
+/// <p>Summary data of an Proton environment resource. An Proton environment is a set of resources shared across Proton services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentSummary {
@@ -4822,6 +4919,10 @@ pub struct EnvironmentSummary {
     pub environment_account_id: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub provisioning: std::option::Option<crate::model::Provisioning>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentSummary {
     /// <p>The name of the environment.</p>
@@ -4884,6 +4985,12 @@ impl EnvironmentSummary {
     pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
         self.provisioning.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+        self.component_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EnvironmentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4915,6 +5022,7 @@ impl std::fmt::Debug for EnvironmentSummary {
         );
         formatter.field("environment_account_id", &self.environment_account_id);
         formatter.field("provisioning", &self.provisioning);
+        formatter.field("component_role_arn", &self.component_role_arn);
         formatter.finish()
     }
 }
@@ -4940,6 +5048,7 @@ pub mod environment_summary {
         pub(crate) environment_account_connection_id: std::option::Option<std::string::String>,
         pub(crate) environment_account_id: std::option::Option<std::string::String>,
         pub(crate) provisioning: std::option::Option<crate::model::Provisioning>,
+        pub(crate) component_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the environment.</p>
@@ -5131,6 +5240,23 @@ pub mod environment_summary {
             self.provisioning = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::model::EnvironmentSummary)
         pub fn build(self) -> crate::model::EnvironmentSummary {
             crate::model::EnvironmentSummary {
@@ -5149,6 +5275,7 @@ pub mod environment_summary {
                 environment_account_connection_id: self.environment_account_connection_id,
                 environment_account_id: self.environment_account_id,
                 provisioning: self.provisioning,
+                component_role_arn: self.component_role_arn,
             }
         }
     }
@@ -5240,7 +5367,7 @@ impl EnvironmentTemplateFilter {
     }
 }
 
-/// <p>The environment detail data. An Proton environment is a set resources shared across an Proton service.</p>
+/// <p>Detailed data of an Proton environment resource. An Proton environment is a set of resources shared across Proton services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
@@ -5278,6 +5405,10 @@ pub struct Environment {
     pub provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>The infrastructure repository that you use to host your rendered infrastructure templates for self-managed provisioning.</p>
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl Environment {
     /// <p>The name of the environment.</p>
@@ -5348,6 +5479,12 @@ impl Environment {
     pub fn provisioning_repository(&self) -> std::option::Option<&crate::model::RepositoryBranch> {
         self.provisioning_repository.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+        self.component_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Environment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5381,6 +5518,7 @@ impl std::fmt::Debug for Environment {
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.field("provisioning", &self.provisioning);
         formatter.field("provisioning_repository", &self.provisioning_repository);
+        formatter.field("component_role_arn", &self.component_role_arn);
         formatter.finish()
     }
 }
@@ -5408,6 +5546,7 @@ pub mod environment {
         pub(crate) spec: std::option::Option<std::string::String>,
         pub(crate) provisioning: std::option::Option<crate::model::Provisioning>,
         pub(crate) provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
+        pub(crate) component_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the environment.</p>
@@ -5622,6 +5761,23 @@ pub mod environment {
             self.provisioning_repository = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Environment`](crate::model::Environment)
         pub fn build(self) -> crate::model::Environment {
             crate::model::Environment {
@@ -5642,6 +5798,7 @@ pub mod environment {
                 spec: self.spec,
                 provisioning: self.provisioning,
                 provisioning_repository: self.provisioning_repository,
+                component_role_arn: self.component_role_arn,
             }
         }
     }
@@ -5864,7 +6021,7 @@ impl RepositoryBranchInput {
     }
 }
 
-/// <p>The environment account connection detail data.</p>
+/// <p>Detailed data of an Proton environment account connection resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentAccountConnection {
@@ -5886,6 +6043,10 @@ pub struct EnvironmentAccountConnection {
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the environment account connection.</p>
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentAccountConnection {
     /// <p>The ID of the environment account connection.</p>
@@ -5924,6 +6085,12 @@ impl EnvironmentAccountConnection {
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentAccountConnectionStatus> {
         self.status.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+        self.component_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EnvironmentAccountConnection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5937,6 +6104,7 @@ impl std::fmt::Debug for EnvironmentAccountConnection {
         formatter.field("requested_at", &self.requested_at);
         formatter.field("last_modified_at", &self.last_modified_at);
         formatter.field("status", &self.status);
+        formatter.field("component_role_arn", &self.component_role_arn);
         formatter.finish()
     }
 }
@@ -5956,6 +6124,7 @@ pub mod environment_account_connection {
         pub(crate) requested_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
+        pub(crate) component_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the environment account connection.</p>
@@ -6066,6 +6235,23 @@ pub mod environment_account_connection {
             self.status = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection)
         pub fn build(self) -> crate::model::EnvironmentAccountConnection {
             crate::model::EnvironmentAccountConnection {
@@ -6078,6 +6264,7 @@ pub mod environment_account_connection {
                 requested_at: self.requested_at,
                 last_modified_at: self.last_modified_at,
                 status: self.status,
+                component_role_arn: self.component_role_arn,
             }
         }
     }
@@ -6148,7 +6335,7 @@ impl AsRef<str> for EnvironmentAccountConnectionStatus {
     }
 }
 
-/// <p>A summary of the environment account connection detail data.</p>
+/// <p>Summary data of an Proton environment account connection resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentAccountConnectionSummary {
@@ -6170,6 +6357,10 @@ pub struct EnvironmentAccountConnectionSummary {
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the environment account connection.</p>
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentAccountConnectionSummary {
     /// <p>The ID of the environment account connection.</p>
@@ -6208,6 +6399,12 @@ impl EnvironmentAccountConnectionSummary {
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentAccountConnectionStatus> {
         self.status.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+        self.component_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EnvironmentAccountConnectionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6221,6 +6418,7 @@ impl std::fmt::Debug for EnvironmentAccountConnectionSummary {
         formatter.field("requested_at", &self.requested_at);
         formatter.field("last_modified_at", &self.last_modified_at);
         formatter.field("status", &self.status);
+        formatter.field("component_role_arn", &self.component_role_arn);
         formatter.finish()
     }
 }
@@ -6240,6 +6438,7 @@ pub mod environment_account_connection_summary {
         pub(crate) requested_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
+        pub(crate) component_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the environment account connection.</p>
@@ -6350,6 +6549,23 @@ pub mod environment_account_connection_summary {
             self.status = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn set_component_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary)
         pub fn build(self) -> crate::model::EnvironmentAccountConnectionSummary {
             crate::model::EnvironmentAccountConnectionSummary {
@@ -6362,6 +6578,7 @@ pub mod environment_account_connection_summary {
                 requested_at: self.requested_at,
                 last_modified_at: self.last_modified_at,
                 status: self.status,
+                component_role_arn: self.component_role_arn,
             }
         }
     }
@@ -6431,6 +6648,657 @@ impl EnvironmentAccountConnectionRequesterAccountType {
     }
 }
 impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Summary data of an Proton component resource.</p>
+/// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ComponentSummary {
+    /// <p>The name of the component.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the Proton environment that this component is associated with.</p>
+    pub environment_name: std::option::Option<std::string::String>,
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+    pub service_name: std::option::Option<std::string::String>,
+    /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+    pub service_instance_name: std::option::Option<std::string::String>,
+    /// <p>The time when the component was created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when the component was last modified.</p>
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when a deployment of the component was last attempted.</p>
+    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when the component was last deployed successfully.</p>
+    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The component deployment status.</p>
+    pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
+    /// <p>The message associated with the component deployment status.</p>
+    pub deployment_status_message: std::option::Option<std::string::String>,
+}
+impl ComponentSummary {
+    /// <p>The name of the component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the Proton environment that this component is associated with.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+        self.service_instance_name.as_deref()
+    }
+    /// <p>The time when the component was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the component was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The time when a deployment of the component was last attempted.</p>
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_deployment_attempted_at.as_ref()
+    }
+    /// <p>The time when the component was last deployed successfully.</p>
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_deployment_succeeded_at.as_ref()
+    }
+    /// <p>The component deployment status.</p>
+    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>The message associated with the component deployment status.</p>
+    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+        self.deployment_status_message.as_deref()
+    }
+}
+impl std::fmt::Debug for ComponentSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ComponentSummary");
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.field("environment_name", &self.environment_name);
+        formatter.field("service_name", &self.service_name);
+        formatter.field("service_instance_name", &self.service_instance_name);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_modified_at", &self.last_modified_at);
+        formatter.field(
+            "last_deployment_attempted_at",
+            &self.last_deployment_attempted_at,
+        );
+        formatter.field(
+            "last_deployment_succeeded_at",
+            &self.last_deployment_succeeded_at,
+        );
+        formatter.field("deployment_status", &self.deployment_status);
+        formatter.field(
+            "deployment_status_message",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.finish()
+    }
+}
+/// See [`ComponentSummary`](crate::model::ComponentSummary)
+pub mod component_summary {
+
+    /// A builder for [`ComponentSummary`](crate::model::ComponentSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) environment_name: std::option::Option<std::string::String>,
+        pub(crate) service_name: std::option::Option<std::string::String>,
+        pub(crate) service_instance_name: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deployment_status: std::option::Option<crate::model::DeploymentStatus>,
+        pub(crate) deployment_status_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the component.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the component.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the component.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the component.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the Proton environment that this component is associated with.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Proton environment that this component is associated with.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.environment_name = input;
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
+            self
+        }
+        /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_instance_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+        pub fn set_service_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_instance_name = input;
+            self
+        }
+        /// <p>The time when the component was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The time when the component was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The time when the component was last modified.</p>
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_at = Some(input);
+            self
+        }
+        /// <p>The time when the component was last modified.</p>
+        pub fn set_last_modified_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_at = input;
+            self
+        }
+        /// <p>The time when a deployment of the component was last attempted.</p>
+        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_deployment_attempted_at = Some(input);
+            self
+        }
+        /// <p>The time when a deployment of the component was last attempted.</p>
+        pub fn set_last_deployment_attempted_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_deployment_attempted_at = input;
+            self
+        }
+        /// <p>The time when the component was last deployed successfully.</p>
+        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_deployment_succeeded_at = Some(input);
+            self
+        }
+        /// <p>The time when the component was last deployed successfully.</p>
+        pub fn set_last_deployment_succeeded_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_deployment_succeeded_at = input;
+            self
+        }
+        /// <p>The component deployment status.</p>
+        pub fn deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
+            self.deployment_status = Some(input);
+            self
+        }
+        /// <p>The component deployment status.</p>
+        pub fn set_deployment_status(
+            mut self,
+            input: std::option::Option<crate::model::DeploymentStatus>,
+        ) -> Self {
+            self.deployment_status = input;
+            self
+        }
+        /// <p>The message associated with the component deployment status.</p>
+        pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_status_message = Some(input.into());
+            self
+        }
+        /// <p>The message associated with the component deployment status.</p>
+        pub fn set_deployment_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_status_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ComponentSummary`](crate::model::ComponentSummary)
+        pub fn build(self) -> crate::model::ComponentSummary {
+            crate::model::ComponentSummary {
+                name: self.name,
+                arn: self.arn,
+                environment_name: self.environment_name,
+                service_name: self.service_name,
+                service_instance_name: self.service_instance_name,
+                created_at: self.created_at,
+                last_modified_at: self.last_modified_at,
+                last_deployment_attempted_at: self.last_deployment_attempted_at,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at,
+                deployment_status: self.deployment_status,
+                deployment_status_message: self.deployment_status_message,
+            }
+        }
+    }
+}
+impl ComponentSummary {
+    /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary)
+    pub fn builder() -> crate::model::component_summary::Builder {
+        crate::model::component_summary::Builder::default()
+    }
+}
+
+/// <p>Detailed data of an Proton component resource.</p>
+/// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the <i>Proton Administrator Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Component {
+    /// <p>The name of the component.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description of the component.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the Proton environment that this component is associated with.</p>
+    pub environment_name: std::option::Option<std::string::String>,
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+    pub service_name: std::option::Option<std::string::String>,
+    /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+    pub service_instance_name: std::option::Option<std::string::String>,
+    /// <p>The time when the component was created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when the component was last modified.</p>
+    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when a deployment of the component was last attempted.</p>
+    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time when the component was last deployed successfully.</p>
+    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The component deployment status.</p>
+    pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
+    /// <p>The message associated with the component deployment status.</p>
+    pub deployment_status_message: std::option::Option<std::string::String>,
+    /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
+    pub service_spec: std::option::Option<std::string::String>,
+}
+impl Component {
+    /// <p>The name of the component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the component.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the Proton environment that this component is associated with.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+        self.service_instance_name.as_deref()
+    }
+    /// <p>The time when the component was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the component was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The time when a deployment of the component was last attempted.</p>
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_deployment_attempted_at.as_ref()
+    }
+    /// <p>The time when the component was last deployed successfully.</p>
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_deployment_succeeded_at.as_ref()
+    }
+    /// <p>The component deployment status.</p>
+    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>The message associated with the component deployment status.</p>
+    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+        self.deployment_status_message.as_deref()
+    }
+    /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
+    pub fn service_spec(&self) -> std::option::Option<&str> {
+        self.service_spec.as_deref()
+    }
+}
+impl std::fmt::Debug for Component {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Component");
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("arn", &self.arn);
+        formatter.field("environment_name", &self.environment_name);
+        formatter.field("service_name", &self.service_name);
+        formatter.field("service_instance_name", &self.service_instance_name);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_modified_at", &self.last_modified_at);
+        formatter.field(
+            "last_deployment_attempted_at",
+            &self.last_deployment_attempted_at,
+        );
+        formatter.field(
+            "last_deployment_succeeded_at",
+            &self.last_deployment_succeeded_at,
+        );
+        formatter.field("deployment_status", &self.deployment_status);
+        formatter.field(
+            "deployment_status_message",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`Component`](crate::model::Component)
+pub mod component {
+
+    /// A builder for [`Component`](crate::model::Component)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) environment_name: std::option::Option<std::string::String>,
+        pub(crate) service_name: std::option::Option<std::string::String>,
+        pub(crate) service_instance_name: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) deployment_status: std::option::Option<crate::model::DeploymentStatus>,
+        pub(crate) deployment_status_message: std::option::Option<std::string::String>,
+        pub(crate) service_spec: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the component.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the component.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description of the component.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the component.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the component.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the component.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the Proton environment that this component is associated with.</p>
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.environment_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Proton environment that this component is associated with.</p>
+        pub fn set_environment_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.environment_name = input;
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
+            self
+        }
+        /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_instance_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+        pub fn set_service_instance_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_instance_name = input;
+            self
+        }
+        /// <p>The time when the component was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The time when the component was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The time when the component was last modified.</p>
+        pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_at = Some(input);
+            self
+        }
+        /// <p>The time when the component was last modified.</p>
+        pub fn set_last_modified_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_at = input;
+            self
+        }
+        /// <p>The time when a deployment of the component was last attempted.</p>
+        pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_deployment_attempted_at = Some(input);
+            self
+        }
+        /// <p>The time when a deployment of the component was last attempted.</p>
+        pub fn set_last_deployment_attempted_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_deployment_attempted_at = input;
+            self
+        }
+        /// <p>The time when the component was last deployed successfully.</p>
+        pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_deployment_succeeded_at = Some(input);
+            self
+        }
+        /// <p>The time when the component was last deployed successfully.</p>
+        pub fn set_last_deployment_succeeded_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_deployment_succeeded_at = input;
+            self
+        }
+        /// <p>The component deployment status.</p>
+        pub fn deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
+            self.deployment_status = Some(input);
+            self
+        }
+        /// <p>The component deployment status.</p>
+        pub fn set_deployment_status(
+            mut self,
+            input: std::option::Option<crate::model::DeploymentStatus>,
+        ) -> Self {
+            self.deployment_status = input;
+            self
+        }
+        /// <p>The message associated with the component deployment status.</p>
+        pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_status_message = Some(input.into());
+            self
+        }
+        /// <p>The message associated with the component deployment status.</p>
+        pub fn set_deployment_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_status_message = input;
+            self
+        }
+        /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
+        pub fn service_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_spec = Some(input.into());
+            self
+        }
+        /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
+        pub fn set_service_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_spec = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Component`](crate::model::Component)
+        pub fn build(self) -> crate::model::Component {
+            crate::model::Component {
+                name: self.name,
+                description: self.description,
+                arn: self.arn,
+                environment_name: self.environment_name,
+                service_name: self.service_name,
+                service_instance_name: self.service_instance_name,
+                created_at: self.created_at,
+                last_modified_at: self.last_modified_at,
+                last_deployment_attempted_at: self.last_deployment_attempted_at,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at,
+                deployment_status: self.deployment_status,
+                deployment_status_message: self.deployment_status_message,
+                service_spec: self.service_spec,
+            }
+        }
+    }
+}
+impl Component {
+    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component)
+    pub fn builder() -> crate::model::component::Builder {
+        crate::model::component::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ComponentDeploymentUpdateType {
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentVersion,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ComponentDeploymentUpdateType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CURRENT_VERSION" => ComponentDeploymentUpdateType::CurrentVersion,
+            "NONE" => ComponentDeploymentUpdateType::None,
+            other => ComponentDeploymentUpdateType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ComponentDeploymentUpdateType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ComponentDeploymentUpdateType::from(s))
+    }
+}
+impl ComponentDeploymentUpdateType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ComponentDeploymentUpdateType::CurrentVersion => "CURRENT_VERSION",
+            ComponentDeploymentUpdateType::None => "NONE",
+            ComponentDeploymentUpdateType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CURRENT_VERSION", "NONE"]
+    }
+}
+impl AsRef<str> for ComponentDeploymentUpdateType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

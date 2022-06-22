@@ -304,6 +304,7 @@ pub mod create_alert_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) alert_filters: std::option::Option<crate::model::AlertFilters>,
     }
     impl Builder {
         /// <p>The name of the alert.</p>
@@ -387,6 +388,19 @@ pub mod create_alert_input {
             self.tags = input;
             self
         }
+        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+        pub fn alert_filters(mut self, input: crate::model::AlertFilters) -> Self {
+            self.alert_filters = Some(input);
+            self
+        }
+        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+        pub fn set_alert_filters(
+            mut self,
+            input: std::option::Option<crate::model::AlertFilters>,
+        ) -> Self {
+            self.alert_filters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAlertInput`](crate::input::CreateAlertInput)
         pub fn build(
             self,
@@ -401,6 +415,7 @@ pub mod create_alert_input {
                 anomaly_detector_arn: self.anomaly_detector_arn,
                 action: self.action,
                 tags: self.tags,
+                alert_filters: self.alert_filters,
             })
         }
     }
@@ -4417,6 +4432,198 @@ impl UntagResourceInput {
     }
 }
 
+/// See [`UpdateAlertInput`](crate::input::UpdateAlertInput)
+pub mod update_alert_input {
+
+    /// A builder for [`UpdateAlertInput`](crate::input::UpdateAlertInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alert_arn: std::option::Option<std::string::String>,
+        pub(crate) alert_description: std::option::Option<std::string::String>,
+        pub(crate) alert_sensitivity_threshold: std::option::Option<i32>,
+        pub(crate) action: std::option::Option<crate::model::Action>,
+        pub(crate) alert_filters: std::option::Option<crate::model::AlertFilters>,
+    }
+    impl Builder {
+        /// <p>The ARN of the alert to update.</p>
+        pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alert_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the alert to update.</p>
+        pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alert_arn = input;
+            self
+        }
+        /// <p>A description of the alert.</p>
+        pub fn alert_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alert_description = Some(input.into());
+            self
+        }
+        /// <p>A description of the alert.</p>
+        pub fn set_alert_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.alert_description = input;
+            self
+        }
+        /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+        pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
+            self.alert_sensitivity_threshold = Some(input);
+            self
+        }
+        /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+        pub fn set_alert_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
+            self.alert_sensitivity_threshold = input;
+            self
+        }
+        /// <p>Action that will be triggered when there is an alert.</p>
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.action = Some(input);
+            self
+        }
+        /// <p>Action that will be triggered when there is an alert.</p>
+        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
+            self.action = input;
+            self
+        }
+        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+        pub fn alert_filters(mut self, input: crate::model::AlertFilters) -> Self {
+            self.alert_filters = Some(input);
+            self
+        }
+        /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+        pub fn set_alert_filters(
+            mut self,
+            input: std::option::Option<crate::model::AlertFilters>,
+        ) -> Self {
+            self.alert_filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAlertInput`](crate::input::UpdateAlertInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateAlertInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateAlertInput {
+                alert_arn: self.alert_arn,
+                alert_description: self.alert_description,
+                alert_sensitivity_threshold: self.alert_sensitivity_threshold.unwrap_or_default(),
+                action: self.action,
+                alert_filters: self.alert_filters,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateAlertInputOperationOutputAlias = crate::operation::UpdateAlert;
+#[doc(hidden)]
+pub type UpdateAlertInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateAlertInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAlert`](crate::operation::UpdateAlert)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateAlert,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateAlertInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/UpdateAlert").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateAlertInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_alert(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAlert::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAlert",
+            "lookoutmetrics",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateAlertInput`](crate::input::UpdateAlertInput)
+    pub fn builder() -> crate::input::update_alert_input::Builder {
+        crate::input::update_alert_input::Builder::default()
+    }
+}
+
 /// See [`UpdateAnomalyDetectorInput`](crate::input::UpdateAnomalyDetectorInput)
 pub mod update_anomaly_detector_input {
 
@@ -4977,6 +5184,58 @@ impl std::fmt::Debug for UpdateAnomalyDetectorInput {
             &self.anomaly_detector_description,
         );
         formatter.field("anomaly_detector_config", &self.anomaly_detector_config);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAlertInput {
+    /// <p>The ARN of the alert to update.</p>
+    pub alert_arn: std::option::Option<std::string::String>,
+    /// <p>A description of the alert.</p>
+    pub alert_description: std::option::Option<std::string::String>,
+    /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+    pub alert_sensitivity_threshold: i32,
+    /// <p>Action that will be triggered when there is an alert.</p>
+    pub action: std::option::Option<crate::model::Action>,
+    /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+    pub alert_filters: std::option::Option<crate::model::AlertFilters>,
+}
+impl UpdateAlertInput {
+    /// <p>The ARN of the alert to update.</p>
+    pub fn alert_arn(&self) -> std::option::Option<&str> {
+        self.alert_arn.as_deref()
+    }
+    /// <p>A description of the alert.</p>
+    pub fn alert_description(&self) -> std::option::Option<&str> {
+        self.alert_description.as_deref()
+    }
+    /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+    pub fn alert_sensitivity_threshold(&self) -> i32 {
+        self.alert_sensitivity_threshold
+    }
+    /// <p>Action that will be triggered when there is an alert.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+    pub fn alert_filters(&self) -> std::option::Option<&crate::model::AlertFilters> {
+        self.alert_filters.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateAlertInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAlertInput");
+        formatter.field("alert_arn", &self.alert_arn);
+        formatter.field("alert_description", &self.alert_description);
+        formatter.field(
+            "alert_sensitivity_threshold",
+            &self.alert_sensitivity_threshold,
+        );
+        formatter.field("action", &self.action);
+        formatter.field("alert_filters", &self.alert_filters);
         formatter.finish()
     }
 }
@@ -5802,6 +6061,8 @@ pub struct CreateAlertInput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+    pub alert_filters: std::option::Option<crate::model::AlertFilters>,
 }
 impl CreateAlertInput {
     /// <p>The name of the alert.</p>
@@ -5831,6 +6092,10 @@ impl CreateAlertInput {
     {
         self.tags.as_ref()
     }
+    /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
+    pub fn alert_filters(&self) -> std::option::Option<&crate::model::AlertFilters> {
+        self.alert_filters.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAlertInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5844,6 +6109,7 @@ impl std::fmt::Debug for CreateAlertInput {
         formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
         formatter.field("action", &self.action);
         formatter.field("tags", &self.tags);
+        formatter.field("alert_filters", &self.alert_filters);
         formatter.finish()
     }
 }
