@@ -60,6 +60,10 @@ where
         let (err, response) = match err {
             Ok(_) => return RetryKind::Unnecessary,
             Err(SdkError::ServiceError { err, raw }) => (err, raw),
+            Err(SdkError::TimeoutError(_err)) => {
+                return RetryKind::Error(ErrorKind::TransientError)
+            }
+
             Err(SdkError::DispatchFailure(err)) => {
                 return if err.is_timeout() || err.is_io() {
                     RetryKind::Error(ErrorKind::TransientError)
@@ -67,7 +71,7 @@ where
                     RetryKind::Error(ek)
                 } else {
                     RetryKind::UnretryableFailure
-                }
+                };
             }
             Err(_) => return RetryKind::UnretryableFailure,
         };
@@ -198,7 +202,7 @@ mod test {
                     CodedError {
                         code: "RequestTimeout"
                     },
-                    test_response
+                    test_response,
                 )
                 .as_ref()
             ),
@@ -251,6 +255,16 @@ mod test {
         assert_eq!(
             policy.classify(make_err(UnmodeledError, test_response).as_ref()),
             RetryKind::Explicit(Duration::from_millis(5000))
+        );
+    }
+
+    #[test]
+    fn test_timeout_error() {
+        let policy = AwsErrorRetryPolicy::new();
+        let err: Result<(), SdkError<UnmodeledError>> = Err(SdkError::TimeoutError("blah".into()));
+        assert_eq!(
+            policy.classify(err.as_ref()),
+            RetryKind::Error(ErrorKind::TransientError)
         );
     }
 }
