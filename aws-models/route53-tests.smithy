@@ -7,8 +7,8 @@ use smithy.test#httpRequestTests
 
 apply ListResourceRecordSets @httpRequestTests([
     {
-        id: "ListResourceRecordSetsTrimHostdZone",
-        documentation: "This test validates that that hosted zone is correctly trimmed",
+        id: "ListResourceRecordSetsTrimHostedZone",
+        documentation: "This test validates that hosted zone is correctly trimmed",
         method: "GET",
         protocol: "aws.protocols#restXml",
         uri: "/2013-04-01/hostedzone/IDOFMYHOSTEDZONE/rrset",
@@ -17,4 +17,32 @@ apply ListResourceRecordSets @httpRequestTests([
             "HostedZoneId": "/hostedzone/IDOFMYHOSTEDZONE"
         }
     }
+])
+
+apply GetChange @httpRequestTests([
+    {
+        id: "GetChangeTrimChangeId",
+        documentation: "This test validates that change id is correctly trimmed",
+        method: "GET",
+        protocol: "aws.protocols#restXml",
+        uri: "/2013-04-01/change/SOMECHANGEID",
+        bodyMediaType: "application/xml",
+        params: {
+            "Id": "/change/SOMECHANGEID"
+        }
+    },
+])
+
+apply GetReusableDelegationSet @httpRequestTests([
+    {
+        id: "GetReusableDelegationSetTrimDelegationSetId",
+        documentation: "This test validates that delegation set id is correctly trimmed",
+        method: "GET",
+        protocol: "aws.protocols#restXml",
+        uri: "/2013-04-01/delegationset/DELEGATIONSETID",
+        bodyMediaType: "application/xml",
+        params: {
+            "Id": "/delegationset/DELEGATIONSETID"
+        }
+    },
 ])
