@@ -63,6 +63,16 @@ fn user_agent() -> AwsUserAgent {
 /// [transitioning to IMDSv2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html#instance-metadata-transition-to-version-2)
 /// for more information._
 ///
+/// **Note**: When running in a Docker container, all network requests will incur an additional hop. When combined with the default IMDS hop limit of 1, this will cause requests to IMDS to timeout! To fix this issue, you'll need to set the following instance metadata settings :
+/// ```txt
+/// amazonec2-metadata-token=required
+/// amazonec2-metadata-token-response-hop-limit=2
+/// ```
+///
+/// On an instance that is already running, these can be set with [ModifyInstanceMetadataOptions](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceMetadataOptions.html). On a new instance, these can be set with the `MetadataOptions` field on [RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html).
+///
+/// For more information about IMDSv2 vs. IMDSv1 see [this guide](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-service.html)
+///
 /// # Client Configuration
 /// The IMDS client can load configuration explicitly, via environment variables, or via
 /// `~/.aws/config`. It will first attempt to resolve an endpoint override. If no endpoint
