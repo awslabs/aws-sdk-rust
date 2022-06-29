@@ -46,7 +46,7 @@ impl Builder {
     /// Override the [instance profile](instance-profile) used for this provider.
     ///
     /// When retrieving IMDS credentials, a call must first be made to
-    /// `<IMDS_BASE_URL>/latest/meta-data/iam/security-credentials`. This returns the instance
+    /// `<IMDS_BASE_URL>/latest/meta-data/iam/security-credentials/`. This returns the instance
     /// profile used. By setting this parameter, retrieving the profile is skipped
     /// and the provided value is used instead.
     ///
@@ -129,7 +129,7 @@ impl ImdsCredentialsProvider {
         match self
             .client()
             .await?
-            .get("/latest/meta-data/iam/security-credentials")
+            .get("/latest/meta-data/iam/security-credentials/")
             .await
         {
             Ok(profile) => Ok(profile),
@@ -223,7 +223,7 @@ mod test {
                     token_response(21600, TOKEN_A),
                 ),
                 (
-                    imds_request("http://169.254.169.254/latest/meta-data/iam/security-credentials", TOKEN_A),
+                    imds_request("http://169.254.169.254/latest/meta-data/iam/security-credentials/", TOKEN_A),
                     imds_response(r#"profile-name"#),
                 ),
                 (
@@ -231,7 +231,7 @@ mod test {
                     imds_response("{\n  \"Code\" : \"Success\",\n  \"LastUpdated\" : \"2021-09-20T21:42:26Z\",\n  \"Type\" : \"AWS-HMAC\",\n  \"AccessKeyId\" : \"ASIARTEST\",\n  \"SecretAccessKey\" : \"testsecret\",\n  \"Token\" : \"testtoken\",\n  \"Expiration\" : \"2021-09-21T04:16:53Z\"\n}"),
                 ),
                 (
-                    imds_request("http://169.254.169.254/latest/meta-data/iam/security-credentials", TOKEN_A),
+                    imds_request("http://169.254.169.254/latest/meta-data/iam/security-credentials/", TOKEN_A),
                     imds_response(r#"different-profile"#),
                 ),
                 (
