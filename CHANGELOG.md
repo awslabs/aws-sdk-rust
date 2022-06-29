@@ -1,3 +1,21 @@
+<!-- Do not manually edit this file. Use the `changelogger` tool. -->
+v0.15.0 (June 29th, 2022)
+=========================
+**Breaking Changes:**
+- ⚠ ([smithy-rs#932](https://github.com/awslabs/smithy-rs/issues/932)) Replaced use of `pin-project` with equivalent `pin-project-lite`. For pinned enum tuple variants and tuple structs, this
+    change requires that we switch to using enum struct variants and regular structs. Most of the structs and enums that
+    were updated had only private fields/variants and so have the same public API. However, this change does affect the
+    public API of `aws_smithy_http_tower::map_request::MapRequestFuture<F, E>`. The `Inner` and `Ready` variants contained a
+    single value. Each have been converted to struct variants and the inner value is now accessible by the `inner` field
+    instead of the `0` field.
+
+**New this release:**
+- 🐛 ([aws-sdk-rust#560](https://github.com/awslabs/aws-sdk-rust/issues/560), [smithy-rs#1487](https://github.com/awslabs/smithy-rs/issues/1487)) Add a trailing slash to the URI `/latest/meta-data/iam/security-credentials/ when loading credentials from IMDS
+- ([aws-sdk-rust#540](https://github.com/awslabs/aws-sdk-rust/issues/540), @jmklix) Add comments for docker settings needed when using this sdk
+
+**Contributors**
+Thank you for your contributions! ❤
+- @jmklix ([aws-sdk-rust#540](https://github.com/awslabs/aws-sdk-rust/issues/540))
 <!-- Do not manually edit this file, use `update-changelogs` -->
 v0.14.0 (June 22nd, 2022)
 =========================
