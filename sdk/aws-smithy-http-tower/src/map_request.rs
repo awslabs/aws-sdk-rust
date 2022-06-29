@@ -6,7 +6,7 @@
 use crate::SendOperationError;
 use aws_smithy_http::middleware::{AsyncMapRequest, MapRequest};
 use aws_smithy_http::operation;
-use pin_project::pin_project;
+use pin_project_lite::pin_project;
 use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
@@ -97,10 +97,15 @@ where
     }
 }
 
-#[pin_project(project = EnumProj)]
-pub enum MapRequestFuture<F, E> {
-    Inner(#[pin] F),
-    Ready(Option<E>),
+pin_project! {
+    #[project = EnumProj]
+    pub enum MapRequestFuture<F, E> {
+        Inner {
+            #[pin]
+            inner: F
+        },
+        Ready { inner: Option<E> },
+    }
 }
 
 impl<O, F, E> Future for MapRequestFuture<F, E>
@@ -111,8 +116,8 @@ where
 
     fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
         match self.project() {
-            EnumProj::Ready(e) => Poll::Ready(Err(e.take().unwrap())),
-            EnumProj::Inner(f) => f.poll(cx),
+            EnumProj::Inner { inner: f } => f.poll(cx),
+            EnumProj::Ready { inner: e } => Poll::Ready(Err(e.take().unwrap())),
         }
     }
 }
@@ -143,8 +148,10 @@ where
             .apply(req)
             .map_err(|e| SendOperationError::RequestConstructionError(e.into()))
         {
-            Err(e) => MapRequestFuture::Ready(Some(e)),
-            Ok(req) => MapRequestFuture::Inner(self.inner.call(req)),
+            Err(e) => MapRequestFuture::Ready { inner: Some(e) },
+            Ok(req) => MapRequestFuture::Inner {
+                inner: self.inner.call(req),
+            },
         }
     }
 }

@@ -358,8 +358,8 @@ mod test {
         assert_eq!(some_data.len(), 16384);
 
         assert_eq!(
-            ByteStream::new(body1).collect().await.unwrap().remaining(),
-            file_length as usize - some_data.len()
+            ByteStream::new(body1).collect().await.unwrap().remaining() as u64,
+            file_length - some_data.len() as u64
         );
     }
 
@@ -577,7 +577,7 @@ mod test {
 
         let file_size = file.as_file().metadata().unwrap().len();
         // Check that our in-memory copy has the same size as the file
-        assert_eq!(file_size as usize, in_memory_copy_of_file_contents.len());
+        assert_eq!(file_size, in_memory_copy_of_file_contents.len() as u64);
         let file_path = file.path().to_path_buf();
         let chunks = 7;
         let chunk_size = file_size / chunks;

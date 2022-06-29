@@ -8,7 +8,6 @@ use crate::result::SdkError;
 use aws_smithy_eventstream::frame::{MarshallMessage, SignMessage};
 use bytes::Bytes;
 use futures_core::Stream;
-use pin_project::pin_project;
 use std::error::Error as StdError;
 use std::fmt;
 use std::marker::PhantomData;
@@ -53,15 +52,15 @@ where
 ///
 /// This will yield an `Err(SdkError::ConstructionFailure)` if a message can't be
 /// marshalled into an Event Stream frame, (e.g., if the message payload was too large).
-#[pin_project]
 pub struct MessageStreamAdapter<T, E> {
     marshaller: Box<dyn MarshallMessage<Input = T> + Send + Sync>,
     signer: Box<dyn SignMessage + Send + Sync>,
-    #[pin]
     stream: Pin<Box<dyn Stream<Item = Result<T, BoxError>> + Send>>,
     end_signal_sent: bool,
     _phantom: PhantomData<E>,
 }
+
+impl<T, E> Unpin for MessageStreamAdapter<T, E> {}
 
 impl<T, E> MessageStreamAdapter<T, E>
 where
@@ -88,18 +87,17 @@ where
 {
     type Item = Result<Bytes, SdkError<E>>;
 
-    fn poll_next(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
-        let this = self.project();
-        match this.stream.poll_next(cx) {
+    fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
+        match self.stream.as_mut().poll_next(cx) {
             Poll::Ready(message_option) => {
                 if let Some(message_result) = message_option {
                     let message_result =
                         message_result.map_err(|err| SdkError::ConstructionFailure(err));
-                    let message = this
+                    let message = self
                         .marshaller
                         .marshall(message_result?)
                         .map_err(|err| SdkError::ConstructionFailure(Box::new(err)))?;
-                    let message = this
+                    let message = self
                         .signer
                         .sign(message)
                         .map_err(|err| SdkError::ConstructionFailure(err))?;
@@ -108,10 +106,10 @@ where
                         .write_to(&mut buffer)
                         .map_err(|err| SdkError::ConstructionFailure(Box::new(err)))?;
                     Poll::Ready(Some(Ok(Bytes::from(buffer))))
-                } else if !*this.end_signal_sent {
-                    *this.end_signal_sent = true;
+                } else if !self.end_signal_sent {
+                    self.end_signal_sent = true;
                     let mut buffer = Vec::new();
-                    this.signer
+                    self.signer
                         .sign_empty()
                         .map_err(|err| SdkError::ConstructionFailure(err))?
                         .write_to(&mut buffer)
