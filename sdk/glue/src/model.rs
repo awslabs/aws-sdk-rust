@@ -17950,17 +17950,17 @@ impl DataLakePrincipal {
     }
 }
 
-/// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+/// <p>Specifies Lake Formation configuration settings for the crawler.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LakeFormationConfiguration {
-    /// <p>Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+    /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub use_lake_formation_credentials: std::option::Option<bool>,
     /// <p>Required for cross account crawls. For same account crawls as the target data, this can be left as null.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl LakeFormationConfiguration {
-    /// <p>Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+    /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub fn use_lake_formation_credentials(&self) -> std::option::Option<bool> {
         self.use_lake_formation_credentials
     }
@@ -17990,12 +17990,12 @@ pub mod lake_formation_configuration {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+        /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
         pub fn use_lake_formation_credentials(mut self, input: bool) -> Self {
             self.use_lake_formation_credentials = Some(input);
             self
         }
-        /// <p>Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+        /// <p>Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
         pub fn set_use_lake_formation_credentials(
             mut self,
             input: std::option::Option<bool>,
@@ -25967,6 +25967,601 @@ impl CustomEntityType {
     /// Creates a new builder-style object to manufacture [`CustomEntityType`](crate::model::CustomEntityType).
     pub fn builder() -> crate::model::custom_entity_type::Builder {
         crate::model::custom_entity_type::Builder::default()
+    }
+}
+
+/// <p>Contains the information for a run of a crawler.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CrawlerHistory {
+    /// <p>A UUID identifier for each crawl.</p>
+    pub crawl_id: std::option::Option<std::string::String>,
+    /// <p>The state of the crawl.</p>
+    pub state: std::option::Option<crate::model::CrawlerHistoryState>,
+    /// <p>The date and time on which the crawl started.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time on which the crawl ended.</p>
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
+    pub summary: std::option::Option<std::string::String>,
+    /// <p>If an error occurred, the error message associated with the crawl.</p>
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>The log group associated with the crawl.</p>
+    pub log_group: std::option::Option<std::string::String>,
+    /// <p>The log stream associated with the crawl.</p>
+    pub log_stream: std::option::Option<std::string::String>,
+    /// <p>The prefix for a CloudWatch message about this crawl.</p>
+    pub message_prefix: std::option::Option<std::string::String>,
+    /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
+    pub dpu_hour: f64,
+}
+impl CrawlerHistory {
+    /// <p>A UUID identifier for each crawl.</p>
+    pub fn crawl_id(&self) -> std::option::Option<&str> {
+        self.crawl_id.as_deref()
+    }
+    /// <p>The state of the crawl.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CrawlerHistoryState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time on which the crawl started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The date and time on which the crawl ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+    /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>If an error occurred, the error message associated with the crawl.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The log group associated with the crawl.</p>
+    pub fn log_group(&self) -> std::option::Option<&str> {
+        self.log_group.as_deref()
+    }
+    /// <p>The log stream associated with the crawl.</p>
+    pub fn log_stream(&self) -> std::option::Option<&str> {
+        self.log_stream.as_deref()
+    }
+    /// <p>The prefix for a CloudWatch message about this crawl.</p>
+    pub fn message_prefix(&self) -> std::option::Option<&str> {
+        self.message_prefix.as_deref()
+    }
+    /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
+    pub fn dpu_hour(&self) -> f64 {
+        self.dpu_hour
+    }
+}
+impl std::fmt::Debug for CrawlerHistory {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CrawlerHistory");
+        formatter.field("crawl_id", &self.crawl_id);
+        formatter.field("state", &self.state);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("summary", &self.summary);
+        formatter.field("error_message", &self.error_message);
+        formatter.field("log_group", &self.log_group);
+        formatter.field("log_stream", &self.log_stream);
+        formatter.field("message_prefix", &self.message_prefix);
+        formatter.field("dpu_hour", &self.dpu_hour);
+        formatter.finish()
+    }
+}
+/// See [`CrawlerHistory`](crate::model::CrawlerHistory).
+pub mod crawler_history {
+
+    /// A builder for [`CrawlerHistory`](crate::model::CrawlerHistory).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) crawl_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::CrawlerHistoryState>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) summary: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) log_group: std::option::Option<std::string::String>,
+        pub(crate) log_stream: std::option::Option<std::string::String>,
+        pub(crate) message_prefix: std::option::Option<std::string::String>,
+        pub(crate) dpu_hour: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>A UUID identifier for each crawl.</p>
+        pub fn crawl_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.crawl_id = Some(input.into());
+            self
+        }
+        /// <p>A UUID identifier for each crawl.</p>
+        pub fn set_crawl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.crawl_id = input;
+            self
+        }
+        /// <p>The state of the crawl.</p>
+        pub fn state(mut self, input: crate::model::CrawlerHistoryState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the crawl.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::CrawlerHistoryState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The date and time on which the crawl started.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>The date and time on which the crawl started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The date and time on which the crawl ended.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p>The date and time on which the crawl ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
+        pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.summary = Some(input.into());
+            self
+        }
+        /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
+        pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.summary = input;
+            self
+        }
+        /// <p>If an error occurred, the error message associated with the crawl.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>If an error occurred, the error message associated with the crawl.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p>The log group associated with the crawl.</p>
+        pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group = Some(input.into());
+            self
+        }
+        /// <p>The log group associated with the crawl.</p>
+        pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group = input;
+            self
+        }
+        /// <p>The log stream associated with the crawl.</p>
+        pub fn log_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_stream = Some(input.into());
+            self
+        }
+        /// <p>The log stream associated with the crawl.</p>
+        pub fn set_log_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_stream = input;
+            self
+        }
+        /// <p>The prefix for a CloudWatch message about this crawl.</p>
+        pub fn message_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_prefix = Some(input.into());
+            self
+        }
+        /// <p>The prefix for a CloudWatch message about this crawl.</p>
+        pub fn set_message_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.message_prefix = input;
+            self
+        }
+        /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
+        pub fn dpu_hour(mut self, input: f64) -> Self {
+            self.dpu_hour = Some(input);
+            self
+        }
+        /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
+        pub fn set_dpu_hour(mut self, input: std::option::Option<f64>) -> Self {
+            self.dpu_hour = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CrawlerHistory`](crate::model::CrawlerHistory).
+        pub fn build(self) -> crate::model::CrawlerHistory {
+            crate::model::CrawlerHistory {
+                crawl_id: self.crawl_id,
+                state: self.state,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                summary: self.summary,
+                error_message: self.error_message,
+                log_group: self.log_group,
+                log_stream: self.log_stream,
+                message_prefix: self.message_prefix,
+                dpu_hour: self.dpu_hour.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CrawlerHistory {
+    /// Creates a new builder-style object to manufacture [`CrawlerHistory`](crate::model::CrawlerHistory).
+    pub fn builder() -> crate::model::crawler_history::Builder {
+        crate::model::crawler_history::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CrawlerHistoryState {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CrawlerHistoryState {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => CrawlerHistoryState::Completed,
+            "FAILED" => CrawlerHistoryState::Failed,
+            "RUNNING" => CrawlerHistoryState::Running,
+            "STOPPED" => CrawlerHistoryState::Stopped,
+            other => CrawlerHistoryState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CrawlerHistoryState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CrawlerHistoryState::from(s))
+    }
+}
+impl CrawlerHistoryState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CrawlerHistoryState::Completed => "COMPLETED",
+            CrawlerHistoryState::Failed => "FAILED",
+            CrawlerHistoryState::Running => "RUNNING",
+            CrawlerHistoryState::Stopped => "STOPPED",
+            CrawlerHistoryState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED", "RUNNING", "STOPPED"]
+    }
+}
+impl AsRef<str> for CrawlerHistoryState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A list of fields, comparators and value that you can use to filter the crawler runs for a specified crawler.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CrawlsFilter {
+    /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
+    /// <ul>
+    /// <li> <p> <code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p> </li>
+    /// <li> <p> <code>STATE</code>: A string representing the state of the crawl.</p> </li>
+    /// <li> <p> <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p> </li>
+    /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
+    /// </ul>
+    pub field_name: std::option::Option<crate::model::FieldName>,
+    /// <p>A defined comparator that operates on the value. The available operators are:</p>
+    /// <ul>
+    /// <li> <p> <code>GT</code>: Greater than.</p> </li>
+    /// <li> <p> <code>GE</code>: Greater than or equal to.</p> </li>
+    /// <li> <p> <code>LT</code>: Less than.</p> </li>
+    /// <li> <p> <code>LE</code>: Less than or equal to.</p> </li>
+    /// <li> <p> <code>EQ</code>: Equal to.</p> </li>
+    /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
+    /// </ul>
+    pub filter_operator: std::option::Option<crate::model::FilterOperator>,
+    /// <p>The value provided for comparison on the crawl field. </p>
+    pub field_value: std::option::Option<std::string::String>,
+}
+impl CrawlsFilter {
+    /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
+    /// <ul>
+    /// <li> <p> <code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p> </li>
+    /// <li> <p> <code>STATE</code>: A string representing the state of the crawl.</p> </li>
+    /// <li> <p> <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p> </li>
+    /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
+    /// </ul>
+    pub fn field_name(&self) -> std::option::Option<&crate::model::FieldName> {
+        self.field_name.as_ref()
+    }
+    /// <p>A defined comparator that operates on the value. The available operators are:</p>
+    /// <ul>
+    /// <li> <p> <code>GT</code>: Greater than.</p> </li>
+    /// <li> <p> <code>GE</code>: Greater than or equal to.</p> </li>
+    /// <li> <p> <code>LT</code>: Less than.</p> </li>
+    /// <li> <p> <code>LE</code>: Less than or equal to.</p> </li>
+    /// <li> <p> <code>EQ</code>: Equal to.</p> </li>
+    /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
+    /// </ul>
+    pub fn filter_operator(&self) -> std::option::Option<&crate::model::FilterOperator> {
+        self.filter_operator.as_ref()
+    }
+    /// <p>The value provided for comparison on the crawl field. </p>
+    pub fn field_value(&self) -> std::option::Option<&str> {
+        self.field_value.as_deref()
+    }
+}
+impl std::fmt::Debug for CrawlsFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CrawlsFilter");
+        formatter.field("field_name", &self.field_name);
+        formatter.field("filter_operator", &self.filter_operator);
+        formatter.field("field_value", &self.field_value);
+        formatter.finish()
+    }
+}
+/// See [`CrawlsFilter`](crate::model::CrawlsFilter).
+pub mod crawls_filter {
+
+    /// A builder for [`CrawlsFilter`](crate::model::CrawlsFilter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) field_name: std::option::Option<crate::model::FieldName>,
+        pub(crate) filter_operator: std::option::Option<crate::model::FilterOperator>,
+        pub(crate) field_value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
+        /// <ul>
+        /// <li> <p> <code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p> </li>
+        /// <li> <p> <code>STATE</code>: A string representing the state of the crawl.</p> </li>
+        /// <li> <p> <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p> </li>
+        /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
+        /// </ul>
+        pub fn field_name(mut self, input: crate::model::FieldName) -> Self {
+            self.field_name = Some(input);
+            self
+        }
+        /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
+        /// <ul>
+        /// <li> <p> <code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p> </li>
+        /// <li> <p> <code>STATE</code>: A string representing the state of the crawl.</p> </li>
+        /// <li> <p> <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p> </li>
+        /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
+        /// </ul>
+        pub fn set_field_name(
+            mut self,
+            input: std::option::Option<crate::model::FieldName>,
+        ) -> Self {
+            self.field_name = input;
+            self
+        }
+        /// <p>A defined comparator that operates on the value. The available operators are:</p>
+        /// <ul>
+        /// <li> <p> <code>GT</code>: Greater than.</p> </li>
+        /// <li> <p> <code>GE</code>: Greater than or equal to.</p> </li>
+        /// <li> <p> <code>LT</code>: Less than.</p> </li>
+        /// <li> <p> <code>LE</code>: Less than or equal to.</p> </li>
+        /// <li> <p> <code>EQ</code>: Equal to.</p> </li>
+        /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
+        /// </ul>
+        pub fn filter_operator(mut self, input: crate::model::FilterOperator) -> Self {
+            self.filter_operator = Some(input);
+            self
+        }
+        /// <p>A defined comparator that operates on the value. The available operators are:</p>
+        /// <ul>
+        /// <li> <p> <code>GT</code>: Greater than.</p> </li>
+        /// <li> <p> <code>GE</code>: Greater than or equal to.</p> </li>
+        /// <li> <p> <code>LT</code>: Less than.</p> </li>
+        /// <li> <p> <code>LE</code>: Less than or equal to.</p> </li>
+        /// <li> <p> <code>EQ</code>: Equal to.</p> </li>
+        /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
+        /// </ul>
+        pub fn set_filter_operator(
+            mut self,
+            input: std::option::Option<crate::model::FilterOperator>,
+        ) -> Self {
+            self.filter_operator = input;
+            self
+        }
+        /// <p>The value provided for comparison on the crawl field. </p>
+        pub fn field_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.field_value = Some(input.into());
+            self
+        }
+        /// <p>The value provided for comparison on the crawl field. </p>
+        pub fn set_field_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.field_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CrawlsFilter`](crate::model::CrawlsFilter).
+        pub fn build(self) -> crate::model::CrawlsFilter {
+            crate::model::CrawlsFilter {
+                field_name: self.field_name,
+                filter_operator: self.filter_operator,
+                field_value: self.field_value,
+            }
+        }
+    }
+}
+impl CrawlsFilter {
+    /// Creates a new builder-style object to manufacture [`CrawlsFilter`](crate::model::CrawlsFilter).
+    pub fn builder() -> crate::model::crawls_filter::Builder {
+        crate::model::crawls_filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FilterOperator {
+    #[allow(missing_docs)] // documentation missing in model
+    Eq,
+    #[allow(missing_docs)] // documentation missing in model
+    Ge,
+    #[allow(missing_docs)] // documentation missing in model
+    Gt,
+    #[allow(missing_docs)] // documentation missing in model
+    Le,
+    #[allow(missing_docs)] // documentation missing in model
+    Lt,
+    #[allow(missing_docs)] // documentation missing in model
+    Ne,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FilterOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "EQ" => FilterOperator::Eq,
+            "GE" => FilterOperator::Ge,
+            "GT" => FilterOperator::Gt,
+            "LE" => FilterOperator::Le,
+            "LT" => FilterOperator::Lt,
+            "NE" => FilterOperator::Ne,
+            other => FilterOperator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FilterOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FilterOperator::from(s))
+    }
+}
+impl FilterOperator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FilterOperator::Eq => "EQ",
+            FilterOperator::Ge => "GE",
+            FilterOperator::Gt => "GT",
+            FilterOperator::Le => "LE",
+            FilterOperator::Lt => "LT",
+            FilterOperator::Ne => "NE",
+            FilterOperator::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EQ", "GE", "GT", "LE", "LT", "NE"]
+    }
+}
+impl AsRef<str> for FilterOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FieldName {
+    #[allow(missing_docs)] // documentation missing in model
+    CrawlId,
+    #[allow(missing_docs)] // documentation missing in model
+    DpuHour,
+    #[allow(missing_docs)] // documentation missing in model
+    EndTime,
+    #[allow(missing_docs)] // documentation missing in model
+    StartTime,
+    #[allow(missing_docs)] // documentation missing in model
+    State,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FieldName {
+    fn from(s: &str) -> Self {
+        match s {
+            "CRAWL_ID" => FieldName::CrawlId,
+            "DPU_HOUR" => FieldName::DpuHour,
+            "END_TIME" => FieldName::EndTime,
+            "START_TIME" => FieldName::StartTime,
+            "STATE" => FieldName::State,
+            other => FieldName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FieldName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FieldName::from(s))
+    }
+}
+impl FieldName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FieldName::CrawlId => "CRAWL_ID",
+            FieldName::DpuHour => "DPU_HOUR",
+            FieldName::EndTime => "END_TIME",
+            FieldName::StartTime => "START_TIME",
+            FieldName::State => "STATE",
+            FieldName::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CRAWL_ID", "DPU_HOUR", "END_TIME", "START_TIME", "STATE"]
+    }
+}
+impl AsRef<str> for FieldName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -35366,7 +35961,7 @@ pub struct Crawler {
     pub configuration: std::option::Option<std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub crawler_security_configuration: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+    /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
 }
 impl Crawler {
@@ -35448,7 +36043,7 @@ impl Crawler {
     pub fn crawler_security_configuration(&self) -> std::option::Option<&str> {
         self.crawler_security_configuration.as_deref()
     }
-    /// <p>Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+    /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub fn lake_formation_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
@@ -35748,7 +36343,7 @@ pub mod crawler {
             self.crawler_security_configuration = input;
             self
         }
-        /// <p>Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+        /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -35756,7 +36351,7 @@ pub mod crawler {
             self.lake_formation_configuration = Some(input);
             self
         }
-        /// <p>Specifies whether the crawler should use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
+        /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,

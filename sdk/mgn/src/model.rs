@@ -379,6 +379,120 @@ impl VcenterClient {
     }
 }
 
+/// <p>Error details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ErrorDetails {
+    /// <p>Error details message.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>Error details code.</p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>Error details resourceId.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>Error details resourceType.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+}
+impl ErrorDetails {
+    /// <p>Error details message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Error details code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Error details resourceId.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Error details resourceType.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
+impl std::fmt::Debug for ErrorDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ErrorDetails");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.finish()
+    }
+}
+/// See [`ErrorDetails`](crate::model::ErrorDetails).
+pub mod error_details {
+
+    /// A builder for [`ErrorDetails`](crate::model::ErrorDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Error details message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Error details message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>Error details code.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p>Error details code.</p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>Error details resourceId.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>Error details resourceId.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>Error details resourceType.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>Error details resourceType.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ErrorDetails`](crate::model::ErrorDetails).
+        pub fn build(self) -> crate::model::ErrorDetails {
+            crate::model::ErrorDetails {
+                message: self.message,
+                code: self.code,
+                resource_id: self.resource_id,
+                resource_type: self.resource_type,
+            }
+        }
+    }
+}
+impl ErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
+    pub fn builder() -> crate::model::error_details::Builder {
+        crate::model::error_details::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3613,6 +3727,521 @@ impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
     }
 }
 
+/// <p>Server participating in Job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PostLaunchActions {
+    /// <p>Server participating in Job.</p>
+    pub deployment: std::option::Option<crate::model::PostLaunchActionsDeploymentType>,
+    /// <p>Server participating in Job.</p>
+    pub s3_log_bucket: std::option::Option<std::string::String>,
+    /// <p>Server participating in Job.</p>
+    pub s3_output_key_prefix: std::option::Option<std::string::String>,
+    /// <p>Server participating in Job.</p>
+    pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
+    /// <p>Server participating in Job.</p>
+    pub ssm_documents: std::option::Option<std::vec::Vec<crate::model::SsmDocument>>,
+}
+impl PostLaunchActions {
+    /// <p>Server participating in Job.</p>
+    pub fn deployment(
+        &self,
+    ) -> std::option::Option<&crate::model::PostLaunchActionsDeploymentType> {
+        self.deployment.as_ref()
+    }
+    /// <p>Server participating in Job.</p>
+    pub fn s3_log_bucket(&self) -> std::option::Option<&str> {
+        self.s3_log_bucket.as_deref()
+    }
+    /// <p>Server participating in Job.</p>
+    pub fn s3_output_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_output_key_prefix.as_deref()
+    }
+    /// <p>Server participating in Job.</p>
+    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<&str> {
+        self.cloud_watch_log_group_name.as_deref()
+    }
+    /// <p>Server participating in Job.</p>
+    pub fn ssm_documents(&self) -> std::option::Option<&[crate::model::SsmDocument]> {
+        self.ssm_documents.as_deref()
+    }
+}
+impl std::fmt::Debug for PostLaunchActions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PostLaunchActions");
+        formatter.field("deployment", &self.deployment);
+        formatter.field("s3_log_bucket", &self.s3_log_bucket);
+        formatter.field("s3_output_key_prefix", &self.s3_output_key_prefix);
+        formatter.field(
+            "cloud_watch_log_group_name",
+            &self.cloud_watch_log_group_name,
+        );
+        formatter.field("ssm_documents", &self.ssm_documents);
+        formatter.finish()
+    }
+}
+/// See [`PostLaunchActions`](crate::model::PostLaunchActions).
+pub mod post_launch_actions {
+
+    /// A builder for [`PostLaunchActions`](crate::model::PostLaunchActions).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) deployment: std::option::Option<crate::model::PostLaunchActionsDeploymentType>,
+        pub(crate) s3_log_bucket: std::option::Option<std::string::String>,
+        pub(crate) s3_output_key_prefix: std::option::Option<std::string::String>,
+        pub(crate) cloud_watch_log_group_name: std::option::Option<std::string::String>,
+        pub(crate) ssm_documents: std::option::Option<std::vec::Vec<crate::model::SsmDocument>>,
+    }
+    impl Builder {
+        /// <p>Server participating in Job.</p>
+        pub fn deployment(mut self, input: crate::model::PostLaunchActionsDeploymentType) -> Self {
+            self.deployment = Some(input);
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_deployment(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActionsDeploymentType>,
+        ) -> Self {
+            self.deployment = input;
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn s3_log_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_log_bucket = Some(input.into());
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_s3_log_bucket(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_log_bucket = input;
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn s3_output_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_output_key_prefix = Some(input.into());
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_s3_output_key_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_output_key_prefix = input;
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn cloud_watch_log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_watch_log_group_name = Some(input.into());
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_cloud_watch_log_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cloud_watch_log_group_name = input;
+            self
+        }
+        /// Appends an item to `ssm_documents`.
+        ///
+        /// To override the contents of this collection use [`set_ssm_documents`](Self::set_ssm_documents).
+        ///
+        /// <p>Server participating in Job.</p>
+        pub fn ssm_documents(mut self, input: crate::model::SsmDocument) -> Self {
+            let mut v = self.ssm_documents.unwrap_or_default();
+            v.push(input);
+            self.ssm_documents = Some(v);
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_ssm_documents(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SsmDocument>>,
+        ) -> Self {
+            self.ssm_documents = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PostLaunchActions`](crate::model::PostLaunchActions).
+        pub fn build(self) -> crate::model::PostLaunchActions {
+            crate::model::PostLaunchActions {
+                deployment: self.deployment,
+                s3_log_bucket: self.s3_log_bucket,
+                s3_output_key_prefix: self.s3_output_key_prefix,
+                cloud_watch_log_group_name: self.cloud_watch_log_group_name,
+                ssm_documents: self.ssm_documents,
+            }
+        }
+    }
+}
+impl PostLaunchActions {
+    /// Creates a new builder-style object to manufacture [`PostLaunchActions`](crate::model::PostLaunchActions).
+    pub fn builder() -> crate::model::post_launch_actions::Builder {
+        crate::model::post_launch_actions::Builder::default()
+    }
+}
+
+/// <p>Source server replication type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SsmDocument {
+    /// <p>Source server replication type.</p>
+    pub action_name: std::option::Option<std::string::String>,
+    /// <p>Source server replication type.</p>
+    pub ssm_document_name: std::option::Option<std::string::String>,
+    /// <p>Source server replication type.</p>
+    pub timeout_seconds: i32,
+    /// <p>Source server replication type.</p>
+    pub must_succeed_for_cutover: std::option::Option<bool>,
+    /// <p>Source server replication type.</p>
+    pub parameters: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+        >,
+    >,
+}
+impl SsmDocument {
+    /// <p>Source server replication type.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>Source server replication type.</p>
+    pub fn ssm_document_name(&self) -> std::option::Option<&str> {
+        self.ssm_document_name.as_deref()
+    }
+    /// <p>Source server replication type.</p>
+    pub fn timeout_seconds(&self) -> i32 {
+        self.timeout_seconds
+    }
+    /// <p>Source server replication type.</p>
+    pub fn must_succeed_for_cutover(&self) -> std::option::Option<bool> {
+        self.must_succeed_for_cutover
+    }
+    /// <p>Source server replication type.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+        >,
+    > {
+        self.parameters.as_ref()
+    }
+}
+impl std::fmt::Debug for SsmDocument {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SsmDocument");
+        formatter.field("action_name", &self.action_name);
+        formatter.field("ssm_document_name", &self.ssm_document_name);
+        formatter.field("timeout_seconds", &self.timeout_seconds);
+        formatter.field("must_succeed_for_cutover", &self.must_succeed_for_cutover);
+        formatter.field("parameters", &self.parameters);
+        formatter.finish()
+    }
+}
+/// See [`SsmDocument`](crate::model::SsmDocument).
+pub mod ssm_document {
+
+    /// A builder for [`SsmDocument`](crate::model::SsmDocument).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action_name: std::option::Option<std::string::String>,
+        pub(crate) ssm_document_name: std::option::Option<std::string::String>,
+        pub(crate) timeout_seconds: std::option::Option<i32>,
+        pub(crate) must_succeed_for_cutover: std::option::Option<bool>,
+        pub(crate) parameters: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+            >,
+        >,
+    }
+    impl Builder {
+        /// <p>Source server replication type.</p>
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.action_name = Some(input.into());
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_name = input;
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn ssm_document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssm_document_name = Some(input.into());
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_ssm_document_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssm_document_name = input;
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn timeout_seconds(mut self, input: i32) -> Self {
+            self.timeout_seconds = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_seconds = input;
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
+            self.must_succeed_for_cutover = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_must_succeed_for_cutover(mut self, input: std::option::Option<bool>) -> Self {
+            self.must_succeed_for_cutover = input;
+            self
+        }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>Source server replication type.</p>
+        pub fn parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+        ) -> Self {
+            let mut hash_map = self.parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.parameters = Some(hash_map);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+                >,
+            >,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SsmDocument`](crate::model::SsmDocument).
+        pub fn build(self) -> crate::model::SsmDocument {
+            crate::model::SsmDocument {
+                action_name: self.action_name,
+                ssm_document_name: self.ssm_document_name,
+                timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+                must_succeed_for_cutover: self.must_succeed_for_cutover,
+                parameters: self.parameters,
+            }
+        }
+    }
+}
+impl SsmDocument {
+    /// Creates a new builder-style object to manufacture [`SsmDocument`](crate::model::SsmDocument).
+    pub fn builder() -> crate::model::ssm_document::Builder {
+        crate::model::ssm_document::Builder::default()
+    }
+}
+
+/// <p>Source server replication type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SsmParameterStoreParameter {
+    /// <p>Source server replication type.</p>
+    pub parameter_type: std::option::Option<crate::model::SsmParameterStoreParameterType>,
+    /// <p>Source server replication type.</p>
+    pub parameter_name: std::option::Option<std::string::String>,
+}
+impl SsmParameterStoreParameter {
+    /// <p>Source server replication type.</p>
+    pub fn parameter_type(
+        &self,
+    ) -> std::option::Option<&crate::model::SsmParameterStoreParameterType> {
+        self.parameter_type.as_ref()
+    }
+    /// <p>Source server replication type.</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+}
+impl std::fmt::Debug for SsmParameterStoreParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SsmParameterStoreParameter");
+        formatter.field("parameter_type", &self.parameter_type);
+        formatter.field("parameter_name", &self.parameter_name);
+        formatter.finish()
+    }
+}
+/// See [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
+pub mod ssm_parameter_store_parameter {
+
+    /// A builder for [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) parameter_type:
+            std::option::Option<crate::model::SsmParameterStoreParameterType>,
+        pub(crate) parameter_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Source server replication type.</p>
+        pub fn parameter_type(
+            mut self,
+            input: crate::model::SsmParameterStoreParameterType,
+        ) -> Self {
+            self.parameter_type = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_parameter_type(
+            mut self,
+            input: std::option::Option<crate::model::SsmParameterStoreParameterType>,
+        ) -> Self {
+            self.parameter_type = input;
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_name = Some(input.into());
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_parameter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parameter_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
+        pub fn build(self) -> crate::model::SsmParameterStoreParameter {
+            crate::model::SsmParameterStoreParameter {
+                parameter_type: self.parameter_type,
+                parameter_name: self.parameter_name,
+            }
+        }
+    }
+}
+impl SsmParameterStoreParameter {
+    /// Creates a new builder-style object to manufacture [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
+    pub fn builder() -> crate::model::ssm_parameter_store_parameter::Builder {
+        crate::model::ssm_parameter_store_parameter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SsmParameterStoreParameterType {
+    #[allow(missing_docs)] // documentation missing in model
+    String,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SsmParameterStoreParameterType {
+    fn from(s: &str) -> Self {
+        match s {
+            "STRING" => SsmParameterStoreParameterType::String,
+            other => SsmParameterStoreParameterType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SsmParameterStoreParameterType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SsmParameterStoreParameterType::from(s))
+    }
+}
+impl SsmParameterStoreParameterType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SsmParameterStoreParameterType::String => "STRING",
+            SsmParameterStoreParameterType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["STRING"]
+    }
+}
+impl AsRef<str> for SsmParameterStoreParameterType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PostLaunchActionsDeploymentType {
+    #[allow(missing_docs)] // documentation missing in model
+    CutoverOnly,
+    #[allow(missing_docs)] // documentation missing in model
+    TestAndCutover,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PostLaunchActionsDeploymentType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CUTOVER_ONLY" => PostLaunchActionsDeploymentType::CutoverOnly,
+            "TEST_AND_CUTOVER" => PostLaunchActionsDeploymentType::TestAndCutover,
+            other => PostLaunchActionsDeploymentType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PostLaunchActionsDeploymentType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PostLaunchActionsDeploymentType::from(s))
+    }
+}
+impl PostLaunchActionsDeploymentType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PostLaunchActionsDeploymentType::CutoverOnly => "CUTOVER_ONLY",
+            PostLaunchActionsDeploymentType::TestAndCutover => "TEST_AND_CUTOVER",
+            PostLaunchActionsDeploymentType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CUTOVER_ONLY", "TEST_AND_CUTOVER"]
+    }
+}
+impl AsRef<str> for PostLaunchActionsDeploymentType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4222,6 +4851,10 @@ pub struct ParticipatingServer {
     pub source_server_id: std::option::Option<std::string::String>,
     /// <p>Participating server launch status.</p>
     pub launch_status: std::option::Option<crate::model::LaunchStatus>,
+    /// <p>Participating server Source Server ID.</p>
+    pub launched_ec2_instance_id: std::option::Option<std::string::String>,
+    /// <p>Participating server Source Server ID.</p>
+    pub post_launch_actions_status: std::option::Option<crate::model::PostLaunchActionsStatus>,
 }
 impl ParticipatingServer {
     /// <p>Participating server Source Server ID.</p>
@@ -4232,12 +4865,27 @@ impl ParticipatingServer {
     pub fn launch_status(&self) -> std::option::Option<&crate::model::LaunchStatus> {
         self.launch_status.as_ref()
     }
+    /// <p>Participating server Source Server ID.</p>
+    pub fn launched_ec2_instance_id(&self) -> std::option::Option<&str> {
+        self.launched_ec2_instance_id.as_deref()
+    }
+    /// <p>Participating server Source Server ID.</p>
+    pub fn post_launch_actions_status(
+        &self,
+    ) -> std::option::Option<&crate::model::PostLaunchActionsStatus> {
+        self.post_launch_actions_status.as_ref()
+    }
 }
 impl std::fmt::Debug for ParticipatingServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParticipatingServer");
         formatter.field("source_server_id", &self.source_server_id);
         formatter.field("launch_status", &self.launch_status);
+        formatter.field("launched_ec2_instance_id", &self.launched_ec2_instance_id);
+        formatter.field(
+            "post_launch_actions_status",
+            &self.post_launch_actions_status,
+        );
         formatter.finish()
     }
 }
@@ -4249,6 +4897,9 @@ pub mod participating_server {
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) launch_status: std::option::Option<crate::model::LaunchStatus>,
+        pub(crate) launched_ec2_instance_id: std::option::Option<std::string::String>,
+        pub(crate) post_launch_actions_status:
+            std::option::Option<crate::model::PostLaunchActionsStatus>,
     }
     impl Builder {
         /// <p>Participating server Source Server ID.</p>
@@ -4277,11 +4928,42 @@ pub mod participating_server {
             self.launch_status = input;
             self
         }
+        /// <p>Participating server Source Server ID.</p>
+        pub fn launched_ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launched_ec2_instance_id = Some(input.into());
+            self
+        }
+        /// <p>Participating server Source Server ID.</p>
+        pub fn set_launched_ec2_instance_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launched_ec2_instance_id = input;
+            self
+        }
+        /// <p>Participating server Source Server ID.</p>
+        pub fn post_launch_actions_status(
+            mut self,
+            input: crate::model::PostLaunchActionsStatus,
+        ) -> Self {
+            self.post_launch_actions_status = Some(input);
+            self
+        }
+        /// <p>Participating server Source Server ID.</p>
+        pub fn set_post_launch_actions_status(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActionsStatus>,
+        ) -> Self {
+            self.post_launch_actions_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ParticipatingServer`](crate::model::ParticipatingServer).
         pub fn build(self) -> crate::model::ParticipatingServer {
             crate::model::ParticipatingServer {
                 source_server_id: self.source_server_id,
                 launch_status: self.launch_status,
+                launched_ec2_instance_id: self.launched_ec2_instance_id,
+                post_launch_actions_status: self.post_launch_actions_status,
             }
         }
     }
@@ -4290,6 +4972,373 @@ impl ParticipatingServer {
     /// Creates a new builder-style object to manufacture [`ParticipatingServer`](crate::model::ParticipatingServer).
     pub fn builder() -> crate::model::participating_server::Builder {
         crate::model::participating_server::Builder::default()
+    }
+}
+
+/// <p>Server participating in Job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PostLaunchActionsStatus {
+    /// <p>Server participating in Job.</p>
+    pub ssm_agent_discovery_datetime: std::option::Option<std::string::String>,
+    /// <p>Server participating in Job.</p>
+    pub post_launch_actions_launch_status_list:
+        std::option::Option<std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>>,
+}
+impl PostLaunchActionsStatus {
+    /// <p>Server participating in Job.</p>
+    pub fn ssm_agent_discovery_datetime(&self) -> std::option::Option<&str> {
+        self.ssm_agent_discovery_datetime.as_deref()
+    }
+    /// <p>Server participating in Job.</p>
+    pub fn post_launch_actions_launch_status_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::JobPostLaunchActionsLaunchStatus]> {
+        self.post_launch_actions_launch_status_list.as_deref()
+    }
+}
+impl std::fmt::Debug for PostLaunchActionsStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PostLaunchActionsStatus");
+        formatter.field(
+            "ssm_agent_discovery_datetime",
+            &self.ssm_agent_discovery_datetime,
+        );
+        formatter.field(
+            "post_launch_actions_launch_status_list",
+            &self.post_launch_actions_launch_status_list,
+        );
+        formatter.finish()
+    }
+}
+/// See [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
+pub mod post_launch_actions_status {
+
+    /// A builder for [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ssm_agent_discovery_datetime: std::option::Option<std::string::String>,
+        pub(crate) post_launch_actions_launch_status_list:
+            std::option::Option<std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>>,
+    }
+    impl Builder {
+        /// <p>Server participating in Job.</p>
+        pub fn ssm_agent_discovery_datetime(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ssm_agent_discovery_datetime = Some(input.into());
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_ssm_agent_discovery_datetime(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssm_agent_discovery_datetime = input;
+            self
+        }
+        /// Appends an item to `post_launch_actions_launch_status_list`.
+        ///
+        /// To override the contents of this collection use [`set_post_launch_actions_launch_status_list`](Self::set_post_launch_actions_launch_status_list).
+        ///
+        /// <p>Server participating in Job.</p>
+        pub fn post_launch_actions_launch_status_list(
+            mut self,
+            input: crate::model::JobPostLaunchActionsLaunchStatus,
+        ) -> Self {
+            let mut v = self
+                .post_launch_actions_launch_status_list
+                .unwrap_or_default();
+            v.push(input);
+            self.post_launch_actions_launch_status_list = Some(v);
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_post_launch_actions_launch_status_list(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>,
+            >,
+        ) -> Self {
+            self.post_launch_actions_launch_status_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
+        pub fn build(self) -> crate::model::PostLaunchActionsStatus {
+            crate::model::PostLaunchActionsStatus {
+                ssm_agent_discovery_datetime: self.ssm_agent_discovery_datetime,
+                post_launch_actions_launch_status_list: self.post_launch_actions_launch_status_list,
+            }
+        }
+    }
+}
+impl PostLaunchActionsStatus {
+    /// Creates a new builder-style object to manufacture [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
+    pub fn builder() -> crate::model::post_launch_actions_status::Builder {
+        crate::model::post_launch_actions_status::Builder::default()
+    }
+}
+
+/// <p>Job type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobPostLaunchActionsLaunchStatus {
+    /// <p>Job type.</p>
+    pub ssm_document: std::option::Option<crate::model::SsmDocument>,
+    /// <p>Job type.</p>
+    pub ssm_document_type: std::option::Option<crate::model::SsmDocumentType>,
+    /// <p>Job type.</p>
+    pub execution_id: std::option::Option<std::string::String>,
+    /// <p>Job type.</p>
+    pub execution_status: std::option::Option<crate::model::PostLaunchActionExecutionStatus>,
+    /// <p>Job type.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl JobPostLaunchActionsLaunchStatus {
+    /// <p>Job type.</p>
+    pub fn ssm_document(&self) -> std::option::Option<&crate::model::SsmDocument> {
+        self.ssm_document.as_ref()
+    }
+    /// <p>Job type.</p>
+    pub fn ssm_document_type(&self) -> std::option::Option<&crate::model::SsmDocumentType> {
+        self.ssm_document_type.as_ref()
+    }
+    /// <p>Job type.</p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
+    /// <p>Job type.</p>
+    pub fn execution_status(
+        &self,
+    ) -> std::option::Option<&crate::model::PostLaunchActionExecutionStatus> {
+        self.execution_status.as_ref()
+    }
+    /// <p>Job type.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
+impl std::fmt::Debug for JobPostLaunchActionsLaunchStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobPostLaunchActionsLaunchStatus");
+        formatter.field("ssm_document", &self.ssm_document);
+        formatter.field("ssm_document_type", &self.ssm_document_type);
+        formatter.field("execution_id", &self.execution_id);
+        formatter.field("execution_status", &self.execution_status);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.finish()
+    }
+}
+/// See [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
+pub mod job_post_launch_actions_launch_status {
+
+    /// A builder for [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ssm_document: std::option::Option<crate::model::SsmDocument>,
+        pub(crate) ssm_document_type: std::option::Option<crate::model::SsmDocumentType>,
+        pub(crate) execution_id: std::option::Option<std::string::String>,
+        pub(crate) execution_status:
+            std::option::Option<crate::model::PostLaunchActionExecutionStatus>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Job type.</p>
+        pub fn ssm_document(mut self, input: crate::model::SsmDocument) -> Self {
+            self.ssm_document = Some(input);
+            self
+        }
+        /// <p>Job type.</p>
+        pub fn set_ssm_document(
+            mut self,
+            input: std::option::Option<crate::model::SsmDocument>,
+        ) -> Self {
+            self.ssm_document = input;
+            self
+        }
+        /// <p>Job type.</p>
+        pub fn ssm_document_type(mut self, input: crate::model::SsmDocumentType) -> Self {
+            self.ssm_document_type = Some(input);
+            self
+        }
+        /// <p>Job type.</p>
+        pub fn set_ssm_document_type(
+            mut self,
+            input: std::option::Option<crate::model::SsmDocumentType>,
+        ) -> Self {
+            self.ssm_document_type = input;
+            self
+        }
+        /// <p>Job type.</p>
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_id = Some(input.into());
+            self
+        }
+        /// <p>Job type.</p>
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_id = input;
+            self
+        }
+        /// <p>Job type.</p>
+        pub fn execution_status(
+            mut self,
+            input: crate::model::PostLaunchActionExecutionStatus,
+        ) -> Self {
+            self.execution_status = Some(input);
+            self
+        }
+        /// <p>Job type.</p>
+        pub fn set_execution_status(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActionExecutionStatus>,
+        ) -> Self {
+            self.execution_status = input;
+            self
+        }
+        /// <p>Job type.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>Job type.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
+        pub fn build(self) -> crate::model::JobPostLaunchActionsLaunchStatus {
+            crate::model::JobPostLaunchActionsLaunchStatus {
+                ssm_document: self.ssm_document,
+                ssm_document_type: self.ssm_document_type,
+                execution_id: self.execution_id,
+                execution_status: self.execution_status,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl JobPostLaunchActionsLaunchStatus {
+    /// Creates a new builder-style object to manufacture [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
+    pub fn builder() -> crate::model::job_post_launch_actions_launch_status::Builder {
+        crate::model::job_post_launch_actions_launch_status::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PostLaunchActionExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Success,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PostLaunchActionExecutionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => PostLaunchActionExecutionStatus::Failed,
+            "IN_PROGRESS" => PostLaunchActionExecutionStatus::InProgress,
+            "SUCCESS" => PostLaunchActionExecutionStatus::Success,
+            other => PostLaunchActionExecutionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PostLaunchActionExecutionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PostLaunchActionExecutionStatus::from(s))
+    }
+}
+impl PostLaunchActionExecutionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PostLaunchActionExecutionStatus::Failed => "FAILED",
+            PostLaunchActionExecutionStatus::InProgress => "IN_PROGRESS",
+            PostLaunchActionExecutionStatus::Success => "SUCCESS",
+            PostLaunchActionExecutionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "IN_PROGRESS", "SUCCESS"]
+    }
+}
+impl AsRef<str> for PostLaunchActionExecutionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SsmDocumentType {
+    #[allow(missing_docs)] // documentation missing in model
+    Automation,
+    #[allow(missing_docs)] // documentation missing in model
+    Command,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SsmDocumentType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTOMATION" => SsmDocumentType::Automation,
+            "COMMAND" => SsmDocumentType::Command,
+            other => SsmDocumentType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SsmDocumentType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SsmDocumentType::from(s))
+    }
+}
+impl SsmDocumentType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SsmDocumentType::Automation => "AUTOMATION",
+            SsmDocumentType::Command => "COMMAND",
+            SsmDocumentType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AUTOMATION", "COMMAND"]
+    }
+}
+impl AsRef<str> for SsmDocumentType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5396,6 +6445,150 @@ impl ReplicationConfigurationTemplate {
     /// Creates a new builder-style object to manufacture [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
     pub fn builder() -> crate::model::replication_configuration_template::Builder {
         crate::model::replication_configuration_template::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LaunchConfigurationTemplate {
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub launch_configuration_template_id: std::option::Option<std::string::String>,
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl LaunchConfigurationTemplate {
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn launch_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.launch_configuration_template_id.as_deref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+        self.post_launch_actions.as_ref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for LaunchConfigurationTemplate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LaunchConfigurationTemplate");
+        formatter.field(
+            "launch_configuration_template_id",
+            &self.launch_configuration_template_id,
+        );
+        formatter.field("arn", &self.arn);
+        formatter.field("post_launch_actions", &self.post_launch_actions);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
+pub mod launch_configuration_template {
+
+    /// A builder for [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = Some(input.into());
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = input;
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.post_launch_actions = Some(input);
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.post_launch_actions = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
+        pub fn build(self) -> crate::model::LaunchConfigurationTemplate {
+            crate::model::LaunchConfigurationTemplate {
+                launch_configuration_template_id: self.launch_configuration_template_id,
+                arn: self.arn,
+                post_launch_actions: self.post_launch_actions,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl LaunchConfigurationTemplate {
+    /// Creates a new builder-style object to manufacture [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
+    pub fn builder() -> crate::model::launch_configuration_template::Builder {
+        crate::model::launch_configuration_template::Builder::default()
     }
 }
 

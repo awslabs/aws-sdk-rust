@@ -4898,6 +4898,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateWorkforceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateWorkforceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::UpdateWorkforceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),

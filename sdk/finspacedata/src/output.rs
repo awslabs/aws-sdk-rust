@@ -1465,6 +1465,85 @@ impl GetPermissionGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetExternalDataViewAccessDetailsOutput {
+    /// <p>The credentials required to access the external Dataview from the S3 location.</p>
+    pub credentials: std::option::Option<crate::model::AwsCredentials>,
+    /// <p>The location where the external Dataview is stored.</p>
+    pub s3_location: std::option::Option<crate::model::S3Location>,
+}
+impl GetExternalDataViewAccessDetailsOutput {
+    /// <p>The credentials required to access the external Dataview from the S3 location.</p>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
+        self.credentials.as_ref()
+    }
+    /// <p>The location where the external Dataview is stored.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+}
+impl std::fmt::Debug for GetExternalDataViewAccessDetailsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetExternalDataViewAccessDetailsOutput");
+        formatter.field("credentials", &self.credentials);
+        formatter.field("s3_location", &self.s3_location);
+        formatter.finish()
+    }
+}
+/// See [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
+pub mod get_external_data_view_access_details_output {
+
+    /// A builder for [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) credentials: std::option::Option<crate::model::AwsCredentials>,
+        pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
+    }
+    impl Builder {
+        /// <p>The credentials required to access the external Dataview from the S3 location.</p>
+        pub fn credentials(mut self, input: crate::model::AwsCredentials) -> Self {
+            self.credentials = Some(input);
+            self
+        }
+        /// <p>The credentials required to access the external Dataview from the S3 location.</p>
+        pub fn set_credentials(
+            mut self,
+            input: std::option::Option<crate::model::AwsCredentials>,
+        ) -> Self {
+            self.credentials = input;
+            self
+        }
+        /// <p>The location where the external Dataview is stored.</p>
+        pub fn s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.s3_location = Some(input);
+            self
+        }
+        /// <p>The location where the external Dataview is stored.</p>
+        pub fn set_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.s3_location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
+        pub fn build(self) -> crate::output::GetExternalDataViewAccessDetailsOutput {
+            crate::output::GetExternalDataViewAccessDetailsOutput {
+                credentials: self.credentials,
+                s3_location: self.s3_location,
+            }
+        }
+    }
+}
+impl GetExternalDataViewAccessDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
+    pub fn builder() -> crate::output::get_external_data_view_access_details_output::Builder {
+        crate::output::get_external_data_view_access_details_output::Builder::default()
+    }
+}
+
 /// Response from retrieving a dataview, which includes details on the target database and table name
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

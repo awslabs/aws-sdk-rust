@@ -2499,6 +2499,167 @@ impl S3Object {
     }
 }
 
+/// <p>Contains information about the specific inference event, including start and end time, diagnostics information, event duration and so on.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InferenceEventSummary {
+    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+    pub inference_scheduler_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the inference scheduler being used for the inference events. </p>
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
+    /// <p>Indicates the starting time of an inference event. </p>
+    pub event_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Indicates the ending time of an inference event. </p>
+    pub event_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+    pub diagnostics: std::option::Option<std::string::String>,
+    /// <p> Indicates the size of an inference event in seconds. </p>
+    pub event_duration_in_seconds: std::option::Option<i64>,
+}
+impl InferenceEventSummary {
+    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_arn.as_deref()
+    }
+    /// <p>The name of the inference scheduler being used for the inference events. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p>Indicates the starting time of an inference event. </p>
+    pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.event_start_time.as_ref()
+    }
+    /// <p>Indicates the ending time of an inference event. </p>
+    pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.event_end_time.as_ref()
+    }
+    /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+    pub fn diagnostics(&self) -> std::option::Option<&str> {
+        self.diagnostics.as_deref()
+    }
+    /// <p> Indicates the size of an inference event in seconds. </p>
+    pub fn event_duration_in_seconds(&self) -> std::option::Option<i64> {
+        self.event_duration_in_seconds
+    }
+}
+impl std::fmt::Debug for InferenceEventSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InferenceEventSummary");
+        formatter.field("inference_scheduler_arn", &self.inference_scheduler_arn);
+        formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
+        formatter.field("event_start_time", &self.event_start_time);
+        formatter.field("event_end_time", &self.event_end_time);
+        formatter.field("diagnostics", &self.diagnostics);
+        formatter.field("event_duration_in_seconds", &self.event_duration_in_seconds);
+        formatter.finish()
+    }
+}
+/// See [`InferenceEventSummary`](crate::model::InferenceEventSummary).
+pub mod inference_event_summary {
+
+    /// A builder for [`InferenceEventSummary`](crate::model::InferenceEventSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inference_scheduler_arn: std::option::Option<std::string::String>,
+        pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
+        pub(crate) event_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) event_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) diagnostics: std::option::Option<std::string::String>,
+        pub(crate) event_duration_in_seconds: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+        pub fn inference_scheduler_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_scheduler_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+        pub fn set_inference_scheduler_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_arn = input;
+            self
+        }
+        /// <p>The name of the inference scheduler being used for the inference events. </p>
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_scheduler_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the inference scheduler being used for the inference events. </p>
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
+        }
+        /// <p>Indicates the starting time of an inference event. </p>
+        pub fn event_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.event_start_time = Some(input);
+            self
+        }
+        /// <p>Indicates the starting time of an inference event. </p>
+        pub fn set_event_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.event_start_time = input;
+            self
+        }
+        /// <p>Indicates the ending time of an inference event. </p>
+        pub fn event_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.event_end_time = Some(input);
+            self
+        }
+        /// <p>Indicates the ending time of an inference event. </p>
+        pub fn set_event_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.event_end_time = input;
+            self
+        }
+        /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+        pub fn diagnostics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.diagnostics = Some(input.into());
+            self
+        }
+        /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+        pub fn set_diagnostics(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.diagnostics = input;
+            self
+        }
+        /// <p> Indicates the size of an inference event in seconds. </p>
+        pub fn event_duration_in_seconds(mut self, input: i64) -> Self {
+            self.event_duration_in_seconds = Some(input);
+            self
+        }
+        /// <p> Indicates the size of an inference event in seconds. </p>
+        pub fn set_event_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.event_duration_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InferenceEventSummary`](crate::model::InferenceEventSummary).
+        pub fn build(self) -> crate::model::InferenceEventSummary {
+            crate::model::InferenceEventSummary {
+                inference_scheduler_arn: self.inference_scheduler_arn,
+                inference_scheduler_name: self.inference_scheduler_name,
+                event_start_time: self.event_start_time,
+                event_end_time: self.event_end_time,
+                diagnostics: self.diagnostics,
+                event_duration_in_seconds: self.event_duration_in_seconds,
+            }
+        }
+    }
+}
+impl InferenceEventSummary {
+    /// Creates a new builder-style object to manufacture [`InferenceEventSummary`](crate::model::InferenceEventSummary).
+    pub fn builder() -> crate::model::inference_event_summary::Builder {
+        crate::model::inference_event_summary::Builder::default()
+    }
+}
+
 /// <p>Contains information about the specific data set, including name, ARN, and status. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

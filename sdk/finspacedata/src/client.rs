@@ -159,7 +159,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePermissionGroup::set_name): <p>The name of the permission group.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePermissionGroup::set_description): <p>A brief description for the permission group.</p>
-    ///   - [`application_permissions(Vec<ApplicationPermission>)`](crate::client::fluent_builders::CreatePermissionGroup::application_permissions) / [`set_application_permissions(Option<Vec<ApplicationPermission>>)`](crate::client::fluent_builders::CreatePermissionGroup::set_application_permissions): <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>  <ul>   <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>   <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>   <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>   <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>   <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>   <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>   <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>  </ul>
+    ///   - [`application_permissions(Vec<ApplicationPermission>)`](crate::client::fluent_builders::CreatePermissionGroup::application_permissions) / [`set_application_permissions(Option<Vec<ApplicationPermission>>)`](crate::client::fluent_builders::CreatePermissionGroup::set_application_permissions): <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>   <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>  </important>  <ul>   <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>   <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>   <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>   <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>   <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>   <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>   <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>  </ul>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreatePermissionGroup::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     /// - On success, responds with [`CreatePermissionGroupOutput`](crate::output::CreatePermissionGroupOutput) with field(s):
     ///   - [`permission_group_id(Option<String>)`](crate::output::CreatePermissionGroupOutput::permission_group_id): <p>The unique identifier for the permission group.</p>
@@ -304,6 +304,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetDataViewError>`](crate::error::GetDataViewError)
     pub fn get_data_view(&self) -> fluent_builders::GetDataView {
         fluent_builders::GetDataView::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetExternalDataViewAccessDetails`](crate::client::fluent_builders::GetExternalDataViewAccessDetails) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`data_view_id(impl Into<String>)`](crate::client::fluent_builders::GetExternalDataViewAccessDetails::data_view_id) / [`set_data_view_id(Option<String>)`](crate::client::fluent_builders::GetExternalDataViewAccessDetails::set_data_view_id): <p>The unique identifier for the Dataview that you want to access.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::GetExternalDataViewAccessDetails::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::GetExternalDataViewAccessDetails::set_dataset_id): <p>The unique identifier for the Dataset.</p>
+    /// - On success, responds with [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput) with field(s):
+    ///   - [`credentials(Option<AwsCredentials>)`](crate::output::GetExternalDataViewAccessDetailsOutput::credentials): <p>The credentials required to access the external Dataview from the S3 location.</p>
+    ///   - [`s3_location(Option<S3Location>)`](crate::output::GetExternalDataViewAccessDetailsOutput::s3_location): <p>The location where the external Dataview is stored.</p>
+    /// - On failure, responds with [`SdkError<GetExternalDataViewAccessDetailsError>`](crate::error::GetExternalDataViewAccessDetailsError)
+    pub fn get_external_data_view_access_details(
+        &self,
+    ) -> fluent_builders::GetExternalDataViewAccessDetails {
+        fluent_builders::GetExternalDataViewAccessDetails::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetPermissionGroup`](crate::client::fluent_builders::GetPermissionGroup) operation.
     ///
@@ -505,7 +519,7 @@ impl Client {
     ///   - [`permission_group_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionGroup::permission_group_id) / [`set_permission_group_id(Option<String>)`](crate::client::fluent_builders::UpdatePermissionGroup::set_permission_group_id): <p>The unique identifier for the permission group to update.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdatePermissionGroup::set_name): <p>The name of the permission group.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePermissionGroup::set_description): <p>A brief description for the permission group.</p>
-    ///   - [`application_permissions(Vec<ApplicationPermission>)`](crate::client::fluent_builders::UpdatePermissionGroup::application_permissions) / [`set_application_permissions(Option<Vec<ApplicationPermission>>)`](crate::client::fluent_builders::UpdatePermissionGroup::set_application_permissions): <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>  <ul>   <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>   <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>   <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>   <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>   <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>   <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>   <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>  </ul>
+    ///   - [`application_permissions(Vec<ApplicationPermission>)`](crate::client::fluent_builders::UpdatePermissionGroup::application_permissions) / [`set_application_permissions(Option<Vec<ApplicationPermission>>)`](crate::client::fluent_builders::UpdatePermissionGroup::set_application_permissions): <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>   <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>  </important>  <ul>   <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>   <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>   <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>   <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>   <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>   <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>   <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>  </ul>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdatePermissionGroup::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     /// - On success, responds with [`UpdatePermissionGroupOutput`](crate::output::UpdatePermissionGroupOutput) with field(s):
     ///   - [`permission_group_id(Option<String>)`](crate::output::UpdatePermissionGroupOutput::permission_group_id): <p>The unique identifier for the updated permission group.</p>
@@ -1125,11 +1139,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_application_permissions`](Self::set_application_permissions).
         ///
-        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -1142,11 +1158,13 @@ pub mod fluent_builders {
             self.inner = self.inner.application_permissions(input);
             self
         }
-        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -1815,6 +1833,73 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the Dataset used in the Dataview.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetExternalDataViewAccessDetails`.
+    ///
+    /// <p>Returns the credentials to access the external Dataview from an S3 location. To call this API:</p>
+    /// <ul>
+    /// <li> <p>You must retrieve the programmatic credentials.</p> </li>
+    /// <li> <p>You must be a member of a FinSpace user group, where the dataset that you want to access has <code>Read Dataset Data</code> permissions.</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetExternalDataViewAccessDetails {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_external_data_view_access_details_input::Builder,
+    }
+    impl GetExternalDataViewAccessDetails {
+        /// Creates a new `GetExternalDataViewAccessDetails`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetExternalDataViewAccessDetailsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetExternalDataViewAccessDetailsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the Dataview that you want to access.</p>
+        pub fn data_view_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_view_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Dataview that you want to access.</p>
+        pub fn set_data_view_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_data_view_id(input);
+            self
+        }
+        /// <p>The unique identifier for the Dataset.</p>
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Dataset.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_id(input);
             self
@@ -2996,11 +3081,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_application_permissions`](Self::set_application_permissions).
         ///
-        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -3013,11 +3100,13 @@ pub mod fluent_builders {
             self.inner = self.inner.application_permissions(input);
             self
         }
-        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>

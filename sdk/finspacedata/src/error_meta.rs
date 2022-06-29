@@ -484,6 +484,31 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetExternalDataViewAccessDetailsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetExternalDataViewAccessDetailsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetExternalDataViewAccessDetailsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetExternalDataViewAccessDetailsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetExternalDataViewAccessDetailsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetExternalDataViewAccessDetailsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetExternalDataViewAccessDetailsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::GetExternalDataViewAccessDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPermissionGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

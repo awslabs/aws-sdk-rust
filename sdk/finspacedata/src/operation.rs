@@ -457,6 +457,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataView {
     }
 }
 
+/// Operation shape for `GetExternalDataViewAccessDetails`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_external_data_view_access_details`](crate::client::Client::get_external_data_view_access_details).
+///
+/// See [`crate::client::fluent_builders::GetExternalDataViewAccessDetails`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetExternalDataViewAccessDetails {
+    _private: (),
+}
+impl GetExternalDataViewAccessDetails {
+    /// Creates a new builder-style object to manufacture [`GetExternalDataViewAccessDetailsInput`](crate::input::GetExternalDataViewAccessDetailsInput).
+    pub fn builder() -> crate::input::get_external_data_view_access_details_input::Builder {
+        crate::input::get_external_data_view_access_details_input::Builder::default()
+    }
+    /// Creates a new `GetExternalDataViewAccessDetails` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetExternalDataViewAccessDetails {
+    type Output = std::result::Result<
+        crate::output::GetExternalDataViewAccessDetailsOutput,
+        crate::error::GetExternalDataViewAccessDetailsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_external_data_view_access_details_error(response)
+        } else {
+            crate::operation_deser::parse_get_external_data_view_access_details_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetPermissionGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

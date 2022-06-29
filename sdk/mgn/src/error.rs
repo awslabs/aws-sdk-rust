@@ -129,6 +129,134 @@ impl std::error::Error for ChangeServerLifeCycleStateError {
     }
 }
 
+/// Error type for the `CreateLaunchConfigurationTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLaunchConfigurationTemplateError {
+    /// Kind of error that occurred.
+    pub kind: CreateLaunchConfigurationTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateLaunchConfigurationTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLaunchConfigurationTemplateErrorKind {
+    /// <p>Operating denied due to a file permission or access check error.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Uninitialized account exception.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    /// <p>Validate exception.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLaunchConfigurationTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLaunchConfigurationTemplateErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateLaunchConfigurationTemplateErrorKind::UninitializedAccountException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateLaunchConfigurationTemplateErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateLaunchConfigurationTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLaunchConfigurationTemplateError {
+    fn code(&self) -> Option<&str> {
+        CreateLaunchConfigurationTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLaunchConfigurationTemplateError {
+    /// Creates a new `CreateLaunchConfigurationTemplateError`.
+    pub fn new(
+        kind: CreateLaunchConfigurationTemplateErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLaunchConfigurationTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLaunchConfigurationTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLaunchConfigurationTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLaunchConfigurationTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLaunchConfigurationTemplateErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLaunchConfigurationTemplateErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLaunchConfigurationTemplateErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLaunchConfigurationTemplateErrorKind::UninitializedAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLaunchConfigurationTemplateErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLaunchConfigurationTemplateErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateLaunchConfigurationTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLaunchConfigurationTemplateErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            CreateLaunchConfigurationTemplateErrorKind::UninitializedAccountException(_inner) => {
+                Some(_inner)
+            }
+            CreateLaunchConfigurationTemplateErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateLaunchConfigurationTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateReplicationConfigurationTemplate` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -366,6 +494,132 @@ impl std::error::Error for DeleteJobError {
             DeleteJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteJobErrorKind::UninitializedAccountException(_inner) => Some(_inner),
             DeleteJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteLaunchConfigurationTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteLaunchConfigurationTemplateError {
+    /// Kind of error that occurred.
+    pub kind: DeleteLaunchConfigurationTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteLaunchConfigurationTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteLaunchConfigurationTemplateErrorKind {
+    /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Resource not found exception.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Uninitialized account exception.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteLaunchConfigurationTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteLaunchConfigurationTemplateErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteLaunchConfigurationTemplateErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteLaunchConfigurationTemplateErrorKind::UninitializedAccountException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteLaunchConfigurationTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteLaunchConfigurationTemplateError {
+    fn code(&self) -> Option<&str> {
+        DeleteLaunchConfigurationTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteLaunchConfigurationTemplateError {
+    /// Creates a new `DeleteLaunchConfigurationTemplateError`.
+    pub fn new(
+        kind: DeleteLaunchConfigurationTemplateErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteLaunchConfigurationTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteLaunchConfigurationTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteLaunchConfigurationTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteLaunchConfigurationTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteLaunchConfigurationTemplateErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLaunchConfigurationTemplateErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLaunchConfigurationTemplateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLaunchConfigurationTemplateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLaunchConfigurationTemplateErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLaunchConfigurationTemplateErrorKind::UninitializedAccountException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteLaunchConfigurationTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteLaunchConfigurationTemplateErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteLaunchConfigurationTemplateErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteLaunchConfigurationTemplateErrorKind::UninitializedAccountException(_inner) => {
+                Some(_inner)
+            }
+            DeleteLaunchConfigurationTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -933,6 +1187,138 @@ impl std::error::Error for DescribeJobsError {
             DescribeJobsErrorKind::UninitializedAccountException(_inner) => Some(_inner),
             DescribeJobsErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeLaunchConfigurationTemplates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeLaunchConfigurationTemplatesError {
+    /// Kind of error that occurred.
+    pub kind: DescribeLaunchConfigurationTemplatesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeLaunchConfigurationTemplates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeLaunchConfigurationTemplatesErrorKind {
+    /// <p>Resource not found exception.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Uninitialized account exception.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    /// <p>Validate exception.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeLaunchConfigurationTemplatesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeLaunchConfigurationTemplatesErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeLaunchConfigurationTemplatesErrorKind::UninitializedAccountException(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribeLaunchConfigurationTemplatesErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeLaunchConfigurationTemplatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeLaunchConfigurationTemplatesError {
+    fn code(&self) -> Option<&str> {
+        DescribeLaunchConfigurationTemplatesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeLaunchConfigurationTemplatesError {
+    /// Creates a new `DescribeLaunchConfigurationTemplatesError`.
+    pub fn new(
+        kind: DescribeLaunchConfigurationTemplatesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeLaunchConfigurationTemplatesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeLaunchConfigurationTemplatesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeLaunchConfigurationTemplatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeLaunchConfigurationTemplatesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeLaunchConfigurationTemplatesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLaunchConfigurationTemplatesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLaunchConfigurationTemplatesErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLaunchConfigurationTemplatesErrorKind::UninitializedAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeLaunchConfigurationTemplatesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLaunchConfigurationTemplatesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeLaunchConfigurationTemplatesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeLaunchConfigurationTemplatesErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeLaunchConfigurationTemplatesErrorKind::UninitializedAccountException(
+                _inner,
+            ) => Some(_inner),
+            DescribeLaunchConfigurationTemplatesErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            DescribeLaunchConfigurationTemplatesErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -3059,6 +3445,149 @@ impl std::error::Error for UpdateLaunchConfigurationError {
     }
 }
 
+/// Error type for the `UpdateLaunchConfigurationTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateLaunchConfigurationTemplateError {
+    /// Kind of error that occurred.
+    pub kind: UpdateLaunchConfigurationTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateLaunchConfigurationTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateLaunchConfigurationTemplateErrorKind {
+    /// <p>Operating denied due to a file permission or access check error.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Resource not found exception.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Uninitialized account exception.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    /// <p>Validate exception.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateLaunchConfigurationTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateLaunchConfigurationTemplateErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateLaunchConfigurationTemplateErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateLaunchConfigurationTemplateErrorKind::UninitializedAccountException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateLaunchConfigurationTemplateErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateLaunchConfigurationTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateLaunchConfigurationTemplateError {
+    fn code(&self) -> Option<&str> {
+        UpdateLaunchConfigurationTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateLaunchConfigurationTemplateError {
+    /// Creates a new `UpdateLaunchConfigurationTemplateError`.
+    pub fn new(
+        kind: UpdateLaunchConfigurationTemplateErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateLaunchConfigurationTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateLaunchConfigurationTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateLaunchConfigurationTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateLaunchConfigurationTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateLaunchConfigurationTemplateErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLaunchConfigurationTemplateErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLaunchConfigurationTemplateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLaunchConfigurationTemplateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLaunchConfigurationTemplateErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLaunchConfigurationTemplateErrorKind::UninitializedAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateLaunchConfigurationTemplateErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLaunchConfigurationTemplateErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateLaunchConfigurationTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateLaunchConfigurationTemplateErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            UpdateLaunchConfigurationTemplateErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateLaunchConfigurationTemplateErrorKind::UninitializedAccountException(_inner) => {
+                Some(_inner)
+            }
+            UpdateLaunchConfigurationTemplateErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateLaunchConfigurationTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateReplicationConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3852,6 +4381,8 @@ pub struct ConflictException {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A conflict occurred when prompting for resource type.</p>
     pub resource_type: std::option::Option<std::string::String>,
+    /// <p>Conflict Exception specific errors.</p>
+    pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorDetails>>,
 }
 impl ConflictException {
     #[allow(missing_docs)] // documentation missing in model
@@ -3866,6 +4397,10 @@ impl ConflictException {
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
+    /// <p>Conflict Exception specific errors.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::ErrorDetails]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3874,6 +4409,7 @@ impl std::fmt::Debug for ConflictException {
         formatter.field("code", &self.code);
         formatter.field("resource_id", &self.resource_id);
         formatter.field("resource_type", &self.resource_type);
+        formatter.field("errors", &self.errors);
         formatter.finish()
     }
 }
@@ -3903,6 +4439,7 @@ pub mod conflict_exception {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::ErrorDetails>>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -3948,6 +4485,25 @@ pub mod conflict_exception {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>Conflict Exception specific errors.</p>
+        pub fn errors(mut self, input: crate::model::ErrorDetails) -> Self {
+            let mut v = self.errors.unwrap_or_default();
+            v.push(input);
+            self.errors = Some(v);
+            self
+        }
+        /// <p>Conflict Exception specific errors.</p>
+        pub fn set_errors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ErrorDetails>>,
+        ) -> Self {
+            self.errors = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
@@ -3955,6 +4511,7 @@ pub mod conflict_exception {
                 code: self.code,
                 resource_id: self.resource_id,
                 resource_type: self.resource_type,
+                errors: self.errors,
             }
         }
     }

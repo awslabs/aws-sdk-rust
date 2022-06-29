@@ -1498,11 +1498,13 @@ pub struct PermissionGroup {
     pub name: std::option::Option<std::string::String>,
     /// <p> A brief description for the permission group.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p>
+    /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
     /// <ul>
     /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
     /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
     /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
     /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -1535,11 +1537,13 @@ impl PermissionGroup {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p>
+    /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
     /// <ul>
     /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
     /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
     /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
     /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -1637,11 +1641,13 @@ pub mod permission_group {
         ///
         /// To override the contents of this collection use [`set_application_permissions`](Self::set_application_permissions).
         ///
-        /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p>
+        /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -1656,11 +1662,13 @@ pub mod permission_group {
             self.application_permissions = Some(v);
             self
         }
-        /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p>
+        /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -3740,6 +3748,199 @@ impl Credentials {
     /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
     pub fn builder() -> crate::model::credentials::Builder {
         crate::model::credentials::Builder::default()
+    }
+}
+
+/// <p>The location of an external Dataview in an S3 bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3Location {
+    /// <p> The name of the S3 bucket.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p> The path of the folder, within the S3 bucket that contains the Dataset.</p>
+    pub key: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p> The name of the S3 bucket.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p> The path of the folder, within the S3 bucket that contains the Dataset.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+}
+impl std::fmt::Debug for S3Location {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3Location");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("key", &self.key);
+        formatter.finish()
+    }
+}
+/// See [`S3Location`](crate::model::S3Location).
+pub mod s3_location {
+
+    /// A builder for [`S3Location`](crate::model::S3Location).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The name of the S3 bucket.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p> The name of the S3 bucket.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p> The path of the folder, within the S3 bucket that contains the Dataset.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p> The path of the folder, within the S3 bucket that contains the Dataset.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
+        pub fn build(self) -> crate::model::S3Location {
+            crate::model::S3Location {
+                bucket: self.bucket,
+                key: self.key,
+            }
+        }
+    }
+}
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
+/// <p> The credentials required to access the external Dataview from the S3 location.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsCredentials {
+    /// <p> The unique identifier for the security credentials.</p>
+    pub access_key_id: std::option::Option<std::string::String>,
+    /// <p> The secret access key that can be used to sign requests.</p>
+    pub secret_access_key: std::option::Option<std::string::String>,
+    /// <p> The token that users must pass to use the credentials.</p>
+    pub session_token: std::option::Option<std::string::String>,
+    /// <p> The Epoch time when the current credentials expire.</p>
+    pub expiration: i64,
+}
+impl AwsCredentials {
+    /// <p> The unique identifier for the security credentials.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p> The secret access key that can be used to sign requests.</p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p> The token that users must pass to use the credentials.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+    /// <p> The Epoch time when the current credentials expire.</p>
+    pub fn expiration(&self) -> i64 {
+        self.expiration
+    }
+}
+impl std::fmt::Debug for AwsCredentials {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsCredentials");
+        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("expiration", &self.expiration);
+        formatter.finish()
+    }
+}
+/// See [`AwsCredentials`](crate::model::AwsCredentials).
+pub mod aws_credentials {
+
+    /// A builder for [`AwsCredentials`](crate::model::AwsCredentials).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_key_id: std::option::Option<std::string::String>,
+        pub(crate) secret_access_key: std::option::Option<std::string::String>,
+        pub(crate) session_token: std::option::Option<std::string::String>,
+        pub(crate) expiration: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p> The unique identifier for the security credentials.</p>
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
+            self
+        }
+        /// <p> The unique identifier for the security credentials.</p>
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
+            self
+        }
+        /// <p> The secret access key that can be used to sign requests.</p>
+        pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_access_key = Some(input.into());
+            self
+        }
+        /// <p> The secret access key that can be used to sign requests.</p>
+        pub fn set_secret_access_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secret_access_key = input;
+            self
+        }
+        /// <p> The token that users must pass to use the credentials.</p>
+        pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_token = Some(input.into());
+            self
+        }
+        /// <p> The token that users must pass to use the credentials.</p>
+        pub fn set_session_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.session_token = input;
+            self
+        }
+        /// <p> The Epoch time when the current credentials expire.</p>
+        pub fn expiration(mut self, input: i64) -> Self {
+            self.expiration = Some(input);
+            self
+        }
+        /// <p> The Epoch time when the current credentials expire.</p>
+        pub fn set_expiration(mut self, input: std::option::Option<i64>) -> Self {
+            self.expiration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsCredentials`](crate::model::AwsCredentials).
+        pub fn build(self) -> crate::model::AwsCredentials {
+            crate::model::AwsCredentials {
+                access_key_id: self.access_key_id,
+                secret_access_key: self.secret_access_key,
+                session_token: self.session_token,
+                expiration: self.expiration.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AwsCredentials {
+    /// Creates a new builder-style object to manufacture [`AwsCredentials`](crate::model::AwsCredentials).
+    pub fn builder() -> crate::model::aws_credentials::Builder {
+        crate::model::aws_credentials::Builder::default()
     }
 }
 

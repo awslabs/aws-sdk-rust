@@ -1843,49 +1843,49 @@ impl DescribeLocationS3Output {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationObjectStorageOutput {
-    /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.</p>
+    /// <p>The ARN of the object storage system location.</p>
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The URL of the source self-managed object storage server location that was described.</p>
+    /// <p>The URL of the object storage system location.</p>
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+    /// <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
     pub access_key: std::option::Option<std::string::String>,
-    /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).</p>
+    /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub server_port: std::option::Option<i32>,
-    /// <p>The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.</p>
+    /// <p>The protocol that your object storage server uses to communicate.</p>
     pub server_protocol: std::option::Option<crate::model::ObjectStorageServerProtocol>,
-    /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+    /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The time that the self-managed object storage server agent was created.</p>
+    /// <p>The time that the location was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeLocationObjectStorageOutput {
-    /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.</p>
+    /// <p>The ARN of the object storage system location.</p>
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The URL of the source self-managed object storage server location that was described.</p>
+    /// <p>The URL of the object storage system location.</p>
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+    /// <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
     pub fn access_key(&self) -> std::option::Option<&str> {
         self.access_key.as_deref()
     }
-    /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).</p>
+    /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub fn server_port(&self) -> std::option::Option<i32> {
         self.server_port
     }
-    /// <p>The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.</p>
+    /// <p>The protocol that your object storage server uses to communicate.</p>
     pub fn server_protocol(
         &self,
     ) -> std::option::Option<&crate::model::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+    /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
     pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_arns.as_deref()
     }
-    /// <p>The time that the self-managed object storage server agent was created.</p>
+    /// <p>The time that the location was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
@@ -1918,52 +1918,52 @@ pub mod describe_location_object_storage_output {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.</p>
+        /// <p>The ARN of the object storage system location.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to describe.</p>
+        /// <p>The ARN of the object storage system location.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input;
             self
         }
-        /// <p>The URL of the source self-managed object storage server location that was described.</p>
+        /// <p>The URL of the object storage system location.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_uri = Some(input.into());
             self
         }
-        /// <p>The URL of the source self-managed object storage server location that was described.</p>
+        /// <p>The URL of the object storage system location.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_uri = input;
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
         pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key = Some(input.into());
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
+        /// <p>The access key (for example, a user name) required to authenticate with the object storage server.</p>
         pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_key = input;
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).</p>
+        /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn server_port(mut self, input: i32) -> Self {
             self.server_port = Some(input);
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS).</p>
+        /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
             self.server_port = input;
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.</p>
+        /// <p>The protocol that your object storage server uses to communicate.</p>
         pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
             self.server_protocol = Some(input);
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.</p>
+        /// <p>The protocol that your object storage server uses to communicate.</p>
         pub fn set_server_protocol(
             mut self,
             input: std::option::Option<crate::model::ObjectStorageServerProtocol>,
@@ -1975,14 +1975,14 @@ pub mod describe_location_object_storage_output {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+        /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
             v.push(input.into());
             self.agent_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+        /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1990,12 +1990,12 @@ pub mod describe_location_object_storage_output {
             self.agent_arns = input;
             self
         }
-        /// <p>The time that the self-managed object storage server agent was created.</p>
+        /// <p>The time that the location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The time that the self-managed object storage server agent was created.</p>
+        /// <p>The time that the location was created.</p>
         pub fn set_creation_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2774,6 +2774,201 @@ impl DescribeLocationFsxOpenZfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLocationFsxOntapOutput {
+    /// <p>The time that the location was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The ARN of the FSx for ONTAP file system location.</p>
+    pub location_arn: std::option::Option<std::string::String>,
+    /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
+    pub location_uri: std::option::Option<std::string::String>,
+    /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
+    pub protocol: std::option::Option<crate::model::FsxProtocol>,
+    /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
+    pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
+    pub storage_virtual_machine_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the FSx for ONTAP file system.</p>
+    pub fsx_filesystem_arn: std::option::Option<std::string::String>,
+}
+impl DescribeLocationFsxOntapOutput {
+    /// <p>The time that the location was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ARN of the FSx for ONTAP file system location.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
+    pub fn location_uri(&self) -> std::option::Option<&str> {
+        self.location_uri.as_deref()
+    }
+    /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::FsxProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
+    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_arns.as_deref()
+    }
+    /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
+    pub fn storage_virtual_machine_arn(&self) -> std::option::Option<&str> {
+        self.storage_virtual_machine_arn.as_deref()
+    }
+    /// <p>The ARN of the FSx for ONTAP file system.</p>
+    pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
+        self.fsx_filesystem_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeLocationFsxOntapOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLocationFsxOntapOutput");
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("location_arn", &self.location_arn);
+        formatter.field("location_uri", &self.location_uri);
+        formatter.field("protocol", &self.protocol);
+        formatter.field("security_group_arns", &self.security_group_arns);
+        formatter.field(
+            "storage_virtual_machine_arn",
+            &self.storage_virtual_machine_arn,
+        );
+        formatter.field("fsx_filesystem_arn", &self.fsx_filesystem_arn);
+        formatter.finish()
+    }
+}
+/// See [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
+pub mod describe_location_fsx_ontap_output {
+
+    /// A builder for [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+        pub(crate) location_uri: std::option::Option<std::string::String>,
+        pub(crate) protocol: std::option::Option<crate::model::FsxProtocol>,
+        pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) storage_virtual_machine_arn: std::option::Option<std::string::String>,
+        pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The time that the location was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time that the location was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The ARN of the FSx for ONTAP file system location.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the FSx for ONTAP file system location.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
+        pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_uri = Some(input.into());
+            self
+        }
+        /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
+        pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_uri = input;
+            self
+        }
+        /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
+        pub fn protocol(mut self, input: crate::model::FsxProtocol) -> Self {
+            self.protocol = Some(input);
+            self
+        }
+        /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
+        pub fn set_protocol(
+            mut self,
+            input: std::option::Option<crate::model::FsxProtocol>,
+        ) -> Self {
+            self.protocol = input;
+            self
+        }
+        /// Appends an item to `security_group_arns`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
+        ///
+        /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
+        pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_arns.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_arns = Some(v);
+            self
+        }
+        /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
+        pub fn set_security_group_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_arns = input;
+            self
+        }
+        /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
+        pub fn storage_virtual_machine_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.storage_virtual_machine_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
+        pub fn set_storage_virtual_machine_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.storage_virtual_machine_arn = input;
+            self
+        }
+        /// <p>The ARN of the FSx for ONTAP file system.</p>
+        pub fn fsx_filesystem_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fsx_filesystem_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the FSx for ONTAP file system.</p>
+        pub fn set_fsx_filesystem_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.fsx_filesystem_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
+        pub fn build(self) -> crate::output::DescribeLocationFsxOntapOutput {
+            crate::output::DescribeLocationFsxOntapOutput {
+                creation_time: self.creation_time,
+                location_arn: self.location_arn,
+                location_uri: self.location_uri,
+                protocol: self.protocol,
+                security_group_arns: self.security_group_arns,
+                storage_virtual_machine_arn: self.storage_virtual_machine_arn,
+                fsx_filesystem_arn: self.fsx_filesystem_arn,
+            }
+        }
+    }
+}
+impl DescribeLocationFsxOntapOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
+    pub fn builder() -> crate::output::describe_location_fsx_ontap_output::Builder {
+        crate::output::describe_location_fsx_ontap_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLocationFsxLustreOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
     pub location_arn: std::option::Option<std::string::String>,
@@ -2910,7 +3105,7 @@ pub struct DescribeLocationEfsOutput {
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
     pub file_system_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>Whether DataSync uses TLS encryption when transferring data to or from your Amazon EFS file system.</p>
+    /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
     pub in_transit_encryption: std::option::Option<crate::model::EfsInTransitEncryption>,
 }
 impl DescribeLocationEfsOutput {
@@ -2938,7 +3133,7 @@ impl DescribeLocationEfsOutput {
     pub fn file_system_access_role_arn(&self) -> std::option::Option<&str> {
         self.file_system_access_role_arn.as_deref()
     }
-    /// <p>Whether DataSync uses TLS encryption when transferring data to or from your Amazon EFS file system.</p>
+    /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
     pub fn in_transit_encryption(
         &self,
     ) -> std::option::Option<&crate::model::EfsInTransitEncryption> {
@@ -3051,7 +3246,7 @@ pub mod describe_location_efs_output {
             self.file_system_access_role_arn = input;
             self
         }
-        /// <p>Whether DataSync uses TLS encryption when transferring data to or from your Amazon EFS file system.</p>
+        /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
         pub fn in_transit_encryption(
             mut self,
             input: crate::model::EfsInTransitEncryption,
@@ -3059,7 +3254,7 @@ pub mod describe_location_efs_output {
             self.in_transit_encryption = Some(input);
             self
         }
-        /// <p>Whether DataSync uses TLS encryption when transferring data to or from your Amazon EFS file system.</p>
+        /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
         pub fn set_in_transit_encryption(
             mut self,
             input: std::option::Option<crate::model::EfsInTransitEncryption>,
@@ -3524,11 +3719,11 @@ impl CreateLocationS3Output {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLocationObjectStorageOutput {
-    /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+    /// <p>Specifies the ARN of the object storage system location that you create.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationObjectStorageOutput {
-    /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+    /// <p>Specifies the ARN of the object storage system location that you create.</p>
     pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
@@ -3549,12 +3744,12 @@ pub mod create_location_object_storage_output {
         pub(crate) location_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+        /// <p>Specifies the ARN of the object storage system location that you create.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
+        /// <p>Specifies the ARN of the object storage system location that you create.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input;
             self
@@ -3787,6 +3982,60 @@ impl CreateLocationFsxOpenZfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
     pub fn builder() -> crate::output::create_location_fsx_open_zfs_output::Builder {
         crate::output::create_location_fsx_open_zfs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLocationFsxOntapOutput {
+    /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
+    pub location_arn: std::option::Option<std::string::String>,
+}
+impl CreateLocationFsxOntapOutput {
+    /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateLocationFsxOntapOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLocationFsxOntapOutput");
+        formatter.field("location_arn", &self.location_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
+pub mod create_location_fsx_ontap_output {
+
+    /// A builder for [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) location_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location_arn = Some(input.into());
+            self
+        }
+        /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
+        pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
+        pub fn build(self) -> crate::output::CreateLocationFsxOntapOutput {
+            crate::output::CreateLocationFsxOntapOutput {
+                location_arn: self.location_arn,
+            }
+        }
+    }
+}
+impl CreateLocationFsxOntapOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
+    pub fn builder() -> crate::output::create_location_fsx_ontap_output::Builder {
+        crate::output::create_location_fsx_ontap_output::Builder::default()
     }
 }
 

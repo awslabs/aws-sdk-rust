@@ -2189,6 +2189,203 @@ impl ListDatasetsInput {
     }
 }
 
+/// See [`ListInferenceEventsInput`](crate::input::ListInferenceEventsInput).
+pub mod list_inference_events_input {
+
+    /// A builder for [`ListInferenceEventsInput`](crate::input::ListInferenceEventsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
+        pub(crate) interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Specifies the maximum number of inference events to list. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Specifies the maximum number of inference events to list. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The name of the inference scheduler for the inference events listed. </p>
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_scheduler_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the inference scheduler for the inference events listed. </p>
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
+        }
+        /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+        pub fn interval_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.interval_start_time = Some(input);
+            self
+        }
+        /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+        pub fn set_interval_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.interval_start_time = input;
+            self
+        }
+        /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+        pub fn interval_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.interval_end_time = Some(input);
+            self
+        }
+        /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+        pub fn set_interval_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.interval_end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListInferenceEventsInput`](crate::input::ListInferenceEventsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListInferenceEventsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListInferenceEventsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                inference_scheduler_name: self.inference_scheduler_name,
+                interval_start_time: self.interval_start_time,
+                interval_end_time: self.interval_end_time,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListInferenceEventsInputOperationOutputAlias = crate::operation::ListInferenceEvents;
+#[doc(hidden)]
+pub type ListInferenceEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListInferenceEventsInput {
+    /// Consumes the builder and constructs an Operation<[`ListInferenceEvents`](crate::operation::ListInferenceEvents)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListInferenceEvents,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListInferenceEventsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListInferenceEventsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListInferenceEvents",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_inference_events(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListInferenceEvents::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListInferenceEvents",
+            "lookoutequipment",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListInferenceEventsInput`](crate::input::ListInferenceEventsInput).
+    pub fn builder() -> crate::input::list_inference_events_input::Builder {
+        crate::input::list_inference_events_input::Builder::default()
+    }
+}
+
 /// See [`ListInferenceExecutionsInput`](crate::input::ListInferenceExecutionsInput).
 pub mod list_inference_executions_input {
 
@@ -4555,6 +4752,55 @@ impl std::fmt::Debug for ListInferenceExecutionsInput {
         formatter.field("data_start_time_after", &self.data_start_time_after);
         formatter.field("data_end_time_before", &self.data_end_time_before);
         formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListInferenceEventsInput {
+    /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Specifies the maximum number of inference events to list. </p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The name of the inference scheduler for the inference events listed. </p>
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
+    /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+    pub interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+    pub interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ListInferenceEventsInput {
+    /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies the maximum number of inference events to list. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the inference scheduler for the inference events listed. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+    pub fn interval_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.interval_start_time.as_ref()
+    }
+    /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+    pub fn interval_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.interval_end_time.as_ref()
+    }
+}
+impl std::fmt::Debug for ListInferenceEventsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListInferenceEventsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
+        formatter.field("interval_start_time", &self.interval_start_time);
+        formatter.field("interval_end_time", &self.interval_end_time);
         formatter.finish()
     }
 }

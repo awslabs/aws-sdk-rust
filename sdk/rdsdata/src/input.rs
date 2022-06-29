@@ -27,22 +27,24 @@ pub mod batch_execute_statement_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+        /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+        /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
         }
-        /// <p>The SQL statement to run.</p>
+        /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
         pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql = Some(input.into());
             self
         }
-        /// <p>The SQL statement to run.</p>
+        /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
         pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sql = input;
             self
@@ -598,12 +600,14 @@ pub mod execute_sql_input {
             self.db_cluster_or_instance_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn aws_secret_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_secret_store_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn set_aws_secret_store_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -794,12 +798,14 @@ pub mod execute_statement_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+        /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+        /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -1257,7 +1263,8 @@ impl std::fmt::Debug for RollbackTransactionInput {
 pub struct ExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The SQL statement to run.</p>
     pub sql: std::option::Option<std::string::String>,
@@ -1291,7 +1298,8 @@ impl ExecuteStatementInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -1364,7 +1372,8 @@ impl std::fmt::Debug for ExecuteStatementInput {
 pub struct ExecuteSqlInput {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
     pub db_cluster_or_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub aws_secret_store_arn: std::option::Option<std::string::String>,
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
@@ -1379,7 +1388,8 @@ impl ExecuteSqlInput {
     pub fn db_cluster_or_instance_arn(&self) -> std::option::Option<&str> {
         self.db_cluster_or_instance_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub fn aws_secret_store_arn(&self) -> std::option::Option<&str> {
         self.aws_secret_store_arn.as_deref()
     }
@@ -1495,9 +1505,10 @@ impl std::fmt::Debug for BeginTransactionInput {
 pub struct BatchExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The SQL statement to run.</p>
+    /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
     pub sql: std::option::Option<std::string::String>,
     /// <p>The name of the database.</p>
     pub database: std::option::Option<std::string::String>,
@@ -1522,11 +1533,12 @@ impl BatchExecuteStatementInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+    /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The SQL statement to run.</p>
+    /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
     pub fn sql(&self) -> std::option::Option<&str> {
         self.sql.as_deref()
     }

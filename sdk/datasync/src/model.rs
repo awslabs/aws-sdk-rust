@@ -6,56 +6,59 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Options {
     /// <p>A value that determines whether a data integrity verification should be performed at the end of a task execution after all data and metadata have been transferred. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>. </p>
-    /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-    /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred. </p>
-    /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
-    /// <p>NONE: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
+    /// <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code> </p>
+    /// <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification only on files that were transferred. </p>
+    /// <p> <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
+    /// <p> <code>NONE</code>: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
     pub verify_mode: std::option::Option<crate::model::VerifyMode>,
     /// <p>A value that determines whether files at the destination should be overwritten or preserved when copying files. If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the destination file differs from the source file. If you modify files in the destination and you sync the files, you can use this value to protect against overwriting those changes. </p>
     /// <p>Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User Guide</i>.</p>
     pub overwrite_mode: std::option::Option<crate::model::OverwriteMode>,
-    /// <p>A file metadata value that shows the last time a file was accessed (that is, when the file was read or written to). If you set <code>Atime</code> to BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the PREPARING phase). However, <code>Atime</code>'s behavior is not fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
-    /// <p>Default value: BEST_EFFORT.</p>
-    /// <p>BEST_EFFORT: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
-    /// <p>NONE: Ignore <code>Atime</code>.</p> <note>
-    /// <p>If <code>Atime</code> is set to BEST_EFFORT, <code>Mtime</code> must be set to PRESERVE. </p>
-    /// <p>If <code>Atime</code> is set to NONE, <code>Mtime</code> must also be NONE. </p>
+    /// <p>A file metadata value that shows the last time a file was accessed (that is, when the file was read or written to). If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
+    /// <p>Default value: <code>BEST_EFFORT</code> </p>
+    /// <p> <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
+    /// <p> <code>NONE</code>: Ignore <code>Atime</code>.</p> <note>
+    /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>. </p>
+    /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>. </p>
     /// </note>
     pub atime: std::option::Option<crate::model::Atime>,
-    /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the PREPARING phase. This option is required for cases when you need to run the same task more than one time. </p>
+    /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the <code>PREPARING</code> phase. This option is required for cases when you need to run the same task more than one time. </p>
     /// <p>Default Value: <code>PRESERVE</code> </p>
-    /// <p>PRESERVE: Preserve original <code>Mtime</code> (recommended)</p>
-    /// <p> NONE: Ignore <code>Mtime</code>. </p> <note>
-    /// <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to BEST_EFFORT.</p>
-    /// <p>If <code>Mtime</code> is set to NONE, <code>Atime</code> must also be set to NONE. </p>
+    /// <p> <code>PRESERVE</code>: Preserve original <code>Mtime</code> (recommended)</p>
+    /// <p> <code>NONE</code>: Ignore <code>Mtime</code>. </p> <note>
+    /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
+    /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>. </p>
     /// </note>
     pub mtime: std::option::Option<crate::model::Mtime>,
-    /// <p>The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3 locations. To learn more about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>.</p>
-    /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
-    /// <p>INT_VALUE: Preserve the integer value of UID and group ID (GID) (recommended).</p>
-    /// <p>NONE: Ignore UID and GID. </p>
+    /// <p>The POSIX user ID (UID) of the file's owner.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
+    /// <p> <code>INT_VALUE</code>: Preserve the integer value of UID and group ID (GID) (recommended).</p>
+    /// <p> <code>NONE</code>: Ignore UID and GID. </p>
     pub uid: std::option::Option<crate::model::Uid>,
-    /// <p>The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3 locations. For more information about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
-    /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
-    /// <p>INT_VALUE: Preserve the integer value of user ID (UID) and GID (recommended).</p>
-    /// <p>NONE: Ignore UID and GID. </p>
+    /// <p>The POSIX group ID (GID) of the file's owners.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
+    /// <p> <code>INT_VALUE</code>: Preserve the integer value of user ID (UID) and GID (recommended).</p>
+    /// <p> <code>NONE</code>: Ignore UID and GID.</p>
     pub gid: std::option::Option<crate::model::Gid>,
     /// <p>A value that specifies whether files in the destination that don't exist in the source file system should be preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User Guide</i>.</p>
-    /// <p>Default value: PRESERVE.</p>
-    /// <p>PRESERVE: Ignore such destination files (recommended). </p>
-    /// <p>REMOVE: Delete destination files that aren’t present in the source.</p>
+    /// <p>Default value: <code>PRESERVE</code> </p>
+    /// <p> <code>PRESERVE</code>: Ignore such destination files (recommended). </p>
+    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p>
     pub preserve_deleted_files: std::option::Option<crate::model::PreserveDeletedFiles>,
     /// <p>A value that determines whether DataSync should preserve the metadata of block and character devices in the source file system, and re-create the files with that device name and metadata on the destination. DataSync does not copy the contents of such devices, only the name and metadata. </p> <note>
     /// <p>DataSync can't sync the actual contents of such devices, because they are nonterminal and don't return an end-of-file (EOF) marker.</p>
     /// </note>
-    /// <p>Default value: NONE.</p>
-    /// <p>NONE: Ignore special devices (recommended). </p>
-    /// <p>PRESERVE: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>
+    /// <p>Default value: <code>NONE</code> </p>
+    /// <p> <code>NONE</code>: Ignore special devices (recommended). </p>
+    /// <p> <code>PRESERVE</code>: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>
     pub preserve_devices: std::option::Option<crate::model::PreserveDevices>,
-    /// <p>A value that determines which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more information about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
-    /// <p>Default value: PRESERVE.</p>
-    /// <p>PRESERVE: Preserve POSIX-style permissions (recommended).</p>
-    /// <p>NONE: Ignore permissions. </p> <note>
+    /// <p>A value that determines which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>Default value: <code>PRESERVE</code> </p>
+    /// <p> <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p>
+    /// <p> <code>NONE</code>: Ignore permissions. </p> <note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub posix_permissions: std::option::Option<crate::model::PosixPermissions>,
@@ -67,26 +70,26 @@ pub struct Options {
     /// <p>A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch log group that you provide. For more information about providing a log group for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes logs on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for every file or object that is transferred and integrity checked.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// <p>A value that determines whether DataSync transfers only the data and metadata that differ between the source and the destination location, or whether DataSync transfers all the content from the source, without comparing to the destination location. </p>
-    /// <p>CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
-    /// <p>ALL: DataSync copies all source location content to the destination, without comparing to existing content on the destination.</p>
+    /// <p> <code>CHANGED</code>: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
+    /// <p> <code>ALL</code>: DataSync copies all source location content to the destination, without comparing to existing content on the destination.</p>
     pub transfer_mode: std::option::Option<crate::model::TransferMode>,
     /// <p>A value that determines which components of the SMB security descriptor are copied from source to destination objects. </p>
     /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata and Special Files</a>. </p>
-    /// <p>Default value: OWNER_DACL.</p>
-    /// <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:</p>
+    /// <p>Default value: <code>OWNER_DACL</code> </p>
+    /// <p> <code>OWNER_DACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
     /// <li> <p>Object owner.</p> </li>
     /// <li> <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> </li>
     /// </ul>
     /// <p>When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured object.</p>
-    /// <p> <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:</p>
+    /// <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
     /// <li> <p>Object owner.</p> </li>
     /// <li> <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> </li>
     /// <li> <p>NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured object.</p> </li>
     /// </ul>
     /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
-    /// <p> <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
+    /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
     pub security_descriptor_copy_flags:
         std::option::Option<crate::model::SmbSecurityDescriptorCopyFlags>,
     /// <p>Specifies whether object tags are maintained when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
@@ -95,10 +98,10 @@ pub struct Options {
 }
 impl Options {
     /// <p>A value that determines whether a data integrity verification should be performed at the end of a task execution after all data and metadata have been transferred. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>. </p>
-    /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-    /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred. </p>
-    /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
-    /// <p>NONE: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
+    /// <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code> </p>
+    /// <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification only on files that were transferred. </p>
+    /// <p> <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
+    /// <p> <code>NONE</code>: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
     pub fn verify_mode(&self) -> std::option::Option<&crate::model::VerifyMode> {
         self.verify_mode.as_ref()
     }
@@ -107,44 +110,46 @@ impl Options {
     pub fn overwrite_mode(&self) -> std::option::Option<&crate::model::OverwriteMode> {
         self.overwrite_mode.as_ref()
     }
-    /// <p>A file metadata value that shows the last time a file was accessed (that is, when the file was read or written to). If you set <code>Atime</code> to BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the PREPARING phase). However, <code>Atime</code>'s behavior is not fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
-    /// <p>Default value: BEST_EFFORT.</p>
-    /// <p>BEST_EFFORT: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
-    /// <p>NONE: Ignore <code>Atime</code>.</p> <note>
-    /// <p>If <code>Atime</code> is set to BEST_EFFORT, <code>Mtime</code> must be set to PRESERVE. </p>
-    /// <p>If <code>Atime</code> is set to NONE, <code>Mtime</code> must also be NONE. </p>
+    /// <p>A file metadata value that shows the last time a file was accessed (that is, when the file was read or written to). If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
+    /// <p>Default value: <code>BEST_EFFORT</code> </p>
+    /// <p> <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
+    /// <p> <code>NONE</code>: Ignore <code>Atime</code>.</p> <note>
+    /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>. </p>
+    /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>. </p>
     /// </note>
     pub fn atime(&self) -> std::option::Option<&crate::model::Atime> {
         self.atime.as_ref()
     }
-    /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the PREPARING phase. This option is required for cases when you need to run the same task more than one time. </p>
+    /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the <code>PREPARING</code> phase. This option is required for cases when you need to run the same task more than one time. </p>
     /// <p>Default Value: <code>PRESERVE</code> </p>
-    /// <p>PRESERVE: Preserve original <code>Mtime</code> (recommended)</p>
-    /// <p> NONE: Ignore <code>Mtime</code>. </p> <note>
-    /// <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to BEST_EFFORT.</p>
-    /// <p>If <code>Mtime</code> is set to NONE, <code>Atime</code> must also be set to NONE. </p>
+    /// <p> <code>PRESERVE</code>: Preserve original <code>Mtime</code> (recommended)</p>
+    /// <p> <code>NONE</code>: Ignore <code>Mtime</code>. </p> <note>
+    /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
+    /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>. </p>
     /// </note>
     pub fn mtime(&self) -> std::option::Option<&crate::model::Mtime> {
         self.mtime.as_ref()
     }
-    /// <p>The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3 locations. To learn more about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>.</p>
-    /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
-    /// <p>INT_VALUE: Preserve the integer value of UID and group ID (GID) (recommended).</p>
-    /// <p>NONE: Ignore UID and GID. </p>
+    /// <p>The POSIX user ID (UID) of the file's owner.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
+    /// <p> <code>INT_VALUE</code>: Preserve the integer value of UID and group ID (GID) (recommended).</p>
+    /// <p> <code>NONE</code>: Ignore UID and GID. </p>
     pub fn uid(&self) -> std::option::Option<&crate::model::Uid> {
         self.uid.as_ref()
     }
-    /// <p>The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3 locations. For more information about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
-    /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
-    /// <p>INT_VALUE: Preserve the integer value of user ID (UID) and GID (recommended).</p>
-    /// <p>NONE: Ignore UID and GID. </p>
+    /// <p>The POSIX group ID (GID) of the file's owners.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
+    /// <p> <code>INT_VALUE</code>: Preserve the integer value of user ID (UID) and GID (recommended).</p>
+    /// <p> <code>NONE</code>: Ignore UID and GID.</p>
     pub fn gid(&self) -> std::option::Option<&crate::model::Gid> {
         self.gid.as_ref()
     }
     /// <p>A value that specifies whether files in the destination that don't exist in the source file system should be preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User Guide</i>.</p>
-    /// <p>Default value: PRESERVE.</p>
-    /// <p>PRESERVE: Ignore such destination files (recommended). </p>
-    /// <p>REMOVE: Delete destination files that aren’t present in the source.</p>
+    /// <p>Default value: <code>PRESERVE</code> </p>
+    /// <p> <code>PRESERVE</code>: Ignore such destination files (recommended). </p>
+    /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p>
     pub fn preserve_deleted_files(
         &self,
     ) -> std::option::Option<&crate::model::PreserveDeletedFiles> {
@@ -153,16 +158,17 @@ impl Options {
     /// <p>A value that determines whether DataSync should preserve the metadata of block and character devices in the source file system, and re-create the files with that device name and metadata on the destination. DataSync does not copy the contents of such devices, only the name and metadata. </p> <note>
     /// <p>DataSync can't sync the actual contents of such devices, because they are nonterminal and don't return an end-of-file (EOF) marker.</p>
     /// </note>
-    /// <p>Default value: NONE.</p>
-    /// <p>NONE: Ignore special devices (recommended). </p>
-    /// <p>PRESERVE: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>
+    /// <p>Default value: <code>NONE</code> </p>
+    /// <p> <code>NONE</code>: Ignore special devices (recommended). </p>
+    /// <p> <code>PRESERVE</code>: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>
     pub fn preserve_devices(&self) -> std::option::Option<&crate::model::PreserveDevices> {
         self.preserve_devices.as_ref()
     }
-    /// <p>A value that determines which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more information about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
-    /// <p>Default value: PRESERVE.</p>
-    /// <p>PRESERVE: Preserve POSIX-style permissions (recommended).</p>
-    /// <p>NONE: Ignore permissions. </p> <note>
+    /// <p>A value that determines which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+    /// <p>Default value: <code>PRESERVE</code> </p>
+    /// <p> <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p>
+    /// <p> <code>NONE</code>: Ignore permissions. </p> <note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub fn posix_permissions(&self) -> std::option::Option<&crate::model::PosixPermissions> {
@@ -182,28 +188,28 @@ impl Options {
         self.log_level.as_ref()
     }
     /// <p>A value that determines whether DataSync transfers only the data and metadata that differ between the source and the destination location, or whether DataSync transfers all the content from the source, without comparing to the destination location. </p>
-    /// <p>CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
-    /// <p>ALL: DataSync copies all source location content to the destination, without comparing to existing content on the destination.</p>
+    /// <p> <code>CHANGED</code>: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
+    /// <p> <code>ALL</code>: DataSync copies all source location content to the destination, without comparing to existing content on the destination.</p>
     pub fn transfer_mode(&self) -> std::option::Option<&crate::model::TransferMode> {
         self.transfer_mode.as_ref()
     }
     /// <p>A value that determines which components of the SMB security descriptor are copied from source to destination objects. </p>
     /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata and Special Files</a>. </p>
-    /// <p>Default value: OWNER_DACL.</p>
-    /// <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:</p>
+    /// <p>Default value: <code>OWNER_DACL</code> </p>
+    /// <p> <code>OWNER_DACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
     /// <li> <p>Object owner.</p> </li>
     /// <li> <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> </li>
     /// </ul>
     /// <p>When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured object.</p>
-    /// <p> <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:</p>
+    /// <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
     /// <li> <p>Object owner.</p> </li>
     /// <li> <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> </li>
     /// <li> <p>NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured object.</p> </li>
     /// </ul>
     /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
-    /// <p> <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
+    /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
     pub fn security_descriptor_copy_flags(
         &self,
     ) -> std::option::Option<&crate::model::SmbSecurityDescriptorCopyFlags> {
@@ -264,19 +270,19 @@ pub mod options {
     }
     impl Builder {
         /// <p>A value that determines whether a data integrity verification should be performed at the end of a task execution after all data and metadata have been transferred. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>. </p>
-        /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-        /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred. </p>
-        /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
-        /// <p>NONE: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
+        /// <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code> </p>
+        /// <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification only on files that were transferred. </p>
+        /// <p> <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
+        /// <p> <code>NONE</code>: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
         pub fn verify_mode(mut self, input: crate::model::VerifyMode) -> Self {
             self.verify_mode = Some(input);
             self
         }
         /// <p>A value that determines whether a data integrity verification should be performed at the end of a task execution after all data and metadata have been transferred. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>. </p>
-        /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-        /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred. </p>
-        /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
-        /// <p>NONE: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
+        /// <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code> </p>
+        /// <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification only on files that were transferred. </p>
+        /// <p> <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire destination at the end of the transfer to verify that source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p>
+        /// <p> <code>NONE</code>: No additional verification is done at the end of the transfer, but all data transmissions are integrity-checked with checksum verification during the transfer.</p>
         pub fn set_verify_mode(
             mut self,
             input: std::option::Option<crate::model::VerifyMode>,
@@ -299,94 +305,98 @@ pub mod options {
             self.overwrite_mode = input;
             self
         }
-        /// <p>A file metadata value that shows the last time a file was accessed (that is, when the file was read or written to). If you set <code>Atime</code> to BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the PREPARING phase). However, <code>Atime</code>'s behavior is not fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
-        /// <p>Default value: BEST_EFFORT.</p>
-        /// <p>BEST_EFFORT: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
-        /// <p>NONE: Ignore <code>Atime</code>.</p> <note>
-        /// <p>If <code>Atime</code> is set to BEST_EFFORT, <code>Mtime</code> must be set to PRESERVE. </p>
-        /// <p>If <code>Atime</code> is set to NONE, <code>Mtime</code> must also be NONE. </p>
+        /// <p>A file metadata value that shows the last time a file was accessed (that is, when the file was read or written to). If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
+        /// <p>Default value: <code>BEST_EFFORT</code> </p>
+        /// <p> <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
+        /// <p> <code>NONE</code>: Ignore <code>Atime</code>.</p> <note>
+        /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>. </p>
+        /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>. </p>
         /// </note>
         pub fn atime(mut self, input: crate::model::Atime) -> Self {
             self.atime = Some(input);
             self
         }
-        /// <p>A file metadata value that shows the last time a file was accessed (that is, when the file was read or written to). If you set <code>Atime</code> to BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the PREPARING phase). However, <code>Atime</code>'s behavior is not fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
-        /// <p>Default value: BEST_EFFORT.</p>
-        /// <p>BEST_EFFORT: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
-        /// <p>NONE: Ignore <code>Atime</code>.</p> <note>
-        /// <p>If <code>Atime</code> is set to BEST_EFFORT, <code>Mtime</code> must be set to PRESERVE. </p>
-        /// <p>If <code>Atime</code> is set to NONE, <code>Mtime</code> must also be NONE. </p>
+        /// <p>A file metadata value that shows the last time a file was accessed (that is, when the file was read or written to). If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
+        /// <p>Default value: <code>BEST_EFFORT</code> </p>
+        /// <p> <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
+        /// <p> <code>NONE</code>: Ignore <code>Atime</code>.</p> <note>
+        /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>. </p>
+        /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>. </p>
         /// </note>
         pub fn set_atime(mut self, input: std::option::Option<crate::model::Atime>) -> Self {
             self.atime = input;
             self
         }
-        /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the PREPARING phase. This option is required for cases when you need to run the same task more than one time. </p>
+        /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the <code>PREPARING</code> phase. This option is required for cases when you need to run the same task more than one time. </p>
         /// <p>Default Value: <code>PRESERVE</code> </p>
-        /// <p>PRESERVE: Preserve original <code>Mtime</code> (recommended)</p>
-        /// <p> NONE: Ignore <code>Mtime</code>. </p> <note>
-        /// <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to BEST_EFFORT.</p>
-        /// <p>If <code>Mtime</code> is set to NONE, <code>Atime</code> must also be set to NONE. </p>
+        /// <p> <code>PRESERVE</code>: Preserve original <code>Mtime</code> (recommended)</p>
+        /// <p> <code>NONE</code>: Ignore <code>Mtime</code>. </p> <note>
+        /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
+        /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>. </p>
         /// </note>
         pub fn mtime(mut self, input: crate::model::Mtime) -> Self {
             self.mtime = Some(input);
             self
         }
-        /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the PREPARING phase. This option is required for cases when you need to run the same task more than one time. </p>
+        /// <p>A value that indicates the last time that a file was modified (that is, a file was written to) before the <code>PREPARING</code> phase. This option is required for cases when you need to run the same task more than one time. </p>
         /// <p>Default Value: <code>PRESERVE</code> </p>
-        /// <p>PRESERVE: Preserve original <code>Mtime</code> (recommended)</p>
-        /// <p> NONE: Ignore <code>Mtime</code>. </p> <note>
-        /// <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to BEST_EFFORT.</p>
-        /// <p>If <code>Mtime</code> is set to NONE, <code>Atime</code> must also be set to NONE. </p>
+        /// <p> <code>PRESERVE</code>: Preserve original <code>Mtime</code> (recommended)</p>
+        /// <p> <code>NONE</code>: Ignore <code>Mtime</code>. </p> <note>
+        /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
+        /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>. </p>
         /// </note>
         pub fn set_mtime(mut self, input: std::option::Option<crate::model::Mtime>) -> Self {
             self.mtime = input;
             self
         }
-        /// <p>The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3 locations. To learn more about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>.</p>
-        /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
-        /// <p>INT_VALUE: Preserve the integer value of UID and group ID (GID) (recommended).</p>
-        /// <p>NONE: Ignore UID and GID. </p>
+        /// <p>The POSIX user ID (UID) of the file's owner.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+        /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
+        /// <p> <code>INT_VALUE</code>: Preserve the integer value of UID and group ID (GID) (recommended).</p>
+        /// <p> <code>NONE</code>: Ignore UID and GID. </p>
         pub fn uid(mut self, input: crate::model::Uid) -> Self {
             self.uid = Some(input);
             self
         }
-        /// <p>The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3 locations. To learn more about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>.</p>
-        /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
-        /// <p>INT_VALUE: Preserve the integer value of UID and group ID (GID) (recommended).</p>
-        /// <p>NONE: Ignore UID and GID. </p>
+        /// <p>The POSIX user ID (UID) of the file's owner.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+        /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
+        /// <p> <code>INT_VALUE</code>: Preserve the integer value of UID and group ID (GID) (recommended).</p>
+        /// <p> <code>NONE</code>: Ignore UID and GID. </p>
         pub fn set_uid(mut self, input: std::option::Option<crate::model::Uid>) -> Self {
             self.uid = input;
             self
         }
-        /// <p>The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3 locations. For more information about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
-        /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
-        /// <p>INT_VALUE: Preserve the integer value of user ID (UID) and GID (recommended).</p>
-        /// <p>NONE: Ignore UID and GID. </p>
+        /// <p>The POSIX group ID (GID) of the file's owners.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+        /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
+        /// <p> <code>INT_VALUE</code>: Preserve the integer value of user ID (UID) and GID (recommended).</p>
+        /// <p> <code>NONE</code>: Ignore UID and GID.</p>
         pub fn gid(mut self, input: crate::model::Gid) -> Self {
             self.gid = Some(input);
             self
         }
-        /// <p>The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3 locations. For more information about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
-        /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
-        /// <p>INT_VALUE: Preserve the integer value of user ID (UID) and GID (recommended).</p>
-        /// <p>NONE: Ignore UID and GID. </p>
+        /// <p>The POSIX group ID (GID) of the file's owners.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+        /// <p>Default value: <code>INT_VALUE</code>. This preserves the integer value of the ID.</p>
+        /// <p> <code>INT_VALUE</code>: Preserve the integer value of user ID (UID) and GID (recommended).</p>
+        /// <p> <code>NONE</code>: Ignore UID and GID.</p>
         pub fn set_gid(mut self, input: std::option::Option<crate::model::Gid>) -> Self {
             self.gid = input;
             self
         }
         /// <p>A value that specifies whether files in the destination that don't exist in the source file system should be preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User Guide</i>.</p>
-        /// <p>Default value: PRESERVE.</p>
-        /// <p>PRESERVE: Ignore such destination files (recommended). </p>
-        /// <p>REMOVE: Delete destination files that aren’t present in the source.</p>
+        /// <p>Default value: <code>PRESERVE</code> </p>
+        /// <p> <code>PRESERVE</code>: Ignore such destination files (recommended). </p>
+        /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p>
         pub fn preserve_deleted_files(mut self, input: crate::model::PreserveDeletedFiles) -> Self {
             self.preserve_deleted_files = Some(input);
             self
         }
         /// <p>A value that specifies whether files in the destination that don't exist in the source file system should be preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User Guide</i>.</p>
-        /// <p>Default value: PRESERVE.</p>
-        /// <p>PRESERVE: Ignore such destination files (recommended). </p>
-        /// <p>REMOVE: Delete destination files that aren’t present in the source.</p>
+        /// <p>Default value: <code>PRESERVE</code> </p>
+        /// <p> <code>PRESERVE</code>: Ignore such destination files (recommended). </p>
+        /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p>
         pub fn set_preserve_deleted_files(
             mut self,
             input: std::option::Option<crate::model::PreserveDeletedFiles>,
@@ -397,9 +407,9 @@ pub mod options {
         /// <p>A value that determines whether DataSync should preserve the metadata of block and character devices in the source file system, and re-create the files with that device name and metadata on the destination. DataSync does not copy the contents of such devices, only the name and metadata. </p> <note>
         /// <p>DataSync can't sync the actual contents of such devices, because they are nonterminal and don't return an end-of-file (EOF) marker.</p>
         /// </note>
-        /// <p>Default value: NONE.</p>
-        /// <p>NONE: Ignore special devices (recommended). </p>
-        /// <p>PRESERVE: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>
+        /// <p>Default value: <code>NONE</code> </p>
+        /// <p> <code>NONE</code>: Ignore special devices (recommended). </p>
+        /// <p> <code>PRESERVE</code>: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>
         pub fn preserve_devices(mut self, input: crate::model::PreserveDevices) -> Self {
             self.preserve_devices = Some(input);
             self
@@ -407,9 +417,9 @@ pub mod options {
         /// <p>A value that determines whether DataSync should preserve the metadata of block and character devices in the source file system, and re-create the files with that device name and metadata on the destination. DataSync does not copy the contents of such devices, only the name and metadata. </p> <note>
         /// <p>DataSync can't sync the actual contents of such devices, because they are nonterminal and don't return an end-of-file (EOF) marker.</p>
         /// </note>
-        /// <p>Default value: NONE.</p>
-        /// <p>NONE: Ignore special devices (recommended). </p>
-        /// <p>PRESERVE: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>
+        /// <p>Default value: <code>NONE</code> </p>
+        /// <p> <code>NONE</code>: Ignore special devices (recommended). </p>
+        /// <p> <code>PRESERVE</code>: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>
         pub fn set_preserve_devices(
             mut self,
             input: std::option::Option<crate::model::PreserveDevices>,
@@ -417,20 +427,22 @@ pub mod options {
             self.preserve_devices = input;
             self
         }
-        /// <p>A value that determines which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more information about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
-        /// <p>Default value: PRESERVE.</p>
-        /// <p>PRESERVE: Preserve POSIX-style permissions (recommended).</p>
-        /// <p>NONE: Ignore permissions. </p> <note>
+        /// <p>A value that determines which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+        /// <p>Default value: <code>PRESERVE</code> </p>
+        /// <p> <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p>
+        /// <p> <code>NONE</code>: Ignore permissions. </p> <note>
         /// <p>DataSync can preserve extant permissions of a source location.</p>
         /// </note>
         pub fn posix_permissions(mut self, input: crate::model::PosixPermissions) -> Self {
             self.posix_permissions = Some(input);
             self
         }
-        /// <p>A value that determines which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more information about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
-        /// <p>Default value: PRESERVE.</p>
-        /// <p>PRESERVE: Preserve POSIX-style permissions (recommended).</p>
-        /// <p>NONE: Ignore permissions. </p> <note>
+        /// <p>A value that determines which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
+        /// <p>Default value: <code>PRESERVE</code> </p>
+        /// <p> <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p>
+        /// <p> <code>NONE</code>: Ignore permissions. </p> <note>
         /// <p>DataSync can preserve extant permissions of a source location.</p>
         /// </note>
         pub fn set_posix_permissions(
@@ -476,15 +488,15 @@ pub mod options {
             self
         }
         /// <p>A value that determines whether DataSync transfers only the data and metadata that differ between the source and the destination location, or whether DataSync transfers all the content from the source, without comparing to the destination location. </p>
-        /// <p>CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
-        /// <p>ALL: DataSync copies all source location content to the destination, without comparing to existing content on the destination.</p>
+        /// <p> <code>CHANGED</code>: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
+        /// <p> <code>ALL</code>: DataSync copies all source location content to the destination, without comparing to existing content on the destination.</p>
         pub fn transfer_mode(mut self, input: crate::model::TransferMode) -> Self {
             self.transfer_mode = Some(input);
             self
         }
         /// <p>A value that determines whether DataSync transfers only the data and metadata that differ between the source and the destination location, or whether DataSync transfers all the content from the source, without comparing to the destination location. </p>
-        /// <p>CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
-        /// <p>ALL: DataSync copies all source location content to the destination, without comparing to existing content on the destination.</p>
+        /// <p> <code>CHANGED</code>: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
+        /// <p> <code>ALL</code>: DataSync copies all source location content to the destination, without comparing to existing content on the destination.</p>
         pub fn set_transfer_mode(
             mut self,
             input: std::option::Option<crate::model::TransferMode>,
@@ -494,21 +506,21 @@ pub mod options {
         }
         /// <p>A value that determines which components of the SMB security descriptor are copied from source to destination objects. </p>
         /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata and Special Files</a>. </p>
-        /// <p>Default value: OWNER_DACL.</p>
-        /// <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:</p>
+        /// <p>Default value: <code>OWNER_DACL</code> </p>
+        /// <p> <code>OWNER_DACL</code>: For each copied object, DataSync copies the following metadata:</p>
         /// <ul>
         /// <li> <p>Object owner.</p> </li>
         /// <li> <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> </li>
         /// </ul>
         /// <p>When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured object.</p>
-        /// <p> <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:</p>
+        /// <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync copies the following metadata:</p>
         /// <ul>
         /// <li> <p>Object owner.</p> </li>
         /// <li> <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> </li>
         /// <li> <p>NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured object.</p> </li>
         /// </ul>
         /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
-        /// <p> <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
+        /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
         pub fn security_descriptor_copy_flags(
             mut self,
             input: crate::model::SmbSecurityDescriptorCopyFlags,
@@ -518,21 +530,21 @@ pub mod options {
         }
         /// <p>A value that determines which components of the SMB security descriptor are copied from source to destination objects. </p>
         /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata and Special Files</a>. </p>
-        /// <p>Default value: OWNER_DACL.</p>
-        /// <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:</p>
+        /// <p>Default value: <code>OWNER_DACL</code> </p>
+        /// <p> <code>OWNER_DACL</code>: For each copied object, DataSync copies the following metadata:</p>
         /// <ul>
         /// <li> <p>Object owner.</p> </li>
         /// <li> <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> </li>
         /// </ul>
         /// <p>When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured object.</p>
-        /// <p> <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:</p>
+        /// <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync copies the following metadata:</p>
         /// <ul>
         /// <li> <p>Object owner.</p> </li>
         /// <li> <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> </li>
         /// <li> <p>NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured object.</p> </li>
         /// </ul>
         /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
-        /// <p> <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
+        /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
         pub fn set_security_descriptor_copy_flags(
             mut self,
             input: std::option::Option<crate::model::SmbSecurityDescriptorCopyFlags>,
@@ -1570,15 +1582,15 @@ impl TaskSchedule {
     }
 }
 
-/// <p>Represents the mount options that are available for DataSync to access an SMB location.</p>
+/// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmbMountOptions {
-    /// <p>The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the SMB server.</p>
+    /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
     pub version: std::option::Option<crate::model::SmbVersion>,
 }
 impl SmbMountOptions {
-    /// <p>The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the SMB server.</p>
+    /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
     pub fn version(&self) -> std::option::Option<&crate::model::SmbVersion> {
         self.version.as_ref()
     }
@@ -1599,12 +1611,12 @@ pub mod smb_mount_options {
         pub(crate) version: std::option::Option<crate::model::SmbVersion>,
     }
     impl Builder {
-        /// <p>The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the SMB server.</p>
+        /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
         pub fn version(mut self, input: crate::model::SmbVersion) -> Self {
             self.version = Some(input);
             self
         }
-        /// <p>The specific SMB version that you want DataSync to use to mount your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the SMB server.</p>
+        /// <p>Specifies the SMB version that you want DataSync to use when mounting your SMB share. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses a version based on negotiation with the SMB server.</p>
         pub fn set_version(mut self, input: std::option::Option<crate::model::SmbVersion>) -> Self {
             self.version = input;
             self
@@ -1738,27 +1750,33 @@ impl AsRef<str> for ObjectStorageServerProtocol {
     }
 }
 
-/// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
+/// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NfsMountOptions {
-    /// <p>The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to use the version specified, the sync will fail. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the NFS server.</p>
-    /// <p>You can specify the following NFS versions:</p>
+    /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
+    /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows for asynchronous writes on the server.</p> </li>
-    /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p> </li>
-    /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that supports sessions, directory delegations, and parallel data processing. Version 4.1 also includes all features available in version 4.0.</p> </li>
-    /// </ul>
+    /// <li> <p> <code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.</p> </li>
+    /// <li> <p> <code>NFS3</code>: Stateless protocol version that allows for asynchronous writes on the server.</p> </li>
+    /// <li> <p> <code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p> </li>
+    /// <li> <p> <code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory delegations, and parallel data processing. NFS version 4.1 also includes all features available in version 4.0.</p> </li>
+    /// </ul> <note>
+    /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
+    /// </note>
     pub version: std::option::Option<crate::model::NfsVersion>,
 }
 impl NfsMountOptions {
-    /// <p>The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to use the version specified, the sync will fail. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the NFS server.</p>
-    /// <p>You can specify the following NFS versions:</p>
+    /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
+    /// <p>You can specify the following options:</p>
     /// <ul>
-    /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows for asynchronous writes on the server.</p> </li>
-    /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p> </li>
-    /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that supports sessions, directory delegations, and parallel data processing. Version 4.1 also includes all features available in version 4.0.</p> </li>
-    /// </ul>
+    /// <li> <p> <code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.</p> </li>
+    /// <li> <p> <code>NFS3</code>: Stateless protocol version that allows for asynchronous writes on the server.</p> </li>
+    /// <li> <p> <code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p> </li>
+    /// <li> <p> <code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory delegations, and parallel data processing. NFS version 4.1 also includes all features available in version 4.0.</p> </li>
+    /// </ul> <note>
+    /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
+    /// </note>
     pub fn version(&self) -> std::option::Option<&crate::model::NfsVersion> {
         self.version.as_ref()
     }
@@ -1779,24 +1797,30 @@ pub mod nfs_mount_options {
         pub(crate) version: std::option::Option<crate::model::NfsVersion>,
     }
     impl Builder {
-        /// <p>The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to use the version specified, the sync will fail. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the NFS server.</p>
-        /// <p>You can specify the following NFS versions:</p>
+        /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
+        /// <p>You can specify the following options:</p>
         /// <ul>
-        /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows for asynchronous writes on the server.</p> </li>
-        /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p> </li>
-        /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that supports sessions, directory delegations, and parallel data processing. Version 4.1 also includes all features available in version 4.0.</p> </li>
-        /// </ul>
+        /// <li> <p> <code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.</p> </li>
+        /// <li> <p> <code>NFS3</code>: Stateless protocol version that allows for asynchronous writes on the server.</p> </li>
+        /// <li> <p> <code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p> </li>
+        /// <li> <p> <code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory delegations, and parallel data processing. NFS version 4.1 also includes all features available in version 4.0.</p> </li>
+        /// </ul> <note>
+        /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
+        /// </note>
         pub fn version(mut self, input: crate::model::NfsVersion) -> Self {
             self.version = Some(input);
             self
         }
-        /// <p>The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to use the version specified, the sync will fail. If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the NFS server.</p>
-        /// <p>You can specify the following NFS versions:</p>
+        /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
+        /// <p>You can specify the following options:</p>
         /// <ul>
-        /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows for asynchronous writes on the server.</p> </li>
-        /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p> </li>
-        /// <li> <p> <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that supports sessions, directory delegations, and parallel data processing. Version 4.1 also includes all features available in version 4.0.</p> </li>
-        /// </ul>
+        /// <li> <p> <code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.</p> </li>
+        /// <li> <p> <code>NFS3</code>: Stateless protocol version that allows for asynchronous writes on the server.</p> </li>
+        /// <li> <p> <code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p> </li>
+        /// <li> <p> <code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory delegations, and parallel data processing. NFS version 4.1 also includes all features available in version 4.0.</p> </li>
+        /// </ul> <note>
+        /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
+        /// </note>
         pub fn set_version(mut self, input: std::option::Option<crate::model::NfsVersion>) -> Self {
             self.version = input;
             self
@@ -3750,23 +3774,30 @@ impl AsRef<str> for S3StorageClass {
     }
 }
 
-/// <p>Represents the protocol that DataSync uses to access your Amazon FSx for OpenZFS file system.</p>
+/// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FsxProtocol {
-    /// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.</p>
+    /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
     pub nfs: std::option::Option<crate::model::FsxProtocolNfs>,
+    /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
+    pub smb: std::option::Option<crate::model::FsxProtocolSmb>,
 }
 impl FsxProtocol {
-    /// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.</p>
+    /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
     pub fn nfs(&self) -> std::option::Option<&crate::model::FsxProtocolNfs> {
         self.nfs.as_ref()
+    }
+    /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
+    pub fn smb(&self) -> std::option::Option<&crate::model::FsxProtocolSmb> {
+        self.smb.as_ref()
     }
 }
 impl std::fmt::Debug for FsxProtocol {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FsxProtocol");
         formatter.field("nfs", &self.nfs);
+        formatter.field("smb", &self.smb);
         formatter.finish()
     }
 }
@@ -3777,21 +3808,35 @@ pub mod fsx_protocol {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nfs: std::option::Option<crate::model::FsxProtocolNfs>,
+        pub(crate) smb: std::option::Option<crate::model::FsxProtocolSmb>,
     }
     impl Builder {
-        /// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.</p>
+        /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
         pub fn nfs(mut self, input: crate::model::FsxProtocolNfs) -> Self {
             self.nfs = Some(input);
             self
         }
-        /// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system.</p>
+        /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage virtual machine (SVM).</p>
         pub fn set_nfs(mut self, input: std::option::Option<crate::model::FsxProtocolNfs>) -> Self {
             self.nfs = input;
             self
         }
+        /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
+        pub fn smb(mut self, input: crate::model::FsxProtocolSmb) -> Self {
+            self.smb = Some(input);
+            self
+        }
+        /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your FSx for ONTAP file system's SVM.</p>
+        pub fn set_smb(mut self, input: std::option::Option<crate::model::FsxProtocolSmb>) -> Self {
+            self.smb = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FsxProtocol`](crate::model::FsxProtocol).
         pub fn build(self) -> crate::model::FsxProtocol {
-            crate::model::FsxProtocol { nfs: self.nfs }
+            crate::model::FsxProtocol {
+                nfs: self.nfs,
+                smb: self.smb,
+            }
         }
     }
 }
@@ -3802,15 +3847,129 @@ impl FsxProtocol {
     }
 }
 
-/// <p>Represents the Network File System (NFS) protocol that DataSync uses to access your Amazon FSx for OpenZFS file system.</p>
+/// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your Amazon FSx for NetApp ONTAP file system. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">Accessing FSx for ONTAP file systems</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FsxProtocolSmb {
+    /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
+    pub domain: std::option::Option<std::string::String>,
+    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
+    /// <p>Specifies the password of a user who has permission to access your SVM.</p>
+    pub password: std::option::Option<std::string::String>,
+    /// <p>Specifies a user who has permission to access your SVM.</p>
+    pub user: std::option::Option<std::string::String>,
+}
+impl FsxProtocolSmb {
+    /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+    pub fn mount_options(&self) -> std::option::Option<&crate::model::SmbMountOptions> {
+        self.mount_options.as_ref()
+    }
+    /// <p>Specifies the password of a user who has permission to access your SVM.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>Specifies a user who has permission to access your SVM.</p>
+    pub fn user(&self) -> std::option::Option<&str> {
+        self.user.as_deref()
+    }
+}
+impl std::fmt::Debug for FsxProtocolSmb {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FsxProtocolSmb");
+        formatter.field("domain", &self.domain);
+        formatter.field("mount_options", &self.mount_options);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("user", &self.user);
+        formatter.finish()
+    }
+}
+/// See [`FsxProtocolSmb`](crate::model::FsxProtocolSmb).
+pub mod fsx_protocol_smb {
+
+    /// A builder for [`FsxProtocolSmb`](crate::model::FsxProtocolSmb).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) mount_options: std::option::Option<crate::model::SmbMountOptions>,
+        pub(crate) password: std::option::Option<std::string::String>,
+        pub(crate) user: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+        pub fn mount_options(mut self, input: crate::model::SmbMountOptions) -> Self {
+            self.mount_options = Some(input);
+            self
+        }
+        /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
+        pub fn set_mount_options(
+            mut self,
+            input: std::option::Option<crate::model::SmbMountOptions>,
+        ) -> Self {
+            self.mount_options = input;
+            self
+        }
+        /// <p>Specifies the password of a user who has permission to access your SVM.</p>
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password = Some(input.into());
+            self
+        }
+        /// <p>Specifies the password of a user who has permission to access your SVM.</p>
+        pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.password = input;
+            self
+        }
+        /// <p>Specifies a user who has permission to access your SVM.</p>
+        pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user = Some(input.into());
+            self
+        }
+        /// <p>Specifies a user who has permission to access your SVM.</p>
+        pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FsxProtocolSmb`](crate::model::FsxProtocolSmb).
+        pub fn build(self) -> crate::model::FsxProtocolSmb {
+            crate::model::FsxProtocolSmb {
+                domain: self.domain,
+                mount_options: self.mount_options,
+                password: self.password,
+                user: self.user,
+            }
+        }
+    }
+}
+impl FsxProtocolSmb {
+    /// Creates a new builder-style object to manufacture [`FsxProtocolSmb`](crate::model::FsxProtocolSmb).
+    pub fn builder() -> crate::model::fsx_protocol_smb::Builder {
+        crate::model::fsx_protocol_smb::Builder::default()
+    }
+}
+
+/// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FsxProtocolNfs {
-    /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
+    /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
 }
 impl FsxProtocolNfs {
-    /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
+    /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub fn mount_options(&self) -> std::option::Option<&crate::model::NfsMountOptions> {
         self.mount_options.as_ref()
     }
@@ -3831,12 +3990,12 @@ pub mod fsx_protocol_nfs {
         pub(crate) mount_options: std::option::Option<crate::model::NfsMountOptions>,
     }
     impl Builder {
-        /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
+        /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
         pub fn mount_options(mut self, input: crate::model::NfsMountOptions) -> Self {
             self.mount_options = Some(input);
             self
         }
-        /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
+        /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
         pub fn set_mount_options(
             mut self,
             input: std::option::Option<crate::model::NfsMountOptions>,

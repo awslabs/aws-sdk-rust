@@ -3507,6 +3507,88 @@ impl ListCustomEntityTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCrawlsOutput {
+    /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
+    pub crawls: std::option::Option<std::vec::Vec<crate::model::CrawlerHistory>>,
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCrawlsOutput {
+    /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
+    pub fn crawls(&self) -> std::option::Option<&[crate::model::CrawlerHistory]> {
+        self.crawls.as_deref()
+    }
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCrawlsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCrawlsOutput");
+        formatter.field("crawls", &self.crawls);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListCrawlsOutput`](crate::output::ListCrawlsOutput).
+pub mod list_crawls_output {
+
+    /// A builder for [`ListCrawlsOutput`](crate::output::ListCrawlsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) crawls: std::option::Option<std::vec::Vec<crate::model::CrawlerHistory>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `crawls`.
+        ///
+        /// To override the contents of this collection use [`set_crawls`](Self::set_crawls).
+        ///
+        /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
+        pub fn crawls(mut self, input: crate::model::CrawlerHistory) -> Self {
+            let mut v = self.crawls.unwrap_or_default();
+            v.push(input);
+            self.crawls = Some(v);
+            self
+        }
+        /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
+        pub fn set_crawls(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CrawlerHistory>>,
+        ) -> Self {
+            self.crawls = input;
+            self
+        }
+        /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCrawlsOutput`](crate::output::ListCrawlsOutput).
+        pub fn build(self) -> crate::output::ListCrawlsOutput {
+            crate::output::ListCrawlsOutput {
+                crawls: self.crawls,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCrawlsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCrawlsOutput`](crate::output::ListCrawlsOutput).
+    pub fn builder() -> crate::output::list_crawls_output::Builder {
+        crate::output::list_crawls_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrawlersOutput {
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
     pub crawler_names: std::option::Option<std::vec::Vec<std::string::String>>,

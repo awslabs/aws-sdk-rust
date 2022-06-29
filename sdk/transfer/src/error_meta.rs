@@ -20,7 +20,6 @@ pub enum Error {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

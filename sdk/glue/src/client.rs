@@ -363,7 +363,7 @@ impl Client {
     ///   - [`schema_change_policy(SchemaChangePolicy)`](crate::client::fluent_builders::CreateCrawler::schema_change_policy) / [`set_schema_change_policy(Option<SchemaChangePolicy>)`](crate::client::fluent_builders::CreateCrawler::set_schema_change_policy): <p>The policy for the crawler's update and deletion behavior.</p>
     ///   - [`recrawl_policy(RecrawlPolicy)`](crate::client::fluent_builders::CreateCrawler::recrawl_policy) / [`set_recrawl_policy(Option<RecrawlPolicy>)`](crate::client::fluent_builders::CreateCrawler::set_recrawl_policy): <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     ///   - [`lineage_configuration(LineageConfiguration)`](crate::client::fluent_builders::CreateCrawler::lineage_configuration) / [`set_lineage_configuration(Option<LineageConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lineage_configuration): <p>Specifies data lineage configuration settings for the crawler.</p>
-    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::CreateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lake_formation_configuration): <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::CreateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lake_formation_configuration): <p>Specifies Lake Formation configuration settings for the crawler.</p>
     ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     ///   - [`crawler_security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::crawler_security_configuration) / [`set_crawler_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_crawler_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCrawler::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCrawler::set_tags): <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
@@ -1830,6 +1830,20 @@ impl Client {
     pub fn list_crawlers(&self) -> fluent_builders::ListCrawlers {
         fluent_builders::ListCrawlers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListCrawls`](crate::client::fluent_builders::ListCrawls) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`crawler_name(impl Into<String>)`](crate::client::fluent_builders::ListCrawls::crawler_name) / [`set_crawler_name(Option<String>)`](crate::client::fluent_builders::ListCrawls::set_crawler_name): <p>The name of the crawler whose runs you want to retrieve.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCrawls::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCrawls::set_max_results): <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
+    ///   - [`filters(Vec<CrawlsFilter>)`](crate::client::fluent_builders::ListCrawls::filters) / [`set_filters(Option<Vec<CrawlsFilter>>)`](crate::client::fluent_builders::ListCrawls::set_filters): <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCrawls::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCrawls::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    /// - On success, responds with [`ListCrawlsOutput`](crate::output::ListCrawlsOutput) with field(s):
+    ///   - [`crawls(Option<Vec<CrawlerHistory>>)`](crate::output::ListCrawlsOutput::crawls): <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCrawlsOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    /// - On failure, responds with [`SdkError<ListCrawlsError>`](crate::error::ListCrawlsError)
+    pub fn list_crawls(&self) -> fluent_builders::ListCrawls {
+        fluent_builders::ListCrawls::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListCustomEntityTypes`](crate::client::fluent_builders::ListCustomEntityTypes) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomEntityTypes::into_paginator).
     ///
@@ -2422,7 +2436,7 @@ impl Client {
     ///   - [`schema_change_policy(SchemaChangePolicy)`](crate::client::fluent_builders::UpdateCrawler::schema_change_policy) / [`set_schema_change_policy(Option<SchemaChangePolicy>)`](crate::client::fluent_builders::UpdateCrawler::set_schema_change_policy): <p>The policy for the crawler's update and deletion behavior.</p>
     ///   - [`recrawl_policy(RecrawlPolicy)`](crate::client::fluent_builders::UpdateCrawler::recrawl_policy) / [`set_recrawl_policy(Option<RecrawlPolicy>)`](crate::client::fluent_builders::UpdateCrawler::set_recrawl_policy): <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     ///   - [`lineage_configuration(LineageConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lineage_configuration) / [`set_lineage_configuration(Option<LineageConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lineage_configuration): <p>Specifies data lineage configuration settings for the crawler.</p>
-    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lake_formation_configuration): <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lake_formation_configuration): <p>Specifies Lake Formation configuration settings for the crawler.</p>
     ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     ///   - [`crawler_security_configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::crawler_security_configuration) / [`set_crawler_security_configuration(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_crawler_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     /// - On success, responds with [`UpdateCrawlerOutput`](crate::output::UpdateCrawlerOutput)
@@ -4424,7 +4438,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lineage_configuration(input);
             self
         }
-        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+        /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -4432,7 +4446,7 @@ pub mod fluent_builders {
             self.inner = self.inner.lake_formation_configuration(input);
             self
         }
-        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+        /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,
@@ -13701,6 +13715,103 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListCrawls`.
+    ///
+    /// <p>Returns all the crawls of a specified crawler. Returns only the crawls that have occurred since the launch date of the crawler history feature, and only retains up to 12 months of crawls. Older crawls will not be returned.</p>
+    /// <p>You may use this API to:</p>
+    /// <ul>
+    /// <li> <p>Retrive all the crawls of a specified crawler.</p> </li>
+    /// <li> <p>Retrieve all the crawls of a specified crawler within a limited count.</p> </li>
+    /// <li> <p>Retrieve all the crawls of a specified crawler in a specific time range.</p> </li>
+    /// <li> <p>Retrieve all the crawls of a specified crawler with a particular state, crawl ID, or DPU hour value.</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCrawls {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_crawls_input::Builder,
+    }
+    impl ListCrawls {
+        /// Creates a new `ListCrawls`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCrawlsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCrawlsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the crawler whose runs you want to retrieve.</p>
+        pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.crawler_name(input.into());
+            self
+        }
+        /// <p>The name of the crawler whose runs you want to retrieve.</p>
+        pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_crawler_name(input);
+            self
+        }
+        /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
+        pub fn filters(mut self, input: crate::model::CrawlsFilter) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CrawlsFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListCustomEntityTypes`.
     ///
     /// <p>Lists all the custom patterns that have been created.</p>
@@ -17524,7 +17635,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lineage_configuration(input);
             self
         }
-        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+        /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -17532,7 +17643,7 @@ pub mod fluent_builders {
             self.inner = self.inner.lake_formation_configuration(input);
             self
         }
-        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+        /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,

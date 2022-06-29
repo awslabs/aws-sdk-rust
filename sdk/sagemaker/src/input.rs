@@ -1265,12 +1265,16 @@ pub mod create_app_input {
             self.tags = input;
             self
         }
-        /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+        /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+        /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
+        /// </note>
         pub fn resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
             self.resource_spec = Some(input);
             self
         }
-        /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+        /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+        /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
+        /// </note>
         pub fn set_resource_spec(
             mut self,
             input: std::option::Option<crate::model::ResourceSpec>,
@@ -12174,6 +12178,8 @@ pub mod create_workforce_input {
         pub(crate) source_ip_config: std::option::Option<crate::model::SourceIpConfig>,
         pub(crate) workforce_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) workforce_vpc_config:
+            std::option::Option<crate::model::WorkforceVpcConfigRequest>,
     }
     impl Builder {
         /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
@@ -12251,6 +12257,22 @@ pub mod create_workforce_input {
             self.tags = input;
             self
         }
+        /// <p>Use this parameter to configure a workforce using VPC.</p>
+        pub fn workforce_vpc_config(
+            mut self,
+            input: crate::model::WorkforceVpcConfigRequest,
+        ) -> Self {
+            self.workforce_vpc_config = Some(input);
+            self
+        }
+        /// <p>Use this parameter to configure a workforce using VPC.</p>
+        pub fn set_workforce_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkforceVpcConfigRequest>,
+        ) -> Self {
+            self.workforce_vpc_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkforceInput`](crate::input::CreateWorkforceInput).
         pub fn build(
             self,
@@ -12262,6 +12284,7 @@ pub mod create_workforce_input {
                 source_ip_config: self.source_ip_config,
                 workforce_name: self.workforce_name,
                 tags: self.tags,
+                workforce_vpc_config: self.workforce_vpc_config,
             })
         }
     }
@@ -48947,6 +48970,8 @@ pub mod update_workforce_input {
         pub(crate) workforce_name: std::option::Option<std::string::String>,
         pub(crate) source_ip_config: std::option::Option<crate::model::SourceIpConfig>,
         pub(crate) oidc_config: std::option::Option<crate::model::OidcConfig>,
+        pub(crate) workforce_vpc_config:
+            std::option::Option<crate::model::WorkforceVpcConfigRequest>,
     }
     impl Builder {
         /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the operation.</p>
@@ -48990,6 +49015,22 @@ pub mod update_workforce_input {
             self.oidc_config = input;
             self
         }
+        /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+        pub fn workforce_vpc_config(
+            mut self,
+            input: crate::model::WorkforceVpcConfigRequest,
+        ) -> Self {
+            self.workforce_vpc_config = Some(input);
+            self
+        }
+        /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+        pub fn set_workforce_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkforceVpcConfigRequest>,
+        ) -> Self {
+            self.workforce_vpc_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkforceInput`](crate::input::UpdateWorkforceInput).
         pub fn build(
             self,
@@ -48999,6 +49040,7 @@ pub mod update_workforce_input {
                 workforce_name: self.workforce_name,
                 source_ip_config: self.source_ip_config,
                 oidc_config: self.oidc_config,
+                workforce_vpc_config: self.workforce_vpc_config,
             })
         }
     }
@@ -49379,6 +49421,8 @@ pub struct UpdateWorkforceInput {
     pub source_ip_config: std::option::Option<crate::model::SourceIpConfig>,
     /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
     pub oidc_config: std::option::Option<crate::model::OidcConfig>,
+    /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+    pub workforce_vpc_config: std::option::Option<crate::model::WorkforceVpcConfigRequest>,
 }
 impl UpdateWorkforceInput {
     /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the operation.</p>
@@ -49394,6 +49438,12 @@ impl UpdateWorkforceInput {
     pub fn oidc_config(&self) -> std::option::Option<&crate::model::OidcConfig> {
         self.oidc_config.as_ref()
     }
+    /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+    pub fn workforce_vpc_config(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkforceVpcConfigRequest> {
+        self.workforce_vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateWorkforceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49401,6 +49451,7 @@ impl std::fmt::Debug for UpdateWorkforceInput {
         formatter.field("workforce_name", &self.workforce_name);
         formatter.field("source_ip_config", &self.source_ip_config);
         formatter.field("oidc_config", &self.oidc_config);
+        formatter.field("workforce_vpc_config", &self.workforce_vpc_config);
         formatter.finish()
     }
 }
@@ -57530,6 +57581,8 @@ pub struct CreateWorkforceInput {
     pub workforce_name: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Use this parameter to configure a workforce using VPC.</p>
+    pub workforce_vpc_config: std::option::Option<crate::model::WorkforceVpcConfigRequest>,
 }
 impl CreateWorkforceInput {
     /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
@@ -57554,6 +57607,12 @@ impl CreateWorkforceInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Use this parameter to configure a workforce using VPC.</p>
+    pub fn workforce_vpc_config(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkforceVpcConfigRequest> {
+        self.workforce_vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateWorkforceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57563,6 +57622,7 @@ impl std::fmt::Debug for CreateWorkforceInput {
         formatter.field("source_ip_config", &self.source_ip_config);
         formatter.field("workforce_name", &self.workforce_name);
         formatter.field("tags", &self.tags);
+        formatter.field("workforce_vpc_config", &self.workforce_vpc_config);
         formatter.finish()
     }
 }
@@ -60918,7 +60978,9 @@ pub struct CreateAppInput {
     pub app_name: std::option::Option<std::string::String>,
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
+    /// </note>
     pub resource_spec: std::option::Option<crate::model::ResourceSpec>,
 }
 impl CreateAppInput {
@@ -60942,7 +61004,9 @@ impl CreateAppInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
+    /// </note>
     pub fn resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
         self.resource_spec.as_ref()
     }

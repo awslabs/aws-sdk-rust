@@ -13980,6 +13980,91 @@ pub fn parse_list_crawlers_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_crawls_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListCrawlsOutput, crate::error::ListCrawlsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListCrawlsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListCrawlsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::ListCrawlsError {
+            meta: generic,
+            kind: crate::error::ListCrawlsErrorKind::EntityNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCrawlsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::ListCrawlsError {
+            meta: generic,
+            kind: crate::error::ListCrawlsErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCrawlsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationTimeoutException" => crate::error::ListCrawlsError {
+            meta: generic,
+            kind: crate::error::ListCrawlsErrorKind::OperationTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCrawlsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListCrawlsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_crawls_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListCrawlsOutput, crate::error::ListCrawlsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_crawls_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_crawls(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListCrawlsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_custom_entity_types_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

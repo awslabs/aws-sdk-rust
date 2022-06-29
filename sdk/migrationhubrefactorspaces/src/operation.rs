@@ -755,3 +755,35 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
         }
     }
 }
+
+/// Operation shape for `UpdateRoute`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_route`](crate::client::Client::update_route).
+///
+/// See [`crate::client::fluent_builders::UpdateRoute`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateRoute {
+    _private: (),
+}
+impl UpdateRoute {
+    /// Creates a new builder-style object to manufacture [`UpdateRouteInput`](crate::input::UpdateRouteInput).
+    pub fn builder() -> crate::input::update_route_input::Builder {
+        crate::input::update_route_input::Builder::default()
+    }
+    /// Creates a new `UpdateRoute` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateRoute {
+    type Output =
+        std::result::Result<crate::output::UpdateRouteOutput, crate::error::UpdateRouteError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_route_error(response)
+        } else {
+            crate::operation_deser::parse_update_route_response(response)
+        }
+    }
+}

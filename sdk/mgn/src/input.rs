@@ -162,6 +162,177 @@ impl ChangeServerLifeCycleStateInput {
     }
 }
 
+/// See [`CreateLaunchConfigurationTemplateInput`](crate::input::CreateLaunchConfigurationTemplateInput).
+pub mod create_launch_configuration_template_input {
+
+    /// A builder for [`CreateLaunchConfigurationTemplateInput`](crate::input::CreateLaunchConfigurationTemplateInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.post_launch_actions = Some(input);
+            self
+        }
+        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.post_launch_actions = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLaunchConfigurationTemplateInput`](crate::input::CreateLaunchConfigurationTemplateInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateLaunchConfigurationTemplateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateLaunchConfigurationTemplateInput {
+                post_launch_actions: self.post_launch_actions,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateLaunchConfigurationTemplateInputOperationOutputAlias =
+    crate::operation::CreateLaunchConfigurationTemplate;
+#[doc(hidden)]
+pub type CreateLaunchConfigurationTemplateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl CreateLaunchConfigurationTemplateInput {
+    /// Consumes the builder and constructs an Operation<[`CreateLaunchConfigurationTemplate`](crate::operation::CreateLaunchConfigurationTemplate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLaunchConfigurationTemplate,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateLaunchConfigurationTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/CreateLaunchConfigurationTemplate")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLaunchConfigurationTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_launch_configuration_template(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLaunchConfigurationTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLaunchConfigurationTemplate",
+            "mgn",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateLaunchConfigurationTemplateInput`](crate::input::CreateLaunchConfigurationTemplateInput).
+    pub fn builder() -> crate::input::create_launch_configuration_template_input::Builder {
+        crate::input::create_launch_configuration_template_input::Builder::default()
+    }
+}
+
 /// See [`CreateReplicationConfigurationTemplateInput`](crate::input::CreateReplicationConfigurationTemplateInput).
 pub mod create_replication_configuration_template_input {
 
@@ -665,6 +836,151 @@ impl DeleteJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteJobInput`](crate::input::DeleteJobInput).
     pub fn builder() -> crate::input::delete_job_input::Builder {
         crate::input::delete_job_input::Builder::default()
+    }
+}
+
+/// See [`DeleteLaunchConfigurationTemplateInput`](crate::input::DeleteLaunchConfigurationTemplateInput).
+pub mod delete_launch_configuration_template_input {
+
+    /// A builder for [`DeleteLaunchConfigurationTemplateInput`](crate::input::DeleteLaunchConfigurationTemplateInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>ID of resource to be deleted.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = Some(input.into());
+            self
+        }
+        /// <p>ID of resource to be deleted.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteLaunchConfigurationTemplateInput`](crate::input::DeleteLaunchConfigurationTemplateInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteLaunchConfigurationTemplateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteLaunchConfigurationTemplateInput {
+                launch_configuration_template_id: self.launch_configuration_template_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteLaunchConfigurationTemplateInputOperationOutputAlias =
+    crate::operation::DeleteLaunchConfigurationTemplate;
+#[doc(hidden)]
+pub type DeleteLaunchConfigurationTemplateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteLaunchConfigurationTemplateInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteLaunchConfigurationTemplate`](crate::operation::DeleteLaunchConfigurationTemplate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteLaunchConfigurationTemplate,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteLaunchConfigurationTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/DeleteLaunchConfigurationTemplate")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteLaunchConfigurationTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_launch_configuration_template(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLaunchConfigurationTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLaunchConfigurationTemplate",
+            "mgn",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteLaunchConfigurationTemplateInput`](crate::input::DeleteLaunchConfigurationTemplateInput).
+    pub fn builder() -> crate::input::delete_launch_configuration_template_input::Builder {
+        crate::input::delete_launch_configuration_template_input::Builder::default()
     }
 }
 
@@ -1409,6 +1725,182 @@ impl DescribeJobsInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobsInput`](crate::input::DescribeJobsInput).
     pub fn builder() -> crate::input::describe_jobs_input::Builder {
         crate::input::describe_jobs_input::Builder::default()
+    }
+}
+
+/// See [`DescribeLaunchConfigurationTemplatesInput`](crate::input::DescribeLaunchConfigurationTemplatesInput).
+pub mod describe_launch_configuration_templates_input {
+
+    /// A builder for [`DescribeLaunchConfigurationTemplatesInput`](crate::input::DescribeLaunchConfigurationTemplatesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_configuration_template_i_ds:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `launch_configuration_template_i_ds`.
+        ///
+        /// To override the contents of this collection use [`set_launch_configuration_template_i_ds`](Self::set_launch_configuration_template_i_ds).
+        ///
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn launch_configuration_template_i_ds(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.launch_configuration_template_i_ds.unwrap_or_default();
+            v.push(input.into());
+            self.launch_configuration_template_i_ds = Some(v);
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn set_launch_configuration_template_i_ds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.launch_configuration_template_i_ds = input;
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLaunchConfigurationTemplatesInput`](crate::input::DescribeLaunchConfigurationTemplatesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeLaunchConfigurationTemplatesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeLaunchConfigurationTemplatesInput {
+                launch_configuration_template_i_ds: self.launch_configuration_template_i_ds,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeLaunchConfigurationTemplatesInputOperationOutputAlias =
+    crate::operation::DescribeLaunchConfigurationTemplates;
+#[doc(hidden)]
+pub type DescribeLaunchConfigurationTemplatesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeLaunchConfigurationTemplatesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeLaunchConfigurationTemplates`](crate::operation::DescribeLaunchConfigurationTemplates)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLaunchConfigurationTemplates,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeLaunchConfigurationTemplatesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/DescribeLaunchConfigurationTemplates")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLaunchConfigurationTemplatesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_launch_configuration_templates(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLaunchConfigurationTemplates::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLaunchConfigurationTemplates",
+            "mgn",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeLaunchConfigurationTemplatesInput`](crate::input::DescribeLaunchConfigurationTemplatesInput).
+    pub fn builder() -> crate::input::describe_launch_configuration_templates_input::Builder {
+        crate::input::describe_launch_configuration_templates_input::Builder::default()
     }
 }
 
@@ -4009,6 +4501,7 @@ pub mod update_launch_configuration_input {
         pub(crate) copy_tags: std::option::Option<bool>,
         pub(crate) licensing: std::option::Option<crate::model::Licensing>,
         pub(crate) boot_mode: std::option::Option<crate::model::BootMode>,
+        pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
     }
     impl Builder {
         /// <p>Update Launch configuration by Source Server ID request.</p>
@@ -4106,6 +4599,19 @@ pub mod update_launch_configuration_input {
             self.boot_mode = input;
             self
         }
+        /// <p>Server participating in Job.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.post_launch_actions = Some(input);
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.post_launch_actions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLaunchConfigurationInput`](crate::input::UpdateLaunchConfigurationInput).
         pub fn build(
             self,
@@ -4123,6 +4629,7 @@ pub mod update_launch_configuration_input {
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
                 boot_mode: self.boot_mode,
+                post_launch_actions: self.post_launch_actions,
             })
         }
     }
@@ -4232,6 +4739,166 @@ impl UpdateLaunchConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationInput`](crate::input::UpdateLaunchConfigurationInput).
     pub fn builder() -> crate::input::update_launch_configuration_input::Builder {
         crate::input::update_launch_configuration_input::Builder::default()
+    }
+}
+
+/// See [`UpdateLaunchConfigurationTemplateInput`](crate::input::UpdateLaunchConfigurationTemplateInput).
+pub mod update_launch_configuration_template_input {
+
+    /// A builder for [`UpdateLaunchConfigurationTemplateInput`](crate::input::UpdateLaunchConfigurationTemplateInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
+        pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+    }
+    impl Builder {
+        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = Some(input.into());
+            self
+        }
+        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = input;
+            self
+        }
+        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.post_launch_actions = Some(input);
+            self
+        }
+        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.post_launch_actions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateInput`](crate::input::UpdateLaunchConfigurationTemplateInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateLaunchConfigurationTemplateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateLaunchConfigurationTemplateInput {
+                launch_configuration_template_id: self.launch_configuration_template_id,
+                post_launch_actions: self.post_launch_actions,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateLaunchConfigurationTemplateInputOperationOutputAlias =
+    crate::operation::UpdateLaunchConfigurationTemplate;
+#[doc(hidden)]
+pub type UpdateLaunchConfigurationTemplateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateLaunchConfigurationTemplateInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateLaunchConfigurationTemplate`](crate::operation::UpdateLaunchConfigurationTemplate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateLaunchConfigurationTemplate,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateLaunchConfigurationTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/UpdateLaunchConfigurationTemplate")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateLaunchConfigurationTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_launch_configuration_template(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLaunchConfigurationTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateLaunchConfigurationTemplate",
+            "mgn",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationTemplateInput`](crate::input::UpdateLaunchConfigurationTemplateInput).
+    pub fn builder() -> crate::input::update_launch_configuration_template_input::Builder {
+        crate::input::update_launch_configuration_template_input::Builder::default()
     }
 }
 
@@ -5418,6 +6085,8 @@ pub struct UpdateLaunchConfigurationInput {
     pub licensing: std::option::Option<crate::model::Licensing>,
     /// <p>Update Launch configuration boot mode request.</p>
     pub boot_mode: std::option::Option<crate::model::BootMode>,
+    /// <p>Server participating in Job.</p>
+    pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
 }
 impl UpdateLaunchConfigurationInput {
     /// <p>Update Launch configuration by Source Server ID request.</p>
@@ -5454,6 +6123,10 @@ impl UpdateLaunchConfigurationInput {
     pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
         self.boot_mode.as_ref()
     }
+    /// <p>Server participating in Job.</p>
+    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+        self.post_launch_actions.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateLaunchConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5469,6 +6142,7 @@ impl std::fmt::Debug for UpdateLaunchConfigurationInput {
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("boot_mode", &self.boot_mode);
+        formatter.field("post_launch_actions", &self.post_launch_actions);
         formatter.finish()
     }
 }
@@ -6152,6 +6826,133 @@ impl std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
         formatter.field("data_plane_routing", &self.data_plane_routing);
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLaunchConfigurationTemplatesInput {
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub launch_configuration_template_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub max_results: i32,
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeLaunchConfigurationTemplatesInput {
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub fn launch_configuration_template_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.launch_configuration_template_i_ds.as_deref()
+    }
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeLaunchConfigurationTemplatesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLaunchConfigurationTemplatesInput");
+        formatter.field(
+            "launch_configuration_template_i_ds",
+            &self.launch_configuration_template_i_ds,
+        );
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLaunchConfigurationTemplateInput {
+    /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+    /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateLaunchConfigurationTemplateInput {
+    /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+        self.post_launch_actions.as_ref()
+    }
+    /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateLaunchConfigurationTemplateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLaunchConfigurationTemplateInput");
+        formatter.field("post_launch_actions", &self.post_launch_actions);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLaunchConfigurationTemplateInput {
+    /// <p>ID of resource to be deleted.</p>
+    pub launch_configuration_template_id: std::option::Option<std::string::String>,
+}
+impl DeleteLaunchConfigurationTemplateInput {
+    /// <p>ID of resource to be deleted.</p>
+    pub fn launch_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.launch_configuration_template_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteLaunchConfigurationTemplateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLaunchConfigurationTemplateInput");
+        formatter.field(
+            "launch_configuration_template_id",
+            &self.launch_configuration_template_id,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLaunchConfigurationTemplateInput {
+    /// <p>Update Launch configuration Target instance right sizing request.</p>
+    pub launch_configuration_template_id: std::option::Option<std::string::String>,
+    /// <p>Update Launch configuration Target instance right sizing request.</p>
+    pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+}
+impl UpdateLaunchConfigurationTemplateInput {
+    /// <p>Update Launch configuration Target instance right sizing request.</p>
+    pub fn launch_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.launch_configuration_template_id.as_deref()
+    }
+    /// <p>Update Launch configuration Target instance right sizing request.</p>
+    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+        self.post_launch_actions.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateLaunchConfigurationTemplateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLaunchConfigurationTemplateInput");
+        formatter.field(
+            "launch_configuration_template_id",
+            &self.launch_configuration_template_id,
+        );
+        formatter.field("post_launch_actions", &self.post_launch_actions);
         formatter.finish()
     }
 }

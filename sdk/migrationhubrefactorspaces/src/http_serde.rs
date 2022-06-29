@@ -298,3 +298,18 @@ pub fn deser_header_put_resource_policy_throttling_exception_retry_after_seconds
         Ok(var_20.pop())
     }
 }
+
+pub fn deser_header_update_route_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_21 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_21.len() > 1 {
+        Err(aws_smithy_http::header::ParseError::new_with_message(
+            format!("expected one item but found {}", var_21.len()),
+        ))
+    } else {
+        let mut var_21 = var_21;
+        Ok(var_21.pop())
+    }
+}

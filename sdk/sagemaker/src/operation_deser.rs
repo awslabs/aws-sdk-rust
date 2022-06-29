@@ -12645,7 +12645,34 @@ pub fn parse_update_workforce_error(
 ) -> std::result::Result<crate::output::UpdateWorkforceOutput, crate::error::UpdateWorkforceError> {
     let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateWorkforceError::unhandled)?;
-    Err(crate::error::UpdateWorkforceError::generic(generic))
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateWorkforceError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::UpdateWorkforceError {
+                meta: generic,
+                kind: crate::error::UpdateWorkforceErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWorkforceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateWorkforceError::generic(generic),
+    })
 }
 
 #[allow(clippy::unnecessary_wraps)]

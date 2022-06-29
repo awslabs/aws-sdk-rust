@@ -2,6 +2,161 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRouteOutput {
+    /// <p> The unique identifier of the route. </p>
+    pub route_id: std::option::Option<std::string::String>,
+    /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+    pub service_id: std::option::Option<std::string::String>,
+    /// <p> The ID of the application in which the route is being updated. </p>
+    pub application_id: std::option::Option<std::string::String>,
+    /// <p> The current state of the route. </p>
+    pub state: std::option::Option<crate::model::RouteState>,
+    /// <p> A timestamp that indicates when the route was last updated. </p>
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl UpdateRouteOutput {
+    /// <p> The unique identifier of the route. </p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+    pub fn service_id(&self) -> std::option::Option<&str> {
+        self.service_id.as_deref()
+    }
+    /// <p> The ID of the application in which the route is being updated. </p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p> The current state of the route. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::RouteState> {
+        self.state.as_ref()
+    }
+    /// <p> A timestamp that indicates when the route was last updated. </p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateRouteOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateRouteOutput");
+        formatter.field("route_id", &self.route_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("service_id", &self.service_id);
+        formatter.field("application_id", &self.application_id);
+        formatter.field("state", &self.state);
+        formatter.field("last_updated_time", &self.last_updated_time);
+        formatter.finish()
+    }
+}
+/// See [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
+pub mod update_route_output {
+
+    /// A builder for [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) route_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) service_id: std::option::Option<std::string::String>,
+        pub(crate) application_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::RouteState>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The unique identifier of the route. </p>
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.route_id = Some(input.into());
+            self
+        }
+        /// <p> The unique identifier of the route. </p>
+        pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.route_id = input;
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of service in which the route was created. Traffic that matches this route is forwarded to this service. </p>
+        pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_id = input;
+            self
+        }
+        /// <p> The ID of the application in which the route is being updated. </p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_id = Some(input.into());
+            self
+        }
+        /// <p> The ID of the application in which the route is being updated. </p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_id = input;
+            self
+        }
+        /// <p> The current state of the route. </p>
+        pub fn state(mut self, input: crate::model::RouteState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p> The current state of the route. </p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::RouteState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p> A timestamp that indicates when the route was last updated. </p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p> A timestamp that indicates when the route was last updated. </p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
+        pub fn build(self) -> crate::output::UpdateRouteOutput {
+            crate::output::UpdateRouteOutput {
+                route_id: self.route_id,
+                arn: self.arn,
+                service_id: self.service_id,
+                application_id: self.application_id,
+                state: self.state,
+                last_updated_time: self.last_updated_time,
+            }
+        }
+    }
+}
+impl UpdateRouteOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
+    pub fn builder() -> crate::output::update_route_output::Builder {
+        crate::output::update_route_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3226,9 +3381,9 @@ pub struct CreateRouteOutput {
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application in which the route is created.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>onfiguration for the URI path route type. </p>
+    /// <p>Configuration for the URI path route type. </p>
     pub uri_path_route: std::option::Option<crate::model::UriPathRouteInput>,
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     pub tags:
@@ -3267,11 +3422,11 @@ impl CreateRouteOutput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>onfiguration for the URI path route type. </p>
+    /// <p>Configuration for the URI path route type. </p>
     pub fn uri_path_route(&self) -> std::option::Option<&crate::model::UriPathRouteInput> {
         self.uri_path_route.as_ref()
     }
-    /// <p>The current state of the route. </p>
+    /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::RouteState> {
         self.state.as_ref()
     }
@@ -3413,12 +3568,12 @@ pub mod create_route_output {
             self.application_id = input;
             self
         }
-        /// <p>onfiguration for the URI path route type. </p>
+        /// <p>Configuration for the URI path route type. </p>
         pub fn uri_path_route(mut self, input: crate::model::UriPathRouteInput) -> Self {
             self.uri_path_route = Some(input);
             self
         }
-        /// <p>onfiguration for the URI path route type. </p>
+        /// <p>Configuration for the URI path route type. </p>
         pub fn set_uri_path_route(
             mut self,
             input: std::option::Option<crate::model::UriPathRouteInput>,
@@ -3426,12 +3581,12 @@ pub mod create_route_output {
             self.uri_path_route = input;
             self
         }
-        /// <p>The current state of the route. </p>
+        /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
         pub fn state(mut self, input: crate::model::RouteState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The current state of the route. </p>
+        /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RouteState>) -> Self {
             self.state = input;
             self

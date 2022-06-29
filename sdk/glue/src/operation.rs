@@ -4163,6 +4163,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCrawlers {
     }
 }
 
+/// Operation shape for `ListCrawls`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_crawls`](crate::client::Client::list_crawls).
+///
+/// See [`crate::client::fluent_builders::ListCrawls`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListCrawls {
+    _private: (),
+}
+impl ListCrawls {
+    /// Creates a new builder-style object to manufacture [`ListCrawlsInput`](crate::input::ListCrawlsInput).
+    pub fn builder() -> crate::input::list_crawls_input::Builder {
+        crate::input::list_crawls_input::Builder::default()
+    }
+    /// Creates a new `ListCrawls` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListCrawls {
+    type Output =
+        std::result::Result<crate::output::ListCrawlsOutput, crate::error::ListCrawlsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_crawls_error(response)
+        } else {
+            crate::operation_deser::parse_list_crawls_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListCustomEntityTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

@@ -2021,6 +2021,158 @@ impl std::error::Error for GetDataViewError {
     }
 }
 
+/// Error type for the `GetExternalDataViewAccessDetails` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetExternalDataViewAccessDetailsError {
+    /// Kind of error that occurred.
+    pub kind: GetExternalDataViewAccessDetailsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetExternalDataViewAccessDetails` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetExternalDataViewAccessDetailsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>One or more resources can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetExternalDataViewAccessDetailsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetExternalDataViewAccessDetailsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetExternalDataViewAccessDetailsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetExternalDataViewAccessDetailsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetExternalDataViewAccessDetailsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetExternalDataViewAccessDetailsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetExternalDataViewAccessDetailsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetExternalDataViewAccessDetailsError {
+    fn code(&self) -> Option<&str> {
+        GetExternalDataViewAccessDetailsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetExternalDataViewAccessDetailsError {
+    /// Creates a new `GetExternalDataViewAccessDetailsError`.
+    pub fn new(
+        kind: GetExternalDataViewAccessDetailsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetExternalDataViewAccessDetailsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetExternalDataViewAccessDetailsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetExternalDataViewAccessDetailsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetExternalDataViewAccessDetailsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetExternalDataViewAccessDetailsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExternalDataViewAccessDetailsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExternalDataViewAccessDetailsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExternalDataViewAccessDetailsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExternalDataViewAccessDetailsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExternalDataViewAccessDetailsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExternalDataViewAccessDetailsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExternalDataViewAccessDetailsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetExternalDataViewAccessDetailsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetExternalDataViewAccessDetailsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetExternalDataViewAccessDetailsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetExternalDataViewAccessDetailsErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            GetExternalDataViewAccessDetailsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            GetExternalDataViewAccessDetailsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetExternalDataViewAccessDetailsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetExternalDataViewAccessDetailsErrorKind::ValidationException(_inner) => Some(_inner),
+            GetExternalDataViewAccessDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetPermissionGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

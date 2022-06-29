@@ -3761,7 +3761,7 @@ pub mod create_crawler_input {
             self.lineage_configuration = input;
             self
         }
-        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+        /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -3769,7 +3769,7 @@ pub mod create_crawler_input {
             self.lake_formation_configuration = Some(input);
             self
         }
-        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+        /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,
@@ -22685,6 +22685,190 @@ impl ListCrawlersInput {
     }
 }
 
+/// See [`ListCrawlsInput`](crate::input::ListCrawlsInput).
+pub mod list_crawls_input {
+
+    /// A builder for [`ListCrawlsInput`](crate::input::ListCrawlsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) crawler_name: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::CrawlsFilter>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the crawler whose runs you want to retrieve.</p>
+        pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.crawler_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the crawler whose runs you want to retrieve.</p>
+        pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.crawler_name = input;
+            self
+        }
+        /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
+        pub fn filters(mut self, input: crate::model::CrawlsFilter) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input);
+            self.filters = Some(v);
+            self
+        }
+        /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CrawlsFilter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCrawlsInput`](crate::input::ListCrawlsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListCrawlsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListCrawlsInput {
+                crawler_name: self.crawler_name,
+                max_results: self.max_results,
+                filters: self.filters,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListCrawlsInputOperationOutputAlias = crate::operation::ListCrawls;
+#[doc(hidden)]
+pub type ListCrawlsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListCrawlsInput {
+    /// Consumes the builder and constructs an Operation<[`ListCrawls`](crate::operation::ListCrawls)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCrawls,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCrawlsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCrawlsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.ListCrawls",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_crawls(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCrawls::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCrawls",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCrawlsInput`](crate::input::ListCrawlsInput).
+    pub fn builder() -> crate::input::list_crawls_input::Builder {
+        crate::input::list_crawls_input::Builder::default()
+    }
+}
+
 /// See [`ListCustomEntityTypesInput`](crate::input::ListCustomEntityTypesInput).
 pub mod list_custom_entity_types_input {
 
@@ -30497,7 +30681,7 @@ pub mod update_crawler_input {
             self.lineage_configuration = input;
             self
         }
-        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+        /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
         pub fn lake_formation_configuration(
             mut self,
             input: crate::model::LakeFormationConfiguration,
@@ -30505,7 +30689,7 @@ pub mod update_crawler_input {
             self.lake_formation_configuration = Some(input);
             self
         }
-        /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+        /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
         pub fn set_lake_formation_configuration(
             mut self,
             input: std::option::Option<crate::model::LakeFormationConfiguration>,
@@ -33615,7 +33799,7 @@ pub struct UpdateCrawlerInput {
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
     pub lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
-    /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+    /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     pub configuration: std::option::Option<std::string::String>,
@@ -33669,7 +33853,7 @@ impl UpdateCrawlerInput {
     ) -> std::option::Option<&crate::model::LineageConfiguration> {
         self.lineage_configuration.as_ref()
     }
-    /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+    /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
     pub fn lake_formation_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
@@ -35358,6 +35542,48 @@ impl std::fmt::Debug for ListCustomEntityTypesInput {
         let mut formatter = f.debug_struct("ListCustomEntityTypesInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCrawlsInput {
+    /// <p>The name of the crawler whose runs you want to retrieve.</p>
+    pub crawler_name: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::CrawlsFilter>>,
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCrawlsInput {
+    /// <p>The name of the crawler whose runs you want to retrieve.</p>
+    pub fn crawler_name(&self) -> std::option::Option<&str> {
+        self.crawler_name.as_deref()
+    }
+    /// <p>The maximum number of results to return. The default is 20, and maximum is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::CrawlsFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCrawlsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCrawlsInput");
+        formatter.field("crawler_name", &self.crawler_name);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("filters", &self.filters);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -39781,7 +40007,7 @@ pub struct CreateCrawlerInput {
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
     pub lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
-    /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+    /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
     pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     pub configuration: std::option::Option<std::string::String>,
@@ -39838,7 +40064,7 @@ impl CreateCrawlerInput {
     ) -> std::option::Option<&crate::model::LineageConfiguration> {
         self.lineage_configuration.as_ref()
     }
-    /// <p>Specifies AWS Lake Formation configuration settings for the crawler.</p>
+    /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
     pub fn lake_formation_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {

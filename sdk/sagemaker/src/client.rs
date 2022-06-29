@@ -179,7 +179,7 @@ impl Client {
     ///   - [`app_type(AppType)`](crate::client::fluent_builders::CreateApp::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::CreateApp::set_app_type): <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
     ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_app_name): <p>The name of the app.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateApp::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateApp::set_tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
-    ///   - [`resource_spec(ResourceSpec)`](crate::client::fluent_builders::CreateApp::resource_spec) / [`set_resource_spec(Option<ResourceSpec>)`](crate::client::fluent_builders::CreateApp::set_resource_spec): <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    ///   - [`resource_spec(ResourceSpec)`](crate::client::fluent_builders::CreateApp::resource_spec) / [`set_resource_spec(Option<ResourceSpec>)`](crate::client::fluent_builders::CreateApp::set_resource_spec): <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>   <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>  </note>
     /// - On success, responds with [`CreateAppOutput`](crate::output::CreateAppOutput) with field(s):
     ///   - [`app_arn(Option<String>)`](crate::output::CreateAppOutput::app_arn): <p>The Amazon Resource Name (ARN) of the app.</p>
     /// - On failure, responds with [`SdkError<CreateAppError>`](crate::error::CreateAppError)
@@ -888,6 +888,7 @@ impl Client {
     ///   - [`source_ip_config(SourceIpConfig)`](crate::client::fluent_builders::CreateWorkforce::source_ip_config) / [`set_source_ip_config(Option<SourceIpConfig>)`](crate::client::fluent_builders::CreateWorkforce::set_source_ip_config): <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
     ///   - [`workforce_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkforce::workforce_name) / [`set_workforce_name(Option<String>)`](crate::client::fluent_builders::CreateWorkforce::set_workforce_name): <p>The name of the private workforce.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWorkforce::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWorkforce::set_tags): <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
+    ///   - [`workforce_vpc_config(WorkforceVpcConfigRequest)`](crate::client::fluent_builders::CreateWorkforce::workforce_vpc_config) / [`set_workforce_vpc_config(Option<WorkforceVpcConfigRequest>)`](crate::client::fluent_builders::CreateWorkforce::set_workforce_vpc_config): <p>Use this parameter to configure a workforce using VPC.</p>
     /// - On success, responds with [`CreateWorkforceOutput`](crate::output::CreateWorkforceOutput) with field(s):
     ///   - [`workforce_arn(Option<String>)`](crate::output::CreateWorkforceOutput::workforce_arn): <p>The Amazon Resource Name (ARN) of the workforce.</p>
     /// - On failure, responds with [`SdkError<CreateWorkforceError>`](crate::error::CreateWorkforceError)
@@ -4141,6 +4142,7 @@ impl Client {
     ///   - [`workforce_name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkforce::workforce_name) / [`set_workforce_name(Option<String>)`](crate::client::fluent_builders::UpdateWorkforce::set_workforce_name): <p>The name of the private workforce that you want to update. You can find your workforce name by using the operation.</p>
     ///   - [`source_ip_config(SourceIpConfig)`](crate::client::fluent_builders::UpdateWorkforce::source_ip_config) / [`set_source_ip_config(Option<SourceIpConfig>)`](crate::client::fluent_builders::UpdateWorkforce::set_source_ip_config): <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>  <p>Maximum: Ten CIDR values</p>
     ///   - [`oidc_config(OidcConfig)`](crate::client::fluent_builders::UpdateWorkforce::oidc_config) / [`set_oidc_config(Option<OidcConfig>)`](crate::client::fluent_builders::UpdateWorkforce::set_oidc_config): <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
+    ///   - [`workforce_vpc_config(WorkforceVpcConfigRequest)`](crate::client::fluent_builders::UpdateWorkforce::workforce_vpc_config) / [`set_workforce_vpc_config(Option<WorkforceVpcConfigRequest>)`](crate::client::fluent_builders::UpdateWorkforce::set_workforce_vpc_config): <p>Use this parameter to update your VPC configuration for a workforce.</p>
     /// - On success, responds with [`UpdateWorkforceOutput`](crate::output::UpdateWorkforceOutput) with field(s):
     ///   - [`workforce(Option<Workforce>)`](crate::output::UpdateWorkforceOutput::workforce): <p>A single private workforce. You can create one private work force in each Amazon Web Services Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkforceError>`](crate::error::UpdateWorkforceError)
@@ -4886,12 +4888,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+        /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+        /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
+        /// </note>
         pub fn resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
             self.inner = self.inner.resource_spec(input);
             self
         }
-        /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+        /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+        /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
+        /// </note>
         pub fn set_resource_spec(
             mut self,
             input: std::option::Option<crate::model::ResourceSpec>,
@@ -7929,7 +7935,7 @@ pub mod fluent_builders {
     /// <p>Creates a model in SageMaker. In the request, you name the model and describe a primary container. For the primary container, you specify the Docker image that contains inference code, artifacts (from prior training), and a custom environment map that the inference code uses when you deploy the model for predictions.</p>
     /// <p>Use this API to create a model if you want to use SageMaker hosting services or run a batch transform job.</p>
     /// <p>To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then create an endpoint with the <code>CreateEndpoint</code> API. SageMaker then deploys all of the containers that you defined for the model in the hosting environment. </p>
-    /// <p>For an example that calls this method when deploying a model to SageMaker hosting services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto 3)).</a> </p>
+    /// <p>For an example that calls this method when deploying a model to SageMaker hosting services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model">Create a Model (Amazon Web Services SDK for Python (Boto 3)).</a> </p>
     /// <p>To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API. SageMaker uses your model and your dataset to get inferences which are then saved to a specified S3 location.</p>
     /// <p>In the request, you also provide an IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute hosting instances or for batch transform jobs. In addition, you also use the IAM role to manage permissions the inference code needs. For example, if the inference code access any other Amazon Web Services resources, you grant necessary permissions via this role.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -11548,6 +11554,22 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Use this parameter to configure a workforce using VPC.</p>
+        pub fn workforce_vpc_config(
+            mut self,
+            input: crate::model::WorkforceVpcConfigRequest,
+        ) -> Self {
+            self.inner = self.inner.workforce_vpc_config(input);
+            self
+        }
+        /// <p>Use this parameter to configure a workforce using VPC.</p>
+        pub fn set_workforce_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkforceVpcConfigRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_workforce_vpc_config(input);
             self
         }
     }
@@ -29777,7 +29799,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkforce`.
     ///
     /// <p>Use this operation to update your workforce. You can use this operation to require that workers use specific IP addresses to work on tasks and to update your OpenID Connect (OIDC) Identity Provider (IdP) workforce configuration.</p>
+    /// <p>The worker portal is now supported in VPC and public internet.</p>
     /// <p> Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific range of IP addresses. You specify allowed IP addresses by creating a list of up to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>. By default, a workforce isn't restricted to specific IP addresses. If you specify a range of IP addresses, workers who attempt to access tasks using any IP address outside the specified range are denied and get a <code>Not Found</code> error message on the worker portal.</p>
+    /// <p>To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code> CIDR value as "0.0.0.0/0".</p> <important>
+    /// <p>Amazon SageMaker does not support Source Ip restriction for worker portals in VPC.</p>
+    /// </important>
     /// <p>Use <code>OidcConfig</code> to update the configuration of a workforce created using your own OIDC IdP. </p> <important>
     /// <p>You can only update your OIDC IdP configuration when there are no work teams associated with your workforce. You can delete work teams using the operation.</p>
     /// </important>
@@ -29862,6 +29888,22 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::OidcConfig>,
         ) -> Self {
             self.inner = self.inner.set_oidc_config(input);
+            self
+        }
+        /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+        pub fn workforce_vpc_config(
+            mut self,
+            input: crate::model::WorkforceVpcConfigRequest,
+        ) -> Self {
+            self.inner = self.inner.workforce_vpc_config(input);
+            self
+        }
+        /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
+        pub fn set_workforce_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkforceVpcConfigRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_workforce_vpc_config(input);
             self
         }
     }

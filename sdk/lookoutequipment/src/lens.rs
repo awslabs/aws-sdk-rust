@@ -19,6 +19,16 @@ pub(crate) fn reflens_structure_crate_output_list_datasets_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_inference_events_output_next_token(
+    input: &crate::output::ListInferenceEventsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_inference_executions_output_next_token(
     input: &crate::output::ListInferenceExecutionsOutput,
 ) -> std::option::Option<&std::string::String> {

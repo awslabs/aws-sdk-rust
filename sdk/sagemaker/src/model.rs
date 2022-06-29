@@ -591,6 +591,12 @@ pub struct Workforce {
     pub oidc_config: std::option::Option<crate::model::OidcConfigForResponse>,
     /// <p>The date that the workforce is created.</p>
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The configuration of a VPC workforce.</p>
+    pub workforce_vpc_config: std::option::Option<crate::model::WorkforceVpcConfigResponse>,
+    /// <p>The status of your workforce.</p>
+    pub status: std::option::Option<crate::model::WorkforceStatus>,
+    /// <p>The reason your workforce failed.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
 }
 impl Workforce {
     /// <p>The name of the private workforce.</p>
@@ -625,6 +631,20 @@ impl Workforce {
     pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
+    /// <p>The configuration of a VPC workforce.</p>
+    pub fn workforce_vpc_config(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkforceVpcConfigResponse> {
+        self.workforce_vpc_config.as_ref()
+    }
+    /// <p>The status of your workforce.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::WorkforceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason your workforce failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for Workforce {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -637,6 +657,9 @@ impl std::fmt::Debug for Workforce {
         formatter.field("cognito_config", &self.cognito_config);
         formatter.field("oidc_config", &self.oidc_config);
         formatter.field("create_date", &self.create_date);
+        formatter.field("workforce_vpc_config", &self.workforce_vpc_config);
+        formatter.field("status", &self.status);
+        formatter.field("failure_reason", &self.failure_reason);
         formatter.finish()
     }
 }
@@ -654,6 +677,10 @@ pub mod workforce {
         pub(crate) cognito_config: std::option::Option<crate::model::CognitoConfig>,
         pub(crate) oidc_config: std::option::Option<crate::model::OidcConfigForResponse>,
         pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) workforce_vpc_config:
+            std::option::Option<crate::model::WorkforceVpcConfigResponse>,
+        pub(crate) status: std::option::Option<crate::model::WorkforceStatus>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the private workforce.</p>
@@ -757,6 +784,48 @@ pub mod workforce {
             self.create_date = input;
             self
         }
+        /// <p>The configuration of a VPC workforce.</p>
+        pub fn workforce_vpc_config(
+            mut self,
+            input: crate::model::WorkforceVpcConfigResponse,
+        ) -> Self {
+            self.workforce_vpc_config = Some(input);
+            self
+        }
+        /// <p>The configuration of a VPC workforce.</p>
+        pub fn set_workforce_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::WorkforceVpcConfigResponse>,
+        ) -> Self {
+            self.workforce_vpc_config = input;
+            self
+        }
+        /// <p>The status of your workforce.</p>
+        pub fn status(mut self, input: crate::model::WorkforceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of your workforce.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::WorkforceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The reason your workforce failed.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason your workforce failed.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Workforce`](crate::model::Workforce).
         pub fn build(self) -> crate::model::Workforce {
             crate::model::Workforce {
@@ -768,6 +837,9 @@ pub mod workforce {
                 cognito_config: self.cognito_config,
                 oidc_config: self.oidc_config,
                 create_date: self.create_date,
+                workforce_vpc_config: self.workforce_vpc_config,
+                status: self.status,
+                failure_reason: self.failure_reason,
             }
         }
     }
@@ -776,6 +848,205 @@ impl Workforce {
     /// Creates a new builder-style object to manufacture [`Workforce`](crate::model::Workforce).
     pub fn builder() -> crate::model::workforce::Builder {
         crate::model::workforce::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WorkforceStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Initializing,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for WorkforceStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Active" => WorkforceStatus::Active,
+            "Deleting" => WorkforceStatus::Deleting,
+            "Failed" => WorkforceStatus::Failed,
+            "Initializing" => WorkforceStatus::Initializing,
+            "Updating" => WorkforceStatus::Updating,
+            other => WorkforceStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for WorkforceStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WorkforceStatus::from(s))
+    }
+}
+impl WorkforceStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WorkforceStatus::Active => "Active",
+            WorkforceStatus::Deleting => "Deleting",
+            WorkforceStatus::Failed => "Failed",
+            WorkforceStatus::Initializing => "Initializing",
+            WorkforceStatus::Updating => "Updating",
+            WorkforceStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Deleting", "Failed", "Initializing", "Updating"]
+    }
+}
+impl AsRef<str> for WorkforceStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A VpcConfig object that specifies the VPC that you want your workforce to connect to.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WorkforceVpcConfigResponse {
+    /// <p>The ID of the VPC that the workforce uses for communication.</p>
+    pub vpc_id: std::option::Option<std::string::String>,
+    /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
+    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+}
+impl WorkforceVpcConfigResponse {
+    /// <p>The ID of the VPC that the workforce uses for communication.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+}
+impl std::fmt::Debug for WorkforceVpcConfigResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WorkforceVpcConfigResponse");
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("subnets", &self.subnets);
+        formatter.field("vpc_endpoint_id", &self.vpc_endpoint_id);
+        formatter.finish()
+    }
+}
+/// See [`WorkforceVpcConfigResponse`](crate::model::WorkforceVpcConfigResponse).
+pub mod workforce_vpc_config_response {
+
+    /// A builder for [`WorkforceVpcConfigResponse`](crate::model::WorkforceVpcConfigResponse).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the VPC that the workforce uses for communication.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the VPC that the workforce uses for communication.</p>
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnets.unwrap_or_default();
+            v.push(input.into());
+            self.subnets = Some(v);
+            self
+        }
+        /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnets = input;
+            self
+        }
+        /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The IDs for the VPC service endpoints of your VPC workforce when it is created and updated.</p>
+        pub fn set_vpc_endpoint_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkforceVpcConfigResponse`](crate::model::WorkforceVpcConfigResponse).
+        pub fn build(self) -> crate::model::WorkforceVpcConfigResponse {
+            crate::model::WorkforceVpcConfigResponse {
+                vpc_id: self.vpc_id,
+                security_group_ids: self.security_group_ids,
+                subnets: self.subnets,
+                vpc_endpoint_id: self.vpc_endpoint_id,
+            }
+        }
+    }
+}
+impl WorkforceVpcConfigResponse {
+    /// Creates a new builder-style object to manufacture [`WorkforceVpcConfigResponse`](crate::model::WorkforceVpcConfigResponse).
+    pub fn builder() -> crate::model::workforce_vpc_config_response::Builder {
+        crate::model::workforce_vpc_config_response::Builder::default()
     }
 }
 
@@ -1102,6 +1373,116 @@ impl SourceIpConfig {
     /// Creates a new builder-style object to manufacture [`SourceIpConfig`](crate::model::SourceIpConfig).
     pub fn builder() -> crate::model::source_ip_config::Builder {
         crate::model::source_ip_config::Builder::default()
+    }
+}
+
+/// <p>The VPC object you use to create or update a workforce.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WorkforceVpcConfigRequest {
+    /// <p>The ID of the VPC that the workforce uses for communication.</p>
+    pub vpc_id: std::option::Option<std::string::String>,
+    /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl WorkforceVpcConfigRequest {
+    /// <p>The ID of the VPC that the workforce uses for communication.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+}
+impl std::fmt::Debug for WorkforceVpcConfigRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WorkforceVpcConfigRequest");
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("subnets", &self.subnets);
+        formatter.finish()
+    }
+}
+/// See [`WorkforceVpcConfigRequest`](crate::model::WorkforceVpcConfigRequest).
+pub mod workforce_vpc_config_request {
+
+    /// A builder for [`WorkforceVpcConfigRequest`](crate::model::WorkforceVpcConfigRequest).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The ID of the VPC that the workforce uses for communication.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the VPC that the workforce uses for communication.</p>
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnets.unwrap_or_default();
+            v.push(input.into());
+            self.subnets = Some(v);
+            self
+        }
+        /// <p>The ID of the subnets in the VPC that you want to connect.</p>
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnets = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkforceVpcConfigRequest`](crate::model::WorkforceVpcConfigRequest).
+        pub fn build(self) -> crate::model::WorkforceVpcConfigRequest {
+            crate::model::WorkforceVpcConfigRequest {
+                vpc_id: self.vpc_id,
+                security_group_ids: self.security_group_ids,
+                subnets: self.subnets,
+            }
+        }
+    }
+}
+impl WorkforceVpcConfigRequest {
+    /// Creates a new builder-style object to manufacture [`WorkforceVpcConfigRequest`](crate::model::WorkforceVpcConfigRequest).
+    pub fn builder() -> crate::model::workforce_vpc_config_request::Builder {
+        crate::model::workforce_vpc_config_request::Builder::default()
     }
 }
 
@@ -1762,7 +2143,8 @@ pub struct ResourceSpec {
     /// <p>The ARN of the image version created on the instance.</p>
     pub sage_maker_image_version_arn: std::option::Option<std::string::String>,
     /// <p>The instance type that the image version runs on.</p> <note>
-    /// <p>JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the <code>system</code> value, but support all other values for available instance types.</p>
+    /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
+    /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
     pub instance_type: std::option::Option<crate::model::AppInstanceType>,
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
@@ -1778,7 +2160,8 @@ impl ResourceSpec {
         self.sage_maker_image_version_arn.as_deref()
     }
     /// <p>The instance type that the image version runs on.</p> <note>
-    /// <p>JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the <code>system</code> value, but support all other values for available instance types.</p>
+    /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
+    /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
     pub fn instance_type(&self) -> std::option::Option<&crate::model::AppInstanceType> {
         self.instance_type.as_ref()
@@ -1843,14 +2226,16 @@ pub mod resource_spec {
             self
         }
         /// <p>The instance type that the image version runs on.</p> <note>
-        /// <p>JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the <code>system</code> value, but support all other values for available instance types.</p>
+        /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
+        /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
         /// </note>
         pub fn instance_type(mut self, input: crate::model::AppInstanceType) -> Self {
             self.instance_type = Some(input);
             self
         }
         /// <p>The instance type that the image version runs on.</p> <note>
-        /// <p>JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps do not support the <code>system</code> value, but support all other values for available instance types.</p>
+        /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
+        /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
         /// </note>
         pub fn set_instance_type(
             mut self,
@@ -52351,7 +52736,7 @@ impl ModelExplainabilityJobInput {
 pub struct ModelExplainabilityAppSpecification {
     /// <p>The container image to be run by the model explainability job.</p>
     pub image_uri: std::option::Option<std::string::String>,
-    /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-model-explainability-parameter-config.html">Configure model explainability parameters</a>.</p>
+    /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub config_uri: std::option::Option<std::string::String>,
     /// <p>Sets the environment variables in the Docker container.</p>
     pub environment:
@@ -52362,7 +52747,7 @@ impl ModelExplainabilityAppSpecification {
     pub fn image_uri(&self) -> std::option::Option<&str> {
         self.image_uri.as_deref()
     }
-    /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-model-explainability-parameter-config.html">Configure model explainability parameters</a>.</p>
+    /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub fn config_uri(&self) -> std::option::Option<&str> {
         self.config_uri.as_deref()
     }
@@ -52406,12 +52791,12 @@ pub mod model_explainability_app_specification {
             self.image_uri = input;
             self
         }
-        /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-model-explainability-parameter-config.html">Configure model explainability parameters</a>.</p>
+        /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
         pub fn config_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_uri = Some(input.into());
             self
         }
-        /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-model-explainability-parameter-config.html">Configure model explainability parameters</a>.</p>
+        /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
         pub fn set_config_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_uri = input;
             self
@@ -52634,7 +53019,7 @@ impl ModelBiasJobInput {
 pub struct ModelBiasAppSpecification {
     /// <p>The container image to be run by the model bias job.</p>
     pub image_uri: std::option::Option<std::string::String>,
-    /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias parameters</a>.</p>
+    /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure bias parameters</a>.</p>
     pub config_uri: std::option::Option<std::string::String>,
     /// <p>Sets the environment variables in the Docker container.</p>
     pub environment:
@@ -52645,7 +53030,7 @@ impl ModelBiasAppSpecification {
     pub fn image_uri(&self) -> std::option::Option<&str> {
         self.image_uri.as_deref()
     }
-    /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias parameters</a>.</p>
+    /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure bias parameters</a>.</p>
     pub fn config_uri(&self) -> std::option::Option<&str> {
         self.config_uri.as_deref()
     }
@@ -52689,12 +53074,12 @@ pub mod model_bias_app_specification {
             self.image_uri = input;
             self
         }
-        /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias parameters</a>.</p>
+        /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure bias parameters</a>.</p>
         pub fn config_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_uri = Some(input.into());
             self
         }
-        /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/json-bias-parameter-config.html">Configure bias parameters</a>.</p>
+        /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure bias parameters</a>.</p>
         pub fn set_config_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_uri = input;
             self
@@ -57310,6 +57695,8 @@ pub struct LabelingJobResourceConfig {
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
 }
 impl LabelingJobResourceConfig {
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training and inference jobs used for automated data labeling. </p>
@@ -57322,11 +57709,16 @@ impl LabelingJobResourceConfig {
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
+    /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
 }
 impl std::fmt::Debug for LabelingJobResourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LabelingJobResourceConfig");
         formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
+        formatter.field("vpc_config", &self.vpc_config);
         formatter.finish()
     }
 }
@@ -57337,6 +57729,7 @@ pub mod labeling_job_resource_config {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
     }
     impl Builder {
         /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training and inference jobs used for automated data labeling. </p>
@@ -57364,10 +57757,24 @@ pub mod labeling_job_resource_config {
             self.volume_kms_key_id = input;
             self
         }
+        /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LabelingJobResourceConfig`](crate::model::LabelingJobResourceConfig).
         pub fn build(self) -> crate::model::LabelingJobResourceConfig {
             crate::model::LabelingJobResourceConfig {
                 volume_kms_key_id: self.volume_kms_key_id,
+                vpc_config: self.vpc_config,
             }
         }
     }
@@ -67129,7 +67536,7 @@ impl AutoMlCandidateGenerationConfig {
     }
 }
 
-/// <p>This structure specifies how to split the data into train and test datasets. The validation and training datasets must contain the same headers. The validation dataset must be less than 2 GB in size.</p>
+/// <p>This structure specifies how to split the data into train and validation datasets. The validation and training datasets must contain the same headers. The validation dataset must be less than 2 GB in size.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlDataSplitConfig {
@@ -67569,15 +67976,11 @@ impl AsRef<str> for AutoMlChannelType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlDataSource {
-    /// <p>The Amazon S3 location of the input data.</p> <note>
-    /// <p>The input data must be in CSV format and contain at least 500 rows.</p>
-    /// </note>
+    /// <p>The Amazon S3 location of the input data.</p>
     pub s3_data_source: std::option::Option<crate::model::AutoMls3DataSource>,
 }
 impl AutoMlDataSource {
-    /// <p>The Amazon S3 location of the input data.</p> <note>
-    /// <p>The input data must be in CSV format and contain at least 500 rows.</p>
-    /// </note>
+    /// <p>The Amazon S3 location of the input data.</p>
     pub fn s3_data_source(&self) -> std::option::Option<&crate::model::AutoMls3DataSource> {
         self.s3_data_source.as_ref()
     }
@@ -67598,16 +68001,12 @@ pub mod auto_ml_data_source {
         pub(crate) s3_data_source: std::option::Option<crate::model::AutoMls3DataSource>,
     }
     impl Builder {
-        /// <p>The Amazon S3 location of the input data.</p> <note>
-        /// <p>The input data must be in CSV format and contain at least 500 rows.</p>
-        /// </note>
+        /// <p>The Amazon S3 location of the input data.</p>
         pub fn s3_data_source(mut self, input: crate::model::AutoMls3DataSource) -> Self {
             self.s3_data_source = Some(input);
             self
         }
-        /// <p>The Amazon S3 location of the input data.</p> <note>
-        /// <p>The input data must be in CSV format and contain at least 500 rows.</p>
-        /// </note>
+        /// <p>The Amazon S3 location of the input data.</p>
         pub fn set_s3_data_source(
             mut self,
             input: std::option::Option<crate::model::AutoMls3DataSource>,
@@ -67635,12 +68034,26 @@ impl AutoMlDataSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMls3DataSource {
     /// <p>The data type.</p>
+    /// <p>A ManifestFile should have the format shown below:</p>
+    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p>
+    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+    /// <p>An S3Prefix should have the following format: </p>
+    /// <p> <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
     pub s3_data_type: std::option::Option<crate::model::AutoMls3DataType>,
     /// <p>The URL to the Amazon S3 data source.</p>
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl AutoMls3DataSource {
     /// <p>The data type.</p>
+    /// <p>A ManifestFile should have the format shown below:</p>
+    /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p>
+    /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p>
+    /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+    /// <p>An S3Prefix should have the following format: </p>
+    /// <p> <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
     pub fn s3_data_type(&self) -> std::option::Option<&crate::model::AutoMls3DataType> {
         self.s3_data_type.as_ref()
     }
@@ -67668,11 +68081,25 @@ pub mod auto_mls3_data_source {
     }
     impl Builder {
         /// <p>The data type.</p>
+        /// <p>A ManifestFile should have the format shown below:</p>
+        /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+        /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p>
+        /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p>
+        /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+        /// <p>An S3Prefix should have the following format: </p>
+        /// <p> <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
         pub fn s3_data_type(mut self, input: crate::model::AutoMls3DataType) -> Self {
             self.s3_data_type = Some(input);
             self
         }
         /// <p>The data type.</p>
+        /// <p>A ManifestFile should have the format shown below:</p>
+        /// <p> <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+        /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p>
+        /// <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p>
+        /// <p> <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+        /// <p>An S3Prefix should have the following format: </p>
+        /// <p> <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
         pub fn set_s3_data_type(
             mut self,
             input: std::option::Option<crate::model::AutoMls3DataType>,

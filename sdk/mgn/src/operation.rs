@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeServerLifeCycleSta
     }
 }
 
+/// Operation shape for `CreateLaunchConfigurationTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_launch_configuration_template`](crate::client::Client::create_launch_configuration_template).
+///
+/// See [`crate::client::fluent_builders::CreateLaunchConfigurationTemplate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLaunchConfigurationTemplate {
+    _private: (),
+}
+impl CreateLaunchConfigurationTemplate {
+    /// Creates a new builder-style object to manufacture [`CreateLaunchConfigurationTemplateInput`](crate::input::CreateLaunchConfigurationTemplateInput).
+    pub fn builder() -> crate::input::create_launch_configuration_template_input::Builder {
+        crate::input::create_launch_configuration_template_input::Builder::default()
+    }
+    /// Creates a new `CreateLaunchConfigurationTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLaunchConfigurationTemplate {
+    type Output = std::result::Result<
+        crate::output::CreateLaunchConfigurationTemplateOutput,
+        crate::error::CreateLaunchConfigurationTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_launch_configuration_template_error(response)
+        } else {
+            crate::operation_deser::parse_create_launch_configuration_template_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateReplicationConfigurationTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -96,6 +130,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJob {
             crate::operation_deser::parse_delete_job_error(response)
         } else {
             crate::operation_deser::parse_delete_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteLaunchConfigurationTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_launch_configuration_template`](crate::client::Client::delete_launch_configuration_template).
+///
+/// See [`crate::client::fluent_builders::DeleteLaunchConfigurationTemplate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteLaunchConfigurationTemplate {
+    _private: (),
+}
+impl DeleteLaunchConfigurationTemplate {
+    /// Creates a new builder-style object to manufacture [`DeleteLaunchConfigurationTemplateInput`](crate::input::DeleteLaunchConfigurationTemplateInput).
+    pub fn builder() -> crate::input::delete_launch_configuration_template_input::Builder {
+        crate::input::delete_launch_configuration_template_input::Builder::default()
+    }
+    /// Creates a new `DeleteLaunchConfigurationTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchConfigurationTemplate {
+    type Output = std::result::Result<
+        crate::output::DeleteLaunchConfigurationTemplateOutput,
+        crate::error::DeleteLaunchConfigurationTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_launch_configuration_template_error(response)
+        } else {
+            crate::operation_deser::parse_delete_launch_configuration_template_response(response)
         }
     }
 }
@@ -266,6 +334,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobs {
             crate::operation_deser::parse_describe_jobs_error(response)
         } else {
             crate::operation_deser::parse_describe_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeLaunchConfigurationTemplates`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_launch_configuration_templates`](crate::client::Client::describe_launch_configuration_templates).
+///
+/// See [`crate::client::fluent_builders::DescribeLaunchConfigurationTemplates`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeLaunchConfigurationTemplates {
+    _private: (),
+}
+impl DescribeLaunchConfigurationTemplates {
+    /// Creates a new builder-style object to manufacture [`DescribeLaunchConfigurationTemplatesInput`](crate::input::DescribeLaunchConfigurationTemplatesInput).
+    pub fn builder() -> crate::input::describe_launch_configuration_templates_input::Builder {
+        crate::input::describe_launch_configuration_templates_input::Builder::default()
+    }
+    /// Creates a new `DescribeLaunchConfigurationTemplates` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeLaunchConfigurationTemplates {
+    type Output = std::result::Result<
+        crate::output::DescribeLaunchConfigurationTemplatesOutput,
+        crate::error::DescribeLaunchConfigurationTemplatesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_launch_configuration_templates_error(response)
+        } else {
+            crate::operation_deser::parse_describe_launch_configuration_templates_response(response)
         }
     }
 }
@@ -871,6 +973,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchConfiguratio
             crate::operation_deser::parse_update_launch_configuration_error(response)
         } else {
             crate::operation_deser::parse_update_launch_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateLaunchConfigurationTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_launch_configuration_template`](crate::client::Client::update_launch_configuration_template).
+///
+/// See [`crate::client::fluent_builders::UpdateLaunchConfigurationTemplate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateLaunchConfigurationTemplate {
+    _private: (),
+}
+impl UpdateLaunchConfigurationTemplate {
+    /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationTemplateInput`](crate::input::UpdateLaunchConfigurationTemplateInput).
+    pub fn builder() -> crate::input::update_launch_configuration_template_input::Builder {
+        crate::input::update_launch_configuration_template_input::Builder::default()
+    }
+    /// Creates a new `UpdateLaunchConfigurationTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchConfigurationTemplate {
+    type Output = std::result::Result<
+        crate::output::UpdateLaunchConfigurationTemplateOutput,
+        crate::error::UpdateLaunchConfigurationTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_launch_configuration_template_error(response)
+        } else {
+            crate::operation_deser::parse_update_launch_configuration_template_response(response)
         }
     }
 }

@@ -211,7 +211,7 @@ impl Client {
     /// - On success, responds with [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput) with field(s):
     ///   - [`dataset_name(Option<String>)`](crate::output::DescribeDatasetOutput::dataset_name): <p>The name of the dataset being described. </p>
     ///   - [`dataset_arn(Option<String>)`](crate::output::DescribeDatasetOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDatasetOutput::created_at): <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDatasetOutput::created_at): <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeDatasetOutput::last_updated_at): <p>Specifies the time the dataset was last updated, if it was. </p>
     ///   - [`status(Option<DatasetStatus>)`](crate::output::DescribeDatasetOutput::status): <p>Indicates the status of the dataset. </p>
     ///   - [`schema(Option<String>)`](crate::output::DescribeDatasetOutput::schema): <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
@@ -306,6 +306,22 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::error::ListDatasetsError)
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets {
         fluent_builders::ListDatasets::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListInferenceEvents`](crate::client::fluent_builders::ListInferenceEvents) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInferenceEvents::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInferenceEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInferenceEvents::set_next_token): <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInferenceEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInferenceEvents::set_max_results): <p>Specifies the maximum number of inference events to list. </p>
+    ///   - [`inference_scheduler_name(impl Into<String>)`](crate::client::fluent_builders::ListInferenceEvents::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::client::fluent_builders::ListInferenceEvents::set_inference_scheduler_name): <p>The name of the inference scheduler for the inference events listed. </p>
+    ///   - [`interval_start_time(DateTime)`](crate::client::fluent_builders::ListInferenceEvents::interval_start_time) / [`set_interval_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceEvents::set_interval_start_time): <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+    ///   - [`interval_end_time(DateTime)`](crate::client::fluent_builders::ListInferenceEvents::interval_end_time) / [`set_interval_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceEvents::set_interval_end_time): <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+    /// - On success, responds with [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListInferenceEventsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
+    ///   - [`inference_event_summaries(Option<Vec<InferenceEventSummary>>)`](crate::output::ListInferenceEventsOutput::inference_event_summaries): <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
+    /// - On failure, responds with [`SdkError<ListInferenceEventsError>`](crate::error::ListInferenceEventsError)
+    pub fn list_inference_events(&self) -> fluent_builders::ListInferenceEvents {
+        fluent_builders::ListInferenceEvents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListInferenceExecutions`](crate::client::fluent_builders::ListInferenceExecutions) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInferenceExecutions::into_paginator).
@@ -1519,6 +1535,114 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_dataset_name_begins_with(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListInferenceEvents`.
+    ///
+    /// <p> Lists all inference events that have been found for the specified inference scheduler. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListInferenceEvents {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_inference_events_input::Builder,
+    }
+    impl ListInferenceEvents {
+        /// Creates a new `ListInferenceEvents`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListInferenceEventsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListInferenceEventsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInferenceEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInferenceEventsPaginator {
+            crate::paginator::ListInferenceEventsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Specifies the maximum number of inference events to list. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Specifies the maximum number of inference events to list. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The name of the inference scheduler for the inference events listed. </p>
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_scheduler_name(input.into());
+            self
+        }
+        /// <p>The name of the inference scheduler for the inference events listed. </p>
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_inference_scheduler_name(input);
+            self
+        }
+        /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+        pub fn interval_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.interval_start_time(input);
+            self
+        }
+        /// <p> Lookout for Equipment will return all the inference events with start time equal to or greater than the start time given.</p>
+        pub fn set_interval_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_interval_start_time(input);
+            self
+        }
+        /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+        pub fn interval_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.interval_end_time(input);
+            self
+        }
+        /// <p>Lookout for Equipment will return all the inference events with end time equal to or less than the end time given.</p>
+        pub fn set_interval_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_interval_end_time(input);
             self
         }
     }

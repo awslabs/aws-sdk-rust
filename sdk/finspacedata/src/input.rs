@@ -1027,11 +1027,13 @@ pub mod create_permission_group_input {
         ///
         /// To override the contents of this collection use [`set_application_permissions`](Self::set_application_permissions).
         ///
-        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -1046,11 +1048,13 @@ pub mod create_permission_group_input {
             self.application_permissions = Some(v);
             self
         }
-        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+        /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -2763,6 +2767,177 @@ impl GetDataViewInput {
     }
 }
 
+/// See [`GetExternalDataViewAccessDetailsInput`](crate::input::GetExternalDataViewAccessDetailsInput).
+pub mod get_external_data_view_access_details_input {
+
+    /// A builder for [`GetExternalDataViewAccessDetailsInput`](crate::input::GetExternalDataViewAccessDetailsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_view_id: std::option::Option<std::string::String>,
+        pub(crate) dataset_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the Dataview that you want to access.</p>
+        pub fn data_view_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_view_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Dataview that you want to access.</p>
+        pub fn set_data_view_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_view_id = input;
+            self
+        }
+        /// <p>The unique identifier for the Dataset.</p>
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the Dataset.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetExternalDataViewAccessDetailsInput`](crate::input::GetExternalDataViewAccessDetailsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetExternalDataViewAccessDetailsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetExternalDataViewAccessDetailsInput {
+                data_view_id: self.data_view_id,
+                dataset_id: self.dataset_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetExternalDataViewAccessDetailsInputOperationOutputAlias =
+    crate::operation::GetExternalDataViewAccessDetails;
+#[doc(hidden)]
+pub type GetExternalDataViewAccessDetailsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl GetExternalDataViewAccessDetailsInput {
+    /// Consumes the builder and constructs an Operation<[`GetExternalDataViewAccessDetails`](crate::operation::GetExternalDataViewAccessDetails)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetExternalDataViewAccessDetails,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetExternalDataViewAccessDetailsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_19 = &_input.dataset_id;
+                let input_19 = input_19.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "dataset_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let dataset_id = aws_smithy_http::label::fmt_string(input_19, false);
+                if dataset_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "dataset_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_20 = &_input.data_view_id;
+                let input_20 = input_20.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "data_view_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let data_view_id = aws_smithy_http::label::fmt_string(input_20, false);
+                if data_view_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "data_view_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/datasets/{datasetId}/dataviewsv2/{dataViewId}/external-access-details",
+                    datasetId = dataset_id,
+                    dataViewId = data_view_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetExternalDataViewAccessDetailsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetExternalDataViewAccessDetails::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetExternalDataViewAccessDetails",
+            "finspacedata",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetExternalDataViewAccessDetailsInput`](crate::input::GetExternalDataViewAccessDetailsInput).
+    pub fn builder() -> crate::input::get_external_data_view_access_details_input::Builder {
+        crate::input::get_external_data_view_access_details_input::Builder::default()
+    }
+}
+
 /// See [`GetPermissionGroupInput`](crate::input::GetPermissionGroupInput).
 pub mod get_permission_group_input {
 
@@ -2820,14 +2995,14 @@ impl GetPermissionGroupInput {
                 _input: &crate::input::GetPermissionGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_19 = &_input.permission_group_id;
-                let input_19 = input_19.as_ref().ok_or(
+                let input_21 = &_input.permission_group_id;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "permission_group_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let permission_group_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let permission_group_id = aws_smithy_http::label::fmt_string(input_21, false);
                 if permission_group_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "permission_group_id",
@@ -2994,10 +3169,10 @@ impl GetProgrammaticAccessCredentialsInput {
                             .encode(),
                     );
                 }
-                if let Some(inner_20) = &_input.environment_id {
+                if let Some(inner_22) = &_input.environment_id {
                     query.push_kv(
                         "environmentId",
-                        &aws_smithy_http::query::fmt_string(&inner_20),
+                        &aws_smithy_http::query::fmt_string(&inner_22),
                     );
                 }
                 Ok(())
@@ -3120,14 +3295,14 @@ impl GetUserInput {
                 _input: &crate::input::GetUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.user_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_23 = &_input.user_id;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -3424,14 +3599,14 @@ impl ListChangesetsInput {
                 _input: &crate::input::ListChangesetsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.dataset_id;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_24 = &_input.dataset_id;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_24, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
@@ -3451,14 +3626,14 @@ impl ListChangesetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_23) = &_input.max_results {
+                if let Some(inner_25) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_23).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
                     );
                 }
-                if let Some(inner_24) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                if let Some(inner_26) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
                 }
                 Ok(())
             }
@@ -3601,13 +3776,13 @@ impl ListDatasetsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_25) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                if let Some(inner_27) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
                 }
-                if let Some(inner_26) = &_input.max_results {
+                if let Some(inner_28) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_26).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
                     );
                 }
                 Ok(())
@@ -3755,14 +3930,14 @@ impl ListDataViewsInput {
                 _input: &crate::input::ListDataViewsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_27 = &_input.dataset_id;
-                let input_27 = input_27.as_ref().ok_or(
+                let input_29 = &_input.dataset_id;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_29, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
@@ -3782,13 +3957,13 @@ impl ListDataViewsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_28) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                if let Some(inner_30) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
                 }
-                if let Some(inner_29) = &_input.max_results {
+                if let Some(inner_31) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_29).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
                     );
                 }
                 Ok(())
@@ -3932,8 +4107,8 @@ impl ListPermissionGroupsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                if let Some(inner_32) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4089,14 +4264,14 @@ impl ListPermissionGroupsByUserInput {
                 _input: &crate::input::ListPermissionGroupsByUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.user_id;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_33 = &_input.user_id;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_33, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -4112,8 +4287,8 @@ impl ListPermissionGroupsByUserInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_32) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                if let Some(inner_34) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4261,8 +4436,8 @@ impl ListUsersInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_33) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                if let Some(inner_35) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4419,14 +4594,14 @@ impl ListUsersByPermissionGroupInput {
                 _input: &crate::input::ListUsersByPermissionGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_34 = &_input.permission_group_id;
-                let input_34 = input_34.as_ref().ok_or(
+                let input_36 = &_input.permission_group_id;
+                let input_36 = input_36.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "permission_group_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let permission_group_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let permission_group_id = aws_smithy_http::label::fmt_string(input_36, false);
                 if permission_group_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "permission_group_id",
@@ -4446,8 +4621,8 @@ impl ListUsersByPermissionGroupInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_35) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                if let Some(inner_37) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4591,14 +4766,14 @@ impl ResetUserPasswordInput {
                 _input: &crate::input::ResetUserPasswordInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.user_id;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_38 = &_input.user_id;
+                let input_38 = input_38.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_38, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -4858,28 +5033,28 @@ impl UpdateChangesetInput {
                 _input: &crate::input::UpdateChangesetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_37 = &_input.dataset_id;
-                let input_37 = input_37.as_ref().ok_or(
+                let input_39 = &_input.dataset_id;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_39, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_38 = &_input.changeset_id;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_40 = &_input.changeset_id;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "changeset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let changeset_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let changeset_id = aws_smithy_http::label::fmt_string(input_40, false);
                 if changeset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "changeset_id",
@@ -5119,14 +5294,14 @@ impl UpdateDatasetInput {
                 _input: &crate::input::UpdateDatasetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_39 = &_input.dataset_id;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_41 = &_input.dataset_id;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let dataset_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let dataset_id = aws_smithy_http::label::fmt_string(input_41, false);
                 if dataset_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
@@ -5266,11 +5441,13 @@ pub mod update_permission_group_input {
         ///
         /// To override the contents of this collection use [`set_application_permissions`](Self::set_application_permissions).
         ///
-        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -5285,11 +5462,13 @@ pub mod update_permission_group_input {
             self.application_permissions = Some(v);
             self
         }
-        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+        /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+        /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+        /// </important>
         /// <ul>
         /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
         /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+        /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
         /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
         /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
         /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -5354,14 +5533,14 @@ impl UpdatePermissionGroupInput {
                 _input: &crate::input::UpdatePermissionGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.permission_group_id;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_42 = &_input.permission_group_id;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "permission_group_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let permission_group_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let permission_group_id = aws_smithy_http::label::fmt_string(input_42, false);
                 if permission_group_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "permission_group_id",
@@ -5606,14 +5785,14 @@ impl UpdateUserInput {
                 _input: &crate::input::UpdateUserInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.user_id;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_43 = &_input.user_id;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let user_id = aws_smithy_http::label::fmt_string(input_41, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_43, false);
                 if user_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
@@ -5791,11 +5970,13 @@ pub struct UpdatePermissionGroupInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A brief description for the permission group.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+    /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
     /// <ul>
     /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
     /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
     /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
     /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -5819,11 +6000,13 @@ impl UpdatePermissionGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p>
+    /// <p>The permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
     /// <ul>
     /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
     /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
     /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
     /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -6362,6 +6545,34 @@ impl std::fmt::Debug for GetPermissionGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetExternalDataViewAccessDetailsInput {
+    /// <p>The unique identifier for the Dataview that you want to access.</p>
+    pub data_view_id: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the Dataset.</p>
+    pub dataset_id: std::option::Option<std::string::String>,
+}
+impl GetExternalDataViewAccessDetailsInput {
+    /// <p>The unique identifier for the Dataview that you want to access.</p>
+    pub fn data_view_id(&self) -> std::option::Option<&str> {
+        self.data_view_id.as_deref()
+    }
+    /// <p>The unique identifier for the Dataset.</p>
+    pub fn dataset_id(&self) -> std::option::Option<&str> {
+        self.dataset_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetExternalDataViewAccessDetailsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetExternalDataViewAccessDetailsInput");
+        formatter.field("data_view_id", &self.data_view_id);
+        formatter.field("dataset_id", &self.dataset_id);
+        formatter.finish()
+    }
+}
+
 /// Request for retrieving a data view detail. Grouped / accessible within a dataset by its dataset id.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6673,11 +6884,13 @@ pub struct CreatePermissionGroupInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A brief description for the permission group.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
     /// <ul>
     /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
     /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
     /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
     /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
@@ -6697,11 +6910,13 @@ impl CreatePermissionGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p>
+    /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
     /// <ul>
     /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
     /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
-    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
     /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
     /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>

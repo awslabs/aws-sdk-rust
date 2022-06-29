@@ -3149,6 +3149,131 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
+/// Error type for the `UpdateRoute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateRouteError {
+    /// Kind of error that occurred.
+    pub kind: UpdateRouteErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateRoute` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateRouteErrorKind {
+    /// <p>The user does not have sufficient access to perform this action. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing the request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request references a resource that does not exist. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Request was denied because the request was throttled. </p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input does not satisfy the constraints specified by an Amazon Web Service. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateRouteError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateRouteErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateRouteErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateRouteErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateRouteErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateRouteErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateRouteErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateRouteError {
+    fn code(&self) -> Option<&str> {
+        UpdateRouteError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateRouteError {
+    /// Creates a new `UpdateRouteError`.
+    pub fn new(kind: UpdateRouteErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateRouteError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateRouteErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateRouteError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateRouteErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRouteErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRouteErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRouteErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRouteErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRouteErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UpdateRouteError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateRouteErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateRouteErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateRouteErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateRouteErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateRouteErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>The input does not satisfy the constraints specified by an Amazon Web Service. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3213,6 +3338,129 @@ impl ValidationException {
     }
 }
 
+/// <p>Request was denied because the request was throttled. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
+    pub quota_code: std::option::Option<std::string::String>,
+    /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
+    pub service_code: std::option::Option<std::string::String>,
+    /// <p>The number of seconds to wait before retrying. </p>
+    pub retry_after_seconds: i32,
+}
+impl ThrottlingException {
+    /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The number of seconds to wait before retrying. </p>
+    pub fn retry_after_seconds(&self) -> i32 {
+        self.retry_after_seconds
+    }
+}
+impl std::fmt::Debug for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThrottlingException");
+        formatter.field("message", &self.message);
+        formatter.field("quota_code", &self.quota_code);
+        formatter.field("service_code", &self.service_code);
+        formatter.field("retry_after_seconds", &self.retry_after_seconds);
+        formatter.finish()
+    }
+}
+impl ThrottlingException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottlingException")?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException).
+pub mod throttling_exception {
+
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) quota_code: std::option::Option<std::string::String>,
+        pub(crate) service_code: std::option::Option<std::string::String>,
+        pub(crate) retry_after_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quota_code = Some(input.into());
+            self
+        }
+        /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
+        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.quota_code = input;
+            self
+        }
+        /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_code = Some(input.into());
+            self
+        }
+        /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
+        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_code = input;
+            self
+        }
+        /// <p>The number of seconds to wait before retrying. </p>
+        pub fn retry_after_seconds(mut self, input: i32) -> Self {
+            self.retry_after_seconds = Some(input);
+            self
+        }
+        /// <p>The number of seconds to wait before retrying. </p>
+        pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.retry_after_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
+                message: self.message,
+                quota_code: self.quota_code,
+                service_code: self.service_code,
+                retry_after_seconds: self.retry_after_seconds.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
+    }
+}
+
 /// <p>The request references a resource that does not exist. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3252,8 +3500,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -3343,8 +3591,8 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -3384,193 +3632,6 @@ impl InternalServerException {
     }
 }
 
-/// <p>Request was denied because the request was throttled. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ThrottlingException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
-    pub quota_code: std::option::Option<std::string::String>,
-    /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
-    pub service_code: std::option::Option<std::string::String>,
-    /// <p>The number of seconds to wait before retrying. </p>
-    pub retry_after_seconds: i32,
-}
-impl ThrottlingException {
-    /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
-    pub fn quota_code(&self) -> std::option::Option<&str> {
-        self.quota_code.as_deref()
-    }
-    /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
-        self.service_code.as_deref()
-    }
-    /// <p>The number of seconds to wait before retrying. </p>
-    pub fn retry_after_seconds(&self) -> i32 {
-        self.retry_after_seconds
-    }
-}
-impl std::fmt::Debug for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThrottlingException");
-        formatter.field("message", &self.message);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("service_code", &self.service_code);
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.finish()
-    }
-}
-impl ThrottlingException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ThrottlingException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ThrottlingException {}
-/// See [`ThrottlingException`](crate::error::ThrottlingException).
-pub mod throttling_exception {
-
-    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) quota_code: std::option::Option<std::string::String>,
-        pub(crate) service_code: std::option::Option<std::string::String>,
-        pub(crate) retry_after_seconds: std::option::Option<i32>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.quota_code = Some(input.into());
-            self
-        }
-        /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.quota_code = input;
-            self
-        }
-        /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.service_code = Some(input.into());
-            self
-        }
-        /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_code = input;
-            self
-        }
-        /// <p>The number of seconds to wait before retrying. </p>
-        pub fn retry_after_seconds(mut self, input: i32) -> Self {
-            self.retry_after_seconds = Some(input);
-            self
-        }
-        /// <p>The number of seconds to wait before retrying. </p>
-        pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.retry_after_seconds = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
-        pub fn build(self) -> crate::error::ThrottlingException {
-            crate::error::ThrottlingException {
-                message: self.message,
-                quota_code: self.quota_code,
-                service_code: self.service_code,
-                retry_after_seconds: self.retry_after_seconds.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl ThrottlingException {
-    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
-    pub fn builder() -> crate::error::throttling_exception::Builder {
-        crate::error::throttling_exception::Builder::default()
-    }
-}
-
-/// <p>The resource policy is not valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidResourcePolicyException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidResourcePolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResourcePolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InvalidResourcePolicyException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidResourcePolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidResourcePolicyException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidResourcePolicyException {}
-/// See [`InvalidResourcePolicyException`](crate::error::InvalidResourcePolicyException).
-pub mod invalid_resource_policy_exception {
-
-    /// A builder for [`InvalidResourcePolicyException`](crate::error::InvalidResourcePolicyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidResourcePolicyException`](crate::error::InvalidResourcePolicyException).
-        pub fn build(self) -> crate::error::InvalidResourcePolicyException {
-            crate::error::InvalidResourcePolicyException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InvalidResourcePolicyException {
-    /// Creates a new builder-style object to manufacture [`InvalidResourcePolicyException`](crate::error::InvalidResourcePolicyException).
-    pub fn builder() -> crate::error::invalid_resource_policy_exception::Builder {
-        crate::error::invalid_resource_policy_exception::Builder::default()
-    }
-}
-
 /// <p>The user does not have sufficient access to perform this action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3594,8 +3655,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -3632,6 +3693,70 @@ impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
     pub fn builder() -> crate::error::access_denied_exception::Builder {
         crate::error::access_denied_exception::Builder::default()
+    }
+}
+
+/// <p>The resource policy is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidResourcePolicyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidResourcePolicyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidResourcePolicyException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidResourcePolicyException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidResourcePolicyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidResourcePolicyException")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidResourcePolicyException {}
+/// See [`InvalidResourcePolicyException`](crate::error::InvalidResourcePolicyException).
+pub mod invalid_resource_policy_exception {
+
+    /// A builder for [`InvalidResourcePolicyException`](crate::error::InvalidResourcePolicyException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidResourcePolicyException`](crate::error::InvalidResourcePolicyException).
+        pub fn build(self) -> crate::error::InvalidResourcePolicyException {
+            crate::error::InvalidResourcePolicyException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidResourcePolicyException {
+    /// Creates a new builder-style object to manufacture [`InvalidResourcePolicyException`](crate::error::InvalidResourcePolicyException).
+    pub fn builder() -> crate::error::invalid_resource_policy_exception::Builder {
+        crate::error::invalid_resource_policy_exception::Builder::default()
     }
 }
 

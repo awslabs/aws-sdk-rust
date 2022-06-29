@@ -95,8 +95,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_secret_arn): <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    ///   - [`sql(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::sql) / [`set_sql(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_sql): <p>The SQL statement to run.</p>
+    ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_secret_arn): <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>  <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    ///   - [`sql(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::sql) / [`set_sql(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_sql): <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
     ///   - [`database(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::database) / [`set_database(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_database): <p>The name of the database.</p>
     ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_schema): <p>The name of the database schema.</p>
     ///   - [`parameter_sets(Vec<Vec<SqlParameter>>)`](crate::client::fluent_builders::BatchExecuteStatement::parameter_sets) / [`set_parameter_sets(Option<Vec<Vec<SqlParameter>>>)`](crate::client::fluent_builders::BatchExecuteStatement::set_parameter_sets): <p>The parameter set for the batch operation.</p>  <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>  <ul>   <li> <p>Specify one or more empty parameter sets.</p> </li>   <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>  </ul> <note>   <p>Array parameters are not supported.</p>  </note>
@@ -136,7 +136,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`db_cluster_or_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::db_cluster_or_instance_arn) / [`set_db_cluster_or_instance_arn(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_db_cluster_or_instance_arn): <p>The ARN of the Aurora Serverless DB cluster.</p>
-    ///   - [`aws_secret_store_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::aws_secret_store_arn) / [`set_aws_secret_store_arn(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_aws_secret_store_arn): <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
+    ///   - [`aws_secret_store_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::aws_secret_store_arn) / [`set_aws_secret_store_arn(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_aws_secret_store_arn): <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>  <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     ///   - [`sql_statements(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::sql_statements) / [`set_sql_statements(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_sql_statements): <p>One or more SQL statements to run on the DB cluster.</p>  <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     ///   - [`database(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::database) / [`set_database(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_database): <p>The name of the database.</p>
     ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_schema): <p>The name of the database schema.</p>
@@ -150,7 +150,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_secret_arn): <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_secret_arn): <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>  <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     ///   - [`sql(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::sql) / [`set_sql(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_sql): <p>The SQL statement to run.</p>
     ///   - [`database(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::database) / [`set_database(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_database): <p>The name of the database.</p>
     ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_schema): <p>The name of the database schema.</p> <note>   <p>Currently, the <code>schema</code> parameter isn't supported.</p>  </note>
@@ -195,6 +195,8 @@ pub mod fluent_builders {
     /// <p>Runs a batch SQL statement over an array of data.</p>
     /// <p>You can run bulk update and insert operations for multiple records using a DML statement with different parameter sets. Bulk operations can provide a significant performance improvement over individual insert and update operations.</p> <important>
     /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
+    /// <p>There isn't a fixed upper limit on the number of parameter sets. However, the maximum size of the HTTP request submitted through the Data API is 4 MiB. If the request exceeds this limit, the Data API returns an error and doesn't process the request. This 4-MiB limit includes the size of the HTTP headers and the JSON notation in the request. Thus, the number of parameter sets that you can include depends on a combination of factors, such as the size of the SQL statement and the size of each parameter set.</p>
+    /// <p>The response size limit is 1 MiB. If the call returns more than 1 MiB of response data, the call is terminated.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchExecuteStatement {
@@ -245,22 +247,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+        /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_arn(input.into());
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+        /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_arn(input);
             self
         }
-        /// <p>The SQL statement to run.</p>
+        /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
         pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sql(input.into());
             self
         }
-        /// <p>The SQL statement to run.</p>
+        /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
         pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sql(input);
             self
@@ -552,12 +556,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_cluster_or_instance_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn aws_secret_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_secret_store_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn set_aws_secret_store_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -605,8 +611,8 @@ pub mod fluent_builders {
     ///
     /// <p>Runs a SQL statement against a database.</p> <important>
     /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
-    /// </important>
     /// <p>If the binary response data from the database is more than 1 MB, the call is terminated.</p>
+    /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteStatement {
         handle: std::sync::Arc<super::Handle>,
@@ -656,12 +662,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+        /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_arn(input.into());
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+        /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
+        /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_arn(input);
             self

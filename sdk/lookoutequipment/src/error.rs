@@ -1619,6 +1619,143 @@ impl std::error::Error for ListDatasetsError {
     }
 }
 
+/// Error type for the `ListInferenceEvents` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListInferenceEventsError {
+    /// Kind of error that occurred.
+    pub kind: ListInferenceEventsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListInferenceEvents` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListInferenceEventsErrorKind {
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListInferenceEventsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListInferenceEventsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListInferenceEventsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListInferenceEventsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListInferenceEventsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListInferenceEventsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListInferenceEventsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListInferenceEventsError {
+    fn code(&self) -> Option<&str> {
+        ListInferenceEventsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListInferenceEventsError {
+    /// Creates a new `ListInferenceEventsError`.
+    pub fn new(kind: ListInferenceEventsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListInferenceEventsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListInferenceEventsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListInferenceEventsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListInferenceEventsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListInferenceEventsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInferenceEventsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListInferenceEventsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInferenceEventsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListInferenceEventsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInferenceEventsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListInferenceEventsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInferenceEventsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListInferenceEventsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInferenceEventsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListInferenceEventsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListInferenceEventsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListInferenceEventsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListInferenceEventsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListInferenceEventsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListInferenceEventsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListInferenceEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListInferenceExecutions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

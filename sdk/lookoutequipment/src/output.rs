@@ -865,6 +865,95 @@ impl ListInferenceExecutionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListInferenceEventsOutput {
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
+    pub inference_event_summaries:
+        std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
+}
+impl ListInferenceEventsOutput {
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
+    pub fn inference_event_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferenceEventSummary]> {
+        self.inference_event_summaries.as_deref()
+    }
+}
+impl std::fmt::Debug for ListInferenceEventsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListInferenceEventsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("inference_event_summaries", &self.inference_event_summaries);
+        formatter.finish()
+    }
+}
+/// See [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
+pub mod list_inference_events_output {
+
+    /// A builder for [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) inference_event_summaries:
+            std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
+    }
+    impl Builder {
+        /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `inference_event_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_inference_event_summaries`](Self::set_inference_event_summaries).
+        ///
+        /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
+        pub fn inference_event_summaries(
+            mut self,
+            input: crate::model::InferenceEventSummary,
+        ) -> Self {
+            let mut v = self.inference_event_summaries.unwrap_or_default();
+            v.push(input);
+            self.inference_event_summaries = Some(v);
+            self
+        }
+        /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
+        pub fn set_inference_event_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
+        ) -> Self {
+            self.inference_event_summaries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
+        pub fn build(self) -> crate::output::ListInferenceEventsOutput {
+            crate::output::ListInferenceEventsOutput {
+                next_token: self.next_token,
+                inference_event_summaries: self.inference_event_summaries,
+            }
+        }
+    }
+}
+impl ListInferenceEventsOutput {
+    /// Creates a new builder-style object to manufacture [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
+    pub fn builder() -> crate::output::list_inference_events_output::Builder {
+        crate::output::list_inference_events_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -1879,7 +1968,7 @@ pub struct DescribeDatasetOutput {
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
+    /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1912,7 +2001,7 @@ impl DescribeDatasetOutput {
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
+    /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -2025,12 +2114,12 @@ pub mod describe_dataset_output {
             self.dataset_arn = input;
             self
         }
-        /// <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
+        /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
+        /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

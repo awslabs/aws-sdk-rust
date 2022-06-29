@@ -108,6 +108,30 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOntapError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOntapError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateLocationFsxOntapErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::CreateLocationFsxOntapErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateLocationFsxOntapErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOpenZfsError, R>>
     for Error
 where
@@ -407,6 +431,30 @@ where
                     inner,
                 ) => Error::InvalidRequestException(inner),
                 crate::error::DescribeLocationFsxLustreErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOntapError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOntapError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeLocationFsxOntapErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::DescribeLocationFsxOntapErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeLocationFsxOntapErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

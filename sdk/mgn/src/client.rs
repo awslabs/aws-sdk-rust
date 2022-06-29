@@ -111,6 +111,22 @@ impl Client {
     pub fn change_server_life_cycle_state(&self) -> fluent_builders::ChangeServerLifeCycleState {
         fluent_builders::ChangeServerLifeCycleState::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateLaunchConfigurationTemplate`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_post_launch_actions): <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_tags): <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    /// - On success, responds with [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput) with field(s):
+    ///   - [`launch_configuration_template_id(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::launch_configuration_template_id): <p>Copy Private IP during Launch Configuration.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::arn): <p>Copy Private IP during Launch Configuration.</p>
+    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::CreateLaunchConfigurationTemplateOutput::post_launch_actions): <p>Copy Private IP during Launch Configuration.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateLaunchConfigurationTemplateOutput::tags): <p>Copy Private IP during Launch Configuration.</p>
+    /// - On failure, responds with [`SdkError<CreateLaunchConfigurationTemplateError>`](crate::error::CreateLaunchConfigurationTemplateError)
+    pub fn create_launch_configuration_template(
+        &self,
+    ) -> fluent_builders::CreateLaunchConfigurationTemplate {
+        fluent_builders::CreateLaunchConfigurationTemplate::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateReplicationConfigurationTemplate`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate) operation.
     ///
     /// - The fluent builder is configurable:
@@ -158,6 +174,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::error::DeleteJobError)
     pub fn delete_job(&self) -> fluent_builders::DeleteJob {
         fluent_builders::DeleteJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteLaunchConfigurationTemplate`](crate::client::fluent_builders::DeleteLaunchConfigurationTemplate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchConfigurationTemplate::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchConfigurationTemplate::set_launch_configuration_template_id): <p>ID of resource to be deleted.</p>
+    /// - On success, responds with [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLaunchConfigurationTemplateError>`](crate::error::DeleteLaunchConfigurationTemplateError)
+    pub fn delete_launch_configuration_template(
+        &self,
+    ) -> fluent_builders::DeleteLaunchConfigurationTemplate {
+        fluent_builders::DeleteLaunchConfigurationTemplate::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteReplicationConfigurationTemplate`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate) operation.
     ///
@@ -218,6 +246,22 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeJobsError>`](crate::error::DescribeJobsError)
     pub fn describe_jobs(&self) -> fluent_builders::DescribeJobs {
         fluent_builders::DescribeJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeLaunchConfigurationTemplates`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`launch_configuration_template_i_ds(Vec<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::launch_configuration_template_i_ds) / [`set_launch_configuration_template_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_launch_configuration_template_i_ds): <p>Request to disconnect Source Server from service by Server ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_max_results): <p>Request to disconnect Source Server from service by Server ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_next_token): <p>Request to disconnect Source Server from service by Server ID.</p>
+    /// - On success, responds with [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput) with field(s):
+    ///   - [`items(Option<Vec<LaunchConfigurationTemplate>>)`](crate::output::DescribeLaunchConfigurationTemplatesOutput::items): <p>Request to disconnect Source Server from service by Server ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeLaunchConfigurationTemplatesOutput::next_token): <p>Request to disconnect Source Server from service by Server ID.</p>
+    /// - On failure, responds with [`SdkError<DescribeLaunchConfigurationTemplatesError>`](crate::error::DescribeLaunchConfigurationTemplatesError)
+    pub fn describe_launch_configuration_templates(
+        &self,
+    ) -> fluent_builders::DescribeLaunchConfigurationTemplates {
+        fluent_builders::DescribeLaunchConfigurationTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeReplicationConfigurationTemplates`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::into_paginator).
@@ -314,6 +358,7 @@ impl Client {
     ///   - [`copy_tags(Option<bool>)`](crate::output::GetLaunchConfigurationOutput::copy_tags): <p>Copy Tags during Launch Configuration.</p>
     ///   - [`licensing(Option<Licensing>)`](crate::output::GetLaunchConfigurationOutput::licensing): <p>Launch configuration OS licensing.</p>
     ///   - [`boot_mode(Option<BootMode>)`](crate::output::GetLaunchConfigurationOutput::boot_mode): <p>Launch configuration boot mode.</p>
+    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::GetLaunchConfigurationOutput::post_launch_actions): <p>Server participating in Job.</p>
     /// - On failure, responds with [`SdkError<GetLaunchConfigurationError>`](crate::error::GetLaunchConfigurationError)
     pub fn get_launch_configuration(&self) -> fluent_builders::GetLaunchConfiguration {
         fluent_builders::GetLaunchConfiguration::new(self.handle.clone())
@@ -485,6 +530,7 @@ impl Client {
     ///   - [`copy_tags(bool)`](crate::client::fluent_builders::UpdateLaunchConfiguration::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_copy_tags): <p>Update Launch configuration copy Tags request.</p>
     ///   - [`licensing(Licensing)`](crate::client::fluent_builders::UpdateLaunchConfiguration::licensing) / [`set_licensing(Option<Licensing>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_licensing): <p>Update Launch configuration licensing request.</p>
     ///   - [`boot_mode(BootMode)`](crate::client::fluent_builders::UpdateLaunchConfiguration::boot_mode) / [`set_boot_mode(Option<BootMode>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_boot_mode): <p>Update Launch configuration boot mode request.</p>
+    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::UpdateLaunchConfiguration::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_post_launch_actions): <p>Server participating in Job.</p>
     /// - On success, responds with [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::source_server_id): <p>Launch configuration Source Server ID.</p>
     ///   - [`name(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::name): <p>Launch configuration name.</p>
@@ -495,9 +541,26 @@ impl Client {
     ///   - [`copy_tags(Option<bool>)`](crate::output::UpdateLaunchConfigurationOutput::copy_tags): <p>Copy Tags during Launch Configuration.</p>
     ///   - [`licensing(Option<Licensing>)`](crate::output::UpdateLaunchConfigurationOutput::licensing): <p>Launch configuration OS licensing.</p>
     ///   - [`boot_mode(Option<BootMode>)`](crate::output::UpdateLaunchConfigurationOutput::boot_mode): <p>Launch configuration boot mode.</p>
+    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::UpdateLaunchConfigurationOutput::post_launch_actions): <p>Server participating in Job.</p>
     /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationError>`](crate::error::UpdateLaunchConfigurationError)
     pub fn update_launch_configuration(&self) -> fluent_builders::UpdateLaunchConfiguration {
         fluent_builders::UpdateLaunchConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateLaunchConfigurationTemplate`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_launch_configuration_template_id): <p>Update Launch configuration Target instance right sizing request.</p>
+    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_post_launch_actions): <p>Update Launch configuration Target instance right sizing request.</p>
+    /// - On success, responds with [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput) with field(s):
+    ///   - [`launch_configuration_template_id(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::launch_configuration_template_id): <p>Copy Private IP during Launch Configuration.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::arn): <p>Copy Private IP during Launch Configuration.</p>
+    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::post_launch_actions): <p>Copy Private IP during Launch Configuration.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::tags): <p>Copy Private IP during Launch Configuration.</p>
+    /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationTemplateError>`](crate::error::UpdateLaunchConfigurationTemplateError)
+    pub fn update_launch_configuration_template(
+        &self,
+    ) -> fluent_builders::UpdateLaunchConfigurationTemplate {
+        fluent_builders::UpdateLaunchConfigurationTemplate::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateReplicationConfiguration`](crate::client::fluent_builders::UpdateReplicationConfiguration) operation.
     ///
@@ -679,6 +742,85 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_life_cycle(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateLaunchConfigurationTemplate`.
+    ///
+    /// <p>Creates a new ReplicationConfigurationTemplate.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateLaunchConfigurationTemplate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_launch_configuration_template_input::Builder,
+    }
+    impl CreateLaunchConfigurationTemplate {
+        /// Creates a new `CreateLaunchConfigurationTemplate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLaunchConfigurationTemplateOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLaunchConfigurationTemplateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.inner = self.inner.post_launch_actions(input);
+            self
+        }
+        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.inner = self.inner.set_post_launch_actions(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -985,6 +1127,65 @@ pub mod fluent_builders {
         /// <p>Request to delete Job from service by Job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteLaunchConfigurationTemplate`.
+    ///
+    /// <p>Creates a new ReplicationConfigurationTemplate.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteLaunchConfigurationTemplate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::delete_launch_configuration_template_input::Builder,
+    }
+    impl DeleteLaunchConfigurationTemplate {
+        /// Creates a new `DeleteLaunchConfigurationTemplate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteLaunchConfigurationTemplateOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteLaunchConfigurationTemplateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>ID of resource to be deleted.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_template_id(input.into());
+            self
+        }
+        /// <p>ID of resource to be deleted.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_configuration_template_id(input);
             self
         }
     }
@@ -1319,6 +1520,102 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe job log items by next token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeLaunchConfigurationTemplates`.
+    ///
+    /// <p>Creates a new ReplicationConfigurationTemplate.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeLaunchConfigurationTemplates {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_launch_configuration_templates_input::Builder,
+    }
+    impl DescribeLaunchConfigurationTemplates {
+        /// Creates a new `DescribeLaunchConfigurationTemplates`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeLaunchConfigurationTemplatesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeLaunchConfigurationTemplatesError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeLaunchConfigurationTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeLaunchConfigurationTemplatesPaginator {
+            crate::paginator::DescribeLaunchConfigurationTemplatesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// Appends an item to `launchConfigurationTemplateIDs`.
+        ///
+        /// To override the contents of this collection use [`set_launch_configuration_template_i_ds`](Self::set_launch_configuration_template_i_ds).
+        ///
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn launch_configuration_template_i_ds(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_template_i_ds(input.into());
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn set_launch_configuration_template_i_ds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_configuration_template_i_ds(input);
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2595,6 +2892,91 @@ pub mod fluent_builders {
         /// <p>Update Launch configuration boot mode request.</p>
         pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
             self.inner = self.inner.set_boot_mode(input);
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.inner = self.inner.post_launch_actions(input);
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.inner = self.inner.set_post_launch_actions(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateLaunchConfigurationTemplate`.
+    ///
+    /// <p>Creates a new ReplicationConfigurationTemplate.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateLaunchConfigurationTemplate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_launch_configuration_template_input::Builder,
+    }
+    impl UpdateLaunchConfigurationTemplate {
+        /// Creates a new `UpdateLaunchConfigurationTemplate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateLaunchConfigurationTemplateOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateLaunchConfigurationTemplateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_template_id(input.into());
+            self
+        }
+        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_configuration_template_id(input);
+            self
+        }
+        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.inner = self.inner.post_launch_actions(input);
+            self
+        }
+        /// <p>Update Launch configuration Target instance right sizing request.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.inner = self.inner.set_post_launch_actions(input);
             self
         }
     }

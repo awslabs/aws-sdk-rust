@@ -20,6 +20,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Arlet,
     #[allow(missing_docs)] // documentation missing in model
+    Arthur,
+    #[allow(missing_docs)] // documentation missing in model
     Astrid,
     #[allow(missing_docs)] // documentation missing in model
     Ayanda,
@@ -41,6 +43,8 @@ pub enum VoiceId {
     Conchita,
     #[allow(missing_docs)] // documentation missing in model
     Cristiano,
+    #[allow(missing_docs)] // documentation missing in model
+    Daniel,
     #[allow(missing_docs)] // documentation missing in model
     Dora,
     #[allow(missing_docs)] // documentation missing in model
@@ -88,6 +92,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Lea,
     #[allow(missing_docs)] // documentation missing in model
+    Liam,
+    #[allow(missing_docs)] // documentation missing in model
     Liv,
     #[allow(missing_docs)] // documentation missing in model
     Lotte,
@@ -119,6 +125,8 @@ pub enum VoiceId {
     Nicole,
     #[allow(missing_docs)] // documentation missing in model
     Olivia,
+    #[allow(missing_docs)] // documentation missing in model
+    Pedro,
     #[allow(missing_docs)] // documentation missing in model
     Penelope,
     #[allow(missing_docs)] // documentation missing in model
@@ -155,6 +163,7 @@ impl std::convert::From<&str> for VoiceId {
             "Amy" => VoiceId::Amy,
             "Aria" => VoiceId::Aria,
             "Arlet" => VoiceId::Arlet,
+            "Arthur" => VoiceId::Arthur,
             "Astrid" => VoiceId::Astrid,
             "Ayanda" => VoiceId::Ayanda,
             "Bianca" => VoiceId::Bianca,
@@ -166,6 +175,7 @@ impl std::convert::From<&str> for VoiceId {
             "Chantal" => VoiceId::Chantal,
             "Conchita" => VoiceId::Conchita,
             "Cristiano" => VoiceId::Cristiano,
+            "Daniel" => VoiceId::Daniel,
             "Dora" => VoiceId::Dora,
             "Emma" => VoiceId::Emma,
             "Enrique" => VoiceId::Enrique,
@@ -189,6 +199,7 @@ impl std::convert::From<&str> for VoiceId {
             "Kevin" => VoiceId::Kevin,
             "Kimberly" => VoiceId::Kimberly,
             "Lea" => VoiceId::Lea,
+            "Liam" => VoiceId::Liam,
             "Liv" => VoiceId::Liv,
             "Lotte" => VoiceId::Lotte,
             "Lucia" => VoiceId::Lucia,
@@ -205,6 +216,7 @@ impl std::convert::From<&str> for VoiceId {
             "Naja" => VoiceId::Naja,
             "Nicole" => VoiceId::Nicole,
             "Olivia" => VoiceId::Olivia,
+            "Pedro" => VoiceId::Pedro,
             "Penelope" => VoiceId::Penelope,
             "Raveena" => VoiceId::Raveena,
             "Ricardo" => VoiceId::Ricardo,
@@ -237,6 +249,7 @@ impl VoiceId {
             VoiceId::Amy => "Amy",
             VoiceId::Aria => "Aria",
             VoiceId::Arlet => "Arlet",
+            VoiceId::Arthur => "Arthur",
             VoiceId::Astrid => "Astrid",
             VoiceId::Ayanda => "Ayanda",
             VoiceId::Bianca => "Bianca",
@@ -248,6 +261,7 @@ impl VoiceId {
             VoiceId::Chantal => "Chantal",
             VoiceId::Conchita => "Conchita",
             VoiceId::Cristiano => "Cristiano",
+            VoiceId::Daniel => "Daniel",
             VoiceId::Dora => "Dora",
             VoiceId::Emma => "Emma",
             VoiceId::Enrique => "Enrique",
@@ -271,6 +285,7 @@ impl VoiceId {
             VoiceId::Kevin => "Kevin",
             VoiceId::Kimberly => "Kimberly",
             VoiceId::Lea => "Lea",
+            VoiceId::Liam => "Liam",
             VoiceId::Liv => "Liv",
             VoiceId::Lotte => "Lotte",
             VoiceId::Lucia => "Lucia",
@@ -287,6 +302,7 @@ impl VoiceId {
             VoiceId::Naja => "Naja",
             VoiceId::Nicole => "Nicole",
             VoiceId::Olivia => "Olivia",
+            VoiceId::Pedro => "Pedro",
             VoiceId::Penelope => "Penelope",
             VoiceId::Raveena => "Raveena",
             VoiceId::Ricardo => "Ricardo",
@@ -310,6 +326,7 @@ impl VoiceId {
             "Amy",
             "Aria",
             "Arlet",
+            "Arthur",
             "Astrid",
             "Ayanda",
             "Bianca",
@@ -321,6 +338,7 @@ impl VoiceId {
             "Chantal",
             "Conchita",
             "Cristiano",
+            "Daniel",
             "Dora",
             "Emma",
             "Enrique",
@@ -344,6 +362,7 @@ impl VoiceId {
             "Kevin",
             "Kimberly",
             "Lea",
+            "Liam",
             "Liv",
             "Lotte",
             "Lucia",
@@ -360,6 +379,7 @@ impl VoiceId {
             "Naja",
             "Nicole",
             "Olivia",
+            "Pedro",
             "Penelope",
             "Raveena",
             "Ricardo",

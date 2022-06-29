@@ -848,6 +848,8 @@ pub struct UpdateLaunchConfigurationOutput {
     pub licensing: std::option::Option<crate::model::Licensing>,
     /// <p>Launch configuration boot mode.</p>
     pub boot_mode: std::option::Option<crate::model::BootMode>,
+    /// <p>Server participating in Job.</p>
+    pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
 }
 impl UpdateLaunchConfigurationOutput {
     /// <p>Launch configuration Source Server ID.</p>
@@ -888,6 +890,10 @@ impl UpdateLaunchConfigurationOutput {
     pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
         self.boot_mode.as_ref()
     }
+    /// <p>Server participating in Job.</p>
+    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+        self.post_launch_actions.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateLaunchConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -904,6 +910,7 @@ impl std::fmt::Debug for UpdateLaunchConfigurationOutput {
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("boot_mode", &self.boot_mode);
+        formatter.field("post_launch_actions", &self.post_launch_actions);
         formatter.finish()
     }
 }
@@ -923,6 +930,7 @@ pub mod update_launch_configuration_output {
         pub(crate) copy_tags: std::option::Option<bool>,
         pub(crate) licensing: std::option::Option<crate::model::Licensing>,
         pub(crate) boot_mode: std::option::Option<crate::model::BootMode>,
+        pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
     }
     impl Builder {
         /// <p>Launch configuration Source Server ID.</p>
@@ -1033,6 +1041,19 @@ pub mod update_launch_configuration_output {
             self.boot_mode = input;
             self
         }
+        /// <p>Server participating in Job.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.post_launch_actions = Some(input);
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.post_launch_actions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateLaunchConfigurationOutput {
             crate::output::UpdateLaunchConfigurationOutput {
@@ -1046,6 +1067,7 @@ pub mod update_launch_configuration_output {
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
                 boot_mode: self.boot_mode,
+                post_launch_actions: self.post_launch_actions,
             }
         }
     }
@@ -2328,6 +2350,8 @@ pub struct GetLaunchConfigurationOutput {
     pub licensing: std::option::Option<crate::model::Licensing>,
     /// <p>Launch configuration boot mode.</p>
     pub boot_mode: std::option::Option<crate::model::BootMode>,
+    /// <p>Server participating in Job.</p>
+    pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
 }
 impl GetLaunchConfigurationOutput {
     /// <p>Launch configuration Source Server ID.</p>
@@ -2368,6 +2392,10 @@ impl GetLaunchConfigurationOutput {
     pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
         self.boot_mode.as_ref()
     }
+    /// <p>Server participating in Job.</p>
+    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+        self.post_launch_actions.as_ref()
+    }
 }
 impl std::fmt::Debug for GetLaunchConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2384,6 +2412,7 @@ impl std::fmt::Debug for GetLaunchConfigurationOutput {
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("boot_mode", &self.boot_mode);
+        formatter.field("post_launch_actions", &self.post_launch_actions);
         formatter.finish()
     }
 }
@@ -2403,6 +2432,7 @@ pub mod get_launch_configuration_output {
         pub(crate) copy_tags: std::option::Option<bool>,
         pub(crate) licensing: std::option::Option<crate::model::Licensing>,
         pub(crate) boot_mode: std::option::Option<crate::model::BootMode>,
+        pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
     }
     impl Builder {
         /// <p>Launch configuration Source Server ID.</p>
@@ -2513,6 +2543,19 @@ pub mod get_launch_configuration_output {
             self.boot_mode = input;
             self
         }
+        /// <p>Server participating in Job.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.post_launch_actions = Some(input);
+            self
+        }
+        /// <p>Server participating in Job.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.post_launch_actions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput).
         pub fn build(self) -> crate::output::GetLaunchConfigurationOutput {
             crate::output::GetLaunchConfigurationOutput {
@@ -2526,6 +2569,7 @@ pub mod get_launch_configuration_output {
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
                 boot_mode: self.boot_mode,
+                post_launch_actions: self.post_launch_actions,
             }
         }
     }
@@ -4629,6 +4673,407 @@ impl UpdateReplicationConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput).
     pub fn builder() -> crate::output::update_replication_configuration_template_output::Builder {
         crate::output::update_replication_configuration_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLaunchConfigurationTemplatesOutput {
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>>,
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeLaunchConfigurationTemplatesOutput {
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::LaunchConfigurationTemplate]> {
+        self.items.as_deref()
+    }
+    /// <p>Request to disconnect Source Server from service by Server ID.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeLaunchConfigurationTemplatesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLaunchConfigurationTemplatesOutput");
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput).
+pub mod describe_launch_configuration_templates_output {
+
+    /// A builder for [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items:
+            std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn items(mut self, input: crate::model::LaunchConfigurationTemplate) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input);
+            self.items = Some(v);
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Request to disconnect Source Server from service by Server ID.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput).
+        pub fn build(self) -> crate::output::DescribeLaunchConfigurationTemplatesOutput {
+            crate::output::DescribeLaunchConfigurationTemplatesOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeLaunchConfigurationTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput).
+    pub fn builder() -> crate::output::describe_launch_configuration_templates_output::Builder {
+        crate::output::describe_launch_configuration_templates_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLaunchConfigurationTemplateOutput {
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub launch_configuration_template_id: std::option::Option<std::string::String>,
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateLaunchConfigurationTemplateOutput {
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn launch_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.launch_configuration_template_id.as_deref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+        self.post_launch_actions.as_ref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateLaunchConfigurationTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLaunchConfigurationTemplateOutput");
+        formatter.field(
+            "launch_configuration_template_id",
+            &self.launch_configuration_template_id,
+        );
+        formatter.field("arn", &self.arn);
+        formatter.field("post_launch_actions", &self.post_launch_actions);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput).
+pub mod create_launch_configuration_template_output {
+
+    /// A builder for [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = Some(input.into());
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = input;
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.post_launch_actions = Some(input);
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.post_launch_actions = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput).
+        pub fn build(self) -> crate::output::CreateLaunchConfigurationTemplateOutput {
+            crate::output::CreateLaunchConfigurationTemplateOutput {
+                launch_configuration_template_id: self.launch_configuration_template_id,
+                arn: self.arn,
+                post_launch_actions: self.post_launch_actions,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl CreateLaunchConfigurationTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput).
+    pub fn builder() -> crate::output::create_launch_configuration_template_output::Builder {
+        crate::output::create_launch_configuration_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLaunchConfigurationTemplateOutput {}
+impl std::fmt::Debug for DeleteLaunchConfigurationTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLaunchConfigurationTemplateOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput).
+pub mod delete_launch_configuration_template_output {
+
+    /// A builder for [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput).
+        pub fn build(self) -> crate::output::DeleteLaunchConfigurationTemplateOutput {
+            crate::output::DeleteLaunchConfigurationTemplateOutput {}
+        }
+    }
+}
+impl DeleteLaunchConfigurationTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput).
+    pub fn builder() -> crate::output::delete_launch_configuration_template_output::Builder {
+        crate::output::delete_launch_configuration_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLaunchConfigurationTemplateOutput {
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub launch_configuration_template_id: std::option::Option<std::string::String>,
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateLaunchConfigurationTemplateOutput {
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn launch_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.launch_configuration_template_id.as_deref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+        self.post_launch_actions.as_ref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateLaunchConfigurationTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateLaunchConfigurationTemplateOutput");
+        formatter.field(
+            "launch_configuration_template_id",
+            &self.launch_configuration_template_id,
+        );
+        formatter.field("arn", &self.arn);
+        formatter.field("post_launch_actions", &self.post_launch_actions);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput).
+pub mod update_launch_configuration_template_output {
+
+    /// A builder for [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn launch_configuration_template_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = Some(input.into());
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_launch_configuration_template_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_template_id = input;
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
+            self.post_launch_actions = Some(input);
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_post_launch_actions(
+            mut self,
+            input: std::option::Option<crate::model::PostLaunchActions>,
+        ) -> Self {
+            self.post_launch_actions = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Copy Private IP during Launch Configuration.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput).
+        pub fn build(self) -> crate::output::UpdateLaunchConfigurationTemplateOutput {
+            crate::output::UpdateLaunchConfigurationTemplateOutput {
+                launch_configuration_template_id: self.launch_configuration_template_id,
+                arn: self.arn,
+                post_launch_actions: self.post_launch_actions,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl UpdateLaunchConfigurationTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput).
+    pub fn builder() -> crate::output::update_launch_configuration_template_output::Builder {
+        crate::output::update_launch_configuration_template_output::Builder::default()
     }
 }
 

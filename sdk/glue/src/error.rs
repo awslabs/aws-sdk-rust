@@ -16323,6 +16323,115 @@ impl std::error::Error for ListCrawlersError {
     }
 }
 
+/// Error type for the `ListCrawls` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListCrawlsError {
+    /// Kind of error that occurred.
+    pub kind: ListCrawlsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListCrawls` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListCrawlsErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListCrawlsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListCrawlsErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            ListCrawlsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListCrawlsErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            ListCrawlsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListCrawlsError {
+    fn code(&self) -> Option<&str> {
+        ListCrawlsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListCrawlsError {
+    /// Creates a new `ListCrawlsError`.
+    pub fn new(kind: ListCrawlsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListCrawlsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListCrawlsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListCrawlsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListCrawlsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListCrawlsErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListCrawlsErrorKind::EntityNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `ListCrawlsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, ListCrawlsErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `ListCrawlsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCrawlsErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListCrawlsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListCrawlsErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            ListCrawlsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListCrawlsErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            ListCrawlsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListCustomEntityTypes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

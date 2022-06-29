@@ -395,6 +395,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
     }
 }
 
+/// Operation shape for `ListInferenceEvents`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_inference_events`](crate::client::Client::list_inference_events).
+///
+/// See [`crate::client::fluent_builders::ListInferenceEvents`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListInferenceEvents {
+    _private: (),
+}
+impl ListInferenceEvents {
+    /// Creates a new builder-style object to manufacture [`ListInferenceEventsInput`](crate::input::ListInferenceEventsInput).
+    pub fn builder() -> crate::input::list_inference_events_input::Builder {
+        crate::input::list_inference_events_input::Builder::default()
+    }
+    /// Creates a new `ListInferenceEvents` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListInferenceEvents {
+    type Output = std::result::Result<
+        crate::output::ListInferenceEventsOutput,
+        crate::error::ListInferenceEventsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_inference_events_error(response)
+        } else {
+            crate::operation_deser::parse_list_inference_events_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListInferenceExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

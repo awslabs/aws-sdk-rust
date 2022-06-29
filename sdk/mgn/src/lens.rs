@@ -19,6 +19,16 @@ pub(crate) fn reflens_structure_crate_output_describe_jobs_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_launch_configuration_templates_output_next_token(
+    input: &crate::output::DescribeLaunchConfigurationTemplatesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_replication_configuration_templates_output_next_token(
     input: &crate::output::DescribeReplicationConfigurationTemplatesOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -62,6 +72,16 @@ pub(crate) fn lens_structure_crate_output_describe_job_log_items_output_items(
 pub(crate) fn lens_structure_crate_output_describe_jobs_output_items(
     input: crate::output::DescribeJobsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::Job>> {
+    let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_launch_configuration_templates_output_items(
+    input: crate::output::DescribeLaunchConfigurationTemplatesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::LaunchConfigurationTemplate>> {
     let input = match input.items {
         None => return None,
         Some(t) => t,

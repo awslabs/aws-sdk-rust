@@ -472,6 +472,7 @@ pub mod create_route_input {
         pub(crate) application_identifier: std::option::Option<std::string::String>,
         pub(crate) service_identifier: std::option::Option<std::string::String>,
         pub(crate) route_type: std::option::Option<crate::model::RouteType>,
+        pub(crate) default_route: std::option::Option<crate::model::DefaultRouteInput>,
         pub(crate) uri_path_route: std::option::Option<crate::model::UriPathRouteInput>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -529,6 +530,19 @@ pub mod create_route_input {
             input: std::option::Option<crate::model::RouteType>,
         ) -> Self {
             self.route_type = input;
+            self
+        }
+        /// <p> Configuration for the default route type. </p>
+        pub fn default_route(mut self, input: crate::model::DefaultRouteInput) -> Self {
+            self.default_route = Some(input);
+            self
+        }
+        /// <p> Configuration for the default route type. </p>
+        pub fn set_default_route(
+            mut self,
+            input: std::option::Option<crate::model::DefaultRouteInput>,
+        ) -> Self {
+            self.default_route = input;
             self
         }
         /// <p>The configuration for the URI path route type. </p>
@@ -589,6 +603,7 @@ pub mod create_route_input {
                 application_identifier: self.application_identifier,
                 service_identifier: self.service_identifier,
                 route_type: self.route_type,
+                default_route: self.default_route,
                 uri_path_route: self.uri_path_route,
                 tags: self.tags,
                 client_token: self.client_token,
@@ -3962,12 +3977,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3976,7 +3991,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The new or modified tags for the resource. </p>
+        /// <p>The new or modified tags for the resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3987,7 +4002,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The new or modified tags for the resource. </p>
+        /// <p>The new or modified tags for the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4299,6 +4314,273 @@ impl UntagResourceInput {
     }
 }
 
+/// See [`UpdateRouteInput`](crate::input::UpdateRouteInput).
+pub mod update_route_input {
+
+    /// A builder for [`UpdateRouteInput`](crate::input::UpdateRouteInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) environment_identifier: std::option::Option<std::string::String>,
+        pub(crate) application_identifier: std::option::Option<std::string::String>,
+        pub(crate) route_identifier: std::option::Option<std::string::String>,
+        pub(crate) activation_state: std::option::Option<crate::model::RouteActivationState>,
+    }
+    impl Builder {
+        /// <p> The ID of the environment in which the route is being updated. </p>
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.environment_identifier = Some(input.into());
+            self
+        }
+        /// <p> The ID of the environment in which the route is being updated. </p>
+        pub fn set_environment_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.environment_identifier = input;
+            self
+        }
+        /// <p> The ID of the application within which the route is being updated. </p>
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_identifier = Some(input.into());
+            self
+        }
+        /// <p> The ID of the application within which the route is being updated. </p>
+        pub fn set_application_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_identifier = input;
+            self
+        }
+        /// <p> The unique identifier of the route to update. </p>
+        pub fn route_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.route_identifier = Some(input.into());
+            self
+        }
+        /// <p> The unique identifier of the route to update. </p>
+        pub fn set_route_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.route_identifier = input;
+            self
+        }
+        /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+        pub fn activation_state(mut self, input: crate::model::RouteActivationState) -> Self {
+            self.activation_state = Some(input);
+            self
+        }
+        /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+        pub fn set_activation_state(
+            mut self,
+            input: std::option::Option<crate::model::RouteActivationState>,
+        ) -> Self {
+            self.activation_state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::input::UpdateRouteInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateRouteInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateRouteInput {
+                environment_identifier: self.environment_identifier,
+                application_identifier: self.application_identifier,
+                route_identifier: self.route_identifier,
+                activation_state: self.activation_state,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateRouteInputOperationOutputAlias = crate::operation::UpdateRoute;
+#[doc(hidden)]
+pub type UpdateRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateRouteInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateRoute`](crate::operation::UpdateRoute)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateRoute,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateRouteInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_47 = &_input.environment_identifier;
+                let input_47 = input_47.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "environment_identifier",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let environment_identifier = aws_smithy_http::label::fmt_string(input_47, false);
+                if environment_identifier.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "environment_identifier",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_48 = &_input.application_identifier;
+                let input_48 = input_48.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "application_identifier",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let application_identifier = aws_smithy_http::label::fmt_string(input_48, false);
+                if application_identifier.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "application_identifier",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_49 = &_input.route_identifier;
+                let input_49 = input_49.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "route_identifier",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let route_identifier = aws_smithy_http::label::fmt_string(input_49, false);
+                if route_identifier.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "route_identifier",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}", EnvironmentIdentifier = environment_identifier, ApplicationIdentifier = application_identifier, RouteIdentifier = route_identifier).expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateRouteInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PATCH").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_route(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRoute::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRoute",
+            "migrationhubrefactorspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateRouteInput`](crate::input::UpdateRouteInput).
+    pub fn builder() -> crate::input::update_route_input::Builder {
+        crate::input::update_route_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRouteInput {
+    /// <p> The ID of the environment in which the route is being updated. </p>
+    pub environment_identifier: std::option::Option<std::string::String>,
+    /// <p> The ID of the application within which the route is being updated. </p>
+    pub application_identifier: std::option::Option<std::string::String>,
+    /// <p> The unique identifier of the route to update. </p>
+    pub route_identifier: std::option::Option<std::string::String>,
+    /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    pub activation_state: std::option::Option<crate::model::RouteActivationState>,
+}
+impl UpdateRouteInput {
+    /// <p> The ID of the environment in which the route is being updated. </p>
+    pub fn environment_identifier(&self) -> std::option::Option<&str> {
+        self.environment_identifier.as_deref()
+    }
+    /// <p> The ID of the application within which the route is being updated. </p>
+    pub fn application_identifier(&self) -> std::option::Option<&str> {
+        self.application_identifier.as_deref()
+    }
+    /// <p> The unique identifier of the route to update. </p>
+    pub fn route_identifier(&self) -> std::option::Option<&str> {
+        self.route_identifier.as_deref()
+    }
+    /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    pub fn activation_state(&self) -> std::option::Option<&crate::model::RouteActivationState> {
+        self.activation_state.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateRouteInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateRouteInput");
+        formatter.field("environment_identifier", &self.environment_identifier);
+        formatter.field("application_identifier", &self.application_identifier);
+        formatter.field("route_identifier", &self.route_identifier);
+        formatter.field("activation_state", &self.activation_state);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4331,18 +4613,18 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The new or modified tags for the resource. </p>
+    /// <p>The new or modified tags for the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The new or modified tags for the resource. </p>
+    /// <p>The new or modified tags for the resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4974,6 +5256,8 @@ pub struct CreateRouteInput {
     pub service_identifier: std::option::Option<std::string::String>,
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub route_type: std::option::Option<crate::model::RouteType>,
+    /// <p> Configuration for the default route type. </p>
+    pub default_route: std::option::Option<crate::model::DefaultRouteInput>,
     /// <p>The configuration for the URI path route type. </p>
     pub uri_path_route: std::option::Option<crate::model::UriPathRouteInput>,
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
@@ -4999,6 +5283,10 @@ impl CreateRouteInput {
     pub fn route_type(&self) -> std::option::Option<&crate::model::RouteType> {
         self.route_type.as_ref()
     }
+    /// <p> Configuration for the default route type. </p>
+    pub fn default_route(&self) -> std::option::Option<&crate::model::DefaultRouteInput> {
+        self.default_route.as_ref()
+    }
     /// <p>The configuration for the URI path route type. </p>
     pub fn uri_path_route(&self) -> std::option::Option<&crate::model::UriPathRouteInput> {
         self.uri_path_route.as_ref()
@@ -5022,6 +5310,7 @@ impl std::fmt::Debug for CreateRouteInput {
         formatter.field("application_identifier", &self.application_identifier);
         formatter.field("service_identifier", &self.service_identifier);
         formatter.field("route_type", &self.route_type);
+        formatter.field("default_route", &self.default_route);
         formatter.field("uri_path_route", &self.uri_path_route);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
